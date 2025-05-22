@@ -1,0 +1,44 @@
+id: preamble
+version: 1.0.0
+title: Preamble
+description: The foundational statement of purpose and intent
+
+content: |
+  # Preamble
+  
+  We, the members of Example DAO, united by our shared vision of decentralized 
+  governance and collective ownership, hereby establish this Constitution as the 
+  supreme governing document of our organization.
+  
+  ## Purpose
+  
+  This Constitution serves to:
+  
+  1. Define the fundamental principles that guide our actions
+  2. Establish clear governance processes and procedures
+  3. Protect the rights of all members
+  4. Ensure the long-term sustainability of our organization
+  5. Create mechanisms for peaceful evolution and adaptation
+  
+  ## Vision
+  
+  We envision a future where:
+  - Decision-making power is distributed fairly among all stakeholders
+  - Transparency and accountability are paramount
+  - Innovation and experimentation are encouraged
+  - The collective wisdom of our community drives progress
+  
+  ## Commitment
+  
+  By participating in this DAO, all members commit to:
+  - Upholding the principles set forth in this Constitution
+  - Acting in good faith for the benefit of the collective
+  - Respecting the rights and contributions of all members
+  - Continuously improving our governance systems
+
+metadata:
+  created: 2025-01-22T00:00:00Z
+  modified: 2025-01-22T00:00:00Z
+  ratified: 2025-01-22T00:00:00Z
+  authors:
+    - founding-committee

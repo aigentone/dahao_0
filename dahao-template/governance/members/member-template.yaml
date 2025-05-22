@@ -1,0 +1,41 @@
+# Template for member profiles
+# Copy this file and rename to: [member-address].yaml
+
+id: member-0x1234  # Replace with actual member ID
+address: "0x1234567890123456789012345678901234567890"  # Ethereum address
+ens: member.eth  # Optional ENS name
+
+roles:
+  - member
+  # Add additional roles as assigned
+
+permissions:
+  # Automatically derived from roles
+  # Additional special permissions can be listed here
+
+reputation:
+  score: 100
+  level: contributor
+  badges:
+    - early_adopter
+    - proposal_author
+
+participation:
+  proposals_created: 5
+  votes_cast: 42
+  attendance_rate: 0.85
+
+joined_date: 2025-01-22T00:00:00Z
+status: active
+
+metadata:
+  bio: "Passionate about decentralized governance and community building"
+  skills:
+    - governance
+    - smart-contracts
+    - community-management
+  timezone: UTC-5
+  contact:
+    discord: member#1234
+    telegram: "@member"
+    # email: optional

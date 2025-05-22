@@ -1,0 +1,92 @@
+$schema: http://json-schema.org/draft-07/schema#
+title: DAHAO Governance Schema
+description: Schema for governance rules and processes
+type: object
+required:
+  - id
+  - type
+  - title
+  - description
+  - rules
+properties:
+  id:
+    type: string
+    pattern: "^[a-z0-9-]+$"
+    description: Unique identifier for the governance item
+  type:
+    type: string
+    enum:
+      - voting
+      - proposal
+      - decision
+      - process
+      - role
+    description: Type of governance item
+  title:
+    type: string
+    description: Human-readable title
+  description:
+    type: string
+    description: Detailed description
+  rules:
+    type: array
+    items:
+      type: object
+      required:
+        - id
+        - description
+      properties:
+        id:
+          type: string
+          pattern: "^[a-z0-9-]+$"
+        description:
+          type: string
+        conditions:
+          type: array
+          items:
+            type: string
+        actions:
+          type: array
+          items:
+            type: string
+        exceptions:
+          type: array
+          items:
+            type: string
+  parameters:
+    type: object
+    properties:
+      quorum:
+        type: number
+        minimum: 0
+        maximum: 1
+        description: Required quorum as percentage
+      threshold:
+        type: number
+        minimum: 0
+        maximum: 1
+        description: Required approval threshold
+      duration:
+        type: object
+        properties:
+          proposal:
+            type: integer
+            description: Duration in days for proposal phase
+          voting:
+            type: integer
+            description: Duration in days for voting phase
+          execution:
+            type: integer
+            description: Duration in days for execution phase
+  metadata:
+    type: object
+    properties:
+      created:
+        type: string
+        format: date-time
+      modified:
+        type: string
+        format: date-time
+      version:
+        type: string
+        pattern: "^\\d+\\.\\d+\\.\\d+$"

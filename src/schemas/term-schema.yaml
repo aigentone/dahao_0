@@ -1,0 +1,54 @@
+$schema: http://json-schema.org/draft-07/schema#
+title: DAHAO Term Schema
+description: Schema for defining terms in the DAHAO system
+type: object
+required:
+  - term
+  - definition
+  - category
+properties:
+  term:
+    type: string
+    description: The term being defined
+  definition:
+    type: string
+    description: Clear definition of the term
+  category:
+    type: string
+    enum:
+      - governance
+      - technical
+      - economic
+      - legal
+      - operational
+    description: Category the term belongs to
+  aliases:
+    type: array
+    items:
+      type: string
+    description: Alternative names or abbreviations
+  related_terms:
+    type: array
+    items:
+      type: string
+    description: Related terms for cross-reference
+  examples:
+    type: array
+    items:
+      type: string
+    description: Example usage of the term
+  source:
+    type: string
+    description: Source or reference for the definition
+  metadata:
+    type: object
+    properties:
+      created:
+        type: string
+        format: date-time
+      modified:
+        type: string
+        format: date-time
+      version:
+        type: string
+        pattern: "^\\d+\\.\\d+\\.\\d+$"

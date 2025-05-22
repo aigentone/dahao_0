@@ -1,0 +1,71 @@
+- id: member
+  title: DAO Member
+  description: Basic membership role with voting rights
+  permissions:
+    - create_proposal
+    - vote
+    - delegate_vote
+    - view_treasury
+    - participate_discussion
+  requirements:
+    - Hold minimum 100 DAO tokens
+    - Complete onboarding process
+    - Agree to constitution
+  term: indefinite
+
+- id: steward
+  title: DAO Steward
+  description: Elected representative responsible for specific domains
+  permissions:
+    - member_permissions
+    - fast_track_proposal
+    - moderate_discussion
+    - allocate_budget
+  requirements:
+    - Active member for 6+ months
+    - Elected by community vote
+    - Domain expertise
+  term: 6 months
+  max_concurrent: 7
+
+- id: multisig_signer
+  title: Multisig Signer
+  description: Trusted member authorized to sign treasury transactions
+  permissions:
+    - sign_transactions
+    - view_pending_transactions
+    - propose_emergency_action
+  requirements:
+    - Active member for 12+ months
+    - Security clearance
+    - KYC completed
+    - Elected with 75% approval
+  term: 12 months
+  max_concurrent: 7
+
+- id: contributor
+  title: Active Contributor
+  description: Member actively contributing to DAO operations
+  permissions:
+    - member_permissions
+    - access_contributor_tools
+    - claim_bounties
+    - join_working_groups
+  requirements:
+    - Complete 3+ approved tasks
+    - Active participation
+  term: indefinite
+
+- id: moderator
+  title: Community Moderator
+  description: Maintains community standards and facilitates discussion
+  permissions:
+    - moderate_forums
+    - issue_warnings
+    - temporary_mute
+    - escalate_violations
+  requirements:
+    - Active member for 3+ months
+    - Complete moderator training
+    - Community nomination
+  term: 3 months

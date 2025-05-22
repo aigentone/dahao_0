@@ -1,0 +1,57 @@
+# OS Files
+.DS_Store
+Thumbs.db
+
+# IDE Files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+env/
+venv/
+.env
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build outputs
+dist/
+build/
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Local configuration
+.dahao/local.yaml
+.dahao/*.local.yaml
+
+# Private keys and secrets
+*.key
+*.pem
+.secrets/
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Test coverage
+coverage/
+.coverage
+htmlcov/
+
+# Documentation build
+docs/_build/
+site/
