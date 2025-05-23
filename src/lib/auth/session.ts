@@ -9,8 +9,8 @@ const secret = new TextEncoder().encode(
 
 const SESSION_DURATION = 7 * 24 * 60 * 60 * 1000; // 7 days
 
-export async function createSession(user: User): Promise<string> {
-  const token = await new SignJWT({ userId: user.id })
+export async function createSession(user: User, accessToken: string): Promise<string> {
+  const token = await new SignJWT({ userId: user.id, accessToken })
     .setProtectedHeader({ alg: 'HS256' })
     .setIssuedAt()
     .setExpirationTime('7d')
@@ -40,6 +40,7 @@ export async function validateSession(request: Request): Promise<Session | null>
   try {
     const { payload } = await jwtVerify(token, secret);
     const userId = payload.userId as string;
+    const accessToken = payload.accessToken as string;
 
     // In a real app, you'd fetch the user from the database here
     // For now, we'll create a mock user
@@ -58,10 +59,16 @@ export async function validateSession(request: Request): Promise<Session | null>
       updatedAt: new Date(),
     };
 
+    if (!accessToken) {
+      console.error('Access token not found in session payload');
+      return null;
+    }
+
     return {
       userId,
       user,
       expiresAt: new Date(Date.now() + SESSION_DURATION),
+      accessToken,
     };
   } catch (error) {
     return null;
@@ -79,6 +86,7 @@ export async function getSession(request?: NextRequest): Promise<Session | null>
   try {
     const { payload } = await jwtVerify(token, secret);
     const userId = payload.userId as string;
+    const accessToken = payload.accessToken as string;
 
     // In a real app, you'd fetch the user from the database here
     const user: User = {
@@ -96,10 +104,16 @@ export async function getSession(request?: NextRequest): Promise<Session | null>
       updatedAt: new Date(),
     };
 
+    if (!accessToken) {
+      console.error('Access token not found in session payload');
+      return null;
+    }
+
     return {
       userId,
       user,
       expiresAt: new Date(Date.now() + SESSION_DURATION),
+      accessToken,
     };
   } catch (error) {
     return null;

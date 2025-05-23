@@ -1,48 +1,46 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import { DocumentViewer } from '@/components/constitution/DocumentViewer';
 import { DocumentEditor } from '@/components/constitution/DocumentEditor';
-import { DiffViewer } from '@/components/constitution/DiffViewer';
-import { useDocument } from '@/hooks/useDocument';
-import { ArrowLeftIcon, PencilIcon, ClockIcon } from '@heroicons/react/24/outline';
+import { usePublicDocument } from '@/hooks/usePublicDocument';
+import { useStore } from '@/store';
+import { ArrowLeftIcon, PencilIcon } from '@heroicons/react/24/outline';
 
 const SectionPage: React.FC = () => {
   const params = useParams();
   const router = useRouter();
   const sectionId = params.sectionId as string;
   const [isEditMode, setIsEditMode] = useState(false);
-  const [showHistory, setShowHistory] = useState(false);
-  const [compareVersion, setCompareVersion] = useState<string | null>(null);
+  
+  const { document, isLoading, error } = usePublicDocument(sectionId);
+  const { isAuthenticated, login } = useStore();
 
-  // Mock document path - in real app, map sectionId to actual file path
-  const documentPath = `constitution/${sectionId}.yaml`;
-  const repoPath = process.env.NEXT_PUBLIC_REPO_PATH || '.';
-
-  const {
-    document,
-    isLoading,
-    error,
-    isDirty,
-    loadHistory,
-    saveDocument,
-    getDocumentDiff,
-  } = useDocument(documentPath, repoPath);
-
-  useEffect(() => {
-    loadHistory();
-  }, [loadHistory]);
-
-  const handleSave = async (content: string) => {
-    const message = `Update ${document?.metadata.title || sectionId}`;
-    await saveDocument(content, message);
-    setIsEditMode(false);
+  const handleEditClick = () => {
+    if (!isAuthenticated) {
+      // Check if GitHub OAuth is configured
+      fetch('/api/auth/check-config')
+        .then(res => res.json())
+        .then(data => {
+          if (!data.configured) {
+            alert('GitHub authentication is not configured. Please follow the setup instructions in the README.');
+          } else if (confirm('You need to sign in with GitHub to edit documents. Sign in now?')) {
+            login();
+          }
+        })
+        .catch(() => {
+          alert('Unable to check authentication configuration.');
+        });
+      return;
+    }
+    setIsEditMode(true);
   };
 
-  const handleCompare = async (commitHash: string) => {
-    setCompareVersion(commitHash);
-    // Load diff for comparison
+  const handleSave = async (content: string) => {
+    // This would use the authenticated API
+    alert('Saving functionality requires full authentication setup');
+    setIsEditMode(false);
   };
 
   if (isLoading) {
@@ -53,13 +51,19 @@ const SectionPage: React.FC = () => {
     );
   }
 
-  if (error) {
+  if (error || !document) {
     return (
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900 p-8">
         <div className="max-w-2xl mx-auto">
           <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
-            Error: {error}
+            Error: {error || 'Document not found'}
           </div>
+          <button
+            onClick={() => router.push('/constitution')}
+            className="mt-4 text-blue-600 hover:underline"
+          >
+            ← Back to Constitution
+          </button>
         </div>
       </div>
     );
@@ -78,79 +82,67 @@ const SectionPage: React.FC = () => {
               Back to Constitution
             </button>
             <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
-              {document?.metadata.title || 'Loading...'}
+              {document.title}
             </h1>
           </div>
 
           <div className="flex items-center gap-4">
-            <button
-              onClick={() => setShowHistory(!showHistory)}
-              className="flex items-center gap-2 px-4 py-2 text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 rounded-md shadow hover:bg-gray-50 dark:hover:bg-gray-700"
-            >
-              <ClockIcon className="h-5 w-5" />
-              History
-            </button>
-            <button
-              onClick={() => setIsEditMode(!isEditMode)}
-              className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700"
-            >
-              <PencilIcon className="h-5 w-5" />
-              {isEditMode ? 'Cancel Edit' : 'Edit'}
-            </button>
+            {isAuthenticated ? (
+              <button
+                onClick={handleEditClick}
+                className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700"
+              >
+                <PencilIcon className="h-5 w-5" />
+                {isEditMode ? 'Cancel Edit' : 'Edit'}
+              </button>
+            ) : (
+              <button
+                onClick={handleEditClick}
+                className="flex items-center gap-2 px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-md shadow hover:bg-gray-300 dark:hover:bg-gray-600"
+              >
+                <PencilIcon className="h-5 w-5" />
+                Sign in to Edit
+              </button>
+            )}
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-          <div className={showHistory ? 'lg:col-span-3' : 'lg:col-span-4'}>
+        <div className="grid grid-cols-1 gap-8">
+          <div>
             {isEditMode && document ? (
               <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg h-[600px]">
                 <DocumentEditor
                   initialContent={document.content}
                   onSave={handleSave}
-                  title={document.metadata.title}
+                  title={document.title}
                 />
               </div>
-            ) : compareVersion ? (
-              <DiffViewer
-                oldContent="Original content here"
-                newContent={document?.content || ''}
-                oldTitle={`Version at ${compareVersion}`}
-                newTitle="Current Version"
-              />
             ) : (
               <DocumentViewer
-                content={document?.content || ''}
-                metadata={document?.metadata}
+                content={document.content}
+                metadata={{
+                  title: document.title,
+                  lastModified: document.lastModified,
+                  author: document.author
+                }}
               />
             )}
           </div>
-
-          {showHistory && document?.history && (
-            <div className="lg:col-span-1">
-              <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4">
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-                  Version History
-                </h3>
-                <div className="space-y-3">
-                  {document.history.map((commit) => (
-                    <div
-                      key={commit.hash}
-                      className="p-3 border border-gray-200 dark:border-gray-700 rounded-md hover:bg-gray-50 dark:hover:bg-gray-700 cursor-pointer"
-                      onClick={() => handleCompare(commit.hash)}
-                    >
-                      <p className="text-sm font-medium text-gray-900 dark:text-white">
-                        {commit.message}
-                      </p>
-                      <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-                        {new Date(commit.date).toLocaleDateString()} by {commit.author}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          )}
         </div>
+        
+        {!isAuthenticated && (
+          <div className="mt-8 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4 text-center">
+            <p className="text-blue-800 dark:text-blue-200 mb-3">
+              Want to contribute to this document?
+            </p>
+            <button
+              onClick={() => login()}
+              className="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+            >
+              Sign in with GitHub to Edit
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

@@ -21,6 +21,8 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "diff": "^5.1.0",
+    "gray-matter": "^4.0.3",
+    "immer": "^10.1.1",
     "js-yaml": "^4.1.0",
     "lucide-react": "^0.321.0",
     "next": "14.1.0",
@@ -29,7 +31,8 @@
     "react-markdown": "^9.0.1",
     "simple-git": "^3.22.0",
     "tailwind-merge": "^2.6.0",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "zustand": "^5.0.5"
   },
   "devDependencies": {
     "@types/diff": "^5.0.9",

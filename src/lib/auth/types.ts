@@ -17,6 +17,7 @@ export interface Session {
   userId: string;
   user: User;
   expiresAt: Date;
+  accessToken: string;
 }
 
 export interface GitHubUser {
