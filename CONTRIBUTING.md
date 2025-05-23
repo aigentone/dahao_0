@@ -29,7 +29,8 @@ By participating in this project, you agree to abide by our Code of Conduct:
    ```bash
    # Via GitHub UI: Click the "Fork" button
    # Or use GitHub CLI:
-   gh repo fork dahao-org/dahao_0
+   gh repo fork aigentone/dahao_0
+   aigentone/dahao_0
    ```
 
 2. **Clone Your Fork**
@@ -40,7 +41,7 @@ By participating in this project, you agree to abide by our Code of Conduct:
 
 3. **Add Upstream Remote**
    ```bash
-   git remote add upstream https://github.com/dahao-org/dahao_0.git
+   git remote add upstream https://github.com/aigentone/dahao_0.git
    ```
 
 4. **Set Up Development Environment**
