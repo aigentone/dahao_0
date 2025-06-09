@@ -38,10 +38,10 @@ const ConstitutionPage: React.FC = () => {
         <div className="mb-8 flex justify-between items-start">
           <div>
             <h1 className="text-4xl font-bold text-gray-900 dark:text-white">
-              Constitution of Dahao
+              DAHAO Ethics Framework
             </h1>
             <p className="mt-2 text-lg text-gray-600 dark:text-gray-400">
-              Browse and view the constitutional documents
+              Explore versioned ethical principles and their evolution through community consensus
             </p>
           </div>
           
@@ -92,14 +92,15 @@ const ConstitutionPage: React.FC = () => {
             ) : (
               <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 text-center">
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
-                  Welcome to the DAHAO Constitution
+                  Welcome to the DAHAO Ethics Framework
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400 mb-6">
-                  Select a section from the browser to view its contents.
+                  These are our versioned ethical principles that evolve through GitHub-based governance. 
+                  Select a section to explore the current ethics versions.
                 </p>
                 {!isAuthenticated && (
                   <p className="text-sm text-gray-500 dark:text-gray-500">
-                    You're viewing in read-only mode. Sign in to propose changes.
+                    You're viewing in read-only mode. Sign in to propose ethics updates via GitHub Issues.
                   </p>
                 )}
               </div>

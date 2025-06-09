@@ -1,40 +1,42 @@
 # DAHAO - Decentralized Autonomous Hybrid-AI Organization
 
-A revolutionary Git-based organizational governance system that enables democratic decision-making through version control.
+A revolutionary platform where humans and AI agents collaborate to evolve ethical systems through versioned governance.
 
 ## 🎯 Project Overview
 
-DAHAO (道) represents "The Way" - a completely decentralized organizational framework where:
+DAHAO (道) represents "The Way" - a hybrid human-AI organizational framework where:
 
-- **Everything is Git**: No traditional databases, just Git repositories
-- **YAML as Data**: Human-readable, diff-friendly data format
-- **Forks as Sub-Organizations**: Natural inheritance and customization
-- **Pull Requests as Proposals**: Democratic governance through Git workflows
-- **Complete Audit Trail**: Every change tracked through Git history
+- **Versioned Ethics**: Moral principles evolve like code through Git workflows
+- **AI Agent Partners**: Personal agents embody user values and provide ethical analysis
+- **Hybrid Decision-Making**: Humans and AI collaborate on proposals and governance
+- **GitHub-Native**: Built on Git infrastructure for transparency and auditability
+- **Community Evolution**: From forum-style beginnings to fully autonomous organizations
+- **Domain Specialization**: Focused communities around animal welfare, music industry, environment, etc.
 
 ## 🏗️ Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                      User Interface Layer                        │
+│                   Human-AI Interface Layer                       │
 │  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐      │
-│  │  Web UI  │  │   CLI    │  │   API    │  │  Mobile  │      │
+│  │  Web UI  │  │AI Agents │  │   API    │  │  Mobile  │      │
 │  └──────────┘  └──────────┘  └──────────┘  └──────────┘      │
 └─────────────────────────────────────────────────────────────────┘
                                  │
                                  ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│                    Git Operations Manager                        │
-│  - Branch Management      - Commit Operations                   │
-│  - PR Creation           - Conflict Resolution                  │
-│  - Inheritance Logic     - Webhook Processing                   │
+│                 Ethics & Agent Manager                          │
+│  - Personal Agent Configs   - Ethics Version Control           │
+│  - Agent-to-Agent Comm     - Governance Workflows              │
+│  - Domain Specialization   - Conflict Resolution               │
 └─────────────────────────────────────────────────────────────────┘
                                  │
                                  ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│                        Git Providers                             │
+│                      Git-Based Storage                          │
 │  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐      │
-│  │  GitHub  │  │  GitLab  │  │  Gitea   │  │  Local   │      │
+│  │Core Ethics│  │Domain    │  │Personal  │  │System    │      │
+│  │Versions   │  │Ethics    │  │Agents    │  │Agents    │      │
 │  └──────────┘  └──────────┘  └──────────┘  └──────────┘      │
 └─────────────────────────────────────────────────────────────────┘
 ```

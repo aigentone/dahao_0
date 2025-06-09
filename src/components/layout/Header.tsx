@@ -39,9 +39,11 @@ export function Header() {
 
   const navItems = [
     { href: '/', label: 'Home' },
-    { href: '/governance', label: 'Governance' },
-    { href: '/constitution', label: 'Constitution' },
-    { href: '/forum', label: 'Forum' },
+    { href: '/mission', label: 'Our Mission' },
+    { href: '/about', label: 'About' },
+    { href: '/how-it-works', label: 'How It Works' },
+    { href: '/agents', label: 'AI Agents' },
+    { href: '/constitution', label: 'Ethics Framework' },
   ];
 
   return (
@@ -50,7 +52,7 @@ export function Header() {
         <nav className="flex items-center justify-between">
           <div className="flex items-center space-x-6">
             <Link href="/" className="text-xl font-bold">
-              DaHao DAO
+              DAHAO
             </Link>
             <div className="hidden md:flex items-center space-x-4">
               {navItems.map((item) => (
