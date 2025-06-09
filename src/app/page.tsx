@@ -4,29 +4,14 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowRightIcon, FileTextIcon, MessageSquareIcon, VoteIcon, GitBranchIcon, Users2Icon, BrainIcon, Network, Zap, CoinsIcon, TrendingUpIcon, LightbulbIcon } from 'lucide-react';
-import { useEffect, useState } from 'react';
-import { Session } from '@/lib/auth/types';
 
 export default function Home() {
-  const [session, setSession] = useState<Session | null>(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    fetch('/api/auth/session')
-      .then(res => res.ok ? res.json() : null)
-      .then(data => {
-        setSession(data);
-        setLoading(false);
-      })
-      .catch(() => setLoading(false));
-  }, []);
-
   const features = [
     {
       icon: FileTextIcon,
-      title: 'Ethics Framework',
-      description: 'Explore versioned ethical principles and their evolution through community consensus',
-      href: '/constitution',
+      title: 'Our Mission',
+      description: 'Learn about our vision for human-AI collaboration and ethical governance',
+      href: '/mission',
     },
     {
       icon: VoteIcon,
@@ -56,33 +41,17 @@ export default function Home() {
             Where humans and AI agents collaborate to evolve ethical systems through versioned governance
           </p>
           
-          {loading ? (
-            <div className="inline-block h-10 w-32 animate-pulse bg-muted rounded" />
-          ) : session ? (
-            <div className="space-y-2">
-              <p className="text-lg">
-                Welcome back, <span className="font-semibold">{session.user.name || session.user.username}</span>!
-              </p>
-              <Button asChild>
-                <Link href="/governance">
-                  Go to Governance
-                  <ArrowRightIcon className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-            </div>
-          ) : (
-            <div className="space-y-4">
-              <p className="text-lg text-muted-foreground">
-                Sign in to participate in governance and join the community
-              </p>
-              <Button asChild size="lg">
-                <Link href="/api/auth/github">
-                  Get Started
-                  <ArrowRightIcon className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-            </div>
-          )}
+          <div className="space-y-4">
+            <p className="text-lg text-muted-foreground">
+              Explore the future of human-AI collaboration
+            </p>
+            <Button asChild size="lg">
+              <Link href="/mission">
+                Learn More
+                <ArrowRightIcon className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
         </div>
 
         <div className="grid gap-6 md:grid-cols-3">
@@ -204,7 +173,7 @@ export default function Home() {
           </p>
           <div className="space-x-4">
             <Button asChild size="lg">
-              <Link href="/api/auth/github">
+              <Link href="/mission">
                 Get Started
                 <ArrowRightIcon className="ml-2 h-4 w-4" />
               </Link>
