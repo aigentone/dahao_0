@@ -1,6 +1,7 @@
 import { useState, useCallback } from 'react';
 import { useYAMLData } from './useYAMLData';
-import { useGitRepo } from './useGitRepo';
+// TODO: Uncomment when git functionality is implemented
+// import { useGitRepo } from './useGitRepo';
 
 export interface DocumentMetadata {
   title: string;
@@ -25,27 +26,41 @@ export interface Document {
 
 export const useDocument = (documentPath: string, repoPath: string) => {
   const { data: yamlData, isLoading: yamlLoading, error: yamlError, saveData, isDirty } = useYAMLData(documentPath);
-  const { getCommits, commit, getDiff } = useGitRepo(repoPath);
+  // TODO: Uncomment when git functionality is implemented
+  // const { getCommits, commit, getDiff } = useGitRepo(repoPath);
   const [history, setHistory] = useState<Document['history']>([]);
 
   const loadHistory = useCallback(async () => {
+    // TODO: Implement when git is available
+    console.log('Git history not yet implemented');
+    /* TODO: Uncomment when git functionality is implemented
     try {
       const commits = await getCommits(documentPath, 20);
       setHistory(commits);
     } catch (err) {
       console.error('Failed to load document history:', err);
     }
-  }, [documentPath, getCommits]);
+    */
+  }, [documentPath]);
 
   const saveDocument = useCallback(async (content: string, commitMessage: string) => {
     await saveData(content);
+    // TODO: Implement git commit when available
+    console.log('Git commit not yet implemented:', commitMessage);
+    /* TODO: Uncomment when git functionality is implemented
     await commit(commitMessage, [documentPath]);
     await loadHistory();
-  }, [saveData, commit, documentPath, loadHistory]);
+    */
+  }, [saveData, documentPath]);
 
   const getDocumentDiff = useCallback(async (commitHash?: string) => {
+    // TODO: Implement when git is available
+    console.log('Git diff not yet implemented:', commitHash);
+    return null;
+    /* TODO: Uncomment when git functionality is implemented
     return await getDiff(documentPath, commitHash);
-  }, [getDiff, documentPath]);
+    */
+  }, [documentPath]);
 
   const document: Document | null = yamlData ? {
     id: documentPath.replace(/[^a-zA-Z0-9]/g, '-'),

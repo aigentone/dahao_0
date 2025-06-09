@@ -1,18 +1,21 @@
 import { create } from 'zustand';
 import { devtools, persist } from 'zustand/middleware';
 import { immer } from 'zustand/middleware/immer';
-import { createGitSlice, GitSlice } from './slices/git';
+// TODO: Uncomment when git functionality is implemented
+// import { createGitSlice, GitSlice } from './slices/git';
 import { createDocumentSlice, DocumentSlice } from './slices/document';
 import { createGovernanceSlice, GovernanceSlice } from './slices/governance';
 import { createAuthSlice, AuthSlice } from './slices/auth';
 
-export type StoreState = GitSlice & DocumentSlice & GovernanceSlice & AuthSlice;
+// TODO: Add GitSlice when git functionality is implemented
+export type StoreState = DocumentSlice & GovernanceSlice & AuthSlice;
 
 export const useStore = create<StoreState>()(
   devtools(
     persist(
       immer((...a) => ({
-        ...createGitSlice(...a),
+        // TODO: Add git slice when implemented
+        // ...createGitSlice(...a),
         ...createDocumentSlice(...a),
         ...createGovernanceSlice(...a),
         ...createAuthSlice(...a),
