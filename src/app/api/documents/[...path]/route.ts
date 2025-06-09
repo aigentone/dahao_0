@@ -212,9 +212,9 @@ export async function PUT(
       path: filePath,
     });
 
-    if (!('sha' in currentFile)) {
+    if (!('sha' in currentFile) || !('content' in currentFile)) {
       return NextResponse.json(
-        { error: 'Document not found' },
+        { error: 'Document not found or not accessible' },
         { status: 404 }
       );
     }
