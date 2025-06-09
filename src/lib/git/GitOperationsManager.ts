@@ -31,6 +31,10 @@ export class GitOperationsManager implements IGitOperationsManager {
   }
 
   async getHistory(filePath: string, limit: number = 50): Promise<GitCommit[]> {
+    // TODO: Fix TypeScript types and implement
+    return [];
+    
+    /* TODO: Uncomment when TypeScript types are fixed
     const log: LogResult = await this.git.log({
       file: filePath,
       n: limit,
@@ -48,9 +52,14 @@ export class GitOperationsManager implements IGitOperationsManager {
       date: commit.date || '',
       message: commit.message || ''
     }));
+    */
   }
 
   async getDiff(commitHash: string, filePath: string): Promise<GitDiff[]> {
+    // TODO: Implement git diff functionality
+    return [];
+    
+    /* TODO: Uncomment when implementing
     const diffSummary = await this.git.diffSummary([
       `${commitHash}^`,
       commitHash,
@@ -77,28 +86,49 @@ export class GitOperationsManager implements IGitOperationsManager {
     }
 
     return diffs;
+    */
   }
 
   async getFileAtCommit(commitHash: string, filePath: string): Promise<string> {
+    // TODO: Implement git show functionality
+    return '';
+    
+    /* TODO: Uncomment when implementing
     try {
       const content = await this.git.show([`${commitHash}:${filePath}`]);
       return content;
     } catch (error) {
       throw new Error(`Failed to get file content at commit ${commitHash}: ${error}`);
     }
+    */
   }
 
   async getCurrentBranch(): Promise<string> {
+    // TODO: Implement git branch functionality
+    return 'main';
+    
+    /* TODO: Uncomment when implementing
     const branch = await this.git.revparse(['--abbrev-ref', 'HEAD']);
     return branch.trim();
+    */
   }
 
   async getBranches(): Promise<string[]> {
+    // TODO: Implement git branch listing
+    return ['main'];
+    
+    /* TODO: Uncomment when implementing
     const branchSummary = await this.git.branch();
     return Object.keys(branchSummary.branches);
+    */
   }
 
   async checkout(branch: string): Promise<void> {
+    // TODO: Implement git checkout
+    console.log('Git checkout not implemented:', branch);
+    
+    /* TODO: Uncomment when implementing
     await this.git.checkout(branch);
+    */
   }
 }
