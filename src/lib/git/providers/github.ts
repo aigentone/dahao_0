@@ -174,10 +174,10 @@ export class GitHubProvider implements GitProvider {
 
     return {
       content: {
-        name: data.content!.name,
-        path: data.content!.path,
-        sha: data.content!.sha,
-        size: data.content!.size,
+        name: data.content?.name || path.split('/').pop() || '',
+        path: data.content?.path || path,
+        sha: data.content?.sha || '',
+        size: data.content?.size || 0,
         content: Buffer.from(content).toString('base64'),
         encoding: 'base64',
       },
