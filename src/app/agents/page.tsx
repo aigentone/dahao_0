@@ -51,7 +51,7 @@ export default function AgentsPage() {
                       <div>&nbsp;&nbsp;music_industry: "v0.9"</div>
                       <div></div>
                       <div>decision_process:</div>
-                      <div>&nbsp;&nbsp;priority: "personal_values > domain > core"</div>
+                      <div>&nbsp;&nbsp;priority: "personal_values &gt; domain &gt; core"</div>
                       <div>&nbsp;&nbsp;reasoning_style: "collaborative"</div>
                     </div>
                   </div>
