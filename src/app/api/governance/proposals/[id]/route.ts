@@ -1,13 +1,21 @@
 import { NextResponse } from 'next/server';
-import { db } from '@/lib/db';
-import { proposals, votes, comments } from '@/lib/db/schema';
-import { eq, desc } from 'drizzle-orm';
-import { validateSession } from '@/lib/auth/session';
+// TODO: Uncomment when database is set up
+// import { db } from '@/lib/db';
+// import { proposals, votes, comments } from '@/lib/db/schema';
+// import { eq, desc } from 'drizzle-orm';
+// import { validateSession } from '@/lib/auth/session';
 
 export async function GET(
   request: Request,
   { params }: { params: { id: string } }
 ) {
+  // TODO: Implement database functionality
+  return NextResponse.json(
+    { error: 'Proposal system not yet implemented' },
+    { status: 501 }
+  );
+
+  /* TODO: Uncomment when database is set up
   try {
     const proposalId = parseInt(params.id);
     if (isNaN(proposalId)) {
@@ -77,12 +85,20 @@ export async function GET(
       { status: 500 }
     );
   }
+  */
 }
 
 export async function PUT(
   request: Request,
   { params }: { params: { id: string } }
 ) {
+  // TODO: Implement database functionality
+  return NextResponse.json(
+    { error: 'Proposal system not yet implemented' },
+    { status: 501 }
+  );
+
+  /* TODO: Uncomment when database is set up
   try {
     const session = await validateSession(request);
     if (!session) {
@@ -143,12 +159,20 @@ export async function PUT(
       { status: 500 }
     );
   }
+  */
 }
 
 export async function DELETE(
   request: Request,
   { params }: { params: { id: string } }
 ) {
+  // TODO: Implement database functionality
+  return NextResponse.json(
+    { error: 'Proposal system not yet implemented' },
+    { status: 501 }
+  );
+
+  /* TODO: Uncomment when database is set up
   try {
     const session = await validateSession(request);
     if (!session) {
@@ -198,4 +222,5 @@ export async function DELETE(
       { status: 500 }
     );
   }
+  */
 }
