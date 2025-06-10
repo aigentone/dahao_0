@@ -1,0 +1,80 @@
+version: "1.0"
+principle_id: "welfare_measurement"
+name: "Welfare Measurement"
+description: "Objective assessment methods for animal welfare evaluation"
+category: "domain_specific"
+domain: "animal_welfare"
+
+measurement_categories:
+  physical_health:
+    description: "Objective physical wellness indicators"
+    metrics:
+      - body_condition_scoring
+      - injury_incidence_tracking
+      - disease_prevalence_monitoring
+      - mortality_rate_analysis
+    frequency: "weekly_minimum"
+    data_retention: "permanent_anonymized"
+
+  behavioral_indicators:
+    description: "Natural behavior expression assessment"
+    metrics:
+      - time_budget_analysis
+      - social_interaction_frequency
+      - exploration_behavior_measurement
+      - stress_behavior_observation
+    frequency: "daily_observation_periods"
+    standardization: "ethogram_based_protocols"
+
+  physiological_markers:
+    description: "Stress and health biomarkers"
+    metrics:
+      - cortisol_level_monitoring
+      - heart_rate_variability
+      - immune_function_indicators
+      - reproductive_success_rates
+    frequency: "monthly_sampling"
+    validation: "veterinary_oversight_required"
+
+  environmental_quality:
+    description: "Habitat and environmental assessments"
+    metrics:
+      - space_adequacy_measurement
+      - environmental_enrichment_availability
+      - climate_control_effectiveness
+      - resource_accessibility_analysis
+    frequency: "continuous_monitoring"
+    standards: "species_specific_requirements"
+
+assessment_protocols:
+  data_collection:
+    standardization: "internationally_recognized_protocols"
+    training_requirement: "certified_assessor_minimum"
+    inter_observer_reliability: "minimum_80_percent_agreement"
+    bias_minimization: "blind_assessment_where_possible"
+
+  analysis_methods:
+    statistical_approach: "evidence_based_significance_testing"
+    longitudinal_tracking: "individual_and_population_level"
+    comparative_analysis: "baseline_and_benchmark_comparison"
+    reporting_format: "standardized_welfare_outcome_measures"
+
+quality_assurance:
+  validation_requirements:
+    - "Peer review of measurement protocols"
+    - "Regular calibration of assessment tools"
+    - "Independent verification of results"
+    - "Continuous improvement based on new science"
+
+  transparency_standards:
+    - "Public availability of assessment methodologies"
+    - "Open access to aggregate welfare data"
+    - "Clear reporting of limitations and uncertainties"
+    - "Regular stakeholder consultation on methods"
+
+integration_with_freedoms:
+  freedom_alignment:
+    - "All measurements must map to five freedoms framework"
+    - "Negative welfare indicators trigger immediate review"
+    - "Positive welfare indicators guide best practice development"
+    - "Measurement gaps identified for research prioritization"

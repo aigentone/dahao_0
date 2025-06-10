@@ -1,0 +1,48 @@
+version: "1.1"
+principle_id: "sustainability"
+name: "Sustainability"
+description: "Consider long-term impact on community and environment"
+category: "core"
+previous_version: "1.0"
+
+requirements:
+  environmental_impact:
+    description: "Environmental consequences must be assessed"
+    mandatory: true
+    scope: "full_lifecycle_analysis"
+
+  community_health:
+    description: "Long-term community viability consideration"
+    mandatory: true
+    metrics:
+      - member_retention
+      - participation_growth
+      - value_creation_sustainability
+
+  resource_planning:
+    description: "Sustainable resource allocation strategies"
+    mandatory: true
+    timeframe: "minimum_5_year_projection"
+
+  regenerative_approach:
+    description: "Prefer solutions that improve rather than just maintain"
+    encouraged: true
+    examples:
+      - "Carbon negative rather than carbon neutral"
+      - "Community strengthening rather than status quo"
+
+assessment_framework:
+  environmental:
+    carbon_footprint: "calculated_per_action"
+    resource_consumption: "renewable_preferred"
+    waste_generation: "circular_economy_approach"
+
+  social:
+    community_cohesion: "measured_quarterly"
+    knowledge_transfer: "continuous_improvement"
+    conflict_resolution: "restorative_justice_methods"
+
+  economic:
+    long_term_viability: "5_year_projections"
+    value_distribution: "equitable_sharing_mechanisms"
+    innovation_investment: "compound_growth_focus"

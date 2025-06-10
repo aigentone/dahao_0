@@ -1,0 +1,68 @@
+version: "1.0"
+principle_id: "five_freedoms"
+name: "Five Freedoms of Animal Welfare"
+description: "Fundamental welfare framework for all animal-related decisions"
+category: "domain_core"
+domain: "animal_welfare"
+
+freedoms:
+  freedom_from_hunger:
+    description: "Freedom from hunger and thirst"
+    requirements:
+      - "Ready access to fresh water"
+      - "Diet to maintain full health and vigor"
+    indicators:
+      - body_condition_score
+      - feeding_behavior_observation
+      - water_intake_monitoring
+
+  freedom_from_discomfort:
+    description: "Freedom from discomfort"
+    requirements:
+      - "Appropriate environment including shelter"
+      - "Comfortable resting area"
+    indicators:
+      - environmental_temperature
+      - space_adequacy
+      - shelter_utilization
+
+  freedom_from_pain:
+    description: "Freedom from pain, injury or disease"
+    requirements:
+      - "Prevention through rapid diagnosis"
+      - "Effective treatment protocols"
+    indicators:
+      - injury_incidence_rates
+      - disease_prevalence
+      - pain_assessment_scores
+
+  freedom_to_express:
+    description: "Freedom to express normal behavior"
+    requirements:
+      - "Sufficient space for normal behaviors"
+      - "Company of animals of own kind where appropriate"
+    indicators:
+      - behavioral_repertoire_expression
+      - social_interaction_frequency
+      - stereotypical_behavior_absence
+
+  freedom_from_fear:
+    description: "Freedom from fear and distress"
+    requirements:
+      - "Conditions that avoid mental suffering"
+      - "Stress minimization protocols"
+    indicators:
+      - stress_hormone_levels
+      - fear_response_assessment
+      - environmental_predictability
+
+implementation:
+  assessment_frequency: "daily_for_critical_indicators"
+  reporting_requirement: "monthly_welfare_summaries"
+  intervention_threshold: "immediate_for_freedom_violations"
+
+validation_rules:
+  proposal_requirements:
+    - "Must demonstrate benefit or neutrality to all five freedoms"
+    - "Cannot compromise any freedom without exceptional justification"
+    - "Must include welfare measurement plan"

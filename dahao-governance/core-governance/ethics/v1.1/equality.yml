@@ -1,0 +1,49 @@
+version: "1.1"
+principle_id: "equality"
+name: "Human Equality"
+description: "All humans have equal fundamental rights regardless of background"
+category: "core"
+previous_version: "1.0"
+
+requirements:
+  equal_participation:
+    description: "All community members have equal participation opportunities"
+    mandatory: true
+    implementation: "open_github_discussions"
+
+  non_discrimination:
+    description: "No discrimination based on protected characteristics"
+    mandatory: true
+    protected_characteristics:
+      - race
+      - gender
+      - age
+      - religion
+      - nationality
+      - economic_status
+      - technical_expertise_level
+
+  fair_resource_access:
+    description: "Equal access to information and decision-making tools"
+    mandatory: true
+    implementation: "free_tier_access_guaranteed"
+
+validation_rules:
+  proposal_screening:
+    - "Must not create barriers for any group"
+    - "Must consider accessibility needs"
+    - "Must not advantage privileged groups unfairly"
+
+examples:
+  good:
+    - "Proposal that provides multiple participation methods"
+    - "Decision that considers impact on all economic levels"
+
+  bad:
+    - "Requirement that excludes based on technical knowledge"
+    - "Process that favors certain geographic regions"
+
+cross_domain_applications:
+  animal_welfare: "Equal consideration for all animal species"
+  music_industry: "Fair opportunities for all artists regardless of background"
+  environment: "Environmental justice for all communities"
