@@ -97,6 +97,51 @@ export default function MissionPage() {
           </Card>
         </div>
 
+        {/* Current AI Integration */}
+        <div className="mb-16">
+          <Card className="bg-gradient-to-r from-emerald-50 to-teal-50 border-emerald-200">
+            <CardHeader>
+              <CardTitle>Current AI Integration: GitHub Copilot & Claude Code</CardTitle>
+              <CardDescription>Leveraging today's most powerful AI tools</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground mb-4">
+                DAHAO doesn't wait for the future - we harness today's most powerful AI tools. 
+                GitHub Copilot Agent Mode and Claude Code provide the intelligence layer, while 
+                Model Context Protocol (MCP) enables seamless agent communication.
+              </p>
+              <div className="grid gap-4 md:grid-cols-2 mb-6">
+                <div className="bg-white/70 p-4 rounded-lg">
+                  <h4 className="font-semibold text-emerald-800 mb-2">GitHub Copilot Integration</h4>
+                  <ul className="space-y-1 text-sm text-muted-foreground">
+                    <li>• Agent Mode for autonomous task execution</li>
+                    <li>• Code generation and review</li>
+                    <li>• GitHub Actions orchestration</li>
+                    <li>• Issue and PR automation</li>
+                  </ul>
+                </div>
+                <div className="bg-white/70 p-4 rounded-lg">
+                  <h4 className="font-semibold text-blue-800 mb-2">Claude Code Integration</h4>
+                  <ul className="space-y-1 text-sm text-muted-foreground">
+                    <li>• Deep reasoning and analysis</li>
+                    <li>• Ethical compliance checking</li>
+                    <li>• Documentation generation</li>
+                    <li>• Strategic planning assistance</li>
+                  </ul>
+                </div>
+              </div>
+              <div className="bg-gradient-to-r from-purple-100 to-indigo-100 p-4 rounded-lg">
+                <h4 className="font-semibold text-purple-800 mb-2">MCP (Model Context Protocol) Potential</h4>
+                <p className="text-sm text-muted-foreground">
+                  MCP enables seamless communication between different AI models and systems. 
+                  As this standard evolves, DAHAO agents will automatically gain the ability to coordinate 
+                  across platforms, share context, and collaborate on complex tasks.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
         {/* Automatic Evolution */}
         <div className="mb-16">
           <Card>

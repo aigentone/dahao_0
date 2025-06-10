@@ -7,6 +7,7 @@ import { Separator } from '@/components/ui/separator';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Avatar } from '@/components/ui/avatar';
 import { GovernanceDiscussion } from '@/types/governance';
+import AgentAssignmentPanel from './AgentAssignmentPanel';
 
 interface DiscussionViewerProps {
   discussion: GovernanceDiscussion;
@@ -116,9 +117,9 @@ export function DiscussionViewer({ discussion, onBack }: DiscussionViewerProps) 
           if (voteMatch) {
             const vote = `${voteMatch[1]} @${voteMatch[2]}: "${voteMatch[3]}"`;
             if (line.includes('Agent')) {
-              votes.ai.push(vote);
+              votes.ai.push(vote as never);
             } else {
-              votes.human.push(vote);
+              votes.human.push(vote as never);
             }
           }
         }
@@ -306,6 +307,9 @@ export function DiscussionViewer({ discussion, onBack }: DiscussionViewerProps) 
             </CardContent>
           </Card>
         )}
+
+        {/* Agent Assignment Panel */}
+        <AgentAssignmentPanel />
       </div>
     </ScrollArea>
   );

@@ -15,7 +15,7 @@ export default function AboutPage() {
             Understanding DAHAO
           </h1>
           <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            The world's first platform for evolving ethical systems through human-AI collaboration, 
+            The world's first platform for evolving ethical systems through human-AI collaboration,
             using Git-like versioning to democratically develop moral frameworks.
           </p>
         </div>
@@ -34,7 +34,7 @@ export default function AboutPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
-                  Just as code evolves through versions (v1.0 → v1.1 → v2.0), ethical frameworks can be 
+                  Just as code evolves through versions (v1.0 → v1.1 → v2.0), ethical frameworks can be
                   systematically improved through community consensus and practical testing.
                 </p>
               </CardContent>
@@ -50,7 +50,7 @@ export default function AboutPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
-                  Each member deploys an AI agent that embodies their personal ethics while respecting 
+                  Each member deploys an AI agent that embodies their personal ethics while respecting
                   community principles, creating a hybrid decision-making process.
                 </p>
               </CardContent>
@@ -66,7 +66,7 @@ export default function AboutPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
-                  The collaboration between human intuition and AI analytical capabilities produces 
+                  The collaboration between human intuition and AI analytical capabilities produces
                   more thoughtful, comprehensive decisions than either could achieve alone.
                 </p>
               </CardContent>
@@ -186,7 +186,7 @@ export default function AboutPage() {
         {/* Revolutionary Economics */}
         <div className="mb-16">
           <h2 className="text-3xl font-semibold mb-8 text-center">Revolutionary Economics</h2>
-          
+
           <div className="space-y-8">
             <Card>
               <CardHeader>
@@ -275,7 +275,7 @@ export default function AboutPage() {
                 <div className="mt-6 p-4 bg-green-50 rounded-lg">
                   <h5 className="font-semibold mb-2">Example: Animal Welfare DAHAO</h5>
                   <p className="text-sm text-green-800">
-                    Sells smart pet collars → Revenue funds street animal care → 
+                    Sells smart pet collars → Revenue funds street animal care →
                     Better outcomes attract more users → More revenue → Greater impact
                   </p>
                 </div>
@@ -290,7 +290,7 @@ export default function AboutPage() {
               <CardContent>
                 <div className="space-y-4">
                   <p className="text-muted-foreground">
-                    Intellectual contribution becomes the new mining. Transform your daily API costs 
+                    Intellectual contribution becomes the new mining. Transform your daily API costs
                     into profitable contribution to humanity.
                   </p>
                   <div className="grid gap-4 md:grid-cols-2">
@@ -354,12 +354,12 @@ export default function AboutPage() {
               <div>
                 <h3 className="font-semibold mb-1">Phase 1: Foundation (0-6 months)</h3>
                 <p className="text-sm text-muted-foreground">
-                  GitHub + Claude Code integration. Forum-style discussions with basic agent interactions. 
+                  GitHub + Claude Code integration. Forum-style discussions with basic agent interactions.
                   Founder control with community input.
                 </p>
               </div>
             </div>
-            
+
             <div className="flex items-center gap-4 p-6 border rounded-lg">
               <div className="flex-shrink-0 w-8 h-8 bg-green-100 text-green-600 rounded-full flex items-center justify-center font-semibold">
                 2
@@ -371,7 +371,7 @@ export default function AboutPage() {
                 </p>
               </div>
             </div>
-            
+
             <div className="flex items-center gap-4 p-6 border rounded-lg">
               <div className="flex-shrink-0 w-8 h-8 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center font-semibold">
                 3
@@ -389,7 +389,7 @@ export default function AboutPage() {
         {/* Leveraging Existing Infrastructure */}
         <div className="mb-16">
           <h2 className="text-3xl font-semibold mb-8 text-center">Leveraging Existing Infrastructure</h2>
-          
+
           <Card className="mb-8">
             <CardHeader>
               <CardTitle>The DAHAO Strategy: Build Fast, Customize Later</CardTitle>
@@ -589,7 +589,7 @@ export default function AboutPage() {
         {/* Network Intelligence */}
         <div className="mb-16">
           <h2 className="text-3xl font-semibold mb-8 text-center">Network Intelligence</h2>
-          
+
           <div className="space-y-8">
             <Card>
               <CardHeader>
@@ -631,7 +631,7 @@ export default function AboutPage() {
               <CardContent>
                 <div className="space-y-4">
                   <p className="text-muted-foreground">
-                    Disagree with governance decisions? Fork the DAHAO. Unlike traditional organizations 
+                    Disagree with governance decisions? Fork the DAHAO. Unlike traditional organizations
                     where disagreement means leaving, DAHAO makes dissent a driver of innovation.
                   </p>
                   <div className="grid gap-4 md:grid-cols-2">
@@ -687,7 +687,7 @@ export default function AboutPage() {
         {/* Self-Sustaining Growth Engine */}
         <div className="mb-16">
           <h2 className="text-3xl font-semibold mb-8 text-center">Self-Sustaining Growth Engine</h2>
-          
+
           <Card className="mb-8">
             <CardHeader>
               <CardTitle>The DAHAO Growth Flywheel</CardTitle>
@@ -892,7 +892,7 @@ export default function AboutPage() {
                 </div>
                 <div className="mt-6 p-4 bg-gradient-to-r from-green-100 to-blue-100 rounded-lg text-center">
                   <p className="font-semibold text-green-800">
-                    This creates unprecedented organizational resilience: the more people who find value in DAHAO, 
+                    This creates unprecedented organizational resilience: the more people who find value in DAHAO,
                     the more valuable it becomes for everyone.
                   </p>
                 </div>
@@ -905,7 +905,7 @@ export default function AboutPage() {
         <div className="text-center">
           <h2 className="text-2xl font-semibold mb-4">Join the Evolution</h2>
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-            Be part of the first platform where human wisdom and AI analysis combine to create 
+            Be part of the first platform where human wisdom and AI analysis combine to create
             more ethical, transparent, and intelligent organizations.
           </p>
           <div className="space-x-4">

@@ -5,13 +5,13 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { mcpClient } from '@/lib/mcp-client';
-import { 
-  ChatMessage, 
-  GovernanceProposal, 
-  EthicsCompatibilityResult, 
+import {
+  ChatMessage,
+  GovernanceProposal,
+  EthicsCompatibilityResult,
   CrossDomainAnalysis,
   GOVERNANCE_DOMAINS,
-  PROPOSAL_TYPES 
+  PROPOSAL_TYPES
 } from '@/types/mcp';
 
 export default function ChatPage() {
@@ -74,19 +74,19 @@ export default function ChatPage() {
         const status = result.data;
         addMessage(
           `Current governance status:\n\n` +
-          `• Active proposals: ${status.activeProposals}\n` +
-          `• Current branch: ${status.currentBranch}\n` +
-          `• Contributors: ${status.collaborationMetrics.contributors}\n` +
-          `• Proposals this month: ${status.collaborationMetrics.proposalsThisMonth}\n` +
-          `• Implementation rate: ${(status.collaborationMetrics.implementationRate * 100).toFixed(1)}%\n\n` +
-          `Ethics versions:\n${Object.entries(status.ethicsVersions).map(([domain, version]) => `• ${domain}: ${version}`).join('\n')}`,
+          `• Active proposals: ${status?.activeProposals}\n` +
+          `• Current branch: ${status?.currentBranch}\n` +
+          `• Contributors: ${status?.collaborationMetrics.contributors}\n` +
+          `• Proposals this month: ${status?.collaborationMetrics.proposalsThisMonth}\n` +
+          `• Implementation rate: ${(status?.collaborationMetrics?.implementationRate * 100).toFixed(1)}%\n\n` +
+          `Ethics versions:\n${Object.entries(status?.ethicsVersions || {}).map(([domain, version]) => `• ${domain}: ${version}`).join('\n')}`,
           'assistant'
         );
       } else {
         addMessage('Failed to fetch governance status.', 'assistant');
       }
     }
-    
+
     // Analyze proposal
     else if (lowerMessage.includes('analyze') || lowerMessage.includes('proposal')) {
       if (draftProposal) {
@@ -99,7 +99,7 @@ export default function ChatPage() {
         );
       }
     }
-    
+
     // Create proposal
     else if (lowerMessage.includes('create') && (lowerMessage.includes('proposal') || lowerMessage.includes('suggest'))) {
       const proposal = extractProposalFromMessage(message);
@@ -115,16 +115,16 @@ export default function ChatPage() {
         { proposal }
       );
     }
-    
+
     // Check ethics
     else if (lowerMessage.includes('ethics') || lowerMessage.includes('compatible')) {
       const result = await mcpClient.getCurrentEthics();
       if (result.success) {
         const ethics = result.data;
-        const ethicsText = Object.entries(ethics).map(([framework, data]) => 
+        const ethicsText = Object.entries(ethics).map(([framework, data]) =>
           `• ${framework}: ${(data as any).principles?.length || 0} principles`
         ).join('\n');
-        
+
         addMessage(
           `Current ethics frameworks:\n\n${ethicsText}\n\n` +
           `If you have a proposal to analyze, I can check its compatibility with these frameworks.`,
@@ -134,7 +134,7 @@ export default function ChatPage() {
         addMessage('Failed to fetch current ethics frameworks.', 'assistant');
       }
     }
-    
+
     // Generic help
     else {
       addMessage(
@@ -152,7 +152,7 @@ export default function ChatPage() {
   const extractProposalFromMessage = (message: string): Partial<GovernanceProposal> => {
     // Simple extraction logic - in a real app, this would be more sophisticated
     const title = message.replace(/create\s+(a\s+)?proposal\s+(to\s+)?/i, '').trim();
-    
+
     // Detect domain based on keywords
     let domain = 'human-rights'; // default
     const domainKeywords = {
@@ -162,20 +162,20 @@ export default function ChatPage() {
       'technology-ethics': ['ai', 'algorithm', 'data', 'privacy'],
       'economic-policy': ['economy', 'budget', 'tax', 'finance']
     };
-    
+
     for (const [domainName, keywords] of Object.entries(domainKeywords)) {
       if (keywords.some(keyword => message.toLowerCase().includes(keyword))) {
         domain = domainName;
         break;
       }
     }
-    
+
     // Detect type based on keywords
     let type: GovernanceProposal['type'] = 'policy_change'; // default
     if (message.toLowerCase().includes('ethic')) type = 'ethics_evolution';
     if (message.toLowerCase().includes('resource') || message.toLowerCase().includes('budget')) type = 'resource_allocation';
     if (message.toLowerCase().includes('structure') || message.toLowerCase().includes('organization')) type = 'structural_change';
-    
+
     return {
       title: title.charAt(0).toUpperCase() + title.slice(1),
       description: `Proposal to ${title.toLowerCase()}`,
@@ -193,37 +193,37 @@ export default function ChatPage() {
     // Ethics compatibility analysis
     const ethicsResult = await mcpClient.validateEthicsCompatibility(draftProposal);
     let ethicsAnalysis: EthicsCompatibilityResult | undefined;
-    
+
     if (ethicsResult.success) {
       ethicsAnalysis = ethicsResult.data;
       const ethicsMessage = `**Ethics Compatibility Analysis:**\n\n` +
         `${ethicsAnalysis.compatible ? '✅ Compatible' : '❌ Conflicts detected'}\n\n` +
-        (ethicsAnalysis.conflicts.length > 0 ? 
+        (ethicsAnalysis.conflicts.length > 0 ?
           `**Conflicts:**\n${ethicsAnalysis.conflicts.map(c => `• ${c}`).join('\n')}\n\n` : '') +
-        (ethicsAnalysis.recommendations.length > 0 ? 
+        (ethicsAnalysis.recommendations.length > 0 ?
           `**Recommendations:**\n${ethicsAnalysis.recommendations.map(r => `• ${r}`).join('\n')}\n\n` : '') +
-        (ethicsAnalysis.requiredUpdates.length > 0 ? 
+        (ethicsAnalysis.requiredUpdates.length > 0 ?
           `**Required Updates:**\n${ethicsAnalysis.requiredUpdates.map(u => `• ${u}`).join('\n')}` : '');
-      
+
       addMessage(ethicsMessage, 'assistant', { ethicsAnalysis });
     }
 
     // Cross-domain impact analysis
     const crossDomainResult = await mcpClient.analyzeCrossDomainImpact(draftProposal);
     let crossDomainAnalysis: CrossDomainAnalysis | undefined;
-    
+
     if (crossDomainResult.success) {
       crossDomainAnalysis = crossDomainResult.data;
       const crossDomainMessage = `**Cross-Domain Impact Analysis:**\n\n` +
         `**Affected Domains:** ${crossDomainAnalysis.affectedDomains.join(', ')}\n\n` +
-        `**Impact Details:**\n${crossDomainAnalysis.impacts.map(impact => 
+        `**Impact Details:**\n${crossDomainAnalysis.impacts.map(impact =>
           `• ${impact.domain}: ${impact.impactLevel} impact - ${impact.description}`
         ).join('\n')}\n\n` +
-        (crossDomainAnalysis.synergies.length > 0 ? 
+        (crossDomainAnalysis.synergies.length > 0 ?
           `**Synergies:**\n${crossDomainAnalysis.synergies.map(s => `• ${s}`).join('\n')}\n\n` : '') +
-        (crossDomainAnalysis.risks.length > 0 ? 
+        (crossDomainAnalysis.risks.length > 0 ?
           `**Risks:**\n${crossDomainAnalysis.risks.map(r => `• ${r}`).join('\n')}` : '');
-      
+
       addMessage(crossDomainMessage, 'assistant', { crossDomainAnalysis });
     }
 
@@ -234,7 +234,7 @@ export default function ChatPage() {
       `${ethicsAnalysis?.conflicts.length ? 'Consider addressing the ethics conflicts before proceeding.' : ''} ` +
       `${crossDomainAnalysis?.risks.length ? 'Pay attention to the identified cross-domain risks.' : ''}\n\n` +
       `Would you like me to help you refine the proposal or create it in the forum?`;
-    
+
     addMessage(summaryMessage, 'assistant');
   };
 
@@ -276,7 +276,7 @@ export default function ChatPage() {
             Powered by your MCP server with ethics validation and cross-domain analysis
           </CardDescription>
         </CardHeader>
-        
+
         <CardContent className="flex-1 flex flex-col">
           {/* Messages */}
           <div className="flex-1 overflow-auto space-y-4 mb-4">
@@ -293,14 +293,14 @@ export default function ChatPage() {
                   }`}
                 >
                   <div className="whitespace-pre-wrap">{message.content}</div>
-                  
+
                   {/* Show metadata if available */}
                   {message.metadata?.proposal && (
                     <div className="mt-3 p-2 bg-white/10 rounded text-xs">
                       <strong>Draft Proposal:</strong> {message.metadata.proposal.title}
                     </div>
                   )}
-                  
+
                   {message.metadata?.ethicsAnalysis && (
                     <div className="mt-2">
                       <Badge className={message.metadata.ethicsAnalysis.compatible ? 'bg-green-600' : 'bg-red-600'}>
@@ -308,14 +308,14 @@ export default function ChatPage() {
                       </Badge>
                     </div>
                   )}
-                  
+
                   <div className="text-xs opacity-70 mt-1">
                     {message.timestamp.toLocaleTimeString()}
                   </div>
                 </div>
               </div>
             ))}
-            
+
             {loading && (
               <div className="flex justify-start">
                 <div className="bg-gray-100 text-gray-900 p-3 rounded-lg">
@@ -323,7 +323,7 @@ export default function ChatPage() {
                 </div>
               </div>
             )}
-            
+
             <div ref={messagesEndRef} />
           </div>
 

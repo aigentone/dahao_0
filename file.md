@@ -1,77 +1,176 @@
-# Goal: Update Animal Welfare DAHAO with Turkey Street Animal System
+markdown# Goal: Update DAHAO for AI Agent Integration (Mock Implementation)
 
 ## Overview
-We need to add a new discussion and ethics principle to the Animal Welfare DAHAO governance structure. This represents a real-world implementation proposal for managing street animals in Turkey through municipal veterinary services with blockchain verification.
+Update the DAHAO platform to reflect current AI agent capabilities (GitHub Copilot, Claude Code) and fix incorrect information in existing pages. This is a MOCK implementation - no real API integrations yet.
 
-## Tasks
+## Priority Tasks
 
-### 1. Create New Discussion File
-**Path:** `animal-welfare/discussions/street-animals/turkey-municipal-vet-system.md`
+### 1. Fix Incorrect Information in Existing Pages
 
-Create a new discussion following the existing format that includes:
-- Municipal veterinary registration system for Turkey
-- Blockchain-based treatment tracking
-- Transparent donation mechanism
-- Medical data sharing protocols
-- Implementation phases (pilot → regional → national)
+#### A. Update Home Page (`app/page.tsx`)
+**Remove/Update:**
+- Remove specific token name references ("Kut-Akil Token")
+- Change "Token rewards" to "Contribution rewards (coming in Phase 3)"
+- Update the economics section to emphasize the GitHub Actions + AI agents integration
 
-Key components to include:
-- Treatment records stored on blockchain
-- Direct donation system to municipal vets
-- Public access to anonymized treatment data
-- Cost verification and transparency
-- Integration with existing Five Freedoms framework
+**Key changes:**
+```typescript
+// In the "Intellectual Mining" section, update to:
+"Contributors earn rewards based on agent-measured impact"
+// Remove specific token economics details
+B. Update About Page (app/about/page.tsx)
+Critical fixes:
 
-### 2. Create New Ethics Principle
-**Path:** `animal-welfare/ethics/v1.0/emergency-care-protocol.yml`
+Replace "Council of verified experts" with "hybrid human-AI voting system"
+Remove "Voting power based on expertise/history" - DAHAO uses equal voting
+Update "Token economics" to "Contribution rewards system (Phase 3)"
+Emphasize GitHub Actions as the orchestration engine
 
-Add a new ethics principle for emergency care that includes:
-- Emergency categories (life-threatening, urgent, preventive)
-- Financial protocols for emergency funds
-- Provider verification requirements
-- Cross-domain coordination with public health
-- Validation rules for emergency treatments
+Specific text to find and replace:
 
-### 3. Update Inheritance File
-**Path:** `animal-welfare/inheritance.yml`
+"Council of verified veterinary experts" → "Hybrid human-AI governance"
+"Voting power is not just based on tokens" → "Equal voting rights for all members"
+"Kut-Akil Token (KUT)" → "Contribution rewards system"
 
-Add to the `domain_extensions` section:
-```yaml
-emergency_care_protocol:
-  version: "1.0"
-  description: "Rapid response framework for animal emergencies"
-  status: "domain_specific"
+C. Update Mission Page (app/mission/page.tsx)
+Add new sections:
 
-municipal_integration:
-  version: "1.0"
-  description: "Framework for municipal veterinary service integration"
-  status: "domain_specific"
-Add to the specialization section:
-yamlmunicipal_coordination:
-  government_liaison: "required_for_municipal_programs"
-  public_health_integration: "mandatory_for_street_animals"
-  emergency_response: "24_7_capability_required"
-Implementation Notes
+Add explanation of MCP (Model Context Protocol) integration potential
+Update to mention GitHub Copilot Agent Mode and Claude Code
+Emphasize "surf don't build" strategy with current AI tools
 
-Follow existing patterns: Look at other discussions and ethics files for formatting consistency
-Maintain version compatibility: Ensure all references to other principles use correct versions
-Include realistic data: The discussion should feel like a real community debate with multiple perspectives
-Add AI agent analysis: Include structured YAML responses from relevant AI agents
-Keep blockchain details practical: Focus on what data goes on-chain vs off-chain
+D. Update How It Works Page (app/how-it-works/page.tsx)
+Add to workflow:
 
-Expected Outcome
-After these changes:
+Insert new Step 6: "Agent Assignment & Analysis"
+Update examples to show @claude mentions
+Add section on GitHub Actions orchestration for agents
 
-The forum will display a new discussion about Turkey's street animal system
-A new emergency care protocol will be available in the ethics framework
-The system will support municipal vet integration and blockchain verification
-The changes will be compatible with existing Five Freedoms and Welfare Measurement principles
+2. Create Mock Agent Features
+A. Agent Assignment Panel Component
+Create: components/governance/AgentAssignmentPanel.tsx
+Mock component that shows:
 
-Validation Checklist
+List of available agents (Personal, Ethics, Claude, Domain-specific)
+Assignment button with loading states
+Mock analysis results after 2-second delay
 
- New discussion file created with proper markdown formatting
- Emergency care protocol YML follows existing schema
- Inheritance.yml updated without breaking existing structure
- All cross-references use correct version numbers
- File paths match the expected structure
- YAML syntax is valid in all files
+B. Settings Page
+Create: app/settings/page.tsx
+Mock settings page with:
+
+LLM provider selection (GitHub Copilot, Claude Code, Custom)
+API key input field (disabled for mock)
+Save button (shows success message but doesn't save)
+
+C. Update Navigation
+Update: components/layout/Header.tsx
+Add Settings link to navigation:
+typescript{ href: '/settings', label: 'Settings' },
+3. Enhance Forum Features
+A. Update Discussion Viewer
+Update: components/governance/DiscussionViewer.tsx
+Add:
+
+Import and use AgentAssignmentPanel component
+Show it below the main discussion content
+Add mock "@claude analyze this" button
+
+B. Add Comment Input
+Create: components/governance/CommentInput.tsx
+Simple comment input with:
+
+Textarea for comment
+"Post Comment" button
+Info text: "Mention @claude to trigger AI analysis"
+When submitted with @claude, show mock "Analysis requested" message
+
+4. Update Chat Page
+A. Add Agent Commands
+Update: app/chat/page.tsx
+Add new command handlers:
+typescript// New commands to handle:
+- "list agents" → Show available agents
+- "assign [agent] to [discussion]" → Mock assignment
+- "agent status" → Show mock active assignments
+- "configure agent" → Link to settings
+5. Create Mock Data
+A. Mock Agent Responses
+Create: lib/mock-data/agent-responses.ts
+Create realistic mock responses for:
+
+Ethics compliance analysis
+Personal agent analysis
+Claude code review
+Domain expert analysis
+
+Format:
+typescriptexport const MOCK_AGENT_RESPONSES = {
+  'ethics-compliance': {
+    template: "Ethics Analysis:\n✓ Transparency: Compatible\n✓ Equality: Compatible\n✓ Harm Prevention: No issues\n✓ Sustainability: Long-term positive\nRecommendation: APPROVE"
+  },
+  // ... more templates
+};
+6. Update Type Definitions
+A. Extend Discussion Type
+Update: types/governance.ts
+Add to GovernanceDiscussion interface:
+typescriptassignedAgents?: {
+  agentId: string;
+  assignedBy: string;
+  assignedAt: string;
+  status: 'pending' | 'analyzing' | 'completed';
+  mockAnalysis?: string;
+}[];
+Implementation Guidelines
+DO:
+
+Keep all implementations as MOCK (no real API calls)
+Use setTimeout for simulating async operations
+Store mock state in React component state only
+Show clear UI feedback for all actions
+Make it obvious this is a demo/mock version
+
+DON'T:
+
+Don't implement real GitHub OAuth
+Don't make actual API calls
+Don't create backend routes yet
+Don't implement real blockchain features
+Don't add complex state management (Redux, etc.)
+
+Testing Checklist
+After implementation, verify:
+
+ All pages load without errors
+ Incorrect information has been fixed
+ Agent assignment shows mock loading states
+ Settings page displays but clarifies it's mock
+ Chat understands new agent commands
+ Navigation includes Settings link
+ @claude mentions show feedback
+
+File Structure Summary
+New files to create:
+- app/settings/page.tsx
+- components/governance/AgentAssignmentPanel.tsx
+- components/governance/CommentInput.tsx
+- lib/mock-data/agent-responses.ts
+
+Files to update:
+- app/page.tsx (fix token references)
+- app/about/page.tsx (fix governance model)
+- app/mission/page.tsx (add AI tools context)
+- app/how-it-works/page.tsx (add agent workflow)
+- app/chat/page.tsx (add agent commands)
+- components/layout/Header.tsx (add settings)
+- components/governance/DiscussionViewer.tsx (add agent panel)
+- types/governance.ts (add agent fields)
+Success Criteria
+The implementation is successful when:
+
+A new user can understand DAHAO uses AI agents, not token-based voting
+The mock agent assignment flow works smoothly
+All references to incorrect governance models are fixed
+The platform clearly shows it's ready for GitHub Actions + AI integration
+Users can see how @claude mentions would work

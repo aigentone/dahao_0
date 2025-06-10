@@ -16,7 +16,7 @@ export default function HowItWorksPage() {
             How DAHAO Works
           </h1>
           <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Deep dive into the technical vision: GitHub Actions, Claude Code integration, 
+            Deep dive into the technical vision: GitHub Actions, Claude Code integration,
             and AI agent systems working together for ethical governance.
           </p>
           <div className="flex justify-center gap-2 mb-8">
@@ -29,7 +29,7 @@ export default function HowItWorksPage() {
         {/* Core Workflow */}
         <div className="mb-16">
           <h2 className="text-3xl font-semibold mb-8 text-center">Core Workflow: From Idea to Decision</h2>
-          
+
           <div className="space-y-8">
             {/* Step 1: Proposal Creation */}
             <Card className="border-l-4 border-l-blue-500">
@@ -230,11 +230,62 @@ export default function HowItWorksPage() {
               </CardContent>
             </Card>
 
-            {/* Step 5: Value Creation & Distribution */}
+            {/* Step 5: Agent Assignment & Analysis */}
+            <Card className="border-l-4 border-l-teal-500">
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-teal-100 text-teal-600 rounded-full flex items-center justify-center font-semibold">5</div>
+                  <CardTitle className="flex items-center gap-2">
+                    <Bot className="h-5 w-5" />
+                    Agent Assignment & Analysis
+                  </CardTitle>
+                </div>
+                <CardDescription>Community members can assign specific agents to analyze proposals</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  <div className="bg-muted p-4 rounded-lg">
+                    <div className="font-semibold mb-2">Community-Driven Analysis:</div>
+                    <div className="space-y-3 text-sm">
+                      <div className="bg-blue-50 p-3 rounded border-l-4 border-l-blue-500">
+                        <div className="font-semibold">@community_member</div>
+                        <div>"This needs deep ethical analysis. <span className="bg-yellow-100 px-1 rounded">@claude</span> please analyze this proposal against our Five Freedoms framework."</div>
+                      </div>
+                      <div className="bg-green-50 p-3 rounded border-l-4 border-l-green-500">
+                        <div className="font-semibold">@claude (AI Agent)</div>
+                        <div>```yaml<br/>ethics_analysis:<br/>&nbsp;&nbsp;framework: "five_freedoms_v1.0"<br/>&nbsp;&nbsp;compliance_score: 8.5/10<br/>&nbsp;&nbsp;concerns: ["implementation_cost", "urban_adaptation"]<br/>&nbsp;&nbsp;recommendations: ["phased_rollout", "pilot_program"]<br/>```</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="grid gap-4 md:grid-cols-2">
+                    <div>
+                      <h4 className="font-semibold mb-2">Available Agent Types</h4>
+                      <ul className="space-y-1 text-sm text-muted-foreground">
+                        <li>• <span className="font-mono">@claude</span> - Deep reasoning and analysis</li>
+                        <li>• <span className="font-mono">@ethics-validator</span> - Compliance checking</li>
+                        <li>• <span className="font-mono">@domain-expert</span> - Specialized knowledge</li>
+                        <li>• <span className="font-mono">@personal-agent</span> - User's values representation</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold mb-2">GitHub Actions Integration</h4>
+                      <ul className="space-y-1 text-sm text-muted-foreground">
+                        <li>• Automatic mention detection in comments</li>
+                        <li>• Agent assignment triggers workflows</li>
+                        <li>• Structured analysis posted to GitHub</li>
+                        <li>• Cross-reference with proposal metadata</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Step 6: Value Creation & Distribution */}
             <Card className="border-l-4 border-l-indigo-500">
               <CardHeader>
                 <div className="flex items-center gap-3">
-                  <div className="flex-shrink-0 w-8 h-8 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center font-semibold">5</div>
+                  <div className="flex-shrink-0 w-8 h-8 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center font-semibold">6</div>
                   <CardTitle className="flex items-center gap-2">
                     <Users className="h-5 w-5" />
                     Value Creation & Distribution
@@ -351,7 +402,7 @@ export default function HowItWorksPage() {
         {/* Technical Implementation */}
         <div className="mb-16">
           <h2 className="text-3xl font-semibold mb-8 text-center">Technical Implementation Vision</h2>
-          
+
           {/* Integration-First Architecture */}
           <Card className="mb-8 bg-gradient-to-r from-green-50 to-blue-50">
             <CardHeader>
@@ -425,7 +476,7 @@ export default function HowItWorksPage() {
               </div>
             </CardContent>
           </Card>
-          
+
           <div className="grid gap-6 md:grid-cols-2">
             {/* GitHub Actions */}
             <Card>
@@ -606,7 +657,7 @@ export default function HowItWorksPage() {
                   <div className="bg-gradient-to-r from-emerald-50 to-teal-50 p-6 rounded-lg text-center">
                     <h4 className="font-semibold mb-3 text-emerald-800">Result: Exponential Organizations</h4>
                     <p className="text-muted-foreground">
-                      Unlike linear growth models, DAHAO creates exponential value curves where later participants 
+                      Unlike linear growth models, DAHAO creates exponential value curves where later participants
                       benefit from all previous contributions while adding their own to the commons.
                     </p>
                   </div>
@@ -619,14 +670,14 @@ export default function HowItWorksPage() {
         {/* MCP Server Integration */}
         <div className="mb-16">
           <h2 className="text-3xl font-semibold mb-8 text-center">MCP Server Integration: Direct System Access</h2>
-          
+
           <div className="space-y-8">
             {/* Header Card */}
             <Card className="bg-gradient-to-r from-blue-50 to-purple-50">
               <CardHeader>
                 <CardTitle className="text-center">Beyond GitHub: Direct System Integration</CardTitle>
                 <CardDescription className="text-center max-w-3xl mx-auto">
-                  While GitHub Actions provide the foundation, DAHAO agents gain superpower through MCP (Model Context Protocol) servers - 
+                  While GitHub Actions provide the foundation, DAHAO agents gain superpower through MCP (Model Context Protocol) servers -
                   enabling direct interaction with blockchain, ethics databases, and cross-domain intelligence.
                 </CardDescription>
               </CardHeader>
@@ -798,7 +849,7 @@ export default function HowItWorksPage() {
                       </div>
                     </div>
                   </div>
-                  
+
                   <div className="bg-gradient-to-r from-purple-50 to-blue-50 p-6 rounded-lg">
                     <h4 className="font-semibold mb-3">Capabilities Breakdown</h4>
                     <div className="grid gap-3 md:grid-cols-2">
@@ -857,7 +908,7 @@ export default function HowItWorksPage() {
                   </div>
                   <div className="mt-6 p-4 bg-gradient-to-r from-indigo-100 to-purple-100 rounded-lg text-center">
                     <p className="font-semibold text-indigo-800">
-                      The first truly autonomous, self-improving organizational network where human wisdom guides direction 
+                      The first truly autonomous, self-improving organizational network where human wisdom guides direction
                       while AI agents handle consistency, verification, and cross-domain learning at superhuman scale.
                     </p>
                   </div>
@@ -910,7 +961,7 @@ export default function HowItWorksPage() {
         {/* Implementation Phases */}
         <div className="mb-16">
           <h2 className="text-3xl font-semibold mb-8 text-center">Implementation Roadmap</h2>
-          
+
           <div className="space-y-6">
             <Card className="bg-blue-50 border-blue-200">
               <CardHeader>
@@ -985,7 +1036,7 @@ export default function HowItWorksPage() {
         <div className="text-center">
           <h2 className="text-2xl font-semibold mb-4">Ready to Build the Future?</h2>
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-            This technical vision shows how human wisdom and AI analysis can create 
+            This technical vision shows how human wisdom and AI analysis can create
             unprecedented organizational intelligence. Let's make it real.
           </p>
           <div className="space-x-4">
