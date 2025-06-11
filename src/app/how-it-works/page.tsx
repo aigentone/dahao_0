@@ -2,7 +2,7 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { GitBranchIcon, Bot, Workflow, MessageSquare, Users, CheckCircle, AlertTriangle, GitPullRequest, Database, Shield, Network } from 'lucide-react';
+import { GitBranchIcon, Bot, Workflow, MessageSquare, Users, CheckCircle, AlertTriangle, GitPullRequest, Database, Shield, Network, BookOpen } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
@@ -76,11 +76,57 @@ export default function HowItWorksPage() {
               </CardContent>
             </Card>
 
-            {/* Step 2: Agent Analysis */}
+            {/* Step 2: Term Validation */}
+            <Card className="border-l-4 border-l-yellow-500">
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-yellow-100 text-yellow-600 rounded-full flex items-center justify-center font-semibold">2</div>
+                  <CardTitle className="flex items-center gap-2">
+                    <BookOpen className="h-5 w-5" />
+                    Term Validation
+                  </CardTitle>
+                </div>
+                <CardDescription>Ensure proposal uses correct versioned terminology</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="grid gap-4 md:grid-cols-2">
+                  <div>
+                    <h4 className="font-semibold mb-2">Automatic Term Check</h4>
+                    <div className="bg-muted p-4 rounded-lg font-mono text-sm">
+                      <div className="text-green-600"># Terms used in proposal:</div>
+                      <div>{`{core:harm@v1.0}`}</div>
+                      <div>{`{welfare:suffering@v1.0}`}</div>
+                      <div>{`{welfare:sentience@v1.0}`}</div>
+                      <div className="text-yellow-600"># Warning: undefined term</div>
+                      <div>"chronic stress" → suggest: {`{welfare:suffering@v1.1}`}</div>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2">Term Evolution Trigger</h4>
+                    <ul className="space-y-2 text-sm text-muted-foreground">
+                      <li className="flex items-center gap-2">
+                        <AlertTriangle className="h-4 w-4 text-yellow-500" />
+                        Proposal identifies gap in current terms
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <CheckCircle className="h-4 w-4 text-green-500" />
+                        Community can propose term updates
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <CheckCircle className="h-4 w-4 text-green-500" />
+                        Terms evolve alongside ethics
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Step 3: Agent Analysis */}
             <Card className="border-l-4 border-l-green-500">
               <CardHeader>
                 <div className="flex items-center gap-3">
-                  <div className="flex-shrink-0 w-8 h-8 bg-green-100 text-green-600 rounded-full flex items-center justify-center font-semibold">2</div>
+                  <div className="flex-shrink-0 w-8 h-8 bg-green-100 text-green-600 rounded-full flex items-center justify-center font-semibold">3</div>
                   <CardTitle className="flex items-center gap-2">
                     <Bot className="h-5 w-5" />
                     AI Agent Analysis
@@ -139,11 +185,11 @@ export default function HowItWorksPage() {
               </CardContent>
             </Card>
 
-            {/* Step 3: Community Discussion */}
+            {/* Step 4: Community Discussion */}
             <Card className="border-l-4 border-l-purple-500">
               <CardHeader>
                 <div className="flex items-center gap-3">
-                  <div className="flex-shrink-0 w-8 h-8 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center font-semibold">3</div>
+                  <div className="flex-shrink-0 w-8 h-8 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center font-semibold">4</div>
                   <CardTitle className="flex items-center gap-2">
                     <MessageSquare className="h-5 w-5" />
                     Community Discussion
@@ -174,11 +220,11 @@ export default function HowItWorksPage() {
               </CardContent>
             </Card>
 
-            {/* Step 4: Voting */}
+            {/* Step 5: Voting */}
             <Card className="border-l-4 border-l-orange-500">
               <CardHeader>
                 <div className="flex items-center gap-3">
-                  <div className="flex-shrink-0 w-8 h-8 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center font-semibold">4</div>
+                  <div className="flex-shrink-0 w-8 h-8 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center font-semibold">5</div>
                   <CardTitle className="flex items-center gap-2">
                     <Users className="h-5 w-5" />
                     Hybrid Voting
@@ -230,11 +276,11 @@ export default function HowItWorksPage() {
               </CardContent>
             </Card>
 
-            {/* Step 5: Agent Assignment & Analysis */}
+            {/* Step 6: Agent Assignment & Analysis */}
             <Card className="border-l-4 border-l-teal-500">
               <CardHeader>
                 <div className="flex items-center gap-3">
-                  <div className="flex-shrink-0 w-8 h-8 bg-teal-100 text-teal-600 rounded-full flex items-center justify-center font-semibold">5</div>
+                  <div className="flex-shrink-0 w-8 h-8 bg-teal-100 text-teal-600 rounded-full flex items-center justify-center font-semibold">6</div>
                   <CardTitle className="flex items-center gap-2">
                     <Bot className="h-5 w-5" />
                     Agent Assignment & Analysis
@@ -281,11 +327,11 @@ export default function HowItWorksPage() {
               </CardContent>
             </Card>
 
-            {/* Step 6: Value Creation & Distribution */}
+            {/* Step 7: Value Creation & Distribution */}
             <Card className="border-l-4 border-l-indigo-500">
               <CardHeader>
                 <div className="flex items-center gap-3">
-                  <div className="flex-shrink-0 w-8 h-8 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center font-semibold">6</div>
+                  <div className="flex-shrink-0 w-8 h-8 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center font-semibold">7</div>
                   <CardTitle className="flex items-center gap-2">
                     <Users className="h-5 w-5" />
                     Value Creation & Distribution
@@ -544,11 +590,45 @@ export default function HowItWorksPage() {
               </CardContent>
             </Card>
 
-            {/* Step 7: Continuous Network Strengthening */}
+            {/* Term Dictionary System */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <BookOpen className="h-5 w-5" />
+                  Term Dictionary System
+                </CardTitle>
+                <CardDescription>Living vocabulary with Git-based versioning</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="font-semibold mb-2">Term Structure</h4>
+                    <div className="bg-muted p-3 rounded font-mono text-sm">
+                      <div>core-governance/terms/v1.0/</div>
+                      <div>&nbsp;&nbsp;fundamental.yml  # harm, being, wellbeing</div>
+                      <div>&nbsp;&nbsp;governance.yml   # transparency, equality</div>
+                      <div>animal-welfare/terms/v1.0/</div>
+                      <div>&nbsp;&nbsp;welfare-core.yml # suffering, sentience</div>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2">Features</h4>
+                    <ul className="space-y-1 text-sm text-muted-foreground">
+                      <li>• Inheritance from core to domain terms</li>
+                      <li>• Cross-domain term mapping</li>
+                      <li>• Automatic consistency checking</li>
+                      <li>• Democratic term evolution</li>
+                    </ul>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Step 8: Continuous Network Strengthening */}
             <Card className="border-l-4 border-l-emerald-500">
               <CardHeader>
                 <div className="flex items-center gap-3">
-                  <div className="flex-shrink-0 w-8 h-8 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-semibold">7</div>
+                  <div className="flex-shrink-0 w-8 h-8 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-semibold">8</div>
                   <CardTitle className="flex items-center gap-2">
                     <Network className="h-5 w-5" />
                     Continuous Network Strengthening

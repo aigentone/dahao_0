@@ -1,0 +1,36 @@
+version: "1.0"
+namespace: "core"
+terms:
+  harm:
+    v1.0:
+      definition: "Physical damage to a being"
+      created: "2024-01-01"
+    v1.1:
+      definition: "Any reduction in wellbeing, including physical damage, psychological distress, opportunity limitation, or dignity violation"
+      created: "2024-06-15"
+      changes:
+        - "Expanded beyond physical to include psychological harm"
+        - "Added opportunity and dignity aspects"
+
+  being:
+    v1.0:
+      definition: "Any entity capable of experience"
+      created: "2024-01-01"
+    v1.1:
+      definition: "Any entity capable of subjective experience"
+      created: "2024-03-10"
+    v2.0:
+      definition: "Any entity with interests that can be affected"
+      created: "2024-09-20"
+      changes:
+        - "Expanded to include future AIs and collective entities"
+
+  wellbeing:
+    v1.0:
+      definition: "State of positive functioning"
+      dimensions: ["physical", "mental"]
+      created: "2024-01-01"
+    v1.1:
+      definition: "Holistic state of thriving"
+      dimensions: ["physical", "mental", "social", "environmental"]
+      created: "2024-07-15"

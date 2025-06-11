@@ -35,3 +35,4 @@ yarn-error.log*
 next-env.d.ts
 
 /mcp-server/node_modules
+/mcp-server_disabled/node_modules

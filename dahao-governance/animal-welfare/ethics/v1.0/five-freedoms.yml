@@ -1,13 +1,18 @@
 version: "1.0"
 principle_id: "five_freedoms"
 name: "Five Freedoms of Animal Welfare"
-description: "Fundamental welfare framework for all animal-related decisions"
+description: "Implementation of {welfare:five_freedoms@v1.0} framework for all animal-related decisions"
 category: "domain_core"
 domain: "animal_welfare"
 
+uses_terms:
+  - "welfare:five_freedoms@v1.0"
+  - "welfare:suffering@v1.0"
+  - "core:wellbeing@v1.1"
+
 freedoms:
   freedom_from_hunger:
-    description: "Freedom from hunger and thirst"
+    description: "Freedom from hunger and thirst - ensuring {core:wellbeing@v1.1}"
     requirements:
       - "Ready access to fresh water"
       - "Diet to maintain full health and vigor"

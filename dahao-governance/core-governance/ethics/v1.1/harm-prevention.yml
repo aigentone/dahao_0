@@ -1,9 +1,14 @@
 version: "1.1"
 principle_id: "harm-prevention"
 name: "Harm Prevention"
-description: "Actively prevent direct and indirect harm with proactive measures"
+description: "Actively prevent {core:harm@v1.1} to all {core:being@v2.0} with proactive measures"
 category: "core"
 previous_version: "1.0"
+
+uses_terms:
+  - "core:harm@v1.1"
+  - "core:being@v2.0"
+  - "core:wellbeing@v1.1"
 
 requirements:
   risk_assessment:
@@ -32,7 +37,7 @@ requirements:
 
 harm_categories:
   physical:
-    description: "Direct physical harm to humans or animals"
+    description: "Direct physical {core:harm@v1.1} to {core:being@v2.0}"
     severity: "critical"
     response: "immediate_halt"
 

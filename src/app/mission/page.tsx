@@ -79,7 +79,7 @@ export default function MissionPage() {
                 The beauty of DAHAO lies in a simple realization: we don't need to build the technology - 
                 tech giants are already doing it for us. We're not competing with these investments; we're surfing on them.
               </p>
-              <div className="grid gap-4 md:grid-cols-3 mt-6">
+              <div className="grid gap-4 md:grid-cols-4 mt-6">
                 <div className="bg-white/70 p-4 rounded-lg text-center">
                   <div className="font-semibold text-green-800 mb-2">Claude Gets Better</div>
                   <div className="text-sm text-muted-foreground">→ Every DAHAO agent becomes smarter</div>
@@ -91,6 +91,10 @@ export default function MissionPage() {
                 <div className="bg-white/70 p-4 rounded-lg text-center">
                   <div className="font-semibold text-purple-800 mb-2">Standards Emerge</div>
                   <div className="text-sm text-muted-foreground">→ Network gains new powers overnight</div>
+                </div>
+                <div className="bg-white/70 p-4 rounded-lg text-center">
+                  <div className="font-semibold text-orange-800 mb-2">Terms Evolve</div>
+                  <div className="text-sm text-muted-foreground">→ Shared understanding deepens</div>
                 </div>
               </div>
             </CardContent>
@@ -180,6 +184,18 @@ export default function MissionPage() {
                   <p className="text-sm font-medium text-blue-800">
                     We're not building technology; we're building the vessel that will carry us wherever technology goes.
                   </p>
+                </div>
+              </div>
+              <div className="bg-gradient-to-r from-orange-50 to-yellow-50 p-6 rounded-lg mt-4">
+                <h4 className="font-semibold mb-3">Living Vocabulary</h4>
+                <p className="text-sm text-muted-foreground mb-3">
+                  Even our language evolves: terms like "harm", "wellbeing", and "suffering" update democratically
+                  as our collective understanding deepens. Version-controlled terminology ensures everyone speaks
+                  the same ethical language while allowing for growth.
+                </p>
+                <div className="flex items-center gap-2">
+                  <ArrowRightIcon className="h-4 w-4 text-orange-500" />
+                  <span className="text-sm">Better definitions → Clearer decisions → Stronger consensus</span>
                 </div>
               </div>
             </CardContent>

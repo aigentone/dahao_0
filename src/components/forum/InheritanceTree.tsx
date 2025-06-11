@@ -152,7 +152,9 @@ export function InheritanceTree({ organizations, currentDomain, onNavigate }: In
                         <ArrowRight className="w-3 h-3" />
                         <span className="font-medium">core-governance@{extendsVersion}</span>
                         {!isCompatible && (
-                          <AlertCircle className="w-3 h-3 text-orange-500" title="Version mismatch" />
+                          <div title="Version mismatch">
+                            <AlertCircle className="w-3 h-3 text-orange-500" />
+                          </div>
                         )}
                       </div>
                       

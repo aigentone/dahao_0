@@ -1,7 +1,7 @@
 'use client';
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { GitBranchIcon, Users2Icon, BrainIcon, FileTextIcon, ArrowRightIcon, LayersIcon } from 'lucide-react';
+import { GitBranchIcon, Users2Icon, BrainIcon, FileTextIcon, ArrowRightIcon, LayersIcon, BookOpenIcon } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
@@ -71,6 +71,22 @@ export default function AboutPage() {
                 </p>
               </CardContent>
             </Card>
+
+            <Card>
+              <CardHeader>
+                <BookOpenIcon className="h-8 w-8 mb-2 text-orange-500" />
+                <CardTitle>Versioned Terms</CardTitle>
+                <CardDescription>
+                  Shared vocabulary that evolves democratically, ensuring everyone speaks the same ethical language
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">
+                  Like a living dictionary, terms like "harm", "wellbeing", and "suffering" have
+                  precise, versioned definitions that communities can refine while maintaining clarity.
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
 
@@ -78,6 +94,39 @@ export default function AboutPage() {
         <div className="mb-16">
           <h2 className="text-3xl font-semibold mb-8 text-center">System Architecture</h2>
           <div className="space-y-8">
+            {/* Terms Foundation Layer */}
+            <Card>
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <BookOpenIcon className="h-6 w-6 text-orange-500" />
+                  <CardTitle>Terms Foundation Layer</CardTitle>
+                </div>
+                <CardDescription>Versioned vocabulary that all ethics and principles reference</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="grid gap-4 md:grid-cols-3">
+                  <div>
+                    <h4 className="font-semibold mb-2">Core Terms</h4>
+                    <p className="text-sm text-muted-foreground">
+                      Universal concepts like "harm", "being", "wellbeing" with precise definitions
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2">Domain Terms</h4>
+                    <p className="text-sm text-muted-foreground">
+                      Specialized vocabulary like "sentience" for animal welfare, "ecosystem health" for environment
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-2">Term Evolution</h4>
+                    <p className="text-sm text-muted-foreground">
+                      Democratic updates ensure terms reflect current understanding and values
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
             {/* Core Ethics Layer */}
             <Card>
               <CardHeader>

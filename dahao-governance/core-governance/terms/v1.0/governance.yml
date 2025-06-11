@@ -1,0 +1,26 @@
+version: "1.0"
+namespace: "core"
+terms:
+  transparency:
+    v1.0:
+      definition: "All decisions and processes must be open and auditable"
+      created: "2024-01-01"
+    v1.1:
+      definition: "All decisions and processes must be open, auditable, and include AI agent reasoning traces"
+      created: "2024-12-15"
+
+  equality:
+    v1.0:
+      definition: "All humans have equal fundamental rights"
+      created: "2024-01-01"
+    v1.1:
+      definition: "All humans have equal fundamental rights regardless of background"
+      created: "2024-06-15"
+
+  sustainability:
+    v1.0:
+      definition: "Consider long-term impact on community and environment"
+      created: "2024-01-01"
+    v1.1:
+      definition: "Actively improve rather than just maintain conditions for future generations"
+      created: "2024-08-20"

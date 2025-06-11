@@ -1,0 +1,21 @@
+version: "1.0"
+namespace: "environment"
+terms:
+  ecosystem_health:
+    v1.2:
+      definition: "Integrated wellbeing of all beings in a system"
+      uses_terms:
+        - "core:wellbeing@v1.1"
+        - "core:being@v2.0"
+      aspects:
+        - "non-sentient entities"
+        - "emergent properties"
+        - "temporal sustainability"
+      created: "2024-03-15"
+
+  sustainability_enhanced:
+    v1.2:
+      definition: "Beyond maintaining to actively improving environmental conditions"
+      extends: "core:sustainability@v1.1"
+      focus: "regenerative approach"
+      created: "2024-03-15"

@@ -272,7 +272,7 @@ export class DiscussionParser {
       aiAnalyses: metrics.aiAnalyses,
       author: discussion.author || 'Unknown',
       created: discussion.created || 'Unknown',
-      votingData
+      votingData: votingData || undefined
     };
   }
 

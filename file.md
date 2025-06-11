@@ -1,176 +1,249 @@
-markdown# Goal: Update DAHAO for AI Agent Integration (Mock Implementation)
+# GOAL: Create Term Dictionary YML Files and Update Ethics to Use Terms
 
-## Overview
-Update the DAHAO platform to reflect current AI agent capabilities (GitHub Copilot, Claude Code) and fix incorrect information in existing pages. This is a MOCK implementation - no real API integrations yet.
+## STEP 1: Create Term Dictionary Files
 
-## Priority Tasks
+### CREATE: dahao-governance/core-governance/terms/v1.0/fundamental.yml
+```yaml
+version: "1.0"
+namespace: "core"
+terms:
+  harm:
+    v1.0:
+      definition: "Physical damage to a being"
+      created: "2024-01-01"
+    v1.1:
+      definition: "Any reduction in wellbeing, including physical damage, psychological distress, opportunity limitation, or dignity violation"
+      created: "2024-06-15"
+      changes:
+        - "Expanded beyond physical to include psychological harm"
+        - "Added opportunity and dignity aspects"
 
-### 1. Fix Incorrect Information in Existing Pages
+  being:
+    v1.0:
+      definition: "Any entity capable of experience"
+      created: "2024-01-01"
+    v1.1:
+      definition: "Any entity capable of subjective experience"
+      created: "2024-03-10"
+    v2.0:
+      definition: "Any entity with interests that can be affected"
+      created: "2024-09-20"
+      changes:
+        - "Expanded to include future AIs and collective entities"
 
-#### A. Update Home Page (`app/page.tsx`)
-**Remove/Update:**
-- Remove specific token name references ("Kut-Akil Token")
-- Change "Token rewards" to "Contribution rewards (coming in Phase 3)"
-- Update the economics section to emphasize the GitHub Actions + AI agents integration
+  wellbeing:
+    v1.0:
+      definition: "State of positive functioning"
+      dimensions: ["physical", "mental"]
+      created: "2024-01-01"
+    v1.1:
+      definition: "Holistic state of thriving"
+      dimensions: ["physical", "mental", "social", "environmental"]
+      created: "2024-07-15"
+CREATE: dahao-governance/core-governance/terms/v1.0/governance.yml
+yamlversion: "1.0"
+namespace: "core"
+terms:
+  transparency:
+    v1.0:
+      definition: "All decisions and processes must be open and auditable"
+      created: "2024-01-01"
+    v1.1:
+      definition: "All decisions and processes must be open, auditable, and include AI agent reasoning traces"
+      created: "2024-12-15"
 
-**Key changes:**
-```typescript
-// In the "Intellectual Mining" section, update to:
-"Contributors earn rewards based on agent-measured impact"
-// Remove specific token economics details
-B. Update About Page (app/about/page.tsx)
-Critical fixes:
+  equality:
+    v1.0:
+      definition: "All humans have equal fundamental rights"
+      created: "2024-01-01"
+    v1.1:
+      definition: "All humans have equal fundamental rights regardless of background"
+      created: "2024-06-15"
 
-Replace "Council of verified experts" with "hybrid human-AI voting system"
-Remove "Voting power based on expertise/history" - DAHAO uses equal voting
-Update "Token economics" to "Contribution rewards system (Phase 3)"
-Emphasize GitHub Actions as the orchestration engine
+  sustainability:
+    v1.0:
+      definition: "Consider long-term impact on community and environment"
+      created: "2024-01-01"
+    v1.1:
+      definition: "Actively improve rather than just maintain conditions for future generations"
+      created: "2024-08-20"
+CREATE: dahao-governance/animal-welfare/terms/v1.0/welfare-core.yml
+yamlversion: "1.0"
+namespace: "welfare"
+terms:
+  suffering:
+    v1.0:
+      definition: "Negative subjective experience of sentient beings"
+      extends: "core:harm@v1.1"
+      specificity: "Conscious experience requirement"
+      types:
+        physical: "Pain, discomfort, illness"
+        psychological: "Fear, distress, frustration"
+        behavioral: "Inability to express natural behaviors"
+      created: "2024-02-01"
 
-Specific text to find and replace:
+  sentience:
+    v1.0:
+      definition: "Capacity to have subjective experiences"
+      extends: "core:being@v1.1"
+      indicators:
+        - "nociception"
+        - "cognitive_complexity"
+        - "behavioral_responses"
+      created: "2024-02-01"
 
-"Council of verified veterinary experts" → "Hybrid human-AI governance"
-"Voting power is not just based on tokens" → "Equal voting rights for all members"
-"Kut-Akil Token (KUT)" → "Contribution rewards system"
+  five_freedoms:
+    v1.0:
+      definition: "Framework for assessing animal welfare"
+      components:
+        - "Freedom from hunger and thirst"
+        - "Freedom from discomfort"
+        - "Freedom from pain, injury, disease"
+        - "Freedom to express normal behavior"
+        - "Freedom from fear and distress"
+      created: "2024-02-01"
+CREATE: dahao-governance/environment/terms/v1.0/ecosystem-specific.yml
+yamlversion: "1.0"
+namespace: "environment"
+terms:
+  ecosystem_health:
+    v1.2:
+      definition: "Integrated wellbeing of all beings in a system"
+      uses_terms:
+        - "core:wellbeing@v1.1"
+        - "core:being@v2.0"
+      aspects:
+        - "non-sentient entities"
+        - "emergent properties"
+        - "temporal sustainability"
+      created: "2024-03-15"
 
-C. Update Mission Page (app/mission/page.tsx)
-Add new sections:
+  sustainability_enhanced:
+    v1.2:
+      definition: "Beyond maintaining to actively improving environmental conditions"
+      extends: "core:sustainability@v1.1"
+      focus: "regenerative approach"
+      created: "2024-03-15"
+STEP 2: Update Ethics YML Files to Use Terms
+UPDATE: dahao-governance/core-governance/ethics/v1.1/harm-prevention.yml
+Add after description:
+yamluses_terms:
+  - "core:harm@v1.1"
+  - "core:being@v2.0"
+  - "core:wellbeing@v1.1"
 
-Add explanation of MCP (Model Context Protocol) integration potential
-Update to mention GitHub Copilot Agent Mode and Claude Code
-Emphasize "surf don't build" strategy with current AI tools
+# Update description to:
+description: "Actively prevent {core:harm@v1.1} to all {core:being@v2.0} with proactive measures"
 
-D. Update How It Works Page (app/how-it-works/page.tsx)
-Add to workflow:
+# Update harm_categories descriptions:
+harm_categories:
+  physical:
+    description: "Direct physical {core:harm@v1.1} to {core:being@v2.0}"
+UPDATE: dahao-governance/animal-welfare/ethics/v1.0/five-freedoms.yml
+Add after description:
+yamluses_terms:
+  - "welfare:five_freedoms@v1.0"
+  - "welfare:suffering@v1.0"
+  - "core:wellbeing@v1.1"
 
-Insert new Step 6: "Agent Assignment & Analysis"
-Update examples to show @claude mentions
-Add section on GitHub Actions orchestration for agents
+# Update description to:
+description: "Implementation of {welfare:five_freedoms@v1.0} framework for all animal-related decisions"
 
-2. Create Mock Agent Features
-A. Agent Assignment Panel Component
-Create: components/governance/AgentAssignmentPanel.tsx
-Mock component that shows:
+# Update freedom descriptions:
+freedom_from_hunger:
+  description: "Freedom from hunger and thirst - ensuring {core:wellbeing@v1.1}"
+STEP 3: Update Type System
+UPDATE: types/governance.ts
+Add to GovernancePrinciple interface:
+typescript// Term-related fields
+uses_terms?: string[]; // Array of term references like "core:harm@v1.1"
+term_definitions?: Record<string, any>; // Resolved term definitions
+Add new interfaces:
+typescriptexport interface Term {
+  namespace: string;
+  name: string;
+  version: string;
+  definition: string;
+  extends?: string;
+  created: string;
+  changes?: string[];
+  dimensions?: string[];
+  types?: Record<string, string>;
+  [key: string]: any;
+}
 
-List of available agents (Personal, Ethics, Claude, Domain-specific)
-Assignment button with loading states
-Mock analysis results after 2-second delay
+export interface TermDictionary {
+  version: string;
+  namespace: string;
+  terms: Record<string, Record<string, Term>>;
+}
+STEP 4: Update API to Load Terms
+UPDATE: app/api/governance/route.ts
+Add term loading:
+typescriptasync function loadTermsForDomain(domain: string): Promise<TermDictionary | null> {
+  const termsPath = path.join(process.cwd(), 'dahao-governance', domain, 'terms');
 
-B. Settings Page
-Create: app/settings/page.tsx
-Mock settings page with:
+  if (!fs.existsSync(termsPath)) {
+    return null;
+  }
 
-LLM provider selection (GitHub Copilot, Claude Code, Custom)
-API key input field (disabled for mock)
-Save button (shows success message but doesn't save)
+  // Load all term files
+  const termFiles = fs.readdirSync(termsPath, { recursive: true })
+    .filter(file => file.endsWith('.yml'));
 
-C. Update Navigation
-Update: components/layout/Header.tsx
-Add Settings link to navigation:
-typescript{ href: '/settings', label: 'Settings' },
-3. Enhance Forum Features
-A. Update Discussion Viewer
-Update: components/governance/DiscussionViewer.tsx
-Add:
+  const terms: TermDictionary = {
+    version: "1.0",
+    namespace: domain,
+    terms: {}
+  };
 
-Import and use AgentAssignmentPanel component
-Show it below the main discussion content
-Add mock "@claude analyze this" button
+  for (const file of termFiles) {
+    const content = fs.readFileSync(path.join(termsPath, file), 'utf8');
+    const termData = yaml.load(content) as TermDictionary;
 
-B. Add Comment Input
-Create: components/governance/CommentInput.tsx
-Simple comment input with:
+    // Merge terms
+    Object.assign(terms.terms, termData.terms);
+  }
 
-Textarea for comment
-"Post Comment" button
-Info text: "Mention @claude to trigger AI analysis"
-When submitted with @claude, show mock "Analysis requested" message
+  return terms;
+}
+STEP 5: Create Dynamic Terms API
+CREATE: app/api/terms/route.ts
+typescriptimport { NextResponse } from 'next/server';
+import { loadGovernanceData } from '@/lib/governance-loader';
 
-4. Update Chat Page
-A. Add Agent Commands
-Update: app/chat/page.tsx
-Add new command handlers:
-typescript// New commands to handle:
-- "list agents" → Show available agents
-- "assign [agent] to [discussion]" → Mock assignment
-- "agent status" → Show mock active assignments
-- "configure agent" → Link to settings
-5. Create Mock Data
-A. Mock Agent Responses
-Create: lib/mock-data/agent-responses.ts
-Create realistic mock responses for:
+export async function GET() {
+  try {
+    const data = await loadGovernanceData();
+    const allTerms: Record<string, any> = {};
 
-Ethics compliance analysis
-Personal agent analysis
-Claude code review
-Domain expert analysis
+    // Load terms from each organization
+    for (const org of data.organizations) {
+      const terms = await loadTermsForDomain(org.id);
+      if (terms) {
+        allTerms[org.id] = terms;
+      }
+    }
 
-Format:
-typescriptexport const MOCK_AGENT_RESPONSES = {
-  'ethics-compliance': {
-    template: "Ethics Analysis:\n✓ Transparency: Compatible\n✓ Equality: Compatible\n✓ Harm Prevention: No issues\n✓ Sustainability: Long-term positive\nRecommendation: APPROVE"
-  },
-  // ... more templates
-};
-6. Update Type Definitions
-A. Extend Discussion Type
-Update: types/governance.ts
-Add to GovernanceDiscussion interface:
-typescriptassignedAgents?: {
-  agentId: string;
-  assignedBy: string;
-  assignedAt: string;
-  status: 'pending' | 'analyzing' | 'completed';
-  mockAnalysis?: string;
-}[];
-Implementation Guidelines
-DO:
+    return NextResponse.json(allTerms);
+  } catch (error) {
+    console.error('Error loading terms:', error);
+    return NextResponse.json({ error: 'Failed to load terms' }, { status: 500 });
+  }
+}
+STEP 6: Update Terms Page to be Dynamic
+UPDATE: app/terms/page.tsx
+Replace static content with:
+typescriptconst [terms, setTerms] = useState<Record<string, TermDictionary>>({});
+const [loading, setLoading] = useState(true);
 
-Keep all implementations as MOCK (no real API calls)
-Use setTimeout for simulating async operations
-Store mock state in React component state only
-Show clear UI feedback for all actions
-Make it obvious this is a demo/mock version
+useEffect(() => {
+  fetch('/api/terms')
+    .then(res => res.json())
+    .then(data => {
+      setTerms(data);
+      setLoading(false);
+    });
+}, []);
 
-DON'T:
-
-Don't implement real GitHub OAuth
-Don't make actual API calls
-Don't create backend routes yet
-Don't implement real blockchain features
-Don't add complex state management (Redux, etc.)
-
-Testing Checklist
-After implementation, verify:
-
- All pages load without errors
- Incorrect information has been fixed
- Agent assignment shows mock loading states
- Settings page displays but clarifies it's mock
- Chat understands new agent commands
- Navigation includes Settings link
- @claude mentions show feedback
-
-File Structure Summary
-New files to create:
-- app/settings/page.tsx
-- components/governance/AgentAssignmentPanel.tsx
-- components/governance/CommentInput.tsx
-- lib/mock-data/agent-responses.ts
-
-Files to update:
-- app/page.tsx (fix token references)
-- app/about/page.tsx (fix governance model)
-- app/mission/page.tsx (add AI tools context)
-- app/how-it-works/page.tsx (add agent workflow)
-- app/chat/page.tsx (add agent commands)
-- components/layout/Header.tsx (add settings)
-- components/governance/DiscussionViewer.tsx (add agent panel)
-- types/governance.ts (add agent fields)
-Success Criteria
-The implementation is successful when:
-
-A new user can understand DAHAO uses AI agents, not token-based voting
-The mock agent assignment flow works smoothly
-All references to incorrect governance models are fixed
-The platform clearly shows it's ready for GitHub Actions + AI integration
-Users can see how @claude mentions would work
+// Then dynamically render terms from the loaded data

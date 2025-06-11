@@ -50,6 +50,10 @@ export default function AgentsPage() {
                       <div>&nbsp;&nbsp;animal_welfare: "v1.0"</div>
                       <div>&nbsp;&nbsp;music_industry: "v0.9"</div>
                       <div></div>
+                      <div>term_versions:</div>
+                      <div>&nbsp;&nbsp;core: "v1.0"</div>
+                      <div>&nbsp;&nbsp;animal_welfare: "v1.0"</div>
+                      <div></div>
                       <div>decision_process:</div>
                       <div>&nbsp;&nbsp;priority: "personal_values &gt; domain &gt; core"</div>
                       <div>&nbsp;&nbsp;reasoning_style: "collaborative"</div>
@@ -114,9 +118,9 @@ export default function AgentsPage() {
                         <strong>Authority:</strong> Main branch protection
                       </div>
                       <div className="text-muted-foreground">
-                        • Validates ethics proposals<br/>
-                        • Manages voting systems<br/>
-                        • Handles version conflicts<br/>
+                        • Validates ethics proposals
+                        • Manages voting systems
+                        • Handles version conflicts
                         • Authorizes migrations
                       </div>
                     </div>
@@ -131,9 +135,9 @@ export default function AgentsPage() {
                         <strong>Authority:</strong> Compliance monitoring
                       </div>
                       <div className="text-muted-foreground">
-                        • Monitors agent behavior<br/>
-                        • Flags ethical violations<br/>
-                        • Suggests remediation<br/>
+                        • Monitors agent behavior
+                        • Flags ethical violations
+                        • Suggests remediation
                         • Maintains audit trail
                       </div>
                     </div>
@@ -148,9 +152,9 @@ export default function AgentsPage() {
                         <strong>Authority:</strong> Performance assessment
                       </div>
                       <div className="text-muted-foreground">
-                        • Code quality scoring<br/>
-                        • Ethical consistency tracking<br/>
-                        • Community value measurement<br/>
+                        • Code quality scoring
+                        • Ethical consistency tracking
+                        • Community value measurement
                         • Real impact assessment
                       </div>
                     </div>
@@ -183,9 +187,9 @@ export default function AgentsPage() {
                         <li>• Implementation feasibility</li>
                       </ul>
                       <div className="mt-3 font-mono text-xs bg-white p-2 rounded">
-                        ethics_domain: "animal-welfare@v1.0"<br/>
-                        knowledge_base: "scientific_literature"<br/>
-                        update_frequency: "quarterly"
+                        <div>ethics_domain: "animal-welfare@v1.0"</div>
+                        <div>knowledge_base: "scientific_literature"</div>
+                        <div>update_frequency: "quarterly"</div>
                       </div>
                     </div>
                   </div>
@@ -200,9 +204,9 @@ export default function AgentsPage() {
                         <li>• Creative freedom balance</li>
                       </ul>
                       <div className="mt-3 font-mono text-xs bg-white p-2 rounded">
-                        ethics_domain: "music-industry@v1.0"<br/>
-                        focus_areas: ["royalties", "artist_rights"]<br/>
-                        collaboration: "cross_domain"
+                        <div>ethics_domain: "music-industry@v1.0"</div>
+                        <div>focus_areas: ["royalties", "artist_rights"]</div>
+                        <div>collaboration: "cross_domain"</div>
                       </div>
                     </div>
                   </div>
@@ -217,9 +221,9 @@ export default function AgentsPage() {
                         <li>• Circular economy principles</li>
                       </ul>
                       <div className="mt-3 font-mono text-xs bg-white p-2 rounded">
-                        ethics_domain: "environment@v1.0"<br/>
-                        impact_tracking: "quantitative"<br/>
-                        verification: "third_party"
+                        <div>ethics_domain: "environment@v1.0"</div>
+                        <div>impact_tracking: "quantitative"</div>
+                        <div>verification: "third_party"</div>
                       </div>
                     </div>
                   </div>
@@ -246,51 +250,52 @@ export default function AgentsPage() {
                     <div className="bg-blue-50 p-4 rounded border-l-4 border-l-blue-500">
                       <div className="font-semibold mb-2">@sarah-agent (Personal Agent)</div>
                       <div className="font-mono text-sm bg-white p-3 rounded">
-                        ```yaml<br/>
-                        agent: sarah-agent<br/>
-                        analysis_type: "initial_review"<br/>
-                        ethics_check:<br/>
-                        &nbsp;&nbsp;core_compatibility: "✓ PASS"<br/>
-                        &nbsp;&nbsp;animal_welfare_impact: "positive"<br/>
-                        &nbsp;&nbsp;personal_alignment: "strong"<br/>
-                        recommendation: "APPROVE"<br/>
-                        concerns: ["budget_allocation", "timeline"]<br/>
-                        suggestions:<br/>
-                        &nbsp;&nbsp;- "Add phased implementation"<br/>
-                        &nbsp;&nbsp;- "Include success metrics"<br/>
-                        ```
+                        <div>```yaml</div>
+                        <div>agent: sarah-agent</div>
+                        <div>analysis_type: "initial_review"</div>
+                        <div>ethics_check:</div>
+                        <div>&nbsp;&nbsp;core_compatibility: "✓ PASS"</div>
+                        <div>&nbsp;&nbsp;animal_welfare_impact: "positive"</div>
+                        <div>&nbsp;&nbsp;term_usage: "{`{core:harm@v1.0}`} prevention aligned"</div>
+                        <div>&nbsp;&nbsp;personal_alignment: "strong"</div>
+                        <div>recommendation: "APPROVE"</div>
+                        <div>concerns: ["budget_allocation", "timeline"]</div>
+                        <div>suggestions:</div>
+                        <div>&nbsp;&nbsp;- "Add phased implementation"</div>
+                        <div>&nbsp;&nbsp;- "Include success metrics"</div>
+                        <div>```</div>
                       </div>
                     </div>
 
                     <div className="bg-purple-50 p-4 rounded border-l-4 border-l-purple-500">
                       <div className="font-semibold mb-2">@ethics-compliance-agent (System Agent)</div>
                       <div className="font-mono text-sm bg-white p-3 rounded">
-                        ```yaml<br/>
-                        agent: ethics-compliance-agent<br/>
-                        validation_result:<br/>
-                        &nbsp;&nbsp;ethics_compatibility: "✓ COMPATIBLE"<br/>
-                        &nbsp;&nbsp;version_conflicts: "none_detected"<br/>
-                        &nbsp;&nbsp;migration_required: false<br/>
-                        governance_path: "threshold_vote_60_percent"<br/>
-                        compliance_notes: "Aligns with transparency@v1.0"<br/>
-                        ```
+                        <div>```yaml</div>
+                        <div>agent: ethics-compliance-agent</div>
+                        <div>validation_result:</div>
+                        <div>&nbsp;&nbsp;ethics_compatibility: "✓ COMPATIBLE"</div>
+                        <div>&nbsp;&nbsp;version_conflicts: "none_detected"</div>
+                        <div>&nbsp;&nbsp;migration_required: false</div>
+                        <div>governance_path: "threshold_vote_60_percent"</div>
+                        <div>compliance_notes: "Aligns with transparency@v1.0"</div>
+                        <div>```</div>
                       </div>
                     </div>
 
                     <div className="bg-green-50 p-4 rounded border-l-4 border-l-green-500">
                       <div className="font-semibold mb-2">@animal-welfare-agent (Domain Agent)</div>
                       <div className="font-mono text-sm bg-white p-3 rounded">
-                        ```yaml<br/>
-                        agent: animal-welfare-agent<br/>
-                        domain_analysis:<br/>
-                        &nbsp;&nbsp;scientific_validity: "peer_reviewed_support"<br/>
-                        &nbsp;&nbsp;welfare_impact: "significant_positive"<br/>
-                        &nbsp;&nbsp;implementation_feasibility: "high"<br/>
-                        cross_reference: "similar_implementations_eu"<br/>
-                        enhancement_suggestions:<br/>
-                        &nbsp;&nbsp;- "Add welfare_measurement_framework"<br/>
-                        &nbsp;&nbsp;- "Include_quarterly_assessment"<br/>
-                        ```
+                        <div>```yaml</div>
+                        <div>agent: animal-welfare-agent</div>
+                        <div>domain_analysis:</div>
+                        <div>&nbsp;&nbsp;scientific_validity: "peer_reviewed_support"</div>
+                        <div>&nbsp;&nbsp;welfare_impact: "significant_positive"</div>
+                        <div>&nbsp;&nbsp;implementation_feasibility: "high"</div>
+                        <div>cross_reference: "similar_implementations_eu"</div>
+                        <div>enhancement_suggestions:</div>
+                        <div>&nbsp;&nbsp;- "Add welfare_measurement_framework"</div>
+                        <div>&nbsp;&nbsp;- "Include_quarterly_assessment"</div>
+                        <div>```</div>
                       </div>
                     </div>
                   </div>
@@ -457,6 +462,15 @@ export default function AgentsPage() {
                       </p>
                     </div>
                   </div>
+                </div>
+                <div className="mt-6 p-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg">
+                  <h4 className="font-semibold mb-2">Shared Vocabulary Evolution</h4>
+                  <p className="text-sm text-muted-foreground">
+                    As patterns spread across domains, so does vocabulary. When animal welfare refines
+                    "{`{welfare:suffering@v1.0}`}" to include chronic stress, environment domains can adopt
+                    this enhanced definition for ecosystem stress indicators, creating network-wide
+                    semantic alignment.
+                  </p>
                 </div>
               </CardContent>
             </Card>

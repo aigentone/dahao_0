@@ -12,6 +12,7 @@ export function Header() {
     { href: '/about', label: 'About' },
     { href: '/how-it-works', label: 'How It Works' },
     { href: '/agents', label: 'AI Agents' },
+    { href: '/terms', label: 'Terms' },
     { href: '/forum', label: 'Forum' },
     { href: '/chat', label: 'AI Assistant' },
     { href: '/settings', label: 'Settings' },

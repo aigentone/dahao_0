@@ -1,20 +1,45 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-// Import the working server directly
-let DAHAOServer: any;
-let mcpServer: any;
+// Mock MCP server for development
+class MockDAHAOServer {
+  async getActiveProposals() {
+    return [];
+  }
 
-// Dynamic import to handle ES modules
+  async getRepoStatus() {
+    return { status: 'mock', message: 'MCP server not implemented' };
+  }
+
+  async getCurrentEthics() {
+    return { ethics: 'mock', message: 'MCP server not implemented' };
+  }
+
+  async createProposal(_title: string, _description: string, _type: string, _domain: string, _author: string) {
+    return { id: 'mock-proposal', message: 'MCP server not implemented' };
+  }
+
+  async validateEthicsCompatibility(_proposal: any) {
+    return { valid: true, message: 'MCP server not implemented' };
+  }
+
+  async analyzeCrossDomainImpact(_proposal: any) {
+    return { impact: 'low', message: 'MCP server not implemented' };
+  }
+
+  async updateProposalStatus(_issueNumber: number, _status: string) {
+    return { updated: true, message: 'MCP server not implemented' };
+  }
+
+  async getProposalDiscussion(_issueNumber: number) {
+    return { discussion: [], message: 'MCP server not implemented' };
+  }
+}
+
+let mcpServer: MockDAHAOServer;
+
 async function getMCPServer() {
   if (!mcpServer) {
-    try {
-      const module = await import('../../../mcp-server/dist/working-server.js');
-      DAHAOServer = module.DAHAOServer;
-      mcpServer = new DAHAOServer();
-    } catch (error) {
-      console.error('Failed to import MCP server:', error);
-      throw new Error('MCP server not available');
-    }
+    mcpServer = new MockDAHAOServer();
   }
   return mcpServer;
 }

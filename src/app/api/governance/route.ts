@@ -3,7 +3,7 @@ import { getAllDiscussions, getOrganizationStats } from '@/lib/governance-data';
 import fs from 'fs';
 import path from 'path';
 import yaml from 'js-yaml';
-import { InheritanceConfig, GovernancePrinciple } from '@/types/governance';
+import { InheritanceConfig, GovernancePrinciple, TermDictionary } from '@/types/governance';
 
 export async function GET() {
   try {
@@ -183,6 +183,38 @@ function getEffectivePrinciples(domain: string): GovernancePrinciple[] {
   return principles;
 }
 
+
+async function loadTermsForDomain(domain: string): Promise<TermDictionary | null> {
+  const termsPath = path.join(process.cwd(), 'dahao-governance', domain, 'terms');
+
+  if (!fs.existsSync(termsPath)) {
+    return null;
+  }
+
+  // Load all term files
+  const termFiles = fs.readdirSync(termsPath, { recursive: true })
+    .filter(file => file.toString().endsWith('.yml'));
+
+  const terms: TermDictionary = {
+    version: "1.0",
+    namespace: domain,
+    terms: {}
+  };
+
+  for (const file of termFiles) {
+    try {
+      const content = fs.readFileSync(path.join(termsPath, file.toString()), 'utf8');
+      const termData = yaml.load(content) as TermDictionary;
+
+      // Merge terms
+      Object.assign(terms.terms, termData.terms);
+    } catch (error) {
+      console.error(`Error loading term file ${file} for ${domain}:`, error);
+    }
+  }
+
+  return terms;
+}
 
 function getEmojiForDomain(domain: string): string {
   const emojis = {

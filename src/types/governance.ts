@@ -50,6 +50,10 @@ export interface GovernancePrinciple {
   inheritance_modification?: string; // How inheritance was modified
   extension_config?: any; // Domain extension configuration
   
+  // Term-related fields
+  uses_terms?: string[]; // Array of term references like "core:harm@v1.1"
+  term_definitions?: Record<string, any>; // Resolved term definitions
+  
   // Flexible for other domain-specific structures
   [key: string]: any;
 }
@@ -120,3 +124,22 @@ export interface GovernanceData {
 }
 
 export type OrganizationType = 'core-governance' | 'animal-welfare' | 'environment';
+
+export interface Term {
+  namespace: string;
+  name: string;
+  version: string;
+  definition: string;
+  extends?: string;
+  created: string;
+  changes?: string[];
+  dimensions?: string[];
+  types?: Record<string, string>;
+  [key: string]: any;
+}
+
+export interface TermDictionary {
+  version: string;
+  namespace: string;
+  terms: Record<string, Record<string, Term>>;
+}

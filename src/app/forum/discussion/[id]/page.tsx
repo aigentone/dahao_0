@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -33,11 +33,7 @@ export default function DiscussionDetailPage() {
   const [discussion, setDiscussion] = useState<GovernanceDiscussion | null>(null);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    fetchDiscussionData();
-  }, [params.id]);
-
-  const fetchDiscussionData = async () => {
+  const fetchDiscussionData = useCallback(async () => {
     setLoading(true);
     try {
       const response = await fetch('/api/governance');
@@ -62,7 +58,11 @@ export default function DiscussionDetailPage() {
       console.error('Error fetching discussion data:', error);
     }
     setLoading(false);
-  };
+  }, [params.id]);
+
+  useEffect(() => {
+    fetchDiscussionData();
+  }, [fetchDiscussionData]);
 
   if (loading) {
     return (

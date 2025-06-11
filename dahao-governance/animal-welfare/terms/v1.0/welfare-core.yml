@@ -1,0 +1,34 @@
+version: "1.0"
+namespace: "welfare"
+terms:
+  suffering:
+    v1.0:
+      definition: "Negative subjective experience of sentient beings"
+      extends: "core:harm@v1.1"
+      specificity: "Conscious experience requirement"
+      types:
+        physical: "Pain, discomfort, illness"
+        psychological: "Fear, distress, frustration"
+        behavioral: "Inability to express natural behaviors"
+      created: "2024-02-01"
+
+  sentience:
+    v1.0:
+      definition: "Capacity to have subjective experiences"
+      extends: "core:being@v1.1"
+      indicators:
+        - "nociception"
+        - "cognitive_complexity"
+        - "behavioral_responses"
+      created: "2024-02-01"
+
+  five_freedoms:
+    v1.0:
+      definition: "Framework for assessing animal welfare"
+      components:
+        - "Freedom from hunger and thirst"
+        - "Freedom from discomfort"
+        - "Freedom from pain, injury, disease"
+        - "Freedom to express normal behavior"
+        - "Freedom from fear and distress"
+      created: "2024-02-01"

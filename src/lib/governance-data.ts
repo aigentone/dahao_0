@@ -64,7 +64,7 @@ function parseDiscussion(filePath: string, domain: string): Discussion | null {
     
     // Count participants
     const participantMatches = body.match(/@[\w-]+/g) || [];
-    const uniqueParticipants = [...new Set(participantMatches)];
+    const uniqueParticipants = Array.from(new Set(participantMatches));
     
     // Check for AI participation
     const aiParticipation = body.includes('(AI Agent)');
