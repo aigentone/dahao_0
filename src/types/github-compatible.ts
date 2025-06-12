@@ -87,3 +87,64 @@ export interface ListOptions {
   states?: ('OPEN' | 'CLOSED')[];
   category?: string;
 }
+
+// Term Discussion Types
+export interface TermDefinition {
+  version: string;
+  text: string;
+  ratified_date: string;
+  approval_rate: string;
+  ratification_comment_id: string;
+  author: GitHubUser;
+  extends?: string;
+  specificity?: string;
+}
+
+export interface TermVersionHistory {
+  version: string;
+  text: string;
+  proposed_date: string;
+  ratified_date?: string;
+  status: 'active' | 'superseded' | 'rejected';
+  approval_rate?: string;
+  proposer: GitHubUser;
+  initial_adoption?: boolean;
+}
+
+export interface ProposedTermVersion {
+  version: string;
+  text: string;
+  proposed_date: string;
+  proposer: GitHubUser;
+  status: 'under_discussion' | 'voting' | 'rejected';
+  current_support: string;
+  discussion_deadline?: string;
+  changes_from_current?: string[];
+}
+
+export interface TermDiscussion {
+  id: string;
+  number: number;
+  title: string;
+  status: 'active' | 'closed';
+  category: {
+    id: string;
+    name: string;
+    slug: string;
+    emoji?: string;
+  };
+  current_definition: TermDefinition;
+  version_history: TermVersionHistory[];
+  proposed_versions: ProposedTermVersion[];
+  comments: {
+    totalCount: number;
+    nodes: GitHubDiscussionComment[];
+  };
+  labels: {
+    nodes: GitHubLabel[];
+  };
+  upvoteCount: number;
+  createdAt: string;
+  updatedAt: string;
+  closed: boolean;
+}

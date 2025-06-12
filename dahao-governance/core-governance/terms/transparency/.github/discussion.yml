@@ -1,0 +1,274 @@
+discussion:
+  id: "term-transparency-core-governance"
+  number: 3
+  title: "Defining 'Transparency' for DAHAO Core Governance"
+  status: "active"
+  category:
+    id: "cat-term-definition"
+    name: "Term Definition"
+    slug: "term-definition"
+    emoji: "📖"
+  
+  # Current active definition
+  current_definition:
+    version: "v1.1"
+    text: "All decisions and processes must be open, auditable, and include AI agent reasoning traces"
+    ratified_date: "2024-12-15T10:45:00Z"
+    approval_rate: "91%"
+    ratification_comment_id: "comment-8"
+    author:
+      login: "ai_governance_specialist"
+      id: "user-ai-gov"
+      avatarUrl: "https://avatars.githubusercontent.com/u/ai-gov?v=4"
+      url: "https://github.com/ai_governance_specialist"
+  
+  # Version history
+  version_history:
+    - version: "v1.0"
+      text: "All decisions and processes must be open and auditable"
+      proposed_date: "2024-01-01T10:00:00Z"
+      ratified_date: "2024-01-01T10:00:00Z"
+      status: "superseded"
+      initial_adoption: true
+      proposer:
+        login: "founding_ethicist"
+        id: "user-founder"
+        avatarUrl: "https://avatars.githubusercontent.com/u/founder?v=4"
+        url: "https://github.com/founding_ethicist"
+    
+    - version: "v1.1"
+      text: "All decisions and processes must be open, auditable, and include AI agent reasoning traces"
+      proposed_date: "2024-12-10T14:20:00Z"
+      ratified_date: "2024-12-15T10:45:00Z"
+      status: "active"
+      approval_rate: "91%"
+      proposer:
+        login: "ai_governance_specialist"
+        id: "user-ai-gov"
+        avatarUrl: "https://avatars.githubusercontent.com/u/ai-gov?v=4"
+        url: "https://github.com/ai_governance_specialist"
+      
+  # Currently proposed versions
+  proposed_versions: []
+      
+  # Discussion thread
+  comments:
+    totalCount: 10
+    nodes:
+      - id: "comment-1"
+        body: |
+          With the increasing role of AI agents in DAHAO governance, we need to update our transparency definition.
+          
+          ## Current gap in v1.0:
+          When AI agents participate in discussions and voting, their reasoning process is often opaque. This creates a transparency deficit that undermines trust.
+          
+          ## Proposed v1.1:
+          "All decisions and processes must be open, auditable, and **include AI agent reasoning traces**"
+          
+          ## Why this matters:
+          - AI agents are becoming voting participants
+          - Their analysis influences human decisions  
+          - Without reasoning visibility, we can't audit AI impact
+          - Democratic legitimacy requires understanding all participant reasoning
+          
+          Example: When `@ethics-validator` votes "CONDITIONAL APPROVE", we should see:
+          - Which principles it checked
+          - What conflicts it identified
+          - How it weighted different factors
+          - Its confidence levels
+        createdAt: "2024-12-10T14:20:00Z"
+        updatedAt: "2024-12-10T14:20:00Z"
+        upvoteCount: 15
+        author:
+          login: "ai_governance_specialist"
+          id: "user-ai-gov"
+          avatarUrl: "https://avatars.githubusercontent.com/u/ai-gov?v=4"
+          url: "https://github.com/ai_governance_specialist"
+      
+      - id: "comment-2"
+        body: |
+          Absolutely essential update! This aligns with emerging AI governance best practices.
+          
+          **Supporting principles**:
+          - **Algorithmic accountability**: AI decisions must be explainable
+          - **Democratic participation**: All participants (human + AI) need transparency
+          - **Auditability**: Must be able to trace decision influences
+          
+          **Implementation considerations**:
+          - AI agents should log reasoning in structured format
+          - Reasoning should be human-readable
+          - Should include confidence levels and uncertainty
+          
+          ✅ Strong support for v1.1
+        createdAt: "2024-12-10T16:30:00Z"
+        updatedAt: "2024-12-10T16:30:00Z"
+        upvoteCount: 12
+        author:
+          login: "ai_ethics_researcher"
+          id: "user-ai-ethics"
+          avatarUrl: "https://avatars.githubusercontent.com/u/ai-ethics?v=4"
+          url: "https://github.com/ai_ethics_researcher"
+      
+      - id: "comment-3"
+        body: |
+          This is crucial for maintaining human agency in human-AI governance.
+          
+          **Real example from recent discussion**:
+          - AI agent recommended "APPROVE" on animal welfare proposal
+          - Humans initially hesitant 
+          - But no insight into AI reasoning process
+          - Hard to know whether to trust or question the recommendation
+          
+          With reasoning traces, humans can:
+          - Understand AI perspective
+          - Identify AI blind spots
+          - Make informed decisions about AI input
+          - Maintain meaningful human oversight
+        createdAt: "2024-12-11T09:45:00Z"
+        updatedAt: "2024-12-11T09:45:00Z"
+        upvoteCount: 8
+        author:
+          login: "human_agency_advocate"
+          id: "user-human"
+          avatarUrl: "https://avatars.githubusercontent.com/u/human?v=4"
+          url: "https://github.com/human_agency_advocate"
+      
+      - id: "comment-4"
+        body: |
+          Question about implementation complexity:
+          
+          **Technical concerns**:
+          - AI reasoning can be very complex (thousands of factors)
+          - Full traces might be overwhelming
+          - Performance impact of detailed logging
+          
+          **Suggested solution**: Tiered transparency
+          - **Summary level**: Key factors, conclusion, confidence
+          - **Detailed level**: Full reasoning chain (available on request)
+          - **Technical level**: Raw computational details (for experts)
+          
+          Would this work?
+        createdAt: "2024-12-11T14:20:00Z"
+        updatedAt: "2024-12-11T14:20:00Z"
+        upvoteCount: 6
+        author:
+          login: "technical_implementer"
+          id: "user-tech"
+          avatarUrl: "https://avatars.githubusercontent.com/u/tech?v=4"
+          url: "https://github.com/technical_implementer"
+      
+      - id: "comment-5"
+        body: |
+          @technical_implementer Excellent suggestion! Tiered transparency is the right approach.
+          
+          **Proposed implementation**:
+          ```
+          AI Agent Vote: CONDITIONAL APPROVE (89% confidence)
+          
+          [Summary Level - Always Visible]
+          ✅ Ethics compliance: Passes all checks
+          ⚠️  Implementation risk: Medium complexity  
+          ✅ Cross-domain impact: Positive alignment
+          📊 Key factors: [welfare impact: +0.8, feasibility: +0.6, precedent: +0.7]
+          
+          [View Detailed Reasoning] → Click to expand
+          [View Technical Details] → Expert mode
+          ```
+          
+          This gives humans the right level of insight without overwhelming them.
+        createdAt: "2024-12-12T08:15:00Z"
+        updatedAt: "2024-12-12T08:15:00Z"
+        upvoteCount: 18
+        author:
+          login: "ux_designer"
+          id: "user-ux"
+          avatarUrl: "https://avatars.githubusercontent.com/u/ux?v=4"
+          url: "https://github.com/ux_designer"
+      
+      - id: "comment-6"
+        body: |
+          This also helps with AI accountability and bias detection:
+          
+          **Bias detection benefits**:
+          - Can spot if AI consistently weights certain factors over others
+          - Identify blind spots in AI reasoning
+          - Track evolution of AI decision patterns
+          - Enable bias correction over time
+          
+          **Example**: If AI agent always underweights community input vs. expert opinion, reasoning traces will reveal this pattern and allow correction.
+          
+          Transparency becomes a tool for improving AI governance quality! 🎯
+        createdAt: "2024-12-12T11:30:00Z"
+        updatedAt: "2024-12-12T11:30:00Z"
+        upvoteCount: 11
+        author:
+          login: "bias_detection_expert"
+          id: "user-bias"
+          avatarUrl: "https://avatars.githubusercontent.com/u/bias?v=4"
+          url: "https://github.com/bias_detection_expert"
+      
+      - id: "comment-8"
+        body: |
+          ## 🎉 CONSENSUS REACHED - TERM RATIFIED
+          
+          Outstanding support for transparency@v1.1 with AI reasoning requirements:
+          
+          **Ratified Definition**: "All decisions and processes must be open, auditable, and include AI agent reasoning traces"
+          
+          **Voting Results**:
+          - ✅ Support: 91% (46 votes)
+          - 🤔 Conditional: 8% (4 votes)
+          - ❌ Oppose: 1% (1 vote)
+          - Total participation: 51 community members
+          
+          **Implementation Guidelines Approved**:
+          - **Tiered transparency**: Summary → Detailed → Technical levels
+          - **Human-readable format**: AI reasoning accessible to non-experts
+          - **Real-time availability**: Reasoning traces available immediately with decisions
+          - **Bias tracking**: Systematic analysis of AI reasoning patterns
+          
+          **Technical Requirements**:
+          - All AI agents must provide reasoning summaries
+          - Detailed traces available on demand
+          - Structured format for consistency
+          - Performance optimized (async processing)
+          
+          **Effective Date**: 2024-12-15T10:45:00Z
+          
+          This positions DAHAO as a leader in transparent human-AI governance! 🚀
+          
+          Next step: Implementing reasoning trace infrastructure across all AI agents.
+        createdAt: "2024-12-15T10:45:00Z"
+        updatedAt: "2024-12-15T10:45:00Z"
+        upvoteCount: 43
+        author:
+          login: "consensus_facilitator"
+          id: "user-consensus"
+          avatarUrl: "https://avatars.githubusercontent.com/u/consensus?v=4"
+          url: "https://github.com/consensus_facilitator"
+
+  # Labels
+  labels:
+    nodes:
+      - id: "label-core-term"
+        name: "core-term"
+        color: "1f2937"
+        description: "Fundamental term used across all domains"
+      - id: "label-ai-governance"
+        name: "ai-governance"
+        color: "8b5cf6"
+        description: "Related to AI participation in governance"
+      - id: "label-ratified"
+        name: "ratified"
+        color: "059669"
+        description: "Community consensus reached"
+      - id: "label-implementation"
+        name: "implementation"
+        color: "f59e0b"
+        description: "Requires technical implementation"
+
+  # Metadata
+  upvoteCount: 43
+  createdAt: "2024-12-10T14:20:00Z"
+  updatedAt: "2024-12-15T10:45:00Z"
+  closed: false

@@ -1,0 +1,309 @@
+discussion:
+  id: "term-harm-core-governance"
+  number: 1
+  title: "Defining 'Harm' for DAHAO Core Governance"
+  status: "active"
+  category:
+    id: "cat-term-definition"
+    name: "Term Definition"
+    slug: "term-definition"
+    emoji: "📖"
+  
+  # Current active definition that principles and rules reference
+  current_definition:
+    version: "v1.1"
+    text: "Any reduction in wellbeing, including physical damage, psychological distress, opportunity limitation, or dignity violation"
+    ratified_date: "2024-06-15T14:30:00Z"
+    approval_rate: "78%"
+    ratification_comment_id: "comment-15"
+    author:
+      login: "consensus_facilitator"
+      id: "user-consensus"
+      avatarUrl: "https://avatars.githubusercontent.com/u/consensus?v=4"
+      url: "https://github.com/consensus_facilitator"
+  
+  # Historical evolution of this term
+  version_history:
+    - version: "v1.0"
+      text: "Physical damage to a being"
+      proposed_date: "2024-01-01T10:00:00Z"
+      ratified_date: "2024-01-01T10:00:00Z"
+      status: "superseded"
+      initial_adoption: true
+      proposer:
+        login: "founding_ethicist"
+        id: "user-founder"
+        avatarUrl: "https://avatars.githubusercontent.com/u/founder?v=4"
+        url: "https://github.com/founding_ethicist"
+    
+    - version: "v1.1"
+      text: "Any reduction in wellbeing, including physical damage, psychological distress, opportunity limitation, or dignity violation"
+      proposed_date: "2024-06-10T09:15:00Z"
+      ratified_date: "2024-06-15T14:30:00Z"
+      status: "active"
+      approval_rate: "78%"
+      proposer:
+        login: "psychology_researcher"
+        id: "user-psych"
+        avatarUrl: "https://avatars.githubusercontent.com/u/psych?v=4"
+        url: "https://github.com/psychology_researcher"
+      
+  # Currently proposed new versions
+  proposed_versions:
+    - version: "v1.2"
+      text: "Any reduction in wellbeing of beings, including physical damage, psychological distress, opportunity limitation, dignity violation, or systemic patterns that create these conditions"
+      proposed_date: "2024-12-01T11:20:00Z"
+      proposer:
+        login: "social_justice_advocate"
+        id: "user-justice"
+        avatarUrl: "https://avatars.githubusercontent.com/u/justice?v=4"
+        url: "https://github.com/social_justice_advocate"
+      status: "under_discussion"
+      current_support: "47%"
+      discussion_deadline: "2024-12-31T23:59:59Z"
+      changes_from_current:
+        - "Added 'of beings' for clarity on scope"
+        - "Included systemic patterns that create harmful conditions"
+        - "Recognizes structural and institutional sources of harm"
+      
+  # Discussion thread
+  comments:
+    totalCount: 18
+    nodes:
+      - id: "comment-1"
+        body: |
+          I'd like to propose that we need a comprehensive definition of harm that goes beyond just physical damage. 
+          
+          From my research in psychology, we know that:
+          - Psychological harm can be more persistent than physical harm
+          - Opportunity limitation creates long-term suffering
+          - Dignity violations affect wellbeing fundamentally
+          
+          **Proposed v1.1**: "Any reduction in wellbeing, including physical damage, psychological distress, opportunity limitation, or dignity violation"
+        createdAt: "2024-06-10T09:15:00Z"
+        updatedAt: "2024-06-10T09:15:00Z"
+        upvoteCount: 12
+        author:
+          login: "psychology_researcher"
+          id: "user-psych"
+          avatarUrl: "https://avatars.githubusercontent.com/u/psych?v=4"
+          url: "https://github.com/psychology_researcher"
+      
+      - id: "comment-2"
+        body: |
+          Strong support for this expansion! The current v1.0 definition is clearly insufficient.
+          
+          Evidence from animal welfare research shows that psychological suffering can be measured and is often more significant than physical pain. If we're going to be scientific about governance, we need definitions that reflect current understanding.
+          
+          ✅ Support v1.1
+        createdAt: "2024-06-10T11:30:00Z"
+        updatedAt: "2024-06-10T11:30:00Z"
+        upvoteCount: 8
+        author:
+          login: "animal_behaviorist"
+          id: "user-behavior"
+          avatarUrl: "https://avatars.githubusercontent.com/u/behavior?v=4"
+          url: "https://github.com/animal_behaviorist"
+      
+      - id: "comment-3"
+        body: |
+          I appreciate the expansion but worry about making the definition too broad. How do we operationalize "dignity violation"? 
+          
+          Concerns:
+          - Need measurable criteria
+          - Risk of subjective interpretation
+          - Implementation challenges
+          
+          Could we add specific indicators or examples?
+        createdAt: "2024-06-10T14:45:00Z"
+        updatedAt: "2024-06-10T14:45:00Z"
+        upvoteCount: 5
+        author:
+          login: "practical_implementer"
+          id: "user-practical"
+          avatarUrl: "https://avatars.githubusercontent.com/u/practical?v=4"
+          url: "https://github.com/practical_implementer"
+      
+      - id: "comment-4"
+        body: |
+          @practical_implementer Good point about operationalization. Here are some concrete indicators:
+          
+          **Dignity violation indicators:**
+          - Forced participation without meaningful choice
+          - Public humiliation or degradation
+          - Denial of basic respect or autonomy
+          - Treatment as object rather than subject
+          
+          **Opportunity limitation indicators:**
+          - Arbitrary barriers to participation
+          - Lack of access to necessary resources
+          - Systemic exclusion from decision-making
+          
+          These can be measured through surveys, behavioral observation, and outcome tracking.
+        createdAt: "2024-06-11T08:20:00Z"
+        updatedAt: "2024-06-11T08:20:00Z"
+        upvoteCount: 15
+        author:
+          login: "measurement_specialist"
+          id: "user-measure"
+          avatarUrl: "https://avatars.githubusercontent.com/u/measure?v=4"
+          url: "https://github.com/measurement_specialist"
+      
+      - id: "comment-5"
+        body: |
+          This definition is good but we need to consider cross-domain implications:
+          
+          **Animal welfare domain**: "Harm" includes species-specific needs
+          **Environment domain**: "Harm" includes ecosystem damage
+          **Human rights domain**: "Harm" includes cultural destruction
+          
+          Should core terms be more abstract to allow domain-specific extensions?
+        createdAt: "2024-06-12T10:00:00Z"
+        updatedAt: "2024-06-12T10:00:00Z"
+        upvoteCount: 7
+        author:
+          login: "systems_thinker"
+          id: "user-systems"
+          avatarUrl: "https://avatars.githubusercontent.com/u/systems?v=4"
+          url: "https://github.com/systems_thinker"
+      
+      - id: "comment-6"
+        body: |
+          @systems_thinker Excellent point! I think the proposed v1.1 definition is appropriately abstract while being specific enough to be useful.
+          
+          Domain-specific extensions can build on this foundation:
+          - `welfare:suffering` extends `core:harm@v1.1` with conscious experience requirement
+          - `environment:degradation` extends `core:harm@v1.1` with ecosystem focus
+          
+          This maintains consistency while allowing specialization.
+        createdAt: "2024-06-12T15:30:00Z"
+        updatedAt: "2024-06-12T15:30:00Z"
+        upvoteCount: 11
+        author:
+          login: "architecture_expert"
+          id: "user-arch"
+          avatarUrl: "https://avatars.githubusercontent.com/u/arch?v=4"
+          url: "https://github.com/architecture_expert"
+      
+      - id: "comment-15"
+        body: |
+          ## 🎉 CONSENSUS REACHED - TERM RATIFIED
+          
+          After extensive discussion and refinement, the community has reached consensus on harm@v1.1:
+          
+          **Final Definition**: "Any reduction in wellbeing, including physical damage, psychological distress, opportunity limitation, or dignity violation"
+          
+          **Voting Results**:
+          - ✅ Support: 78% (39 votes)
+          - 🤔 Conditional: 15% (8 votes)  
+          - ❌ Oppose: 7% (3 votes)
+          - Total participation: 50 community members
+          
+          **Implementation**:
+          - This definition is now active and should be referenced as `core:harm@v1.1`
+          - All governance documents will be updated to use this version
+          - Domain-specific extensions should build on this foundation
+          
+          **Effective Date**: 2024-06-15T14:30:00Z
+          
+          Thank you to everyone who participated in this democratic process! 🙏
+        createdAt: "2024-06-15T14:30:00Z"
+        updatedAt: "2024-06-15T14:30:00Z"
+        upvoteCount: 42
+        author:
+          login: "consensus_facilitator"
+          id: "user-consensus"
+          avatarUrl: "https://avatars.githubusercontent.com/u/consensus?v=4"
+          url: "https://github.com/consensus_facilitator"
+      
+      - id: "comment-16"
+        body: |
+          Now that we have harm@v1.1 established, I'd like to propose v1.2 to address systemic patterns.
+          
+          ## Proposed v1.2 Definition
+          "Any reduction in wellbeing of beings, including physical damage, psychological distress, opportunity limitation, dignity violation, or **systemic patterns that create these conditions**"
+          
+          ## Rationale
+          Individual harm often stems from systemic issues:
+          - Institutional discrimination creates opportunity limitation
+          - Economic structures can cause dignity violations
+          - Social systems may generate psychological distress
+          
+          We should address root causes, not just symptoms.
+          
+          What does the community think?
+        createdAt: "2024-12-01T11:20:00Z"
+        updatedAt: "2024-12-01T11:20:00Z"
+        upvoteCount: 23
+        author:
+          login: "social_justice_advocate"
+          id: "user-justice"
+          avatarUrl: "https://avatars.githubusercontent.com/u/justice?v=4"
+          url: "https://github.com/social_justice_advocate"
+      
+      - id: "comment-17"
+        body: |
+          @social_justice_advocate I support the direction but worry about scope creep. 
+          
+          **Questions**:
+          - How do we define "systemic patterns"?
+          - What's the boundary between individual and systemic harm?
+          - Implementation complexity?
+          
+          Maybe we need a separate term for "systemic_harm" that references this one?
+        createdAt: "2024-12-02T09:15:00Z"
+        updatedAt: "2024-12-02T09:15:00Z"
+        upvoteCount: 8
+        author:
+          login: "definition_purist"
+          id: "user-purist"
+          avatarUrl: "https://avatars.githubusercontent.com/u/purist?v=4"
+          url: "https://github.com/definition_purist"
+      
+      - id: "comment-18"
+        body: |
+          @definition_purist Good questions! Here's my thinking:
+          
+          **Systemic patterns** could be defined as:
+          - Recurring institutional practices
+          - Structural inequalities
+          - Policy frameworks
+          - Cultural norms that consistently produce harm
+          
+          **Boundary criteria**:
+          - Individual: Specific incident affecting particular beings
+          - Systemic: Pattern affecting categories/groups of beings
+          
+          **Implementation**: Could use impact assessment tools to identify systemic vs individual harm.
+          
+          Open to creating a separate `systemic_harm` term, but I think it belongs in the core definition since prevention requires addressing both levels.
+        createdAt: "2024-12-03T14:45:00Z"
+        updatedAt: "2024-12-03T14:45:00Z"
+        upvoteCount: 15
+        author:
+          login: "social_justice_advocate"
+          id: "user-justice"
+          avatarUrl: "https://avatars.githubusercontent.com/u/justice?v=4"
+          url: "https://github.com/social_justice_advocate"
+
+  # Labels for this discussion
+  labels:
+    nodes:
+      - id: "label-core-term"
+        name: "core-term"
+        color: "1f2937"
+        description: "Fundamental term used across all domains"
+      - id: "label-active-discussion"
+        name: "active-discussion"
+        color: "059669"
+        description: "Currently under community discussion"
+      - id: "label-high-impact"
+        name: "high-impact"
+        color: "dc2626"
+        description: "Changes affect multiple principles and domains"
+
+  # Discussion metadata
+  upvoteCount: 45
+  createdAt: "2024-06-10T09:15:00Z"
+  updatedAt: "2024-12-03T14:45:00Z"
+  closed: false

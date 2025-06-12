@@ -3419,3 +3419,282 @@ const dataService = process.env.NODE_ENV === 'production' && process.env.USE_GIT
 - ✅ Future GitHub API compatibility
 
 This implementation transforms DAHAO from a static governance documentation system into a living, breathing discussion platform where human participants and AI agents collaborate to evolve governance frameworks through transparent, democratic processes.
+
+---
+
+## 10. Terms-as-Discussions System: Democratic Term Evolution (December 2024)
+
+### 10.1 Revolutionary Insight: Terms Should Be Discussions
+
+A critical realization emerged during implementation: **governance terms should not be static YAML files but living, democratic discussions where definitions evolve through community consensus**.
+
+This transforms how organizations define fundamental concepts:
+- **Before**: Static definitions in YAML files
+- **After**: Dynamic discussions with version history, proposed updates, and community ratification
+
+### 10.2 Terms Tab Integration in Forum Interface
+
+Successfully integrated a **Terms tab** into the existing forum interface, maintaining the tab-based navigation pattern alongside Discussions, Principles, AI Agents, and Analytics.
+
+#### **Forum Tab Structure (Enhanced)**
+```tsx
+<TabsList className="grid grid-cols-5 w-full bg-gray-100/50 p-1 rounded-xl">
+  <TabsTrigger value="discussions">
+    <MessageSquare className="w-4 h-4 mr-2" />
+    Discussions
+  </TabsTrigger>
+  <TabsTrigger value="principles">
+    <Shield className="w-4 h-4 mr-2" />
+    Principles
+  </TabsTrigger>
+  <TabsTrigger value="terms">
+    <FileText className="w-4 h-4 mr-2" />
+    Terms
+  </TabsTrigger>
+  <TabsTrigger value="agents">
+    <Brain className="w-4 h-4 mr-2" />
+    AI Agents
+  </TabsTrigger>
+  <TabsTrigger value="analytics">
+    <BarChart3 className="w-4 h-4 mr-2" />
+    Analytics
+  </TabsTrigger>
+</TabsList>
+```
+
+### 10.3 Terms Discussion Data Structure
+
+#### **Term Discussion YAML Format**
+```yaml
+discussion:
+  id: "term-harm-core-governance"
+  number: 1
+  title: "Defining 'Harm' for DAHAO Core Governance"
+  status: "active"
+  category:
+    id: "cat-term-definition"
+    name: "Term Definition"
+    slug: "term-definition"
+    emoji: "📖"
+  
+  # Current active definition
+  current_definition:
+    version: "v1.1"
+    text: "Any reduction in wellbeing, including physical damage, psychological distress, opportunity limitation, or dignity violation"
+    ratified_date: "2024-06-15T10:30:00Z"
+    approval_rate: "78%"
+    ratification_comment_id: "comment-9"
+    author:
+      login: "consensus_facilitator"
+      url: "https://github.com/consensus_facilitator"
+  
+  # Complete version history
+  version_history:
+    - version: "v1.0"
+      text: "Physical damage to a being"
+      proposed_date: "2024-01-01T09:00:00Z"
+      ratified_date: "2024-01-01T15:00:00Z"
+      status: "superseded"
+      proposer:
+        login: "founding_ethicist"
+        
+    - version: "v1.1"
+      text: "Any reduction in wellbeing, including physical damage, psychological distress, opportunity limitation, or dignity violation"
+      proposed_date: "2024-06-10T14:00:00Z"
+      ratified_date: "2024-06-15T10:30:00Z"
+      status: "active"
+      approval_rate: "78%"
+      proposer:
+        login: "psychology_researcher"
+  
+  # Currently proposed versions
+  proposed_versions:
+    - version: "v1.2"
+      text: "Any reduction in wellbeing of beings, including physical damage, psychological distress, opportunity limitation, dignity violation, or systemic patterns that create these conditions"
+      proposed_date: "2024-12-01T09:00:00Z"
+      proposer:
+        login: "social_justice_advocate"
+      status: "under_discussion"
+      current_support: "47%"
+      changes_from_current:
+        - "Added 'of beings' for clarity on scope"
+        - "Included systemic patterns that create harmful conditions"
+        - "Recognizes structural and institutional sources of harm"
+```
+
+### 10.4 UI Components Implementation
+
+#### **TermsView Component**
+Created a comprehensive terms interface that:
+
+```tsx
+export function TermsView({ organizationId }: TermsViewProps) {
+  const [availableTerms, setAvailableTerms] = useState<TermInfo[]>([]);
+  const [selectedTerm, setSelectedTerm] = useState<TermDiscussion | null>(null);
+  const [viewMode, setViewMode] = useState<'list' | 'detail'>('list');
+
+  // Two main view modes:
+  // 1. LIST MODE: Shows available terms for organization
+  // 2. DETAIL MODE: Shows complete term discussion with version history
+}
+```
+
+**List Mode Features**:
+- Shows all available terms for the selected organization
+- Indicates which terms have active discussions
+- Green dot for terms with democratic discussions
+- Click any term to view its evolution
+
+**Detail Mode Features**:
+- **TermDefinitionCard**: Prominent display of current active definition
+- **Version History**: All previous versions with ratification status
+- **Proposed Updates**: Current proposals under community consideration
+- **Full Discussion Thread**: Complete community discussion using DiscussionView
+- **Back Navigation**: Returns to terms list without page reload
+
+#### **TermDefinitionCard Component**
+```tsx
+export function TermDefinitionCard({ 
+  termName, 
+  domain, 
+  currentDefinition 
+}: TermDefinitionCardProps) {
+  // Prominent display with domain-specific coloring
+  // - Core Governance: Blue theme
+  // - Animal Welfare: Emerald theme  
+  // - Environment: Green theme
+  
+  // Shows:
+  // - Current definition text
+  // - Version number (@v1.1)
+  // - Ratification date and community approval rate
+  // - Original author with GitHub profile link
+  // - "Active Definition" status badge
+}
+```
+
+### 10.5 API Infrastructure
+
+#### **Terms List API**
+```typescript
+// GET /api/terms-list/[domain]
+// Returns available terms for organization domain
+[
+  { "name": "harm", "domain": "core-governance", "hasDiscussion": true },
+  { "name": "wellbeing", "domain": "core-governance", "hasDiscussion": true },
+  { "name": "transparency", "domain": "core-governance", "hasDiscussion": true }
+]
+```
+
+#### **Term Discussion API**
+```typescript
+// GET /api/terms/[domain]/[term]  
+// Returns complete TermDiscussion object with:
+// - Current definition
+// - Version history
+// - Proposed versions
+// - Full discussion thread
+// - GitHub-compatible format
+```
+
+### 10.6 Cross-Domain Term Examples
+
+#### **Core Governance Terms**
+- **harm@v1.1**: "Any reduction in wellbeing, including physical damage, psychological distress, opportunity limitation, or dignity violation"
+- **wellbeing@v1.0**: "Positive state encompassing physical health, mental satisfaction, social connection, and personal fulfillment"
+- **transparency@v1.1**: "Open access to decision-making processes, rationale, and outcomes with clear accountability mechanisms"
+
+#### **Animal Welfare Terms**
+- **suffering@v1.0**: "Negative subjective experience of sentient beings, encompassing physical pain, psychological distress, and behavioral frustration"
+  - **Extends**: `core:harm@v1.1` with consciousness requirement
+  - **Specificity**: "Requires conscious experience and sentience"
+
+### 10.7 Term Evolution Process
+
+#### **Democratic Term Lifecycle**
+1. **Proposal**: Community member proposes new term definition
+2. **Discussion**: Open discussion with scientific evidence and reasoning
+3. **Refinement**: Definition refined based on community feedback
+4. **Voting**: Community votes on proposed definition
+5. **Ratification**: Approved definitions become active (requires >60% support)
+6. **Evolution**: New proposals can update existing definitions
+7. **Version History**: All changes tracked with full audit trail
+
+#### **Cross-Domain Inheritance**
+```yaml
+# Animal welfare terms can extend core terms
+welfare:suffering@v1.0:
+  extends: "core:harm@v1.1"
+  specificity: "Adds consciousness requirement to harm definition"
+  
+# Environment terms can extend both core and animal welfare
+environment:ecosystem_harm@v1.0:
+  extends: "core:harm@v1.1"
+  includes: "welfare:suffering@v1.0"
+  specificity: "Systemic damage to interconnected natural systems"
+```
+
+### 10.8 In-Page Navigation System
+
+**Seamless User Experience**:
+- **No Page Redirects**: Everything happens within forum interface
+- **Preserved Context**: Sidebar selection and organization context maintained
+- **Back Navigation**: "Back to terms list" returns to terms overview
+- **Tab Persistence**: Terms tab remains active throughout navigation
+- **AI Agent Integration**: Per-comment bot assignment available in term discussions
+
+**Navigation Flow**:
+```
+Forum → Select Organization → Terms Tab → Select Term → View Discussion
+  ↑                                                          ↓
+  ←← Back to terms list ←← Back to terms list ←← Back Button ←
+```
+
+### 10.9 Implementation Files
+
+**Core Components**:
+- `src/components/forum/TermsView.tsx` - Main terms interface with list/detail modes
+- `src/components/github-compatible/TermDefinitionCard.tsx` - Current definition display
+- `src/app/forum/page.tsx` - Updated with Terms tab integration
+
+**API Routes**:
+- `src/app/api/terms-list/[domain]/route.ts` - Available terms for organization
+- `src/app/api/terms/[domain]/[term]/route.ts` - Individual term discussion data
+
+**Data Files**:
+- `dahao-governance/core-governance/terms/harm/.github/discussion.yml`
+- `dahao-governance/core-governance/terms/wellbeing/.github/discussion.yml`
+- `dahao-governance/core-governance/terms/transparency/.github/discussion.yml`
+- `dahao-governance/animal-welfare/terms/suffering/.github/discussion.yml`
+
+### 10.10 Key Benefits Achieved
+
+**✅ Democratic Term Evolution**: Terms evolve through community consensus rather than top-down definitions
+
+**✅ Version Transparency**: Complete history of how and why definitions changed over time
+
+**✅ Cross-Domain Consistency**: Terms can extend from other domains while maintaining semantic clarity
+
+**✅ GitHub Integration Ready**: Uses same discussion format as organization/domain discussions
+
+**✅ In-Forum Experience**: No separate term pages - everything integrated into forum tabs
+
+**✅ AI Agent Support**: Per-comment bot assignment available for term discussions
+
+**✅ Approval Tracking**: Community support percentages and ratification status clearly visible
+
+**✅ Scientific Rigor**: Discussions include evidence, reasoning, and peer review processes
+
+### 10.11 Future Enhancements
+
+**Consensus Algorithms**: Implement formal voting mechanisms for term ratification
+
+**Term Dependencies**: Visual mapping of how terms relate and inherit from each other
+
+**Usage Analytics**: Track how terms are referenced across governance documents
+
+**Automated Updates**: Notify when referenced terms are updated or superseded
+
+**Translation Support**: Multi-language term definitions with equivalency mapping
+
+This terms-as-discussions system fundamentally changes how organizations develop their governance vocabulary - from static definitions to living, democratic processes that evolve with the community's understanding and needs.

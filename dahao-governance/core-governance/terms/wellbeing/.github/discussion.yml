@@ -1,0 +1,251 @@
+discussion:
+  id: "term-wellbeing-core-governance"
+  number: 2
+  title: "Defining 'Wellbeing' for DAHAO Core Governance"
+  status: "active"
+  category:
+    id: "cat-term-definition"
+    name: "Term Definition"
+    slug: "term-definition"
+    emoji: "📖"
+  
+  # Current active definition
+  current_definition:
+    version: "v1.1"
+    text: "Holistic state of thriving across physical, mental, social, and environmental dimensions"
+    ratified_date: "2024-07-15T16:20:00Z"
+    approval_rate: "84%"
+    ratification_comment_id: "comment-12"
+    author:
+      login: "holistic_health_expert"
+      id: "user-holistic"
+      avatarUrl: "https://avatars.githubusercontent.com/u/holistic?v=4"
+      url: "https://github.com/holistic_health_expert"
+  
+  # Version history
+  version_history:
+    - version: "v1.0"
+      text: "State of positive functioning"
+      dimensions: ["physical", "mental"]
+      proposed_date: "2024-01-01T10:00:00Z"
+      ratified_date: "2024-01-01T10:00:00Z"
+      status: "superseded"
+      initial_adoption: true
+      proposer:
+        login: "founding_ethicist"
+        id: "user-founder"
+        avatarUrl: "https://avatars.githubusercontent.com/u/founder?v=4"
+        url: "https://github.com/founding_ethicist"
+    
+    - version: "v1.1"
+      text: "Holistic state of thriving across physical, mental, social, and environmental dimensions"
+      proposed_date: "2024-07-10T08:30:00Z"
+      ratified_date: "2024-07-15T16:20:00Z"
+      status: "active"
+      approval_rate: "84%"
+      proposer:
+        login: "holistic_health_expert"
+        id: "user-holistic"
+        avatarUrl: "https://avatars.githubusercontent.com/u/holistic?v=4"
+        url: "https://github.com/holistic_health_expert"
+      
+  # Currently proposed versions
+  proposed_versions: []
+      
+  # Discussion thread
+  comments:
+    totalCount: 14
+    nodes:
+      - id: "comment-1"
+        body: |
+          The current v1.0 definition is too narrow. "Positive functioning" doesn't capture the full scope of what we mean by wellbeing.
+          
+          ## Issues with v1.0:
+          - Only covers physical and mental dimensions
+          - "Functioning" implies mere operation, not thriving
+          - Misses social and environmental factors
+          
+          ## Proposed v1.1:
+          "Holistic state of thriving across physical, mental, social, and environmental dimensions"
+          
+          This better reflects:
+          - **Physical**: Health, vitality, bodily integrity
+          - **Mental**: Emotional balance, cognitive capacity, purpose
+          - **Social**: Relationships, community, belonging
+          - **Environmental**: Healthy surroundings, sustainability
+        createdAt: "2024-07-10T08:30:00Z"
+        updatedAt: "2024-07-10T08:30:00Z"
+        upvoteCount: 18
+        author:
+          login: "holistic_health_expert"
+          id: "user-holistic"
+          avatarUrl: "https://avatars.githubusercontent.com/u/holistic?v=4"
+          url: "https://github.com/holistic_health_expert"
+      
+      - id: "comment-2"
+        body: |
+          Excellent expansion! This aligns with WHO's definition of health and modern wellbeing research.
+          
+          **Supporting evidence**:
+          - Social connections are as important as physical health for longevity
+          - Environmental factors significantly impact both physical and mental wellbeing
+          - "Thriving" captures the positive psychology approach vs. just absence of problems
+          
+          ✅ Strong support for v1.1
+        createdAt: "2024-07-10T11:45:00Z"
+        updatedAt: "2024-07-10T11:45:00Z"
+        upvoteCount: 12
+        author:
+          login: "public_health_researcher"
+          id: "user-health"
+          avatarUrl: "https://avatars.githubusercontent.com/u/health?v=4"
+          url: "https://github.com/public_health_researcher"
+      
+      - id: "comment-3"
+        body: |
+          Love the direction! Quick question about **environmental dimension** - does this include:
+          - Physical environment (air, water, noise, etc.)?
+          - Built environment (housing, workplace design)?
+          - Natural environment access?
+          - Social environment (community, culture)?
+          
+          Want to make sure we're clear on scope.
+        createdAt: "2024-07-11T09:15:00Z"
+        updatedAt: "2024-07-11T09:15:00Z"
+        upvoteCount: 7
+        author:
+          login: "environmental_advocate"
+          id: "user-enviro"
+          avatarUrl: "https://avatars.githubusercontent.com/u/enviro?v=4"
+          url: "https://github.com/environmental_advocate"
+      
+      - id: "comment-4"
+        body: |
+          @environmental_advocate Great clarification request! I'd include:
+          
+          **Environmental dimension encompasses**:
+          - **Physical**: Clean air/water, safe surroundings, appropriate climate
+          - **Built**: Accessible design, natural light, functional spaces
+          - **Natural**: Access to nature, biodiversity, ecosystem health
+          - **Toxic-free**: Freedom from pollutants, harmful substances
+          
+          **Note**: Social environment is covered under "social dimension" to avoid overlap.
+          
+          The key is that our external environment significantly shapes our capacity to thrive.
+        createdAt: "2024-07-11T14:20:00Z"
+        updatedAt: "2024-07-11T14:20:00Z"
+        upvoteCount: 15
+        author:
+          login: "holistic_health_expert"
+          id: "user-holistic"
+          avatarUrl: "https://avatars.githubusercontent.com/u/holistic?v=4"
+          url: "https://github.com/holistic_health_expert"
+      
+      - id: "comment-5"
+        body: |
+          This is important for cross-domain consistency. How does this relate to:
+          
+          - `core:harm@v1.1` - "reduction in wellbeing"
+          - `welfare:suffering` - negative experience
+          - `environment:sustainability` - long-term wellbeing
+          
+          We need these terms to work together coherently.
+        createdAt: "2024-07-12T10:30:00Z"
+        updatedAt: "2024-07-12T10:30:00Z"
+        upvoteCount: 9
+        author:
+          login: "systems_architect"
+          id: "user-systems"
+          avatarUrl: "https://avatars.githubusercontent.com/u/systems?v=4"
+          url: "https://github.com/systems_architect"
+      
+      - id: "comment-6"
+        body: |
+          @systems_architect Perfect question! Here's how they interconnect:
+          
+          **Wellbeing (positive baseline)**:
+          - State we're trying to achieve and maintain
+          - Multi-dimensional thriving
+          
+          **Harm (reduction from baseline)**:
+          - Anything that reduces wellbeing
+          - Can affect any dimension (physical, mental, social, environmental)
+          
+          **Suffering (conscious experience)**:
+          - Subjective negative experience of wellbeing reduction
+          - Extends `harm` with consciousness requirement
+          
+          **Sustainability (temporal dimension)**:
+          - Maintaining/improving wellbeing over time
+          - Inter-generational wellbeing responsibility
+          
+          They form a coherent framework! 🎯
+        createdAt: "2024-07-12T15:45:00Z"
+        updatedAt: "2024-07-12T15:45:00Z"
+        upvoteCount: 22
+        author:
+          login: "conceptual_framework_expert"
+          id: "user-framework"
+          avatarUrl: "https://avatars.githubusercontent.com/u/framework?v=4"
+          url: "https://github.com/conceptual_framework_expert"
+      
+      - id: "comment-12"
+        body: |
+          ## 🎉 CONSENSUS ACHIEVED - TERM RATIFIED
+          
+          The community has reached strong consensus on wellbeing@v1.1:
+          
+          **Ratified Definition**: "Holistic state of thriving across physical, mental, social, and environmental dimensions"
+          
+          **Voting Results**:
+          - ✅ Support: 84% (42 votes)
+          - 🤔 Conditional: 12% (6 votes)
+          - ❌ Oppose: 4% (2 votes)
+          - Total participation: 50 community members
+          
+          **Key Dimensions Clarified**:
+          - **Physical**: Health, vitality, bodily integrity
+          - **Mental**: Emotional balance, cognitive capacity, purpose
+          - **Social**: Relationships, community, belonging  
+          - **Environmental**: Healthy, sustainable surroundings
+          
+          **Integration Notes**:
+          - Forms positive baseline for `core:harm@v1.1` (wellbeing reduction)
+          - Supports domain-specific extensions
+          - Aligns with sustainability and cross-generational responsibility
+          
+          **Effective Date**: 2024-07-15T16:20:00Z
+          
+          All governance documents will reference `core:wellbeing@v1.1` going forward.
+          
+          Excellent collaborative work, everyone! 🌟
+        createdAt: "2024-07-15T16:20:00Z"
+        updatedAt: "2024-07-15T16:20:00Z"
+        upvoteCount: 38
+        author:
+          login: "consensus_facilitator"
+          id: "user-consensus"
+          avatarUrl: "https://avatars.githubusercontent.com/u/consensus?v=4"
+          url: "https://github.com/consensus_facilitator"
+
+  # Labels
+  labels:
+    nodes:
+      - id: "label-core-term"
+        name: "core-term"
+        color: "1f2937"
+        description: "Fundamental term used across all domains"
+      - id: "label-ratified"
+        name: "ratified"
+        color: "059669"
+        description: "Community consensus reached"
+      - id: "label-framework"
+        name: "framework"
+        color: "7c3aed"
+        description: "Foundational concept for other terms"
+
+  # Metadata
+  upvoteCount: 38
+  createdAt: "2024-07-10T08:30:00Z"
+  updatedAt: "2024-07-15T16:20:00Z"
+  closed: false
