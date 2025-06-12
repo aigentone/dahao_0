@@ -4,20 +4,24 @@ import { useState, useEffect } from 'react';
 import { StatsBar } from '@/components/forum/StatsBar';
 import { OrganizationCards } from '@/components/forum/OrganizationCards';
 import { OrganizationHeader } from '@/components/forum/OrganizationHeader';
-import { FeaturedDiscussion } from '@/components/forum/FeaturedDiscussion';
-import { RecentDiscussions } from '@/components/forum/RecentDiscussions';
+import { FeaturedDiscussion } from '@/components/github-compatible/FeaturedDiscussion';
+import { DiscussionList } from '@/components/github-compatible/DiscussionList';
+import { DiscussionView } from '@/components/github-compatible/DiscussionView';
 import { PrinciplesViewWithInheritance } from '@/components/forum/PrinciplesViewWithInheritance';
 import { InheritanceTree } from '@/components/forum/InheritanceTree';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Button } from '@/components/ui/button';
-import { Search, Filter, MessageSquare, Shield, Brain, BarChart3, Sparkles } from 'lucide-react';
+import { Search, Filter, MessageSquare, Shield, Brain, BarChart3, Sparkles, ArrowLeft } from 'lucide-react';
 import { GovernanceData, GovernanceOrganization } from '@/types/governance';
+import { GitHubDiscussion } from '@/types/github-compatible';
 
 export default function ForumPage() {
   const [governanceData, setGovernanceData] = useState<GovernanceData | null>(null);
   const [loading, setLoading] = useState(true);
   const [selectedOrg, setSelectedOrg] = useState<string | null>(null);
-  const [selectedDiscussion, setSelectedDiscussion] = useState<any | null>(null);
+  const [selectedDiscussion, setSelectedDiscussion] = useState<GitHubDiscussion | null>(null);
+  const [viewMode, setViewMode] = useState<'list' | 'detail'>('list');
+  const [orgDiscussions, setOrgDiscussions] = useState<GitHubDiscussion[]>([]);
 
   useEffect(() => {
     fetchGovernanceData();
@@ -32,7 +36,7 @@ export default function ForumPage() {
         setGovernanceData(data);
         // Auto-select animal welfare by default to show the featured discussion
         if (data.organizations.length > 0) {
-          setSelectedOrg('animal-welfare');
+          handleSelectOrg('animal-welfare');
         }
       } else {
         console.error('Failed to fetch governance data');
@@ -43,8 +47,35 @@ export default function ForumPage() {
     setLoading(false);
   };
 
-  const handleSelectOrg = (orgId: string) => {
+  const handleSelectOrg = async (orgId: string) => {
     setSelectedOrg(orgId);
+    setSelectedDiscussion(null);
+    setViewMode('list');
+    
+    // Fetch GitHub discussions for this organization via API
+    try {
+      const response = await fetch(`/api/discussions/${orgId}`);
+      if (response.ok) {
+        const discussions = await response.json();
+        setOrgDiscussions(discussions.nodes);
+      } else {
+        console.error('Failed to fetch organization discussions');
+        setOrgDiscussions([]);
+      }
+    } catch (error) {
+      console.error('Failed to fetch organization discussions:', error);
+      setOrgDiscussions([]);
+    }
+  };
+
+  const handleDiscussionSelect = (discussion: GitHubDiscussion) => {
+    setSelectedDiscussion(discussion);
+    setViewMode('detail');
+  };
+
+  const handleBackToList = () => {
+    setSelectedDiscussion(null);
+    setViewMode('list');
   };
 
   const getCurrentOrganization = (): GovernanceOrganization | null => {
@@ -163,37 +194,44 @@ export default function ForumPage() {
 
                   {/* Discussions Tab */}
                   <TabsContent value="discussions" className="space-y-4">
-                    {/* Featured Discussion or Selected Discussion */}
-                    {selectedDiscussion ? (
-                      <FeaturedDiscussion 
-                        discussion={selectedDiscussion}
-                        onBack={() => setSelectedDiscussion(null)}
-                        isSelected={true}
-                      />
+                    {viewMode === 'detail' && selectedDiscussion ? (
+                      /* Detail View - Show full discussion */
+                      <div className="space-y-4">
+                        <button
+                          onClick={handleBackToList}
+                          className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 mb-4"
+                        >
+                          <ArrowLeft className="w-4 h-4" />
+                          Back to discussions
+                        </button>
+                        <DiscussionView discussion={selectedDiscussion} />
+                      </div>
                     ) : (
-                      <FeaturedDiscussion 
-                        discussion={currentOrg.discussions.find(d => 
-                          d.status.toLowerCase().includes('active') ||
-                          d.status.toLowerCase().includes('discussion') ||
-                          d.status.toLowerCase().includes('voting')
-                        ) || currentOrg.discussions[0]}
-                        onDiscussionSelect={setSelectedDiscussion}
-                      />
-                    )}
+                      /* List View - Show featured + list */
+                      <>
+                        <FeaturedDiscussion 
+                          discussion={orgDiscussions.find(d => 
+                            !d.closed && d.category.slug === 'governance-proposals'
+                          ) || orgDiscussions[0] || null}
+                          onDiscussionSelect={handleDiscussionSelect}
+                        />
 
-                    {/* Other Discussions - only show when no discussion selected */}
-                    {!selectedDiscussion && (
-                      <RecentDiscussions 
-                        discussions={currentOrg.discussions.filter((d) => 
-                          // Exclude the featured discussion (first active/voting discussion or first discussion)
-                          d !== (currentOrg.discussions.find(disc => 
-                            disc.status.toLowerCase().includes('active') ||
-                            disc.status.toLowerCase().includes('discussion') ||
-                            disc.status.toLowerCase().includes('voting')
-                          ) || currentOrg.discussions[0])
+                        {/* Other Discussions */}
+                        {orgDiscussions.length > 1 && (
+                          <div className="space-y-4">
+                            <h3 className="text-lg font-semibold text-gray-900">Other Discussions</h3>
+                            <DiscussionList 
+                              discussions={orgDiscussions.filter((d) => 
+                                // Exclude the featured discussion
+                                d !== (orgDiscussions.find(disc => 
+                                  !disc.closed && disc.category.slug === 'governance-proposals'
+                                ) || orgDiscussions[0])
+                              )}
+                              onDiscussionSelect={handleDiscussionSelect}
+                            />
+                          </div>
                         )}
-                        onDiscussionSelect={setSelectedDiscussion}
-                      />
+                      </>
                     )}
                   </TabsContent>
 

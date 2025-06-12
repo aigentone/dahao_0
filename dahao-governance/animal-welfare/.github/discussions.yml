@@ -1,0 +1,229 @@
+discussions:
+  - id: "D_animal_welfare_1"
+    number: 1
+    title: "Turkey Municipal Veterinary Care System for Street Animals"
+    body: |
+      ## Summary
+      Proposal for a comprehensive blockchain-verified municipal veterinary care system for street animals in Turkey. The system integrates with existing municipal infrastructure to provide transparent, funded healthcare for street animals through verified veterinary providers with blockchain-tracked treatment records.
+
+      ## Proposed System Components
+      1. **Municipal Veterinary Registration** - Authorized provider network with blockchain verification
+      2. **Blockchain Treatment Tracking** - On-chain timestamps with off-chain medical data
+      3. **Transparent Donation Mechanism** - Direct municipal funding with public dashboard
+      4. **Medical Data Sharing** - Anonymized research access with privacy protection
+
+      ## Implementation Phases
+      - **Phase 1**: 3-municipality pilot (Ankara, Istanbul, Izmir) - 6 months
+      - **Phase 2**: Regional expansion to 15 municipalities - 12 months
+      - **Phase 3**: National implementation across Turkey - 24 months
+
+      ## Alignment with Five Freedoms
+      1. Freedom from Hunger/Thirst - Emergency feeding protocols
+      2. Freedom from Discomfort - Shelter improvements tracking
+      3. Freedom from Pain/Disease - Medical intervention focus
+      4. Freedom from Normal Behavior - Behavioral assessment integration
+      5. Freedom from Fear/Distress - Stress-reduction protocols
+    createdAt: "2024-10-15T10:00:00Z"
+    updatedAt: "2024-11-09T15:30:00Z"
+    closed: false
+    author:
+      login: "municipal_integration_working_group"
+      id: "MDQ6VXNlcjA1"
+      avatarUrl: "https://avatars.githubusercontent.com/u/1001?v=4"
+      url: "https://github.com/municipal_integration_working_group"
+      name: "Municipal Integration Working Group"
+    category:
+      id: "DIC_animal_welfare_1"
+      name: "Governance Proposals"
+      slug: "governance-proposals"
+      emoji: "🏛️"
+    labels:
+      nodes:
+        - id: "L_emergency_care"
+          name: "emergency-care-protocol"
+          color: "ff6b6b"
+          description: "Emergency care protocol discussions"
+        - id: "L_blockchain"
+          name: "blockchain"
+          color: "4ecdc4"
+          description: "Blockchain implementation"
+        - id: "L_municipal"
+          name: "municipal-integration"
+          color: "45b7d1"
+          description: "Municipal government integration"
+    comments:
+      totalCount: 7
+      nodes:
+        - id: "DC_animal_welfare_1_1"
+          body: |
+            This addresses critical gaps in coordinated street animal care. Blockchain verification would eliminate payment delays we face with municipal reimbursements. Need extensive technical training though.
+          createdAt: "2024-10-16T09:00:00Z"
+          updatedAt: "2024-10-16T09:00:00Z"
+          author:
+            login: "ayse_demir_ankara_vet"
+            id: "MDQ6VXNlcjA2"
+            avatarUrl: "https://avatars.githubusercontent.com/u/1002?v=4"
+            url: "https://github.com/ayse_demir_ankara_vet"
+            name: "Dr. Ayşe Demir"
+          upvoteCount: 5
+        - id: "DC_animal_welfare_1_2"
+          body: |
+            Finally, transparency! Current municipal processes are opaque. Citizens never know if tax money actually helps animals. This could revolutionize animal welfare funding.
+          createdAt: "2024-10-17T11:30:00Z"
+          updatedAt: "2024-10-17T11:30:00Z"
+          author:
+            login: "mehmet_animal_rights"
+            id: "MDQ6VXNlcjA3"
+            avatarUrl: "https://avatars.githubusercontent.com/u/1003?v=4"
+            url: "https://github.com/mehmet_animal_rights"
+            name: "Mehmet Özkan"
+          upvoteCount: 8
+        - id: "DC_animal_welfare_1_3"
+          body: |
+            Medical data sharing component excellent for research and population health monitoring. Could integrate with university research programs. Privacy protections adequate.
+          createdAt: "2024-10-18T14:15:00Z"
+          updatedAt: "2024-10-18T14:15:00Z"
+          author:
+            login: "zeynep_vet_faculty"
+            id: "MDQ6VXNlcjA4"
+            avatarUrl: "https://avatars.githubusercontent.com/u/1004?v=4"
+            url: "https://github.com/zeynep_vet_faculty"
+            name: "Prof. Dr. Zeynep Yılmaz"
+          upvoteCount: 6
+        - id: "DC_animal_welfare_1_4"
+          body: |
+            **AI Analysis - Municipal Efficiency**
+            
+            Efficiency analysis: 35% reduction in processing time estimated. Initial investment high but long-term savings significant. Moderate technical risk, low operational risk. Recommend phased rollout with extensive training.
+          createdAt: "2024-10-19T08:45:00Z"
+          updatedAt: "2024-10-19T08:45:00Z"
+          author:
+            login: "municipal-efficiency-agent"
+            id: "AI_agent_001"
+            avatarUrl: "https://avatars.githubusercontent.com/u/2001?v=4"
+            url: "https://github.com/municipal-efficiency-agent"
+            name: "Municipal Efficiency AI Agent"
+          upvoteCount: 4
+        - id: "DC_animal_welfare_1_5"
+          body: |
+            **AI Analysis - Animal Welfare Impact**
+            
+            Welfare impact assessment: Improved treatment consistency, reduced bureaucratic delays, enhanced follow-up tracking. Implementation score: 8.2/10. Excellent alignment with Five Freedoms framework.
+          createdAt: "2024-10-19T09:15:00Z"
+          updatedAt: "2024-10-19T09:15:00Z"
+          author:
+            login: "animal-welfare-impact-agent"
+            id: "AI_agent_002"
+            avatarUrl: "https://avatars.githubusercontent.com/u/2002?v=4"
+            url: "https://github.com/animal-welfare-impact-agent"
+            name: "Animal Welfare Impact AI Agent"
+          upvoteCount: 7
+    upvoteCount: 23
+
+  - id: "D_animal_welfare_2"
+    number: 2
+    title: "Outdoor Access Requirement for Farm Animals"
+    body: |
+      ## Summary
+      Proposal to establish outdoor access as a mandatory requirement under the "freedom to express normal behavior" principle.
+
+      ## Proposed Requirements
+      - Minimum daily outdoor access: 6 hours for social species
+      - Weather-appropriate shelter available in outdoor areas
+      - Pasture rotation to prevent overgrazing
+      - Species-specific outdoor environment design
+
+      ## Five Freedoms Analysis
+
+      ### Freedom to Express Normal Behavior ✅
+      Outdoor access directly supports natural behaviors:
+      - Foraging and exploration
+      - Social interactions in natural setting
+      - Thermoregulation behaviors
+      - Exercise and locomotion
+
+      ### Freedom from Discomfort 🤔
+      Requires careful implementation:
+      - Weather protection necessary
+      - Predator protection measures
+      - Terrain suitable for species
+
+      ## Current Voting Status
+      - ✅ 75% approval
+      - 🤔 Pending practical implementation guidelines
+    createdAt: "2024-12-12T10:00:00Z"
+    updatedAt: "2024-12-15T16:00:00Z"
+    closed: false
+    author:
+      login: "farm_welfare_specialist"
+      id: "MDQ6VXNlcjA5"
+      avatarUrl: "https://avatars.githubusercontent.com/u/1005?v=4"
+      url: "https://github.com/farm_welfare_specialist"
+      name: "Dr. Sarah Mitchell"
+    category:
+      id: "DIC_animal_welfare_2"
+      name: "Policy Proposals"
+      slug: "policy-proposals"
+      emoji: "📋"
+    labels:
+      nodes:
+        - id: "L_five_freedoms"
+          name: "five-freedoms"
+          color: "96ceb4"
+          description: "Related to Five Freedoms framework"
+        - id: "L_farm_animals"
+          name: "farm-animals"
+          color: "feca57"
+          description: "Farm animal welfare"
+        - id: "L_voting"
+          name: "community-review"
+          color: "a55eea"
+          description: "Community voting in progress"
+    comments:
+      totalCount: 4
+      nodes:
+        - id: "DC_animal_welfare_2_1"
+          body: |
+            Research shows 73% improvement in behavioral repertoire expression with outdoor access versus indoor-only systems.
+          createdAt: "2024-12-13T14:00:00Z"
+          updatedAt: "2024-12-13T14:00:00Z"
+          author:
+            login: "farm_welfare_specialist"
+            id: "MDQ6VXNlcjA5"
+            avatarUrl: "https://avatars.githubusercontent.com/u/1005?v=4"
+            url: "https://github.com/farm_welfare_specialist"
+            name: "Dr. Sarah Mitchell"
+          upvoteCount: 12
+        - id: "DC_animal_welfare_2_2"
+          body: |
+            Implementation concerns:
+            - Seasonal weather limitations
+            - Predator protection costs
+            - Land availability constraints
+            - Regulatory compliance complexity
+          createdAt: "2024-12-14T10:30:00Z"
+          updatedAt: "2024-12-14T10:30:00Z"
+          author:
+            login: "practical_farmer"
+            id: "MDQ6VXNlcjEw"
+            avatarUrl: "https://avatars.githubusercontent.com/u/1006?v=4"
+            url: "https://github.com/practical_farmer"
+            name: "John Anderson"
+          upvoteCount: 6
+        - id: "DC_animal_welfare_2_3"
+          body: |
+            **AI Analysis - Animal Behavior Assessment**
+            
+            Cross-species analysis confirms outdoor access benefits across all farm animals studied.
+            Risk assessment: Weather-related welfare risks can be mitigated with proper shelter design.
+            Economic impact: Initial infrastructure costs offset by reduced veterinary expenses over 3-year period.
+          createdAt: "2024-12-14T15:45:00Z"
+          updatedAt: "2024-12-14T15:45:00Z"
+          author:
+            login: "animal-behavior-agent"
+            id: "AI_agent_003"
+            avatarUrl: "https://avatars.githubusercontent.com/u/2003?v=4"
+            url: "https://github.com/animal-behavior-agent"
+            name: "Animal Behavior AI Agent"
+          upvoteCount: 9
+    upvoteCount: 18

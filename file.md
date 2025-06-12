@@ -1,249 +1,330 @@
-# GOAL: Create Term Dictionary YML Files and Update Ethics to Use Terms
+# Enhancement Goal: GitHub-Compatible Term & Principle Discussions/Issues
 
-## STEP 1: Create Term Dictionary Files
+## Overview
+Build term and principle-level discussions/issues that exactly mirror GitHub's structure and UI, using mock data that matches GitHub's API response format. This ensures seamless migration to real GitHub API later.
 
-### CREATE: dahao-governance/core-governance/terms/v1.0/fundamental.yml
-```yaml
-version: "1.0"
-namespace: "core"
-terms:
-  harm:
-    v1.0:
-      definition: "Physical damage to a being"
-      created: "2024-01-01"
-    v1.1:
-      definition: "Any reduction in wellbeing, including physical damage, psychological distress, opportunity limitation, or dignity violation"
-      created: "2024-06-15"
-      changes:
-        - "Expanded beyond physical to include psychological harm"
-        - "Added opportunity and dignity aspects"
+## Design Principle
+**"Build once, swap data source"** - Every component, type, and API response should exactly match GitHub's structure.
 
-  being:
-    v1.0:
-      definition: "Any entity capable of experience"
-      created: "2024-01-01"
-    v1.1:
-      definition: "Any entity capable of subjective experience"
-      created: "2024-03-10"
-    v2.0:
-      definition: "Any entity with interests that can be affected"
-      created: "2024-09-20"
-      changes:
-        - "Expanded to include future AIs and collective entities"
+## 1. GitHub-Exact Type Definitions
 
-  wellbeing:
-    v1.0:
-      definition: "State of positive functioning"
-      dimensions: ["physical", "mental"]
-      created: "2024-01-01"
-    v1.1:
-      definition: "Holistic state of thriving"
-      dimensions: ["physical", "mental", "social", "environmental"]
-      created: "2024-07-15"
-CREATE: dahao-governance/core-governance/terms/v1.0/governance.yml
-yamlversion: "1.0"
-namespace: "core"
-terms:
-  transparency:
-    v1.0:
-      definition: "All decisions and processes must be open and auditable"
-      created: "2024-01-01"
-    v1.1:
-      definition: "All decisions and processes must be open, auditable, and include AI agent reasoning traces"
-      created: "2024-12-15"
+```typescript
+// types/github-compatible.ts
+// These types match GitHub's GraphQL API exactly
 
-  equality:
-    v1.0:
-      definition: "All humans have equal fundamental rights"
-      created: "2024-01-01"
-    v1.1:
-      definition: "All humans have equal fundamental rights regardless of background"
-      created: "2024-06-15"
+interface GitHubUser {
+  login: string;
+  id: string;
+  avatarUrl: string;
+  url: string;
+}
 
-  sustainability:
-    v1.0:
-      definition: "Consider long-term impact on community and environment"
-      created: "2024-01-01"
-    v1.1:
-      definition: "Actively improve rather than just maintain conditions for future generations"
-      created: "2024-08-20"
-CREATE: dahao-governance/animal-welfare/terms/v1.0/welfare-core.yml
-yamlversion: "1.0"
-namespace: "welfare"
-terms:
-  suffering:
-    v1.0:
-      definition: "Negative subjective experience of sentient beings"
-      extends: "core:harm@v1.1"
-      specificity: "Conscious experience requirement"
-      types:
-        physical: "Pain, discomfort, illness"
-        psychological: "Fear, distress, frustration"
-        behavioral: "Inability to express natural behaviors"
-      created: "2024-02-01"
-
-  sentience:
-    v1.0:
-      definition: "Capacity to have subjective experiences"
-      extends: "core:being@v1.1"
-      indicators:
-        - "nociception"
-        - "cognitive_complexity"
-        - "behavioral_responses"
-      created: "2024-02-01"
-
-  five_freedoms:
-    v1.0:
-      definition: "Framework for assessing animal welfare"
-      components:
-        - "Freedom from hunger and thirst"
-        - "Freedom from discomfort"
-        - "Freedom from pain, injury, disease"
-        - "Freedom to express normal behavior"
-        - "Freedom from fear and distress"
-      created: "2024-02-01"
-CREATE: dahao-governance/environment/terms/v1.0/ecosystem-specific.yml
-yamlversion: "1.0"
-namespace: "environment"
-terms:
-  ecosystem_health:
-    v1.2:
-      definition: "Integrated wellbeing of all beings in a system"
-      uses_terms:
-        - "core:wellbeing@v1.1"
-        - "core:being@v2.0"
-      aspects:
-        - "non-sentient entities"
-        - "emergent properties"
-        - "temporal sustainability"
-      created: "2024-03-15"
-
-  sustainability_enhanced:
-    v1.2:
-      definition: "Beyond maintaining to actively improving environmental conditions"
-      extends: "core:sustainability@v1.1"
-      focus: "regenerative approach"
-      created: "2024-03-15"
-STEP 2: Update Ethics YML Files to Use Terms
-UPDATE: dahao-governance/core-governance/ethics/v1.1/harm-prevention.yml
-Add after description:
-yamluses_terms:
-  - "core:harm@v1.1"
-  - "core:being@v2.0"
-  - "core:wellbeing@v1.1"
-
-# Update description to:
-description: "Actively prevent {core:harm@v1.1} to all {core:being@v2.0} with proactive measures"
-
-# Update harm_categories descriptions:
-harm_categories:
-  physical:
-    description: "Direct physical {core:harm@v1.1} to {core:being@v2.0}"
-UPDATE: dahao-governance/animal-welfare/ethics/v1.0/five-freedoms.yml
-Add after description:
-yamluses_terms:
-  - "welfare:five_freedoms@v1.0"
-  - "welfare:suffering@v1.0"
-  - "core:wellbeing@v1.1"
-
-# Update description to:
-description: "Implementation of {welfare:five_freedoms@v1.0} framework for all animal-related decisions"
-
-# Update freedom descriptions:
-freedom_from_hunger:
-  description: "Freedom from hunger and thirst - ensuring {core:wellbeing@v1.1}"
-STEP 3: Update Type System
-UPDATE: types/governance.ts
-Add to GovernancePrinciple interface:
-typescript// Term-related fields
-uses_terms?: string[]; // Array of term references like "core:harm@v1.1"
-term_definitions?: Record<string, any>; // Resolved term definitions
-Add new interfaces:
-typescriptexport interface Term {
-  namespace: string;
+interface GitHubLabel {
+  id: string;
   name: string;
-  version: string;
-  definition: string;
-  extends?: string;
-  created: string;
-  changes?: string[];
-  dimensions?: string[];
-  types?: Record<string, string>;
-  [key: string]: any;
+  color: string;
+  description?: string;
 }
 
-export interface TermDictionary {
-  version: string;
-  namespace: string;
-  terms: Record<string, Record<string, Term>>;
-}
-STEP 4: Update API to Load Terms
-UPDATE: app/api/governance/route.ts
-Add term loading:
-typescriptasync function loadTermsForDomain(domain: string): Promise<TermDictionary | null> {
-  const termsPath = path.join(process.cwd(), 'dahao-governance', domain, 'terms');
-
-  if (!fs.existsSync(termsPath)) {
-    return null;
-  }
-
-  // Load all term files
-  const termFiles = fs.readdirSync(termsPath, { recursive: true })
-    .filter(file => file.endsWith('.yml'));
-
-  const terms: TermDictionary = {
-    version: "1.0",
-    namespace: domain,
-    terms: {}
+interface GitHubDiscussion {
+  id: string;
+  number: number;
+  title: string;
+  body: string;
+  createdAt: string;
+  updatedAt: string;
+  closed: boolean;
+  closedAt?: string;
+  author: GitHubUser;
+  category: {
+    id: string;
+    name: string;
+    slug: string;
+    emoji?: string;
   };
-
-  for (const file of termFiles) {
-    const content = fs.readFileSync(path.join(termsPath, file), 'utf8');
-    const termData = yaml.load(content) as TermDictionary;
-
-    // Merge terms
-    Object.assign(terms.terms, termData.terms);
-  }
-
-  return terms;
+  labels: {
+    nodes: GitHubLabel[];
+  };
+  comments: {
+    totalCount: number;
+    nodes: GitHubDiscussionComment[];
+  };
+  upvoteCount: number;
+  answerChosenAt?: string;
+  answer?: GitHubDiscussionComment;
 }
-STEP 5: Create Dynamic Terms API
-CREATE: app/api/terms/route.ts
-typescriptimport { NextResponse } from 'next/server';
-import { loadGovernanceData } from '@/lib/governance-loader';
 
-export async function GET() {
-  try {
-    const data = await loadGovernanceData();
-    const allTerms: Record<string, any> = {};
+interface GitHubIssue {
+  id: string;
+  number: number;
+  title: string;
+  body: string;
+  state: 'OPEN' | 'CLOSED';
+  createdAt: string;
+  updatedAt: string;
+  closedAt?: string;
+  author: GitHubUser;
+  assignees: {
+    nodes: GitHubUser[];
+  };
+  labels: {
+    nodes: GitHubLabel[];
+  };
+  milestone?: GitHubMilestone;
+  comments: {
+    totalCount: number;
+    nodes: GitHubIssueComment[];
+  };
+}
+2. Mock Data Structure (GitHub-Compatible)
+yaml# dahao-governance/core-governance/terms/v1.0/harm/.github/discussions.yml
+# This structure exactly matches GitHub's API response
+discussions:
+  - id: "D_kwDOAE5jvM4AQz5K"
+    number: 1
+    title: "Expanding 'harm' definition to include systemic harm"
+    body: |
+      ## Current Gap
+      Current definition of harm@v1.1 covers individual harm well...
+    createdAt: "2024-11-20T10:00:00Z"
+    updatedAt: "2024-11-21T14:30:00Z"
+    closed: false
+    author:
+      login: "social_justice_advocate"
+      id: "MDQ6VXNlcjE="
+      avatarUrl: "https://avatars.githubusercontent.com/u/1?v=4"
+      url: "https://github.com/social_justice_advocate"
+    category:
+      id: "DIC_kwDOAE5jvM4B-J8F"
+      name: "Ideas"
+      slug: "ideas"
+      emoji: "💡"
+    labels:
+      nodes:
+        - id: "MDU6TGFiZWwx"
+          name: "enhancement"
+          color: "a2eeef"
+          description: "New feature or request"
+    comments:
+      totalCount: 2
+      nodes:
+        - id: "DC_kwDOAE5jvM4AQ0A1"
+          body: "Strong support. Aligns with modern understanding..."
+          createdAt: "2024-11-20T11:00:00Z"
+          author:
+            login: "ethics_professor"
+            # ... full user object
+    upvoteCount: 15
+3. API Routes (GitHub-Compatible Responses)
+typescript// app/api/github-mock/[owner]/[repo]/discussions/route.ts
+export async function GET(request: Request) {
+  const { searchParams } = new URL(request.url);
+  const first = parseInt(searchParams.get('first') || '10');
+  const after = searchParams.get('after');
 
-    // Load terms from each organization
-    for (const org of data.organizations) {
-      const terms = await loadTermsForDomain(org.id);
-      if (terms) {
-        allTerms[org.id] = terms;
+  // Return GitHub GraphQL-style response
+  return NextResponse.json({
+    data: {
+      repository: {
+        discussions: {
+          totalCount: 42,
+          pageInfo: {
+            hasNextPage: true,
+            endCursor: "Y3Vyc29yOnYyOpK5MjAyNC0xMS0yMVQ..."
+          },
+          nodes: discussions, // From YAML, formatted as GitHub objects
+        }
       }
     }
+  });
+}
+4. UI Components (GitHub-Style)
+tsx// components/github-compatible/DiscussionList.tsx
+export function DiscussionList({ discussions }: { discussions: GitHubDiscussion[] }) {
+  return (
+    <div className="border rounded-lg">
+      {discussions.map((discussion) => (
+        <div key={discussion.id} className="p-4 border-b last:border-b-0 hover:bg-gray-50">
+          <div className="flex items-start gap-3">
+            {/* GitHub-style open/closed indicator */}
+            <div className={`mt-1 ${discussion.closed ? 'text-purple-600' : 'text-green-600'}`}>
+              {discussion.closed ? <CheckCircle /> : <Circle />}
+            </div>
 
-    return NextResponse.json(allTerms);
-  } catch (error) {
-    console.error('Error loading terms:', error);
-    return NextResponse.json({ error: 'Failed to load terms' }, { status: 500 });
+            <div className="flex-1 min-w-0">
+              <div className="flex items-center gap-2 flex-wrap">
+                <Link
+                  href={`/forum/core-governance/terms/harm/discussions/${discussion.number}`}
+                  className="text-base font-semibold hover:text-blue-600"
+                >
+                  {discussion.title}
+                </Link>
+
+                {/* GitHub-style labels */}
+                {discussion.labels.nodes.map(label => (
+                  <span
+                    key={label.id}
+                    className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium"
+                    style={{
+                      backgroundColor: `#${label.color}20`,
+                      color: `#${label.color}`,
+                      border: `1px solid #${label.color}40`
+                    }}
+                  >
+                    {label.name}
+                  </span>
+                ))}
+              </div>
+
+              {/* GitHub-style metadata */}
+              <div className="mt-1 text-sm text-gray-600">
+                {discussion.category.emoji} {discussion.category.name} ·
+                opened {formatDistanceToNow(new Date(discussion.createdAt))} ago by
+                <Link href={discussion.author.url} className="font-medium">
+                  {discussion.author.login}
+                </Link>
+                {discussion.comments.totalCount > 0 && (
+                  <> · {discussion.comments.totalCount} comments</>
+                )}
+              </div>
+            </div>
+
+            {/* GitHub-style comment count */}
+            {discussion.comments.totalCount > 0 && (
+              <Link
+                href={`/forum/core-governance/terms/harm/discussions/${discussion.number}`}
+                className="flex items-center gap-1 text-sm text-gray-600 hover:text-blue-600"
+              >
+                <MessageSquare className="w-4 h-4" />
+                {discussion.comments.totalCount}
+              </Link>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+5. Routes (GitHub-Style URLs)
+# GitHub-style routes
+/forum/[domain]/terms/[term]/discussions              # List discussions
+/forum/[domain]/terms/[term]/discussions/[number]     # Single discussion
+/forum/[domain]/terms/[term]/issues                   # List issues
+/forum/[domain]/terms/[term]/issues/[number]          # Single issue
+
+# Match GitHub's tab structure
+/forum/[domain]/terms/[term]                          # Overview (default to discussions)
+/forum/[domain]/terms/[term]?tab=discussions
+/forum/[domain]/terms/[term]?tab=issues
+/forum/[domain]/terms/[term]?tab=history
+6. Mock Data Service (Swappable Layer)
+typescript// services/github-data-service.ts
+interface IGitHubDataService {
+  getDiscussions(owner: string, repo: string, options?: ListOptions): Promise<DiscussionConnection>;
+  getDiscussion(owner: string, repo: string, number: number): Promise<GitHubDiscussion>;
+  getIssues(owner: string, repo: string, options?: ListOptions): Promise<IssueConnection>;
+  getIssue(owner: string, repo: string, number: number): Promise<GitHubIssue>;
+}
+
+// Mock implementation
+export class MockGitHubDataService implements IGitHubDataService {
+  async getDiscussions(owner: string, repo: string, options?: ListOptions) {
+    // Load from YAML files
+    const yamlPath = `dahao-governance/${owner}/terms/${repo}/.github/discussions.yml`;
+    const data = await loadYaml(yamlPath);
+
+    // Format exactly like GitHub's GraphQL response
+    return {
+      totalCount: data.discussions.length,
+      pageInfo: {
+        hasNextPage: false,
+        endCursor: null
+      },
+      nodes: data.discussions
+    };
   }
 }
-STEP 6: Update Terms Page to be Dynamic
-UPDATE: app/terms/page.tsx
-Replace static content with:
-typescriptconst [terms, setTerms] = useState<Record<string, TermDictionary>>({});
-const [loading, setLoading] = useState(true);
 
-useEffect(() => {
-  fetch('/api/terms')
-    .then(res => res.json())
-    .then(data => {
-      setTerms(data);
-      setLoading(false);
-    });
-}, []);
+// Future: Real GitHub implementation
+export class GitHubDataService implements IGitHubDataService {
+  async getDiscussions(owner: string, repo: string, options?: ListOptions) {
+    // Use Octokit or GraphQL to fetch from real GitHub
+    const response = await octokit.graphql(`
+      query($owner: String!, $repo: String!) {
+        repository(owner: $owner, name: $repo) {
+          discussions(first: 10) {
+            totalCount
+            nodes { ... }
+          }
+        }
+      }
+    `, { owner, repo });
 
-// Then dynamically render terms from the loaded data
+    return response.repository.discussions;
+  }
+}
+
+// In your app, use dependency injection
+const dataService = process.env.USE_GITHUB_API
+  ? new GitHubDataService()
+  : new MockGitHubDataService();
+7. Key Implementation Details
+Label System (Exactly Like GitHub)
+yaml# .github/labels.yml
+labels:
+  - name: "enhancement"
+    color: "a2eeef"
+    description: "New feature or request"
+  - name: "bug"
+    color: "d73a4a"
+    description: "Something isn't working"
+  - name: "documentation"
+    color: "0075ca"
+    description: "Improvements or additions to documentation"
+Milestone System
+yaml# .github/milestones.yml
+milestones:
+  - number: 1
+    title: "v1.2 - Systemic Harm"
+    description: "Expand harm definition to include systemic patterns"
+    dueOn: "2025-03-31T00:00:00Z"
+    state: "OPEN"
+    closedAt: null
+Category Configuration
+yaml# .github/discussion-categories.yml
+discussionCategories:
+  - id: "DIC_kwDOAE5jvM4B-J8F"
+    name: "Ideas"
+    slug: "ideas"
+    emoji: "💡"
+    description: "Share ideas for new features"
+  - id: "DIC_kwDOAE5jvM4B-J8G"
+    name: "Q&A"
+    slug: "q-a"
+    emoji: "🙏"
+    description: "Ask the community for help"
+    isAnswerable: true
+8. Benefits of This Approach
+
+Zero UI Changes Later: When you switch to real GitHub API, all components work as-is
+Exact Feature Parity: Labels, milestones, assignees all work like GitHub
+Familiar to Users: Anyone who uses GitHub will instantly understand
+Type Safety: Using GitHub's exact types prevents mismatches
+Progressive Migration: Can switch one feature at a time
+
+9. Migration Path
+When ready to switch to real GitHub:
+typescript// config/data-source.ts
+export const dataSource = {
+  // Just change this flag
+  useRealGitHub: true,
+
+  // Or do it per feature
+  features: {
+    discussions: 'github',  // or 'mock'
+    issues: 'mock',        // migrate gradually
+  }
+};
+No component changes needed - just swap the data service implementation!
+
+This approach ensures that every piece of UI you build now will work identically when you connect to the real GitHub API later. You're essentially building a GitHub clone for your governance system that can seamlessly become GitHub-powered.

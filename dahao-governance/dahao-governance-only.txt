@@ -4,15 +4,19 @@
 - core-governance/inheritance.yml
 - animal-welfare/discussions/five-freedoms/outdoor-access-requirement.md
 - animal-welfare/discussions/emergency-care-protocol/turkey-municipal-vet-system.md
+- animal-welfare/terms/v1.0/welfare-core.yml
 - animal-welfare/ethics/v1.0/five-freedoms.yml
 - animal-welfare/ethics/v1.0/welfare-measurement.yml
 - animal-welfare/ethics/v1.0/emergency-care-protocol.yml
 - environment/discussions/sustainability/carbon-neutral-operations.md
+- environment/terms/v1.0/ecosystem-specific.yml
 - environment/ethics/v1.2/ecosystem-health.yml
 - environment/ethics/v1.2/sustainability.yml
 - core-governance/discussions/transparency/ai-decision-auditability.md
 - core-governance/discussions/transparency/voting-transparency.md
 - core-governance/discussions/equality/fair-participation.md
+- core-governance/terms/v1.0/governance.yml
+- core-governance/terms/v1.0/fundamental.yml
 - core-governance/ethics/v1.1/harm-prevention.yml
 - core-governance/ethics/v1.1/equality.yml
 - core-governance/ethics/v1.1/sustainability.yml
@@ -320,13 +324,60 @@ Zoonotic disease monitoring integration crucial. Could provide early rabies outb
 - Legal framework compliance review
 ```
 
+## File: animal-welfare/terms/v1.0/welfare-core.yml
+
+- Extension: .yml
+- Language: yaml
+- Size: 1024 bytes
+- Created: 2025-06-11 12:44:40
+- Modified: 2025-06-11 12:44:40
+
+### Code
+
+```yaml
+version: "1.0"
+namespace: "welfare"
+terms:
+  suffering:
+    v1.0:
+      definition: "Negative subjective experience of sentient beings"
+      extends: "core:harm@v1.1"
+      specificity: "Conscious experience requirement"
+      types:
+        physical: "Pain, discomfort, illness"
+        psychological: "Fear, distress, frustration"
+        behavioral: "Inability to express natural behaviors"
+      created: "2024-02-01"
+
+  sentience:
+    v1.0:
+      definition: "Capacity to have subjective experiences"
+      extends: "core:being@v1.1"
+      indicators:
+        - "nociception"
+        - "cognitive_complexity"
+        - "behavioral_responses"
+      created: "2024-02-01"
+
+  five_freedoms:
+    v1.0:
+      definition: "Framework for assessing animal welfare"
+      components:
+        - "Freedom from hunger and thirst"
+        - "Freedom from discomfort"
+        - "Freedom from pain, injury, disease"
+        - "Freedom to express normal behavior"
+        - "Freedom from fear and distress"
+      created: "2024-02-01"
+```
+
 ## File: animal-welfare/ethics/v1.0/five-freedoms.yml
 
 - Extension: .yml
 - Language: yaml
-- Size: 2125 bytes
-- Created: 2025-06-10 12:52:33
-- Modified: 2025-06-10 12:52:33
+- Size: 2286 bytes
+- Created: 2025-06-11 12:44:40
+- Modified: 2025-06-11 12:44:40
 
 ### Code
 
@@ -334,13 +385,18 @@ Zoonotic disease monitoring integration crucial. Could provide early rabies outb
 version: "1.0"
 principle_id: "five_freedoms"
 name: "Five Freedoms of Animal Welfare"
-description: "Fundamental welfare framework for all animal-related decisions"
+description: "Implementation of {welfare:five_freedoms@v1.0} framework for all animal-related decisions"
 category: "domain_core"
 domain: "animal_welfare"
 
+uses_terms:
+  - "welfare:five_freedoms@v1.0"
+  - "welfare:suffering@v1.0"
+  - "core:wellbeing@v1.1"
+
 freedoms:
   freedom_from_hunger:
-    description: "Freedom from hunger and thirst"
+    description: "Freedom from hunger and thirst - ensuring {core:wellbeing@v1.1}"
     requirements:
       - "Ready access to fresh water"
       - "Diet to maintain full health and vigor"
@@ -775,6 +831,40 @@ Support the proposal but request clear communication about how this aligns with 
 ✅ @transparency-agent: "Approve with public reporting requirement"
 
 **Current Status:** 100% approval, ready for implementation planning.
+```
+
+## File: environment/terms/v1.0/ecosystem-specific.yml
+
+- Extension: .yml
+- Language: yaml
+- Size: 597 bytes
+- Created: 2025-06-11 12:44:40
+- Modified: 2025-06-11 12:44:40
+
+### Code
+
+```yaml
+version: "1.0"
+namespace: "environment"
+terms:
+  ecosystem_health:
+    v1.2:
+      definition: "Integrated wellbeing of all beings in a system"
+      uses_terms:
+        - "core:wellbeing@v1.1"
+        - "core:being@v2.0"
+      aspects:
+        - "non-sentient entities"
+        - "emergent properties"
+        - "temporal sustainability"
+      created: "2024-03-15"
+
+  sustainability_enhanced:
+    v1.2:
+      definition: "Beyond maintaining to actively improving environmental conditions"
+      extends: "core:sustainability@v1.1"
+      focus: "regenerative approach"
+      created: "2024-03-15"
 ```
 
 ## File: environment/ethics/v1.2/ecosystem-health.yml
@@ -1227,13 +1317,101 @@ Participation time should be compensated through governance tokens or other valu
 - Token economic impact analysis
 ```
 
+## File: core-governance/terms/v1.0/governance.yml
+
+- Extension: .yml
+- Language: yaml
+- Size: 820 bytes
+- Created: 2025-06-11 12:44:40
+- Modified: 2025-06-11 12:44:40
+
+### Code
+
+```yaml
+version: "1.0"
+namespace: "core"
+terms:
+  transparency:
+    v1.0:
+      definition: "All decisions and processes must be open and auditable"
+      created: "2024-01-01"
+    v1.1:
+      definition: "All decisions and processes must be open, auditable, and include AI agent reasoning traces"
+      created: "2024-12-15"
+
+  equality:
+    v1.0:
+      definition: "All humans have equal fundamental rights"
+      created: "2024-01-01"
+    v1.1:
+      definition: "All humans have equal fundamental rights regardless of background"
+      created: "2024-06-15"
+
+  sustainability:
+    v1.0:
+      definition: "Consider long-term impact on community and environment"
+      created: "2024-01-01"
+    v1.1:
+      definition: "Actively improve rather than just maintain conditions for future generations"
+      created: "2024-08-20"
+```
+
+## File: core-governance/terms/v1.0/fundamental.yml
+
+- Extension: .yml
+- Language: yaml
+- Size: 1132 bytes
+- Created: 2025-06-11 12:44:40
+- Modified: 2025-06-11 12:44:40
+
+### Code
+
+```yaml
+version: "1.0"
+namespace: "core"
+terms:
+  harm:
+    v1.0:
+      definition: "Physical damage to a being"
+      created: "2024-01-01"
+    v1.1:
+      definition: "Any reduction in wellbeing, including physical damage, psychological distress, opportunity limitation, or dignity violation"
+      created: "2024-06-15"
+      changes:
+        - "Expanded beyond physical to include psychological harm"
+        - "Added opportunity and dignity aspects"
+
+  being:
+    v1.0:
+      definition: "Any entity capable of experience"
+      created: "2024-01-01"
+    v1.1:
+      definition: "Any entity capable of subjective experience"
+      created: "2024-03-10"
+    v2.0:
+      definition: "Any entity with interests that can be affected"
+      created: "2024-09-20"
+      changes:
+        - "Expanded to include future AIs and collective entities"
+
+  wellbeing:
+    v1.0:
+      definition: "State of positive functioning"
+      dimensions: ["physical", "mental"]
+      created: "2024-01-01"
+    v1.1:
+      definition: "Holistic state of thriving"
+      dimensions: ["physical", "mental", "social", "environmental"]
+      created: "2024-07-15"
+```
+
 ## File: core-governance/ethics/v1.1/harm-prevention.yml
 
 - Extension: .yml
 - Language: yaml
-- Size: 1688 bytes
-- Created: 2025-06-09 17:39:33
-- Modified: 2025-06-09 17:39:33
+- Size: 1799 bytes
+- Created: 2025-06-11 12:44:40
+- Modified: 2025-06-11 12:44:40
 
 ### Code
 
@@ -1241,9 +1419,14 @@ Participation time should be compensated through governance tokens or other valu
 version: "1.1"
 principle_id: "harm-prevention"
 name: "Harm Prevention"
-description: "Actively prevent direct and indirect harm with proactive measures"
+description: "Actively prevent {core:harm@v1.1} to all {core:being@v2.0} with proactive measures"
 category: "core"
 previous_version: "1.0"
+
+uses_terms:
+  - "core:harm@v1.1"
+  - "core:being@v2.0"
+  - "core:wellbeing@v1.1"
 
 requirements:
   risk_assessment:
@@ -1272,7 +1455,7 @@ requirements:
 
 harm_categories:
   physical:
-    description: "Direct physical harm to humans or animals"
+    description: "Direct physical {core:harm@v1.1} to {core:being@v2.0}"
     severity: "critical"
     response: "immediate_halt"
 

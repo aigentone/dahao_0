@@ -1,0 +1,177 @@
+discussions:
+  - id: "core-governance-disc-1"
+    number: 1
+    title: "Fair Participation Framework"
+    body: |
+      This discussion focuses on developing a comprehensive framework for ensuring fair participation in governance processes. 
+      
+      ## Key Areas
+      
+      - **Equal Voice**: Ensuring all participants have meaningful opportunity to contribute
+      - **Accessibility**: Removing barriers to participation
+      - **Representation**: Balanced perspectives across stakeholder groups
+      - **Process Transparency**: Clear decision-making procedures
+      
+      ## Current Challenges
+      
+      The existing participation mechanisms may inadvertently favor certain groups or perspectives. We need to examine:
+      
+      1. Information asymmetries
+      2. Technical barriers
+      3. Time zone and scheduling constraints
+      4. Language and cultural barriers
+      
+      What approaches should we consider for more inclusive governance?
+    createdAt: "2024-01-15T10:00:00Z"
+    updatedAt: "2024-01-15T10:00:00Z"
+    closed: false
+    category:
+      id: "cat-1"
+      name: "Governance Proposals"
+      slug: "governance-proposals"
+      emoji: "🏛️"
+    author:
+      id: "user-1"
+      login: "governance-lead"
+      avatarUrl: "https://avatars.githubusercontent.com/u/1?v=4"
+      url: "https://github.com/governance-lead"
+    labels:
+      totalCount: 2
+      nodes:
+        - id: "label-1"
+          name: "enhancement"
+          color: "84cc16"
+        - id: "label-2"
+          name: "governance"
+          color: "3b82f6"
+    upvoteCount: 12
+    comments:
+      totalCount: 3
+      nodes:
+        - id: "comment-1"
+          body: |
+            I think we should prioritize asynchronous participation methods to accommodate different time zones. 
+            
+            Some suggestions:
+            - Extended comment periods
+            - Rolling polls rather than live votes
+            - Multiple discussion formats (text, video, voice)
+          createdAt: "2024-01-15T11:30:00Z"
+          updatedAt: "2024-01-15T11:30:00Z"
+          upvoteCount: 5
+          author:
+            id: "user-2"
+            login: "accessibility-advocate"
+            avatarUrl: "https://avatars.githubusercontent.com/u/2?v=4"
+            url: "https://github.com/accessibility-advocate"
+        - id: "comment-2"
+          body: |
+            The challenge with asynchronous methods is maintaining discussion momentum and ensuring decisions can still be made in reasonable timeframes.
+            
+            Perhaps we could have hybrid models:
+            - Async discussion periods
+            - Synchronous decision points
+            - Clear escalation paths
+          createdAt: "2024-01-15T14:20:00Z"
+          updatedAt: "2024-01-15T14:20:00Z"
+          upvoteCount: 3
+          author:
+            id: "user-3"
+            login: "efficiency-expert"
+            avatarUrl: "https://avatars.githubusercontent.com/u/3?v=4"
+            url: "https://github.com/efficiency-expert"
+        - id: "comment-3"
+          body: |
+            We should also consider translation and cultural context. Not everyone processes information or makes decisions the same way.
+            
+            Multi-modal communication could help:
+            - Visual summaries for complex text
+            - Cultural liaisons for different communities
+            - Flexible feedback formats
+          createdAt: "2024-01-15T16:45:00Z"
+          updatedAt: "2024-01-15T16:45:00Z"
+          upvoteCount: 7
+          author:
+            id: "user-4"
+            login: "cultural-bridge"
+            avatarUrl: "https://avatars.githubusercontent.com/u/4?v=4"
+            url: "https://github.com/cultural-bridge"
+    answer: null
+
+  - id: "core-governance-disc-2"
+    number: 2
+    title: "AI Decision Auditability Standards"
+    body: |
+      As AI systems become more integrated into governance processes, we need clear standards for auditing AI-assisted decisions.
+      
+      ## Scope
+      
+      This proposal covers:
+      - AI recommendation systems in governance
+      - Automated processing of proposals
+      - AI-assisted consensus finding
+      - Decision support algorithms
+      
+      ## Auditability Requirements
+      
+      1. **Transparency**: Clear documentation of AI system logic
+      2. **Explainability**: Human-readable explanations for decisions
+      3. **Reproducibility**: Ability to recreate decision paths
+      4. **Bias Detection**: Regular testing for unfair outcomes
+      
+      ## Implementation Considerations
+      
+      - Technical feasibility across different AI systems
+      - Resource requirements for audit processes
+      - Privacy implications of detailed logging
+      - Training requirements for auditors
+      
+      How should we balance transparency with system complexity?
+    createdAt: "2024-01-20T09:15:00Z"
+    updatedAt: "2024-01-22T14:30:00Z"
+    closed: false
+    category:
+      id: "cat-2"
+      name: "Technical Standards"
+      slug: "technical-standards"
+      emoji: "⚙️"
+    author:
+      id: "user-5"
+      login: "ai-ethics-researcher"
+      avatarUrl: "https://avatars.githubusercontent.com/u/5?v=4"
+      url: "https://github.com/ai-ethics-researcher"
+    labels:
+      totalCount: 3
+      nodes:
+        - id: "label-3"
+          name: "ai-governance"
+          color: "8b5cf6"
+        - id: "label-4"
+          name: "transparency"
+          color: "06b6d4"
+        - id: "label-5"
+          name: "standards"
+          color: "f59e0b"
+    upvoteCount: 18
+    comments:
+      totalCount: 1
+      nodes:
+        - id: "comment-4"
+          body: |
+            This is crucial. I suggest we start with a pilot program using simpler AI systems before tackling complex ML models.
+            
+            Phase 1: Rule-based decision trees
+            Phase 2: Linear models with feature importance
+            Phase 3: Complex neural networks (with approximation methods)
+            
+            Each phase should establish patterns we can scale up.
+          createdAt: "2024-01-22T14:30:00Z"
+          updatedAt: "2024-01-22T14:30:00Z"
+          upvoteCount: 11
+          author:
+            id: "user-6"
+            login: "systems-architect"
+            avatarUrl: "https://avatars.githubusercontent.com/u/6?v=4"
+            url: "https://github.com/systems-architect"
+    answer:
+      id: "comment-4"
