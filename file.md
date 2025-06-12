@@ -1,330 +1,672 @@
-# Enhancement Goal: GitHub-Compatible Term & Principle Discussions/Issues
+sequenceDiagram
+    participant Alice as Alice (User)
+    participant AliceAI as Alice's Personal AI
+    participant Bob as Bob (User)
+    participant BobAI as Bob's Personal AI
+    participant SystemAI as System AI Agent
+    participant VotingEngine as Voting Engine
+    participant Proposal as Governance Proposal
 
-## Overview
-Build term and principle-level discussions/issues that exactly mirror GitHub's structure and UI, using mock data that matches GitHub's API response format. This ensures seamless migration to real GitHub API later.
+    Note over Alice, Proposal: Value-Differentiated AI Voting
 
-## Design Principle
-**"Build once, swap data source"** - Every component, type, and API response should exactly match GitHub's structure.
+    %% Alice's AI Analysis
+    Alice->>AliceAI: Analyze proposal "intersectional_harm@v1.2"
 
-## 1. GitHub-Exact Type Definitions
+    Note over AliceAI: Alice's Complete Value System:<br/>✓ core:harm@v1.1<br/>✓ core:equality@v2.0 (intersectional)<br/>✓ alice:systemic_patterns@v1.0<br/>❌ welfare:animal_focus@v1.0 (rejected)
 
-```typescript
-// types/github-compatible.ts
-// These types match GitHub's GraphQL API exactly
+    AliceAI->>Proposal: Apply Alice's accepted values
+    AliceAI-->>VotingEngine: Vote: APPROVE (confidence: 94%)<br/>Reasoning: "Aligns with Alice's intersectional equality v2.0<br/>and her personal systemic_patterns framework"
 
-interface GitHubUser {
-  login: string;
-  id: string;
-  avatarUrl: string;
-  url: string;
-}
+    %% Bob's AI Analysis
+    Bob->>BobAI: Analyze same proposal
 
-interface GitHubLabel {
-  id: string;
-  name: string;
-  color: string;
-  description?: string;
-}
+    Note over BobAI: Bob's Complete Value System:<br/>✓ core:harm@v1.1<br/>✓ core:equality@v1.0 (traditional)<br/>✓ bob:privacy_rights@v2.1<br/>✓ bob:algorithmic_fairness@v1.0
 
-interface GitHubDiscussion {
-  id: string;
-  number: number;
-  title: string;
-  body: string;
-  createdAt: string;
-  updatedAt: string;
-  closed: boolean;
-  closedAt?: string;
-  author: GitHubUser;
-  category: {
-    id: string;
-    name: string;
-    slug: string;
-    emoji?: string;
-  };
-  labels: {
-    nodes: GitHubLabel[];
-  };
-  comments: {
-    totalCount: number;
-    nodes: GitHubDiscussionComment[];
-  };
-  upvoteCount: number;
-  answerChosenAt?: string;
-  answer?: GitHubDiscussionComment;
-}
+    BobAI->>Proposal: Apply Bob's accepted values
+    BobAI-->>VotingEngine: Vote: CONDITIONAL (confidence: 67%)<br/>Reasoning: "Conflicts with Bob's traditional equality v1.0.<br/>Needs privacy impact assessment per his privacy_rights v2.1"
 
-interface GitHubIssue {
-  id: string;
-  number: number;
-  title: string;
-  body: string;
-  state: 'OPEN' | 'CLOSED';
-  createdAt: string;
-  updatedAt: string;
-  closedAt?: string;
-  author: GitHubUser;
-  assignees: {
-    nodes: GitHubUser[];
-  };
-  labels: {
-    nodes: GitHubLabel[];
-  };
-  milestone?: GitHubMilestone;
-  comments: {
-    totalCount: number;
-    nodes: GitHubIssueComment[];
-  };
-}
-2. Mock Data Structure (GitHub-Compatible)
-yaml# dahao-governance/core-governance/terms/v1.0/harm/.github/discussions.yml
-# This structure exactly matches GitHub's API response
-discussions:
-  - id: "D_kwDOAE5jvM4AQz5K"
-    number: 1
-    title: "Expanding 'harm' definition to include systemic harm"
-    body: |
-      ## Current Gap
-      Current definition of harm@v1.1 covers individual harm well...
-    createdAt: "2024-11-20T10:00:00Z"
-    updatedAt: "2024-11-21T14:30:00Z"
-    closed: false
-    author:
-      login: "social_justice_advocate"
-      id: "MDQ6VXNlcjE="
-      avatarUrl: "https://avatars.githubusercontent.com/u/1?v=4"
-      url: "https://github.com/social_justice_advocate"
-    category:
-      id: "DIC_kwDOAE5jvM4B-J8F"
-      name: "Ideas"
-      slug: "ideas"
-      emoji: "💡"
-    labels:
-      nodes:
-        - id: "MDU6TGFiZWwx"
-          name: "enhancement"
-          color: "a2eeef"
-          description: "New feature or request"
-    comments:
-      totalCount: 2
-      nodes:
-        - id: "DC_kwDOAE5jvM4AQ0A1"
-          body: "Strong support. Aligns with modern understanding..."
-          createdAt: "2024-11-20T11:00:00Z"
-          author:
-            login: "ethics_professor"
-            # ... full user object
-    upvoteCount: 15
-3. API Routes (GitHub-Compatible Responses)
-typescript// app/api/github-mock/[owner]/[repo]/discussions/route.ts
-export async function GET(request: Request) {
-  const { searchParams } = new URL(request.url);
-  const first = parseInt(searchParams.get('first') || '10');
-  const after = searchParams.get('after');
+    %% System AI Analysis
+    SystemAI->>Proposal: Analyze with ONLY Main DAHAO values
 
-  // Return GitHub GraphQL-style response
-  return NextResponse.json({
-    data: {
-      repository: {
-        discussions: {
-          totalCount: 42,
-          pageInfo: {
-            hasNextPage: true,
-            endCursor: "Y3Vyc29yOnYyOpK5MjAyNC0xMS0yMVQ..."
-          },
-          nodes: discussions, // From YAML, formatted as GitHub objects
-        }
-      }
-    }
-  });
-}
-4. UI Components (GitHub-Style)
-tsx// components/github-compatible/DiscussionList.tsx
-export function DiscussionList({ discussions }: { discussions: GitHubDiscussion[] }) {
-  return (
-    <div className="border rounded-lg">
-      {discussions.map((discussion) => (
-        <div key={discussion.id} className="p-4 border-b last:border-b-0 hover:bg-gray-50">
-          <div className="flex items-start gap-3">
-            {/* GitHub-style open/closed indicator */}
-            <div className={`mt-1 ${discussion.closed ? 'text-purple-600' : 'text-green-600'}`}>
-              {discussion.closed ? <CheckCircle /> : <Circle />}
-            </div>
+    Note over SystemAI: System Value Constraints:<br/>✓ core:harm@v1.1 ONLY<br/>✓ core:equality@v1.0 ONLY<br/>✓ core:transparency@v1.1<br/>❌ NO personal extensions allowed
 
-            <div className="flex-1 min-w-0">
-              <div className="flex items-center gap-2 flex-wrap">
-                <Link
-                  href={`/forum/core-governance/terms/harm/discussions/${discussion.number}`}
-                  className="text-base font-semibold hover:text-blue-600"
-                >
-                  {discussion.title}
-                </Link>
+    SystemAI-->>VotingEngine: Vote: NEEDS_REVIEW (confidence: 45%)<br/>Reasoning: "Proposal references concepts not in Main DAHAO.<br/>Requires community definition before system can evaluate"
 
-                {/* GitHub-style labels */}
-                {discussion.labels.nodes.map(label => (
-                  <span
-                    key={label.id}
-                    className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium"
-                    style={{
-                      backgroundColor: `#${label.color}20`,
-                      color: `#${label.color}`,
-                      border: `1px solid #${label.color}40`
-                    }}
-                  >
-                    {label.name}
-                  </span>
-                ))}
-              </div>
+    %% Voting Engine Processing
+    VotingEngine->>VotingEngine: Process value-differentiated votes
 
-              {/* GitHub-style metadata */}
-              <div className="mt-1 text-sm text-gray-600">
-                {discussion.category.emoji} {discussion.category.name} ·
-                opened {formatDistanceToNow(new Date(discussion.createdAt))} ago by
-                <Link href={discussion.author.url} className="font-medium">
-                  {discussion.author.login}
-                </Link>
-                {discussion.comments.totalCount > 0 && (
-                  <> · {discussion.comments.totalCount} comments</>
-                )}
-              </div>
-            </div>
+    Note over VotingEngine: Vote Analysis:<br/>Personal AIs: Split based on user values<br/>System AI: Conservative (main values only)<br/>Weighting: Personal AIs 0.8x, System AI 1.0x
 
-            {/* GitHub-style comment count */}
-            {discussion.comments.totalCount > 0 && (
-              <Link
-                href={`/forum/core-governance/terms/harm/discussions/${discussion.number}`}
-                className="flex items-center gap-1 text-sm text-gray-600 hover:text-blue-600"
-              >
-                <MessageSquare className="w-4 h-4" />
-                {discussion.comments.totalCount}
-              </Link>
-            )}
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-}
-5. Routes (GitHub-Style URLs)
-# GitHub-style routes
-/forum/[domain]/terms/[term]/discussions              # List discussions
-/forum/[domain]/terms/[term]/discussions/[number]     # Single discussion
-/forum/[domain]/terms/[term]/issues                   # List issues
-/forum/[domain]/terms/[term]/issues/[number]          # Single issue
+    VotingEngine->>Proposal: Generate consensus report
 
-# Match GitHub's tab structure
-/forum/[domain]/terms/[term]                          # Overview (default to discussions)
-/forum/[domain]/terms/[term]?tab=discussions
-/forum/[domain]/terms/[term]?tab=issues
-/forum/[domain]/terms/[term]?tab=history
-6. Mock Data Service (Swappable Layer)
-typescript// services/github-data-service.ts
-interface IGitHubDataService {
-  getDiscussions(owner: string, repo: string, options?: ListOptions): Promise<DiscussionConnection>;
-  getDiscussion(owner: string, repo: string, number: number): Promise<GitHubDiscussion>;
-  getIssues(owner: string, repo: string, options?: ListOptions): Promise<IssueConnection>;
-  getIssue(owner: string, repo: string, number: number): Promise<GitHubIssue>;
-}
+    Note over Proposal: Consensus Report:<br/>Personal Values Conflict Detected<br/>Alice's intersectional vs Bob's traditional equality<br/>System cannot evaluate without main branch definitions<br/>Recommendation: Define intersectional_harm in main first
 
-// Mock implementation
-export class MockGitHubDataService implements IGitHubDataService {
-  async getDiscussions(owner: string, repo: string, options?: ListOptions) {
-    // Load from YAML files
-    const yamlPath = `dahao-governance/${owner}/terms/${repo}/.github/discussions.yml`;
-    const data = await loadYaml(yamlPath);
+    %% Budget Consideration
+    alt Proposal Has Budget Allocation
+        Note over VotingEngine: DAHAO Budget: $50,000 allocated<br/>Sponsor: Animal Welfare Organization<br/>Funding increases consideration weight
 
-    // Format exactly like GitHub's GraphQL response
-    return {
-      totalCount: data.discussions.length,
-      pageInfo: {
-        hasNextPage: false,
-        endCursor: null
-      },
-      nodes: data.discussions
-    };
-  }
-}
+        VotingEngine->>SystemAI: Re-evaluate with funding context
+        SystemAI-->>VotingEngine: Updated: CONDITIONAL APPROVE<br/>"Budget justifies experimental approach"
 
-// Future: Real GitHub implementation
-export class GitHubDataService implements IGitHubDataService {
-  async getDiscussions(owner: string, repo: string, options?: ListOptions) {
-    // Use Octokit or GraphQL to fetch from real GitHub
-    const response = await octokit.graphql(`
-      query($owner: String!, $repo: String!) {
-        repository(owner: $owner, name: $repo) {
-          discussions(first: 10) {
-            totalCount
-            nodes { ... }
-          }
-        }
-      }
-    `, { owner, repo });
+    else No Budget
+        Note over VotingEngine: Lower priority processing<br/>Relies purely on volunteer consensus
+    end
 
-    return response.repository.discussions;
-  }
-}
+    %% Final Decision
+    VotingEngine->>Alice: Your AI voted APPROVE based on your values
+    VotingEngine->>Bob: Your AI voted CONDITIONAL based on your values
+    VotingEngine->>SystemAI: System requires main branch definition first
 
-// In your app, use dependency injection
-const dataService = process.env.USE_GITHUB_API
-  ? new GitHubDataService()
-  : new MockGitHubDataService();
-7. Key Implementation Details
-Label System (Exactly Like GitHub)
-yaml# .github/labels.yml
-labels:
-  - name: "enhancement"
-    color: "a2eeef"
-    description: "New feature or request"
-  - name: "bug"
-    color: "d73a4a"
-    description: "Something isn't working"
-  - name: "documentation"
-    color: "0075ca"
-    description: "Improvements or additions to documentation"
-Milestone System
-yaml# .github/milestones.yml
-milestones:
-  - number: 1
-    title: "v1.2 - Systemic Harm"
-    description: "Expand harm definition to include systemic patterns"
-    dueOn: "2025-03-31T00:00:00Z"
-    state: "OPEN"
-    closedAt: null
-Category Configuration
-yaml# .github/discussion-categories.yml
-discussionCategories:
-  - id: "DIC_kwDOAE5jvM4B-J8F"
-    name: "Ideas"
-    slug: "ideas"
-    emoji: "💡"
-    description: "Share ideas for new features"
-  - id: "DIC_kwDOAE5jvM4B-J8G"
-    name: "Q&A"
-    slug: "q-a"
-    emoji: "🙏"
-    description: "Ask the community for help"
-    isAnswerable: true
-8. Benefits of This Approach
+    Note over Alice, Proposal: Each AI perfectly represents its user's<br/>complete accepted value system vs system constraints
 
-Zero UI Changes Later: When you switch to real GitHub API, all components work as-is
-Exact Feature Parity: Labels, milestones, assignees all work like GitHub
-Familiar to Users: Anyone who uses GitHub will instantly understand
-Type Safety: Using GitHub's exact types prevents mismatches
-Progressive Migration: Can switch one feature at a time
 
-9. Migration Path
-When ready to switch to real GitHub:
-typescript// config/data-source.ts
-export const dataSource = {
-  // Just change this flag
-  useRealGitHub: true,
 
-  // Or do it per feature
-  features: {
-    discussions: 'github',  // or 'mock'
-    issues: 'mock',        // migrate gradually
-  }
-};
-No component changes needed - just swap the data service implementation!
 
-This approach ensures that every piece of UI you build now will work identically when you connect to the real GitHub API later. You're essentially building a GitHub clone for your governance system that can seamlessly become GitHub-powered.
+graph TB
+    subgraph "Personal DAHAO Value System"
+        PersonalValues[Personal Value Stack]
+        AcceptedVersions[All Accepted Term Versions]
+        PersonalEthics[Personal Ethics Framework]
+        PersonalAI[Personal AI Agent]
+
+        PersonalValues --> AcceptedVersions
+        AcceptedVersions --> PersonalEthics
+        PersonalEthics --> PersonalAI
+
+        subgraph "Alice's Values Example"
+            AliceV1[core:harm@v1.1 ✓]
+            AliceV2[core:equality@v2.0 ✓]
+            AliceV3[alice:intersectional_harm@v1.0 ✓]
+            AliceV4[welfare:suffering@v1.2 ✗]
+
+            AliceV1 --> PersonalAI
+            AliceV2 --> PersonalAI
+            AliceV3 --> PersonalAI
+        end
+    end
+
+    subgraph "System AI Value Constraints"
+        MainDAHAOValues[Main DAHAO Values Only]
+        SystemAI[System AI Agents]
+        ValueValidator[Value Validation Engine]
+
+        MainDAHAOValues --> SystemAI
+        SystemAI --> ValueValidator
+
+        subgraph "System Values Example"
+            SysV1[core:harm@v1.1 ✓]
+            SysV2[core:equality@v1.0 ✓]
+            SysV3[welfare:five_freedoms@v1.0 ✓]
+            SysV4[NO personal extensions ❌]
+
+            SysV1 --> SystemAI
+            SysV2 --> SystemAI
+            SysV3 --> SystemAI
+        end
+    end
+
+    subgraph "DAHAO Budget System"
+        OrganizationBudgets[Organization Budgets]
+        SponsorFunding[Sponsor Funding Pool]
+        ProposalFunding[Proposal Funding]
+        BudgetAllocation[Budget Allocation Engine]
+
+        OrganizationBudgets --> SponsorFunding
+        SponsorFunding --> BudgetAllocation
+        BudgetAllocation --> ProposalFunding
+
+        subgraph "Budget Categories"
+            ResearchFunding[Research Funding]
+            ImplementationBudget[Implementation Budget]
+            CommunityIncentives[Community Incentives]
+            SystemMaintenance[System Maintenance]
+
+            ProposalFunding --> ResearchFunding
+            ProposalFunding --> ImplementationBudget
+            ProposalFunding --> CommunityIncentives
+            ProposalFunding --> SystemMaintenance
+        end
+    end
+
+    subgraph "Voting & Decision Making"
+        VotingProcess[Community Voting]
+        ValueConflictResolver[Value Conflict Resolution]
+        ConsensusEngine[Consensus Building Engine]
+
+        PersonalAI --> VotingProcess
+        SystemAI --> VotingProcess
+        VotingProcess --> ValueConflictResolver
+        ValueConflictResolver --> ConsensusEngine
+
+        subgraph "Vote Analysis"
+            PersonalAIVotes[Personal AI Votes]
+            SystemAIVotes[System AI Votes]
+            HumanVotes[Human Votes]
+            WeightedConsensus[Weighted Consensus]
+
+            PersonalAIVotes --> WeightedConsensus
+            SystemAIVotes --> WeightedConsensus
+            HumanVotes --> WeightedConsensus
+        end
+    end
+
+    subgraph "Funding Decision Integration"
+        BudgetApproval[Budget Approval Process]
+        FundingCriteria[Funding Criteria]
+        ROITracking[ROI & Impact Tracking]
+
+        BudgetAllocation --> BudgetApproval
+        ConsensusEngine --> BudgetApproval
+        BudgetApproval --> FundingCriteria
+        FundingCriteria --> ROITracking
+    end
+
+    %% Key Connections
+    PersonalAI -.->|represents complete value system| VotingProcess
+    SystemAI -.->|only main DAHAO values| VotingProcess
+    BudgetApproval -.->|funding enables| ResearchFunding
+    ROITracking -.->|feedback improves| BudgetAllocation
+
+    %% Value System Conflicts
+    PersonalAI -.->|may conflict with| SystemAI
+    ValueConflictResolver -.->|resolves using| MainDAHAOValues
+
+    %% Budget Influence on Governance
+    OrganizationBudgets -.->|influences| SponsorFunding
+    ProposalFunding -.->|enables serious consideration| VotingProcess
+
+    %% Styling
+    classDef personal fill:#e3f2fd,stroke:#0277bd,stroke-width:2px
+    classDef system fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px
+    classDef budget fill:#fff3e0,stroke:#f57c00,stroke-width:2px
+    classDef voting fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
+    classDef funding fill:#fce4ec,stroke:#c2185b,stroke-width:2px
+    classDef values fill:#f1f8e9,stroke:#558b2f,stroke-width:2px
+
+    class PersonalValues,AcceptedVersions,PersonalEthics,PersonalAI,AliceV1,AliceV2,AliceV3,AliceV4,PersonalAIVotes personal
+    class MainDAHAOValues,SystemAI,ValueValidator,SysV1,SysV2,SysV3,SysV4,SystemAIVotes system
+    class OrganizationBudgets,SponsorFunding,ProposalFunding,BudgetAllocation,ResearchFunding,ImplementationBudget,CommunityIncentives,SystemMaintenance budget
+    class VotingProcess,ValueConflictResolver,ConsensusEngine,HumanVotes,WeightedConsensus voting
+    class BudgetApproval,FundingCriteria,ROITracking funding
+
+    graph TB
+    subgraph "User-Created AI Agents"
+        UserAgents[User Personal Agents]
+        AgentCreator[Agent Creator Interface]
+        AgentConfig[Agent Configuration]
+
+        UserAgents --> AgentCreator
+        AgentCreator --> AgentConfig
+    end
+
+    subgraph "AI Agent Marketplace"
+        AgentPool[Available Agents Pool]
+        AgentRatings[Agent Performance Ratings]
+        AgentSpecialties[Agent Specializations]
+        DeploymentService[Agent Deployment Service]
+
+        AgentPool --> AgentRatings
+        AgentPool --> AgentSpecialties
+        AgentPool --> DeploymentService
+    end
+
+    subgraph "Deployment Targets"
+        OtherPersonalBranches[Other Users' Branches]
+        MainDiscussions[Main DAHAO Discussions]
+        PublicPool[Public Work Pool]
+        GovernanceIssues[Governance Issues]
+
+        DeploymentService --> OtherPersonalBranches
+        DeploymentService --> MainDiscussions
+        DeploymentService --> PublicPool
+        DeploymentService --> GovernanceIssues
+    end
+
+    subgraph "Public Work Pool System"
+        WorkSubmissions[User Work Submissions]
+        PoolVoting[Community Pool Voting]
+        SponsorSystem[Sponsor Approval System]
+        PromotionEngine[Discussion Promotion Engine]
+
+        WorkSubmissions --> PoolVoting
+        PoolVoting --> SponsorSystem
+        SponsorSystem --> PromotionEngine
+    end
+
+    subgraph "API & Authentication"
+        UserAPIKeys[User API Keys]
+        AgentAPIKeys[Agent API Keys]
+        ActionLogger[Action Logging System]
+        PermissionManager[Permission Management]
+
+        UserAPIKeys --> AgentAPIKeys
+        AgentAPIKeys --> ActionLogger
+        ActionLogger --> PermissionManager
+    end
+
+    subgraph "Self-Improvement Engine"
+        SystemAnalytics[System Analytics]
+        PerformanceTracker[Agent Performance Tracking]
+        PatternDetector[Pattern Detection]
+        SystemUpdates[Automated System Updates]
+        ToolDeveloper[Tool Development Engine]
+
+        ActionLogger --> SystemAnalytics
+        SystemAnalytics --> PerformanceTracker
+        PerformanceTracker --> PatternDetector
+        PatternDetector --> SystemUpdates
+        SystemUpdates --> ToolDeveloper
+    end
+
+    %% Connections
+    UserAgents --> AgentPool
+    AgentConfig --> UserAPIKeys
+
+    WorkSubmissions --> PublicPool
+    PromotionEngine --> MainDiscussions
+    PromotionEngine --> GovernanceIssues
+
+    OtherPersonalBranches --> ActionLogger
+    MainDiscussions --> ActionLogger
+    PublicPool --> ActionLogger
+    GovernanceIssues --> ActionLogger
+
+    AgentRatings --> PerformanceTracker
+    SystemUpdates --> AgentPool
+    ToolDeveloper --> DeploymentService
+
+    %% Self-improvement feedback loops
+    PerformanceTracker -.->|improve| AgentPool
+    PatternDetector -.->|optimize| DeploymentService
+    SystemUpdates -.->|enhance| PermissionManager
+    ToolDeveloper -.->|create new tools| UserAgents
+
+    %% Scaling feedback
+    SystemAnalytics -.->|user growth insights| SystemUpdates
+    ActionLogger -.->|usage patterns| PatternDetector
+
+    %% Styling
+    classDef user fill:#e3f2fd,stroke:#0277bd,stroke-width:2px
+    classDef marketplace fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px
+    classDef deployment fill:#fff3e0,stroke:#f57c00,stroke-width:2px
+    classDef pool fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
+    classDef api fill:#fce4ec,stroke:#c2185b,stroke-width:2px
+    classDef selfimprove fill:#f1f8e9,stroke:#558b2f,stroke-width:3px
+
+    class UserAgents,AgentCreator,AgentConfig user
+    class AgentPool,AgentRatings,AgentSpecialties,DeploymentService marketplace
+    class OtherPersonalBranches,MainDiscussions,PublicPool,GovernanceIssues deployment
+    class WorkSubmissions,PoolVoting,SponsorSystem,PromotionEngine pool
+    class UserAPIKeys,AgentAPIKeys,ActionLogger,PermissionManager api
+    class SystemAnalytics,PerformanceTracker,PatternDetector,SystemUpdates,ToolDeveloper selfimprove
+
+
+flowchart TD
+    Start([User joins DAHAO]) --> Setup{Setup personal DAHAO?}
+
+    Setup -->|Yes| CreatePersonal[Create personal branch]
+    Setup -->|No| UseMain[Use main DAHAO only]
+
+    CreatePersonal --> DefineValues[Define personal values & ethics]
+    DefineValues --> ConfigureAI[Configure personal AI agent]
+    ConfigureAI --> PersonalReady[Personal DAHAO ready]
+
+    PersonalReady --> Action{What do you want to do?}
+    UseMain --> Action
+
+    Action -->|Create term| CreateTerm[Create new term]
+    Action -->|Discuss| JoinDiscussion[Join community discussion]
+    Action -->|Submit work| SubmitToPool[Submit to Public Pool]
+    Action -->|Review| ReviewPool[Review Public Pool]
+    Action -->|Deploy agents| DeployAgents[Deploy AI agents to branches]
+
+    CreateTerm --> TermDetails[Enter term definition]
+    TermDetails --> SystemEval[System evaluation]
+    SystemEval --> EvalResults{Evaluation results}
+
+    EvalResults -->|Good score 80+| SavePersonal[Save to personal branch]
+    EvalResults -->|Low score 60-| ImproveTerm[Improve definition]
+    ImproveTerm --> TermDetails
+
+    SavePersonal --> IterateLocal{Develop further?}
+    IterateLocal -->|Yes| RefineLocal[Refine with AI help]
+    RefineLocal --> IterateLocal
+    IterateLocal -->|Ready| SubmitToPool
+
+    SubmitToPool --> PublicPool[Work visible in Public Pool]
+    PublicPool --> CommunityReview[Community can view & vote]
+    CommunityReview --> PoolVoting{Pool voting result}
+
+    PoolVoting -->|Sufficient support| StartDiscussion[Start main discussion]
+    PoolVoting -->|Needs more work| BackToPersonal[Back to personal development]
+
+    StartDiscussion --> RequireSponsors[Require sponsor approvals]
+    RequireSponsors --> SponsorCheck{Sponsors approved?}
+    SponsorCheck -->|Yes| CreateIssue[Create governance issue]
+    SponsorCheck -->|No| BackToPool[Back to pool for more support]
+
+    CreateIssue --> GovernanceProcess[Full governance logic starts]
+    GovernanceProcess --> FinalVote[Final community vote]
+
+    DeployAgents --> AgentMarket[AI Agent Marketplace]
+    AgentMarket --> AssignToTargets[Assign to other branches/discussions]
+    AssignToTargets --> RecordActions[Record all agent actions]
+    RecordActions --> SystemLearning[System learns & improves]
+
+    ReviewPool --> CommunityReview
+    CommunityVote --> VoteResult{Vote result}
+    FinalVote --> VoteResult
+
+    VoteResult -->|Approved 60+%| MergeMain[Merge to main DAHAO]
+    VoteResult -->|Rejected| BackToPersonal[Back to personal development]
+
+    MergeMain --> NotifyAll[Notify all personal branches]
+    NotifyAll --> SyncCheck{Auto-sync compatible?}
+
+    SyncCheck -->|Yes| AutoMerge[Auto-merge to personal]
+    SyncCheck -->|No| UserDecision[User decides: merge/reject/modify]
+
+    UserDecision --> PersonalUpdate[Update personal branch]
+    AutoMerge --> PersonalUpdate
+    BackToPersonal --> PersonalUpdate
+
+    PersonalUpdate --> SystemLearning
+    SystemLearning --> Action
+
+    %% Styling
+    classDef startEnd fill:#e1f5fe,stroke:#01579b,stroke-width:3px
+    classDef decision fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    classDef process fill:#e8f5e8,stroke:#1b5e20,stroke-width:2px
+    classDef personal fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    classDef community fill:#fce4ec,stroke:#880e4f,stroke-width:2px
+
+    class Start,PersonalReady startEnd
+    class Setup,Action,EvalResults,IterateLocal,VoteResult,SyncCheck,UserDecision decision
+    class CreatePersonal,DefineValues,ConfigureAI,CreateTerm,TermDetails,SystemEval,SavePersonal,RefineLocal process
+    class UseMain,ImproveTerm,ProposeToMain,PersonalUpdate personal
+    class JoinDiscussion,MakeProposal,ReviewProposal,CommunityDiscussion,AIParticipation,CommunityVote,MergeMain,NotifyAll,AutoMerge,BackToPersonal community
+
+
+graph TB
+    subgraph "Frontend Layer"
+        WebApp[Next.js Web App]
+        Dashboard[User Dashboard]
+        Forum[Forum Interface]
+        SystemExplorer[System Explorer]
+
+        WebApp --> Dashboard
+        WebApp --> Forum
+        WebApp --> SystemExplorer
+    end
+
+    subgraph "API Layer"
+        AuthAPI[Authentication API]
+        TermAPI[Terms API]
+        ProposalAPI[Proposals API]
+        EvaluationAPI[Evaluation API]
+        VotingAPI[Voting API]
+        SyncAPI[Branch Sync API]
+
+        Forum --> TermAPI
+        Forum --> ProposalAPI
+        Forum --> VotingAPI
+        Dashboard --> AuthAPI
+        Dashboard --> EvaluationAPI
+        Dashboard --> SyncAPI
+    end
+
+    subgraph "Business Logic Layer"
+        TermService[Term Management Service]
+        EthicsEngine[Ethics Compatibility Engine]
+        ProposalEngine[Proposal Management Engine]
+        VotingEngine[Voting & Consensus Engine]
+        SyncEngine[Branch Synchronization Engine]
+        AIOrchestrator[AI Agent Orchestrator]
+
+        EvaluationAPI --> EthicsEngine
+        TermAPI --> TermService
+        ProposalAPI --> ProposalEngine
+        VotingAPI --> VotingEngine
+        SyncAPI --> SyncEngine
+        EthicsEngine --> AIOrchestrator
+    end
+
+    subgraph "AI Agent Layer"
+        PersonalAgents[Personal AI Agents]
+        SystemAgents[System AI Agents]
+        ValidationAgents[Validation AI Agents]
+        MCPServer[MCP Server]
+
+        AIOrchestrator --> PersonalAgents
+        AIOrchestrator --> SystemAgents
+        AIOrchestrator --> ValidationAgents
+        PersonalAgents --> MCPServer
+        SystemAgents --> MCPServer
+        ValidationAgents --> MCPServer
+    end
+
+    subgraph "Data Storage Layer"
+        GitRepo[Git Repository]
+        UserProfiles[User Profiles DB]
+        VotingRecords[Voting Records DB]
+        Cache[Redis Cache]
+
+        subgraph "Git Structure"
+            MainBranch[main/]
+            PersonalBranches[users/*/]
+            TermsData[terms/]
+            DiscussionsData[discussions/]
+            ProposalsData[proposals/]
+        end
+
+        GitRepo --> MainBranch
+        GitRepo --> PersonalBranches
+        GitRepo --> TermsData
+        GitRepo --> DiscussionsData
+        GitRepo --> ProposalsData
+
+        TermService --> GitRepo
+        ProposalEngine --> GitRepo
+        VotingEngine --> VotingRecords
+        SyncEngine --> GitRepo
+        AuthAPI --> UserProfiles
+        EvaluationAPI --> Cache
+    end
+
+    subgraph "External Services"
+        GitHub[GitHub API]
+        WebSearch[Web Search APIs]
+        LLMServices[LLM Services]
+
+        MCPServer --> WebSearch
+        MCPServer --> LLMServices
+        SyncEngine -.->|future| GitHub
+    end
+
+    %% Data Flow Arrows
+    PersonalAgents -.->|analysis results| Forum
+    SystemAgents -.->|validations| ProposalEngine
+    ValidationAgents -.->|cross-checks| EthicsEngine
+
+    %% Styling
+    classDef frontend fill:#e3f2fd,stroke:#0277bd,stroke-width:2px
+    classDef api fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px
+    classDef business fill:#fff3e0,stroke:#f57c00,stroke-width:2px
+    classDef ai fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
+    classDef storage fill:#fce4ec,stroke:#c2185b,stroke-width:2px
+    classDef external fill:#f1f8e9,stroke:#558b2f,stroke-width:2px
+
+    class WebApp,Dashboard,Forum,SystemExplorer frontend
+    class AuthAPI,TermAPI,ProposalAPI,EvaluationAPI,VotingAPI,SyncAPI api
+    class TermService,EthicsEngine,ProposalEngine,VotingEngine,SyncEngine,AIOrchestrator business
+    class PersonalAgents,SystemAgents,ValidationAgents,MCPServer ai
+    class GitRepo,UserProfiles,VotingRecords,Cache,MainBranch,PersonalBranches,TermsData,DiscussionsData,ProposalsData storage
+    class GitHub,WebSearch,LLMServices external
+
+
+
+
+    graph LR
+    subgraph "Personal Development Space"
+        PersonalBranch[Personal DAHAO Branch]
+        PersonalTerms[Personal Terms Dictionary]
+        PersonalEthics[Personal Ethics Framework]
+        PersonalAI[Personal AI Agent]
+
+        PersonalBranch --> PersonalTerms
+        PersonalBranch --> PersonalEthics
+        PersonalEthics --> PersonalAI
+    end
+
+    subgraph "System Evaluation Layer"
+        CompatibilityChecker[Compatibility Checker]
+        SimilarityEngine[Similarity Engine]
+        EthicsValidator[Ethics Validator]
+        CrossDomainAnalyzer[Cross-Domain Analyzer]
+
+        PersonalTermService[Personal Term Service]
+        MainTermService[Main Term Service]
+    end
+
+    subgraph "Main DAHAO Repository"
+        MainBranch[Main DAHAO Branch]
+        CoreTerms[Core Terms Dictionary]
+        DomainTerms[Domain-Specific Terms]
+        CommunityDiscussions[Community Discussions]
+        VotingSystem[Voting & Consensus System]
+
+        MainBranch --> CoreTerms
+        MainBranch --> DomainTerms
+        MainBranch --> CommunityDiscussions
+        CommunityDiscussions --> VotingSystem
+    end
+
+    subgraph "Proposal & Merge System"
+        ProposalQueue[Proposal Queue]
+        CommunityReview[Community Review Process]
+        MergeDecision[Merge Decision Engine]
+        UpdateNotifier[Update Notification System]
+    end
+
+    %% Term Creation Flow
+    PersonalTerms -->|evaluate| CompatibilityChecker
+    CompatibilityChecker -->|check personal ethics| PersonalEthics
+    CompatibilityChecker -->|check main compatibility| CoreTerms
+    CompatibilityChecker -->|find similar| SimilarityEngine
+    SimilarityEngine -->|search| CoreTerms
+    SimilarityEngine -->|search| DomainTerms
+
+    %% Proposal Flow
+    PersonalTerms -->|propose| ProposalQueue
+    ProposalQueue --> CommunityReview
+    CommunityReview --> CommunityDiscussions
+    CommunityDiscussions --> VotingSystem
+    VotingSystem --> MergeDecision
+
+    %% Merge Success Flow
+    MergeDecision -->|approved| CoreTerms
+    MergeDecision -->|approved| DomainTerms
+    CoreTerms --> UpdateNotifier
+    UpdateNotifier -->|notify all branches| PersonalBranch
+
+    %% Inheritance Flow
+    CoreTerms -.->|inherits| PersonalTerms
+    DomainTerms -.->|may inherit| PersonalTerms
+
+    %% AI Integration
+    PersonalAI -->|assists| PersonalTerms
+    PersonalAI -->|participates in| CommunityDiscussions
+
+    %% Cross-Domain Validation
+    CrossDomainAnalyzer -->|validates| ProposalQueue
+    CrossDomainAnalyzer -->|checks impact| DomainTerms
+
+    %% Styling
+    classDef personal fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    classDef system fill:#e8f5e8,stroke:#1b5e20,stroke-width:2px
+    classDef main fill:#e1f5fe,stroke:#01579b,stroke-width:2px
+    classDef process fill:#fff3e0,stroke:#e65100,stroke-width:2px
+
+    class PersonalBranch,PersonalTerms,PersonalEthics,PersonalAI personal
+    class CompatibilityChecker,SimilarityEngine,EthicsValidator,CrossDomainAnalyzer,PersonalTermService,MainTermService system
+    class MainBranch,CoreTerms,DomainTerms,CommunityDiscussions,VotingSystem main
+    class ProposalQueue,CommunityReview,MergeDecision,UpdateNotifier process
+
+
+sequenceDiagram
+    participant User as User (Alice)
+    participant PersonalBranch as Alice's Branch
+    participant PublicPool as Public Pool
+    participant Community as Community
+    participant Sponsors as Sponsor System
+    participant Issue as Governance Issue
+    participant MainDAO as Main DAHAO
+    participant AllBranches as All Personal Branches
+    participant System as Self-Improving System
+
+    Note over User, System: Progressive Governance Pipeline
+
+    %% Personal Development Phase
+    User->>PersonalBranch: Develop new governance concept
+    PersonalBranch->>User: AI assistance & iteration
+    User->>PersonalBranch: Refine based on personal ethics
+
+    %% Public Pool Phase
+    User->>PublicPool: Submit work to public pool
+    PublicPool->>Community: Make work visible to all
+    Community->>PublicPool: Review & preliminary voting
+
+    alt Sufficient Community Interest
+        PublicPool->>Sponsors: Request sponsor review
+        Sponsors->>PublicPool: Evaluate for main discussion
+
+        alt Sponsors Approve
+            PublicPool->>Issue: Create governance issue
+            Issue->>MainDAO: Start formal discussion
+
+            %% AI Agent Deployment
+            User->>Community: Deploy AI agents to assist discussion
+            Community->>Issue: AI agents participate with API keys
+            Issue->>System: Log all agent actions
+
+            %% Full Governance Process
+            Issue->>Community: Formal community voting
+            Community->>Issue: Vote results
+
+            alt Approved for Integration
+                Issue->>MainDAO: Merge into main branch
+                MainDAO->>AllBranches: Notify all personal branches
+                AllBranches->>System: Report compatibility results
+                System->>System: Learn from integration patterns
+
+                %% System Self-Improvement
+                System->>System: Analyze what made this successful
+                System->>MainDAO: Suggest process improvements
+                System->>User: Update agent capabilities
+
+            else Rejected
+                Issue->>PersonalBranch: Return with feedback
+                PersonalBranch->>System: Log failure patterns
+                System->>User: Suggest improvements for future
+            end
+
+        else Sponsors Reject
+            PublicPool->>PersonalBranch: Back to development
+            PersonalBranch->>System: Learn from sponsor feedback
+        end
+
+    else Insufficient Interest
+        PublicPool->>PersonalBranch: Continue development
+        PersonalBranch->>User: AI suggests community alignment
+    end
+
+    %% Continuous Learning Loop
+    System->>System: Analyze all interactions
+    System->>AllBranches: Push system improvements
+    System->>PublicPool: Enhance pool mechanisms
+    System->>Sponsors: Improve sponsor tools
+    System->>Issue: Evolve governance processes
+
+    Note over User, System: System grows smarter with each cycle
+
+

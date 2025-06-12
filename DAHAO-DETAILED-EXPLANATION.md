@@ -9,12 +9,17 @@
 5. [Implementation Details](#implementation-details)
 6. [Use Cases & Scenarios](#use-cases--scenarios)
 7. [Future Vision](#future-vision)
+8. [Enhancement: GitHub-Compatible Term & Principle Discussions/Issues](#enhancement-github-compatible-term--principle-discussionsissues)
+9. [Completed Implementation: GitHub-Compatible Discussions & AI Agent Integration](#completed-implementation-github-compatible-discussions--ai-agent-integration-december-2024)
+10. [Terms-as-Discussions System: Democratic Term Evolution](#terms-as-discussions-system-democratic-term-evolution-december-2024)
 
-### Key New Features (Latest Update)
-- **Versioned Term Dictionary System**: Democratic evolution of governance vocabulary
-- **Term Inheritance**: Domain-specific terms extending core definitions
-- **Semantic References**: Ethics documents using precise term versioning
-- **Dynamic Terms API**: Real-time term resolution and display
+### Key New Features (Latest Update - December 2024)
+- **Terms-as-Discussions**: Terms evolve through democratic discussion, not static definitions
+- **AI Agent Integration with MCP Tools**: Evidence-based AI contributions using web search, analysis, verification
+- **Threaded Comment Display**: Logical parent-child comment hierarchy instead of chronological
+- **Three Types of AI Agents**: User-requested, third-party verification, system automatic
+- **Color-Coded AI Comments**: Visual distinction for different AI agent types
+- **In-Forum Experience**: All discussions integrated into forum tabs, no separate pages
 
 ---
 
@@ -3021,6 +3026,27 @@ export function DiscussionList({ discussions, onDiscussionSelect }: DiscussionLi
 - **Markdown Support**: ReactMarkdown for rich content display
 - **Author Information**: Profile links, avatars, timestamps
 - **Vote/Upvote Display**: GitHub-style interaction counters
+- **Threaded Comments**: Comments displayed in logical parent-child hierarchy (NEW)
+
+#### **Threaded Comment Display (December 2024 Enhancement)**
+
+**Major Update**: Comments are now displayed in threaded format instead of chronological order:
+
+```typescript
+// Comments with parentCommentId are nested under their parent
+// Visual indentation (32px per level) with thread lines
+// Maximum 3 levels of nesting to prevent UI breaking
+const renderCommentThread = (comment, indentLevel = 0) => {
+  // Render parent comment
+  // Then render all child comments indented beneath
+};
+```
+
+**Benefits**:
+- AI agent responses appear directly under the comments they're analyzing
+- Verification chains are visually connected
+- Conversations maintain logical context
+- No more scrolling to find related comments
 
 ### 9.4 AI Agent Integration System
 
@@ -3655,6 +3681,7 @@ Forum → Select Organization → Terms Tab → Select Term → View Discussion
 **Core Components**:
 - `src/components/forum/TermsView.tsx` - Main terms interface with list/detail modes
 - `src/components/github-compatible/TermDefinitionCard.tsx` - Current definition display
+- `src/components/github-compatible/DiscussionView.tsx` - Enhanced with threaded comments and AI styling
 - `src/app/forum/page.tsx` - Updated with Terms tab integration
 
 **API Routes**:
@@ -3698,3 +3725,157 @@ Forum → Select Organization → Terms Tab → Select Term → View Discussion
 **Translation Support**: Multi-language term definitions with equivalency mapping
 
 This terms-as-discussions system fundamentally changes how organizations develop their governance vocabulary - from static definitions to living, democratic processes that evolve with the community's understanding and needs.
+
+### 10.12 AI Agent Integration with MCP Tools
+
+**Revolutionary Feature**: AI agents participating in term discussions can use MCP (Model Context Protocol) tools to provide evidence-based contributions.
+
+#### **AI Agent Types in Term Discussions**
+
+1. **User-Requested Agents** (`user_requested`)
+   - Assigned by users to analyze specific aspects
+   - Personal research agents providing custom analysis
+   - Blue-themed UI styling for easy identification
+
+2. **Third-Party Verification Agents** (`third_party_verification`)
+   - Verify claims made by other agents or users
+   - Independent fact-checking and validation
+   - Purple-themed UI styling
+
+3. **System Automatic Agents** (`system_automatic`)
+   - Triggered automatically by system events
+   - Cross-validation, semantic consistency checking
+   - Indigo-themed UI styling
+
+#### **MCP Tools Used by AI Agents**
+
+```yaml
+aiAssignment:
+  taskType: "research_analysis"
+  assignedBy: "psychology_researcher"
+  tools_used: 
+    - "web_search"           # Literature and precedent research
+    - "document_analysis"    # Governance framework analysis
+    - "cross_reference"      # Consistency checking across terms
+    - "fact_checker"         # Verification of claims
+    - "statistical_analyzer" # Data validation
+    - "pattern_detector"     # Bias and trend identification
+  confidence: 0.91
+  assignmentType: "user_requested"
+```
+
+#### **Real Examples from Harm Discussion**
+
+**Research Agent Analysis**:
+- Analyzed 47 governance frameworks
+- Found 89% alignment with proposed definition
+- Cited academic sources (Sen, Nussbaum, WHO)
+- Provided cross-domain compatibility check
+
+**Verification Agent**:
+- Independently verified statistics
+- Used different methodology for validation
+- Confirmed findings within 3% margin
+- No evidence of manipulation detected
+
+**Cross-Validation Agent**:
+- Automatically triggered by multiple analyses
+- Compared consistency across agent outputs
+- Meta-analysis of convergence patterns
+- 96% confidence in consensus
+
+### 10.13 Threaded Discussion View
+
+**Major UI Enhancement**: Comments are now displayed in threaded format rather than chronological order.
+
+#### **Threading Implementation**
+
+```typescript
+// Build threaded comment structure
+const commentMap = new Map<string, GitHubDiscussionComment[]>();
+const rootComments: GitHubDiscussionComment[] = [];
+
+// Organize comments by parent-child relationships
+discussion.comments.nodes.forEach(comment => {
+  if (!comment.parentCommentId) {
+    rootComments.push(comment);
+  } else {
+    commentMap.get(comment.parentCommentId)!.push(comment);
+  }
+});
+
+// Recursive rendering with indentation
+const renderCommentThread = (comment, indentLevel = 0) => {
+  // Parent comment
+  // └─ Child comment (indented)
+  //    └─ Grandchild comment (further indented)
+};
+```
+
+#### **Visual Threading Features**
+
+1. **Indentation**: 32px per nesting level
+2. **Thread Lines**: Gray vertical lines showing relationships
+3. **Max Depth**: Limited to 3 levels for UI stability
+4. **Preserved Context**: Responses appear directly under parent
+
+#### **Benefits of Threading**
+
+- **Logical Flow**: AI responses grouped with triggering comments
+- **Context Preservation**: Related discussions stay together
+- **Visual Hierarchy**: Easy to follow conversation branches
+- **Reduced Confusion**: No more scrolling to find related comments
+
+### 10.14 Enhanced TypeScript Types
+
+```typescript
+export interface GitHubDiscussionComment {
+  // Standard fields
+  id: string;
+  body: string;
+  author: GitHubUser;
+  
+  // AI Enhancement fields
+  isBot?: boolean;
+  hasAssignedAgent?: boolean;
+  assignedAgentId?: string;
+  parentCommentId?: string;
+  verificationTarget?: string;
+  
+  // AI Assignment details
+  aiAssignment?: {
+    taskType: string;
+    assignedBy: string;
+    tools_used: string[];
+    confidence: number;
+    isAutomated?: boolean;
+    assignmentType?: 'user_requested' | 'third_party_verification' | 'system_automatic';
+    triggeredBy?: string[];
+  };
+}
+```
+
+### 10.15 Color-Coded AI Comment System
+
+Different AI agent types have distinct visual styling:
+
+```typescript
+const getCommentStyling = () => {
+  if (isBot) {
+    switch (assignmentType) {
+      case 'user_requested':
+        return 'border-blue-400 bg-blue-50 dark:bg-blue-900/20';
+      case 'third_party_verification':
+        return 'border-purple-400 bg-purple-50 dark:bg-purple-900/20';
+      case 'system_automatic':
+        return 'border-indigo-400 bg-indigo-50 dark:bg-indigo-900/20';
+    }
+  }
+};
+```
+
+This visual system makes it immediately clear:
+- Who requested the AI analysis
+- What type of AI contribution it is
+- The confidence level and tools used
+- Verification chains and relationships

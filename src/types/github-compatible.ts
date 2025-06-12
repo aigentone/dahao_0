@@ -24,6 +24,20 @@ export interface GitHubDiscussionComment {
   updatedAt: string;
   author: GitHubUser;
   isAnswer?: boolean;
+  isBot?: boolean;
+  hasAssignedAgent?: boolean;
+  assignedAgentId?: string;
+  parentCommentId?: string;
+  verificationTarget?: string;
+  aiAssignment?: {
+    taskType: string;
+    assignedBy: string;
+    tools_used: string[];
+    confidence: number;
+    isAutomated?: boolean;
+    assignmentType?: 'user_requested' | 'third_party_verification' | 'system_automatic';
+    triggeredBy?: string[];
+  };
   replies?: {
     totalCount: number;
     nodes: GitHubDiscussionComment[];
