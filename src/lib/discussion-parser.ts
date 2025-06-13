@@ -25,6 +25,11 @@ interface PlatformStats {
   contributors: number;
   activeDiscussions: number;
   consensusRate: number;
+  // Token Economics Stats
+  totalTokenValue: number;
+  investmentPools: number;
+  tokenHolders: number;
+  averageROI: number;
 }
 
 export class DiscussionParser {
@@ -289,7 +294,11 @@ export class DiscussionParser {
         activeDAHAOs: organizations?.length || 0,
         contributors: 0,
         activeDiscussions: 0,
-        consensusRate: 0
+        consensusRate: 0,
+        totalTokenValue: 0,
+        investmentPools: 0,
+        tokenHolders: 0,
+        averageROI: 0
       };
     }
 
@@ -343,11 +352,21 @@ export class DiscussionParser {
       ? Math.round(totalConsensusScore / totalVotingDiscussions)
       : 85; // Default fallback
 
+    // Calculate token economics stats (mock data for now, would be from API in production)
+    const totalTokenValue = 2500000; // $2.5M total
+    const investmentPools = (organizations?.length || 0) * 3; // 3 pools per DAHAO average
+    const tokenHolders = Math.max(contributors.size * 4, 50); // Estimate 4x contributors are token holders
+    const averageROI = 18.5; // 18.5% average ROI
+
     return {
       activeDAHAOs: organizations?.length || 0,
       contributors: contributors.size, // Show actual count, don't enforce minimum
       activeDiscussions: activeDiscussions,
-      consensusRate
+      consensusRate,
+      totalTokenValue,
+      investmentPools,
+      tokenHolders,
+      averageROI
     };
   }
 }

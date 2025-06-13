@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { formatDistanceToNow } from 'date-fns';
 import { GitHubDiscussion, GitHubDiscussionComment } from '@/types/github-compatible';
 import { CheckCircle, Circle, ChevronUp, Bot } from 'lucide-react';
@@ -30,7 +31,7 @@ export function DiscussionView({ discussion }: DiscussionViewProps) {
             <span className="text-gray-500 ml-2">#{discussion.number}</span>
           </h1>
         </div>
-        
+
         <div className="text-sm text-gray-600 dark:text-gray-400">
           <Link href={discussion.author.url} className="font-medium hover:underline">
             {discussion.author.login}
@@ -63,9 +64,11 @@ export function DiscussionView({ discussion }: DiscussionViewProps) {
       <div className="border border-gray-300 dark:border-gray-700 rounded-lg mb-6">
         <div className="bg-gray-50 dark:bg-gray-800 px-4 py-2 border-b border-gray-300 dark:border-gray-700">
           <div className="flex items-center gap-3">
-            <img
+            <Image
               src={discussion.author.avatarUrl}
               alt={discussion.author.login}
+              width={32}
+              height={32}
               className="w-8 h-8 rounded-full"
             />
             <div>
@@ -78,12 +81,12 @@ export function DiscussionView({ discussion }: DiscussionViewProps) {
             </div>
           </div>
         </div>
-        
+
         <div className="p-4">
           <div className="prose dark:prose-invert max-w-none">
             <ReactMarkdown>{discussion.body}</ReactMarkdown>
           </div>
-          
+
           <div className="mt-4 flex items-center gap-4">
             <button className="flex items-center gap-1 text-sm text-gray-600 hover:text-blue-600">
               <ChevronUp className="w-4 h-4" />
@@ -99,7 +102,7 @@ export function DiscussionView({ discussion }: DiscussionViewProps) {
           // Build a threaded comment structure
           const commentMap = new Map<string, GitHubDiscussionComment[]>();
           const rootComments: GitHubDiscussionComment[] = [];
-          
+
           // First pass: organize comments by parent
           discussion.comments.nodes.forEach(comment => {
             if (!comment.parentCommentId) {
@@ -111,51 +114,51 @@ export function DiscussionView({ discussion }: DiscussionViewProps) {
               commentMap.get(comment.parentCommentId)!.push(comment);
             }
           });
-          
+
           // Sort root comments by date
-          rootComments.sort((a, b) => 
+          rootComments.sort((a, b) =>
             new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime()
           );
-          
+
           // Sort child comments by date
           commentMap.forEach(children => {
-            children.sort((a, b) => 
+            children.sort((a, b) =>
               new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime()
             );
           });
-          
+
           // Recursive function to render comment thread
           const renderCommentThread = (
-            comment: GitHubDiscussionComment, 
+            comment: GitHubDiscussionComment,
             indentLevel: number = 0
           ): React.JSX.Element[] => {
             const maxIndentLevel = 3;
             const actualIndentLevel = Math.min(indentLevel, maxIndentLevel);
-            
+
             const elements: React.JSX.Element[] = [];
-            
+
             // Render the comment itself
             elements.push(
-              <div 
+              <div
                 key={comment.id}
-                style={{ 
+                style={{
                   marginLeft: `${actualIndentLevel * 32}px`,
                   position: 'relative'
                 }}
               >
                 {/* Indent line indicator */}
                 {actualIndentLevel > 0 && (
-                  <div 
+                  <div
                     className="absolute left-0 top-0 bottom-0 w-0.5 bg-gray-300 dark:bg-gray-600"
-                    style={{ 
+                    style={{
                       left: `${-16}px`,
                       top: '20px'
                     }}
                   />
                 )}
-                
-                <CommentView 
-                  comment={comment} 
+
+                <CommentView
+                  comment={comment}
                   isAnswer={comment.id === discussion.answer?.id}
                   onBotClick={() => setSelectedCommentForAgent(
                     selectedCommentForAgent === comment.id ? null : comment.id
@@ -165,16 +168,16 @@ export function DiscussionView({ discussion }: DiscussionViewProps) {
                 />
               </div>
             );
-            
+
             // Render child comments recursively
             const children = commentMap.get(comment.id) || [];
             children.forEach(child => {
               elements.push(...renderCommentThread(child, indentLevel + 1));
             });
-            
+
             return elements;
           };
-          
+
           // Render all root comments and their threads
           return rootComments.flatMap(comment => renderCommentThread(comment));
         })()}
@@ -183,14 +186,14 @@ export function DiscussionView({ discussion }: DiscussionViewProps) {
   );
 }
 
-function CommentView({ 
-  comment, 
-  isAnswer, 
-  onBotClick, 
+function CommentView({
+  comment,
+  isAnswer,
+  onBotClick,
   showAgentPanel,
   indentLevel = 0
-}: { 
-  comment: GitHubDiscussionComment; 
+}: {
+  comment: GitHubDiscussionComment;
   isAnswer?: boolean;
   onBotClick: () => void;
   showAgentPanel: boolean;
@@ -199,7 +202,7 @@ function CommentView({
   const isBot = comment.isBot || false;
   const hasAssignedAgent = comment.hasAssignedAgent || false;
   const assignmentType = comment.aiAssignment?.assignmentType;
-  
+
   // Determine border and background colors based on comment type
   const getCommentStyling = () => {
     if (isAnswer) return 'border-green-500 bg-green-50 dark:bg-green-900/20';
@@ -220,7 +223,7 @@ function CommentView({
     }
     return 'border-gray-300 dark:border-gray-700';
   };
-  
+
   return (
     <div className={`border rounded-lg ${getCommentStyling()}`}>
       <div className={`px-4 py-2 border-b ${
@@ -239,9 +242,11 @@ function CommentView({
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="relative">
-              <img
+              <Image
                 src={comment.author.avatarUrl}
                 alt={comment.author.login}
+                width={32}
+                height={32}
                 className={`w-8 h-8 rounded-full ${isBot ? 'ring-2 ring-blue-400' : ''}`}
               />
               {isBot && (
@@ -309,8 +314,8 @@ function CommentView({
             <button
               onClick={onBotClick}
               className={`p-2 rounded-md transition-colors ${
-                showAgentPanel 
-                  ? 'bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300' 
+                showAgentPanel
+                  ? 'bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300'
                   : 'text-gray-500 hover:text-blue-600 hover:bg-gray-100 dark:hover:bg-gray-700'
               }`}
               title="Assign AI Agent"
@@ -320,14 +325,14 @@ function CommentView({
           </div>
         </div>
       </div>
-      
+
       <div className={`${showAgentPanel ? 'grid grid-cols-1 lg:grid-cols-2 gap-4' : ''}`}>
         {/* Comment Content */}
         <div className="p-4">
           <div className="prose dark:prose-invert max-w-none">
             <ReactMarkdown>{comment.body}</ReactMarkdown>
           </div>
-          
+
           {/* Verification Target Indicator - Only show if verifying a different comment */}
           {comment.verificationTarget && comment.verificationTarget !== comment.parentCommentId && (
             <div className="mt-2 p-2 bg-purple-50 dark:bg-purple-900/20 rounded border-l-4 border-purple-400">
@@ -387,7 +392,7 @@ function CommentView({
               </div>
             </div>
           )}
-          
+
           <div className="mt-4 flex items-center gap-4">
             <button className="flex items-center gap-1 text-sm text-gray-600 hover:text-blue-600">
               <ChevronUp className="w-4 h-4" />

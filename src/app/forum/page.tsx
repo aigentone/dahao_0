@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { StatsBar } from '@/components/forum/StatsBar';
 import { OrganizationCards } from '@/components/forum/OrganizationCards';
 import { OrganizationHeader } from '@/components/forum/OrganizationHeader';
@@ -23,35 +23,8 @@ export default function ForumPage() {
   const [selectedDiscussion, setSelectedDiscussion] = useState<GitHubDiscussion | null>(null);
   const [viewMode, setViewMode] = useState<'list' | 'detail'>('list');
   const [orgDiscussions, setOrgDiscussions] = useState<GitHubDiscussion[]>([]);
-  useEffect(() => {
-    fetchGovernanceData();
-  }, []);
-  const fetchGovernanceData = async () => {
-    setLoading(true);
-    try {
-      const response = await fetch('/api/governance');
-      if (response.ok) {
-        const data = await response.json();
-        setGovernanceData(data);
-        // Auto-select animal welfare by default to show the featured discussion
-        if (data.organizations.length > 0) {
-          handleSelectOrg('animal-welfare');
-        }
-      } else {
-        console.error('Failed to fetch governance data');
-      }
-    } catch (error) {
-      console.error('Error fetching governance data:', error);
-    }
-    setLoading(false);
-  };
 
-  const handleSelectOrg = async (orgId: string) => {
-    setSelectedOrg(orgId);
-    setSelectedDiscussion(null);
-    setViewMode('list');
-
-    // Fetch GitHub discussions for this organization via API
+  const fetchOrgDiscussions = useCallback(async (orgId: string) => {
     try {
       const response = await fetch(`/api/discussions/${orgId}`);
       if (response.ok) {
@@ -65,6 +38,43 @@ export default function ForumPage() {
       console.error('Failed to fetch organization discussions:', error);
       setOrgDiscussions([]);
     }
+  }, []);
+
+  const fetchGovernanceData = useCallback(async () => {
+    setLoading(true);
+    try {
+      const response = await fetch('/api/governance');
+      if (response.ok) {
+        const data = await response.json();
+        setGovernanceData(data);
+        // Auto-select animal welfare by default to show the featured discussion
+        if (data.organizations.length > 0) {
+          setSelectedOrg('animal-welfare');
+        }
+      } else {
+        console.error('Failed to fetch governance data');
+      }
+    } catch (error) {
+      console.error('Error fetching governance data:', error);
+    }
+    setLoading(false);
+  }, []);
+
+  useEffect(() => {
+    fetchGovernanceData();
+  }, [fetchGovernanceData]);
+
+  useEffect(() => {
+    if (selectedOrg && governanceData) {
+      // Fetch discussions when org is selected
+      fetchOrgDiscussions(selectedOrg);
+    }
+  }, [selectedOrg, governanceData, fetchOrgDiscussions]);
+
+  const handleSelectOrg = (orgId: string) => {
+    setSelectedOrg(orgId);
+    setSelectedDiscussion(null);
+    setViewMode('list');
   };
 
   const handleDiscussionSelect = (discussion: GitHubDiscussion) => {

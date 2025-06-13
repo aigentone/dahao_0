@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { formatDistanceToNow } from 'date-fns';
 import { MessageSquare, Circle, CheckCircle, ChevronUp, ArrowLeft } from 'lucide-react';
 import { GitHubDiscussion } from '@/types/github-compatible';
@@ -15,9 +16,9 @@ interface FeaturedDiscussionProps {
   basePath?: string; // For linking to discussion detail page
 }
 
-export function FeaturedDiscussion({ 
-  discussion, 
-  onBack, 
+export function FeaturedDiscussion({
+  discussion,
+  onBack,
   isSelected = false,
   onDiscussionSelect,
   basePath
@@ -60,7 +61,7 @@ export function FeaturedDiscussion({
               </div>
             </div>
           </div>
-          
+
           {isSelected && onBack && (
             <button
               onClick={onBack}
@@ -118,9 +119,11 @@ export function FeaturedDiscussion({
           <div className="space-y-4">
             {discussion.comments.nodes.slice(0, 2).map((comment) => (
               <div key={comment.id} className="flex gap-3">
-                <img
+                <Image
                   src={comment.author.avatarUrl}
                   alt={comment.author.login}
+                  width={32}
+                  height={32}
                   className="w-8 h-8 rounded-full flex-shrink-0"
                 />
                 <div className="flex-1 min-w-0">
@@ -142,7 +145,7 @@ export function FeaturedDiscussion({
               </div>
             ))}
           </div>
-          
+
           {discussion.comments.totalCount > 2 && (
             <div className="mt-4 pt-4 border-t border-gray-50">
               {basePath ? (

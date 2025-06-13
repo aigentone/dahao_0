@@ -429,3 +429,1942 @@ Require stack:
  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 25ms
  GET /api/governance 200 in 67ms
  GET /api/discussions/animal-welfare 200 in 6ms
+ ✓ Compiled in 1227ms (5059 modules)
+ ✓ Compiled in 672ms (5059 modules)
+ GET /forum 200 in 792ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 688ms (5063 modules)
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/_not-found/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/_not-found/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/_not-found/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ GET /.well-known/appspecific/com.chrome.devtools.json 500 in 852ms
+ GET /_next/static/css/app/layout.css?v=1749848711457 500 in 777ms
+ GET /_next/static/chunks/main-app.js?v=1749848711457 500 in 742ms
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/_not-found/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/_not-found/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ GET /_next/static/chunks/app/layout.js 500 in 33ms
+ GET /_next/static/chunks/app-pages-internals.js 500 in 34ms
+ ✓ Compiled in 330ms (5063 modules)
+ GET /forum 200 in 195ms
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ GET /.well-known/appspecific/com.chrome.devtools.json 500 in 66ms
+ GET /_next/static/css/app/layout.css?v=1749848724297 500 in 51ms
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ GET /_next/static/chunks/main-app.js?v=1749848724297 500 in 69ms
+ GET /_next/static/chunks/app/layout.js 500 in 68ms
+ GET /_next/static/chunks/app-pages-internals.js 500 in 69ms
+ ✓ Compiled in 1098ms (5077 modules)
+ GET /forum 200 in 172ms
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ GET /.well-known/appspecific/com.chrome.devtools.json 500 in 22ms
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ GET /_next/static/chunks/main-app.js?v=1749848734142 500 in 26ms
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ GET /_next/static/chunks/app-pages-internals.js 500 in 16ms
+ GET /forum 200 in 45ms
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ GET /.well-known/appspecific/com.chrome.devtools.json 500 in 29ms
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ GET /_next/static/chunks/main-app.js?v=1749848737503 500 in 41ms
+ GET /_next/static/chunks/app-pages-internals.js 500 in 40ms
+ ✓ Compiled in 1059ms (5077 modules)
+ GET /forum 200 in 131ms
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ GET /.well-known/appspecific/com.chrome.devtools.json 500 in 37ms
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ GET /_next/static/chunks/main-app.js?v=1749848745204 500 in 54ms
+ GET /_next/static/chunks/app-pages-internals.js 500 in 54ms
+ ✓ Compiled in 543ms (5077 modules)
+ ✓ Compiled in 1013ms (5077 modules)
+ ⨯ ReferenceError: Cannot access 'fetchGovernanceData' before initialization
+    at ForumPage (src/app/forum/page.tsx:28:6)
+  26 |   useEffect(() => {
+  27 |     fetchGovernanceData();
+> 28 |   }, [fetchGovernanceData]);
+     |      ^
+  29 |
+  30 |   useEffect(() => {
+  31 |     if (selectedOrg) { {
+  digest: '2275013792'
+}
+ GET /forum 500 in 154ms
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ GET /.well-known/appspecific/com.chrome.devtools.json 500 in 28ms
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ GET /_next/static/chunks/main-app.js 500 in 42ms
+ GET /_next/static/chunks/app-pages-internals.js 500 in 42ms
+ ✓ Compiled in 925ms (5077 modules)
+ ⨯ ReferenceError: Cannot access 'fetchGovernanceData' before initialization
+    at ForumPage (src/app/forum/page.tsx:28:6)
+  26 |   useEffect(() => {
+  27 |     fetchGovernanceData();
+> 28 |   }, [fetchGovernanceData]);
+     |      ^
+  29 |
+  30 |   useEffect(() => {
+  31 |     if (selectedOrg && governanceData) { {
+  digest: '2275013792'
+}
+ GET /forum 500 in 382ms
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ GET /.well-known/appspecific/com.chrome.devtools.json 500 in 35ms
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ GET /_next/static/chunks/main-app.js 500 in 50ms
+ GET /_next/static/chunks/app-pages-internals.js 500 in 49ms
+ ⨯ ReferenceError: Cannot access 'fetchGovernanceData' before initialization
+    at ForumPage (src/app/forum/page.tsx:28:6)
+  26 |   useEffect(() => {
+  27 |     fetchGovernanceData();
+> 28 |   }, [fetchGovernanceData]);
+     |      ^
+  29 |
+  30 |   useEffect(() => {
+  31 |     if (selectedOrg && governanceData) { {
+  digest: '2275013792'
+}
+ GET /forum 500 in 52ms
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ GET /.well-known/appspecific/com.chrome.devtools.json 500 in 35ms
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ GET /_next/static/chunks/main-app.js 500 in 31ms
+ GET /_next/static/chunks/app-pages-internals.js 500 in 31ms
+ ✓ Compiled in 522ms (5077 modules)
+ ✓ Compiled in 546ms (5077 modules)
+ ⨯ ReferenceError: Cannot access 'fetchGovernanceData' before initialization
+    at ForumPage (src/app/forum/page.tsx:28:6)
+  26 |   useEffect(() => {
+  27 |     fetchGovernanceData();
+> 28 |   }, [fetchGovernanceData]);
+     |      ^
+  29 |
+  30 |   useEffect(() => {
+  31 |     if (selectedOrg && governanceData) { {
+  digest: '2275013792'
+}
+ GET /forum 500 in 307ms
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ GET /.well-known/appspecific/com.chrome.devtools.json 500 in 28ms
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ GET /_next/static/chunks/main-app.js 500 in 96ms
+ GET /_next/static/chunks/app-pages-internals.js 500 in 97ms
+ ⨯ ReferenceError: Cannot access 'fetchGovernanceData' before initialization
+    at ForumPage (src/app/forum/page.tsx:28:6)
+  26 |   useEffect(() => {
+  27 |     fetchGovernanceData();
+> 28 |   }, [fetchGovernanceData]);
+     |      ^
+  29 |
+  30 |   useEffect(() => {
+  31 |     if (selectedOrg && governanceData) { {
+  digest: '2275013792'
+}
+ GET /forum 500 in 56ms
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ GET /.well-known/appspecific/com.chrome.devtools.json 500 in 23ms
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ GET /_next/static/chunks/main-app.js 500 in 35ms
+ GET /_next/static/chunks/app-pages-internals.js 500 in 35ms
+ ⨯ ReferenceError: Cannot access 'fetchGovernanceData' before initialization
+    at ForumPage (src/app/forum/page.tsx:28:6)
+  26 |   useEffect(() => {
+  27 |     fetchGovernanceData();
+> 28 |   }, [fetchGovernanceData]);
+     |      ^
+  29 |
+  30 |   useEffect(() => {
+  31 |     if (selectedOrg && governanceData) { {
+  digest: '2275013792'
+}
+ GET /forum 500 in 133ms
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ GET /.well-known/appspecific/com.chrome.devtools.json 500 in 57ms
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ GET /_next/static/chunks/main-app.js 500 in 59ms
+ GET /_next/static/chunks/app-pages-internals.js 500 in 59ms
+ ✓ Compiled in 757ms (5077 modules)
+ GET /forum 200 in 720ms
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ GET /.well-known/appspecific/com.chrome.devtools.json 500 in 58ms
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ GET /_next/static/chunks/main-app.js?v=1749848909185 500 in 26ms
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ GET /_next/static/chunks/app-pages-internals.js 500 in 16ms
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ GET /forum 200 in 117ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 500 in 56ms
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ GET /_next/static/chunks/main-app.js?v=1749848922010 500 in 39ms
+ GET /_next/static/chunks/app-pages-internals.js 500 in 38ms
+ ✓ Compiled in 1154ms (5077 modules)
+ GET /forum 200 in 108ms
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ GET /.well-known/appspecific/com.chrome.devtools.json 500 in 36ms
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ GET /_next/static/chunks/main-app.js?v=1749848924397 500 in 38ms
+ GET /_next/static/chunks/app-pages-internals.js 500 in 37ms
+ ⨯ ./src/components/forum/TermsView.tsx
+Error:   [31mx[0m Expected ',', got ';'
+    ,-[[36;1;4m/Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/src/components/forum/TermsView.tsx[0m:45:1]
+ [2m42[0m |       setAvailableTerms(fallbackTerms);
+ [2m43[0m |     }
+ [2m44[0m |     setLoading(false);
+ [2m45[0m |   };
+    : [35;1m   ^[0m
+ [2m46[0m | 
+ [2m47[0m |   const getTermsForOrganization = (orgId: string): TermInfo[] => {
+ [2m48[0m |     const termMap: Record<string, TermInfo[]> = {
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/components/forum/TermsView.tsx
+./src/app/forum/page.tsx
+ ✓ Compiled in 617ms (5077 modules)
+ GET /forum 200 in 77ms
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ GET /.well-known/appspecific/com.chrome.devtools.json 500 in 31ms
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ GET /_next/static/chunks/main-app.js?v=1749848934388 500 in 45ms
+ GET /_next/static/chunks/app-pages-internals.js 500 in 44ms
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ GET /forum 200 in 289ms
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ GET /.well-known/appspecific/com.chrome.devtools.json 500 in 231ms
+ GET /_next/static/chunks/webpack.js?v=1749848972425 500 in 225ms
+ GET /_next/static/css/app/layout.css?v=1749848972425 500 in 227ms
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ GET /_next/static/chunks/main-app.js?v=1749848972425 500 in 51ms
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ GET /_next/static/chunks/app-pages-internals.js 500 in 52ms
+ GET /_next/static/chunks/app/layout.js 500 in 51ms
+ GET /_next/static/chunks/app/forum/page.js 500 in 51ms
+ GET /forum 200 in 37ms
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ GET /.well-known/appspecific/com.chrome.devtools.json 500 in 38ms
+ GET /_next/static/css/app/layout.css?v=1749848974971 500 in 39ms
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ GET /_next/static/chunks/webpack.js?v=1749848974971 500 in 85ms
+ GET /_next/static/chunks/app-pages-internals.js 500 in 84ms
+ GET /_next/static/chunks/main-app.js?v=1749848974971 500 in 85ms
+ GET /_next/static/chunks/app/layout.js 500 in 84ms
+ GET /_next/static/chunks/app/forum/page.js 500 in 83ms
+ GET /forum 200 in 44ms
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ GET /.well-known/appspecific/com.chrome.devtools.json 500 in 38ms
+ GET /_next/static/css/app/layout.css?v=1749848977490 500 in 36ms
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ GET /_next/static/chunks/webpack.js?v=1749848977490 500 in 35ms
+ GET /_next/static/chunks/main-app.js?v=1749848977490 500 in 36ms
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ Error: Cannot find module './4447.js'
+Require stack:
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/webpack-runtime.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/.next/server/app/forum/page.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/require.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/load-components.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/utils.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/options.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/swc/index.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/parse-module.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/build/analysis/get-page-static-info.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/router-server.js
+- /Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/node_modules/next/dist/server/lib/start-server.js
+    at __webpack_require__.f.require (.next/server/webpack-runtime.js:198:28)
+    at <unknown> (.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (.next/server/webpack-runtime.js:162:22)
+    at <unknown> (.next/server/app/_not-found/page.js:1:4844)
+    at Object.<anonymous> (.next/server/app/_not-found/page.js:1:4891) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ GET /_next/static/chunks/app-pages-internals.js 500 in 36ms
+ GET /_next/static/chunks/app/layout.js 500 in 35ms
+ GET /_next/static/chunks/app/forum/page.js 500 in 35ms
+[?25h

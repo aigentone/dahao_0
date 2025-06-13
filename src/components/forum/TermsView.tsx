@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { ArrowLeft, FileText, Calendar, Vote, Users } from 'lucide-react';
 import { TermDefinitionCard } from '@/components/github-compatible/TermDefinitionCard';
 import { DiscussionView } from '@/components/github-compatible/DiscussionView';
@@ -22,11 +22,7 @@ export function TermsView({ organizationId }: TermsViewProps) {
   const [viewMode, setViewMode] = useState<'list' | 'detail'>('list');
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    fetchAvailableTerms();
-  }, [organizationId]);
-
-  const fetchAvailableTerms = async () => {
+  const fetchAvailableTerms = useCallback(async () => {
     setLoading(true);
     try {
       // Get available terms for this organization
@@ -46,7 +42,11 @@ export function TermsView({ organizationId }: TermsViewProps) {
       setAvailableTerms(fallbackTerms);
     }
     setLoading(false);
-  };
+  }, [organizationId]);
+
+  useEffect(() => {
+    fetchAvailableTerms();
+  }, [fetchAvailableTerms]);
 
   const getTermsForOrganization = (orgId: string): TermInfo[] => {
     const termMap: Record<string, TermInfo[]> = {
