@@ -11,6 +11,7 @@ export function Header() {
     { href: '/mission', label: 'Our Mission' },
     { href: '/about', label: 'About' },
     { href: '/how-it-works', label: 'How It Works' },
+    { href: '/flow', label: 'System Flows' },
     { href: '/agents', label: 'AI Agents' },
     { href: '/terms', label: 'Terms' },
     { href: '/forum', label: 'Forum' },
