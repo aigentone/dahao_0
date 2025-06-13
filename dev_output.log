@@ -375,3 +375,57 @@ Require stack:
  GET /api/governance 200 in 951ms
  ✓ Compiled /api/discussions/[orgId] in 252ms (5130 modules)
  GET /api/discussions/animal-welfare 200 in 664ms
+ ✓ Compiled in 2.9s (5070 modules)
+ ✓ Compiled in 510ms (2576 modules)
+ ✓ Compiled in 383ms (2576 modules)
+ ✓ Compiled in 1922ms (5070 modules)
+ ✓ Compiled in 856ms (2576 modules)
+ ✓ Compiled in 370ms (2576 modules)
+ ✓ Compiled in 1089ms (5070 modules)
+ ✓ Compiled in 604ms (5070 modules)
+ ✓ Compiled in 1002ms (2576 modules)
+ ✓ Compiled in 646ms (2576 modules)
+ ✓ Compiled in 800ms (5070 modules)
+ ✓ Compiled in 516ms (5070 modules)
+ ✓ Compiled in 963ms (5070 modules)
+ ✓ Compiled in 979ms (5070 modules)
+ ✓ Compiled in 610ms (5070 modules)
+ ✓ Compiled in 814ms (5070 modules)
+ ✓ Compiled in 1249ms (5073 modules)
+ ✓ Compiled in 1194ms (5073 modules)
+ ✓ Compiled in 588ms (5073 modules)
+ ✓ Compiled in 1022ms (5073 modules)
+ ✓ Compiled in 900ms (2577 modules)
+ ✓ Compiled in 661ms (2577 modules)
+ ✓ Compiled in 1676ms (5059 modules)
+ ✓ Compiled in 1141ms (5073 modules)
+ ✓ Compiled in 2.1s (5073 modules)
+ ○ Compiling /api/governance ...
+ ✓ Compiled /api/governance in 855ms (2563 modules)
+ GET /api/governance 200 in 1113ms
+ ✓ Compiled /api/discussions/[orgId] in 310ms (2566 modules)
+ GET /api/discussions/animal-welfare 200 in 355ms
+ ○ Compiling / ...
+ ✓ Compiled / in 837ms (2575 modules)
+ GET / 200 in 1067ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 750ms (5142 modules)
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 894ms
+ GET /_next/static/chunks/app/page.js 404 in 597ms
+ GET /forum 200 in 238ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 24ms
+ GET /api/governance 200 in 67ms
+ GET /api/discussions/animal-welfare 200 in 10ms
+ ○ Compiling /api/terms-list/[domain] ...
+ ✓ Compiled /api/terms-list/[domain] in 631ms (5144 modules)
+ GET /api/terms-list/animal-welfare 200 in 1002ms
+ GET /api/terms-list/animal-welfare 200 in 4ms
+ GET /api/discussions/environment 200 in 80ms
+ GET /api/discussions/animal-welfare 200 in 12ms
+ GET /api/discussions/core-governance 200 in 18ms
+ GET /api/discussions/animal-welfare 200 in 13ms
+ GET /api/discussions/core-governance 200 in 16ms
+ GET /forum 200 in 272ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 25ms
+ GET /api/governance 200 in 67ms
+ GET /api/discussions/animal-welfare 200 in 6ms

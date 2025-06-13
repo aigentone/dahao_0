@@ -8,7 +8,7 @@ interface TermInfo {
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { domain: string } }
+  { params }: { params: Promise<{ domain: string }> }
 ) {
   try {
     const { domain } = await params;

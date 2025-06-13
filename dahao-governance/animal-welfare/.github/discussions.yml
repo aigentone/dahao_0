@@ -4,12 +4,12 @@ discussions:
     title: "Turkey Municipal Veterinary Care System for Street Animals"
     body: |
       ## Summary
-      Proposal for a comprehensive blockchain-verified municipal veterinary care system for street animals in Turkey. The system integrates with existing municipal infrastructure to provide transparent, funded healthcare for street animals through verified veterinary providers with blockchain-tracked treatment records.
+      Proposal for a comprehensive blockchain-verified municipal veterinary care system for street animals in Turkey. The system integrates with existing municipal infrastructure to provide transparent, token-governed healthcare for street animals through verified veterinary providers with blockchain-tracked treatment records and investment pool allocation.
 
       ## Proposed System Components
       1. **Municipal Veterinary Registration** - Authorized provider network with blockchain verification
       2. **Blockchain Treatment Tracking** - On-chain timestamps with off-chain medical data
-      3. **Transparent Donation Mechanism** - Direct municipal funding with public dashboard
+      3. **Transparent Token Governance** - Investment pool allocation with public dashboard and token holder voting
       4. **Medical Data Sharing** - Anonymized research access with privacy protection
 
       ## Implementation Phases
@@ -56,7 +56,7 @@ discussions:
       nodes:
         - id: "DC_animal_welfare_1_1"
           body: |
-            This addresses critical gaps in coordinated street animal care. Blockchain verification would eliminate payment delays we face with municipal reimbursements. Need extensive technical training though.
+            This addresses critical gaps in coordinated street animal care. Blockchain verification would eliminate payment delays we face with municipal reimbursements. Investment pool governance could ensure stable funding. Need extensive technical training though.
           createdAt: "2024-10-16T09:00:00Z"
           updatedAt: "2024-10-16T09:00:00Z"
           author:
@@ -68,7 +68,7 @@ discussions:
           upvoteCount: 5
         - id: "DC_animal_welfare_1_2"
           body: |
-            Finally, transparency! Current municipal processes are opaque. Citizens never know if tax money actually helps animals. This could revolutionize animal welfare funding.
+            Finally, transparency! Current municipal processes are opaque. Citizens never know if tax money actually helps animals. This token governance system could revolutionize animal welfare investment allocation.
           createdAt: "2024-10-17T11:30:00Z"
           updatedAt: "2024-10-17T11:30:00Z"
           author:
@@ -94,7 +94,7 @@ discussions:
           body: |
             **AI Analysis - Municipal Efficiency**
             
-            Efficiency analysis: 35% reduction in processing time estimated. Initial investment high but long-term savings significant. Moderate technical risk, low operational risk. Recommend phased rollout with extensive training.
+            Efficiency analysis: 35% reduction in processing time estimated. Initial investment pool allocation high but long-term returns significant. Moderate technical risk, low operational risk. Recommend phased rollout with extensive training. Token holder voting ensures aligned incentives.
           createdAt: "2024-10-19T08:45:00Z"
           updatedAt: "2024-10-19T08:45:00Z"
           author:

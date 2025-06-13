@@ -77,7 +77,7 @@ const diagrams = [
   {
     id: 'system-architecture',
     title: 'System Architecture Overview',
-    description: 'Complete system architecture showing personal AI agents, budget system, and voting mechanisms',
+    description: 'Complete system architecture showing personal AI agents, investment system, and voting mechanisms',
     icon: <Cog className="h-5 w-5" />,
     diagram: `graph TB
     subgraph "Personal DAHAO Value System"
@@ -880,7 +880,7 @@ export default function FlowPage() {
                           <li><strong>Personal Value Stacks:</strong> Users build layered value systems with core DAHAO values plus personal extensions</li>
                           <li><strong>Investment-Driven Governance:</strong> Token pool funding creates incentive structures for serious proposal consideration</li>
                           <li><strong>Weighted Consensus:</strong> Different vote types (personal AI, system AI, human) have different weights in final decisions</li>
-                          <li><strong>Feedback Loops:</strong> ROI tracking improves budget allocation, while value conflicts inform system updates</li>
+                          <li><strong>Feedback Loops:</strong> ROI tracking improves investment pool allocation, while value conflicts inform system updates</li>
                         </ul>
                         <p>The architecture ensures that personal autonomy (through custom value systems) coexists with system stability (through main DAHAO constraints) while funding mechanisms enable serious governance work.</p>
                       </div>

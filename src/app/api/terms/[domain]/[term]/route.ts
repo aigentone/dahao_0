@@ -6,7 +6,7 @@ import { TermDiscussion } from '@/types/github-compatible';
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { domain: string; term: string } }
+  { params }: { params: Promise<{ domain: string; term: string }> }
 ) {
   try {
     const { domain, term } = await params;

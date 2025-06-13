@@ -73,6 +73,7 @@ discussion:
           - **Mental**: Emotional balance, cognitive capacity, purpose
           - **Social**: Relationships, community, belonging
           - **Environmental**: Healthy surroundings, sustainability
+          - **Economic**: Access to resources, investment opportunities, token participation
         createdAt: "2024-07-10T08:30:00Z"
         updatedAt: "2024-07-10T08:30:00Z"
         upvoteCount: 18
@@ -128,6 +129,7 @@ discussion:
           - **Built**: Accessible design, natural light, functional spaces
           - **Natural**: Access to nature, biodiversity, ecosystem health
           - **Toxic-free**: Freedom from pollutants, harmful substances
+          - **Economic**: Investment in sustainable infrastructure, green token rewards
           
           **Note**: Social environment is covered under "social dimension" to avoid overlap.
           
@@ -148,6 +150,7 @@ discussion:
           - `core:harm@v1.1` - "reduction in wellbeing"
           - `welfare:suffering` - negative experience
           - `environment:sustainability` - long-term wellbeing
+          - `economics:investment` - resource allocation for wellbeing enhancement
           
           We need these terms to work together coherently.
         createdAt: "2024-07-12T10:30:00Z"
@@ -217,6 +220,11 @@ discussion:
           **Effective Date**: 2024-07-15T16:20:00Z
           
           All governance documents will reference `core:wellbeing@v1.1` going forward.
+          
+          **Integration with Token Economics**:
+          - Investment pool allocations prioritize wellbeing enhancement
+          - Token holder voting considers multidimensional wellbeing impact
+          - Economic incentives align with wellbeing optimization
           
           Excellent collaborative work, everyone! 🌟
         createdAt: "2024-07-15T16:20:00Z"

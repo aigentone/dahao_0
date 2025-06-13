@@ -70,12 +70,16 @@ discussion:
           - Their analysis influences human decisions  
           - Without reasoning visibility, we can't audit AI impact
           - Democratic legitimacy requires understanding all participant reasoning
+          - Token holder voting decisions need transparent AI input assessment
+          - Investment pool allocations require auditable AI recommendations
           
-          Example: When `@ethics-validator` votes "CONDITIONAL APPROVE", we should see:
+          Example: When `@ethics-validator` votes "CONDITIONAL APPROVE" on an investment pool proposal, we should see:
           - Which principles it checked
           - What conflicts it identified
           - How it weighted different factors
           - Its confidence levels
+          - Economic impact assessment reasoning
+          - Token holder benefit analysis
         createdAt: "2024-12-10T14:20:00Z"
         updatedAt: "2024-12-10T14:20:00Z"
         upvoteCount: 15
@@ -301,6 +305,11 @@ discussion:
           **Effective Date**: 2024-12-15T10:45:00Z
           
           This positions DAHAO as a leader in transparent human-AI governance! 🚀
+          
+          **Token Economics Integration**:
+          - AI investment recommendations include transparent reasoning
+          - Token holder voting benefits from clear AI analysis visibility
+          - Investment pool decisions backed by auditable AI assessments
           
           Next step: Implementing reasoning trace infrastructure across all AI agents.
         createdAt: "2024-12-15T10:45:00Z"

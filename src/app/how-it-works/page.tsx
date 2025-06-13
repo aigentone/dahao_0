@@ -221,9 +221,9 @@ export default function HowItWorksPage() {
                     </ul>
                   </div>
                   <div className="bg-purple-50 p-4 rounded-lg">
-                    <div className="font-semibold text-purple-800 mb-2">NO Sponsor System</div>
+                    <div className="font-semibold text-purple-800 mb-2">Investment Pool Governance</div>
                     <p className="text-sm text-purple-600">
-                      Democratic token holder decisions, not sponsor approval
+                      Democratic token holder decisions, not traditional sponsor approval
                     </p>
                   </div>
                 </div>

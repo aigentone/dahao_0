@@ -505,9 +505,9 @@ discussion:
           I want to add a economic perspective to this discussion. From behavioral economics research, I believe we should also consider:
           
           **Economic Harm Categories**:
-          - **Resource limitation**: Artificially constraining access to necessary resources
-          - **Information asymmetry**: Withholding critical information that affects decision-making
-          - **Choice architecture manipulation**: Designing systems to exploit cognitive biases
+          - **Resource limitation**: Artificially constraining access to necessary resources, including investment pool exclusion
+          - **Information asymmetry**: Withholding critical information that affects decision-making, including token economics transparency
+          - **Choice architecture manipulation**: Designing systems to exploit cognitive biases, including governance token voting manipulation
           
           These forms of harm are particularly relevant in digital governance systems.
           
@@ -548,6 +548,7 @@ discussion:
           ✅ All three categories fit within "opportunity limitation" and "dignity violation"
           ✅ Economic harm provides measurable indicators for abstract concepts
           ✅ Strengthens implementation framework without changing core definition
+          ✅ Token economics integration provides concrete governance applications
           
           **Recommendation**: Current v1.1 definition accommodates these categories. Consider economic indicators in implementation guidelines.
           

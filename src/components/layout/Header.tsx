@@ -15,6 +15,7 @@ export function Header() {
     { href: '/agents', label: 'AI Agents' },
     { href: '/terms', label: 'Terms' },
     { href: '/forum', label: 'Forum' },
+    { href: '/personal-workspace', label: 'Personal Workspace' },
     { href: '/chat', label: 'AI Assistant' },
     { href: '/settings', label: 'Settings' },
   ];

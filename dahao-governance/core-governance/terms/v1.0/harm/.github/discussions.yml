@@ -14,6 +14,8 @@ discussions:
       - Environmental injustice
       - Economic exploitation patterns
       - Institutional bias
+      - Investment pool exclusion
+      - Token governance manipulation
       
       ### References
       - Related to principle P003 (minimize harm)
@@ -55,6 +57,8 @@ discussions:
             - Intergenerational harm
             - Digital/algorithmic bias
             - Cultural erasure
+            - Token distribution inequities
+            - Investment pool access barriers
           createdAt: "2024-11-20T11:00:00Z"
           updatedAt: "2024-11-20T11:00:00Z"
           author:
@@ -72,8 +76,9 @@ discussions:
             1. Actionable
             2. Measurable
             3. Enforceable
+            4. Token-economics compatible
             
-            Perhaps we need a tiered approach?
+            Perhaps we need a tiered approach with investment pool oversight?
           createdAt: "2024-11-20T15:30:00Z"
           updatedAt: "2024-11-20T15:30:00Z"
           author:

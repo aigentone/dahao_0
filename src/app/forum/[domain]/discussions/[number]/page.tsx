@@ -6,10 +6,10 @@ import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 
 interface PageProps {
-  params: {
+  params: Promise<{
     domain: string;
     number: string;
-  };
+  }>;
 }
 
 export default async function OrganizationDiscussionPage({ params }: PageProps) {

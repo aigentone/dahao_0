@@ -3,7 +3,7 @@ import { createGitHubDataService } from '@/services/github-data-service';
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { orgId: string } }
+  { params }: { params: Promise<{ orgId: string }> }
 ) {
   try {
     const { orgId } = await params;

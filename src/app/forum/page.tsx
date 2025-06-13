@@ -23,11 +23,9 @@ export default function ForumPage() {
   const [selectedDiscussion, setSelectedDiscussion] = useState<GitHubDiscussion | null>(null);
   const [viewMode, setViewMode] = useState<'list' | 'detail'>('list');
   const [orgDiscussions, setOrgDiscussions] = useState<GitHubDiscussion[]>([]);
-
   useEffect(() => {
     fetchGovernanceData();
   }, []);
-
   const fetchGovernanceData = async () => {
     setLoading(true);
     try {
@@ -52,7 +50,7 @@ export default function ForumPage() {
     setSelectedOrg(orgId);
     setSelectedDiscussion(null);
     setViewMode('list');
-    
+
     // Fetch GitHub discussions for this organization via API
     try {
       const response = await fetch(`/api/discussions/${orgId}`);
@@ -214,8 +212,8 @@ export default function ForumPage() {
                     ) : (
                       /* List View - Show featured + list */
                       <>
-                        <FeaturedDiscussion 
-                          discussion={orgDiscussions.find(d => 
+                        <FeaturedDiscussion
+                          discussion={orgDiscussions.find(d =>
                             !d.closed && d.category.slug === 'governance-proposals'
                           ) || orgDiscussions[0] || null}
                           onDiscussionSelect={handleDiscussionSelect}
@@ -225,10 +223,10 @@ export default function ForumPage() {
                         {orgDiscussions.length > 1 && (
                           <div className="space-y-4">
                             <h3 className="text-lg font-semibold text-gray-900">Other Discussions</h3>
-                            <DiscussionList 
-                              discussions={orgDiscussions.filter((d) => 
+                            <DiscussionList
+                              discussions={orgDiscussions.filter((d) =>
                                 // Exclude the featured discussion
-                                d !== (orgDiscussions.find(disc => 
+                                d !== (orgDiscussions.find(disc =>
                                   !disc.closed && disc.category.slug === 'governance-proposals'
                                 ) || orgDiscussions[0])
                               )}
@@ -243,14 +241,14 @@ export default function ForumPage() {
                   {/* Principles Tab */}
                   <TabsContent value="principles" className="space-y-4">
                     {/* Inheritance Tree */}
-                    <InheritanceTree 
+                    <InheritanceTree
                       organizations={governanceData.organizations}
                       currentDomain={currentOrg.id}
                       onNavigate={handleSelectOrg}
                     />
-                    
+
                     {/* Principles with inheritance info */}
-                    <PrinciplesViewWithInheritance 
+                    <PrinciplesViewWithInheritance
                       principles={currentOrg.principles}
                       organizationName={currentOrg.name}
                       organizationId={currentOrg.id}

@@ -46,3 +46,22 @@ specialization:
   cross_domain_collaboration:
     environment: "ecosystem_health_alignment"
     human_rights: "one_health_approach"
+
+governance:
+  token_holder_voting: true
+  investment_threshold: 0.60
+  funding_criteria: "community_value_creation"
+  personal_workspace_enabled: true
+
+token_economics:
+  dual_benefit_model: true
+  investment_pool_governance: true
+  avalanche_subchain_ready: true
+  personal_branch_support: true
+
+economic_model:
+  type: "dual_benefit_investment"
+  example: "alex_1000_to_5000_tokens"
+  roi_tracking: true
+  community_funding: "token_appreciation"
+  domain_specialization: "animal_welfare_focus"

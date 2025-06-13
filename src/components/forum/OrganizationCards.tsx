@@ -4,7 +4,7 @@ import React from 'react';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Eye, Users, Sparkles, Zap } from 'lucide-react';
+import { Eye, Users, Sparkles, Zap, Coins, TrendingUp, DollarSign } from 'lucide-react';
 import { GovernanceOrganization } from '@/types/governance';
 
 interface OrganizationCardsProps {
@@ -24,13 +24,30 @@ export function OrganizationCards({ organizations, selectedOrg, onSelectOrg }: O
       d.status.toLowerCase().includes('review')
     ).length;
     
+    // Token economics data (would be from API in production)
+    const getTokenData = (orgId: string) => {
+      const tokenData = {
+        'core-governance': { poolSize: 850000, holders: 420, roi: 22.3, trend: 'up' },
+        'animal-welfare': { poolSize: 650000, holders: 280, roi: 18.7, trend: 'up' },
+        'environment': { poolSize: 720000, holders: 310, roi: 15.2, trend: 'stable' }
+      };
+      return tokenData[orgId as keyof typeof tokenData] || tokenData['core-governance'];
+    };
+
+    const tokenStats = getTokenData(org.id);
+    
     // Base stats with real data from governance
     const baseStats = {
       views: 'N/A', // Views not available in governance data yet
       members: 0, // Member count not available in governance data yet
       principles: principleCount,
       active: activeDiscussions,
-      version: org.version
+      version: org.version,
+      // Token Economics Stats
+      investmentPoolSize: tokenStats.poolSize,
+      tokenHolders: tokenStats.holders,
+      roi: tokenStats.roi,
+      tokenTrend: tokenStats.trend
     };
     
     // Organization-specific styling
@@ -106,7 +123,7 @@ export function OrganizationCards({ organizations, selectedOrg, onSelectOrg }: O
                       {stats.active} active
                     </Badge>
                   </div>
-                  <div className="flex items-center gap-4 text-xs text-gray-500">
+                  <div className="flex items-center gap-4 text-xs text-gray-500 mb-3">
                     <span className="flex items-center gap-1">
                       <Eye className="w-3 h-3" />
                       {stats.views} views
@@ -115,6 +132,37 @@ export function OrganizationCards({ organizations, selectedOrg, onSelectOrg }: O
                       <Users className="w-3 h-3" />
                       {stats.members} members
                     </span>
+                  </div>
+                  {/* Token Economics Information */}
+                  <div className="bg-gray-50 rounded-lg p-3 space-y-2">
+                    <div className="flex items-center justify-between text-xs">
+                      <span className="flex items-center gap-1 text-gray-600">
+                        <DollarSign className="w-3 h-3" />
+                        Investment Pool
+                      </span>
+                      <span className="font-medium text-gray-900">
+                        ${(stats.investmentPoolSize / 1000).toFixed(0)}K
+                      </span>
+                    </div>
+                    <div className="flex items-center justify-between text-xs">
+                      <span className="flex items-center gap-1 text-gray-600">
+                        <Coins className="w-3 h-3" />
+                        Token Holders
+                      </span>
+                      <span className="font-medium text-gray-900">{stats.tokenHolders}</span>
+                    </div>
+                    <div className="flex items-center justify-between text-xs">
+                      <span className="flex items-center gap-1 text-gray-600">
+                        <TrendingUp className="w-3 h-3" />
+                        Average ROI
+                      </span>
+                      <span className={`font-medium flex items-center gap-1 ${stats.tokenTrend === 'up' ? 'text-green-600' : 'text-gray-600'}`}>
+                        {stats.roi}%
+                        {stats.tokenTrend === 'up' && (
+                          <TrendingUp className="w-3 h-3 text-green-500" />
+                        )}
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>

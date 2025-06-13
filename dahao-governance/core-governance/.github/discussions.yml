@@ -11,6 +11,8 @@ discussions:
       - **Accessibility**: Removing barriers to participation
       - **Representation**: Balanced perspectives across stakeholder groups
       - **Process Transparency**: Clear decision-making procedures
+      - **Token Governance**: Fair distribution and voting mechanisms
+      - **Investment Pool Oversight**: Transparent allocation decisions
       
       ## Current Challenges
       
@@ -20,6 +22,8 @@ discussions:
       2. Technical barriers
       3. Time zone and scheduling constraints
       4. Language and cultural barriers
+      5. Token holder concentration
+      6. Investment pool access inequities
       
       What approaches should we consider for more inclusive governance?
     createdAt: "2024-01-15T10:00:00Z"
@@ -50,12 +54,14 @@ discussions:
       nodes:
         - id: "comment-1"
           body: |
-            I think we should prioritize asynchronous participation methods to accommodate different time zones. 
+            I think we should prioritize asynchronous participation methods to accommodate different time zones and token governance fairness.
             
             Some suggestions:
             - Extended comment periods
             - Rolling polls rather than live votes
             - Multiple discussion formats (text, video, voice)
+            - Weighted token voting with time-delay protection
+            - Investment pool proposal review periods
           createdAt: "2024-01-15T11:30:00Z"
           updatedAt: "2024-01-15T11:30:00Z"
           upvoteCount: 5
@@ -82,12 +88,14 @@ discussions:
             url: "https://github.com/efficiency-expert"
         - id: "comment-3"
           body: |
-            We should also consider translation and cultural context. Not everyone processes information or makes decisions the same way.
+            We should also consider translation and cultural context. Not everyone processes information or makes decisions the same way. This applies to both governance participation and token economics understanding.
             
             Multi-modal communication could help:
             - Visual summaries for complex text
             - Cultural liaisons for different communities
             - Flexible feedback formats
+            - Token economics education materials
+            - Investment pool allocation visualizations
           createdAt: "2024-01-15T16:45:00Z"
           updatedAt: "2024-01-15T16:45:00Z"
           upvoteCount: 7
@@ -175,3 +183,118 @@ discussions:
             url: "https://github.com/systems-architect"
     answer:
       id: "comment-4"
+
+  - id: "core-governance-disc-3"
+    number: 3
+    title: "Token Economics and Investment Pool Governance Framework"
+    body: |
+      As DAHAO evolves, we need clear frameworks for token governance and investment pool management.
+      
+      ## Investment Pool Allocation Principles
+      
+      - **Transparency**: All allocation decisions publicly recorded on-chain
+      - **Community Voting**: Token holder approval for major investments
+      - **Impact Measurement**: ROI tracking for governance improvements
+      - **Diversification**: Balanced allocation across domains and initiatives
+      
+      ## Token Holder Voting Rights
+      
+      ### Standard Proposals (Simple Majority)
+      - Governance process improvements
+      - Documentation updates
+      - Community guidelines
+      - Cross-domain collaboration
+      
+      ### Investment Decisions (Supermajority 67%)
+      - Investment pool allocations >10% of treasury
+      - Long-term strategic partnerships
+      - Technology infrastructure investments
+      - Cross-domain funding initiatives
+      
+      ## Alex Investment Example
+      
+      **Scenario**: Alex holds 2.5% of governance tokens and proposes investing 500,000 tokens in an AI transparency tool development.
+      
+      **Process**:
+      1. Alex submits detailed proposal with ROI projections
+      2. Community review period (14 days)
+      3. Token holder vote with 67% threshold
+      4. If approved, investment pool allocates tokens
+      5. Quarterly progress reviews with token holder oversight
+      
+      **Governance Benefits**:
+      - Democratic investment decisions
+      - Aligned incentives between token holders and outcomes
+      - Transparent resource allocation
+      - Community-driven priority setting
+      
+      How should we balance individual initiative with collective governance?
+    createdAt: "2024-01-25T14:30:00Z"
+    updatedAt: "2024-01-28T16:45:00Z"
+    closed: false
+    category:
+      id: "cat-3"
+      name: "Token Economics"
+      slug: "token-economics"
+      emoji: "💰"
+    author:
+      id: "user-15"
+      login: "token-economics-lead"
+      avatarUrl: "https://avatars.githubusercontent.com/u/15?v=4"
+      url: "https://github.com/token-economics-lead"
+    labels:
+      totalCount: 3
+      nodes:
+        - id: "label-11"
+          name: "investment"
+          color: "16a34a"
+        - id: "label-12"
+          name: "governance"
+          color: "3b82f6"
+        - id: "label-13"
+          name: "economics"
+          color: "f59e0b"
+    upvoteCount: 24
+    comments:
+      totalCount: 2
+      nodes:
+        - id: "comment-11"
+          body: |
+            This framework balances individual initiative with collective oversight well. 
+            
+            **Key strengths**:
+            - Clear thresholds prevent token holder fatigue
+            - Supermajority requirement for major investments protects treasury
+            - Regular reviews ensure accountability
+            
+            **Suggested additions**:
+            - Minimum holding period before voting rights (prevent vote buying)
+            - Delegation mechanisms for passive token holders
+            - Quorum requirements to ensure broad participation
+          createdAt: "2024-01-26T09:20:00Z"
+          updatedAt: "2024-01-26T09:20:00Z"
+          upvoteCount: 8
+          author:
+            id: "user-16"
+            login: "governance-analyst"
+            avatarUrl: "https://avatars.githubusercontent.com/u/16?v=4"
+            url: "https://github.com/governance-analyst"
+        - id: "comment-12"
+          body: |
+            The Alex investment example is helpful for understanding the process flow.
+            
+            **Real-world considerations**:
+            - What happens if investment fails to meet ROI targets?
+            - How do we handle conflicts of interest (Alex investing in own proposals)?
+            - Should there be investment pool insurance or risk mitigation?
+            
+            **Alternative approach**: Investment committees with term limits and token holder oversight could reduce direct conflicts while maintaining democratic control.
+          createdAt: "2024-01-28T16:45:00Z"
+          updatedAt: "2024-01-28T16:45:00Z"
+          upvoteCount: 12
+          author:
+            id: "user-17"
+            login: "risk-management-expert"
+            avatarUrl: "https://avatars.githubusercontent.com/u/17?v=4"
+            url: "https://github.com/risk-management-expert"
+    answer: null

@@ -369,7 +369,7 @@ export default function MissionPage() {
                   <Coins className="h-12 w-12 mx-auto mb-3 text-yellow-500" />
                   <h4 className="font-semibold mb-2">Investment Pools</h4>
                   <p className="text-sm text-muted-foreground">
-                    Token holders fund promising projects through democratic governance, not traditional sponsor approval
+                    Token holders fund promising projects through democratic governance via investment pool allocation
                   </p>
                 </div>
                 <div className="text-center">

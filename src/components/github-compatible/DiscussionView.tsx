@@ -128,11 +128,11 @@ export function DiscussionView({ discussion }: DiscussionViewProps) {
           const renderCommentThread = (
             comment: GitHubDiscussionComment, 
             indentLevel: number = 0
-          ): JSX.Element[] => {
+          ): React.JSX.Element[] => {
             const maxIndentLevel = 3;
             const actualIndentLevel = Math.min(indentLevel, maxIndentLevel);
             
-            const elements: JSX.Element[] = [];
+            const elements: React.JSX.Element[] = [];
             
             // Render the comment itself
             elements.push(

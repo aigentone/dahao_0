@@ -7,10 +7,10 @@ import { DiscussionView } from '@/components/github-compatible/DiscussionView';
 import { TermDiscussion, GitHubDiscussion } from '@/types/github-compatible';
 
 interface PageProps {
-  params: {
+  params: Promise<{
     domain: string;
     term: string;
-  };
+  }>;
 }
 
 async function getTermDiscussion(domain: string, term: string): Promise<TermDiscussion | null> {

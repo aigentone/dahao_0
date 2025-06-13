@@ -71,3 +71,19 @@ validation_rules:
     - "Must demonstrate benefit or neutrality to all five freedoms"
     - "Cannot compromise any freedom without exceptional justification"
     - "Must include welfare measurement plan"
+
+token_integration:
+  contribution_rewards: "quality_based"
+  implementation_funding: "investment_pool"
+  cross_branch_incentives: true
+  personal_development_rewards: true
+
+economic_alignment:
+  dual_benefit_principle: true
+  sustainable_funding: "token_appreciation"
+  community_ownership: "governance_tokens"
+
+personal_branch_support:
+  development_workspace: true
+  ai_agent_integration: true
+  cross_branch_deployment: true
