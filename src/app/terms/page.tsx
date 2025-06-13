@@ -5,7 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { BookOpenIcon, SearchIcon, GitBranchIcon, LayersIcon, ArrowRightIcon, ClockIcon, UsersIcon, NetworkIcon } from 'lucide-react';
+import { BookOpenIcon, SearchIcon, GitBranchIcon, LayersIcon, ArrowRightIcon, ClockIcon, UsersIcon, NetworkIcon, Coins, TrendingUp, Vote } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { TermDictionary } from '@/types/governance';
 
@@ -89,16 +89,16 @@ export default function TermsPage() {
         {/* Hero Section */}
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold tracking-tight mb-4">
-            DAHAO Term Dictionary
+            Terms-as-Discussions: Democratic Evolution
           </h1>
           <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Versioned vocabulary ensuring everyone speaks the same ethical language.
-            Terms evolve democratically while maintaining semantic clarity.
+            Terms evolve through community discussion and token holder voting. 
+            Quality term development is rewarded with tokens from the investment pool.
           </p>
           <div className="flex justify-center gap-2">
-            <Badge variant="outline">Living Dictionary</Badge>
             <Badge variant="outline">Democratic Evolution</Badge>
-            <Badge variant="outline">Cross-Domain Alignment</Badge>
+            <Badge variant="outline">Token Governance</Badge>
+            <Badge variant="outline">Investment Pool Funded</Badge>
           </div>
         </div>
 
@@ -122,70 +122,188 @@ export default function TermsPage() {
           </div>
         </div>
 
-        {/* Core Concepts */}
+        {/* Democratic Term Evolution Process */}
         <div className="mb-16">
-          <h2 className="text-3xl font-semibold mb-8 text-center">How Term Versioning Works</h2>
-          <div className="grid gap-6 md:grid-cols-3">
+          <h2 className="text-3xl font-semibold mb-8 text-center">Democratic Term Evolution Process</h2>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             <Card>
               <CardHeader>
                 <GitBranchIcon className="h-8 w-8 mb-2 text-blue-500" />
-                <CardTitle>Version Control</CardTitle>
+                <CardTitle>Personal Development</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-3">
-                  Each term has versions like software: v1.0, v1.1, v2.0
+                  Develop term refinements in your personal branch workspace
                 </p>
-                <div className="font-mono text-xs bg-muted p-2 rounded">
-                  {`{core:harm@v1.0}`}<br/>
-                  {`{core:harm@v1.1}`} ← expanded definition<br/>
-                  {`{core:harm@v2.0}`} ← major revision
+                <div className="text-xs space-y-1">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                    <span>Private experimentation</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                    <span>No approval needed</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+                    <span>Build on existing terms</span>
+                  </div>
                 </div>
               </CardContent>
             </Card>
 
             <Card>
               <CardHeader>
-                <LayersIcon className="h-8 w-8 mb-2 text-green-500" />
-                <CardTitle>Inheritance</CardTitle>
+                <UsersIcon className="h-8 w-8 mb-2 text-green-500" />
+                <CardTitle>Public Pool Review</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-3">
-                  Domain terms can extend core terms with specialization
-                </p>
-                <div className="font-mono text-xs bg-muted p-2 rounded">
-                  core:harm → base definition<br/>
-                  welfare:suffering extends harm<br/>
-                  + conscious experience aspect
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <UsersIcon className="h-8 w-8 mb-2 text-purple-500" />
-                <CardTitle>Democratic Updates</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground mb-3">
-                  Community proposes and votes on term evolution
+                  Submit to community for discussion and refinement
                 </p>
                 <div className="text-xs space-y-1">
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                    <span>Proposal: Expand "harm" definition</span>
+                    <span>Community discussion</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                    <span>Discussion: 14 days</span>
+                    <span>Collaborative improvement</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                    <span>Merit-based progression</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <Coins className="h-8 w-8 mb-2 text-orange-500" />
+                <CardTitle>Investment Pool Funding</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-3">
+                  Token holders fund serious term research and development
+                </p>
+                <div className="text-xs space-y-1">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
+                    <span>Token holder voting</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                    <span>Resource allocation</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                    <span>Vote: 73% approval → v1.1</span>
+                    <span>Research funding</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <Vote className="h-8 w-8 mb-2 text-purple-500" />
+                <CardTitle>Token Holder Ratification</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-3">
+                  Final governance vote for official term adoption
+                </p>
+                <div className="text-xs space-y-1">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+                    <span>Final voting</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                    <span>Official adoption</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                    <span>Token rewards earned</span>
                   </div>
                 </div>
               </CardContent>
             </Card>
           </div>
+        </div>
+
+        {/* Token Economics for Terms */}
+        <div className="mb-16">
+          <Card className="bg-gradient-to-r from-emerald-50 to-teal-50 border-emerald-200">
+            <CardHeader>
+              <CardTitle className="text-center text-emerald-800">Token Economics for Term Development</CardTitle>
+              <CardDescription className="text-center">Quality term development creates value for the entire network</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid gap-6 md:grid-cols-3">
+                <div>
+                  <h4 className="font-semibold text-emerald-700 mb-3 flex items-center gap-2">
+                    <TrendingUp className="h-5 w-5" />
+                    Contribution Rewards
+                  </h4>
+                  <ul className="text-sm space-y-2">
+                    <li className="flex items-center gap-2">
+                      <Coins className="h-4 w-4 text-yellow-500" />
+                      <span>Quality term proposals → Token rewards</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Coins className="h-4 w-4 text-yellow-500" />
+                      <span>Valuable feedback → Contribution tokens</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Coins className="h-4 w-4 text-yellow-500" />
+                      <span>Accepted refinements → Adoption bonuses</span>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-emerald-700 mb-3 flex items-center gap-2">
+                    <Vote className="h-5 w-5" />
+                    Governance Participation
+                  </h4>
+                  <ul className="text-sm space-y-2">
+                    <li className="flex items-center gap-2">
+                      <Coins className="h-4 w-4 text-yellow-500" />
+                      <span>Term voting → Governance rewards</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Coins className="h-4 w-4 text-yellow-500" />
+                      <span>Discussion participation → Activity tokens</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Coins className="h-4 w-4 text-yellow-500" />
+                      <span>Cross-domain insights → Collaboration bonuses</span>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-emerald-700 mb-3 flex items-center gap-2">
+                    <NetworkIcon className="h-5 w-5" />
+                    Network Value
+                  </h4>
+                  <ul className="text-sm space-y-2">
+                    <li className="flex items-center gap-2">
+                      <TrendingUp className="h-4 w-4 text-green-500" />
+                      <span>Better terms → Network intelligence</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <TrendingUp className="h-4 w-4 text-green-500" />
+                      <span>Clearer communication → Efficiency gains</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <TrendingUp className="h-4 w-4 text-green-500" />
+                      <span>Shared vocabulary → Token value growth</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         </div>
 
         {/* Term Categories Tabs */}
@@ -280,18 +398,35 @@ export default function TermsPage() {
 
         {/* Call to Action */}
         <div className="text-center">
-          <h2 className="text-2xl font-semibold mb-4">Contribute to Our Living Dictionary</h2>
+          <h2 className="text-2xl font-semibold mb-4">Participate in Token-Governed Term Evolution</h2>
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-            Help refine our shared vocabulary. Propose new terms or suggest improvements
-            to existing definitions through the democratic governance process.
+            Develop terms in your personal branch, contribute to community discussions, 
+            and earn tokens through the democratic evolution process funded by investment pools.
           </p>
+          <div className="grid gap-4 md:grid-cols-3 max-w-3xl mx-auto mb-6">
+            <div className="text-center">
+              <GitBranchIcon className="h-8 w-8 mx-auto mb-2 text-blue-500" />
+              <h4 className="font-semibold">Personal Development</h4>
+              <p className="text-sm text-muted-foreground">Start in your workspace</p>
+            </div>
+            <div className="text-center">
+              <Coins className="h-8 w-8 mx-auto mb-2 text-yellow-500" />
+              <h4 className="font-semibold">Token Rewards</h4>
+              <p className="text-sm text-muted-foreground">Earn for quality contributions</p>
+            </div>
+            <div className="text-center">
+              <Vote className="h-8 w-8 mx-auto mb-2 text-purple-500" />
+              <h4 className="font-semibold">Democratic Governance</h4>
+              <p className="text-sm text-muted-foreground">Token holders decide adoption</p>
+            </div>
+          </div>
           <div className="space-x-4">
             <Button size="lg">
-              Propose a Term
+              Start Your Personal Branch
               <ArrowRightIcon className="ml-2 h-4 w-4" />
             </Button>
             <Button variant="outline" size="lg">
-              View Term Evolution Process
+              View Token Economics
             </Button>
           </div>
         </div>

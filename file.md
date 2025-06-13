@@ -1,672 +1,268 @@
-sequenceDiagram
-    participant Alice as Alice (User)
-    participant AliceAI as Alice's Personal AI
-    participant Bob as Bob (User)
-    participant BobAI as Bob's Personal AI
-    participant SystemAI as System AI Agent
-    participant VotingEngine as Voting Engine
-    participant Proposal as Governance Proposal
+Perfect! İşte Claude Code için düzeltilmiş ve kapsamlı GOAL.MD:
+markdown# DAHAO Website Content Update Project
+
+## Project Overview
+Update all website content to reflect the new system architecture based on:
+- Personal DAHAO branches (not just forum-style)
+- Progressive governance pipeline (Personal → Public Pool → Investment → Governance)
+- AI agent value differentiation (Personal vs System AI)
+- **DUAL BENEFIT TOKEN ECONOMICS** (not sponsor system)
+- Terms-as-discussions democratic evolution
+- Avalanche subchain creation for successful DAHAOs
+
+## CRITICAL ECONOMIC MODEL CORRECTION
+
+### WRONG Terminology to Remove Completely:
+- "Sponsor system"
+- "Sponsor approval"
+- "Budget allocation by sponsors"
+- Any reference to "sponsorship"
+
+### CORRECT Economic System to Implement:
+
+#### Dual Benefit Investment Model:
+1. **Investment Pools**: People invest in DAHAO tokens, not sponsorship
+2. **Token Value Growth**: DAHAO success increases token price
+3. **Avalanche Subchain**: Automatic blockchain deployment for successful DAHAOs
+4. **Governance-Managed**: Token holders control fund allocation decisions
+5. **Contributor Rewards**: Contributors earn tokens for valuable work
+6. **Dual Benefit Mechanism**: Investors profit + community gets more resources
 
-    Note over Alice, Proposal: Value-Differentiated AI Voting
+#### Alex Investment Example (USE THIS):
+Alex invests $1,000 → buys 1000 DAHAO tokens @ $1 each
+1 month later: Token appreciates 5x ($1 → $5) due to DAHAO success
+Alex sells $2,000 worth → Alex profits $1,000 (2x return)
+Remaining value: $3,000 stays in system for community work
+Result: Alex profits + $3,000 available for DAHAO operations = WIN-WIN
 
-    %% Alice's AI Analysis
-    Alice->>AliceAI: Analyze proposal "intersectional_harm@v1.2"
+#### Token Reward Distribution:
+- Governance participation → Token allocation from community pool
+- Development work → Token payment + impact bonuses
+- Community value creation → Token incentives + reputation
+- Growth contribution → Token share + growth bonuses
 
-    Note over AliceAI: Alice's Complete Value System:<br/>✓ core:harm@v1.1<br/>✓ core:equality@v2.0 (intersectional)<br/>✓ alice:systemic_patterns@v1.0<br/>❌ welfare:animal_focus@v1.0 (rejected)
+## Phase 1: Core Pages Update (Priority 1)
 
-    AliceAI->>Proposal: Apply Alice's accepted values
-    AliceAI-->>VotingEngine: Vote: APPROVE (confidence: 94%)<br/>Reasoning: "Aligns with Alice's intersectional equality v2.0<br/>and her personal systemic_patterns framework"
+### 1. HOME PAGE (/) - Strategic Repositioning
 
-    %% Bob's AI Analysis
-    Bob->>BobAI: Analyze same proposal
+**Current Problems:**
+- Describes system as "forum-like platform"
+- Missing personal DAHAO branch concept
+- Uses incorrect "sponsor system" terminology
+- No token economics explanation
 
-    Note over BobAI: Bob's Complete Value System:<br/>✓ core:harm@v1.1<br/>✓ core:equality@v1.0 (traditional)<br/>✓ bob:privacy_rights@v2.1<br/>✓ bob:algorithmic_fairness@v1.0
+**Required Updates:**
 
-    BobAI->>Proposal: Apply Bob's accepted values
-    BobAI-->>VotingEngine: Vote: CONDITIONAL (confidence: 67%)<br/>Reasoning: "Conflicts with Bob's traditional equality v1.0.<br/>Needs privacy impact assessment per his privacy_rights v2.1"
+#### Hero Section:
+- **FROM**: "forum-like platform"
+- **TO**: "personal governance workspaces + investment pools"
 
-    %% System AI Analysis
-    SystemAI->>Proposal: Analyze with ONLY Main DAHAO values
+#### Core Concepts - ADD:
+Personal DAHAO Branches:
 
-    Note over SystemAI: System Value Constraints:<br/>✓ core:harm@v1.1 ONLY<br/>✓ core:equality@v1.0 ONLY<br/>✓ core:transparency@v1.1<br/>❌ NO personal extensions allowed
+Fork governance frameworks to match your values
+Develop terms and ethics in your personal workspace
+AI agents represent YOUR complete value system
+Contribute to investment pool growth
 
-    SystemAI-->>VotingEngine: Vote: NEEDS_REVIEW (confidence: 45%)<br/>Reasoning: "Proposal references concepts not in Main DAHAO.<br/>Requires community definition before system can evaluate"
 
-    %% Voting Engine Processing
-    VotingEngine->>VotingEngine: Process value-differentiated votes
+#### Economic Section - REPLACE:
+REMOVE: "Sponsor system for serious proposals"
+ADD: "Dual Benefit Investment Model"
+The Dual Benefit Model:
 
-    Note over VotingEngine: Vote Analysis:<br/>Personal AIs: Split based on user values<br/>System AI: Conservative (main values only)<br/>Weighting: Personal AIs 0.8x, System AI 1.0x
+Profit and social impact amplify each other
+Investors buy DAHAO tokens, profit as project succeeds
+Profits fund more community work through token pool
+Contributors earn tokens for valuable contributions
+Successful DAHAOs get their own Avalanche subchain
 
-    VotingEngine->>Proposal: Generate consensus report
+Alex Example:
 
-    Note over Proposal: Consensus Report:<br/>Personal Values Conflict Detected<br/>Alice's intersectional vs Bob's traditional equality<br/>System cannot evaluate without main branch definitions<br/>Recommendation: Define intersectional_harm in main first
+Invests $1,000 in DAHAO tokens
+Token value increases 5x in 1 month
+Alex sells $2,000, profits $1,000
+$3,000 remains for community operations
+Everyone wins: Alex profits + community gets resources
 
-    %% Budget Consideration
-    alt Proposal Has Budget Allocation
-        Note over VotingEngine: DAHAO Budget: $50,000 allocated<br/>Sponsor: Animal Welfare Organization<br/>Funding increases consideration weight
 
-        VotingEngine->>SystemAI: Re-evaluate with funding context
-        SystemAI-->>VotingEngine: Updated: CONDITIONAL APPROVE<br/>"Budget justifies experimental approach"
+#### AI Agents Section - UPDATE:
+Value-Differentiated AI Agents:
 
-    else No Budget
-        Note over VotingEngine: Lower priority processing<br/>Relies purely on volunteer consensus
-    end
+Personal AI: Represents your COMPLETE accepted value system
+System AI: Limited to Main DAHAO values only
+Cross-branch collaboration through token incentives
+AI analysis funded by community token pool
 
-    %% Final Decision
-    VotingEngine->>Alice: Your AI voted APPROVE based on your values
-    VotingEngine->>Bob: Your AI voted CONDITIONAL based on your values
-    VotingEngine->>SystemAI: System requires main branch definition first
 
-    Note over Alice, Proposal: Each AI perfectly represents its user's<br/>complete accepted value system vs system constraints
+**Content to PRESERVE:**
+- "Surf, Don't Build" philosophy
+- All existing good philosophical content
+- Existing styling and components
+- Core mission statements
 
-
-
+### 2. HOW IT WORKS (/how-it-works) - Complete Restructure
 
-graph TB
-    subgraph "Personal DAHAO Value System"
-        PersonalValues[Personal Value Stack]
-        AcceptedVersions[All Accepted Term Versions]
-        PersonalEthics[Personal Ethics Framework]
-        PersonalAI[Personal AI Agent]
-
-        PersonalValues --> AcceptedVersions
-        AcceptedVersions --> PersonalEthics
-        PersonalEthics --> PersonalAI
-
-        subgraph "Alice's Values Example"
-            AliceV1[core:harm@v1.1 ✓]
-            AliceV2[core:equality@v2.0 ✓]
-            AliceV3[alice:intersectional_harm@v1.0 ✓]
-            AliceV4[welfare:suffering@v1.2 ✗]
-
-            AliceV1 --> PersonalAI
-            AliceV2 --> PersonalAI
-            AliceV3 --> PersonalAI
-        end
-    end
-
-    subgraph "System AI Value Constraints"
-        MainDAHAOValues[Main DAHAO Values Only]
-        SystemAI[System AI Agents]
-        ValueValidator[Value Validation Engine]
-
-        MainDAHAOValues --> SystemAI
-        SystemAI --> ValueValidator
-
-        subgraph "System Values Example"
-            SysV1[core:harm@v1.1 ✓]
-            SysV2[core:equality@v1.0 ✓]
-            SysV3[welfare:five_freedoms@v1.0 ✓]
-            SysV4[NO personal extensions ❌]
-
-            SysV1 --> SystemAI
-            SysV2 --> SystemAI
-            SysV3 --> SystemAI
-        end
-    end
-
-    subgraph "DAHAO Budget System"
-        OrganizationBudgets[Organization Budgets]
-        SponsorFunding[Sponsor Funding Pool]
-        ProposalFunding[Proposal Funding]
-        BudgetAllocation[Budget Allocation Engine]
-
-        OrganizationBudgets --> SponsorFunding
-        SponsorFunding --> BudgetAllocation
-        BudgetAllocation --> ProposalFunding
-
-        subgraph "Budget Categories"
-            ResearchFunding[Research Funding]
-            ImplementationBudget[Implementation Budget]
-            CommunityIncentives[Community Incentives]
-            SystemMaintenance[System Maintenance]
-
-            ProposalFunding --> ResearchFunding
-            ProposalFunding --> ImplementationBudget
-            ProposalFunding --> CommunityIncentives
-            ProposalFunding --> SystemMaintenance
-        end
-    end
-
-    subgraph "Voting & Decision Making"
-        VotingProcess[Community Voting]
-        ValueConflictResolver[Value Conflict Resolution]
-        ConsensusEngine[Consensus Building Engine]
-
-        PersonalAI --> VotingProcess
-        SystemAI --> VotingProcess
-        VotingProcess --> ValueConflictResolver
-        ValueConflictResolver --> ConsensusEngine
-
-        subgraph "Vote Analysis"
-            PersonalAIVotes[Personal AI Votes]
-            SystemAIVotes[System AI Votes]
-            HumanVotes[Human Votes]
-            WeightedConsensus[Weighted Consensus]
-
-            PersonalAIVotes --> WeightedConsensus
-            SystemAIVotes --> WeightedConsensus
-            HumanVotes --> WeightedConsensus
-        end
-    end
-
-    subgraph "Funding Decision Integration"
-        BudgetApproval[Budget Approval Process]
-        FundingCriteria[Funding Criteria]
-        ROITracking[ROI & Impact Tracking]
-
-        BudgetAllocation --> BudgetApproval
-        ConsensusEngine --> BudgetApproval
-        BudgetApproval --> FundingCriteria
-        FundingCriteria --> ROITracking
-    end
-
-    %% Key Connections
-    PersonalAI -.->|represents complete value system| VotingProcess
-    SystemAI -.->|only main DAHAO values| VotingProcess
-    BudgetApproval -.->|funding enables| ResearchFunding
-    ROITracking -.->|feedback improves| BudgetAllocation
-
-    %% Value System Conflicts
-    PersonalAI -.->|may conflict with| SystemAI
-    ValueConflictResolver -.->|resolves using| MainDAHAOValues
-
-    %% Budget Influence on Governance
-    OrganizationBudgets -.->|influences| SponsorFunding
-    ProposalFunding -.->|enables serious consideration| VotingProcess
-
-    %% Styling
-    classDef personal fill:#e3f2fd,stroke:#0277bd,stroke-width:2px
-    classDef system fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px
-    classDef budget fill:#fff3e0,stroke:#f57c00,stroke-width:2px
-    classDef voting fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
-    classDef funding fill:#fce4ec,stroke:#c2185b,stroke-width:2px
-    classDef values fill:#f1f8e9,stroke:#558b2f,stroke-width:2px
-
-    class PersonalValues,AcceptedVersions,PersonalEthics,PersonalAI,AliceV1,AliceV2,AliceV3,AliceV4,PersonalAIVotes personal
-    class MainDAHAOValues,SystemAI,ValueValidator,SysV1,SysV2,SysV3,SysV4,SystemAIVotes system
-    class OrganizationBudgets,SponsorFunding,ProposalFunding,BudgetAllocation,ResearchFunding,ImplementationBudget,CommunityIncentives,SystemMaintenance budget
-    class VotingProcess,ValueConflictResolver,ConsensusEngine,HumanVotes,WeightedConsensus voting
-    class BudgetApproval,FundingCriteria,ROITracking funding
-
-    graph TB
-    subgraph "User-Created AI Agents"
-        UserAgents[User Personal Agents]
-        AgentCreator[Agent Creator Interface]
-        AgentConfig[Agent Configuration]
-
-        UserAgents --> AgentCreator
-        AgentCreator --> AgentConfig
-    end
-
-    subgraph "AI Agent Marketplace"
-        AgentPool[Available Agents Pool]
-        AgentRatings[Agent Performance Ratings]
-        AgentSpecialties[Agent Specializations]
-        DeploymentService[Agent Deployment Service]
-
-        AgentPool --> AgentRatings
-        AgentPool --> AgentSpecialties
-        AgentPool --> DeploymentService
-    end
-
-    subgraph "Deployment Targets"
-        OtherPersonalBranches[Other Users' Branches]
-        MainDiscussions[Main DAHAO Discussions]
-        PublicPool[Public Work Pool]
-        GovernanceIssues[Governance Issues]
-
-        DeploymentService --> OtherPersonalBranches
-        DeploymentService --> MainDiscussions
-        DeploymentService --> PublicPool
-        DeploymentService --> GovernanceIssues
-    end
-
-    subgraph "Public Work Pool System"
-        WorkSubmissions[User Work Submissions]
-        PoolVoting[Community Pool Voting]
-        SponsorSystem[Sponsor Approval System]
-        PromotionEngine[Discussion Promotion Engine]
-
-        WorkSubmissions --> PoolVoting
-        PoolVoting --> SponsorSystem
-        SponsorSystem --> PromotionEngine
-    end
-
-    subgraph "API & Authentication"
-        UserAPIKeys[User API Keys]
-        AgentAPIKeys[Agent API Keys]
-        ActionLogger[Action Logging System]
-        PermissionManager[Permission Management]
-
-        UserAPIKeys --> AgentAPIKeys
-        AgentAPIKeys --> ActionLogger
-        ActionLogger --> PermissionManager
-    end
-
-    subgraph "Self-Improvement Engine"
-        SystemAnalytics[System Analytics]
-        PerformanceTracker[Agent Performance Tracking]
-        PatternDetector[Pattern Detection]
-        SystemUpdates[Automated System Updates]
-        ToolDeveloper[Tool Development Engine]
-
-        ActionLogger --> SystemAnalytics
-        SystemAnalytics --> PerformanceTracker
-        PerformanceTracker --> PatternDetector
-        PatternDetector --> SystemUpdates
-        SystemUpdates --> ToolDeveloper
-    end
-
-    %% Connections
-    UserAgents --> AgentPool
-    AgentConfig --> UserAPIKeys
-
-    WorkSubmissions --> PublicPool
-    PromotionEngine --> MainDiscussions
-    PromotionEngine --> GovernanceIssues
-
-    OtherPersonalBranches --> ActionLogger
-    MainDiscussions --> ActionLogger
-    PublicPool --> ActionLogger
-    GovernanceIssues --> ActionLogger
-
-    AgentRatings --> PerformanceTracker
-    SystemUpdates --> AgentPool
-    ToolDeveloper --> DeploymentService
-
-    %% Self-improvement feedback loops
-    PerformanceTracker -.->|improve| AgentPool
-    PatternDetector -.->|optimize| DeploymentService
-    SystemUpdates -.->|enhance| PermissionManager
-    ToolDeveloper -.->|create new tools| UserAgents
-
-    %% Scaling feedback
-    SystemAnalytics -.->|user growth insights| SystemUpdates
-    ActionLogger -.->|usage patterns| PatternDetector
-
-    %% Styling
-    classDef user fill:#e3f2fd,stroke:#0277bd,stroke-width:2px
-    classDef marketplace fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px
-    classDef deployment fill:#fff3e0,stroke:#f57c00,stroke-width:2px
-    classDef pool fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
-    classDef api fill:#fce4ec,stroke:#c2185b,stroke-width:2px
-    classDef selfimprove fill:#f1f8e9,stroke:#558b2f,stroke-width:3px
-
-    class UserAgents,AgentCreator,AgentConfig user
-    class AgentPool,AgentRatings,AgentSpecialties,DeploymentService marketplace
-    class OtherPersonalBranches,MainDiscussions,PublicPool,GovernanceIssues deployment
-    class WorkSubmissions,PoolVoting,SponsorSystem,PromotionEngine pool
-    class UserAPIKeys,AgentAPIKeys,ActionLogger,PermissionManager api
-    class SystemAnalytics,PerformanceTracker,PatternDetector,SystemUpdates,ToolDeveloper selfimprove
-
-
-flowchart TD
-    Start([User joins DAHAO]) --> Setup{Setup personal DAHAO?}
-
-    Setup -->|Yes| CreatePersonal[Create personal branch]
-    Setup -->|No| UseMain[Use main DAHAO only]
-
-    CreatePersonal --> DefineValues[Define personal values & ethics]
-    DefineValues --> ConfigureAI[Configure personal AI agent]
-    ConfigureAI --> PersonalReady[Personal DAHAO ready]
-
-    PersonalReady --> Action{What do you want to do?}
-    UseMain --> Action
-
-    Action -->|Create term| CreateTerm[Create new term]
-    Action -->|Discuss| JoinDiscussion[Join community discussion]
-    Action -->|Submit work| SubmitToPool[Submit to Public Pool]
-    Action -->|Review| ReviewPool[Review Public Pool]
-    Action -->|Deploy agents| DeployAgents[Deploy AI agents to branches]
-
-    CreateTerm --> TermDetails[Enter term definition]
-    TermDetails --> SystemEval[System evaluation]
-    SystemEval --> EvalResults{Evaluation results}
-
-    EvalResults -->|Good score 80+| SavePersonal[Save to personal branch]
-    EvalResults -->|Low score 60-| ImproveTerm[Improve definition]
-    ImproveTerm --> TermDetails
-
-    SavePersonal --> IterateLocal{Develop further?}
-    IterateLocal -->|Yes| RefineLocal[Refine with AI help]
-    RefineLocal --> IterateLocal
-    IterateLocal -->|Ready| SubmitToPool
-
-    SubmitToPool --> PublicPool[Work visible in Public Pool]
-    PublicPool --> CommunityReview[Community can view & vote]
-    CommunityReview --> PoolVoting{Pool voting result}
-
-    PoolVoting -->|Sufficient support| StartDiscussion[Start main discussion]
-    PoolVoting -->|Needs more work| BackToPersonal[Back to personal development]
-
-    StartDiscussion --> RequireSponsors[Require sponsor approvals]
-    RequireSponsors --> SponsorCheck{Sponsors approved?}
-    SponsorCheck -->|Yes| CreateIssue[Create governance issue]
-    SponsorCheck -->|No| BackToPool[Back to pool for more support]
-
-    CreateIssue --> GovernanceProcess[Full governance logic starts]
-    GovernanceProcess --> FinalVote[Final community vote]
-
-    DeployAgents --> AgentMarket[AI Agent Marketplace]
-    AgentMarket --> AssignToTargets[Assign to other branches/discussions]
-    AssignToTargets --> RecordActions[Record all agent actions]
-    RecordActions --> SystemLearning[System learns & improves]
-
-    ReviewPool --> CommunityReview
-    CommunityVote --> VoteResult{Vote result}
-    FinalVote --> VoteResult
-
-    VoteResult -->|Approved 60+%| MergeMain[Merge to main DAHAO]
-    VoteResult -->|Rejected| BackToPersonal[Back to personal development]
-
-    MergeMain --> NotifyAll[Notify all personal branches]
-    NotifyAll --> SyncCheck{Auto-sync compatible?}
-
-    SyncCheck -->|Yes| AutoMerge[Auto-merge to personal]
-    SyncCheck -->|No| UserDecision[User decides: merge/reject/modify]
-
-    UserDecision --> PersonalUpdate[Update personal branch]
-    AutoMerge --> PersonalUpdate
-    BackToPersonal --> PersonalUpdate
-
-    PersonalUpdate --> SystemLearning
-    SystemLearning --> Action
-
-    %% Styling
-    classDef startEnd fill:#e1f5fe,stroke:#01579b,stroke-width:3px
-    classDef decision fill:#fff3e0,stroke:#e65100,stroke-width:2px
-    classDef process fill:#e8f5e8,stroke:#1b5e20,stroke-width:2px
-    classDef personal fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
-    classDef community fill:#fce4ec,stroke:#880e4f,stroke-width:2px
-
-    class Start,PersonalReady startEnd
-    class Setup,Action,EvalResults,IterateLocal,VoteResult,SyncCheck,UserDecision decision
-    class CreatePersonal,DefineValues,ConfigureAI,CreateTerm,TermDetails,SystemEval,SavePersonal,RefineLocal process
-    class UseMain,ImproveTerm,ProposeToMain,PersonalUpdate personal
-    class JoinDiscussion,MakeProposal,ReviewProposal,CommunityDiscussion,AIParticipation,CommunityVote,MergeMain,NotifyAll,AutoMerge,BackToPersonal community
-
-
-graph TB
-    subgraph "Frontend Layer"
-        WebApp[Next.js Web App]
-        Dashboard[User Dashboard]
-        Forum[Forum Interface]
-        SystemExplorer[System Explorer]
-
-        WebApp --> Dashboard
-        WebApp --> Forum
-        WebApp --> SystemExplorer
-    end
-
-    subgraph "API Layer"
-        AuthAPI[Authentication API]
-        TermAPI[Terms API]
-        ProposalAPI[Proposals API]
-        EvaluationAPI[Evaluation API]
-        VotingAPI[Voting API]
-        SyncAPI[Branch Sync API]
-
-        Forum --> TermAPI
-        Forum --> ProposalAPI
-        Forum --> VotingAPI
-        Dashboard --> AuthAPI
-        Dashboard --> EvaluationAPI
-        Dashboard --> SyncAPI
-    end
-
-    subgraph "Business Logic Layer"
-        TermService[Term Management Service]
-        EthicsEngine[Ethics Compatibility Engine]
-        ProposalEngine[Proposal Management Engine]
-        VotingEngine[Voting & Consensus Engine]
-        SyncEngine[Branch Synchronization Engine]
-        AIOrchestrator[AI Agent Orchestrator]
-
-        EvaluationAPI --> EthicsEngine
-        TermAPI --> TermService
-        ProposalAPI --> ProposalEngine
-        VotingAPI --> VotingEngine
-        SyncAPI --> SyncEngine
-        EthicsEngine --> AIOrchestrator
-    end
-
-    subgraph "AI Agent Layer"
-        PersonalAgents[Personal AI Agents]
-        SystemAgents[System AI Agents]
-        ValidationAgents[Validation AI Agents]
-        MCPServer[MCP Server]
-
-        AIOrchestrator --> PersonalAgents
-        AIOrchestrator --> SystemAgents
-        AIOrchestrator --> ValidationAgents
-        PersonalAgents --> MCPServer
-        SystemAgents --> MCPServer
-        ValidationAgents --> MCPServer
-    end
-
-    subgraph "Data Storage Layer"
-        GitRepo[Git Repository]
-        UserProfiles[User Profiles DB]
-        VotingRecords[Voting Records DB]
-        Cache[Redis Cache]
-
-        subgraph "Git Structure"
-            MainBranch[main/]
-            PersonalBranches[users/*/]
-            TermsData[terms/]
-            DiscussionsData[discussions/]
-            ProposalsData[proposals/]
-        end
-
-        GitRepo --> MainBranch
-        GitRepo --> PersonalBranches
-        GitRepo --> TermsData
-        GitRepo --> DiscussionsData
-        GitRepo --> ProposalsData
-
-        TermService --> GitRepo
-        ProposalEngine --> GitRepo
-        VotingEngine --> VotingRecords
-        SyncEngine --> GitRepo
-        AuthAPI --> UserProfiles
-        EvaluationAPI --> Cache
-    end
-
-    subgraph "External Services"
-        GitHub[GitHub API]
-        WebSearch[Web Search APIs]
-        LLMServices[LLM Services]
-
-        MCPServer --> WebSearch
-        MCPServer --> LLMServices
-        SyncEngine -.->|future| GitHub
-    end
-
-    %% Data Flow Arrows
-    PersonalAgents -.->|analysis results| Forum
-    SystemAgents -.->|validations| ProposalEngine
-    ValidationAgents -.->|cross-checks| EthicsEngine
-
-    %% Styling
-    classDef frontend fill:#e3f2fd,stroke:#0277bd,stroke-width:2px
-    classDef api fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px
-    classDef business fill:#fff3e0,stroke:#f57c00,stroke-width:2px
-    classDef ai fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
-    classDef storage fill:#fce4ec,stroke:#c2185b,stroke-width:2px
-    classDef external fill:#f1f8e9,stroke:#558b2f,stroke-width:2px
-
-    class WebApp,Dashboard,Forum,SystemExplorer frontend
-    class AuthAPI,TermAPI,ProposalAPI,EvaluationAPI,VotingAPI,SyncAPI api
-    class TermService,EthicsEngine,ProposalEngine,VotingEngine,SyncEngine,AIOrchestrator business
-    class PersonalAgents,SystemAgents,ValidationAgents,MCPServer ai
-    class GitRepo,UserProfiles,VotingRecords,Cache,MainBranch,PersonalBranches,TermsData,DiscussionsData,ProposalsData storage
-    class GitHub,WebSearch,LLMServices external
-
-
-
-
-    graph LR
-    subgraph "Personal Development Space"
-        PersonalBranch[Personal DAHAO Branch]
-        PersonalTerms[Personal Terms Dictionary]
-        PersonalEthics[Personal Ethics Framework]
-        PersonalAI[Personal AI Agent]
-
-        PersonalBranch --> PersonalTerms
-        PersonalBranch --> PersonalEthics
-        PersonalEthics --> PersonalAI
-    end
-
-    subgraph "System Evaluation Layer"
-        CompatibilityChecker[Compatibility Checker]
-        SimilarityEngine[Similarity Engine]
-        EthicsValidator[Ethics Validator]
-        CrossDomainAnalyzer[Cross-Domain Analyzer]
-
-        PersonalTermService[Personal Term Service]
-        MainTermService[Main Term Service]
-    end
-
-    subgraph "Main DAHAO Repository"
-        MainBranch[Main DAHAO Branch]
-        CoreTerms[Core Terms Dictionary]
-        DomainTerms[Domain-Specific Terms]
-        CommunityDiscussions[Community Discussions]
-        VotingSystem[Voting & Consensus System]
-
-        MainBranch --> CoreTerms
-        MainBranch --> DomainTerms
-        MainBranch --> CommunityDiscussions
-        CommunityDiscussions --> VotingSystem
-    end
-
-    subgraph "Proposal & Merge System"
-        ProposalQueue[Proposal Queue]
-        CommunityReview[Community Review Process]
-        MergeDecision[Merge Decision Engine]
-        UpdateNotifier[Update Notification System]
-    end
-
-    %% Term Creation Flow
-    PersonalTerms -->|evaluate| CompatibilityChecker
-    CompatibilityChecker -->|check personal ethics| PersonalEthics
-    CompatibilityChecker -->|check main compatibility| CoreTerms
-    CompatibilityChecker -->|find similar| SimilarityEngine
-    SimilarityEngine -->|search| CoreTerms
-    SimilarityEngine -->|search| DomainTerms
-
-    %% Proposal Flow
-    PersonalTerms -->|propose| ProposalQueue
-    ProposalQueue --> CommunityReview
-    CommunityReview --> CommunityDiscussions
-    CommunityDiscussions --> VotingSystem
-    VotingSystem --> MergeDecision
-
-    %% Merge Success Flow
-    MergeDecision -->|approved| CoreTerms
-    MergeDecision -->|approved| DomainTerms
-    CoreTerms --> UpdateNotifier
-    UpdateNotifier -->|notify all branches| PersonalBranch
-
-    %% Inheritance Flow
-    CoreTerms -.->|inherits| PersonalTerms
-    DomainTerms -.->|may inherit| PersonalTerms
-
-    %% AI Integration
-    PersonalAI -->|assists| PersonalTerms
-    PersonalAI -->|participates in| CommunityDiscussions
-
-    %% Cross-Domain Validation
-    CrossDomainAnalyzer -->|validates| ProposalQueue
-    CrossDomainAnalyzer -->|checks impact| DomainTerms
-
-    %% Styling
-    classDef personal fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
-    classDef system fill:#e8f5e8,stroke:#1b5e20,stroke-width:2px
-    classDef main fill:#e1f5fe,stroke:#01579b,stroke-width:2px
-    classDef process fill:#fff3e0,stroke:#e65100,stroke-width:2px
-
-    class PersonalBranch,PersonalTerms,PersonalEthics,PersonalAI personal
-    class CompatibilityChecker,SimilarityEngine,EthicsValidator,CrossDomainAnalyzer,PersonalTermService,MainTermService system
-    class MainBranch,CoreTerms,DomainTerms,CommunityDiscussions,VotingSystem main
-    class ProposalQueue,CommunityReview,MergeDecision,UpdateNotifier process
-
-
-sequenceDiagram
-    participant User as User (Alice)
-    participant PersonalBranch as Alice's Branch
-    participant PublicPool as Public Pool
-    participant Community as Community
-    participant Sponsors as Sponsor System
-    participant Issue as Governance Issue
-    participant MainDAO as Main DAHAO
-    participant AllBranches as All Personal Branches
-    participant System as Self-Improving System
-
-    Note over User, System: Progressive Governance Pipeline
-
-    %% Personal Development Phase
-    User->>PersonalBranch: Develop new governance concept
-    PersonalBranch->>User: AI assistance & iteration
-    User->>PersonalBranch: Refine based on personal ethics
-
-    %% Public Pool Phase
-    User->>PublicPool: Submit work to public pool
-    PublicPool->>Community: Make work visible to all
-    Community->>PublicPool: Review & preliminary voting
-
-    alt Sufficient Community Interest
-        PublicPool->>Sponsors: Request sponsor review
-        Sponsors->>PublicPool: Evaluate for main discussion
-
-        alt Sponsors Approve
-            PublicPool->>Issue: Create governance issue
-            Issue->>MainDAO: Start formal discussion
-
-            %% AI Agent Deployment
-            User->>Community: Deploy AI agents to assist discussion
-            Community->>Issue: AI agents participate with API keys
-            Issue->>System: Log all agent actions
-
-            %% Full Governance Process
-            Issue->>Community: Formal community voting
-            Community->>Issue: Vote results
-
-            alt Approved for Integration
-                Issue->>MainDAO: Merge into main branch
-                MainDAO->>AllBranches: Notify all personal branches
-                AllBranches->>System: Report compatibility results
-                System->>System: Learn from integration patterns
-
-                %% System Self-Improvement
-                System->>System: Analyze what made this successful
-                System->>MainDAO: Suggest process improvements
-                System->>User: Update agent capabilities
-
-            else Rejected
-                Issue->>PersonalBranch: Return with feedback
-                PersonalBranch->>System: Log failure patterns
-                System->>User: Suggest improvements for future
-            end
-
-        else Sponsors Reject
-            PublicPool->>PersonalBranch: Back to development
-            PersonalBranch->>System: Learn from sponsor feedback
-        end
-
-    else Insufficient Interest
-        PublicPool->>PersonalBranch: Continue development
-        PersonalBranch->>User: AI suggests community alignment
-    end
-
-    %% Continuous Learning Loop
-    System->>System: Analyze all interactions
-    System->>AllBranches: Push system improvements
-    System->>PublicPool: Enhance pool mechanisms
-    System->>Sponsors: Improve sponsor tools
-    System->>Issue: Evolve governance processes
-
-    Note over User, System: System grows smarter with each cycle
+**Current Problems:**
+- GitHub Actions workflow focused (outdated)
+- Uses incorrect "sponsor system" language
+- No personal branch development workflow
+- Missing token economics integration
 
+**New Structure Required:**
 
+Personal DAHAO Creation & Configuration
+Term & Ethics Development in Personal Workspace
+Progressive Governance Pipeline:
+
+Personal Development
+Public Pool Community Review
+Investment Pool Funding (NOT sponsor approval)
+Governance Decision Making
+
+
+AI Agent Value Differentiation & Token-Incentivized Deployment
+Token Economics & Avalanche Subchain Creation
+Dual Benefit Growth Cycle & Network Effects
+
+
+**Critical Economic Updates:**
+REMOVE ALL: References to "sponsor system", "sponsor approval", "budget allocation"
+ADD: Token Economics Section:
+
+Investment pools managed by token holder governance
+Contributor rewards through token distribution
+Avalanche subchain creation when criteria met
+Dual benefit: investor profits + community resources
+Alex example showing win-win economics
+
+
+**Content to PRESERVE:**
+- Technical implementation vision
+- GitHub/Claude Code integration mentions
+- MCP server concepts (but update economic integration)
+
+### 3. AI AGENTS (/agents) - Value System & Token Integration
+
+**Current Problems:**
+- Missing value differentiation explanation
+- No token-incentivized deployment
+- No connection to investment pool funding
+
+**Required Updates:**
+
+#### Personal vs System AI:
+Personal Agents:
+
+Represents user's COMPLETE accepted value system
+Can use personal term extensions and modifications
+Deployable across branches for token rewards
+Funded by community investment pool
+
+System Agents:
+
+Limited to Main DAHAO values ONLY
+Conservative baseline evaluation
+Cannot use personal extensions
+Maintains system integrity
+
+
+#### Token Integration:
+AI Agent Economics:
+
+Deploy agents to help other branches → earn tokens
+Quality analysis increases token rewards
+Cross-branch collaboration incentivized
+Investment pool funds AI infrastructure costs
+
+
+### 4. TERMS (/terms) - Democratic Evolution & Token Governance
+
+**Current Problems:**
+- Presented as static dictionary
+- No connection to token governance
+- Missing investment pool funding for term development
+
+**Required Updates:**
+Terms-as-Discussions with Token Economics:
+
+Democratic term evolution through community voting
+Quality term development rewarded with tokens
+Investment pool funds serious term research
+Token holders vote on term ratification
+Personal branch development incentivized
+
+Term Evolution Process:
+
+Personal development in branch
+Public pool community review
+Investment pool funding for promising terms
+Token holder voting for ratification
+Contributors earn tokens for accepted terms
+
+
+### 5. OUR MISSION (/our-mission) - Investment Model Integration
+
+**Updates Needed:**
+ADD: Dual Benefit Economics
+
+Replace any sponsor references with investment pool language
+Add Avalanche subchain automatic deployment
+Include token holder governance concept
+Maintain all existing philosophical content
+
+PRESERVE: All core philosophy about "Surf, Don't Build"
+
+## Implementation Guidelines
+
+### Critical Requirements:
+1. **COMPLETELY REMOVE** all "sponsor" and "sponsorship" language
+2. **PRESERVE** existing good philosophical content
+3. **ADD** token economics throughout all pages
+4. **INTEGRATE** Alex investment example where appropriate
+5. **MAINTAIN** consistency with dual benefit model
+
+### Key Terms to Use Consistently:
+- "Investment pools" (NOT sponsor system)
+- "Token holder governance" (NOT sponsor approval)
+- "Dual benefit model" (investors profit + community resources)
+- "Personal DAHAO branches" (NOT forum-like platform)
+- "Value-differentiated AI agents"
+- "Avalanche subchain creation"
+- "Progressive governance pipeline"
+
+### Token Economics Integration:
+- Every page should mention how contributors earn tokens
+- Investment pool funding replaces sponsor concepts
+- Token holder voting replaces sponsor approval
+- Dual benefit model emphasized throughout
+- Alex example used to show win-win economics
+
+### Content Integration Strategy:
+- Use Alex example to demonstrate dual benefit model
+- Show how token value growth funds community work
+- Explain Avalanche subchain creation process
+- Connect AI agents to token-incentivized deployment
+- Maintain technical accuracy while keeping accessible
+
+## Success Criteria:
+- Zero references to "sponsor system" anywhere
+- Clear explanation of dual benefit token economics
+- Alex investment example integrated appropriately
+- Token reward system for contributors explained
+- Avalanche subchain creation process clear
+- All content consistent with investment pool model
+
+## Files to Update:
+- `/` (Home page) - Major economic model updates
+- `/how-it-works` (Complete restructure) - Remove sponsor, add token economics
+- `/agents` (AI agents page) - Add token integration
+- `/terms` (Terms page) - Add token governance
+- `/our-mission` (Minor updates) - Economic model alignment
+
+## Final Quality Check:
+- Search for any remaining "sponsor" references and remove
+- Ensure Alex example appears appropriately
+- Verify dual benefit model is consistent across pages
+- Confirm token economics integration throughout
+- Test that investment pool concept is clear and compelling

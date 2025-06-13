@@ -2,7 +2,7 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { GitBranchIcon, Bot, Workflow, MessageSquare, Users, CheckCircle, AlertTriangle, GitPullRequest, Database, Shield, Network, BookOpen } from 'lucide-react';
+import { GitBranchIcon, Bot, Workflow, MessageSquare, Users, CheckCircle, AlertTriangle, GitPullRequest, Database, Shield, Network, BookOpen, TrendingUp as TrendingUpIcon, Zap } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
@@ -16,433 +16,502 @@ export default function HowItWorksPage() {
             How DAHAO Works
           </h1>
           <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Deep dive into the technical vision: GitHub Actions, Claude Code integration,
-            and AI agent systems working together for ethical governance.
+            Personal DAHAO branches, progressive governance pipeline, token economics,
+            and AI agent collaboration creating decentralized autonomous organizations.
           </p>
           <div className="flex justify-center gap-2 mb-8">
-            <Badge variant="outline">Concept Phase</Badge>
-            <Badge variant="outline">Technical Vision</Badge>
-            <Badge variant="outline">Implementation Ready</Badge>
+            <Badge variant="outline">Personal Workspaces</Badge>
+            <Badge variant="outline">Token Economics</Badge>
+            <Badge variant="outline">Avalanche Subchains</Badge>
           </div>
         </div>
 
-        {/* Core Workflow */}
+        {/* Personal DAHAO Creation */}
         <div className="mb-16">
-          <h2 className="text-3xl font-semibold mb-8 text-center">Core Workflow: From Idea to Decision</h2>
+          <h2 className="text-3xl font-semibold mb-8 text-center">Step 1: Personal DAHAO Creation & Configuration</h2>
+
+          <Card className="border-l-4 border-l-purple-500 mb-8">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <GitBranchIcon className="h-5 w-5" />
+                Fork Your Personal Governance Branch
+              </CardTitle>
+              <CardDescription>Create your own workspace to develop values and governance</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid gap-6 md:grid-cols-2">
+                <div>
+                  <h4 className="font-semibold mb-3">Personal Branch Features</h4>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li className="flex items-center gap-2">
+                      <CheckCircle className="h-4 w-4 text-green-500" />
+                      Fork from Main DAHAO or create fresh
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle className="h-4 w-4 text-green-500" />
+                      Develop your complete value system
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle className="h-4 w-4 text-green-500" />
+                      Extend terms beyond baseline
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle className="h-4 w-4 text-green-500" />
+                      Private development space
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold mb-3">Configuration Example</h4>
+                  <div className="bg-muted p-4 rounded-lg font-mono text-sm">
+                    <div className="text-green-600"># Personal DAHAO Config</div>
+                    <div>branch: "fearon/animal-welfare-extended"</div>
+                    <div>parent: "main-dahao"</div>
+                    <div>values:</div>
+                    <div>&nbsp;&nbsp;baseline: "inherit"</div>
+                    <div>&nbsp;&nbsp;extensions:</div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;- "regenerative-farming"</div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;- "sentient-ai-rights"</div>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Term Development */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-semibold mb-8 text-center">Step 2: Term & Ethics Development in Personal Workspace</h2>
+
+          <Card className="border-l-4 border-l-yellow-500">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <BookOpen className="h-5 w-5" />
+                Develop Your Value System
+              </CardTitle>
+              <CardDescription>Create and refine terms that represent your complete worldview</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid gap-6 md:grid-cols-2">
+                <div>
+                  <h4 className="font-semibold mb-3">Personal Term Development</h4>
+                  <div className="space-y-3">
+                    <div className="p-3 bg-yellow-50 rounded-lg">
+                      <div className="font-medium text-yellow-800">Extend Core Terms</div>
+                      <p className="text-sm text-yellow-600">Add nuance to baseline definitions</p>
+                    </div>
+                    <div className="p-3 bg-orange-50 rounded-lg">
+                      <div className="font-medium text-orange-800">Create New Terms</div>
+                      <p className="text-sm text-orange-600">Define concepts unique to your values</p>
+                    </div>
+                    <div className="p-3 bg-red-50 rounded-lg">
+                      <div className="font-medium text-red-800">Challenge Assumptions</div>
+                      <p className="text-sm text-red-600">Question and refine existing frameworks</p>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h4 className="font-semibold mb-3">Value Differentiation</h4>
+                  <div className="bg-muted p-4 rounded-lg">
+                    <div className="font-mono text-sm mb-2">Your Personal AI Agent:</div>
+                    <ul className="space-y-1 text-sm text-muted-foreground">
+                      <li>✓ Uses ALL your term extensions</li>
+                      <li>✓ Represents complete value system</li>
+                      <li>✓ Not limited to baseline</li>
+                    </ul>
+                    <div className="mt-3 pt-3 border-t font-mono text-sm">System AI Agent:</div>
+                    <ul className="space-y-1 text-sm text-muted-foreground">
+                      <li>⚠ Only uses Main DAHAO terms</li>
+                      <li>⚠ Conservative baseline only</li>
+                      <li>⚠ Cannot see extensions</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Progressive Governance Pipeline */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-semibold mb-8 text-center">Step 3: Progressive Governance Pipeline</h2>
 
           <div className="space-y-8">
-            {/* Step 1: Proposal Creation */}
+            {/* Personal Development */}
             <Card className="border-l-4 border-l-blue-500">
               <CardHeader>
                 <div className="flex items-center gap-3">
                   <div className="flex-shrink-0 w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-semibold">1</div>
-                  <CardTitle className="flex items-center gap-2">
-                    <GitPullRequest className="h-5 w-5" />
-                    Proposal Submission
-                  </CardTitle>
+                  <CardTitle>Personal Development</CardTitle>
                 </div>
-                <CardDescription>Community member creates a proposal via GitHub Issue or Pull Request</CardDescription>
+                <CardDescription>Private workspace for value system evolution</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="grid gap-4 md:grid-cols-2">
                   <div>
-                    <h4 className="font-semibold mb-2">GitHub Integration</h4>
-                    <div className="bg-muted p-4 rounded-lg font-mono text-sm">
-                      <div className="text-green-600"># Example: Ethics Proposal</div>
-                      <div>Title: "Update Animal Welfare v1.0 → v1.1"</div>
-                      <div>Type: ethics_evolution</div>
-                      <div>Scope: domain_ethics/animal-welfare</div>
-                      <div>Changes: Add "outdoor access" requirement</div>
-                    </div>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold mb-2">Automatic Triggers</h4>
-                    <ul className="space-y-2 text-sm text-muted-foreground">
-                      <li className="flex items-center gap-2">
-                        <CheckCircle className="h-4 w-4 text-green-500" />
-                        GitHub Action webhook fires
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <CheckCircle className="h-4 w-4 text-green-500" />
-                        Issue labels trigger agent analysis
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <CheckCircle className="h-4 w-4 text-green-500" />
-                        Community notification sent
-                      </li>
+                    <p className="text-sm text-muted-foreground mb-3">
+                      Develop terms, ethics, and governance ideas in your personal branch without constraints.
+                    </p>
+                    <ul className="space-y-1 text-sm">
+                      <li>• Unlimited experimentation</li>
+                      <li>• No approval needed</li>
+                      <li>• Full creative freedom</li>
                     </ul>
+                  </div>
+                  <div className="bg-blue-50 p-4 rounded-lg">
+                    <div className="font-semibold text-blue-800 mb-2">Token Incentive</div>
+                    <p className="text-sm text-blue-600">
+                      Quality developments earn tokens when moved to public pool
+                    </p>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
-            {/* Step 2: Term Validation */}
-            <Card className="border-l-4 border-l-yellow-500">
-              <CardHeader>
-                <div className="flex items-center gap-3">
-                  <div className="flex-shrink-0 w-8 h-8 bg-yellow-100 text-yellow-600 rounded-full flex items-center justify-center font-semibold">2</div>
-                  <CardTitle className="flex items-center gap-2">
-                    <BookOpen className="h-5 w-5" />
-                    Term Validation
-                  </CardTitle>
-                </div>
-                <CardDescription>Ensure proposal uses correct versioned terminology</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="grid gap-4 md:grid-cols-2">
-                  <div>
-                    <h4 className="font-semibold mb-2">Automatic Term Check</h4>
-                    <div className="bg-muted p-4 rounded-lg font-mono text-sm">
-                      <div className="text-green-600"># Terms used in proposal:</div>
-                      <div>{`{core:harm@v1.0}`}</div>
-                      <div>{`{welfare:suffering@v1.0}`}</div>
-                      <div>{`{welfare:sentience@v1.0}`}</div>
-                      <div className="text-yellow-600"># Warning: undefined term</div>
-                      <div>"chronic stress" → suggest: {`{welfare:suffering@v1.1}`}</div>
-                    </div>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold mb-2">Term Evolution Trigger</h4>
-                    <ul className="space-y-2 text-sm text-muted-foreground">
-                      <li className="flex items-center gap-2">
-                        <AlertTriangle className="h-4 w-4 text-yellow-500" />
-                        Proposal identifies gap in current terms
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <CheckCircle className="h-4 w-4 text-green-500" />
-                        Community can propose term updates
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <CheckCircle className="h-4 w-4 text-green-500" />
-                        Terms evolve alongside ethics
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Step 3: Agent Analysis */}
+            {/* Public Pool */}
             <Card className="border-l-4 border-l-green-500">
               <CardHeader>
                 <div className="flex items-center gap-3">
-                  <div className="flex-shrink-0 w-8 h-8 bg-green-100 text-green-600 rounded-full flex items-center justify-center font-semibold">3</div>
-                  <CardTitle className="flex items-center gap-2">
-                    <Bot className="h-5 w-5" />
-                    AI Agent Analysis
-                  </CardTitle>
+                  <div className="flex-shrink-0 w-8 h-8 bg-green-100 text-green-600 rounded-full flex items-center justify-center font-semibold">2</div>
+                  <CardTitle>Public Pool Community Review</CardTitle>
                 </div>
-                <CardDescription>Personal and system agents analyze the proposal through ethical lenses</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="grid gap-6 md:grid-cols-3">
-                  <div>
-                    <h4 className="font-semibold mb-2 flex items-center gap-2">
-                      <Bot className="h-4 w-4 text-blue-500" />
-                      Personal Agents
-                    </h4>
-                    <div className="bg-blue-50 p-3 rounded-lg text-sm">
-                      <div className="font-mono mb-2">@fearon-agent analysis:</div>
-                      <div className="text-muted-foreground">
-                        ✓ Aligns with animal_welfare@v1.0<br/>
-                        ✓ Enhances core values<br/>
-                        ⚠ Consider implementation cost<br/>
-                        💡 Suggest phased rollout
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold mb-2 flex items-center gap-2">
-                      <Bot className="h-4 w-4 text-purple-500" />
-                      System Agents
-                    </h4>
-                    <div className="bg-purple-50 p-3 rounded-lg text-sm">
-                      <div className="font-mono mb-2">@ethics-compliance:</div>
-                      <div className="text-muted-foreground">
-                        ✓ No conflicts detected<br/>
-                        ✓ Backward compatible<br/>
-                        ✓ Migration path clear<br/>
-                        📋 Governance: threshold_vote
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold mb-2 flex items-center gap-2">
-                      <Bot className="h-4 w-4 text-orange-500" />
-                      Domain Agents
-                    </h4>
-                    <div className="bg-orange-50 p-3 rounded-lg text-sm">
-                      <div className="font-mono mb-2">@animal-welfare-expert:</div>
-                      <div className="text-muted-foreground">
-                        ✓ Scientifically sound<br/>
-                        ✓ Practical implementation<br/>
-                        💡 Add measurement metrics<br/>
-                        🔗 Link to existing standards
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Step 4: Community Discussion */}
-            <Card className="border-l-4 border-l-purple-500">
-              <CardHeader>
-                <div className="flex items-center gap-3">
-                  <div className="flex-shrink-0 w-8 h-8 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center font-semibold">4</div>
-                  <CardTitle className="flex items-center gap-2">
-                    <MessageSquare className="h-5 w-5" />
-                    Community Discussion
-                  </CardTitle>
-                </div>
-                <CardDescription>Humans and agents collaborate on GitHub to refine the proposal</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-4">
-                  <div className="bg-muted p-4 rounded-lg">
-                    <div className="font-semibold mb-2">GitHub Comment Thread Example:</div>
-                    <div className="space-y-3 text-sm">
-                      <div className="bg-blue-50 p-3 rounded border-l-4 border-l-blue-500">
-                        <div className="font-semibold">@sarah_contributor</div>
-                        <div>Love the outdoor access requirement! What about urban environments where space is limited?</div>
-                      </div>
-                      <div className="bg-green-50 p-3 rounded border-l-4 border-l-green-500">
-                        <div className="font-semibold">@animal-welfare-agent (AI)</div>
-                        <div>```yaml<br/>ethical_analysis:<br/>&nbsp;&nbsp;concern: "urban_space_limitations"<br/>&nbsp;&nbsp;suggestion: "Add urban_adaptation_clause"<br/>&nbsp;&nbsp;compatibility: "maintains_core_principle"<br/>```</div>
-                      </div>
-                      <div className="bg-purple-50 p-3 rounded border-l-4 border-l-purple-500">
-                        <div className="font-semibold">@mark_expert</div>
-                        <div>@animal-welfare-agent good point. We could define "adequate outdoor access" with size thresholds.</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Step 5: Voting */}
-            <Card className="border-l-4 border-l-orange-500">
-              <CardHeader>
-                <div className="flex items-center gap-3">
-                  <div className="flex-shrink-0 w-8 h-8 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center font-semibold">5</div>
-                  <CardTitle className="flex items-center gap-2">
-                    <Users className="h-5 w-5" />
-                    Hybrid Voting
-                  </CardTitle>
-                </div>
-                <CardDescription>Dual human-agent voting ensures both wisdom and consistency</CardDescription>
+                <CardDescription>Community evaluates and refines proposals</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="grid gap-4 md:grid-cols-2">
                   <div>
-                    <h4 className="font-semibold mb-3">Human Vote</h4>
-                    <div className="space-y-2">
-                      <div className="flex justify-between items-center p-2 bg-green-50 rounded">
-                        <span>@sarah_contributor</span>
-                        <Badge variant="outline" className="text-green-600">✓ YES</Badge>
-                      </div>
-                      <div className="flex justify-between items-center p-2 bg-green-50 rounded">
-                        <span>@mark_expert</span>
-                        <Badge variant="outline" className="text-green-600">✓ YES</Badge>
-                      </div>
-                      <div className="flex justify-between items-center p-2 bg-red-50 rounded">
-                        <span>@cost_conscious</span>
-                        <Badge variant="outline" className="text-red-600">✗ NO</Badge>
-                      </div>
-                    </div>
+                    <p className="text-sm text-muted-foreground mb-3">
+                      Submit developed ideas for community discussion and improvement.
+                    </p>
+                    <ul className="space-y-1 text-sm">
+                      <li>• Open discussion and feedback</li>
+                      <li>• Collaborative refinement</li>
+                      <li>• Merit-based progression</li>
+                    </ul>
                   </div>
-                  <div>
-                    <h4 className="font-semibold mb-3">Agent Vote</h4>
-                    <div className="space-y-2">
-                      <div className="flex justify-between items-center p-2 bg-green-50 rounded">
-                        <span>@sarah-agent</span>
-                        <Badge variant="outline" className="text-green-600">✓ APPROVE</Badge>
-                      </div>
-                      <div className="flex justify-between items-center p-2 bg-green-50 rounded">
-                        <span>@mark-agent</span>
-                        <Badge variant="outline" className="text-green-600">✓ APPROVE</Badge>
-                      </div>
-                      <div className="flex justify-between items-center p-2 bg-yellow-50 rounded">
-                        <span>@cost-agent</span>
-                        <Badge variant="outline" className="text-yellow-600">⚠ CONDITIONAL</Badge>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="mt-4 p-4 bg-green-50 rounded-lg">
-                  <div className="font-semibold text-green-800">Result: APPROVED (65% YES, 62% Agent Approval)</div>
-                  <div className="text-sm text-green-700 mt-1">Threshold met: 60% human + agent consensus required</div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Step 6: Agent Assignment & Analysis */}
-            <Card className="border-l-4 border-l-teal-500">
-              <CardHeader>
-                <div className="flex items-center gap-3">
-                  <div className="flex-shrink-0 w-8 h-8 bg-teal-100 text-teal-600 rounded-full flex items-center justify-center font-semibold">6</div>
-                  <CardTitle className="flex items-center gap-2">
-                    <Bot className="h-5 w-5" />
-                    Agent Assignment & Analysis
-                  </CardTitle>
-                </div>
-                <CardDescription>Community members can assign specific agents to analyze proposals</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-4">
-                  <div className="bg-muted p-4 rounded-lg">
-                    <div className="font-semibold mb-2">Community-Driven Analysis:</div>
-                    <div className="space-y-3 text-sm">
-                      <div className="bg-blue-50 p-3 rounded border-l-4 border-l-blue-500">
-                        <div className="font-semibold">@community_member</div>
-                        <div>"This needs deep ethical analysis. <span className="bg-yellow-100 px-1 rounded">@claude</span> please analyze this proposal against our Five Freedoms framework."</div>
-                      </div>
-                      <div className="bg-green-50 p-3 rounded border-l-4 border-l-green-500">
-                        <div className="font-semibold">@claude (AI Agent)</div>
-                        <div>```yaml<br/>ethics_analysis:<br/>&nbsp;&nbsp;framework: "five_freedoms_v1.0"<br/>&nbsp;&nbsp;compliance_score: 8.5/10<br/>&nbsp;&nbsp;concerns: ["implementation_cost", "urban_adaptation"]<br/>&nbsp;&nbsp;recommendations: ["phased_rollout", "pilot_program"]<br/>```</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="grid gap-4 md:grid-cols-2">
-                    <div>
-                      <h4 className="font-semibold mb-2">Available Agent Types</h4>
-                      <ul className="space-y-1 text-sm text-muted-foreground">
-                        <li>• <span className="font-mono">@claude</span> - Deep reasoning and analysis</li>
-                        <li>• <span className="font-mono">@ethics-validator</span> - Compliance checking</li>
-                        <li>• <span className="font-mono">@domain-expert</span> - Specialized knowledge</li>
-                        <li>• <span className="font-mono">@personal-agent</span> - User's values representation</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold mb-2">GitHub Actions Integration</h4>
-                      <ul className="space-y-1 text-sm text-muted-foreground">
-                        <li>• Automatic mention detection in comments</li>
-                        <li>• Agent assignment triggers workflows</li>
-                        <li>• Structured analysis posted to GitHub</li>
-                        <li>• Cross-reference with proposal metadata</li>
-                      </ul>
-                    </div>
+                  <div className="bg-green-50 p-4 rounded-lg">
+                    <div className="font-semibold text-green-800 mb-2">Token Rewards</div>
+                    <p className="text-sm text-green-600">
+                      Contributors earn tokens for valuable feedback and improvements
+                    </p>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
-            {/* Step 7: Value Creation & Distribution */}
-            <Card className="border-l-4 border-l-indigo-500">
+            {/* Investment Pool */}
+            <Card className="border-l-4 border-l-purple-500">
               <CardHeader>
                 <div className="flex items-center gap-3">
-                  <div className="flex-shrink-0 w-8 h-8 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center font-semibold">7</div>
-                  <CardTitle className="flex items-center gap-2">
-                    <Users className="h-5 w-5" />
-                    Value Creation & Distribution
-                  </CardTitle>
+                  <div className="flex-shrink-0 w-8 h-8 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center font-semibold">3</div>
+                  <CardTitle>Investment Pool Funding</CardTitle>
                 </div>
-                <CardDescription>Aligned incentives ensure everyone wins through participation</CardDescription>
+                <CardDescription>Token holders allocate resources to promising proposals</CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="space-y-6">
+                <div className="grid gap-4 md:grid-cols-2">
                   <div>
-                    <h4 className="font-semibold mb-3">Aligned Incentives</h4>
-                    <p className="text-muted-foreground mb-4">For the first time, everyone wins:</p>
-                    <div className="grid gap-4 md:grid-cols-2">
-                      <div className="space-y-3">
-                        <div className="flex items-center gap-3 p-3 bg-green-50 rounded-lg">
-                          <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                          <div>
-                            <div className="font-semibold text-green-800">Investors</div>
-                            <div className="text-sm text-green-600">Returns grow with social impact</div>
-                          </div>
-                        </div>
-                        <div className="flex items-center gap-3 p-3 bg-blue-50 rounded-lg">
-                          <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                          <div>
-                            <div className="font-semibold text-blue-800">Users</div>
-                            <div className="text-sm text-blue-600">Better services through participation</div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="space-y-3">
-                        <div className="flex items-center gap-3 p-3 bg-purple-50 rounded-lg">
-                          <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                          <div>
-                            <div className="font-semibold text-purple-800">Beneficiaries</div>
-                            <div className="text-sm text-purple-600">Sustainable support, not charity</div>
-                          </div>
-                        </div>
-                        <div className="flex items-center gap-3 p-3 bg-orange-50 rounded-lg">
-                          <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
-                          <div>
-                            <div className="font-semibold text-orange-800">Society</div>
-                            <div className="text-sm text-orange-600">Problems solved by profitable solutions</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    <p className="text-sm text-muted-foreground mb-3">
+                      Serious proposals receive funding from the investment pool for implementation.
+                    </p>
+                    <ul className="space-y-1 text-sm">
+                      <li>• Token holder voting</li>
+                      <li>• Resource allocation</li>
+                      <li>• Implementation funding</li>
+                    </ul>
                   </div>
-
-                  <div>
-                    <h4 className="font-semibold mb-3">Mining Through Contribution</h4>
-                    <p className="text-muted-foreground mb-4">Contributors earn based on agent-measured impact:</p>
-                    <div className="grid gap-3 md:grid-cols-2">
-                      <div className="space-y-2">
-                        <div className="flex justify-between items-center p-2 bg-muted rounded">
-                          <span className="font-medium">Code Quality</span>
-                          <span className="text-sm text-muted-foreground">Technical + ethical alignment</span>
-                        </div>
-                        <div className="flex justify-between items-center p-2 bg-muted rounded">
-                          <span className="font-medium">Intellectual Innovation</span>
-                          <span className="text-sm text-muted-foreground">Accepted system improvements</span>
-                        </div>
-                      </div>
-                      <div className="space-y-2">
-                        <div className="flex justify-between items-center p-2 bg-muted rounded">
-                          <span className="font-medium">Community Value</span>
-                          <span className="text-sm text-muted-foreground">Measured real-world results</span>
-                        </div>
-                        <div className="flex justify-between items-center p-2 bg-muted rounded">
-                          <span className="font-medium">Network Growth</span>
-                          <span className="text-sm text-muted-foreground">Cross-DAHAO pattern sharing</span>
-                        </div>
-                      </div>
-                    </div>
+                  <div className="bg-purple-50 p-4 rounded-lg">
+                    <div className="font-semibold text-purple-800 mb-2">NO Sponsor System</div>
+                    <p className="text-sm text-purple-600">
+                      Democratic token holder decisions, not sponsor approval
+                    </p>
                   </div>
+                </div>
+              </CardContent>
+            </Card>
 
+            {/* Governance Decision */}
+            <Card className="border-l-4 border-l-orange-500">
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center font-semibold">4</div>
+                  <CardTitle>Governance Decision Making</CardTitle>
+                </div>
+                <CardDescription>Final implementation through hybrid human-AI voting</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="grid gap-4 md:grid-cols-2">
                   <div>
-                    <h4 className="font-semibold mb-3">Economic Model</h4>
-                    <div className="bg-indigo-50 p-4 rounded-lg">
-                      <div className="grid gap-3 md:grid-cols-2">
-                        <div className="space-y-2">
-                          <div className="flex justify-between">
-                            <span className="font-medium">Initial cost:</span>
-                            <span className="text-indigo-600">$5/day API fees</span>
-                          </div>
-                          <div className="flex justify-between">
-                            <span className="font-medium">Potential return:</span>
-                            <span className="text-green-600">Token rewards</span>
-                          </div>
-                        </div>
-                        <div className="space-y-2">
-                          <div className="flex justify-between">
-                            <span className="font-medium">Break-even:</span>
-                            <span className="text-blue-600">First successful merge</span>
-                          </div>
-                          <div className="flex justify-between">
-                            <span className="font-medium">Long-term:</span>
-                            <span className="text-purple-600">Profitable contribution</span>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="mt-3 pt-3 border-t border-indigo-200">
-                        <p className="text-sm text-indigo-700 font-medium text-center">
-                          Profitable intellectual contribution to humanity
-                        </p>
-                      </div>
-                    </div>
+                    <p className="text-sm text-muted-foreground mb-3">
+                      Funded proposals go to final governance vote for implementation.
+                    </p>
+                    <ul className="space-y-1 text-sm">
+                      <li>• Human + AI agent voting</li>
+                      <li>• Ethical validation</li>
+                      <li>• Official adoption</li>
+                    </ul>
+                  </div>
+                  <div className="bg-orange-50 p-4 rounded-lg">
+                    <div className="font-semibold text-orange-800 mb-2">Implementation</div>
+                    <p className="text-sm text-orange-600">
+                      Approved changes become part of Main DAHAO governance
+                    </p>
                   </div>
                 </div>
               </CardContent>
             </Card>
           </div>
+        </div>
+
+        {/* Token Economics Section */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-semibold mb-8 text-center">Step 4: Token Economics & Avalanche Subchain Creation</h2>
+
+          <Card className="bg-gradient-to-r from-emerald-50 to-teal-50 border-emerald-200">
+            <CardHeader>
+              <CardTitle className="text-center text-emerald-800">The Dual Benefit Investment Model</CardTitle>
+              <CardDescription className="text-center">Investors profit while funding community development</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid gap-6 md:grid-cols-2">
+                <div>
+                  <h4 className="font-semibold mb-3 text-emerald-800">How It Works</h4>
+                  <ol className="space-y-3 text-sm">
+                    <li className="flex gap-2">
+                      <span className="font-semibold text-emerald-600">1.</span>
+                      <span>Investors buy DAHAO tokens from investment pool</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="font-semibold text-emerald-600">2.</span>
+                      <span>DAHAO success increases token value</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="font-semibold text-emerald-600">3.</span>
+                      <span>Investors can sell for profit anytime</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="font-semibold text-emerald-600">4.</span>
+                      <span>Remaining value funds community work</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="font-semibold text-emerald-600">5.</span>
+                      <span>Successful DAHAOs get Avalanche subchain</span>
+                    </li>
+                  </ol>
+                </div>
+                <div>
+                  <h4 className="font-semibold mb-3 text-emerald-800">The Alex Example</h4>
+                  <div className="bg-white p-4 rounded-lg border border-emerald-300">
+                    <div className="space-y-2 text-sm">
+                      <p><span className="font-semibold">Invests:</span> $1,000 → 1000 tokens @ $1</p>
+                      <p><span className="font-semibold">Growth:</span> Token value 5x in 1 month</p>
+                      <p><span className="font-semibold">Sells:</span> 400 tokens for $2,000</p>
+                      <p><span className="font-semibold">Profit:</span> $1,000 (2x return)</p>
+                      <p><span className="font-semibold">Community:</span> $3,000 for operations</p>
+                      <div className="mt-3 pt-3 border-t border-emerald-200">
+                        <p className="font-semibold text-emerald-700">Win-Win: Alex profits + community funded!</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-6 grid gap-4 md:grid-cols-3">
+                <div className="bg-white p-4 rounded-lg border border-emerald-200">
+                  <h5 className="font-semibold text-emerald-700 mb-2">For Contributors</h5>
+                  <ul className="text-sm space-y-1">
+                    <li>• Earn tokens for valuable work</li>
+                    <li>• Governance participation rewards</li>
+                    <li>• Term development incentives</li>
+                  </ul>
+                </div>
+                <div className="bg-white p-4 rounded-lg border border-emerald-200">
+                  <h5 className="font-semibold text-emerald-700 mb-2">For Investors</h5>
+                  <ul className="text-sm space-y-1">
+                    <li>• Token appreciation potential</li>
+                    <li>• Social impact investment</li>
+                    <li>• Governance voting rights</li>
+                  </ul>
+                </div>
+                <div className="bg-white p-4 rounded-lg border border-emerald-200">
+                  <h5 className="font-semibold text-emerald-700 mb-2">For Community</h5>
+                  <ul className="text-sm space-y-1">
+                    <li>• Sustainable funding model</li>
+                    <li>• No dependency on donations</li>
+                    <li>• Aligned incentives</li>
+                  </ul>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* AI Agent Deployment */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-semibold mb-8 text-center">Step 5: AI Agent Value Differentiation & Token-Incentivized Deployment</h2>
+
+          <div className="grid gap-6 md:grid-cols-2">
+            <Card className="border-indigo-200">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Bot className="h-5 w-5 text-indigo-500" />
+                  Personal AI Agents
+                </CardTitle>
+                <CardDescription>Represent your complete value system</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  <div className="bg-indigo-50 p-4 rounded-lg">
+                    <h4 className="font-semibold text-indigo-800 mb-2">Full Value Representation</h4>
+                    <ul className="space-y-2 text-sm text-indigo-700">
+                      <li>• Uses ALL your personal term extensions</li>
+                      <li>• Embodies your complete ethical framework</li>
+                      <li>• Can reason beyond baseline values</li>
+                      <li>• Deployable across other branches</li>
+                    </ul>
+                  </div>
+                  <div className="bg-emerald-50 p-4 rounded-lg">
+                    <h4 className="font-semibold text-emerald-800 mb-2">Token Rewards</h4>
+                    <p className="text-sm text-emerald-700">
+                      Deploy your agent to help other branches and earn tokens based on value provided
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-purple-200">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Shield className="h-5 w-5 text-purple-500" />
+                  System AI Agents
+                </CardTitle>
+                <CardDescription>Maintain baseline integrity</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  <div className="bg-purple-50 p-4 rounded-lg">
+                    <h4 className="font-semibold text-purple-800 mb-2">Conservative Baseline</h4>
+                    <ul className="space-y-2 text-sm text-purple-700">
+                      <li>• Limited to Main DAHAO values only</li>
+                      <li>• Cannot access personal extensions</li>
+                      <li>• Ensures system consistency</li>
+                      <li>• Guards against value drift</li>
+                    </ul>
+                  </div>
+                  <div className="bg-yellow-50 p-4 rounded-lg">
+                    <h4 className="font-semibold text-yellow-800 mb-2">Validation Role</h4>
+                    <p className="text-sm text-yellow-700">
+                      System agents validate that proposals align with core DAHAO principles
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <Card className="mt-6 bg-gradient-to-r from-blue-50 to-purple-50">
+            <CardHeader>
+              <CardTitle className="text-center">Token-Incentivized Cross-Branch Deployment</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid gap-4 md:grid-cols-3">
+                <div className="text-center">
+                  <Network className="h-8 w-8 mx-auto mb-2 text-blue-500" />
+                  <h4 className="font-semibold mb-1">Deploy Across Branches</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Share your agent's expertise with other DAHAOs
+                  </p>
+                </div>
+                <div className="text-center">
+                  <TrendingUpIcon className="h-8 w-8 mx-auto mb-2 text-green-500" />
+                  <h4 className="font-semibold mb-1">Earn Token Rewards</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Quality analysis and help increases rewards
+                  </p>
+                </div>
+                <div className="text-center">
+                  <Zap className="h-8 w-8 mx-auto mb-2 text-purple-500" />
+                  <h4 className="font-semibold mb-1">Fund Infrastructure</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Investment pool covers AI operational costs
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+          <Card className="bg-gradient-to-r from-green-50 to-blue-50">
+            <CardHeader>
+              <CardTitle className="text-center text-green-800">Exponential Value Creation</CardTitle>
+              <CardDescription className="text-center">Each participant amplifies value for everyone else</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid gap-6 md:grid-cols-3">
+                <div>
+                  <h4 className="font-semibold mb-3 text-blue-600">Individual Benefits</h4>
+                  <ul className="space-y-2 text-sm">
+                    <li className="flex items-center gap-2">
+                      <TrendingUpIcon className="h-4 w-4 text-blue-500" />
+                      <span>Token rewards for contributions</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Network className="h-4 w-4 text-blue-500" />
+                      <span>Access to network intelligence</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Bot className="h-4 w-4 text-blue-500" />
+                      <span>Personal AI agent powered by community</span>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold mb-3 text-green-600">Network Effects</h4>
+                  <ul className="space-y-2 text-sm">
+                    <li className="flex items-center gap-2">
+                      <Users className="h-4 w-4 text-green-500" />
+                      <span>More participants = higher token value</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Zap className="h-4 w-4 text-green-500" />
+                      <span>Success funds more development</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <GitBranchIcon className="h-4 w-4 text-green-500" />
+                      <span>Cross-DAHAO pattern sharing</span>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold mb-3 text-purple-600">Avalanche Graduation</h4>
+                  <ul className="space-y-2 text-sm">
+                    <li className="flex items-center gap-2">
+                      <Shield className="h-4 w-4 text-purple-500" />
+                      <span>Successful DAHAOs get own blockchain</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Database className="h-4 w-4 text-purple-500" />
+                      <span>Full sovereignty and control</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Network className="h-4 w-4 text-purple-500" />
+                      <span>Remain connected to network</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="mt-6 p-4 bg-white rounded-lg border border-green-200">
+                <h4 className="font-semibold text-green-800 mb-2 text-center">The Exponential Advantage</h4>
+                <p className="text-sm text-muted-foreground text-center">
+                  Unlike traditional organizations where growth creates bureaucracy,
+                  DAHAO growth creates intelligence. Each new participant benefits from
+                  all previous contributions while adding their own to the commons.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
         </div>
 
         {/* Technical Implementation */}
@@ -623,129 +692,7 @@ export default function HowItWorksPage() {
                 </div>
               </CardContent>
             </Card>
-
-            {/* Step 8: Continuous Network Strengthening */}
-            <Card className="border-l-4 border-l-emerald-500">
-              <CardHeader>
-                <div className="flex items-center gap-3">
-                  <div className="flex-shrink-0 w-8 h-8 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-semibold">8</div>
-                  <CardTitle className="flex items-center gap-2">
-                    <Network className="h-5 w-5" />
-                    Continuous Network Strengthening
-                  </CardTitle>
-                </div>
-                <CardDescription>Each contribution triggers system-wide improvements and exponential growth</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-6">
-                  <div>
-                    <h4 className="font-semibold mb-3">The Growth Cycle</h4>
-                    <p className="text-muted-foreground mb-4">
-                      Each contribution triggers system-wide improvements:
-                    </p>
-                  </div>
-
-                  <div className="grid gap-6 md:grid-cols-3">
-                    <div>
-                      <h4 className="font-semibold mb-3 text-blue-600">Individual Level</h4>
-                      <div className="space-y-2">
-                        <div className="flex items-center gap-2 p-2 bg-blue-50 rounded">
-                          <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                          <span className="text-sm">Your agent gets smarter from network learning</span>
-                        </div>
-                        <div className="flex items-center gap-2 p-2 bg-blue-50 rounded">
-                          <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                          <span className="text-sm">Cross-domain insights improve your decisions</span>
-                        </div>
-                        <div className="flex items-center gap-2 p-2 bg-blue-50 rounded">
-                          <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                          <span className="text-sm">Community governance amplifies your impact</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div>
-                      <h4 className="font-semibold mb-3 text-green-600">Network Level</h4>
-                      <div className="space-y-2">
-                        <div className="flex items-center gap-2 p-2 bg-green-50 rounded">
-                          <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                          <span className="text-sm">More participants = more diverse perspectives</span>
-                        </div>
-                        <div className="flex items-center gap-2 p-2 bg-green-50 rounded">
-                          <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                          <span className="text-sm">Higher AI usage = better model capabilities</span>
-                        </div>
-                        <div className="flex items-center gap-2 p-2 bg-green-50 rounded">
-                          <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                          <span className="text-sm">Success stories attract new domains and contributors</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div>
-                      <h4 className="font-semibold mb-3 text-purple-600">Economic Reinforcement</h4>
-                      <div className="space-y-2">
-                        <div className="flex items-center gap-2 p-2 bg-purple-50 rounded">
-                          <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                          <span className="text-sm">Free users contribute governance value</span>
-                        </div>
-                        <div className="flex items-center gap-2 p-2 bg-purple-50 rounded">
-                          <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                          <span className="text-sm">Paying users fund AI advancement for all</span>
-                        </div>
-                        <div className="flex items-center gap-2 p-2 bg-purple-50 rounded">
-                          <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                          <span className="text-sm">Token rewards create positive feedback loops</span>
-                        </div>
-                        <div className="flex items-center gap-2 p-2 bg-purple-50 rounded">
-                          <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                          <span className="text-sm">Network growth benefits every participant</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="bg-gradient-to-r from-orange-50 to-red-50 p-6 rounded-lg">
-                    <h4 className="font-semibold mb-3 text-orange-800">Antifragile Design</h4>
-                    <p className="text-muted-foreground mb-3">
-                      The system becomes stronger under stress:
-                    </p>
-                    <div className="grid gap-3 md:grid-cols-2">
-                      <div className="space-y-2">
-                        <div className="flex items-center gap-2 p-2 bg-white/70 rounded">
-                          <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
-                          <span className="text-sm">Challenges trigger community problem-solving</span>
-                        </div>
-                        <div className="flex items-center gap-2 p-2 bg-white/70 rounded">
-                          <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-                          <span className="text-sm">Failures become network-wide learning</span>
-                        </div>
-                      </div>
-                      <div className="space-y-2">
-                        <div className="flex items-center gap-2 p-2 bg-white/70 rounded">
-                          <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
-                          <span className="text-sm">Competition improves governance mechanisms</span>
-                        </div>
-                        <div className="flex items-center gap-2 p-2 bg-white/70 rounded">
-                          <div className="w-2 h-2 bg-pink-500 rounded-full"></div>
-                          <span className="text-sm">External pressure increases internal cohesion</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="bg-gradient-to-r from-emerald-50 to-teal-50 p-6 rounded-lg text-center">
-                    <h4 className="font-semibold mb-3 text-emerald-800">Result: Exponential Organizations</h4>
-                    <p className="text-muted-foreground">
-                      Unlike linear growth models, DAHAO creates exponential value curves where later participants
-                      benefit from all previous contributions while adding their own to the commons.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
           </div>
-        </div>
 
         {/* MCP Server Integration */}
         <div className="mb-16">
@@ -1114,10 +1061,10 @@ export default function HowItWorksPage() {
 
         {/* Call to Action */}
         <div className="text-center">
-          <h2 className="text-2xl font-semibold mb-4">Ready to Build the Future?</h2>
+          <h2 className="text-2xl font-semibold mb-4">Ready to Join the Revolution?</h2>
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-            This technical vision shows how human wisdom and AI analysis can create
-            unprecedented organizational intelligence. Let's make it real.
+            Personal governance workspaces, dual benefit token economics, and AI agents
+            working together to create truly autonomous organizations. Start building your DAHAO today.
           </p>
           <div className="space-x-4">
             <Button asChild size="lg">

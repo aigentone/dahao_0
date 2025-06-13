@@ -38,7 +38,7 @@ export default function Home() {
             <span className="font-semibold">Decentralized Autonomous Hybrid-AI Organization</span>
           </p>
           <p className="text-xl text-muted-foreground mb-8">
-            Where humans and AI agents collaborate to evolve ethical systems through versioned governance
+            Personal governance workspaces with investment pools where humans and AI agents collaborate through versioned ethics
           </p>
           
           <div className="space-y-4">
@@ -91,7 +91,7 @@ export default function Home() {
               analyzing proposals through ethical lenses and helping humans make more thoughtful collective decisions.
             </p>
             <p className="text-muted-foreground mt-4">
-              Starting as a forum-like platform, DAHAO evolves into fully autonomous organizations 
+              Through personal governance workspaces and investment pools, DAHAO evolves into fully autonomous organizations 
               where versioned ethics, transparent reasoning, and human-AI collaboration create 
               unprecedented organizational intelligence.
             </p>
@@ -110,6 +110,84 @@ export default function Home() {
                 DAHAO grows stronger with each participant. Start free, contribute value, upgrade naturally. 
                 Every contribution strengthens the network, creating exponential rather than linear growth.
               </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-16">
+          <h2 className="text-2xl font-semibold mb-8 text-center">Personal DAHAO Branches</h2>
+          <div className="p-8 bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl border border-purple-200">
+            <div className="max-w-3xl mx-auto">
+              <div className="grid gap-4 md:grid-cols-2">
+                <div>
+                  <GitBranchIcon className="h-8 w-8 mb-3 text-purple-600" />
+                  <h3 className="text-lg font-semibold mb-2">Fork Governance Frameworks</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Create your personal workspace to develop governance frameworks that match your values
+                  </p>
+                </div>
+                <div>
+                  <BrainIcon className="h-8 w-8 mb-3 text-purple-600" />
+                  <h3 className="text-lg font-semibold mb-2">Personal Value Systems</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Develop terms and ethics that represent YOUR complete value system, not just baseline rules
+                  </p>
+                </div>
+                <div>
+                  <Network className="h-8 w-8 mb-3 text-purple-600" />
+                  <h3 className="text-lg font-semibold mb-2">AI Agent Representation</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Your personal AI agent represents your complete accepted value system across branches
+                  </p>
+                </div>
+                <div>
+                  <CoinsIcon className="h-8 w-8 mb-3 text-purple-600" />
+                  <h3 className="text-lg font-semibold mb-2">Investment Pool Growth</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Contribute to investment pool growth and earn tokens for valuable contributions
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-16">
+          <h2 className="text-2xl font-semibold mb-8 text-center">The Dual Benefit Investment Model</h2>
+          <div className="p-8 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl border border-emerald-200">
+            <div className="max-w-3xl mx-auto">
+              <p className="text-lg font-semibold mb-4 text-emerald-800">
+                Profit and social impact amplify each other
+              </p>
+              <div className="space-y-4 mb-6">
+                <p className="text-muted-foreground">
+                  • Investors buy DAHAO tokens, profit as project succeeds<br/>
+                  • Profits fund more community work through token pool<br/>
+                  • Contributors earn tokens for valuable contributions<br/>
+                  • Successful DAHAOs get their own Avalanche subchain
+                </p>
+              </div>
+              
+              <div className="bg-white p-6 rounded-lg border border-emerald-300">
+                <h4 className="text-lg font-semibold mb-3 text-emerald-800">The Alex Example</h4>
+                <div className="space-y-2 text-sm">
+                  <p className="text-muted-foreground">
+                    <span className="font-semibold">Initial Investment:</span> Alex invests $1,000 in DAHAO tokens @ $1 each = 1000 tokens
+                  </p>
+                  <p className="text-muted-foreground">
+                    <span className="font-semibold">After 1 month:</span> Token value increases 5x ($1 → $5) due to DAHAO success
+                  </p>
+                  <p className="text-muted-foreground">
+                    <span className="font-semibold">Alex's Action:</span> Sells 400 tokens for $2,000, profits $1,000 (2x return)
+                  </p>
+                  <p className="text-muted-foreground">
+                    <span className="font-semibold">Community Benefit:</span> 600 tokens worth $3,000 remain for community operations
+                  </p>
+                  <p className="font-semibold text-emerald-700 mt-3">
+                    Result: Alex profits + community gets $3,000 for development = Everyone wins!
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -161,6 +239,43 @@ export default function Home() {
                 Disagree with direction? Fork the organization. Keep what works, change what doesn't. 
                 Best innovations flow back to benefit the entire network.
               </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-16">
+          <h2 className="text-2xl font-semibold mb-8 text-center">Value-Differentiated AI Agents</h2>
+          <div className="p-8 bg-gradient-to-r from-indigo-50 to-blue-50 rounded-xl border border-indigo-200">
+            <div className="max-w-3xl mx-auto">
+              <div className="grid gap-6 md:grid-cols-2">
+                <div className="bg-white p-6 rounded-lg border border-indigo-300">
+                  <h3 className="text-lg font-semibold mb-3 text-indigo-800">Personal AI Agents</h3>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li>• Represents your COMPLETE accepted value system</li>
+                    <li>• Can use personal term extensions and modifications</li>
+                    <li>• Deployable across branches for token rewards</li>
+                    <li>• Funded by community investment pool</li>
+                  </ul>
+                </div>
+                <div className="bg-white p-6 rounded-lg border border-indigo-300">
+                  <h3 className="text-lg font-semibold mb-3 text-indigo-800">System AI Agents</h3>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li>• Limited to Main DAHAO values ONLY</li>
+                    <li>• Conservative baseline evaluation</li>
+                    <li>• Cannot use personal extensions</li>
+                    <li>• Maintains system integrity</li>
+                  </ul>
+                </div>
+              </div>
+              <div className="mt-6 bg-white p-6 rounded-lg border border-indigo-300">
+                <h3 className="text-lg font-semibold mb-3 text-indigo-800">Token-Incentivized Deployment</h3>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li>• Deploy agents to help other branches → earn tokens</li>
+                  <li>• Quality analysis increases token rewards</li>
+                  <li>• Cross-branch collaboration incentivized</li>
+                  <li>• Investment pool funds AI infrastructure costs</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>

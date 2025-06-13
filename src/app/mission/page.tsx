@@ -2,7 +2,7 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ArrowRightIcon, TrendingUpIcon, ShieldIcon, EyeIcon, HeartIcon, ZapIcon, GitBranchIcon } from 'lucide-react';
+import { ArrowRightIcon, TrendingUpIcon, ShieldIcon, EyeIcon, HeartIcon, ZapIcon, GitBranchIcon, Coins, Network } from 'lucide-react';
 import Link from 'next/link';
 
 export default function MissionPage() {
@@ -327,23 +327,74 @@ export default function MissionPage() {
               </p>
               <div className="grid gap-4 md:grid-cols-2 mb-6">
                 <div>
-                  <h4 className="font-semibold mb-2">The Dual Benefit Model</h4>
+                  <h4 className="font-semibold mb-2 flex items-center gap-2">
+                    <Coins className="h-5 w-5 text-yellow-500" />
+                    Dual Benefit Investment Model
+                  </h4>
                   <p className="text-sm text-muted-foreground">
-                    Profit and social impact amplify each other, transforming traditional charity 
-                    into self-sustaining engines of positive change.
+                    Investment pools where investors buy DAHAO tokens, profit as projects succeed, 
+                    and their gains fund community development. Win-win economics at scale.
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-2">Adaptive Organizations</h4>
+                  <h4 className="font-semibold mb-2 flex items-center gap-2">
+                    <Network className="h-5 w-5 text-purple-500" />
+                    Avalanche Subchain Graduation
+                  </h4>
                   <p className="text-sm text-muted-foreground">
-                    Organizations that adapt as fast as the world changes, powered by 
-                    the continuous evolution of AI technology.
+                    Successful DAHAOs automatically get their own Avalanche blockchain, 
+                    maintaining network connection while achieving full autonomy.
                   </p>
                 </div>
               </div>
               <div className="bg-gradient-to-r from-orange-100 to-red-100 p-4 rounded-lg text-center">
                 <p className="font-semibold text-orange-800">
                   The future is coming whether we build it or not. DAHAO ensures it serves humanity.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Token Economics Revolution */}
+        <div className="mb-16">
+          <Card className="bg-gradient-to-r from-emerald-50 to-teal-50 border-emerald-200">
+            <CardHeader>
+              <CardTitle className="text-center text-emerald-800">Token Economics Revolution</CardTitle>
+              <CardDescription className="text-center">Investment pools replace traditional funding models</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid gap-6 md:grid-cols-3 mb-6">
+                <div className="text-center">
+                  <Coins className="h-12 w-12 mx-auto mb-3 text-yellow-500" />
+                  <h4 className="font-semibold mb-2">Investment Pools</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Token holders fund promising projects through democratic governance, not traditional sponsor approval
+                  </p>
+                </div>
+                <div className="text-center">
+                  <TrendingUpIcon className="h-12 w-12 mx-auto mb-3 text-green-500" />
+                  <h4 className="font-semibold mb-2">Dual Benefit Growth</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Investors profit as DAHAOs succeed, creating sustainable funding for community development
+                  </p>
+                </div>
+                <div className="text-center">
+                  <Network className="h-12 w-12 mx-auto mb-3 text-purple-500" />
+                  <h4 className="font-semibold mb-2">Avalanche Graduation</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Successful DAHAOs receive their own blockchain while maintaining network connections
+                  </p>
+                </div>
+              </div>
+              <div className="bg-white/70 p-6 rounded-lg border-l-4 border-l-emerald-500">
+                <h4 className="font-semibold text-emerald-800 mb-3">The Alex Example</h4>
+                <p className="text-sm text-muted-foreground mb-2">
+                  Alex invests $1,000 in DAHAO tokens. Token value grows 5x in one month. 
+                  Alex sells $2,000 worth, profits $1,000, while $3,000 remains to fund community work.
+                </p>
+                <p className="text-sm font-semibold text-emerald-700">
+                  Result: Alex profits AND the community gets $3,000 for development. Everyone wins.
                 </p>
               </div>
             </CardContent>

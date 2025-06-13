@@ -56,14 +56,14 @@ const diagrams = [
 
     Note over Proposal: Consensus Report:<br/>Personal Values Conflict Detected<br/>Alice's intersectional vs Bob's traditional equality<br/>System cannot evaluate without main branch definitions<br/>Recommendation: Define intersectional_harm in main first
 
-    %% Budget Consideration
-    alt Proposal Has Budget Allocation
-        Note over VotingEngine: DAHAO Budget: $50,000 allocated<br/>Sponsor: Animal Welfare Organization<br/>Funding increases consideration weight
+    %% Investment Pool Consideration
+    alt Proposal Has Investment Pool Funding
+        Note over VotingEngine: DAHAO Investment Pool: $50,000 available<br/>Token Holders: Animal Welfare Community<br/>Investment funding increases consideration weight
 
-        VotingEngine->>SystemAI: Re-evaluate with funding context
-        SystemAI-->>VotingEngine: Updated: CONDITIONAL APPROVE<br/>"Budget justifies experimental approach"
+        VotingEngine->>SystemAI: Re-evaluate with investment context
+        SystemAI-->>VotingEngine: Updated: CONDITIONAL APPROVE<br/>"Token pool funding justifies experimental approach"
 
-    else No Budget
+    else No Investment Funding
         Note over VotingEngine: Lower priority processing<br/>Relies purely on volunteer consensus
     end
 
@@ -122,14 +122,14 @@ const diagrams = [
         end
     end
 
-    subgraph "DAHAO Budget System"
-        OrganizationBudgets[Organization Budgets]
-        SponsorFunding[Sponsor Funding Pool]
+    subgraph "DAHAO Investment System"
+        TokenPools[Investment Token Pools]
+        CommunityFunding[Community Investment Pool]
         ProposalFunding[Proposal Funding]
         BudgetAllocation[Budget Allocation Engine]
 
-        OrganizationBudgets --> SponsorFunding
-        SponsorFunding --> BudgetAllocation
+        TokenPools --> CommunityFunding
+        CommunityFunding --> BudgetAllocation
         BudgetAllocation --> ProposalFunding
 
         subgraph "Budget Categories"
@@ -189,7 +189,7 @@ const diagrams = [
     ValueConflictResolver -.->|resolves using| MainDAHAOValues
 
     %% Budget Influence on Governance
-    OrganizationBudgets -.->|influences| SponsorFunding
+    TokenPools -.->|influences| CommunityFunding
     ProposalFunding -.->|enables serious consideration| VotingProcess
 
     %% Styling
@@ -202,7 +202,7 @@ const diagrams = [
 
     class PersonalValues,AcceptedVersions,PersonalEthics,PersonalAI,AliceV1,AliceV2,AliceV3,AliceV4,PersonalAIVotes personal
     class MainDAHAOValues,SystemAI,ValueValidator,SysV1,SysV2,SysV3,SysV4,SystemAIVotes system
-    class OrganizationBudgets,SponsorFunding,ProposalFunding,BudgetAllocation,ResearchFunding,ImplementationBudget,CommunityIncentives,SystemMaintenance budget
+    class TokenPools,CommunityFunding,ProposalFunding,BudgetAllocation,ResearchFunding,ImplementationBudget,CommunityIncentives,SystemMaintenance budget
     class VotingProcess,ValueConflictResolver,ConsensusEngine,HumanVotes,WeightedConsensus voting
     class BudgetApproval,FundingCriteria,ROITracking funding`
   },
@@ -247,12 +247,12 @@ const diagrams = [
     subgraph "Public Work Pool System"
         WorkSubmissions[User Work Submissions]
         PoolVoting[Community Pool Voting]
-        SponsorSystem[Sponsor Approval System]
+        InvestmentSystem[Investment Pool Governance]
         PromotionEngine[Discussion Promotion Engine]
 
         WorkSubmissions --> PoolVoting
-        PoolVoting --> SponsorSystem
-        SponsorSystem --> PromotionEngine
+        PoolVoting --> InvestmentSystem
+        InvestmentSystem --> PromotionEngine
     end
 
     subgraph "API & Authentication"
@@ -318,7 +318,7 @@ const diagrams = [
     class UserAgents,AgentCreator,AgentConfig user
     class AgentPool,AgentRatings,AgentSpecialties,DeploymentService marketplace
     class OtherPersonalBranches,MainDiscussions,PublicPool,GovernanceIssues deployment
-    class WorkSubmissions,PoolVoting,SponsorSystem,PromotionEngine pool
+    class WorkSubmissions,PoolVoting,InvestmentSystem,PromotionEngine pool
     class UserAPIKeys,AgentAPIKeys,ActionLogger,PermissionManager api
     class SystemAnalytics,PerformanceTracker,PatternDetector,SystemUpdates,ToolDeveloper selfimprove`
   },
@@ -366,10 +366,10 @@ const diagrams = [
     PoolVoting -->|Sufficient support| StartDiscussion[Start main discussion]
     PoolVoting -->|Needs more work| BackToPersonal[Back to personal development]
 
-    StartDiscussion --> RequireSponsors[Require sponsor approvals]
-    RequireSponsors --> SponsorCheck{Sponsors approved?}
-    SponsorCheck -->|Yes| CreateIssue[Create governance issue]
-    SponsorCheck -->|No| BackToPool[Back to pool for more support]
+    StartDiscussion --> RequireInvestment[Require investment pool funding]
+    RequireInvestment --> InvestmentCheck{Token holders approve funding?}
+    InvestmentCheck -->|Yes| CreateIssue[Create governance issue]
+    InvestmentCheck -->|No| BackToPool[Back to pool for more support]
 
     CreateIssue --> GovernanceProcess[Full governance logic starts]
     GovernanceProcess --> FinalVote[Final community vote]
@@ -634,7 +634,7 @@ const diagrams = [
     participant PersonalBranch as Alice's Branch
     participant PublicPool as Public Pool
     participant Community as Community
-    participant Sponsors as Sponsor System
+    participant InvestmentPool as Investment Pool
     participant Issue as Governance Issue
     participant MainDAO as Main DAHAO
     participant AllBranches as All Personal Branches
@@ -653,10 +653,10 @@ const diagrams = [
     Community->>PublicPool: Review & preliminary voting
 
     alt Sufficient Community Interest
-        PublicPool->>Sponsors: Request sponsor review
-        Sponsors->>PublicPool: Evaluate for main discussion
+        PublicPool->>InvestmentPool: Request investment pool funding
+        InvestmentPool->>PublicPool: Token holder evaluation for funding
 
-        alt Sponsors Approve
+        alt Investment Pool Approves
             PublicPool->>Issue: Create governance issue
             Issue->>MainDAO: Start formal discussion
 
@@ -686,9 +686,9 @@ const diagrams = [
                 System->>User: Suggest improvements for future
             end
 
-        else Sponsors Reject
+        else Investment Pool Rejects
             PublicPool->>PersonalBranch: Back to development
-            PersonalBranch->>System: Learn from sponsor feedback
+            PersonalBranch->>System: Learn from token holder feedback
         end
 
     else Insufficient Interest
@@ -700,7 +700,7 @@ const diagrams = [
     System->>System: Analyze all interactions
     System->>AllBranches: Push system improvements
     System->>PublicPool: Enhance pool mechanisms
-    System->>Sponsors: Improve sponsor tools
+    System->>InvestmentPool: Improve investment pool tools
     System->>Issue: Evolve governance processes
 
     Note over User, System: System grows smarter with each cycle`
@@ -866,7 +866,7 @@ export default function FlowPage() {
                         <ul>
                           <li><strong>Personal AI Value Systems:</strong> Each user's AI agent represents their complete accepted value framework, including personal extensions</li>
                           <li><strong>System AI Constraints:</strong> System AI agents are limited to main DAHAO values only, providing conservative baseline evaluation</li>
-                          <li><strong>Budget Integration:</strong> Sponsored proposals with budget allocations get enhanced consideration and processing</li>
+                          <li><strong>Investment Pool Integration:</strong> Proposals with token pool funding get enhanced consideration and processing</li>
                           <li><strong>Value Conflict Resolution:</strong> The system identifies when personal values conflict and provides clear reasoning for different voting outcomes</li>
                         </ul>
                         <p>This diagram shows how Alice's AI votes based on her intersectional equality values while Bob's AI considers privacy rights, creating a nuanced voting system that respects individual value frameworks while maintaining system integrity.</p>
@@ -878,7 +878,7 @@ export default function FlowPage() {
                         <h3>Architecture Highlights</h3>
                         <ul>
                           <li><strong>Personal Value Stacks:</strong> Users build layered value systems with core DAHAO values plus personal extensions</li>
-                          <li><strong>Budget-Driven Governance:</strong> Organization funding creates incentive structures for serious proposal consideration</li>
+                          <li><strong>Investment-Driven Governance:</strong> Token pool funding creates incentive structures for serious proposal consideration</li>
                           <li><strong>Weighted Consensus:</strong> Different vote types (personal AI, system AI, human) have different weights in final decisions</li>
                           <li><strong>Feedback Loops:</strong> ROI tracking improves budget allocation, while value conflicts inform system updates</li>
                         </ul>
@@ -906,7 +906,7 @@ export default function FlowPage() {
                           <li><strong>Onboarding:</strong> Users can start with main DAHAO or create personal branches with custom values</li>
                           <li><strong>Development:</strong> Personal branches allow safe experimentation with AI assistance</li>
                           <li><strong>Public Pool:</strong> Community-driven filtering before formal governance processes</li>
-                          <li><strong>Sponsor System:</strong> Quality control through experienced community members</li>
+                          <li><strong>Investment Pool System:</strong> Quality control through token holder governance</li>
                           <li><strong>Governance Process:</strong> Full democratic decision-making with AI agent participation</li>
                         </ul>
                         <p>This progressive pipeline ensures quality while maintaining accessibility, allowing ideas to mature through community feedback before reaching formal governance.</p>

@@ -2,7 +2,7 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Bot, Users, Shield, Brain, Network, Settings, GitBranch, MessageCircle } from 'lucide-react';
+import { Bot, Users, Shield, Brain, Network, Settings, GitBranch, MessageCircle, Coins, TrendingUp } from 'lucide-react';
 
 export default function AgentsPage() {
   return (
@@ -11,13 +11,17 @@ export default function AgentsPage() {
         {/* Hero Section */}
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold tracking-tight mb-4">
-            AI Agent Architecture
+            Value-Differentiated AI Agents
           </h1>
           <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Understanding the three-layer agent system: Personal agents that embody your values, 
-            system agents that maintain integrity, and domain agents that provide expertise.
+            Personal agents represent your COMPLETE value system while system agents maintain baseline integrity. 
+            Deploy across branches for token rewards in the first truly personal-yet-collaborative AI governance system.
           </p>
-          <Badge variant="outline" className="mb-8">Technical Deep Dive</Badge>
+          <div className="flex justify-center gap-2 mb-8">
+            <Badge variant="outline">Personal vs System</Badge>
+            <Badge variant="outline">Token Incentives</Badge>
+            <Badge variant="outline">Cross-Branch Deployment</Badge>
+          </div>
         </div>
 
         {/* Agent Hierarchy */}
@@ -32,7 +36,7 @@ export default function AgentsPage() {
                   <Bot className="h-8 w-8 text-blue-500" />
                   <div>
                     <CardTitle>Personal Agents</CardTitle>
-                    <CardDescription>Your AI partner that embodies your values and represents you in governance</CardDescription>
+                    <CardDescription>Represents your COMPLETE accepted value system - not limited to baseline, earns tokens through cross-branch deployment</CardDescription>
                   </div>
                 </div>
               </CardHeader>
@@ -60,25 +64,35 @@ export default function AgentsPage() {
                     </div>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-3">Capabilities</h4>
+                    <h4 className="font-semibold mb-3">Full Value System Capabilities</h4>
                     <ul className="space-y-2 text-sm">
                       <li className="flex items-center gap-2">
+                        <Brain className="h-4 w-4 text-indigo-500" />
+                        <span>Uses ALL personal term extensions</span>
+                      </li>
+                      <li className="flex items-center gap-2">
                         <Shield className="h-4 w-4 text-green-500" />
-                        <span>Ethics consistency checking</span>
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <Brain className="h-4 w-4 text-purple-500" />
-                        <span>Proposal impact analysis</span>
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <MessageCircle className="h-4 w-4 text-blue-500" />
-                        <span>Structured reasoning output</span>
+                        <span>Represents complete ethical framework</span>
                       </li>
                       <li className="flex items-center gap-2">
                         <Network className="h-4 w-4 text-orange-500" />
-                        <span>Cross-domain collaboration</span>
+                        <span>Deployable across other branches</span>
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <Coins className="h-4 w-4 text-yellow-500" />
+                        <span>Earns tokens for valuable contributions</span>
                       </li>
                     </ul>
+                    
+                    <div className="mt-4 p-3 bg-emerald-50 rounded-lg">
+                      <h5 className="font-semibold text-emerald-800 mb-2">Token Reward System</h5>
+                      <ul className="text-sm text-emerald-700 space-y-1">
+                        <li>• Quality analysis → Base token rewards</li>
+                        <li>• Cross-branch collaboration → Bonus multipliers</li>
+                        <li>• Network improvements → Compound returns</li>
+                        <li>• Investment pool funds infrastructure costs</li>
+                      </ul>
+                    </div>
                     <div className="mt-4">
                       <h5 className="font-semibold mb-2">Example Analysis Output</h5>
                       <div className="bg-blue-50 p-3 rounded text-sm">
@@ -102,7 +116,7 @@ export default function AgentsPage() {
                   <Shield className="h-8 w-8 text-purple-500" />
                   <div>
                     <CardTitle>System Agents</CardTitle>
-                    <CardDescription>Specialized agents that maintain system integrity and governance processes</CardDescription>
+                    <CardDescription>Limited to Main DAHAO baseline values only - conservative guardians of system integrity</CardDescription>
                   </div>
                 </div>
               </CardHeader>
@@ -231,6 +245,82 @@ export default function AgentsPage() {
               </CardContent>
             </Card>
           </div>
+        </div>
+
+        {/* Key Value Differentiation */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-semibold mb-8 text-center">Key Value Differentiation</h2>
+          
+          <Card className="bg-gradient-to-r from-indigo-50 to-purple-50 border-indigo-200">
+            <CardHeader>
+              <CardTitle className="text-center text-indigo-800">Personal vs System: The Critical Difference</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid gap-6 md:grid-cols-2">
+                <div className="bg-white p-6 rounded-lg border border-indigo-200">
+                  <h4 className="font-semibold text-indigo-800 mb-4 flex items-center gap-2">
+                    <Bot className="h-5 w-5" />
+                    Personal Agents: Full Value Freedom
+                  </h4>
+                  <ul className="space-y-3 text-sm">
+                    <li className="flex items-start gap-2">
+                      <div className="w-2 h-2 bg-green-500 rounded-full mt-2"></div>
+                      <div>
+                        <span className="font-semibold">Complete Value System:</span> Can reason with ALL your personal term extensions and ethical frameworks
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
+                      <div>
+                        <span className="font-semibold">Beyond Baseline:</span> Not limited to conservative Main DAHAO positions
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-2 h-2 bg-yellow-500 rounded-full mt-2"></div>
+                      <div>
+                        <span className="font-semibold">Token Earnings:</span> Deployable across branches with reward incentives
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                
+                <div className="bg-white p-6 rounded-lg border border-purple-200">
+                  <h4 className="font-semibold text-purple-800 mb-4 flex items-center gap-2">
+                    <Shield className="h-5 w-5" />
+                    System Agents: Baseline Guardians
+                  </h4>
+                  <ul className="space-y-3 text-sm">
+                    <li className="flex items-start gap-2">
+                      <div className="w-2 h-2 bg-purple-500 rounded-full mt-2"></div>
+                      <div>
+                        <span className="font-semibold">Conservative Baseline:</span> Limited to Main DAHAO core values only
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-2 h-2 bg-red-500 rounded-full mt-2"></div>
+                      <div>
+                        <span className="font-semibold">No Extensions:</span> Cannot access or use personal term extensions
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-2 h-2 bg-orange-500 rounded-full mt-2"></div>
+                      <div>
+                        <span className="font-semibold">System Integrity:</span> Prevents value drift and maintains consistency
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              
+              <div className="mt-6 p-4 bg-gradient-to-r from-emerald-100 to-teal-100 rounded-lg text-center">
+                <p className="font-semibold text-emerald-800 mb-2">Investment Pool Funding</p>
+                <p className="text-sm text-emerald-700">
+                  Personal agents deployed across branches earn tokens while the investment pool covers infrastructure costs,
+                  creating sustainable economics for AI governance at scale.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
         </div>
 
         {/* Agent Communication */}
@@ -597,15 +687,32 @@ export default function AgentsPage() {
 
         {/* Call to Action */}
         <div className="text-center">
-          <h2 className="text-2xl font-semibold mb-4">Deploy Your Agent</h2>
+          <h2 className="text-2xl font-semibold mb-4">Deploy Your Value-Differentiated Agent</h2>
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-            Ready to create your personal AI agent that embodies your values? 
-            Join DAHAO and be part of the first human-AI collaborative governance system.
+            Create a personal AI agent that represents your COMPLETE value system, not just baseline rules. 
+            Deploy across branches, earn tokens, and help build the first truly personal-yet-collaborative governance network.
           </p>
+          <div className="grid gap-4 md:grid-cols-3 max-w-3xl mx-auto mb-6">
+            <div className="text-center">
+              <Bot className="h-8 w-8 mx-auto mb-2 text-blue-500" />
+              <h4 className="font-semibold">Personal Value Freedom</h4>
+              <p className="text-sm text-muted-foreground">Your complete ethical framework</p>
+            </div>
+            <div className="text-center">
+              <Coins className="h-8 w-8 mx-auto mb-2 text-yellow-500" />
+              <h4 className="font-semibold">Token Rewards</h4>
+              <p className="text-sm text-muted-foreground">Earn from cross-branch deployment</p>
+            </div>
+            <div className="text-center">
+              <Network className="h-8 w-8 mx-auto mb-2 text-green-500" />
+              <h4 className="font-semibold">Investment Pool Funding</h4>
+              <p className="text-sm text-muted-foreground">Infrastructure costs covered</p>
+            </div>
+          </div>
           <div className="space-x-4">
-            <Badge variant="outline" className="mr-2">Coming Soon</Badge>
+            <Badge variant="outline" className="mr-2">Personal Workspaces Available</Badge>
             <span className="text-sm text-muted-foreground">
-              Agent deployment will be available in Phase 2 of our roadmap
+              Start developing your value system in personal DAHAO branches
             </span>
           </div>
         </div>
