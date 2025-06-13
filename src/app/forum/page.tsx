@@ -10,6 +10,8 @@ import { DiscussionView } from '@/components/github-compatible/DiscussionView';
 import { PrinciplesViewWithInheritance } from '@/components/forum/PrinciplesViewWithInheritance';
 import { InheritanceTree } from '@/components/forum/InheritanceTree';
 import { TermsView } from '@/components/forum/TermsView';
+import { TermDiscussionManager } from '@/components/forum/TermDiscussionManager';
+import AgentAssignmentPanel from '@/components/governance/AgentAssignmentPanel';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Button } from '@/components/ui/button';
 import { Search, Filter, MessageSquare, Shield, Brain, BarChart3, Sparkles, ArrowLeft, FileText } from 'lucide-react';
@@ -182,7 +184,7 @@ export default function ForumPage() {
 
                 {/* Tabs Navigation */}
                 <Tabs defaultValue="discussions" className="space-y-6">
-                  <TabsList className="grid grid-cols-5 w-full bg-gray-100/50 p-1 rounded-xl">
+                  <TabsList className="grid grid-cols-6 w-full bg-gray-100/50 p-1 rounded-xl">
                     <TabsTrigger value="discussions" className="data-[state=active]:bg-white data-[state=active]:shadow-sm">
                       <MessageSquare className="w-4 h-4 mr-2" />
                       Discussions
@@ -194,6 +196,10 @@ export default function ForumPage() {
                     <TabsTrigger value="terms" className="data-[state=active]:bg-white data-[state=active]:shadow-sm">
                       <FileText className="w-4 h-4 mr-2" />
                       Terms
+                    </TabsTrigger>
+                    <TabsTrigger value="term-evolution" className="data-[state=active]:bg-white data-[state=active]:shadow-sm">
+                      <FileText className="w-4 h-4 mr-2" />
+                      Term Evolution
                     </TabsTrigger>
                     <TabsTrigger value="agents" className="data-[state=active]:bg-white data-[state=active]:shadow-sm">
                       <Brain className="w-4 h-4 mr-2" />
@@ -270,12 +276,21 @@ export default function ForumPage() {
                     <TermsView organizationId={currentOrg.id} />
                   </TabsContent>
 
+                  {/* Term Evolution Tab - NEW ADVANCED FEATURE */}
+                  <TabsContent value="term-evolution" className="space-y-4">
+                    <TermDiscussionManager 
+                      organizationId={currentOrg.id}
+                      currentUser={{
+                        id: 'current-user',
+                        name: 'Current User',
+                        tokenBalance: 1250
+                      }}
+                    />
+                  </TabsContent>
+
+                  {/* AI Agents Tab - ENHANCED WITH NEW FEATURES */}
                   <TabsContent value="agents" className="space-y-4">
-                    <div className="bg-white rounded-xl p-8 text-center border border-gray-100">
-                      <Brain className="w-12 h-12 text-gray-400 mx-auto mb-4" />
-                      <h3 className="text-lg font-semibold text-gray-900 mb-2">AI Agents View</h3>
-                      <p className="text-gray-600">AI agents management coming soon</p>
-                    </div>
+                    <AgentAssignmentPanel />
                   </TabsContent>
 
                   <TabsContent value="analytics" className="space-y-4">
