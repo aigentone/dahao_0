@@ -25,6 +25,7 @@ export default function ForumPage() {
   const [selectedDiscussion, setSelectedDiscussion] = useState<GitHubDiscussion | null>(null);
   const [viewMode, setViewMode] = useState<'list' | 'detail'>('list');
   const [orgDiscussions, setOrgDiscussions] = useState<GitHubDiscussion[]>([]);
+  const [activeTab, setActiveTab] = useState('discussions');
 
   const fetchOrgDiscussions = useCallback(async (orgId: string) => {
     try {
@@ -87,6 +88,32 @@ export default function ForumPage() {
   const handleBackToList = () => {
     setSelectedDiscussion(null);
     setViewMode('list');
+  };
+
+  const handleNavigateToDiscussions = (termName: string) => {
+    // Switch to discussions tab
+    setActiveTab('discussions');
+    
+    // Reset discussion view to list mode
+    setSelectedDiscussion(null);
+    setViewMode('list');
+    
+    // Try to find existing discussion about this term
+    const termDiscussion = orgDiscussions.find(discussion => 
+      discussion.title.toLowerCase().includes(termName.toLowerCase()) ||
+      discussion.body?.toLowerCase().includes(termName.toLowerCase())
+    );
+    
+    if (termDiscussion) {
+      // If discussion exists, navigate to it
+      setTimeout(() => {
+        setSelectedDiscussion(termDiscussion);
+        setViewMode('detail');
+      }, 100); // Small delay to ensure tab switch happens first
+    }
+    
+    // TODO: If no discussion exists, could create one or show message
+    // For now, just navigate to discussions tab where user can see all discussions
   };
 
   const getCurrentOrganization = (): GovernanceOrganization | null => {
@@ -183,7 +210,7 @@ export default function ForumPage() {
                 <OrganizationHeader organization={currentOrg} />
 
                 {/* Tabs Navigation */}
-                <Tabs defaultValue="discussions" className="space-y-6">
+                <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
                   <TabsList className="grid grid-cols-6 w-full bg-gray-100/50 p-1 rounded-xl">
                     <TabsTrigger value="discussions" className="data-[state=active]:bg-white data-[state=active]:shadow-sm">
                       <MessageSquare className="w-4 h-4 mr-2" />
@@ -285,6 +312,7 @@ export default function ForumPage() {
                         name: 'Current User',
                         tokenBalance: 1250
                       }}
+                      onNavigateToDiscussions={handleNavigateToDiscussions}
                     />
                   </TabsContent>
 

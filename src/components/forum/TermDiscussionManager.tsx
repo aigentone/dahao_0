@@ -22,6 +22,44 @@ import {
   AlertCircle,
   Coins
 } from 'lucide-react';
+import { TermRatificationVoting } from './TermRatificationVoting';
+
+interface VoteRecord {
+  id: string;
+  voter: {
+    id: string;
+    name: string;
+    type: 'human' | 'personal_ai' | 'system_ai';
+    tokenWeight: number;
+    reputation: number;
+  };
+  vote: 'ratify' | 'reject' | 'abstain';
+  reasoning?: string;
+  timestamp: string;
+  tokensDelegated?: number;
+}
+
+interface VotingSession {
+  id: string;
+  termName: string;
+  proposalId: string;
+  startDate: string;
+  endDate: string;
+  ratificationThreshold: number; // 0.75 = 75%
+  quorum: number; // 0.30 = 30% of total tokens must participate
+  totalTokensInPlay: number;
+  currentParticipation: number;
+  votes: VoteRecord[];
+  status: 'active' | 'passed' | 'failed' | 'pending';
+  results?: {
+    ratifyTokens: number;
+    rejectTokens: number;
+    abstainTokens: number;
+    ratifyPercentage: number;
+    rejectPercentage: number;
+    participationRate: number;
+  };
+}
 
 interface TermProposal {
   id: string;
@@ -72,12 +110,15 @@ interface TermDiscussionManagerProps {
     name: string;
     tokenBalance: number;
   };
+  onNavigateToDiscussions?: (termName: string) => void;
 }
 
-export function TermDiscussionManager({ organizationId, currentUser }: TermDiscussionManagerProps) {
+export function TermDiscussionManager({ organizationId, currentUser, onNavigateToDiscussions }: TermDiscussionManagerProps) {
   const [activeTab, setActiveTab] = useState('active');
   const [selectedProposal, setSelectedProposal] = useState<TermProposal | null>(null);
   const [showNewProposalForm, setShowNewProposalForm] = useState(false);
+  const [showDiscussionInterface, setShowDiscussionInterface] = useState(false);
+  const [activeVotingSession, setActiveVotingSession] = useState<VotingSession | null>(null);
 
   // Mock data for term proposals
   const mockProposals: TermProposal[] = [
@@ -190,6 +231,71 @@ export function TermDiscussionManager({ organizationId, currentUser }: TermDiscu
     const now = new Date();
     const diff = Math.ceil((end.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
     return Math.max(0, diff);
+  };
+
+  const handleJoinDiscussion = (proposal: TermProposal) => {
+    // Navigate to existing discussions tab and find/create discussion for this term
+    if (onNavigateToDiscussions) {
+      onNavigateToDiscussions(proposal.termName);
+    } else {
+      // Fallback: show local discussion interface if no navigation callback
+      setShowDiscussionInterface(true);
+      setSelectedProposal(proposal);
+    }
+  };
+
+  const handleMoveToVoting = (proposal: TermProposal) => {
+    // Transition proposal status from 'discussion' to 'voting'
+    const updatedProposal = { ...proposal, status: 'voting' as const };
+    
+    // Update proposals array
+    setProposals(prev => prev.map(p => 
+      p.id === proposal.id ? updatedProposal : p
+    ));
+    
+    // Create voting session
+    const votingSession: VotingSession = {
+      id: `voting-${proposal.id}-${Date.now()}`,
+      termName: proposal.termName,
+      proposalId: proposal.id,
+      startDate: new Date().toISOString(),
+      endDate: new Date(Date.now() + 14 * 24 * 60 * 60 * 1000).toISOString(), // 14 days from now
+      ratificationThreshold: proposal.ratificationThreshold,
+      quorum: 0.30, // 30% participation required
+      totalTokensInPlay: 10000, // Mock total tokens
+      currentParticipation: 0,
+      votes: [],
+      status: 'active'
+    };
+    
+    setActiveVotingSession(votingSession);
+    setSelectedProposal(updatedProposal);
+  };
+
+  const handleVoteSubmit = (vote: 'ratify' | 'reject' | 'abstain', reasoning?: string) => {
+    if (!activeVotingSession || !currentUser) return;
+
+    const newVote: VoteRecord = {
+      id: `vote-${Date.now()}`,
+      voter: {
+        id: currentUser.id,
+        name: currentUser.name,
+        type: 'human',
+        tokenWeight: currentUser.tokenBalance,
+        reputation: 100 // Mock reputation
+      },
+      vote,
+      reasoning,
+      timestamp: new Date().toISOString()
+    };
+
+    const updatedSession = {
+      ...activeVotingSession,
+      votes: [...activeVotingSession.votes, newVote],
+      currentParticipation: activeVotingSession.currentParticipation + currentUser.tokenBalance
+    };
+
+    setActiveVotingSession(updatedSession);
   };
 
   const renderProposalCard = (proposal: TermProposal) => (
@@ -444,16 +550,73 @@ export function TermDiscussionManager({ organizationId, currentUser }: TermDiscu
 
               {selectedProposal.status === 'discussion' && (
                 <div className="flex gap-2">
-                  <Button>
+                  <Button onClick={() => handleJoinDiscussion(selectedProposal)}>
                     <MessageSquare className="w-4 h-4 mr-2" />
                     Join Discussion
                   </Button>
-                  <Button variant="outline">
+                  <Button variant="outline" onClick={() => handleMoveToVoting(selectedProposal)}>
                     <ArrowRight className="w-4 h-4 mr-2" />
                     Move to Voting
                   </Button>
                 </div>
               )}
+            </div>
+          </CardContent>
+        </Card>
+      )}
+
+      {/* Voting Session Integration */}
+      {activeVotingSession && (
+        <div className="mt-6">
+          <TermRatificationVoting
+            votingSession={activeVotingSession}
+            currentUser={currentUser ? {
+              id: currentUser.id,
+              name: currentUser.name,
+              tokenBalance: currentUser.tokenBalance,
+              votingWeight: currentUser.tokenBalance,
+            } : undefined}
+            onVote={handleVoteSubmit}
+          />
+        </div>
+      )}
+
+      {/* Discussion Interface */}
+      {showDiscussionInterface && selectedProposal && (
+        <Card className="mt-6 border-green-200 bg-green-50">
+          <CardHeader>
+            <div className="flex items-center justify-between">
+              <CardTitle className="flex items-center gap-2">
+                <MessageSquare className="w-5 h-5" />
+                Discussion: {selectedProposal.termName}
+              </CardTitle>
+              <Button variant="outline" size="sm" onClick={() => setShowDiscussionInterface(false)}>
+                Close Discussion
+              </Button>
+            </div>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-4">
+              <p className="text-green-800">
+                <strong>Discussion Mode Activated!</strong> You can now participate in the community discussion about this term definition.
+              </p>
+              <div className="p-4 bg-white rounded border">
+                <h5 className="font-semibold mb-2">Current Discussion Status:</h5>
+                <ul className="text-sm space-y-1">
+                  <li>• Support: {selectedProposal.supportCount} community members</li>
+                  <li>• Opposition: {selectedProposal.opposeCount} community members</li>
+                  <li>• Token Stake: {selectedProposal.tokenStake} tokens committed</li>
+                </ul>
+              </div>
+              <div className="text-sm text-green-700">
+                This is where the full discussion interface would be implemented with:
+                <ul className="mt-2 ml-4 list-disc">
+                  <li>Comment threads</li>
+                  <li>Real-time discussion updates</li>
+                  <li>Community feedback tools</li>
+                  <li>Proposal refinement suggestions</li>
+                </ul>
+              </div>
             </div>
           </CardContent>
         </Card>

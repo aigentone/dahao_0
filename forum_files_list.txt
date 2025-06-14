@@ -1,0 +1,51 @@
+# Forum Logic Related Files
+
+## Main Forum Page
+/Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/src/app/forum/page.tsx
+
+## Forum Components (15 total)
+/Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/src/components/forum/FeaturedDiscussion.tsx
+/Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/src/components/forum/FullDiscussionView.tsx
+/Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/src/components/forum/InheritanceTree.tsx
+/Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/src/components/forum/OrganizationCards.tsx
+/Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/src/components/forum/OrganizationHeader.tsx
+/Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/src/components/forum/PersonalBranchCreator.tsx
+/Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/src/components/forum/PersonalTermDevelopment.tsx
+/Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/src/components/forum/PersonalWorkspace.tsx
+/Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/src/components/forum/PrinciplesView.tsx
+/Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/src/components/forum/PrinciplesViewWithInheritance.tsx
+/Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/src/components/forum/RecentDiscussions.tsx
+/Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/src/components/forum/StatsBar.tsx
+/Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/src/components/forum/TermDiscussionManager.tsx
+/Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/src/components/forum/TermRatificationVoting.tsx
+/Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/src/components/forum/TermsView.tsx
+
+## Related Governance Components
+/Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/src/components/governance/AgentAssignmentPanel.tsx
+/Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/src/components/governance/DiscussionViewer.tsx
+
+## GitHub-Compatible Discussion Components
+/Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/src/components/github-compatible/FeaturedDiscussion.tsx
+/Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/src/components/github-compatible/DiscussionList.tsx
+/Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/src/components/github-compatible/DiscussionView.tsx
+
+## Type Definitions
+/Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/src/types/governance.ts
+/Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/src/types/github-compatible.ts
+/Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/src/types/agents.ts
+
+## API Routes
+/Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/src/app/api/governance/route.ts
+/Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/src/app/api/discussions/[orgId]/route.ts
+/Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/src/app/api/forum/route.ts
+/Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/src/app/api/terms/route.ts
+/Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/src/app/api/terms-list/[domain]/route.ts
+/Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/src/app/api/terms/[domain]/[term]/route.ts
+
+## Forum-Related Pages
+/Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/src/app/forum/[domain]/discussions/[number]/page.tsx
+/Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/src/app/forum/[domain]/terms/[term]/page.tsx
+/Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/src/app/forum/discussion/[id]/page.tsx
+
+## Supporting Libraries/Utils (if any forum-specific logic exists)
+/Users/aigent/Documents/GitHub/h_d/agents-local/dahao_0/src/lib/discussion-parser.ts
