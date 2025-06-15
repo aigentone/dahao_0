@@ -1,3 +1,4 @@
+// Simplified GovernancePrinciple focused on guidance and philosophy
 export interface GovernancePrinciple {
   version: string;
   principle_id: string;
@@ -7,54 +8,121 @@ export interface GovernancePrinciple {
   domain?: string;
   previous_version?: string;
   
-  // Standard fields
-  requirements?: Record<string, any>;
-  validation_rules?: Record<string, any>;
-  examples?: Record<string, any>;
+  // Core principle fields
   cross_domain_applications?: Record<string, string>;
-  changelog?: Record<string, any>;
+  philosophical_foundation?: string;
+  ethical_framework?: string;
   
-  // Animal welfare specific
+  // Animal welfare principle-specific (philosophical content only)
   freedoms?: Record<string, {
     description: string;
-    requirements: string[];
-    indicators: string[];
+    philosophical_basis: string;
+    ethical_considerations: string[];
   }>;
-  implementation?: {
-    assessment_frequency: string;
-    reporting_requirement: string;
-    intervention_threshold: string;
+  
+  // Environment principle-specific (framework only)
+  ecosystem_philosophy?: {
+    guiding_principles?: string[];
+    ethical_considerations?: string[];
+    value_framework?: Record<string, any>;
   };
   
-  // Environment specific
-  ecosystem_assessment_framework?: {
-    structural_indicators?: Record<string, any>;
-    functional_indicators?: Record<string, any>;
-    resilience_indicators?: Record<string, any>;
-  };
-  monitoring_protocols?: Record<string, any>;
-  intervention_strategies?: Record<string, any>;
-  decision_making_framework?: Record<string, any>;
-  emergency_response?: {
-    ecosystem_crisis_triggers?: string[];
-    emergency_protocols?: string[];
-  };
-  
-  // Core governance specific
-  harm_categories?: Record<string, any>;
-  assessment_framework?: Record<string, any>;
+  // Core governance principle-specific (philosophy only)
+  ethical_foundation?: Record<string, any>;
+  value_system?: Record<string, any>;
   
   // Inheritance metadata
-  inheritance_source?: string; // Which domain this principle comes from
-  is_inherited?: boolean; // True if inherited from parent domain
-  inheritance_modification?: string; // How inheritance was modified
-  extension_config?: any; // Domain extension configuration
+  inheritance_source?: string;
+  is_inherited?: boolean;
+  inheritance_modification?: string;
+  extension_config?: any;
   
   // Term-related fields
-  uses_terms?: string[]; // Array of term references like "core:harm@v1.1"
-  term_definitions?: Record<string, any>; // Resolved term definitions
+  uses_terms?: string[];
+  term_definitions?: Record<string, any>;
   
-  // Flexible for other domain-specific structures
+  // Personal branch and economics (philosophical level)
+  token_integration?: {
+    contribution_rewards: string;
+    implementation_funding: string;
+    cross_branch_incentives: boolean;
+    personal_development_rewards: boolean;
+  };
+  
+  economic_alignment?: {
+    dual_benefit_principle: boolean;
+    sustainable_funding: string;
+    community_ownership: string;
+  };
+  
+  personal_branch_support?: {
+    development_workspace: boolean;
+    ai_agent_integration: boolean;
+    cross_branch_deployment: boolean;
+  };
+  
+  changelog?: Record<string, any>;
+  
+  // Flexible for other domain-specific philosophical structures
+  [key: string]: any;
+}
+
+// New GovernanceRule interface for operational requirements
+export interface GovernanceRule {
+  version: string;
+  rule_id: string;
+  name: string;
+  description: string;
+  category: string;
+  domain?: string;
+  previous_version?: string;
+  
+  // Core rule fields
+  derives_from_principles: string[]; // References to principles this rule implements
+  uses_terms?: string[];
+  
+  // Implementation requirements (moved from principles)
+  implementation_requirements?: Record<string, any>;
+  validation_requirements?: Record<string, any>;
+  assessment_framework?: Record<string, any>;
+  
+  // Compliance and enforcement
+  compliance_monitoring?: Record<string, any>;
+  enforcement_mechanisms?: Record<string, any>;
+  violation_responses?: Record<string, any>;
+  
+  // Metrics and measurement
+  measurement_protocols?: Record<string, any>;
+  intervention_thresholds?: Record<string, any>;
+  quality_indicators?: Record<string, any>;
+  
+  // Cross-domain implementation
+  cross_domain_implementation?: Record<string, any>;
+  
+  // Inheritance metadata for rules
+  inheritance_source?: string;
+  is_inherited?: boolean;
+  inheritance_modification?: string;
+  
+  // Personal branch support for rule customization
+  personal_branch_support?: {
+    development_workspace: boolean;
+    ai_agent_integration: boolean;
+    cross_branch_deployment: boolean;
+    custom_rule_variations: boolean;
+  };
+  
+  // Token integration for rule compliance
+  token_integration?: {
+    compliance_rewards: string;
+    improvement_incentives: string;
+    violation_penalties: string;
+    community_oversight?: string;
+  };
+  
+  changelog?: Record<string, any>;
+  
+  // Flexible for domain-specific rule structures
   [key: string]: any;
 }
 
@@ -108,6 +176,7 @@ export interface GovernanceOrganization {
   description: string;
   inheritance: InheritanceConfig;
   principles: GovernancePrinciple[];
+  rules: GovernanceRule[]; // New: operational rules separate from principles
   discussions: GovernanceDiscussion[];
   emoji: string;
   
@@ -120,6 +189,8 @@ export interface GovernanceOrganization {
 export interface GovernanceData {
   organizations: GovernanceOrganization[];
   principlesByOrg: Record<string, GovernancePrinciple[]>;
+  rulesByOrg: Record<string, GovernanceRule[]>; // New: rules by organization
+  rulesByPrinciple: Record<string, GovernanceRule[]>; // New: rules derived from principles
   discussionsByPrinciple: Record<string, GovernanceDiscussion[]>;
 }
 

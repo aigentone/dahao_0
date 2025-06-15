@@ -6,9 +6,11 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Bot, Loader2, CheckCircle, User, Shield, Coins, Target, Settings } from 'lucide-react';
+import { Bot, Loader2, CheckCircle, User, Shield, Coins, Target, Settings, GitPullRequest } from 'lucide-react';
 import { AVAILABLE_AGENTS, getRandomAnalysis, getAgentDelay, type AgentType } from '@/lib/mock-data/agent-responses';
 import { PersonalAIAgent, SystemAIAgent, AgentAssignmentRequest, TokenRewardProjection } from '@/types/agents';
+import { GitHubIssue, GitHubIssueComment } from '@/types/github-compatible';
+import { createGitHubDataService } from '@/services/github-data-service';
 
 interface AssignedAgent {
   agentId: string;
@@ -18,6 +20,20 @@ interface AssignedAgent {
   analysis?: string;
   agentType?: 'personal' | 'system';
   tokenReward?: number;
+  context?: 'governance' | 'issue';
+  issueNumber?: number;
+  issueTitle?: string;
+}
+
+interface AgentAssignmentPanelProps {
+  // Optional Issue context for term development
+  issue?: GitHubIssue;
+  repoOwner?: string;
+  repoName?: string;
+  // Optional callback for issue updates
+  onIssueUpdated?: (issue: GitHubIssue) => void;
+  // Context type - determines available task types and behavior
+  context?: 'governance' | 'term-development';
 }
 
 // Mock Personal AI Agents
@@ -164,20 +180,54 @@ const MOCK_SYSTEM_AGENTS: SystemAIAgent[] = [
   }
 ];
 
-export default function AgentAssignmentPanel() {
+export default function AgentAssignmentPanel({ 
+  issue, 
+  repoOwner = 'user', 
+  repoName = 'term-development', 
+  onIssueUpdated,
+  context = 'governance' 
+}: AgentAssignmentPanelProps) {
   const [assignedAgents, setAssignedAgents] = useState<AssignedAgent[]>([]);
   const [loading, setLoading] = useState<Record<string, boolean>>({});
   const [selectedAgentType, setSelectedAgentType] = useState<'personal' | 'system'>('personal');
-  const [selectedTaskType, setSelectedTaskType] = useState<string>('analysis');
+  const [selectedTaskType, setSelectedTaskType] = useState<string>(context === 'term-development' ? 'definition_review' : 'analysis');
+  const githubService = createGitHubDataService();
+
+  // Get available task types based on context
+  const getAvailableTaskTypes = () => {
+    if (context === 'term-development') {
+      return {
+        definition_review: 'Definition Review',
+        clarity_analysis: 'Clarity Analysis',
+        uniqueness_check: 'Uniqueness Check',
+        domain_alignment: 'Domain Alignment',
+        peer_review_request: 'Peer Review Request'
+      };
+    }
+    return {
+      analysis: 'Analysis',
+      validation: 'Validation',
+      verification: 'Verification',
+      moderation: 'Moderation',
+      research: 'Research'
+    };
+  };
 
   // Helper function to calculate token rewards
   const calculateTokenReward = (agentType: 'personal' | 'system', taskType: string): TokenRewardProjection => {
     const baseRewards = {
+      // General governance tasks
       analysis: 50,
       validation: 30,
       verification: 40,
       moderation: 25,
-      research: 75
+      research: 75,
+      // Term development specific tasks
+      definition_review: 60,
+      clarity_analysis: 45,
+      uniqueness_check: 55,
+      domain_alignment: 50,
+      peer_review_request: 40
     };
 
     const baseReward = baseRewards[taskType as keyof typeof baseRewards] || 50;
@@ -215,45 +265,230 @@ export default function AgentAssignmentPanel() {
       assignedAt: new Date().toISOString(),
       status: 'analyzing',
       agentType,
-      tokenReward: tokenProjection.estimatedTotal
+      tokenReward: tokenProjection.estimatedTotal,
+      context: issue ? 'issue' : 'governance',
+      issueNumber: issue?.number,
+      issueTitle: issue?.title
     };
 
     setAssignedAgents(prev => [...prev, assignment]);
 
-    // Simulate analysis delay based on agent type
-    const baseDelay = agentType === 'personal' ? 2000 : 1500;
-    const delay = baseDelay + Math.random() * 1000;
-    await new Promise(resolve => setTimeout(resolve, delay));
+    try {
+      // If working with an issue, assign agent to the issue
+      if (issue && repoOwner && repoName) {
+        const updatedIssue = await githubService.assignAgentToIssue(
+          repoOwner,
+          repoName,
+          issue.number,
+          agentId,
+          selectedTaskType,
+          'current_user'
+        );
+        
+        // Notify parent component of issue update
+        if (onIssueUpdated) {
+          onIssueUpdated(updatedIssue);
+        }
+      }
 
-    // Generate analysis based on agent type
-    let analysis: string;
-    if (agentType === 'personal') {
-      analysis = `Personal AI Analysis:
+      // Simulate analysis delay based on agent type
+      const baseDelay = agentType === 'personal' ? 2000 : 1500;
+      const delay = baseDelay + Math.random() * 1000;
+      await new Promise(resolve => setTimeout(resolve, delay));
+
+      // Generate analysis based on context and agent type
+      let analysis: string;
+      
+      if (context === 'term-development' && issue) {
+        if (agentType === 'personal') {
+          analysis = generateTermDevelopmentPersonalAnalysis(selectedTaskType, issue, tokenProjection.estimatedTotal);
+        } else {
+          analysis = generateTermDevelopmentSystemAnalysis(selectedTaskType, issue);
+        }
+      } else {
+        // Original governance analysis
+        if (agentType === 'personal') {
+          analysis = `Personal AI Analysis:
 ✓ Aligned with your value system
 ✓ Matches your ${selectedTaskType} preferences
 ✓ Considers your custom values
 💡 Personalized recommendation based on your priorities
 Token Reward: ${tokenProjection.estimatedTotal} tokens
 Overall: APPROVED with personal insights`;
-    } else {
-      analysis = `System AI Analysis:
+        } else {
+          analysis = `System AI Analysis:
 ✓ Compliance with core DAHAO principles
 ✓ Objective evaluation completed
 ✓ Cross-domain validation passed
 ⚠ Neutral assessment (no personal bias)
 System Authority: Validation level
 Overall: COMPLIANT`;
+        }
+      }
+
+      setAssignedAgents(prev =>
+        prev.map(agent =>
+          agent.agentId === agentId && agent.status === 'analyzing'
+            ? { ...agent, status: 'completed', analysis }
+            : agent
+        )
+      );
+
+    } catch (error) {
+      console.error('Failed to assign agent:', error);
+      // Update assignment status to show error
+      setAssignedAgents(prev =>
+        prev.map(agent =>
+          agent.agentId === agentId && agent.status === 'analyzing'
+            ? { ...agent, status: 'completed', analysis: `Error: Failed to assign agent. ${error}` }
+            : agent
+        )
+      );
+    } finally {
+      setLoading(prev => ({ ...prev, [agentId]: false }));
     }
+  };
 
-    setAssignedAgents(prev =>
-      prev.map(agent =>
-        agent.agentId === agentId && agent.status === 'analyzing'
-          ? { ...agent, status: 'completed', analysis }
-          : agent
-      )
-    );
+  // Generate term development specific analysis for Personal AI
+  const generateTermDevelopmentPersonalAnalysis = (taskType: string, issue: GitHubIssue, tokenReward: number): string => {
+    const termDraft = issue.termDraft;
+    if (!termDraft) return 'Error: No term draft data found in issue.';
 
-    setLoading(prev => ({ ...prev, [agentId]: false }));
+    switch (taskType) {
+      case 'definition_review':
+        return `## Personal AI - Definition Review
+
+**Term**: ${termDraft.termName}
+**Overall Score**: 8.${Math.floor(Math.random() * 5 + 3)}/10
+
+### Personal Value System Analysis
+✓ Aligns with your ${termDraft.domain} priorities
+✓ Consistent with your custom value modifications
+✓ Matches your preference for ${Math.random() > 0.5 ? 'progressive' : 'balanced'} approaches
+
+### Definition Quality Assessment
+- **Clarity**: ${termDraft.progress.clarity}% - ${termDraft.progress.clarity >= 80 ? 'Excellent' : 'Needs improvement'}
+- **Uniqueness**: ${termDraft.progress.uniqueness}% - ${termDraft.progress.uniqueness >= 80 ? 'Novel contribution' : 'Consider differentiation'}
+- **Practical Application**: ${termDraft.progress.alignment}% - ${termDraft.progress.alignment >= 80 ? 'Highly applicable' : 'Add examples'}
+
+### Personal Recommendations
+${generatePersonalizedSuggestions(termDraft)}
+
+Token Reward: ${tokenReward} tokens (1.5x Personal AI multiplier)
+**Status**: ${termDraft.progress.completeness >= 80 ? 'APPROVED for advancement' : 'NEEDS REVISION'}`;
+
+      case 'clarity_analysis':
+        return `## Personal AI - Clarity Analysis
+
+**Current Clarity Score**: ${termDraft.progress.clarity}%
+
+### Your Value-Aligned Assessment
+${termDraft.progress.clarity >= 80 ? 
+  '✓ Definition meets your standards for clear communication' : 
+  '⚠ Definition could be clearer based on your preferences'}
+
+### Personalized Clarity Recommendations
+- Adjust language complexity for your target audience
+- Add examples that resonate with your ${termDraft.domain} focus
+- Structure definition according to your preferred format
+
+Token Reward: ${tokenReward} tokens
+**Personal Insight**: Definition clarity aligns with your communication style preferences.`;
+
+      case 'uniqueness_check':
+        return `## Personal AI - Uniqueness Analysis
+
+**Uniqueness Score**: ${termDraft.progress.uniqueness}%
+
+### Personal Knowledge Base Comparison
+✓ Compared against your personal term library
+✓ Analyzed against your ${termDraft.domain} specializations
+${termDraft.progress.uniqueness >= 85 ? 
+  '✓ Highly unique contribution to your value system' : 
+  '⚠ Consider differentiating from similar terms in your domain'}
+
+### Value System Integration
+- Term enhances your ${termDraft.domain} governance framework
+- Complements your existing custom values
+- Provides new tools for your decision-making processes
+
+Token Reward: ${tokenReward} tokens`;
+
+      default:
+        return `## Personal AI - ${taskType.replace('_', ' ').toUpperCase()}
+
+Term: ${termDraft.termName}
+Analysis completed with your personal value system.
+Token Reward: ${tokenReward} tokens`;
+    }
+  };
+
+  // Generate term development specific analysis for System AI
+  const generateTermDevelopmentSystemAnalysis = (taskType: string, issue: GitHubIssue): string => {
+    const termDraft = issue.termDraft;
+    if (!termDraft) return 'Error: No term draft data found in issue.';
+
+    switch (taskType) {
+      case 'definition_review':
+        return `## System AI - Objective Definition Review
+
+**Term**: ${termDraft.termName}
+**Compliance Score**: ${Math.floor(Math.random() * 20 + 80)}%
+
+### DAHAO Core Principle Validation
+✓ Harm Prevention: ${Math.random() > 0.3 ? 'COMPLIANT' : 'REVIEW NEEDED'}
+✓ Equality: ${Math.random() > 0.2 ? 'COMPLIANT' : 'REVIEW NEEDED'}
+✓ Transparency: ${Math.random() > 0.2 ? 'COMPLIANT' : 'REVIEW NEEDED'}
+
+### Domain Standards Assessment
+- **${termDraft.domain.toUpperCase()} Domain**: Standards met
+- **Cross-Domain Impact**: ${Math.random() > 0.5 ? 'Minimal' : 'Moderate'}
+- **Governance Integration**: Compatible
+
+### Objective Quality Metrics
+- Definition Length: ${Math.floor(termDraft.definition.length / 10) * 10} characters
+- Concept Complexity: ${Math.random() > 0.5 ? 'Moderate' : 'High'}
+- Implementation Readiness: ${termDraft.submissionReadiness.overallScore}%
+
+**System Authority**: Validation Level
+**Status**: ${termDraft.submissionReadiness.overallScore >= 80 ? 'APPROVED' : 'CONDITIONAL APPROVAL'}`;
+
+      case 'clarity_analysis':
+        return `## System AI - Objective Clarity Assessment
+
+**Clarity Metrics**:
+- Readability Score: ${Math.floor(Math.random() * 20 + 70)}
+- Terminology Consistency: ${Math.random() > 0.3 ? 'PASS' : 'REVIEW'}
+- Logical Structure: ${Math.random() > 0.2 ? 'PASS' : 'REVIEW'}
+
+### Standard Compliance
+✓ Follows DAHAO definition format
+✓ Uses approved terminology
+✓ Maintains neutral language
+
+**Objective Assessment**: Definition meets clarity standards for ${termDraft.domain} domain.`;
+
+      default:
+        return `## System AI - ${taskType.replace('_', ' ').toUpperCase()}
+
+**Term**: ${termDraft.termName}
+**System Validation**: COMPLIANT
+**Authority Level**: Validation
+**Objective Status**: Standards met for ${termDraft.domain} domain`;
+    }
+  };
+
+  // Generate personalized suggestions based on term draft
+  const generatePersonalizedSuggestions = (termDraft: any): string => {
+    const suggestions = [
+      `Consider adding examples from your ${termDraft.domain} experience`,
+      'Align terminology with your personal value modifications',
+      'Include practical applications relevant to your context',
+      'Reference connections to your custom value set',
+      'Add implementation details for your specific use case'
+    ];
+    
+    return suggestions.slice(0, 3).map(s => `• ${s}`).join('\n');
   };
 
   const isAgentAssigned = (agentId: string) => {
@@ -279,9 +514,23 @@ Overall: COMPLIANT`;
           <CardTitle className="flex items-center gap-2">
             <Bot className="h-5 w-5" />
             AI Agent Assignment
+            {issue && (
+              <>
+                <GitPullRequest className="h-4 w-4 text-blue-600 ml-2" />
+                <span className="text-sm font-normal text-gray-600">Issue #{issue.number}</span>
+              </>
+            )}
           </CardTitle>
           <CardDescription>
-            Choose between Personal AI Agents (your values) or System AI Agents (objective validation)
+            {issue ? (
+              <>
+                Assign AI agents to analyze term development issue: <strong>{issue.title}</strong>
+                <br />
+                Choose between Personal AI Agents (your values) or System AI Agents (objective validation)
+              </>
+            ) : (
+              'Choose between Personal AI Agents (your values) or System AI Agents (objective validation)'
+            )}
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -300,17 +549,17 @@ Overall: COMPLIANT`;
 
             {/* Task Type Selection */}
             <div className="mt-4 space-y-2">
-              <label className="text-sm font-medium">Task Type</label>
+              <label className="text-sm font-medium">
+                Task Type {context === 'term-development' && '(Term Development)'}
+              </label>
               <Select value={selectedTaskType} onValueChange={setSelectedTaskType}>
                 <SelectTrigger>
                   <SelectValue placeholder="Select task type" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="analysis">Analysis</SelectItem>
-                  <SelectItem value="validation">Validation</SelectItem>
-                  <SelectItem value="verification">Verification</SelectItem>
-                  <SelectItem value="moderation">Moderation</SelectItem>
-                  <SelectItem value="research">Research</SelectItem>
+                  {Object.entries(getAvailableTaskTypes()).map(([value, label]) => (
+                    <SelectItem key={value} value={value}>{label}</SelectItem>
+                  ))}
                 </SelectContent>
               </Select>
             </div>
@@ -476,6 +725,12 @@ Overall: COMPLIANT`;
                         {assignment.agentType === 'system' && (
                           <Badge variant="outline" className="text-xs">System AI</Badge>
                         )}
+                        {assignment.context === 'issue' && assignment.issueNumber && (
+                          <Badge variant="outline" className="text-xs bg-blue-50">
+                            <GitPullRequest className="w-3 h-3 mr-1" />
+                            Issue #{assignment.issueNumber}
+                          </Badge>
+                        )}
                       </div>
                       {assignment.tokenReward && (
                         <div className="flex items-center gap-1 text-sm text-yellow-600">
@@ -484,6 +739,13 @@ Overall: COMPLIANT`;
                         </div>
                       )}
                     </div>
+                    
+                    {/* Issue context information */}
+                    {assignment.context === 'issue' && assignment.issueTitle && (
+                      <div className="mb-2 p-2 bg-blue-50 rounded text-xs">
+                        <strong>Issue Context:</strong> {assignment.issueTitle}
+                      </div>
+                    )}
 
                     {assignment.status === 'analyzing' && (
                       <div className="flex items-center gap-2 text-muted-foreground">

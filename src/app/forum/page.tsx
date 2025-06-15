@@ -11,10 +11,11 @@ import { PrinciplesViewWithInheritance } from '@/components/forum/PrinciplesView
 import { InheritanceTree } from '@/components/forum/InheritanceTree';
 import { TermsView } from '@/components/forum/TermsView';
 import { TermDiscussionManager } from '@/components/forum/TermDiscussionManager';
+import RulesView from '@/components/forum/RulesView';
 import AgentAssignmentPanel from '@/components/governance/AgentAssignmentPanel';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Button } from '@/components/ui/button';
-import { Search, Filter, MessageSquare, Shield, Brain, BarChart3, Sparkles, ArrowLeft, FileText } from 'lucide-react';
+import { Search, Filter, MessageSquare, Shield, Brain, BarChart3, Sparkles, ArrowLeft, FileText, Scale } from 'lucide-react';
 import { GovernanceData, GovernanceOrganization } from '@/types/governance';
 import { GitHubDiscussion } from '@/types/github-compatible';
 
@@ -211,7 +212,7 @@ export default function ForumPage() {
 
                 {/* Tabs Navigation */}
                 <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
-                  <TabsList className="grid grid-cols-6 w-full bg-gray-100/50 p-1 rounded-xl">
+                  <TabsList className="grid grid-cols-7 w-full bg-gray-100/50 p-1 rounded-xl">
                     <TabsTrigger value="discussions" className="data-[state=active]:bg-white data-[state=active]:shadow-sm">
                       <MessageSquare className="w-4 h-4 mr-2" />
                       Discussions
@@ -219,6 +220,10 @@ export default function ForumPage() {
                     <TabsTrigger value="principles" className="data-[state=active]:bg-white data-[state=active]:shadow-sm">
                       <Shield className="w-4 h-4 mr-2" />
                       Principles
+                    </TabsTrigger>
+                    <TabsTrigger value="rules" className="data-[state=active]:bg-white data-[state=active]:shadow-sm">
+                      <Scale className="w-4 h-4 mr-2" />
+                      Rules
                     </TabsTrigger>
                     <TabsTrigger value="terms" className="data-[state=active]:bg-white data-[state=active]:shadow-sm">
                       <FileText className="w-4 h-4 mr-2" />
@@ -295,6 +300,18 @@ export default function ForumPage() {
                       principles={currentOrg.principles}
                       organizationName={currentOrg.name}
                       organizationId={currentOrg.id}
+                    />
+                  </TabsContent>
+
+                  {/* Rules Tab */}
+                  <TabsContent value="rules" className="space-y-4">
+                    <RulesView
+                      rules={currentOrg.rules || []}
+                      organizationName={currentOrg.name}
+                      onRuleSelect={(rule) => {
+                        // TODO: Add rule detail view if needed
+                        console.log('Selected rule:', rule);
+                      }}
                     />
                   </TabsContent>
 

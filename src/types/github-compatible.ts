@@ -162,3 +162,124 @@ export interface TermDiscussion {
   updatedAt: string;
   closed: boolean;
 }
+
+// GitHub Issues types for private term development
+export interface GitHubIssueComment {
+  id: string;
+  body: string;
+  createdAt: string;
+  updatedAt: string;
+  author: GitHubUser;
+  isBot?: boolean;
+  hasAssignedAgent?: boolean;
+  assignedAgentId?: string;
+  aiAssignment?: {
+    taskType: 'definition_review' | 'clarity_analysis' | 'uniqueness_check' | 'domain_alignment' | 'peer_review_request';
+    assignedBy: string;
+    tools_used: string[];
+    confidence: number;
+    isAutomated?: boolean;
+    assignmentType?: 'user_requested' | 'third_party_verification' | 'system_automatic';
+    triggeredBy?: string[];
+    completionStatus?: 'pending' | 'in_progress' | 'completed' | 'failed';
+    results?: {
+      score?: number;
+      feedback?: string;
+      suggestions?: string[];
+      issues?: string[];
+    };
+  };
+  reactions: {
+    totalCount: number;
+    nodes: Array<{
+      content: string;
+      user: GitHubUser;
+    }>;
+  };
+}
+
+export interface GitHubMilestone {
+  id: string;
+  number: number;
+  title: string;
+  description?: string;
+  state: 'open' | 'closed';
+  createdAt: string;
+  updatedAt: string;
+  dueOn?: string;
+  closedAt?: string;
+}
+
+export interface GitHubIssue {
+  id: string;
+  number: number;
+  title: string;
+  body: string;
+  state: 'open' | 'closed';
+  createdAt: string;
+  updatedAt: string;
+  closedAt?: string;
+  author: GitHubUser;
+  assignees: {
+    nodes: GitHubUser[];
+  };
+  labels: {
+    nodes: GitHubLabel[];
+  };
+  milestone?: GitHubMilestone;
+  comments: {
+    totalCount: number;
+    nodes: GitHubIssueComment[];
+  };
+  reactions: {
+    totalCount: number;
+    nodes: Array<{
+      content: string;
+      user: GitHubUser;
+    }>;
+  };
+  // Term development specific fields
+  termDraft?: {
+    termName: string;
+    definition: string;
+    rationale: string;
+    domain: string;
+    tags: string[];
+    status: 'draft' | 'ai_review' | 'peer_review' | 'ready_for_submission' | 'submitted';
+    progress: {
+      completeness: number;
+      clarity: number;
+      uniqueness: number;
+      alignment: number;
+    };
+    submissionReadiness: {
+      overallScore: number;
+      criteria: Array<{
+        name: string;
+        met: boolean;
+        description: string;
+      }>;
+    };
+  };
+}
+
+export interface IssueConnection {
+  totalCount: number;
+  pageInfo: PageInfo;
+  nodes: GitHubIssue[];
+}
+
+// Issue-specific list options
+export interface IssueListOptions {
+  first?: number;
+  after?: string;
+  orderBy?: {
+    field: 'CREATED_AT' | 'UPDATED_AT' | 'COMMENTS';
+    direction: 'ASC' | 'DESC';
+  };
+  labels?: string[];
+  states?: ('OPEN' | 'CLOSED')[];
+  assignee?: string;
+  milestone?: string;
+  termDraftStatus?: 'draft' | 'ai_review' | 'peer_review' | 'ready_for_submission' | 'submitted';
+}

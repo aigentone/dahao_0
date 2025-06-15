@@ -1,0 +1,132 @@
+version: "1.0"
+rule_id: "five_freedoms_implementation"
+name: "Five Freedoms Implementation Rules"
+description: "Operational requirements for implementing five freedoms welfare principle"
+category: "implementation"
+domain: "animal_welfare"
+
+derives_from_principles:
+  - "animal_welfare:five_freedoms@v1.0"
+
+uses_terms:
+  - "welfare:five_freedoms@v1.0"
+  - "welfare:suffering@v1.0"
+  - "core:wellbeing@v1.1"
+
+implementation_requirements:
+  freedom_from_hunger:
+    daily_requirements:
+      - "Ready access to fresh water must be available 24/7"
+      - "Diet to maintain full health and vigor must be species-appropriate"
+    measurement_protocols:
+      - body_condition_score: "Weekly assessment using standardized scale"
+      - feeding_behavior_observation: "Daily observation during feeding times"
+      - water_intake_monitoring: "Continuous monitoring with automated systems"
+    intervention_thresholds:
+      - body_condition_critical: "Score below 2.5 requires immediate intervention"
+      - water_access_failure: "More than 2 hours without access triggers emergency protocol"
+
+  freedom_from_discomfort:
+    environmental_requirements:
+      - "Appropriate environment including shelter must meet species-specific needs"
+      - "Comfortable resting area must be available at all times"
+    measurement_protocols:
+      - environmental_temperature: "Continuous monitoring within species comfort range"
+      - space_adequacy: "Minimum space requirements per species guidelines"
+      - shelter_utilization: "Daily observation of shelter usage patterns"
+    intervention_thresholds:
+      - temperature_critical: "Outside comfort range for more than 1 hour"
+      - space_violation: "Below minimum space requirements requires immediate action"
+
+  freedom_from_pain:
+    healthcare_requirements:
+      - "Prevention through rapid diagnosis must include regular health checks"
+      - "Effective treatment protocols must be implemented within 24 hours"
+    measurement_protocols:
+      - injury_incidence_rates: "Monthly reporting of all injuries"
+      - disease_prevalence: "Quarterly health assessments"
+      - pain_assessment_scores: "Daily pain evaluation using validated scales"
+    intervention_thresholds:
+      - injury_response: "All injuries must be assessed within 2 hours"
+      - pain_score_critical: "Pain score above 6/10 requires immediate treatment"
+
+  freedom_to_express:
+    behavioral_requirements:
+      - "Sufficient space for normal behaviors must exceed minimum by 50%"
+      - "Company of animals of own kind where appropriate for social species"
+    measurement_protocols:
+      - behavioral_repertoire_expression: "Weekly ethogram documentation"
+      - social_interaction_frequency: "Daily social behavior observations"
+      - stereotypical_behavior_absence: "Daily monitoring for abnormal behaviors"
+    intervention_thresholds:
+      - stereotypy_occurrence: "Any stereotypical behavior triggers enrichment review"
+      - social_isolation: "More than 4 hours isolation for social species"
+
+  freedom_from_fear:
+    psychological_requirements:
+      - "Conditions that avoid mental suffering must be maintained"
+      - "Stress minimization protocols must be actively implemented"
+    measurement_protocols:
+      - stress_hormone_levels: "Monthly cortisol testing"
+      - fear_response_assessment: "Weekly behavioral fear assessments"
+      - environmental_predictability: "Daily routine consistency monitoring"
+    intervention_thresholds:
+      - cortisol_elevated: "Cortisol levels 2x normal baseline triggers intervention"
+      - fear_response_severe: "Extreme fear responses require immediate environmental review"
+
+assessment_framework:
+  frequency: "daily_for_critical_indicators"
+  reporting_schedule: "monthly_welfare_summaries"
+  intervention_protocol: "immediate_for_freedom_violations"
+  
+validation_rules:
+  proposal_requirements:
+    - "Must demonstrate benefit or neutrality to all five freedoms"
+    - "Cannot compromise any freedom without exceptional justification and mitigation"
+    - "Must include detailed welfare measurement plan with specific indicators"
+    - "Must specify intervention protocols for each freedom"
+  
+  implementation_requirements:
+    - "All measurement protocols must be documented and auditable"
+    - "Intervention thresholds must be evidence-based and regularly reviewed"
+    - "Staff training must be completed before implementation"
+    - "Emergency protocols must be tested quarterly"
+
+compliance_monitoring:
+  audit_frequency: "quarterly_independent_assessment"
+  reporting_chain: "facility_manager → domain_authority → community_oversight"
+  violation_escalation:
+    - level_1: "Minor deviation - 48 hour correction period"
+    - level_2: "Moderate violation - immediate intervention required"
+    - level_3: "Severe violation - operations suspension until resolution"
+
+enforcement_mechanisms:
+  financial_penalties:
+    minor_violation: "1% of operational budget"
+    moderate_violation: "5% of operational budget"
+    severe_violation: "15% of operational budget + operational review"
+  
+  operational_restrictions:
+    - "Temporary suspension of new animal introductions"
+    - "Mandatory third-party oversight"
+    - "Required remediation plan with timeline"
+
+token_integration:
+  compliance_rewards: "quarterly_bonus_for_perfect_compliance"
+  improvement_incentives: "innovation_tokens_for_welfare_improvements"
+  violation_penalties: "token_reduction_based_on_severity"
+
+personal_branch_support:
+  development_workspace: true
+  ai_agent_integration: true
+  cross_branch_deployment: true
+  custom_rule_variations: true
+
+changelog:
+  v1.0:
+    changes:
+      - "Initial operational rules extracted from five-freedoms principle"
+      - "Defined specific measurement protocols and intervention thresholds"
+      - "Established compliance monitoring and enforcement mechanisms"
+    date: "2024-12-15"
+    approved_by: "principle_derivation_process"

@@ -5,7 +5,8 @@ import path from 'path';
 import { 
   GovernanceData, 
   GovernanceOrganization, 
-  GovernancePrinciple, 
+  GovernancePrinciple,
+  GovernanceRule,
   InheritanceConfig,
   GovernanceDiscussion,
   OrganizationType 
@@ -32,10 +33,25 @@ export class GovernanceLoader {
     const organizations = await this.loadOrganizations();
     
     const principlesByOrg: Record<string, GovernancePrinciple[]> = {};
+    const rulesByOrg: Record<string, GovernanceRule[]> = {};
+    const rulesByPrinciple: Record<string, GovernanceRule[]> = {};
     const discussionsByPrinciple: Record<string, GovernanceDiscussion[]> = {};
 
     for (const org of organizations) {
       principlesByOrg[org.id] = org.principles;
+      rulesByOrg[org.id] = org.rules;
+      
+      // Group rules by the principles they derive from
+      for (const rule of org.rules) {
+        if (rule.derives_from_principles) {
+          for (const principleRef of rule.derives_from_principles) {
+            if (!rulesByPrinciple[principleRef]) {
+              rulesByPrinciple[principleRef] = [];
+            }
+            rulesByPrinciple[principleRef].push(rule);
+          }
+        }
+      }
       
       // Group discussions by principle
       for (const discussion of org.discussions) {
@@ -52,6 +68,8 @@ export class GovernanceLoader {
     this.cached = {
       organizations,
       principlesByOrg,
+      rulesByOrg,
+      rulesByPrinciple,
       discussionsByPrinciple
     };
 
@@ -79,6 +97,9 @@ export class GovernanceLoader {
         // Load principles
         const principles = await this.loadPrinciples(orgPath);
         
+        // Load rules
+        const rules = await this.loadRules(orgPath);
+        
         // Load discussions
         const discussions = await this.loadDiscussions(orgPath);
 
@@ -89,6 +110,7 @@ export class GovernanceLoader {
           description: inheritance.description,
           inheritance,
           principles,
+          rules,
           discussions,
           emoji: config.emoji
         });
@@ -135,6 +157,44 @@ export class GovernanceLoader {
     }
 
     return principles;
+  }
+
+  private async loadRules(orgPath: string): Promise<GovernanceRule[]> {
+    const rules: GovernanceRule[] = [];
+    
+    try {
+      const rulesPath = path.join(orgPath, 'rules');
+      const versions = await fs.readdir(rulesPath);
+      
+      for (const version of versions) {
+        if (version.startsWith('.')) continue;
+        
+        const versionPath = path.join(rulesPath, version);
+        const stat = await fs.stat(versionPath);
+        
+        if (stat.isDirectory()) {
+          const files = await fs.readdir(versionPath);
+          
+          for (const file of files) {
+            if (file.endsWith('.yml') || file.endsWith('.yaml')) {
+              try {
+                const filePath = path.join(versionPath, file);
+                const content = await fs.readFile(filePath, 'utf-8');
+                const rule = yaml.load(content) as GovernanceRule;
+                rules.push(rule);
+              } catch (error) {
+                console.error(`Error loading rule ${file}:`, error);
+              }
+            }
+          }
+        }
+      }
+    } catch (error) {
+      // Rules directory might not exist yet, that's okay
+      console.log(`No rules directory found for ${orgPath}, skipping rules loading`);
+    }
+
+    return rules;
   }
 
   private async loadDiscussions(orgPath: string): Promise<GovernanceDiscussion[]> {

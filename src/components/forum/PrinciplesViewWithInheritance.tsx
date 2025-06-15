@@ -157,177 +157,191 @@ export function PrinciplesViewWithInheritance({ principles, organizationName, or
                           </h6>
                           <p className="text-sm text-amber-800 mb-3">{freedom.description}</p>
                           
-                          {freedom.requirements && (
+                          {freedom.philosophical_basis && (
                             <div className="mb-2">
-                              <span className="text-xs font-medium text-amber-700">Requirements:</span>
-                              <ul className="text-xs text-amber-700 mt-1 space-y-1">
-                                {freedom.requirements.map((req: string, i: number) => (
-                                  <li key={i} className="flex items-start gap-1">
-                                    <span className="text-amber-500">•</span>
-                                    <span>{req}</span>
-                                  </li>
-                                ))}
-                              </ul>
+                              <span className="text-xs font-medium text-amber-700">Philosophical Basis:</span>
+                              <p className="text-xs text-amber-700 mt-1">{freedom.philosophical_basis}</p>
                             </div>
                           )}
                           
-                          {freedom.indicators && (
+                          {freedom.ethical_considerations && (
                             <div>
-                              <span className="text-xs font-medium text-amber-700">Indicators:</span>
+                              <span className="text-xs font-medium text-amber-700">Ethical Considerations:</span>
                               <div className="flex flex-wrap gap-1 mt-1">
-                                {freedom.indicators.map((indicator: string, i: number) => (
+                                {freedom.ethical_considerations.map((consideration: string, i: number) => (
                                   <Badge key={i} variant="outline" className="text-xs bg-amber-100 text-amber-700 border-amber-300">
-                                    {indicator.replace(/_/g, ' ')}
+                                    {consideration}
                                   </Badge>
                                 ))}
                               </div>
                             </div>
                           )}
+                          
+                          {/* Reference to operational rules */}
+                          <div className="mt-3 pt-2 border-t border-amber-200">
+                            <div className="flex items-center gap-1 text-xs text-amber-600">
+                              <span>📋</span>
+                              <span>Implementation details available in Rules tab</span>
+                            </div>
+                          </div>
                         </div>
                       ))}
                     </div>
                   </div>
                 )}
                 
-                {/* Environment-specific ecosystem framework */}
-                {principle.ecosystem_assessment_framework && (
+                {/* Environment-specific ecosystem philosophy */}
+                {principle.ecosystem_philosophy && (
                   <div className="space-y-3">
                     <h5 className="font-medium text-gray-900 flex items-center gap-2">
                       <Shield className="w-4 h-4" />
-                      Ecosystem Assessment Framework
+                      Ecosystem Philosophy
                     </h5>
                     
-                    {Object.entries(principle.ecosystem_assessment_framework).map(([frameworkKey, framework]: [string, any]) => (
-                      <div key={frameworkKey} className="bg-green-50 rounded-lg p-4 border border-green-200">
-                        <h6 className="font-medium text-green-900 mb-2">
-                          {frameworkKey.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
-                        </h6>
-                        {framework.description && (
-                          <p className="text-sm text-green-800 mb-3">{framework.description}</p>
-                        )}
-                        
-                        {framework.metrics && (
-                          <div className="space-y-2">
-                            {Object.entries(framework.metrics).map(([metricKey, metric]: [string, any]) => (
-                              <div key={metricKey} className="border-l-2 border-green-300 pl-3">
-                                <span className="text-sm font-medium text-green-800">
-                                  {metricKey.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
-                                </span>
-                                {typeof metric === 'object' ? (
-                                  <div className="mt-1 space-y-1">
-                                    {Object.entries(metric).map(([subKey, subValue]) => (
-                                      <div key={subKey} className="text-xs text-green-700">
-                                        <span className="font-medium">{subKey.replace(/_/g, ' ')}:</span> {String(subValue)}
-                                      </div>
-                                    ))}
-                                  </div>
-                                ) : (
-                                  <p className="text-xs text-green-700 mt-1">{String(metric)}</p>
-                                )}
+                    <div className="bg-green-50 rounded-lg p-4 border border-green-200">
+                      {principle.ecosystem_philosophy.guiding_principles && (
+                        <div className="mb-3">
+                          <span className="text-sm font-medium text-green-800">Guiding Principles:</span>
+                          <ul className="text-sm text-green-700 mt-1 space-y-1">
+                            {principle.ecosystem_philosophy.guiding_principles.map((principle_text: string, i: number) => (
+                              <li key={i} className="flex items-start gap-1">
+                                <span className="text-green-500">•</span>
+                                <span>{principle_text}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                      
+                      {principle.ecosystem_philosophy.ethical_considerations && (
+                        <div className="mb-3">
+                          <span className="text-sm font-medium text-green-800">Ethical Considerations:</span>
+                          <div className="flex flex-wrap gap-1 mt-1">
+                            {principle.ecosystem_philosophy.ethical_considerations.map((consideration: string, i: number) => (
+                              <Badge key={i} variant="outline" className="text-xs bg-green-100 text-green-700 border-green-300">
+                                {consideration}
+                              </Badge>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                      
+                      {principle.ecosystem_philosophy.value_framework && (
+                        <div>
+                          <span className="text-sm font-medium text-green-800">Value Framework:</span>
+                          <div className="mt-1 space-y-1">
+                            {Object.entries(principle.ecosystem_philosophy.value_framework).map(([key, value]) => (
+                              <div key={key} className="text-xs text-green-700">
+                                <span className="font-medium">{key.replace(/_/g, ' ')}:</span> {String(value)}
                               </div>
                             ))}
                           </div>
-                        )}
+                        </div>
+                      )}
+                      
+                      {/* Reference to operational rules */}
+                      <div className="mt-3 pt-2 border-t border-green-200">
+                        <div className="flex items-center gap-1 text-xs text-green-600">
+                          <span>📋</span>
+                          <span>Implementation protocols available in Rules tab</span>
+                        </div>
                       </div>
-                    ))}
+                    </div>
                   </div>
                 )}
 
-                {/* Requirements */}
-                {(principle as any).requirements && (
+                {/* Ethical Foundation */}
+                {principle.ethical_foundation && (
                   <div className="space-y-3">
                     <h5 className="font-medium text-gray-900 flex items-center gap-2">
                       <GitBranch className="w-4 h-4" />
-                      Requirements
+                      Ethical Foundation
                     </h5>
                     
                     <div className="bg-gray-50 rounded-lg p-4 space-y-3">
-                      {Object.entries((principle as any).requirements).map(([key, value]: [string, any]) => (
+                      {Object.entries(principle.ethical_foundation).map(([key, value]: [string, any]) => (
                         <div key={key} className="border-l-2 border-blue-200 pl-3">
                           <h6 className="font-medium text-sm text-gray-800 mb-1">
                             {key.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
                           </h6>
-                          {typeof value === 'object' && value !== null ? (
-                            <div className="text-sm text-gray-600 space-y-1">
-                              {Object.entries(value).map(([subKey, subValue]) => (
-                                <div key={subKey} className="flex flex-col sm:flex-row sm:justify-between">
-                                  <span className="font-medium">{subKey.replace(/_/g, ' ')}:</span>
-                                  <span className="text-right">{typeof subValue === 'boolean' ? (subValue ? '✅ Required' : '❌ Optional') : String(subValue)}</span>
-                                </div>
-                              ))}
-                            </div>
-                          ) : (
-                            <p className="text-sm text-gray-600">{String(value)}</p>
-                          )}
+                          <p className="text-sm text-gray-600">{String(value)}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+                
+                {/* Value System */}
+                {principle.value_system && (
+                  <div className="space-y-3">
+                    <h5 className="font-medium text-gray-900 flex items-center gap-2">
+                      <GitBranch className="w-4 h-4" />
+                      Value System
+                    </h5>
+                    
+                    <div className="bg-purple-50 rounded-lg p-4 space-y-3">
+                      {Object.entries(principle.value_system).map(([key, value]: [string, any]) => (
+                        <div key={key} className="border-l-2 border-purple-200 pl-3">
+                          <h6 className="font-medium text-sm text-purple-800 mb-1">
+                            {key.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
+                          </h6>
+                          <p className="text-sm text-purple-700">{String(value)}</p>
                         </div>
                       ))}
                     </div>
                   </div>
                 )}
 
-                {/* Validation Rules */}
-                {(principle as any).validation_rules && (
+                {/* Philosophical Foundation */}
+                {principle.philosophical_foundation && (
                   <div className="space-y-3">
                     <h5 className="font-medium text-gray-900 flex items-center gap-2">
                       <Shield className="w-4 h-4" />
-                      Validation Rules
+                      Philosophical Foundation
                     </h5>
                     
-                    <div className="bg-blue-50 rounded-lg p-4 space-y-3">
-                      {Object.entries((principle as any).validation_rules).map(([key, value]: [string, any]) => (
-                        <div key={key} className="border-l-2 border-blue-300 pl-3">
-                          <h6 className="font-medium text-sm text-blue-800 mb-2">
-                            {key.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
-                          </h6>
-                          {Array.isArray(value) ? (
-                            <ul className="text-sm text-blue-700 space-y-1">
-                              {value.map((item: string, index: number) => (
-                                <li key={index} className="flex items-start gap-2">
-                                  <span className="text-blue-500">•</span>
-                                  <span>{item}</span>
-                                </li>
-                              ))}
-                            </ul>
-                          ) : (
-                            <p className="text-sm text-blue-700">{String(value)}</p>
-                          )}
-                        </div>
-                      ))}
+                    <div className="bg-blue-50 rounded-lg p-4">
+                      <p className="text-sm text-blue-800">{principle.philosophical_foundation}</p>
+                    </div>
+                  </div>
+                )}
+                
+                {/* Ethical Framework */}
+                {principle.ethical_framework && (
+                  <div className="space-y-3">
+                    <h5 className="font-medium text-gray-900 flex items-center gap-2">
+                      <Shield className="w-4 h-4" />
+                      Ethical Framework
+                    </h5>
+                    
+                    <div className="bg-blue-50 rounded-lg p-4">
+                      <p className="text-sm text-blue-800">{principle.ethical_framework}</p>
                     </div>
                   </div>
                 )}
 
-                {/* Examples */}
-                {(principle as any).examples && (
-                  <div className="space-y-3">
-                    <h5 className="font-medium text-gray-900 flex items-center gap-2">
-                      <ExternalLink className="w-4 h-4" />
-                      Examples
-                    </h5>
-                    
-                    <div className="grid md:grid-cols-2 gap-4">
-                      {Object.entries((principle as any).examples).map(([type, examples]: [string, any]) => (
-                        <div key={type} className={`rounded-lg p-4 ${type === 'good' ? 'bg-green-50 border border-green-200' : 'bg-red-50 border border-red-200'}`}>
-                          <h6 className={`font-medium text-sm mb-2 ${type === 'good' ? 'text-green-800' : 'text-red-800'}`}>
-                            {type === 'good' ? '✅ Good Examples' : '❌ Bad Examples'}
-                          </h6>
-                          {Array.isArray(examples) ? (
-                            <ul className={`text-sm space-y-1 ${type === 'good' ? 'text-green-700' : 'text-red-700'}`}>
-                              {examples.map((example: string, index: number) => (
-                                <li key={index} className="flex items-start gap-2">
-                                  <span className={type === 'good' ? 'text-green-500' : 'text-red-500'}>•</span>
-                                  <span>{example}</span>
-                                </li>
-                              ))}
-                            </ul>
-                          ) : (
-                            <p className={`text-sm ${type === 'good' ? 'text-green-700' : 'text-red-700'}`}>{String(examples)}</p>
-                          )}
-                        </div>
-                      ))}
+                {/* Operational Implementation Reference */}
+                <div className="bg-amber-50 rounded-lg p-4 border border-amber-200">
+                  <div className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-8 h-8 bg-amber-100 rounded-full flex items-center justify-center">
+                      <span className="text-amber-600 text-sm">📋</span>
+                    </div>
+                    <div>
+                      <h6 className="font-medium text-amber-900 mb-1">Implementation Details</h6>
+                      <p className="text-sm text-amber-800 mb-2">
+                        This principle provides philosophical guidance. For specific operational requirements, 
+                        validation rules, and enforcement mechanisms, visit the <strong>Rules</strong> tab.
+                      </p>
+                      <div className="flex items-center gap-2 text-xs text-amber-700">
+                        <span>Terms</span>
+                        <span>→</span>
+                        <span className="bg-amber-200 px-2 py-1 rounded font-semibold">Principles</span>
+                        <span>→</span>
+                        <span>Rules</span>
+                      </div>
                     </div>
                   </div>
-                )}
+                </div>
 
                 {/* Cross Domain Applications */}
                 {(principle as any).cross_domain_applications && (
