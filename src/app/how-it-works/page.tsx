@@ -433,6 +433,248 @@ export default function HowItWorksPage() {
           </Card>
         </div>
 
+      {/* Personal vs Core Governance */}
+      <div className="mb-16">
+        <h2 className="text-3xl font-semibold mb-8 text-center">Personal vs Core Governance</h2>
+
+        <Card className="border-l-4 border-l-indigo-500 mb-8">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <Users className="h-5 w-5" />
+              Your Governance, Your Way
+            </CardTitle>
+            <CardDescription>Extend core governance with your personal values</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="grid gap-6 md:grid-cols-2">
+              <div>
+                <h4 className="font-semibold mb-3 flex items-center gap-2">
+                  <Building className="h-4 w-4 text-blue-500" />
+                  Core DAHAO Governance
+                </h4>
+                <div className="space-y-3">
+                  <div className="p-3 bg-blue-50 rounded-lg border border-blue-200">
+                    <p className="font-medium text-blue-800 mb-2">Baseline Foundation</p>
+                    <ul className="text-sm text-blue-700 space-y-1">
+                      <li>• Minimum viable governance</li>
+                      <li>• Democratically ratified</li>
+                      <li>• Conservative and stable</li>
+                      <li>• Version controlled (e.g., v1.2)</li>
+                    </ul>
+                  </div>
+                  <div className="bg-muted p-3 rounded-lg font-mono text-xs">
+                    <div className="text-blue-600"># Core Terms</div>
+                    <div>transparency: v1.1</div>
+                    <div>harm: v1.2</div>
+                    <div>being: v1.0</div>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 className="font-semibold mb-3 flex items-center gap-2">
+                  <Users className="h-4 w-4 text-purple-500" />
+                  Your Personal Extensions
+                </h4>
+                <div className="space-y-3">
+                  <div className="p-3 bg-purple-50 rounded-lg border border-purple-200">
+                    <p className="font-medium text-purple-800 mb-2">Your Value System</p>
+                    <ul className="text-sm text-purple-700 space-y-1">
+                      <li>• Extends core definitions</li>
+                      <li>• Adds personal values</li>
+                      <li>• Lives in your branch</li>
+                      <li>• Can propose to core</li>
+                    </ul>
+                  </div>
+                  <div className="bg-muted p-3 rounded-lg font-mono text-xs">
+                    <div className="text-purple-600"># John's Extensions</div>
+                    <div>transparency:</div>
+                    <div className="ml-2">extends: "core:v1.1"</div>
+                    <div className="ml-2">adds: "radical_honesty"</div>
+                    <div className="ml-2">adds: "emotional_transparency"</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-6 p-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg">
+              <p className="text-center font-medium text-indigo-800">
+                Core provides stability • Personal enables innovation • Best ideas flow back to core
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+
+
+      {/* Version Evolution */}
+      <Card className="border-l-4 border-l-green-500 mb-8">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <RefreshCw className="h-5 w-5" />
+            Version Evolution
+          </CardTitle>
+          <CardDescription>How governance elements evolve over time</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-6">
+            <div>
+              <h4 className="font-semibold mb-3">Example: The Evolution of "Harm"</h4>
+              <div className="relative">
+                <div className="absolute left-8 top-8 bottom-8 w-0.5 bg-gray-300"></div>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center">
+                      <span className="text-sm font-semibold text-blue-700">v1.0</span>
+                    </div>
+                    <div className="flex-1 p-3 bg-blue-50 rounded-lg">
+                      <p className="font-medium text-blue-800">Initial Definition</p>
+                      <p className="text-sm text-blue-700">"Physical damage to beings"</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
+                      <span className="text-sm font-semibold text-green-700">v1.1</span>
+                    </div>
+                    <div className="flex-1 p-3 bg-green-50 rounded-lg">
+                      <p className="font-medium text-green-800">Community Expansion</p>
+                      <p className="text-sm text-green-700">+ "Psychological distress"</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center">
+                      <span className="text-sm font-semibold text-purple-700">v1.2</span>
+                    </div>
+                    <div className="flex-1 p-3 bg-purple-50 rounded-lg">
+                      <p className="font-medium text-purple-800">Current Version</p>
+                      <p className="text-sm text-purple-700">+ "Opportunity limitation" + "Dignity violation"</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid gap-4 md:grid-cols-3">
+              <div className="text-center p-3 bg-orange-50 rounded-lg">
+                <ArrowRight className="h-6 w-6 mx-auto mb-2 text-orange-500" />
+                <p className="text-sm font-medium text-orange-800">Terms evolve</p>
+                <p className="text-xs text-orange-600">Better understanding over time</p>
+              </div>
+              <div className="text-center p-3 bg-blue-50 rounded-lg">
+                <CheckCircle className="h-6 w-6 mx-auto mb-2 text-blue-500" />
+                <p className="text-sm font-medium text-blue-800">History preserved</p>
+                <p className="text-xs text-blue-600">Every version tracked</p>
+              </div>
+              <div className="text-center p-3 bg-green-50 rounded-lg">
+                <Users className="h-6 w-6 mx-auto mb-2 text-green-500" />
+                <p className="text-sm font-medium text-green-800">Community driven</p>
+                <p className="text-xs text-green-600">Democratic ratification</p>
+              </div>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Sub-DAHAOs and Specialized Domains */}
+      <Card className="border-l-4 border-l-orange-500">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <Building className="h-5 w-5" />
+            Sub-DAHAOs and Specialized Domains
+          </CardTitle>
+          <CardDescription>How different communities extend the core</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="mb-6">
+            <div className="text-center p-4 bg-orange-50 rounded-lg">
+              <p className="font-medium text-orange-800">
+                Core DAHAO → Domain Extensions → Sub-DAHAOs
+              </p>
+              <p className="text-sm text-orange-600 mt-1">
+                Each domain can become its own DAHAO while staying connected
+              </p>
+            </div>
+          </div>
+
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            <Card className="border-indigo-200">
+              <CardHeader className="pb-2">
+                <CardTitle className="text-sm">Core DAHAO</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="text-xs space-y-1">
+                  <li>• Base governance</li>
+                  <li>• Universal terms</li>
+                  <li>• Meta-rules</li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="border-blue-200">
+              <CardHeader className="pb-2">
+                <CardTitle className="text-sm">Animal Welfare DAHAO</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="text-xs space-y-1">
+                  <li>• Five freedoms</li>
+                  <li>• Species-specific rules</li>
+                  <li>• Welfare metrics</li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="border-green-200">
+              <CardHeader className="pb-2">
+                <CardTitle className="text-sm">Environmental DAHAO</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="text-xs space-y-1">
+                  <li>• Sustainability metrics</li>
+                  <li>• Ecosystem principles</li>
+                  <li>• Carbon tracking</li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="border-purple-200">
+              <CardHeader className="pb-2">
+                <CardTitle className="text-sm">Music Industry DAHAO</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="text-xs space-y-1">
+                  <li>• Fair distribution</li>
+                  <li>• Artist rights</li>
+                  <li>• Revenue sharing</li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
+            <div className="p-4 bg-blue-50 rounded-lg">
+              <h5 className="font-semibold text-blue-800 mb-2">Inheritance Pattern</h5>
+              <div className="bg-white p-3 rounded font-mono text-xs">
+                <div>animal_welfare_dahao:</div>
+                <div className="ml-2">inherits: "core:v1.2"</div>
+                <div className="ml-2">extends:</div>
+                <div className="ml-4">- five_freedoms</div>
+                <div className="ml-4">- species_rights</div>
+              </div>
+            </div>
+
+            <div className="p-4 bg-green-50 rounded-lg">
+              <h5 className="font-semibold text-green-800 mb-2">Cross-Pollination</h5>
+              <ul className="text-sm text-green-700 space-y-1">
+                <li>• Animal welfare monitoring → Environmental tracking</li>
+                <li>• Music distribution → Fair resource allocation</li>
+                <li>• Patterns spread across domains</li>
+              </ul>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+    </div>
         {/* How You Participate */}
         <div className="mb-16">
           <h2 className="text-3xl font-semibold mb-8 text-center">How You Participate (Available Now)</h2>
@@ -1044,7 +1286,7 @@ export default function HowItWorksPage() {
             </CardHeader>
             <CardContent>
               <div className="bg-muted p-4 rounded-lg font-mono text-sm">
-                <div className="text-green-600 mb-2">// Example AI Analysis Output</div>
+                <div className="text-green-600 mb-2">{`// Example AI Analysis Output`}</div>
                 <div className="space-y-3">
                   <div>
                     <span className="text-blue-600">@ai-analyzer:</span> "Analysis of 50 governance systems shows:
@@ -1104,7 +1346,7 @@ export default function HowItWorksPage() {
                       </ul>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-start gap-3 p-4 bg-purple-50 rounded-lg">
                     <BookOpen className="h-6 w-6 text-purple-500 mt-1" />
                     <div>
@@ -1132,7 +1374,7 @@ export default function HowItWorksPage() {
                       </ul>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-start gap-3 p-4 bg-orange-50 rounded-lg">
                     <TrendingUpIcon className="h-6 w-6 text-orange-500 mt-1" />
                     <div>
@@ -1331,7 +1573,7 @@ export default function HowItWorksPage() {
                 <div className="mt-8 p-6 bg-gradient-to-r from-blue-100 to-purple-100 rounded-lg text-center">
                   <h4 className="font-semibold text-indigo-800 mb-2">Current Focus: Building Better Governance Together</h4>
                   <p className="text-sm text-indigo-700">
-                    We're in Phase 1, focusing on learning how to create systems that can improve themselves. 
+                    We're in Phase 1, focusing on learning how to create systems that can improve themselves.
                     No tokens, no investment, just building better governance through community collaboration and AI assistance.
                   </p>
                 </div>
@@ -1464,7 +1706,7 @@ export default function HowItWorksPage() {
         {/* Call to Action */}
         <div className="text-center">
           <h2 className="text-2xl font-semibold mb-4">Join the Evolution</h2>
-          
+
           <Card className="bg-gradient-to-r from-green-50 to-blue-50 border-green-200 mb-8">
             <CardHeader>
               <CardTitle className="text-green-800">Start Now</CardTitle>
