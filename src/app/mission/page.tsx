@@ -1,8 +1,14 @@
+// app/mission/page.tsx
 'use client';
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ArrowRightIcon, TrendingUpIcon, ShieldIcon, EyeIcon, HeartIcon, ZapIcon, GitBranchIcon, Coins, Network } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
+import {
+  ArrowRight, TrendingUp, Shield, Eye, Heart, Zap, GitBranch,
+  Users, RefreshCw, Bot, CheckCircle, Lightbulb, Building,
+  Scale, BookOpen, MessageSquare
+} from 'lucide-react';
 import Link from 'next/link';
 
 export default function MissionPage() {
@@ -12,54 +18,50 @@ export default function MissionPage() {
         {/* Hero Section */}
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold tracking-tight mb-4">
-            Our Mission: Technology for Human Values
+            Our Mission
           </h1>
-          <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Harnessing the greatest technological revolution in history to serve humanity, 
-            not just shareholders.
+          <p className="text-2xl text-muted-foreground mb-8">
+            Building governance systems that improve themselves through
+            democratic collaboration and AI assistance
           </p>
+          <Badge variant="outline" className="text-lg px-4 py-1">
+            Phase 1: Foundation Building
+          </Badge>
         </div>
 
-        {/* The Great Acceleration */}
-        <div className="mb-16">
-          <Card className="bg-gradient-to-r from-blue-50 to-indigo-50 border-blue-200">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <ZapIcon className="h-6 w-6 text-blue-600" />
-                The Great Acceleration
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground mb-4">
-                We live in an age of unprecedented technological advancement. OpenAI, Anthropic, Microsoft, 
-                and Google pour billions into making AI more capable every day. Each breakthrough in reasoning, 
-                each improvement in code generation, each advance in agent communication - the pace is breathtaking.
-              </p>
-              <div className="bg-white/70 p-4 rounded-lg border-l-4 border-l-red-500">
-                <h3 className="font-semibold text-red-800 mb-2">But there's a problem.</h3>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-
-        {/* The Concentration Risk */}
+        {/* The Problem */}
         <div className="mb-16">
           <Card className="bg-gradient-to-r from-red-50 to-orange-50 border-red-200">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <TrendingUpIcon className="h-6 w-6 text-red-600" />
-                The Concentration Risk
+                <TrendingUp className="h-6 w-6 text-red-600" />
+                The Problem: Static Governance
               </CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground mb-4">
-                These powerful technologies serve corporate interests first. Traditional organizations can't keep up - 
-                they take years to adopt innovations, while tech giants accumulate unprecedented power.
+                Traditional governance systems are frozen in time. Constitutions written centuries ago.
+                Corporate bylaws that take years to change. Rules that can't adapt to new realities.
               </p>
-              <div className="bg-white/70 p-4 rounded-lg border-l-4 border-l-red-500">
-                <p className="font-semibold text-red-800">
-                  The future is being built, but not for everyone.
-                </p>
+              <div className="grid gap-4 md:grid-cols-3 mt-6">
+                <div className="bg-white/70 p-4 rounded-lg">
+                  <h4 className="font-semibold text-red-800 mb-2">Slow Evolution</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Years to make simple changes
+                  </p>
+                </div>
+                <div className="bg-white/70 p-4 rounded-lg">
+                  <h4 className="font-semibold text-orange-800 mb-2">No Learning</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Same mistakes repeated forever
+                  </p>
+                </div>
+                <div className="bg-white/70 p-4 rounded-lg">
+                  <h4 className="font-semibold text-red-800 mb-2">Power Concentration</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Few control the many
+                  </p>
+                </div>
               </div>
             </CardContent>
           </Card>
@@ -70,215 +72,124 @@ export default function MissionPage() {
           <Card className="bg-gradient-to-r from-green-50 to-emerald-50 border-green-200">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <HeartIcon className="h-6 w-6 text-green-600" />
-                Our Insight: Surf, Don't Build
+                <Lightbulb className="h-6 w-6 text-green-600" />
+                Our Insight: Living Governance
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground mb-4">
-                The beauty of DAHAO lies in a simple realization: we don't need to build the technology - 
-                tech giants are already doing it for us. We're not competing with these investments; we're surfing on them.
+              <p className="text-muted-foreground mb-6">
+                What if governance could improve itself? What if rules could learn from experience?
+                What if communities could evolve their systems as fast as the world changes?
               </p>
-              <div className="grid gap-4 md:grid-cols-4 mt-6">
-                <div className="bg-white/70 p-4 rounded-lg text-center">
-                  <div className="font-semibold text-green-800 mb-2">Claude Gets Better</div>
-                  <div className="text-sm text-muted-foreground">→ Every DAHAO agent becomes smarter</div>
+
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
+                  <div>
+                    <strong>Self-Improvement:</strong> Rules that can change their own rules
+                  </div>
                 </div>
-                <div className="bg-white/70 p-4 rounded-lg text-center">
-                  <div className="font-semibold text-blue-800 mb-2">GitHub Advances</div>
-                  <div className="text-sm text-muted-foreground">→ Every DAHAO inherits new capabilities</div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
+                  <div>
+                    <strong>Democratic Evolution:</strong> Community decides all changes
+                  </div>
                 </div>
-                <div className="bg-white/70 p-4 rounded-lg text-center">
-                  <div className="font-semibold text-purple-800 mb-2">Standards Emerge</div>
-                  <div className="text-sm text-muted-foreground">→ Network gains new powers overnight</div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
+                  <div>
+                    <strong>AI Enhancement:</strong> Better analysis, not AI control
+                  </div>
                 </div>
-                <div className="bg-white/70 p-4 rounded-lg text-center">
-                  <div className="font-semibold text-orange-800 mb-2">Terms Evolve</div>
-                  <div className="text-sm text-muted-foreground">→ Shared understanding deepens</div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
+                  <div>
+                    <strong>Version Control:</strong> Every change tracked and reversible
+                  </div>
                 </div>
               </div>
             </CardContent>
           </Card>
         </div>
 
-        {/* Current AI Integration */}
+        {/* The Innovation */}
         <div className="mb-16">
-          <Card className="bg-gradient-to-r from-emerald-50 to-teal-50 border-emerald-200">
-            <CardHeader>
-              <CardTitle>Current AI Integration: GitHub Copilot & Claude Code</CardTitle>
-              <CardDescription>Leveraging today's most powerful AI tools</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground mb-4">
-                DAHAO doesn't wait for the future - we harness today's most powerful AI tools. 
-                GitHub Copilot Agent Mode and Claude Code provide the intelligence layer, while 
-                Model Context Protocol (MCP) enables seamless agent communication.
-              </p>
-              <div className="grid gap-4 md:grid-cols-2 mb-6">
-                <div className="bg-white/70 p-4 rounded-lg">
-                  <h4 className="font-semibold text-emerald-800 mb-2">GitHub Copilot Integration</h4>
-                  <ul className="space-y-1 text-sm text-muted-foreground">
-                    <li>• Agent Mode for autonomous task execution</li>
-                    <li>• Code generation and review</li>
-                    <li>• GitHub Actions orchestration</li>
-                    <li>• Issue and PR automation</li>
-                  </ul>
-                </div>
-                <div className="bg-white/70 p-4 rounded-lg">
-                  <h4 className="font-semibold text-blue-800 mb-2">Claude Code Integration</h4>
-                  <ul className="space-y-1 text-sm text-muted-foreground">
-                    <li>• Deep reasoning and analysis</li>
-                    <li>• Ethical compliance checking</li>
-                    <li>• Documentation generation</li>
-                    <li>• Strategic planning assistance</li>
-                  </ul>
-                </div>
-              </div>
-              <div className="bg-gradient-to-r from-purple-100 to-indigo-100 p-4 rounded-lg">
-                <h4 className="font-semibold text-purple-800 mb-2">MCP (Model Context Protocol) Potential</h4>
-                <p className="text-sm text-muted-foreground">
-                  MCP enables seamless communication between different AI models and systems. 
-                  As this standard evolves, DAHAO agents will automatically gain the ability to coordinate 
-                  across platforms, share context, and collaborate on complex tasks.
-                </p>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
+          <h2 className="text-3xl font-semibold mb-8 text-center">The DAHAO Innovation</h2>
 
-        {/* Automatic Evolution */}
-        <div className="mb-16">
-          <Card>
-            <CardHeader>
-              <CardTitle>Automatic Evolution</CardTitle>
-              <CardDescription>Organizations that inherit improvements instantly</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground mb-4">
-                What makes DAHAO revolutionary isn't just using current AI tools - it's creating a protocol 
-                that automatically incorporates every future advancement. Traditional organizations must manually 
-                adopt new technologies, often taking years to integrate innovations. DAHAO organizations inherit 
-                improvements instantly.
-              </p>
-              <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-lg">
-                <h4 className="font-semibold mb-3">The Compound Effect</h4>
-                <div className="space-y-2">
-                  <div className="flex items-center gap-2">
-                    <ArrowRightIcon className="h-4 w-4 text-blue-500" />
-                    <span className="text-sm">Better AI → Better organizational decisions</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <ArrowRightIcon className="h-4 w-4 text-green-500" />
-                    <span className="text-sm">Better decisions → More resources</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <ArrowRightIcon className="h-4 w-4 text-purple-500" />
-                    <span className="text-sm">More resources → Fund more innovation</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <ArrowRightIcon className="h-4 w-4 text-orange-500" />
-                    <span className="text-sm">More innovation → Better outcomes for everyone</span>
-                  </div>
-                </div>
-                <div className="mt-4 p-3 bg-white/70 rounded border-l-4 border-l-blue-500">
-                  <p className="text-sm font-medium text-blue-800">
-                    We're not building technology; we're building the vessel that will carry us wherever technology goes.
-                  </p>
-                </div>
-              </div>
-              <div className="bg-gradient-to-r from-orange-50 to-yellow-50 p-6 rounded-lg mt-4">
-                <h4 className="font-semibold mb-3">Living Vocabulary</h4>
-                <p className="text-sm text-muted-foreground mb-3">
-                  Even our language evolves: terms like "harm", "wellbeing", and "suffering" update democratically
-                  as our collective understanding deepens. Version-controlled terminology ensures everyone speaks
-                  the same ethical language while allowing for growth.
-                </p>
-                <div className="flex items-center gap-2">
-                  <ArrowRightIcon className="h-4 w-4 text-orange-500" />
-                  <span className="text-sm">Better definitions → Clearer decisions → Stronger consensus</span>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-
-        {/* Three Pillars */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-semibold mb-8 text-center">Three Pillars of Evolution</h2>
-          <div className="grid gap-8 md:grid-cols-3">
-            {/* Radical Openness */}
-            <Card className="bg-gradient-to-b from-blue-50 to-blue-100">
+          <div className="grid gap-6 md:grid-cols-2">
+            <Card>
               <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <GitBranchIcon className="h-6 w-6 text-blue-600" />
-                  Radical Openness
-                </CardTitle>
-                <CardDescription>Evolution Through Transparency</CardDescription>
+                <Bot className="h-8 w-8 text-purple-600 mb-2" />
+                <CardTitle>Personal vs System AI</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-muted-foreground mb-4">
-                  DAHAO isn't just built on open source - it IS open source at every level. Every line of code, 
-                  every governance decision, every organizational evolution lives publicly on GitHub.
+                <p className="text-muted-foreground mb-4">
+                  Two types of AI agents ensure both personal values and objective compliance.
                 </p>
-                <div className="space-y-2">
-                  <div className="text-xs bg-white/70 p-2 rounded">
-                    <strong>Why?</strong> Closed systems can't evolve. Hidden processes can't be trusted.
+                <div className="space-y-2 text-sm">
+                  <div className="p-2 bg-purple-50 rounded">
+                    <strong>Personal AI:</strong> Represents YOUR values
                   </div>
-                  <div className="text-xs bg-white/70 p-2 rounded">
-                    <strong>Result:</strong> When you fork a DAHAO, you inherit transparent history, proven patterns, and collective wisdom.
+                  <div className="p-2 bg-green-50 rounded">
+                    <strong>System AI:</strong> Ensures baseline compliance
                   </div>
                 </div>
               </CardContent>
             </Card>
 
-            {/* Decentralization as Immunity */}
-            <Card className="bg-gradient-to-b from-green-50 to-green-100">
+            <Card>
               <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <ShieldIcon className="h-6 w-6 text-green-600" />
-                  Decentralization as Immunity
-                </CardTitle>
-                <CardDescription>No Single Point of Failure</CardDescription>
+                <RefreshCw className="h-8 w-8 text-blue-600 mb-2" />
+                <CardTitle>Meta-Governance</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-muted-foreground mb-4">
-                  Traditional organizations have vulnerabilities: CEOs who can corrupt, servers that can be shut down, 
-                  headquarters that can be raided. DAHAO has none of these.
+                <p className="text-muted-foreground mb-4">
+                  The system can modify how it modifies itself, enabling true evolution.
                 </p>
-                <div className="space-y-2">
-                  <div className="text-xs bg-white/70 p-2 rounded">
-                    <strong>Structure:</strong> Each DAHAO runs on its own Avalanche subnet
+                <div className="space-y-2 text-sm">
+                  <div className="p-2 bg-blue-50 rounded">
+                    <strong>Learn:</strong> From what works and what doesn't
                   </div>
-                  <div className="text-xs bg-white/70 p-2 rounded">
-                    <strong>Agents:</strong> Operate from wherever their humans are
-                  </div>
-                  <div className="text-xs bg-white/70 p-2 rounded">
-                    <strong>Decisions:</strong> Emerge from collective intelligence
+                  <div className="p-2 bg-blue-50 rounded">
+                    <strong>Adapt:</strong> Change processes, not just rules
                   </div>
                 </div>
               </CardContent>
             </Card>
 
-            {/* Transparency as Trust */}
-            <Card className="bg-gradient-to-b from-purple-50 to-purple-100">
+            <Card>
               <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <EyeIcon className="h-6 w-6 text-purple-600" />
-                  Transparency as Trust
-                </CardTitle>
-                <CardDescription>Verify, Don't Believe</CardDescription>
+                <BookOpen className="h-8 w-8 text-orange-600 mb-2" />
+                <CardTitle>Living Vocabulary</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-muted-foreground mb-4">
-                  In DAHAO, transparency isn't a feature - it's the foundation. Every transaction on-chain. 
-                  Every decision recorded. Every code change tracked.
+                <p className="text-muted-foreground mb-4">
+                  Terms evolve democratically as understanding deepens.
                 </p>
-                <div className="space-y-2">
-                  <div className="text-xs bg-white/70 p-2 rounded">
-                    <strong>Innovation:</strong> Trust without faith - you can verify everything yourself
+                <div className="font-mono text-sm bg-orange-50 p-2 rounded">
+                  harm: v1.0 → v1.1 → v1.2
+                </div>
+                <p className="text-xs text-muted-foreground mt-2">
+                  Each version adds community wisdom
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <GitBranch className="h-8 w-8 text-green-600 mb-2" />
+                <CardTitle>Fork & Merge</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground mb-4">
+                  Disagreement drives innovation through parallel experiments.
+                </p>
+                <div className="space-y-2 text-sm">
+                  <div className="p-2 bg-green-50 rounded">
+                    <strong>Fork:</strong> Test your ideas safely
                   </div>
-                  <div className="text-xs bg-white/70 p-2 rounded">
-                    <strong>Effect:</strong> Good actors drive out bad through sheer visibility
+                  <div className="p-2 bg-green-50 rounded">
+                    <strong>Merge:</strong> Best ideas flow back
                   </div>
                 </div>
               </CardContent>
@@ -286,116 +197,231 @@ export default function MissionPage() {
           </div>
         </div>
 
-        {/* The Vision */}
+        {/* Three Pillars */}
         <div className="mb-16">
-          <Card className="bg-gradient-to-r from-indigo-50 to-purple-50 border-indigo-200">
+          <h2 className="text-3xl font-semibold mb-8 text-center">Three Pillars of Our Mission</h2>
+
+          <div className="grid gap-8 md:grid-cols-3">
+            <Card className="bg-gradient-to-b from-blue-50 to-blue-100">
+              <CardHeader>
+                <GitBranch className="h-8 w-8 text-blue-600 mb-2" />
+                <CardTitle>Radical Transparency</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Every decision, every change, every vote - all public on GitHub.
+                  Trust through verification, not faith.
+                </p>
+                <div className="bg-white/70 p-3 rounded text-xs">
+                  <strong>Why:</strong> Hidden governance corrupts. Open governance evolves.
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-gradient-to-b from-green-50 to-green-100">
+              <CardHeader>
+                <Users className="h-8 w-8 text-green-600 mb-2" />
+                <CardTitle>Democratic Evolution</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  No kings, no CEOs, no unilateral control. Every change requires
+                  community consent.
+                </p>
+                <div className="bg-white/70 p-3 rounded text-xs">
+                  <strong>How:</strong> Proposals → Discussion → AI Analysis → Vote → Implementation
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-gradient-to-b from-purple-50 to-purple-100">
+              <CardHeader>
+                <Shield className="h-8 w-8 text-purple-600 mb-2" />
+                <CardTitle>Protected Innovation</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Fork rights ensure minority views can experiment. Best innovations
+                  merge back to benefit all.
+                </p>
+                <div className="bg-white/70 p-3 rounded text-xs">
+                  <strong>Result:</strong> Diversity of thought drives collective progress
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+
+        {/* Current Focus */}
+        <div className="mb-16">
+          <Card className="bg-gradient-to-r from-blue-50 to-purple-50">
             <CardHeader>
-              <CardTitle className="text-center text-indigo-800">The Vision: Living Organizations</CardTitle>
+              <CardTitle className="text-center">Phase 1: Building the Foundation</CardTitle>
               <CardDescription className="text-center">
-                Organizations that emerge, evolve, and thrive as living entities
+                What we're doing right now
               </CardDescription>
             </CardHeader>
             <CardContent>
+              <div className="grid gap-6 md:grid-cols-2 mb-6">
+                <div>
+                  <h4 className="font-semibold mb-3">Creating Core Governance</h4>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="h-4 w-4 text-green-600 mt-0.5" />
+                      <span>Defining foundational terms</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="h-4 w-4 text-green-600 mt-0.5" />
+                      <span>Establishing core principles</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="h-4 w-4 text-green-600 mt-0.5" />
+                      <span>Building operational rules</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="h-4 w-4 text-green-600 mt-0.5" />
+                      <span>Testing meta-governance</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 className="font-semibold mb-3">Testing AI Collaboration</h4>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="h-4 w-4 text-green-600 mt-0.5" />
+                      <span>Personal AI agents for values</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="h-4 w-4 text-green-600 mt-0.5" />
+                      <span>System AI for compliance</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="h-4 w-4 text-green-600 mt-0.5" />
+                      <span>AI-assisted analysis</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="h-4 w-4 text-green-600 mt-0.5" />
+                      <span>Human-AI collaboration patterns</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="bg-white/70 p-4 rounded-lg text-center">
+                <p className="font-semibold text-purple-800">
+                  No tokens. No investment. Just building better governance together.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* The Vision */}
+        <div className="mb-16">
+          <Card className="border-2 border-indigo-200">
+            <CardHeader>
+              <CardTitle className="text-center text-indigo-800">
+                The Vision: Governance That Learns
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
               <p className="text-muted-foreground text-center mb-6">
-                DAHAO enables organizations to emerge, evolve, and thrive as living entities. By combining 
-                personal AI agents, versioned governance components, and blockchain verification, DAHAO creates 
-                the conditions for organizational life - but does not dictate its form.
+                We envision a world where communities can create governance systems that:
               </p>
-              <div className="bg-white/70 p-6 rounded-lg border-l-4 border-l-indigo-500">
-                <h4 className="font-semibold text-indigo-800 mb-3">The Revolutionary Insight</h4>
-                <p className="text-sm text-muted-foreground">
-                  We don't need to build the technology - we need to harness its continuous evolution. 
-                  As tech giants pour billions into AI development, DAHAO provides the protocol to channel 
-                  these advancements into living organizations that automatically inherit every improvement.
-                </p>
+
+              <div className="grid gap-4 md:grid-cols-2">
+                <div className="p-4 bg-indigo-50 rounded-lg">
+                  <h4 className="font-semibold text-indigo-800 mb-2">Adapt Rapidly</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Change as fast as the world changes, learning from every decision
+                  </p>
+                </div>
+                <div className="p-4 bg-purple-50 rounded-lg">
+                  <h4 className="font-semibold text-purple-800 mb-2">Stay Democratic</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Power remains with the community, not concentrated in few hands
+                  </p>
+                </div>
+                <div className="p-4 bg-blue-50 rounded-lg">
+                  <h4 className="font-semibold text-blue-800 mb-2">Scale Wisely</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Work for small groups and large organizations alike
+                  </p>
+                </div>
+                <div className="p-4 bg-green-50 rounded-lg">
+                  <h4 className="font-semibold text-green-800 mb-2">Remain Human</h4>
+                  <p className="text-sm text-muted-foreground">
+                    AI assists but humans decide - always
+                  </p>
+                </div>
               </div>
             </CardContent>
           </Card>
         </div>
 
-        {/* The Future We're Building */}
+        {/* Future Phases */}
         <div className="mb-16">
-          <Card className="bg-gradient-to-r from-orange-50 to-red-50 border-orange-200">
+          <Card className="bg-gray-50 border-gray-300">
             <CardHeader>
-              <CardTitle>The Future We're Building</CardTitle>
-              <CardDescription>A new way to grow with technology</CardDescription>
+              <CardTitle className="flex items-center gap-2">
+                <TrendingUp className="h-5 w-5 text-gray-600" />
+                Future Phases
+                <Badge variant="outline">After Foundation</Badge>
+              </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground mb-4">
-                This isn't just new technology - it's a new way to use continuously evolving technology 
-                to grow organizations that adapt as fast as the world changes.
+              <div className="space-y-4 text-sm text-muted-foreground">
+                <div className="p-3 border-l-4 border-l-gray-400">
+                  <strong>Phase 2:</strong> Economic layer with tokens and investment pools
+                </div>
+                <div className="p-3 border-l-4 border-l-gray-400">
+                  <strong>Phase 3:</strong> Fund real projects that create impact
+                </div>
+                <div className="p-3 border-l-4 border-l-gray-400">
+                  <strong>Phase 4:</strong> Network of interconnected DAHAOs
+                </div>
+              </div>
+              <p className="text-xs text-center mt-4 text-gray-600">
+                Each phase builds on solid foundations. We're in Phase 1.
               </p>
-              <div className="grid gap-4 md:grid-cols-2 mb-6">
-                <div>
-                  <h4 className="font-semibold mb-2 flex items-center gap-2">
-                    <Coins className="h-5 w-5 text-yellow-500" />
-                    Dual Benefit Investment Model
-                  </h4>
-                  <p className="text-sm text-muted-foreground">
-                    Investment pools where investors buy DAHAO tokens, profit as projects succeed, 
-                    and their gains fund community development. Win-win economics at scale.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-2 flex items-center gap-2">
-                    <Network className="h-5 w-5 text-purple-500" />
-                    Avalanche Subchain Graduation
-                  </h4>
-                  <p className="text-sm text-muted-foreground">
-                    Successful DAHAOs automatically get their own Avalanche blockchain, 
-                    maintaining network connection while achieving full autonomy.
-                  </p>
-                </div>
-              </div>
-              <div className="bg-gradient-to-r from-orange-100 to-red-100 p-4 rounded-lg text-center">
-                <p className="font-semibold text-orange-800">
-                  The future is coming whether we build it or not. DAHAO ensures it serves humanity.
-                </p>
-              </div>
             </CardContent>
           </Card>
         </div>
 
-        {/* Token Economics Revolution */}
+        {/* Why This Matters */}
         <div className="mb-16">
-          <Card className="bg-gradient-to-r from-emerald-50 to-teal-50 border-emerald-200">
+          <Card className="bg-gradient-to-r from-orange-50 to-yellow-50 border-orange-200">
             <CardHeader>
-              <CardTitle className="text-center text-emerald-800">Token Economics Revolution</CardTitle>
-              <CardDescription className="text-center">Investment pools replace traditional funding models</CardDescription>
+              <CardTitle className="text-center text-orange-800">
+                Why This Matters
+              </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="grid gap-6 md:grid-cols-3 mb-6">
-                <div className="text-center">
-                  <Coins className="h-12 w-12 mx-auto mb-3 text-yellow-500" />
-                  <h4 className="font-semibold mb-2">Investment Pools</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Token holders fund promising projects through democratic governance via investment pool allocation
-                  </p>
+              <p className="text-muted-foreground text-center mb-6">
+                The world is changing faster than ever. AI is advancing exponentially.
+                Global challenges require new solutions. Traditional governance can't keep up.
+              </p>
+
+              <div className="bg-white/70 p-6 rounded-lg">
+                <h4 className="font-semibold text-orange-800 mb-3 text-center">
+                  DAHAO creates governance that evolves as fast as our challenges
+                </h4>
+
+                <div className="grid gap-3 md:grid-cols-3 text-center text-sm">
+                  <div>
+                    <Heart className="h-6 w-6 mx-auto mb-2 text-red-500" />
+                    <p>Human values guide direction</p>
+                  </div>
+                  <div>
+                    <Bot className="h-6 w-6 mx-auto mb-2 text-purple-500" />
+                    <p>AI provides analysis</p>
+                  </div>
+                  <div>
+                    <Users className="h-6 w-6 mx-auto mb-2 text-green-500" />
+                    <p>Community makes decisions</p>
+                  </div>
                 </div>
-                <div className="text-center">
-                  <TrendingUpIcon className="h-12 w-12 mx-auto mb-3 text-green-500" />
-                  <h4 className="font-semibold mb-2">Dual Benefit Growth</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Investors profit as DAHAOs succeed, creating sustainable funding for community development
-                  </p>
-                </div>
-                <div className="text-center">
-                  <Network className="h-12 w-12 mx-auto mb-3 text-purple-500" />
-                  <h4 className="font-semibold mb-2">Avalanche Graduation</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Successful DAHAOs receive their own blockchain while maintaining network connections
-                  </p>
-                </div>
-              </div>
-              <div className="bg-white/70 p-6 rounded-lg border-l-4 border-l-emerald-500">
-                <h4 className="font-semibold text-emerald-800 mb-3">The Alex Example</h4>
-                <p className="text-sm text-muted-foreground mb-2">
-                  Alex invests $1,000 in DAHAO tokens. Token value grows 5x in one month. 
-                  Alex sells $2,000 worth, profits $1,000, while $3,000 remains to fund community work.
-                </p>
-                <p className="text-sm font-semibold text-emerald-700">
-                  Result: Alex profits AND the community gets $3,000 for development. Everyone wins.
-                </p>
               </div>
             </CardContent>
           </Card>
@@ -403,25 +429,30 @@ export default function MissionPage() {
 
         {/* Call to Action */}
         <div className="text-center">
-          <h2 className="text-2xl font-semibold mb-4">Join the Revolution</h2>
-          <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-            Be part of building organizations that evolve as fast as technology advances. 
-            Where human values guide the direction, and AI acceleration provides the speed.
+          <h2 className="text-2xl font-semibold mb-4">Join Our Mission</h2>
+          <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
+            Help build the first governance system that can improve itself.
+            Where every voice matters and the best ideas win.
           </p>
-          <div className="space-x-4">
+
+          <div className="flex justify-center gap-4 mb-8">
             <Button asChild size="lg">
-              <Link href="/api/auth/github">
-                Start Building
-                <ArrowRightIcon className="ml-2 h-4 w-4" />
+              <Link href="/how-it-works">
+                Learn More
+                <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
             <Button asChild variant="outline" size="lg">
-              <Link href="/how-it-works">
-                See How It Works
-                <ArrowRightIcon className="ml-2 h-4 w-4" />
+              <Link href="/forum">
+                <MessageSquare className="h-4 w-4 mr-2" />
+                Join Discussion
               </Link>
             </Button>
           </div>
+
+          <p className="text-sm text-muted-foreground">
+            No investment required. Just bring your ideas.
+          </p>
         </div>
       </div>
     </div>

@@ -2,9 +2,10 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Bot, MessageSquare, Users, CheckCircle, BookOpen, TrendingUp as TrendingUpIcon, Building, Scale, RefreshCw, ArrowRight, Shield } from 'lucide-react';
+import { Bot,AlertCircle, MessageSquare, Users,Vote, CheckCircle, BookOpen, TrendingUp as TrendingUpIcon, Building, Scale, RefreshCw, ArrowRight, Shield, Info } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import AgentAssignmentPanel from '@/components/governance/AgentAssignmentPanel';
 
 export default function HowItWorksPage() {
   return (
@@ -216,70 +217,74 @@ export default function HowItWorksPage() {
               <CardDescription>Terms → Principles → Rules → Meta-Rules flow</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-                <div className="space-y-3">
-                  <div className="flex items-center gap-2 mb-2">
-                    <BookOpen className="h-5 w-5 text-blue-500" />
-                    <h4 className="font-semibold text-blue-800">📚 Terms</h4>
-                  </div>
-                  <div className="text-sm">
-                    <p className="font-medium mb-1">Living Vocabulary</p>
-                    <p className="text-muted-foreground">Shared definitions that evolve democratically</p>
-                  </div>
-                  <div className="bg-blue-50 p-3 rounded-lg text-sm">
-                    <p className="font-medium text-blue-800">Example:</p>
-                    <p className="text-blue-700">"harm" evolved from "physical damage" → "psychological distress, opportunity limitation, dignity violation"</p>
-                  </div>
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+              {/* Terms */}
+              <div className="space-y-3">
+                <div className="flex items-center gap-2 mb-2">
+                  <BookOpen className="h-5 w-5 text-blue-500" />
+                  <h4 className="font-semibold text-blue-800">📚 Terms</h4>
                 </div>
-
-                <div className="space-y-3">
-                  <div className="flex items-center gap-2 mb-2">
-                    <ArrowRight className="h-4 w-4 text-gray-400" />
-                    <Building className="h-5 w-5 text-green-500" />
-                    <h4 className="font-semibold text-green-800">🏛️ Principles</h4>
-                  </div>
-                  <div className="text-sm">
-                    <p className="font-medium mb-1">Philosophical Guidance</p>
-                    <p className="text-muted-foreground">Ethical frameworks built using Terms</p>
-                  </div>
-                  <div className="bg-green-50 p-3 rounded-lg text-sm">
-                    <p className="font-medium text-green-800">Example:</p>
-                    <p className="text-green-700">"Minimize &#123;harm&#125; to all &#123;beings&#125;" - uses term definitions</p>
-                  </div>
+                <div className="text-sm">
+                  <p className="font-medium mb-1">Living Vocabulary</p>
+                  <p className="text-muted-foreground">Shared definitions that evolve democratically</p>
                 </div>
-
-                <div className="space-y-3">
-                  <div className="flex items-center gap-2 mb-2">
-                    <ArrowRight className="h-4 w-4 text-gray-400" />
-                    <Scale className="h-5 w-5 text-purple-500" />
-                    <h4 className="font-semibold text-purple-800">⚖️ Rules</h4>
-                  </div>
-                  <div className="text-sm">
-                    <p className="font-medium mb-1">Operational Requirements</p>
-                    <p className="text-muted-foreground">Concrete implementations from Principles</p>
-                  </div>
-                  <div className="bg-purple-50 p-3 rounded-lg text-sm">
-                    <p className="font-medium text-purple-800">Example:</p>
-                    <p className="text-purple-700">"Report suspected &#123;harm&#125; within 24 hours"</p>
-                  </div>
-                </div>
-
-                <div className="space-y-3">
-                  <div className="flex items-center gap-2 mb-2">
-                    <ArrowRight className="h-4 w-4 text-gray-400" />
-                    <RefreshCw className="h-5 w-5 text-orange-500" />
-                    <h4 className="font-semibold text-orange-800">🔄 Meta-Rules</h4>
-                  </div>
-                  <div className="text-sm">
-                    <p className="font-medium mb-1">How to Change Rules</p>
-                    <p className="text-muted-foreground">Rules about changing rules</p>
-                  </div>
-                  <div className="bg-orange-50 p-3 rounded-lg text-sm">
-                    <p className="font-medium text-orange-800">Example:</p>
-                    <p className="text-orange-700">"Minor changes 50%, Major 67%, Constitutional 75%"</p>
-                  </div>
+                <div className="bg-blue-50 p-3 rounded-lg text-sm">
+                  <p className="font-medium text-blue-800">Example:</p>
+                  <p className="text-blue-700">"harm" v1.2: "Actions causing physical damage, psychological distress, opportunity limitation, or dignity violation"</p>
                 </div>
               </div>
+
+              {/* Principles */}
+              <div className="space-y-3">
+                <div className="flex items-center gap-2 mb-2">
+                  <ArrowRight className="h-4 w-4 text-gray-400" />
+                  <Building className="h-5 w-5 text-green-500" />
+                  <h4 className="font-semibold text-green-800">🏛️ Principles</h4>
+                </div>
+                <div className="text-sm">
+                  <p className="font-medium mb-1">Values Using Terms</p>
+                  <p className="text-muted-foreground">Ethical guidelines built on Term definitions</p>
+                </div>
+                <div className="bg-green-50 p-3 rounded-lg text-sm">
+                  <p className="font-medium text-green-800">Example:</p>
+                  <p className="text-green-700">"Minimize harm@v1.2 to all beings@v1.0" - References specific term versions</p>
+                </div>
+              </div>
+
+              {/* Rules */}
+              <div className="space-y-3">
+                <div className="flex items-center gap-2 mb-2">
+                  <ArrowRight className="h-4 w-4 text-gray-400" />
+                  <Scale className="h-5 w-5 text-purple-500" />
+                  <h4 className="font-semibold text-purple-800">⚖️ Rules</h4>
+                </div>
+                <div className="text-sm">
+                  <p className="font-medium mb-1">How to Act</p>
+                  <p className="text-muted-foreground">Concrete actions implementing Principles</p>
+                </div>
+                <div className="bg-purple-50 p-3 rounded-lg text-sm">
+                  <p className="font-medium text-purple-800">Example:</p>
+                  <p className="text-purple-700">"To minimize harm: Report any suspected harm@v1.2 within 24 hours via GitHub Issue"</p>
+                </div>
+              </div>
+
+              {/* Meta-Rules */}
+              <div className="space-y-3">
+                <div className="flex items-center gap-2 mb-2">
+                  <ArrowRight className="h-4 w-4 text-gray-400" />
+                  <RefreshCw className="h-5 w-5 text-orange-500" />
+                  <h4 className="font-semibold text-orange-800">🔄 Meta-Rules</h4>
+                </div>
+                <div className="text-sm">
+                  <p className="font-medium mb-1">How to Change</p>
+                  <p className="text-muted-foreground">Process for modifying any governance layer</p>
+                </div>
+                <div className="bg-orange-50 p-3 rounded-lg text-sm">
+                  <p className="font-medium text-orange-800">Example:</p>
+                  <p className="text-orange-700">"To change 'harm' definition: Test in branch → 67% vote → Update all dependent principles/rules"</p>
+                </div>
+              </div>
+            </div>
             </CardContent>
           </Card>
 
@@ -293,27 +298,27 @@ export default function HowItWorksPage() {
               <div className="grid gap-4 md:grid-cols-3">
                 <div className="space-y-3">
                   <div className="p-3 bg-emerald-50 rounded-lg border border-emerald-200">
-                    <p className="font-semibold text-emerald-800">Week 1:</p>
+                    <p className="font-semibold text-emerald-800">Time Period 1:</p>
                     <p className="text-sm text-emerald-700">Rule says "All decisions need 60% approval"</p>
                   </div>
                   <div className="p-3 bg-yellow-50 rounded-lg border border-yellow-200">
-                    <p className="font-semibold text-yellow-800">Week 3:</p>
+                    <p className="font-semibold text-yellow-800">Time Period 3:</p>
                     <p className="text-sm text-yellow-700">Community finds 60% too high for minor fixes</p>
                   </div>
                 </div>
                 <div className="space-y-3">
                   <div className="p-3 bg-blue-50 rounded-lg border border-blue-200">
-                    <p className="font-semibold text-blue-800">Week 4:</p>
+                    <p className="font-semibold text-blue-800">Time Period 4:</p>
                     <p className="text-sm text-blue-700">Proposal: "Create decision tiers with different thresholds"</p>
                   </div>
                   <div className="p-3 bg-purple-50 rounded-lg border border-purple-200">
-                    <p className="font-semibold text-purple-800">Week 5:</p>
+                    <p className="font-semibold text-purple-800">Time Period 5:</p>
                     <p className="text-sm text-purple-700">AI analysis shows other systems use 50-75% range effectively</p>
                   </div>
                 </div>
                 <div className="space-y-3">
                   <div className="p-3 bg-green-50 rounded-lg border border-green-200">
-                    <p className="font-semibold text-green-800">Week 6:</p>
+                    <p className="font-semibold text-green-800">Time Period 6:</p>
                     <p className="text-sm text-green-700">Vote passes → New tiered system implemented</p>
                   </div>
                   <div className="p-3 bg-gradient-to-r from-green-100 to-blue-100 rounded-lg border border-green-300">
@@ -1235,6 +1240,7 @@ export default function HowItWorksPage() {
             </CardContent>
           </Card>
 
+          <AgentAssignmentPanel context="governance" />
           {/* How AI Agents Help */}
           <Card className="bg-gradient-to-r from-blue-50 to-purple-50">
             <CardHeader>
@@ -1319,6 +1325,122 @@ export default function HowItWorksPage() {
           </Card>
         </div>
 
+
+{/* Voting Mechanics */}
+<div className="mb-16">
+  <h2 className="text-3xl font-semibold mb-8 text-center">How Voting Works</h2>
+
+  <Card className="border-l-4 border-l-indigo-500 mb-8">
+    <CardHeader>
+      <CardTitle className="flex items-center gap-2">
+        <Vote className="h-5 w-5" />
+        Democratic Decision Making
+      </CardTitle>
+      <CardDescription>Human choice with AI assistance</CardDescription>
+    </CardHeader>
+    <CardContent>
+      <div className="grid gap-6 md:grid-cols-2">
+        <div>
+          <h4 className="font-semibold mb-3">Voting Options</h4>
+          <div className="space-y-3">
+            <div className="p-3 bg-blue-50 rounded-lg">
+              <div className="flex items-center gap-2 mb-2">
+                <Users className="h-4 w-4 text-blue-600" />
+                <span className="font-medium text-blue-800">Manual Voting</span>
+              </div>
+              <p className="text-sm text-blue-700">
+                You review proposals and vote directly
+              </p>
+            </div>
+
+            <div className="p-3 bg-purple-50 rounded-lg">
+              <div className="flex items-center gap-2 mb-2">
+                <Bot className="h-4 w-4 text-purple-600" />
+                <span className="font-medium text-purple-800">AI-Assisted Voting</span>
+              </div>
+              <p className="text-sm text-purple-700">
+                Your AI agent votes based on your values (you can override)
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h4 className="font-semibold mb-3">Value Alignment Check</h4>
+          <div className="bg-indigo-50 p-4 rounded-lg">
+            <div className="space-y-2 text-sm">
+              <div className="flex items-start gap-2">
+                <CheckCircle className="h-4 w-4 text-green-600 mt-0.5" />
+                <span>AI analyzes proposal against your values</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <AlertCircle className="h-4 w-4 text-yellow-600 mt-0.5" />
+                <span>Flags conflicts with your governance</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <Info className="h-4 w-4 text-blue-600 mt-0.5" />
+                <span>Shows reasoning for recommendation</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-6 p-4 bg-yellow-50 rounded-lg">
+        <h4 className="font-medium text-yellow-800 mb-2">Important: All Votes Count</h4>
+        <p className="text-sm text-yellow-700">
+          Even if you vote against your AI's recommendation, your vote counts fully.
+          The system simply tags it with your reasoning for transparency and learning.
+        </p>
+      </div>
+    </CardContent>
+  </Card>
+
+  {/* Voting Example */}
+  <Card>
+    <CardHeader>
+      <CardTitle>Voting Example</CardTitle>
+      <CardDescription>How value-aligned voting works in practice</CardDescription>
+    </CardHeader>
+    <CardContent>
+      <div className="space-y-4">
+        <div className="p-3 bg-gray-50 rounded-lg">
+          <p className="font-medium mb-2">Proposal: "Reduce minor change threshold to 45%"</p>
+        </div>
+
+        <div className="grid gap-4 md:grid-cols-2">
+          <div className="p-4 bg-blue-50 rounded-lg">
+            <h5 className="font-medium text-blue-800 mb-2">Your AI Analysis:</h5>
+            <p className="text-sm text-blue-700 mb-2">
+              "This conflicts with your 'high-consensus' value.
+              You prefer 60%+ thresholds for stability."
+            </p>
+            <div className="flex items-center gap-2">
+              <Badge variant="outline" className="bg-red-50">Recommends: NO</Badge>
+            </div>
+          </div>
+
+          <div className="p-4 bg-green-50 rounded-lg">
+            <h5 className="font-medium text-green-800 mb-2">Your Decision:</h5>
+            <p className="text-sm text-green-700 mb-2">
+              "I agree with faster evolution despite my usual preference"
+            </p>
+            <div className="flex items-center gap-2">
+              <Badge variant="outline" className="bg-green-100">You Vote: YES</Badge>
+            </div>
+          </div>
+        </div>
+
+        <div className="p-3 bg-purple-50 rounded-lg">
+          <p className="text-sm text-purple-700">
+            <strong>Result:</strong> Your YES vote counts fully.
+            System notes: "Voted against personal AI recommendation - evolution priority"
+          </p>
+        </div>
+      </div>
+    </CardContent>
+  </Card>
+</div>
         {/* Current Focus Areas */}
         <div className="mb-16">
           <h2 className="text-3xl font-semibold mb-8 text-center">Current Focus Areas</h2>
