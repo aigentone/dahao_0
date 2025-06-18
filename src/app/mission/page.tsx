@@ -352,7 +352,7 @@ export default function MissionPage() {
                 <div className="p-4 bg-green-50 rounded-lg">
                   <h4 className="font-semibold text-green-800 mb-2">Remain Human</h4>
                   <p className="text-sm text-muted-foreground">
-                    AI assists but humans decide - always
+                    AI assists but always keep humans latest value
                   </p>
                 </div>
               </div>

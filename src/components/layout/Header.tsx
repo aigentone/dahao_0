@@ -15,6 +15,8 @@ export function Header() {
     { href: '/about', label: 'About' },
     { href: '/how-it-works', label: 'How It Works' },
     { href: '/governance', label: 'Governance' },
+    {href:'/versioned-ethics',label:'Ethics'},
+    {href: '/git-structure', label:'Git'}
   ];
 
   const toggleMobileMenu = () => {
