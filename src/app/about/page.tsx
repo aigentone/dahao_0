@@ -38,9 +38,9 @@ export default function AboutPage() {
                 <p className="text-muted-foreground mb-3">
                   Governance rules, terms, and principles evolve through community consensus with full version control.
                 </p>
-                <div className="bg-blue-50 p-3 rounded-lg text-sm">
+                <div className="bg-blue-50 dark:bg-blue-950/20 p-3 rounded-lg text-sm">
                   <code>harm v1.0 → v1.1 → v1.2</code>
-                  <p className="text-blue-700 mt-1">
+                  <p className="text-blue-700 dark:text-blue-300 mt-1">
                     Just as software evolves through versions, governance can be systematically improved while maintaining stability.
                   </p>
                 </div>
@@ -78,7 +78,7 @@ export default function AboutPage() {
                 <p className="text-muted-foreground mb-3">
                   The system can improve its own improvement process.
                 </p>
-                <div className="bg-green-50 p-3 rounded-lg text-sm text-green-700">
+                <div className="bg-green-50 dark:bg-green-950/20 p-3 rounded-lg text-sm text-green-700 dark:text-green-300">
                   Unlike fixed systems, DAHAO can modify how it makes modifications, learning from experience to evolve more effectively.
                 </div>
               </CardContent>
@@ -94,10 +94,10 @@ export default function AboutPage() {
                   Terms evolve democratically with precise version tracking.
                 </p>
                 <div className="space-y-1 text-sm">
-                  <div className="font-mono bg-orange-50 p-2 rounded">
+                  <div className="font-mono bg-orange-50 dark:bg-orange-950/20 p-2 rounded">
                     transparency: v1.1
                   </div>
-                  <div className="font-mono bg-orange-50 p-2 rounded">
+                  <div className="font-mono bg-orange-50 dark:bg-orange-950/20 p-2 rounded">
                     being: v1.0
                   </div>
                 </div>
@@ -384,7 +384,7 @@ export default function AboutPage() {
 
         {/* Key Insights */}
         <div className="mb-16">
-          <Card className="bg-gradient-to-r from-blue-50 to-purple-50">
+          <Card className="bg-gradient-to-r from-blue-50/50 to-purple-50/50 dark:from-blue-950/20 dark:to-purple-950/20">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Lightbulb className="h-6 w-6 text-yellow-600" />
@@ -444,19 +444,19 @@ export default function AboutPage() {
             <CardContent>
               <ol className="text-left space-y-3">
                 <li className="flex items-start gap-3">
-                  <div className="w-6 h-6 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">1</div>
+                  <div className="w-6 h-6 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">1</div>
                   <span>Explore current governance discussions on GitHub</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <div className="w-6 h-6 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">2</div>
+                  <div className="w-6 h-6 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">2</div>
                   <span>Connect your AI assistant for enhanced analysis (optional)</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <div className="w-6 h-6 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">3</div>
+                  <div className="w-6 h-6 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">3</div>
                   <span>Propose your first improvement or join a discussion</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <div className="w-6 h-6 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">4</div>
+                  <div className="w-6 h-6 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">4</div>
                   <span>Help shape the future of governance</span>
                 </li>
               </ol>
@@ -470,8 +470,8 @@ export default function AboutPage() {
             ]}
           />
 
-          <div className="mt-8 p-4 bg-yellow-50 rounded-lg max-w-md mx-auto">
-            <p className="text-sm text-yellow-800">
+          <div className="mt-8 p-4 bg-yellow-50 dark:bg-yellow-950/20 rounded-lg max-w-md mx-auto">
+            <p className="text-sm text-yellow-800 dark:text-yellow-200">
               <strong>Current Status:</strong> Phase 1 - Foundation Building<br />
               <strong>Requirements:</strong> GitHub account (free)<br />
               <strong>No tokens or payment required</strong> - just ideas!

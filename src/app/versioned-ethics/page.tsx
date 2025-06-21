@@ -28,7 +28,7 @@ export default function VersionedEthicsPage() {
         />
 
         {/* Core Philosophy */}
-        <Card className="mb-16 bg-gradient-to-r from-blue-50 to-purple-50 border-blue-200">
+        <Card className="mb-16 bg-gradient-to-r from-blue-50/50 to-purple-50/50 dark:from-blue-950/20 dark:to-purple-950/20 border-blue-200">
           <CardHeader>
             <CardTitle className="text-2xl">The Core Philosophy: Controlled Acceleration</CardTitle>
           </CardHeader>
@@ -79,7 +79,7 @@ export default function VersionedEthicsPage() {
             <CardContent>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-4">
-                  <div className="p-4 bg-blue-50 rounded-lg border border-blue-200">
+                  <div className="p-4 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200">
                     <div className="flex items-center gap-2 mb-2">
                       <Users className="h-5 w-5 text-blue-600" />
                       <strong>Manual Mode</strong>
@@ -91,7 +91,7 @@ export default function VersionedEthicsPage() {
                     </ul>
                   </div>
 
-                  <div className="p-4 bg-purple-50 rounded-lg border border-purple-200">
+                  <div className="p-4 bg-purple-50 dark:bg-purple-950/20 rounded-lg border border-purple-200">
                     <div className="flex items-center gap-2 mb-2">
                       <Brain className="h-5 w-5 text-purple-600" />
                       <strong>AI-Assisted Mode</strong>
@@ -105,7 +105,7 @@ export default function VersionedEthicsPage() {
                 </div>
 
                 <div className="space-y-4">
-                  <div className="p-4 bg-green-50 rounded-lg border border-green-200">
+                  <div className="p-4 bg-green-50 dark:bg-green-950/20 rounded-lg border border-green-200">
                     <div className="flex items-center gap-2 mb-2">
                       <Bot className="h-5 w-5 text-green-600" />
                       <strong>AI-Governed Mode</strong>
@@ -118,7 +118,7 @@ export default function VersionedEthicsPage() {
                     </ul>
                   </div>
 
-                  <div className="p-4 bg-orange-50 rounded-lg border border-orange-200">
+                  <div className="p-4 bg-orange-50 dark:bg-orange-950/20 rounded-lg border border-orange-200">
                     <div className="flex items-center gap-2 mb-2">
                       <Zap className="h-5 w-5 text-orange-600" />
                       <strong>Full Autonomous Mode</strong>
@@ -146,27 +146,27 @@ export default function VersionedEthicsPage() {
               <div className="flex flex-col gap-4">
                 {/* Layer 1: Terms */}
                 <div className="relative">
-                  <div className="bg-blue-100 rounded-lg p-6 border-2 border-blue-300">
+                  <div className="bg-blue-100 dark:bg-blue-900/30 rounded-lg p-6 border-2 border-blue-300">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
-                        <BookOpen className="h-8 w-8 text-blue-700" />
+                        <BookOpen className="h-8 w-8 text-blue-700 dark:text-blue-300" />
                         <div>
-                          <h3 className="text-xl font-bold text-blue-900">Layer 1: Terms - Living Definitions</h3>
-                          <p className="text-blue-700">The DNA of governance with precise versions</p>
+                          <h3 className="text-xl font-bold text-blue-900 dark:text-blue-100">Layer 1: Terms - Living Definitions</h3>
+                          <p className="text-blue-700 dark:text-blue-300">The DNA of governance with precise versions</p>
                         </div>
                       </div>
-                      <Badge className="bg-blue-200 text-blue-900">Foundation</Badge>
+                      <Badge className="bg-blue-200 text-blue-900 dark:text-blue-100">Foundation</Badge>
                     </div>
                     <div className="mt-4 grid grid-cols-2 gap-4">
                       <div>
-                        <p className="text-sm font-semibold text-blue-900 mb-2">Example Terms:</p>
+                        <p className="text-sm font-semibold text-blue-900 dark:text-blue-100 mb-2">Example Terms:</p>
                         <div className="space-y-1">
-                          <code className="bg-white p-2 rounded text-sm block">harm@v1.2</code>
-                          <code className="bg-white p-2 rounded text-sm block">efficiency@v2.1</code>
+                          <code className="bg-background p-2 rounded text-sm block">harm@v1.2</code>
+                          <code className="bg-background p-2 rounded text-sm block">efficiency@v2.1</code>
                         </div>
                       </div>
                       <div>
-                        <p className="text-sm font-semibold text-blue-900 mb-2">AI Participation Options:</p>
+                        <p className="text-sm font-semibold text-blue-900 dark:text-blue-100 mb-2">AI Participation Options:</p>
                         <ul className="text-sm space-y-1">
                           <li>• Suggest new terms from patterns</li>
                           <li>• Propose modifications</li>
@@ -181,26 +181,26 @@ export default function VersionedEthicsPage() {
 
                 {/* Layer 2: Principles */}
                 <div className="relative">
-                  <div className="bg-green-100 rounded-lg p-6 border-2 border-green-300">
+                  <div className="bg-green-100 dark:bg-green-900/30 rounded-lg p-6 border-2 border-green-300">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
-                        <Building className="h-8 w-8 text-green-700" />
+                        <Building className="h-8 w-8 text-green-700 dark:text-green-300" />
                         <div>
-                          <h3 className="text-xl font-bold text-green-900">Layer 2: Principles - Encoded Values</h3>
-                          <p className="text-green-700">Value statements built from versioned terms</p>
+                          <h3 className="text-xl font-bold text-green-900 dark:text-green-100">Layer 2: Principles - Encoded Values</h3>
+                          <p className="text-green-700 dark:text-green-300">Value statements built from versioned terms</p>
                         </div>
                       </div>
-                      <Badge className="bg-green-200 text-green-900">Values</Badge>
+                      <Badge className="bg-green-200 text-green-900 dark:text-green-100">Values</Badge>
                     </div>
                     <div className="mt-4 grid grid-cols-2 gap-4">
                       <div>
-                        <p className="text-sm font-semibold text-green-900 mb-2">Example:</p>
-                        <code className="bg-white p-3 rounded text-sm block">
+                        <p className="text-sm font-semibold text-green-900 dark:text-green-100 mb-2">Example:</p>
+                        <code className="bg-background p-3 rounded text-sm block">
                           "Maximize benefit@v1.3 while minimizing harm@v1.2"
                         </code>
                       </div>
                       <div>
-                        <p className="text-sm font-semibold text-green-900 mb-2">AI Capabilities (When Authorized):</p>
+                        <p className="text-sm font-semibold text-green-900 dark:text-green-100 mb-2">AI Capabilities (When Authorized):</p>
                         <ul className="text-sm space-y-1">
                           <li>• Generate principles from patterns</li>
                           <li>• Optimize combinations</li>
@@ -215,26 +215,26 @@ export default function VersionedEthicsPage() {
 
                 {/* Layer 3: Rules */}
                 <div className="relative">
-                  <div className="bg-purple-100 rounded-lg p-6 border-2 border-purple-300">
+                  <div className="bg-purple-100 dark:bg-purple-900/30 rounded-lg p-6 border-2 border-purple-300">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
-                        <Scale className="h-8 w-8 text-purple-700" />
+                        <Scale className="h-8 w-8 text-purple-700 dark:text-purple-300" />
                         <div>
-                          <h3 className="text-xl font-bold text-purple-900">Layer 3: Rules - Operational Intelligence</h3>
-                          <p className="text-purple-700">Concrete actions implementing principles</p>
+                          <h3 className="text-xl font-bold text-purple-900 dark:text-purple-100">Layer 3: Rules - Operational Intelligence</h3>
+                          <p className="text-purple-700 dark:text-purple-300">Concrete actions implementing principles</p>
                         </div>
                       </div>
-                      <Badge className="bg-purple-200 text-purple-900">Operations</Badge>
+                      <Badge className="bg-purple-200 text-purple-900 dark:text-purple-100">Operations</Badge>
                     </div>
                     <div className="mt-4 grid grid-cols-2 gap-4">
                       <div>
-                        <p className="text-sm font-semibold text-purple-900 mb-2">Example:</p>
-                        <code className="bg-white p-3 rounded text-sm block">
+                        <p className="text-sm font-semibold text-purple-900 dark:text-purple-100 mb-2">Example:</p>
+                        <code className="bg-background p-3 rounded text-sm block">
                           "When harm@v1.2 risk &gt;15%, require human review"
                         </code>
                       </div>
                       <div>
-                        <p className="text-sm font-semibold text-purple-900 mb-2">AI Rule Creation (Your Choice):</p>
+                        <p className="text-sm font-semibold text-purple-900 dark:text-purple-100 mb-2">AI Rule Creation (Your Choice):</p>
                         <ul className="text-sm space-y-1">
                           <li>• Draft rules automatically</li>
                           <li>• Modify based on performance</li>
@@ -263,7 +263,7 @@ export default function VersionedEthicsPage() {
                     <div className="mt-4 grid grid-cols-2 gap-4">
                       <div>
                         <p className="text-sm font-semibold text-orange-900 mb-2">Example:</p>
-                        <code className="bg-white p-3 rounded text-sm block">
+                        <code className="bg-background p-3 rounded text-sm block">
                           "AI can modify terms with &lt;20% impact without approval"
                         </code>
                       </div>
@@ -298,19 +298,19 @@ export default function VersionedEthicsPage() {
               </CardHeader>
               <CardContent>
                 <div className="space-y-3">
-                  <div className="flex items-center justify-between p-2 rounded hover:bg-gray-50">
+                  <div className="flex items-center justify-between p-2 rounded hover:bg-muted/30">
                     <span className="text-sm">Never</span>
                     <Lock className="h-4 w-4 text-gray-400" />
                   </div>
-                  <div className="flex items-center justify-between p-2 rounded hover:bg-gray-50">
+                  <div className="flex items-center justify-between p-2 rounded hover:bg-muted/30">
                     <span className="text-sm">Suggest Only</span>
                     <Lightbulb className="h-4 w-4 text-yellow-600" />
                   </div>
-                  <div className="flex items-center justify-between p-2 rounded hover:bg-gray-50">
+                  <div className="flex items-center justify-between p-2 rounded hover:bg-muted/30">
                     <span className="text-sm">Domain-Limited</span>
                     <Shield className="h-4 w-4 text-blue-600" />
                   </div>
-                  <div className="flex items-center justify-between p-2 rounded hover:bg-gray-50">
+                  <div className="flex items-center justify-between p-2 rounded hover:bg-muted/30">
                     <span className="text-sm">Full Authority</span>
                     <Unlock className="h-4 w-4 text-green-600" />
                   </div>
@@ -331,19 +331,19 @@ export default function VersionedEthicsPage() {
               </CardHeader>
               <CardContent>
                 <div className="space-y-3">
-                  <div className="flex items-center justify-between p-2 rounded hover:bg-gray-50">
+                  <div className="flex items-center justify-between p-2 rounded hover:bg-muted/30">
                     <span className="text-sm">Read-Only</span>
                     <Lock className="h-4 w-4 text-gray-400" />
                   </div>
-                  <div className="flex items-center justify-between p-2 rounded hover:bg-gray-50">
+                  <div className="flex items-center justify-between p-2 rounded hover:bg-muted/30">
                     <span className="text-sm">Minor Updates</span>
                     <RefreshCw className="h-4 w-4 text-yellow-600" />
                   </div>
-                  <div className="flex items-center justify-between p-2 rounded hover:bg-gray-50">
+                  <div className="flex items-center justify-between p-2 rounded hover:bg-muted/30">
                     <span className="text-sm">Evolution Rights</span>
                     <TrendingUp className="h-4 w-4 text-blue-600" />
                   </div>
-                  <div className="flex items-center justify-between p-2 rounded hover:bg-gray-50">
+                  <div className="flex items-center justify-between p-2 rounded hover:bg-muted/30">
                     <span className="text-sm">Full Modification</span>
                     <Unlock className="h-4 w-4 text-green-600" />
                   </div>
@@ -364,19 +364,19 @@ export default function VersionedEthicsPage() {
               </CardHeader>
               <CardContent>
                 <div className="space-y-3">
-                  <div className="flex items-center justify-between p-2 rounded hover:bg-gray-50">
+                  <div className="flex items-center justify-between p-2 rounded hover:bg-muted/30">
                     <span className="text-sm">No Delegation</span>
                     <Users className="h-4 w-4 text-gray-400" />
                   </div>
-                  <div className="flex items-center justify-between p-2 rounded hover:bg-gray-50">
+                  <div className="flex items-center justify-between p-2 rounded hover:bg-muted/30">
                     <span className="text-sm">Aligned Only</span>
                     <CheckCircle className="h-4 w-4 text-yellow-600" />
                   </div>
-                  <div className="flex items-center justify-between p-2 rounded hover:bg-gray-50">
+                  <div className="flex items-center justify-between p-2 rounded hover:bg-muted/30">
                     <span className="text-sm">Default Yes/No</span>
                     <PlayCircle className="h-4 w-4 text-blue-600" />
                   </div>
-                  <div className="flex items-center justify-between p-2 rounded hover:bg-gray-50">
+                  <div className="flex items-center justify-between p-2 rounded hover:bg-muted/30">
                     <span className="text-sm">Full Autonomy</span>
                     <Bot className="h-4 w-4 text-green-600" />
                   </div>
@@ -397,19 +397,19 @@ export default function VersionedEthicsPage() {
               </CardHeader>
               <CardContent>
                 <div className="space-y-3">
-                  <div className="flex items-center justify-between p-2 rounded hover:bg-gray-50">
+                  <div className="flex items-center justify-between p-2 rounded hover:bg-muted/30">
                     <span className="text-sm">Disabled</span>
                     <PauseCircle className="h-4 w-4 text-gray-400" />
                   </div>
-                  <div className="flex items-center justify-between p-2 rounded hover:bg-gray-50">
+                  <div className="flex items-center justify-between p-2 rounded hover:bg-muted/30">
                     <span className="text-sm">Notification Only</span>
                     <AlertTriangle className="h-4 w-4 text-yellow-600" />
                   </div>
-                  <div className="flex items-center justify-between p-2 rounded hover:bg-gray-50">
+                  <div className="flex items-center justify-between p-2 rounded hover:bg-muted/30">
                     <span className="text-sm">Time-Boxed</span>
                     <Timer className="h-4 w-4 text-blue-600" />
                   </div>
-                  <div className="flex items-center justify-between p-2 rounded hover:bg-gray-50">
+                  <div className="flex items-center justify-between p-2 rounded hover:bg-muted/30">
                     <span className="text-sm">Full Emergency</span>
                     <Zap className="h-4 w-4 text-red-600" />
                   </div>
@@ -528,7 +528,7 @@ export default function VersionedEthicsPage() {
           <h2 className="text-3xl font-semibold mb-8 text-center">Why This Works: Speed AND Safety</h2>
 
           <div className="grid md:grid-cols-3 gap-6">
-            <Card className="bg-gradient-to-br from-blue-50 to-blue-100 border-blue-300">
+            <Card className="bg-gradient-to-br from-blue-50/50 to-blue-100/50 dark:from-blue-950/20 dark:to-blue-900/30 border-blue-300">
               <CardHeader>
                 <History className="h-8 w-8 text-blue-600 mb-2" />
                 <CardTitle>Version Control = Safe Experimentation</CardTitle>
@@ -546,7 +546,7 @@ export default function VersionedEthicsPage() {
               </CardContent>
             </Card>
 
-            <Card className="bg-gradient-to-br from-purple-50 to-purple-100 border-purple-300">
+            <Card className="bg-gradient-to-br from-purple-50/50 to-purple-100/50 dark:from-purple-950/20 dark:to-purple-900/30 border-purple-300">
               <CardHeader>
                 <GitBranch className="h-8 w-8 text-purple-600 mb-2" />
                 <CardTitle>Branching = Isolated Innovation</CardTitle>
@@ -564,7 +564,7 @@ export default function VersionedEthicsPage() {
               </CardContent>
             </Card>
 
-            <Card className="bg-gradient-to-br from-green-50 to-green-100 border-green-300">
+            <Card className="bg-gradient-to-br from-green-50/50 to-green-100/50 dark:from-green-950/20 dark:to-green-900/30 border-green-300">
               <CardHeader>
                 <Shield className="h-8 w-8 text-green-600 mb-2" />
                 <CardTitle>Transparency = Trust</CardTitle>
@@ -593,7 +593,7 @@ export default function VersionedEthicsPage() {
             <div className="grid md:grid-cols-2 gap-8">
               <div>
                 <h4 className="font-semibold mb-3 text-red-600">Traditional Governance</h4>
-                <div className="bg-red-50 p-4 rounded-lg mb-3">
+                <div className="bg-red-50 dark:bg-red-950/20 p-4 rounded-lg mb-3">
                   <p className="text-sm">Proposal → Week of discussion → Vote → Implementation</p>
                   <p className="text-sm font-semibold mt-2">Total time: 2-4 weeks per change</p>
                   <p className="text-sm text-muted-foreground">Bottleneck: Human availability</p>
@@ -602,7 +602,7 @@ export default function VersionedEthicsPage() {
 
               <div>
                 <h4 className="font-semibold mb-3 text-green-600">DAHAO with AI Governance</h4>
-                <div className="bg-green-50 p-4 rounded-lg mb-3">
+                <div className="bg-green-50 dark:bg-green-950/20 p-4 rounded-lg mb-3">
                   <p className="text-sm">Pattern detected → AI proposes → Auto-implemented → Human review</p>
                   <p className="text-sm font-semibold mt-2">Total time: Minutes to hours</p>
                   <p className="text-sm text-muted-foreground">Bottleneck: Only your configured constraints</p>
@@ -610,7 +610,7 @@ export default function VersionedEthicsPage() {
               </div>
             </div>
 
-            <div className="mt-6 p-4 bg-blue-50 rounded-lg">
+            <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-950/20 rounded-lg">
               <h4 className="font-semibold mb-2">The Result:</h4>
               <ul className="text-sm space-y-1">
                 <li>• Governance evolves at the pace of change</li>
@@ -701,7 +701,7 @@ export default function VersionedEthicsPage() {
         </div>
 
         {/* Your Safety Net */}
-        <Card className="mb-16 bg-gradient-to-r from-green-50 to-blue-50 border-green-200">
+        <Card className="mb-16 bg-gradient-to-r from-green-50/50 to-blue-50/50 dark:from-green-950/20 dark:to-blue-950/20 border-green-200">
           <CardHeader>
             <CardTitle className="text-2xl flex items-center gap-2">
               <ShieldCheck className="h-6 w-6 text-green-600" />
@@ -833,21 +833,21 @@ export default function VersionedEthicsPage() {
               </p>
 
               <div className="grid md:grid-cols-3 gap-4 mb-6">
-                <div className="text-center p-4 bg-white rounded-lg">
+                <div className="text-center p-4 bg-background rounded-lg">
                   <Users className="h-8 w-8 text-blue-600 mx-auto mb-2" />
                   <p className="text-sm">Some will maintain full human control</p>
                 </div>
-                <div className="text-center p-4 bg-white rounded-lg">
+                <div className="text-center p-4 bg-background rounded-lg">
                   <Bot className="h-8 w-8 text-purple-600 mx-auto mb-2" />
                   <p className="text-sm">Others will delegate extensively to AI</p>
                 </div>
-                <div className="text-center p-4 bg-white rounded-lg">
+                <div className="text-center p-4 bg-background rounded-lg">
                   <Brain className="h-8 w-8 text-green-600 mx-auto mb-2" />
                   <p className="text-sm">Most will find their perfect balance</p>
                 </div>
               </div>
 
-              <div className="bg-white p-4 rounded-lg">
+              <div className="bg-background p-4 rounded-lg">
                 <p className="text-sm">
                   The versioned ethics architecture ensures that no matter how much authority you grant to AI,
                   you maintain:
@@ -877,7 +877,7 @@ export default function VersionedEthicsPage() {
             <CardContent>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                  <div className="w-8 h-8 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
                     <span className="text-sm font-semibold text-blue-600">1</span>
                   </div>
                   <div className="flex-1">
@@ -887,7 +887,7 @@ export default function VersionedEthicsPage() {
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                  <div className="w-8 h-8 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
                     <span className="text-sm font-semibold text-blue-600">2</span>
                   </div>
                   <div className="flex-1">
@@ -897,7 +897,7 @@ export default function VersionedEthicsPage() {
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                  <div className="w-8 h-8 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
                     <span className="text-sm font-semibold text-blue-600">3</span>
                   </div>
                   <div className="flex-1">
@@ -907,7 +907,7 @@ export default function VersionedEthicsPage() {
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                  <div className="w-8 h-8 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
                     <span className="text-sm font-semibold text-blue-600">4</span>
                   </div>
                   <div className="flex-1">
@@ -917,7 +917,7 @@ export default function VersionedEthicsPage() {
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                  <div className="w-8 h-8 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
                     <span className="text-sm font-semibold text-blue-600">5</span>
                   </div>
                   <div className="flex-1">
@@ -932,7 +932,7 @@ export default function VersionedEthicsPage() {
 
         {/* The Bottom Line */}
         <div className="mb-16">
-          <Card className="bg-gradient-to-r from-green-50 to-blue-50">
+          <Card className="bg-gradient-to-r from-green-50/50 to-blue-50/50 dark:from-green-950/20 dark:to-blue-950/20">
             <CardHeader>
               <CardTitle className="text-2xl text-center">The Bottom Line</CardTitle>
             </CardHeader>
@@ -943,7 +943,7 @@ export default function VersionedEthicsPage() {
                 technological change.
               </p>
 
-              <div className="bg-white p-6 rounded-lg text-center">
+              <div className="bg-background p-6 rounded-lg text-center">
                 <p className="text-xl font-semibold mb-2">
                   Your values. Your definitions. Your governance.
                 </p>

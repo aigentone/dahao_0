@@ -757,7 +757,7 @@ function TermCard({ term }: { term: any }) {
           <Badge className={
             term.status === 'ratified' ? 'bg-green-100 text-green-800' :
             term.status === 'proposed' ? 'bg-yellow-100 text-yellow-800' :
-            'bg-gray-100 text-gray-800'
+            'bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200'
           }>
             {term.status}
           </Badge>
@@ -1169,7 +1169,7 @@ export default function GovernancePage() {
             <Badge variant="secondary">Constitutional Level</Badge>
           </div>
 
-          <Card className="bg-orange-50 border-orange-200 mb-4">
+          <Card className="bg-orange-50 dark:bg-orange-950/20 border-orange-200 dark:border-orange-800 mb-4">
             <CardContent className="pt-6">
               <p className="text-sm text-orange-800">
                 <strong>⚠️ Important:</strong> Meta-rules govern how governance itself can be changed.
@@ -1229,7 +1229,7 @@ export default function GovernancePage() {
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
-              <div className="p-3 bg-purple-50 rounded-lg">
+              <div className="p-3 bg-purple-50 dark:bg-purple-950/20 rounded-lg">
                 <h4 className="font-medium mb-2">Modified Terms (2)</h4>
                 <div className="space-y-2 text-sm">
                   <div className="flex items-center justify-between">
@@ -1243,7 +1243,7 @@ export default function GovernancePage() {
                 </div>
               </div>
 
-              <div className="p-3 bg-blue-50 rounded-lg">
+              <div className="p-3 bg-blue-50 dark:bg-blue-950/20 rounded-lg">
                 <h4 className="font-medium mb-2">Additional Principles (1)</h4>
                 <div className="text-sm">
                   <div className="flex items-center justify-between">

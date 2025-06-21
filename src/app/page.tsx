@@ -13,7 +13,7 @@ export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="py-20 px-4 text-center bg-gradient-to-b from-blue-50 to-white">
+      <section className="py-20 px-4 text-center bg-gradient-to-b from-muted/30 to-background">
         <div className="container mx-auto max-w-4xl">
           <HeroSection
             badge="Open Source • Community Driven • AI Enhanced"
@@ -29,9 +29,9 @@ export default function HomePage() {
               ]}
             />
 
-            <Card className="max-w-2xl mx-auto bg-yellow-50 border-yellow-200">
+            <Card className="max-w-2xl mx-auto bg-yellow-50 dark:bg-yellow-950/20 border-yellow-200 dark:border-yellow-800">
               <CardContent className="pt-6">
-                <p className="text-sm text-yellow-800">
+                <p className="text-sm text-yellow-800 dark:text-yellow-200">
                   <strong>Phase 1 (Current):</strong> Building governance foundations.
                   No tokens or investment required - just ideas and participation!
                 </p>
@@ -42,7 +42,7 @@ export default function HomePage() {
       </section>
 
       {/* Core Innovation */}
-      <section className="py-16 px-4 bg-white">
+      <section className="py-16 px-4 bg-background">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl font-bold text-center mb-12">
             The Core Innovation
@@ -77,7 +77,7 @@ export default function HomePage() {
       </section>
 
       {/* How It Works */}
-      <section className="py-16 px-4 bg-gray-50">
+      <section className="py-16 px-4 bg-muted/30">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl font-bold text-center mb-12">
             How DAHAO Works
@@ -154,7 +154,7 @@ export default function HomePage() {
       </section>
 
       {/* AI Agent System */}
-      <section className="py-16 px-4 bg-white">
+      <section className="py-16 px-4 bg-background">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl font-bold text-center mb-12">
             AI Agent System
@@ -228,9 +228,9 @@ export default function HomePage() {
             </Card>
           </div>
 
-          <Card className="mt-6 bg-purple-50 border-purple-200">
+          <Card className="mt-6 bg-purple-50 dark:bg-purple-950/20 border-purple-200 dark:border-purple-800">
             <CardContent className="pt-6">
-              <p className="text-center text-purple-800">
+              <p className="text-center text-purple-800 dark:text-purple-200">
                 <strong>Try it now:</strong> Connect your OpenAI or Claude API key
                 to enable AI-powered governance analysis. Your agents help you
                 understand and participate in governance decisions.
@@ -241,7 +241,7 @@ export default function HomePage() {
       </section>
 
       {/* Personal Branches */}
-      <section className="py-16 px-4 bg-gray-50">
+      <section className="py-16 px-4 bg-muted/30">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl font-bold text-center mb-12">
             Personal Governance Branches
@@ -283,8 +283,8 @@ export default function HomePage() {
                     </div>
                   </div>
 
-                  <div className="bg-blue-50 p-4 rounded-lg">
-                    <p className="text-sm text-blue-800">
+                  <div className="bg-blue-50 dark:bg-blue-950/20 p-4 rounded-lg">
+                    <p className="text-sm text-blue-800 dark:text-blue-200">
                       <strong>Example:</strong> Add "radical transparency" to your
                       transparency definition, test it in your branch, then propose
                       it to core if it works well.
@@ -298,7 +298,7 @@ export default function HomePage() {
       </section>
 
       {/* Current Focus */}
-      <section className="py-16 px-4 bg-white">
+      <section className="py-16 px-4 bg-background">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl font-bold text-center mb-12">
             Current Focus: Building Foundation
@@ -314,7 +314,7 @@ export default function HomePage() {
             ]}
           />
 
-          <Card className="bg-gradient-to-r from-blue-50 to-purple-50">
+          <Card className="bg-gradient-to-r from-blue-50/50 to-purple-50/50 dark:from-blue-950/20 dark:to-purple-950/20">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Lightbulb className="h-5 w-5 text-yellow-600" />
@@ -348,7 +348,7 @@ export default function HomePage() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 px-4 bg-gradient-to-t from-blue-50 to-white">
+      <section className="py-20 px-4 bg-gradient-to-t from-muted/30 to-background">
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-3xl font-bold mb-6">
             Ready to Shape the Future of Governance?

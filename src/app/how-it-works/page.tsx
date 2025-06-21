@@ -34,8 +34,8 @@ export default function HowItWorksPage() {
               <CardDescription>DAHAO isn't one thing - it's a new way of creating systems</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="text-center mb-6 p-4 bg-indigo-50 rounded-lg">
-                <p className="text-indigo-800 font-medium">
+              <div className="text-center mb-6 p-4 bg-indigo-50 dark:bg-indigo-950/20 rounded-lg">
+                <p className="text-indigo-800 dark:text-indigo-200 font-medium">
                   You can engage with DAHAO in any of these ways, and each way strengthens the others
                 </p>
               </div>
@@ -168,7 +168,7 @@ export default function HowItWorksPage() {
                   </ul>
                 </div>
                 <div>
-                  <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-4 rounded-lg">
+                  <div className="bg-gradient-to-r from-blue-50/50 to-purple-50/50 dark:from-blue-950/20 dark:to-purple-950/20 p-4 rounded-lg">
                     <h4 className="font-semibold mb-3 text-blue-800">Key Innovation</h4>
                     <p className="text-sm text-blue-700">
                       The system can modify its own governance through democratic processes. Even the rules about making rules can evolve.
@@ -206,21 +206,21 @@ export default function HowItWorksPage() {
               
               <div className="mt-8 grid gap-4 md:grid-cols-2">
                 <div className="space-y-4">
-                  <div className="bg-blue-50 p-4 rounded-lg">
+                  <div className="bg-blue-50 dark:bg-blue-950/20 p-4 rounded-lg">
                     <p className="font-medium text-blue-800 mb-2">📚 Terms Example:</p>
                     <p className="text-blue-700 text-sm">"harm" v1.2: "Actions causing physical damage, psychological distress, opportunity limitation, or dignity violation"</p>
                   </div>
-                  <div className="bg-green-50 p-4 rounded-lg">
+                  <div className="bg-green-50 dark:bg-green-950/20 p-4 rounded-lg">
                     <p className="font-medium text-green-800 mb-2">🏛️ Principles Example:</p>
                     <p className="text-green-700 text-sm">"Minimize harm@v1.2 to all beings@v1.0" - References specific term versions</p>
                   </div>
                 </div>
                 <div className="space-y-4">
-                  <div className="bg-purple-50 p-4 rounded-lg">
+                  <div className="bg-purple-50 dark:bg-purple-950/20 p-4 rounded-lg">
                     <p className="font-medium text-purple-800 mb-2">⚖️ Rules Example:</p>
                     <p className="text-purple-700 text-sm">"To minimize harm: Report any suspected harm@v1.2 within 24 hours via GitHub Issue"</p>
                   </div>
-                  <div className="bg-orange-50 p-4 rounded-lg">
+                  <div className="bg-orange-50 dark:bg-orange-950/20 p-4 rounded-lg">
                     <p className="font-medium text-orange-800 mb-2">🔄 Meta-Rules Example:</p>
                     <p className="text-orange-700 text-sm">"To change 'harm' definition: Test in branch → 67% vote → Update all dependent principles/rules"</p>
                   </div>
@@ -238,31 +238,31 @@ export default function HowItWorksPage() {
             <CardContent>
               <div className="grid gap-4 md:grid-cols-3">
                 <div className="space-y-3">
-                  <div className="p-3 bg-emerald-50 rounded-lg border border-emerald-200">
+                  <div className="p-3 bg-emerald-50 dark:bg-emerald-950/20 rounded-lg border border-emerald-200">
                     <p className="font-semibold text-emerald-800">Time Period 1:</p>
                     <p className="text-sm text-emerald-700">Rule says "All decisions need 60% approval"</p>
                   </div>
-                  <div className="p-3 bg-yellow-50 rounded-lg border border-yellow-200">
+                  <div className="p-3 bg-yellow-50 dark:bg-yellow-950/20 rounded-lg border border-yellow-200">
                     <p className="font-semibold text-yellow-800">Time Period 3:</p>
                     <p className="text-sm text-yellow-700">Community finds 60% too high for minor fixes</p>
                   </div>
                 </div>
                 <div className="space-y-3">
-                  <div className="p-3 bg-blue-50 rounded-lg border border-blue-200">
+                  <div className="p-3 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200">
                     <p className="font-semibold text-blue-800">Time Period 4:</p>
                     <p className="text-sm text-blue-700">Proposal: "Create decision tiers with different thresholds"</p>
                   </div>
-                  <div className="p-3 bg-purple-50 rounded-lg border border-purple-200">
+                  <div className="p-3 bg-purple-50 dark:bg-purple-950/20 rounded-lg border border-purple-200">
                     <p className="font-semibold text-purple-800">Time Period 5:</p>
                     <p className="text-sm text-purple-700">AI analysis shows other systems use 50-75% range effectively</p>
                   </div>
                 </div>
                 <div className="space-y-3">
-                  <div className="p-3 bg-green-50 rounded-lg border border-green-200">
+                  <div className="p-3 bg-green-50 dark:bg-green-950/20 rounded-lg border border-green-200">
                     <p className="font-semibold text-green-800">Time Period 6:</p>
                     <p className="text-sm text-green-700">Vote passes → New tiered system implemented</p>
                   </div>
-                  <div className="p-3 bg-gradient-to-r from-green-100 to-blue-100 rounded-lg border border-green-300">
+                  <div className="p-3 bg-gradient-to-r from-green-100/50 to-blue-100/50 dark:from-green-900/30 dark:to-blue-900/30 rounded-lg border border-green-300">
                     <p className="font-semibold text-green-800">Result:</p>
                     <p className="text-sm text-green-700">The system just improved its own decision-making!</p>
                   </div>
@@ -290,16 +290,16 @@ export default function HowItWorksPage() {
                       <p className="text-sm text-indigo-700">Base terms, principles, and rules</p>
                     </div>
                     <div className="ml-4 space-y-2">
-                      <div className="p-2 bg-blue-50 rounded border-l-4 border-l-blue-400">
+                      <div className="p-2 bg-blue-50 dark:bg-blue-950/20 rounded border-l-4 border-l-blue-400">
                         <p className="text-sm"><strong>Animal Welfare</strong> - Extends with five freedoms</p>
                       </div>
-                      <div className="p-2 bg-green-50 rounded border-l-4 border-l-green-400">
+                      <div className="p-2 bg-green-50 dark:bg-green-950/20 rounded border-l-4 border-l-green-400">
                         <p className="text-sm"><strong>Environment</strong> - Extends with sustainability metrics</p>
                       </div>
-                      <div className="p-2 bg-purple-50 rounded border-l-4 border-l-purple-400">
+                      <div className="p-2 bg-purple-50 dark:bg-purple-950/20 rounded border-l-4 border-l-purple-400">
                         <p className="text-sm"><strong>Music Industry</strong> - Extends with fair distribution</p>
                       </div>
-                      <div className="p-2 bg-orange-50 rounded border-l-4 border-l-orange-400">
+                      <div className="p-2 bg-orange-50 dark:bg-orange-950/20 rounded border-l-4 border-l-orange-400">
                         <p className="text-sm"><strong>[Your Domain]</strong> - Extends with your focus</p>
                       </div>
                     </div>
@@ -354,22 +354,22 @@ export default function HowItWorksPage() {
             </CardHeader>
             <CardContent>
               <div className="grid gap-4 md:grid-cols-4">
-                <div className="text-center p-4 bg-teal-50 rounded-lg">
+                <div className="text-center p-4 bg-teal-50 dark:bg-teal-950/20 rounded-lg">
                   <CheckCircle className="h-8 w-8 mx-auto mb-2 text-teal-500" />
                   <h4 className="font-semibold text-teal-800">Every Decision</h4>
                   <p className="text-sm text-teal-700">Documented</p>
                 </div>
-                <div className="text-center p-4 bg-blue-50 rounded-lg">
+                <div className="text-center p-4 bg-blue-50 dark:bg-blue-950/20 rounded-lg">
                   <ArrowRight className="h-8 w-8 mx-auto mb-2 text-blue-500" />
                   <h4 className="font-semibold text-blue-800">Every Failure</h4>
                   <p className="text-sm text-blue-700">Analyzed</p>
                 </div>
-                <div className="text-center p-4 bg-purple-50 rounded-lg">
+                <div className="text-center p-4 bg-purple-50 dark:bg-purple-950/20 rounded-lg">
                   <ArrowRight className="h-8 w-8 mx-auto mb-2 text-purple-500" />
                   <h4 className="font-semibold text-purple-800">Every Success</h4>
                   <p className="text-sm text-purple-700">Replicated</p>
                 </div>
-                <div className="text-center p-4 bg-green-50 rounded-lg">
+                <div className="text-center p-4 bg-green-50 dark:bg-green-950/20 rounded-lg">
                   <Users className="h-8 w-8 mx-auto mb-2 text-green-500" />
                   <h4 className="font-semibold text-green-800">Every Pattern</h4>
                   <p className="text-sm text-green-700">Shared</p>
@@ -399,7 +399,7 @@ export default function HowItWorksPage() {
                   Core DAHAO Governance
                 </h4>
                 <div className="space-y-3">
-                  <div className="p-3 bg-blue-50 rounded-lg border border-blue-200">
+                  <div className="p-3 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200">
                     <p className="font-medium text-blue-800 mb-2">Baseline Foundation</p>
                     <ul className="text-sm text-blue-700 space-y-1">
                       <li>• Minimum viable governance</li>
@@ -423,7 +423,7 @@ export default function HowItWorksPage() {
                   Your Personal Extensions
                 </h4>
                 <div className="space-y-3">
-                  <div className="p-3 bg-purple-50 rounded-lg border border-purple-200">
+                  <div className="p-3 bg-purple-50 dark:bg-purple-950/20 rounded-lg border border-purple-200">
                     <p className="font-medium text-purple-800 mb-2">Your Value System</p>
                     <ul className="text-sm text-purple-700 space-y-1">
                       <li>• Extends core definitions</li>
@@ -443,7 +443,7 @@ export default function HowItWorksPage() {
               </div>
             </div>
 
-            <div className="mt-6 p-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg">
+            <div className="mt-6 p-4 bg-gradient-to-r from-blue-50/50 to-purple-50/50 dark:from-blue-950/20 dark:to-purple-950/20 rounded-lg">
               <p className="text-center font-medium text-indigo-800">
                 Core provides stability • Personal enables innovation • Best ideas flow back to core
               </p>
@@ -469,30 +469,30 @@ export default function HowItWorksPage() {
                 <div className="absolute left-8 top-8 bottom-8 w-0.5 bg-gray-300"></div>
                 <div className="space-y-4">
                   <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center">
+                    <div className="flex-shrink-0 w-16 h-16 bg-blue-100 dark:bg-blue-900/50 rounded-full flex items-center justify-center">
                       <span className="text-sm font-semibold text-blue-700">v1.0</span>
                     </div>
-                    <div className="flex-1 p-3 bg-blue-50 rounded-lg">
+                    <div className="flex-1 p-3 bg-blue-50 dark:bg-blue-950/20 rounded-lg">
                       <p className="font-medium text-blue-800">Initial Definition</p>
                       <p className="text-sm text-blue-700">"Physical damage to beings"</p>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
+                    <div className="flex-shrink-0 w-16 h-16 bg-green-100 dark:bg-green-900/50 rounded-full flex items-center justify-center">
                       <span className="text-sm font-semibold text-green-700">v1.1</span>
                     </div>
-                    <div className="flex-1 p-3 bg-green-50 rounded-lg">
+                    <div className="flex-1 p-3 bg-green-50 dark:bg-green-950/20 rounded-lg">
                       <p className="font-medium text-green-800">Community Expansion</p>
                       <p className="text-sm text-green-700">+ "Psychological distress"</p>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center">
+                    <div className="flex-shrink-0 w-16 h-16 bg-purple-100 dark:bg-purple-900/50 rounded-full flex items-center justify-center">
                       <span className="text-sm font-semibold text-purple-700">v1.2</span>
                     </div>
-                    <div className="flex-1 p-3 bg-purple-50 rounded-lg">
+                    <div className="flex-1 p-3 bg-purple-50 dark:bg-purple-950/20 rounded-lg">
                       <p className="font-medium text-purple-800">Current Version</p>
                       <p className="text-sm text-purple-700">+ "Opportunity limitation" + "Dignity violation"</p>
                     </div>
@@ -502,17 +502,17 @@ export default function HowItWorksPage() {
             </div>
 
             <div className="grid gap-4 md:grid-cols-3">
-              <div className="text-center p-3 bg-orange-50 rounded-lg">
+              <div className="text-center p-3 bg-orange-50 dark:bg-orange-950/20 rounded-lg">
                 <ArrowRight className="h-6 w-6 mx-auto mb-2 text-orange-500" />
                 <p className="text-sm font-medium text-orange-800">Terms evolve</p>
                 <p className="text-xs text-orange-600">Better understanding over time</p>
               </div>
-              <div className="text-center p-3 bg-blue-50 rounded-lg">
+              <div className="text-center p-3 bg-blue-50 dark:bg-blue-950/20 rounded-lg">
                 <CheckCircle className="h-6 w-6 mx-auto mb-2 text-blue-500" />
                 <p className="text-sm font-medium text-blue-800">History preserved</p>
                 <p className="text-xs text-blue-600">Every version tracked</p>
               </div>
-              <div className="text-center p-3 bg-green-50 rounded-lg">
+              <div className="text-center p-3 bg-green-50 dark:bg-green-950/20 rounded-lg">
                 <Users className="h-6 w-6 mx-auto mb-2 text-green-500" />
                 <p className="text-sm font-medium text-green-800">Community driven</p>
                 <p className="text-xs text-green-600">Democratic ratification</p>
@@ -533,7 +533,7 @@ export default function HowItWorksPage() {
         </CardHeader>
         <CardContent>
           <div className="mb-6">
-            <div className="text-center p-4 bg-orange-50 rounded-lg">
+            <div className="text-center p-4 bg-orange-50 dark:bg-orange-950/20 rounded-lg">
               <p className="font-medium text-orange-800">
                 Core DAHAO → Domain Extensions → Sub-DAHAOs
               </p>
@@ -598,9 +598,9 @@ export default function HowItWorksPage() {
           </div>
 
           <div className="mt-6 grid gap-4 md:grid-cols-2">
-            <div className="p-4 bg-blue-50 rounded-lg">
+            <div className="p-4 bg-blue-50 dark:bg-blue-950/20 rounded-lg">
               <h5 className="font-semibold text-blue-800 mb-2">Inheritance Pattern</h5>
-              <div className="bg-white p-3 rounded font-mono text-xs">
+              <div className="bg-background p-3 rounded font-mono text-xs">
                 <div>animal_welfare_dahao:</div>
                 <div className="ml-2">inherits: "core:v1.2"</div>
                 <div className="ml-2">extends:</div>
@@ -609,7 +609,7 @@ export default function HowItWorksPage() {
               </div>
             </div>
 
-            <div className="p-4 bg-green-50 rounded-lg">
+            <div className="p-4 bg-green-50 dark:bg-green-950/20 rounded-lg">
               <h5 className="font-semibold text-green-800 mb-2">Cross-Pollination</h5>
               <ul className="text-sm text-green-700 space-y-1">
                 <li>• Animal welfare monitoring → Environmental tracking</li>
@@ -630,7 +630,7 @@ export default function HowItWorksPage() {
             <Card className="border-l-4 border-l-blue-500">
               <CardHeader>
                 <div className="flex items-center gap-3">
-                  <div className="flex-shrink-0 w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-semibold">1</div>
+                  <div className="flex-shrink-0 w-8 h-8 bg-blue-100 dark:bg-blue-900/50 text-blue-600 rounded-full flex items-center justify-center font-semibold">1</div>
                   <CardTitle>Connect Your AI Assistant</CardTitle>
                 </div>
                 <CardDescription>Power governance analysis with your personal AI</CardDescription>
@@ -647,7 +647,7 @@ export default function HowItWorksPage() {
                       <li><strong>Cost:</strong> You pay for your own usage (~$0.01-0.10 per analysis)</li>
                     </ul>
                   </div>
-                  <div className="bg-blue-50 p-4 rounded-lg">
+                  <div className="bg-blue-50 dark:bg-blue-950/20 p-4 rounded-lg">
                     <div className="font-semibold text-blue-800 mb-2">Benefit</div>
                     <p className="text-sm text-blue-600">
                       Get personalized AI help in understanding proposals and governance decisions
@@ -661,7 +661,7 @@ export default function HowItWorksPage() {
             <Card className="border-l-4 border-l-green-500">
               <CardHeader>
                 <div className="flex items-center gap-3">
-                  <div className="flex-shrink-0 w-8 h-8 bg-green-100 text-green-600 rounded-full flex items-center justify-center font-semibold">2</div>
+                  <div className="flex-shrink-0 w-8 h-8 bg-green-100 dark:bg-green-900/50 text-green-600 rounded-full flex items-center justify-center font-semibold">2</div>
                   <CardTitle>Create Your Personal Branch</CardTitle>
                 </div>
                 <CardDescription>Safe space to experiment with governance improvements</CardDescription>
@@ -678,7 +678,7 @@ export default function HowItWorksPage() {
                       <li><strong>How:</strong> Extend terms, modify principles, test new rules</li>
                     </ul>
                   </div>
-                  <div className="bg-green-50 p-4 rounded-lg">
+                  <div className="bg-green-50 dark:bg-green-950/20 p-4 rounded-lg">
                     <div className="font-semibold text-green-800 mb-2">Example</div>
                     <p className="text-sm text-green-600">
                       Add "emotional transparency" to your transparency definition
@@ -692,7 +692,7 @@ export default function HowItWorksPage() {
             <Card className="border-l-4 border-l-purple-500">
               <CardHeader>
                 <div className="flex items-center gap-3">
-                  <div className="flex-shrink-0 w-8 h-8 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center font-semibold">3</div>
+                  <div className="flex-shrink-0 w-8 h-8 bg-purple-100 dark:bg-purple-900/50 text-purple-600 rounded-full flex items-center justify-center font-semibold">3</div>
                   <CardTitle>Join the Evolution</CardTitle>
                 </div>
                 <CardDescription>Participate in governance discussions on GitHub</CardDescription>
@@ -711,7 +711,7 @@ export default function HowItWorksPage() {
                       <li>• Issue #789: "Meta: Should we change voting periods?" - System improvements</li>
                     </ul>
                   </div>
-                  <div className="bg-purple-50 p-4 rounded-lg">
+                  <div className="bg-purple-50 dark:bg-purple-950/20 p-4 rounded-lg">
                     <div className="font-semibold text-purple-800 mb-2">Current Opportunities</div>
                     <ul className="text-sm text-purple-600 space-y-1">
                       <li>• Define core terms</li>
@@ -728,7 +728,7 @@ export default function HowItWorksPage() {
             <Card className="border-l-4 border-l-orange-500">
               <CardHeader>
                 <div className="flex items-center gap-3">
-                  <div className="flex-shrink-0 w-8 h-8 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center font-semibold">4</div>
+                  <div className="flex-shrink-0 w-8 h-8 bg-orange-100 dark:bg-orange-900/50 text-orange-600 rounded-full flex items-center justify-center font-semibold">4</div>
                   <CardTitle>Use AI Agents for Analysis</CardTitle>
                 </div>
                 <CardDescription>Get AI assistance in any GitHub discussion</CardDescription>
@@ -747,7 +747,7 @@ export default function HowItWorksPage() {
                       <div>🛡️ System AI - Uses baseline governance only</div>
                     </div>
                   </div>
-                  <div className="bg-orange-50 p-4 rounded-lg">
+                  <div className="bg-orange-50 dark:bg-orange-950/20 p-4 rounded-lg">
                     <div className="font-semibold text-orange-800 mb-2">AI Response Examples</div>
                     <div className="text-sm text-orange-700 space-y-2">
                       <p><strong>@personal-ai:</strong> "Based on your extended transparency values, this change would..."</p>
@@ -784,7 +784,7 @@ export default function HowItWorksPage() {
                     <div>@john: "@ai-analyze this proposal"</div>
                     <div className="text-blue-600">[Choose: Personal AI / System AI / Other's AI]</div>
                   </div>
-                  <div className="mt-3 p-3 bg-blue-50 rounded-lg">
+                  <div className="mt-3 p-3 bg-blue-50 dark:bg-blue-950/20 rounded-lg">
                     <p className="text-sm text-blue-700">
                       <strong>Flexibility:</strong> Choose the right AI for each situation
                     </p>
@@ -806,7 +806,7 @@ export default function HowItWorksPage() {
                     <div className="ml-2">- discovery: 1</div>
                     <div className="ml-2">- voting: 2</div>
                   </div>
-                  <div className="mt-3 p-3 bg-green-50 rounded-lg">
+                  <div className="mt-3 p-3 bg-green-50 dark:bg-green-950/20 rounded-lg">
                     <p className="text-sm text-green-700">
                       <strong>24/7 Participation:</strong> Your values stay represented
                     </p>
@@ -815,22 +815,22 @@ export default function HowItWorksPage() {
               </div>
 
               <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-                <div className="p-3 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg border border-blue-200">
+                <div className="p-3 bg-gradient-to-br from-blue-50/50 to-indigo-50/50 dark:from-blue-950/20 dark:to-indigo-950/20 rounded-lg border border-blue-200">
                   <CheckCircle className="h-5 w-5 text-blue-500 mb-2" />
                   <h5 className="font-semibold text-blue-800">Verification</h5>
                   <p className="text-xs text-blue-700">Auto-check proposal alignment</p>
                 </div>
-                <div className="p-3 bg-gradient-to-br from-green-50 to-emerald-50 rounded-lg border border-green-200">
+                <div className="p-3 bg-gradient-to-br from-green-50/50 to-emerald-50/50 dark:from-green-950/20 dark:to-emerald-950/20 rounded-lg border border-green-200">
                   <TrendingUpIcon className="h-5 w-5 text-green-500 mb-2" />
                   <h5 className="font-semibold text-green-800">Discovery</h5>
                   <p className="text-xs text-green-700">Find governance patterns</p>
                 </div>
-                <div className="p-3 bg-gradient-to-br from-purple-50 to-pink-50 rounded-lg border border-purple-200">
+                <div className="p-3 bg-gradient-to-br from-purple-50/50 to-pink-50/50 dark:from-purple-950/20 dark:to-pink-950/20 rounded-lg border border-purple-200">
                   <MessageSquare className="h-5 w-5 text-purple-500 mb-2" />
                   <h5 className="font-semibold text-purple-800">Voting</h5>
                   <p className="text-xs text-purple-700">Participate based on values</p>
                 </div>
-                <div className="p-3 bg-gradient-to-br from-orange-50 to-red-50 rounded-lg border border-orange-200">
+                <div className="p-3 bg-gradient-to-br from-orange-50/50 to-red-50/50 dark:from-orange-950/20 dark:to-red-950/20 rounded-lg border border-orange-200">
                   <Shield className="h-5 w-5 text-orange-500 mb-2" />
                   <h5 className="font-semibold text-orange-800">Protection</h5>
                   <p className="text-xs text-orange-700">Flag value conflicts</p>
@@ -852,10 +852,10 @@ export default function HowItWorksPage() {
               <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
-                    <div className="w-6 h-6 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-xs font-semibold">W</div>
+                    <div className="w-6 h-6 bg-blue-100 dark:bg-blue-900/50 text-blue-600 rounded-full flex items-center justify-center text-xs font-semibold">W</div>
                     <h5 className="font-semibold text-blue-800">Weekly</h5>
                   </div>
-                  <div className="p-3 bg-blue-50 rounded-lg">
+                  <div className="p-3 bg-blue-50 dark:bg-blue-950/20 rounded-lg">
                     <p className="text-sm font-medium text-blue-700">Reflection</p>
                     <p className="text-xs text-blue-600">"What friction did we hit?"</p>
                   </div>
@@ -863,10 +863,10 @@ export default function HowItWorksPage() {
 
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
-                    <div className="w-6 h-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-xs font-semibold">M</div>
+                    <div className="w-6 h-6 bg-green-100 dark:bg-green-900/50 text-green-600 rounded-full flex items-center justify-center text-xs font-semibold">M</div>
                     <h5 className="font-semibold text-green-800">Monthly</h5>
                   </div>
-                  <div className="p-3 bg-green-50 rounded-lg">
+                  <div className="p-3 bg-green-50 dark:bg-green-950/20 rounded-lg">
                     <p className="text-sm font-medium text-green-700">Review</p>
                     <p className="text-xs text-green-600">"Which rules weren't followed?"</p>
                   </div>
@@ -874,10 +874,10 @@ export default function HowItWorksPage() {
 
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
-                    <div className="w-6 h-6 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center text-xs font-semibold">Q</div>
+                    <div className="w-6 h-6 bg-purple-100 dark:bg-purple-900/50 text-purple-600 rounded-full flex items-center justify-center text-xs font-semibold">Q</div>
                     <h5 className="font-semibold text-purple-800">Quarterly</h5>
                   </div>
-                  <div className="p-3 bg-purple-50 rounded-lg">
+                  <div className="p-3 bg-purple-50 dark:bg-purple-950/20 rounded-lg">
                     <p className="text-sm font-medium text-purple-700">Evolution</p>
                     <p className="text-xs text-purple-600">"What should we sunset?"</p>
                   </div>
@@ -885,10 +885,10 @@ export default function HowItWorksPage() {
 
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
-                    <div className="w-6 h-6 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center text-xs font-semibold">Y</div>
+                    <div className="w-6 h-6 bg-orange-100 dark:bg-orange-900/50 text-orange-600 rounded-full flex items-center justify-center text-xs font-semibold">Y</div>
                     <h5 className="font-semibold text-orange-800">Yearly</h5>
                   </div>
-                  <div className="p-3 bg-orange-50 rounded-lg">
+                  <div className="p-3 bg-orange-50 dark:bg-orange-950/20 rounded-lg">
                     <p className="text-sm font-medium text-orange-700">Overhaul</p>
                     <p className="text-xs text-orange-600">"What fundamental changes?"</p>
                   </div>
@@ -915,7 +915,7 @@ export default function HowItWorksPage() {
               <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-6">
                 <div className="space-y-3">
                   <div className="flex items-center gap-2 mb-2">
-                    <div className="flex-shrink-0 w-6 h-6 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-xs font-semibold">1</div>
+                    <div className="flex-shrink-0 w-6 h-6 bg-blue-100 dark:bg-blue-900/50 text-blue-600 rounded-full flex items-center justify-center text-xs font-semibold">1</div>
                     <h4 className="font-semibold text-blue-800">Propose</h4>
                   </div>
                   <div className="text-sm">
@@ -931,7 +931,7 @@ export default function HowItWorksPage() {
                 <div className="space-y-3">
                   <div className="flex items-center gap-2 mb-2">
                     <ArrowRight className="h-4 w-4 text-gray-400" />
-                    <div className="flex-shrink-0 w-6 h-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-xs font-semibold">2</div>
+                    <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/50 text-green-600 rounded-full flex items-center justify-center text-xs font-semibold">2</div>
                     <h4 className="font-semibold text-green-800">Discuss</h4>
                   </div>
                   <div className="text-sm">
@@ -947,7 +947,7 @@ export default function HowItWorksPage() {
                 <div className="space-y-3">
                   <div className="flex items-center gap-2 mb-2">
                     <ArrowRight className="h-4 w-4 text-gray-400" />
-                    <div className="flex-shrink-0 w-6 h-6 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center text-xs font-semibold">3</div>
+                    <div className="flex-shrink-0 w-6 h-6 bg-purple-100 dark:bg-purple-900/50 text-purple-600 rounded-full flex items-center justify-center text-xs font-semibold">3</div>
                     <h4 className="font-semibold text-purple-800">Analyze</h4>
                   </div>
                   <div className="text-sm">
@@ -963,7 +963,7 @@ export default function HowItWorksPage() {
                 <div className="space-y-3">
                   <div className="flex items-center gap-2 mb-2">
                     <ArrowRight className="h-4 w-4 text-gray-400" />
-                    <div className="flex-shrink-0 w-6 h-6 bg-yellow-100 text-yellow-600 rounded-full flex items-center justify-center text-xs font-semibold">4</div>
+                    <div className="flex-shrink-0 w-6 h-6 bg-yellow-100 dark:bg-yellow-900/50 text-yellow-600 rounded-full flex items-center justify-center text-xs font-semibold">4</div>
                     <h4 className="font-semibold text-yellow-800">Experiment</h4>
                   </div>
                   <div className="text-sm">
@@ -979,7 +979,7 @@ export default function HowItWorksPage() {
                 <div className="space-y-3">
                   <div className="flex items-center gap-2 mb-2">
                     <ArrowRight className="h-4 w-4 text-gray-400" />
-                    <div className="flex-shrink-0 w-6 h-6 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center text-xs font-semibold">5</div>
+                    <div className="flex-shrink-0 w-6 h-6 bg-orange-100 dark:bg-orange-900/50 text-orange-600 rounded-full flex items-center justify-center text-xs font-semibold">5</div>
                     <h4 className="font-semibold text-orange-800">Vote</h4>
                   </div>
                   <div className="text-sm">
@@ -995,7 +995,7 @@ export default function HowItWorksPage() {
                 <div className="space-y-3">
                   <div className="flex items-center gap-2 mb-2">
                     <ArrowRight className="h-4 w-4 text-gray-400" />
-                    <div className="flex-shrink-0 w-6 h-6 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-xs font-semibold">6</div>
+                    <div className="flex-shrink-0 w-6 h-6 bg-emerald-100 dark:bg-emerald-900/50 text-emerald-600 rounded-full flex items-center justify-center text-xs font-semibold">6</div>
                     <h4 className="font-semibold text-emerald-800">Implement</h4>
                   </div>
                   <div className="text-sm">
@@ -1012,14 +1012,14 @@ export default function HowItWorksPage() {
           </Card>
 
           {/* Real Examples */}
-          <Card className="bg-gradient-to-r from-emerald-50 to-blue-50">
+          <Card className="bg-gradient-to-r from-emerald-50/50 to-blue-50/50 dark:from-emerald-950/20 dark:to-blue-950/20">
             <CardHeader>
               <CardTitle className="text-center text-emerald-800">Real Examples from Our Community</CardTitle>
               <CardDescription className="text-center">Actual improvements we've made together</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="grid gap-6 md:grid-cols-3">
-                <div className="bg-white p-4 rounded-lg border border-emerald-200">
+                <div className="bg-background p-4 rounded-lg border border-emerald-200">
                   <h4 className="font-semibold text-emerald-800 mb-2">Example 1: Simplifying Term Evolution</h4>
                   <ul className="text-sm space-y-1">
                     <li><strong>Problem:</strong> 10-step process too complex</li>
@@ -1027,7 +1027,7 @@ export default function HowItWorksPage() {
                     <li><strong>Result:</strong> 300% increase in participation</li>
                   </ul>
                 </div>
-                <div className="bg-white p-4 rounded-lg border border-blue-200">
+                <div className="bg-background p-4 rounded-lg border border-blue-200">
                   <h4 className="font-semibold text-blue-800 mb-2">Example 2: AI Agent Differentiation</h4>
                   <ul className="text-sm space-y-1">
                     <li><strong>Problem:</strong> Unclear when to use which AI</li>
@@ -1035,7 +1035,7 @@ export default function HowItWorksPage() {
                     <li><strong>Result:</strong> Better value-aligned analysis</li>
                   </ul>
                 </div>
-                <div className="bg-white p-4 rounded-lg border border-purple-200">
+                <div className="bg-background p-4 rounded-lg border border-purple-200">
                   <h4 className="font-semibold text-purple-800 mb-2">Example 3: Voting Period Optimization</h4>
                   <ul className="text-sm space-y-1">
                     <li><strong>Problem:</strong> 7 days too long for everything</li>
@@ -1094,7 +1094,7 @@ export default function HowItWorksPage() {
 
                 <div>
                   <h4 className="font-semibold mb-3">Fork Rights & Minority Protection</h4>
-                  <div className="bg-purple-50 p-4 rounded-lg space-y-3">
+                  <div className="bg-purple-50 dark:bg-purple-950/20 p-4 rounded-lg space-y-3">
                     <div className="flex items-center gap-2">
                       <Users className="h-5 w-5 text-purple-600" />
                       <p className="font-medium text-purple-800">Disagree? Make your version</p>
@@ -1105,7 +1105,7 @@ export default function HowItWorksPage() {
                       <li>• No forced conformity</li>
                       <li>• Diversity encouraged</li>
                     </ul>
-                    <div className="mt-3 p-3 bg-white rounded border border-purple-200">
+                    <div className="mt-3 p-3 bg-background rounded border border-purple-200">
                       <p className="text-sm text-purple-800">
                         <strong>Example:</strong> If you believe "radical transparency" should be core but community votes no, keep it in your branch and prove its value
                       </p>
@@ -1164,7 +1164,7 @@ export default function HowItWorksPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-4">
-                      <div className="bg-purple-50 p-4 rounded-lg">
+                      <div className="bg-purple-50 dark:bg-purple-950/20 p-4 rounded-lg">
                         <p className="text-sm text-purple-700 mb-3">
                           <strong>What it sees:</strong> Only main DAHAO governance
                         </p>
@@ -1183,7 +1183,7 @@ export default function HowItWorksPage() {
 
           <AgentAssignmentPanel context="governance" />
           {/* How AI Agents Help */}
-          <Card className="bg-gradient-to-r from-blue-50 to-purple-50">
+          <Card className="bg-gradient-to-r from-blue-50/50 to-purple-50/50 dark:from-blue-950/20 dark:to-purple-950/20">
             <CardHeader>
               <CardTitle className="text-center">How AI Agents Help</CardTitle>
               <CardDescription className="text-center">Four key ways AI agents enhance governance</CardDescription>
@@ -1249,15 +1249,15 @@ export default function HowItWorksPage() {
               </div>
 
               <div className="grid gap-4 md:grid-cols-3 mt-4">
-                <div className="p-3 bg-blue-50 rounded-lg text-center">
+                <div className="p-3 bg-blue-50 dark:bg-blue-950/20 rounded-lg text-center">
                   <p className="text-sm font-medium text-blue-800">Compliance Insights</p>
                   <p className="text-xs text-blue-600">Simpler = Better</p>
                 </div>
-                <div className="p-3 bg-green-50 rounded-lg text-center">
+                <div className="p-3 bg-green-50 dark:bg-green-950/20 rounded-lg text-center">
                   <p className="text-sm font-medium text-green-800">Participation Patterns</p>
                   <p className="text-xs text-green-600">Visuals Drive Engagement</p>
                 </div>
-                <div className="p-3 bg-purple-50 rounded-lg text-center">
+                <div className="p-3 bg-purple-50 dark:bg-purple-950/20 rounded-lg text-center">
                   <p className="text-sm font-medium text-purple-800">Process Optimization</p>
                   <p className="text-xs text-purple-600">3 Steps = Sweet Spot</p>
                 </div>
@@ -1284,7 +1284,7 @@ export default function HowItWorksPage() {
         <div>
           <h4 className="font-semibold mb-3">Voting Options</h4>
           <div className="space-y-3">
-            <div className="p-3 bg-blue-50 rounded-lg">
+            <div className="p-3 bg-blue-50 dark:bg-blue-950/20 rounded-lg">
               <div className="flex items-center gap-2 mb-2">
                 <Users className="h-4 w-4 text-blue-600" />
                 <span className="font-medium text-blue-800">Manual Voting</span>
@@ -1294,7 +1294,7 @@ export default function HowItWorksPage() {
               </p>
             </div>
 
-            <div className="p-3 bg-purple-50 rounded-lg">
+            <div className="p-3 bg-purple-50 dark:bg-purple-950/20 rounded-lg">
               <div className="flex items-center gap-2 mb-2">
                 <Bot className="h-4 w-4 text-purple-600" />
                 <span className="font-medium text-purple-800">AI-Assisted Voting</span>
@@ -1327,7 +1327,7 @@ export default function HowItWorksPage() {
         </div>
       </div>
 
-      <div className="mt-6 p-4 bg-yellow-50 rounded-lg">
+      <div className="mt-6 p-4 bg-yellow-50 dark:bg-yellow-950/20 rounded-lg">
         <h4 className="font-medium text-yellow-800 mb-2">Important: All Votes Count</h4>
         <p className="text-sm text-yellow-700">
           Even if you vote against your AI's recommendation, your vote counts fully.
@@ -1345,12 +1345,12 @@ export default function HowItWorksPage() {
     </CardHeader>
     <CardContent>
       <div className="space-y-4">
-        <div className="p-3 bg-gray-50 rounded-lg">
+        <div className="p-3 bg-muted/30 rounded-lg">
           <p className="font-medium mb-2">Proposal: "Reduce minor change threshold to 45%"</p>
         </div>
 
         <div className="grid gap-4 md:grid-cols-2">
-          <div className="p-4 bg-blue-50 rounded-lg">
+          <div className="p-4 bg-blue-50 dark:bg-blue-950/20 rounded-lg">
             <h5 className="font-medium text-blue-800 mb-2">Your AI Analysis:</h5>
             <p className="text-sm text-blue-700 mb-2">
               "This conflicts with your 'high-consensus' value.
@@ -1361,18 +1361,18 @@ export default function HowItWorksPage() {
             </div>
           </div>
 
-          <div className="p-4 bg-green-50 rounded-lg">
+          <div className="p-4 bg-green-50 dark:bg-green-950/20 rounded-lg">
             <h5 className="font-medium text-green-800 mb-2">Your Decision:</h5>
             <p className="text-sm text-green-700 mb-2">
               "I agree with faster evolution despite my usual preference"
             </p>
             <div className="flex items-center gap-2">
-              <Badge variant="outline" className="bg-green-100">You Vote: YES</Badge>
+              <Badge variant="outline" className="bg-green-100 dark:bg-green-900/50">You Vote: YES</Badge>
             </div>
           </div>
         </div>
 
-        <div className="p-3 bg-purple-50 rounded-lg">
+        <div className="p-3 bg-purple-50 dark:bg-purple-950/20 rounded-lg">
           <p className="text-sm text-purple-700">
             <strong>Result:</strong> Your YES vote counts fully.
             System notes: "Voted against personal AI recommendation - evolution priority"
@@ -1397,7 +1397,7 @@ export default function HowItWorksPage() {
             <CardContent>
               <div className="grid gap-6 md:grid-cols-2">
                 <div className="space-y-4">
-                  <div className="flex items-start gap-3 p-4 bg-blue-50 rounded-lg">
+                  <div className="flex items-start gap-3 p-4 bg-blue-50 dark:bg-blue-950/20 rounded-lg">
                     <RefreshCw className="h-6 w-6 text-blue-500 mt-1" />
                     <div>
                       <h4 className="font-semibold text-blue-800 mb-2">🔧 Meta-Governance Systems</h4>
@@ -1410,7 +1410,7 @@ export default function HowItWorksPage() {
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-3 p-4 bg-purple-50 rounded-lg">
+                  <div className="flex items-start gap-3 p-4 bg-purple-50 dark:bg-purple-950/20 rounded-lg">
                     <BookOpen className="h-6 w-6 text-purple-500 mt-1" />
                     <div>
                       <h4 className="font-semibold text-purple-800 mb-2">📚 Foundational Terms</h4>
@@ -1425,7 +1425,7 @@ export default function HowItWorksPage() {
                 </div>
 
                 <div className="space-y-4">
-                  <div className="flex items-start gap-3 p-4 bg-green-50 rounded-lg">
+                  <div className="flex items-start gap-3 p-4 bg-green-50 dark:bg-green-950/20 rounded-lg">
                     <Users className="h-6 w-6 text-green-500 mt-1" />
                     <div>
                       <h4 className="font-semibold text-green-800 mb-2">🤝 Human-AI Collaboration</h4>
@@ -1438,7 +1438,7 @@ export default function HowItWorksPage() {
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-3 p-4 bg-orange-50 rounded-lg">
+                  <div className="flex items-start gap-3 p-4 bg-orange-50 dark:bg-orange-950/20 rounded-lg">
                     <TrendingUpIcon className="h-6 w-6 text-orange-500 mt-1" />
                     <div>
                       <h4 className="font-semibold text-orange-800 mb-2">📈 System Learning</h4>
@@ -1471,35 +1471,35 @@ export default function HowItWorksPage() {
               </CardHeader>
               <CardContent>
                 <div className="space-y-3">
-                  <div className="flex items-start gap-3 p-3 bg-emerald-50 rounded-lg">
+                  <div className="flex items-start gap-3 p-3 bg-emerald-50 dark:bg-emerald-950/20 rounded-lg">
                     <CheckCircle className="h-5 w-5 text-emerald-500 mt-1" />
                     <div>
                       <p className="font-medium text-emerald-800">Governance can govern itself</p>
                       <p className="text-sm text-emerald-700">Rules about rules actually work</p>
                     </div>
                   </div>
-                  <div className="flex items-start gap-3 p-3 bg-blue-50 rounded-lg">
+                  <div className="flex items-start gap-3 p-3 bg-blue-50 dark:bg-blue-950/20 rounded-lg">
                     <CheckCircle className="h-5 w-5 text-blue-500 mt-1" />
                     <div>
                       <p className="font-medium text-blue-800">AI agents spot blind spots</p>
                       <p className="text-sm text-blue-700">Patterns humans miss become visible</p>
                     </div>
                   </div>
-                  <div className="flex items-start gap-3 p-3 bg-purple-50 rounded-lg">
+                  <div className="flex items-start gap-3 p-3 bg-purple-50 dark:bg-purple-950/20 rounded-lg">
                     <CheckCircle className="h-5 w-5 text-purple-500 mt-1" />
                     <div>
                       <p className="font-medium text-purple-800">Simple beats complex</p>
                       <p className="text-sm text-purple-700">Easier processes get more participation</p>
                     </div>
                   </div>
-                  <div className="flex items-start gap-3 p-3 bg-orange-50 rounded-lg">
+                  <div className="flex items-start gap-3 p-3 bg-orange-50 dark:bg-orange-950/20 rounded-lg">
                     <CheckCircle className="h-5 w-5 text-orange-500 mt-1" />
                     <div>
                       <p className="font-medium text-orange-800">Personal values matter</p>
                       <p className="text-sm text-orange-700">One size doesn't fit all governance</p>
                     </div>
                   </div>
-                  <div className="flex items-start gap-3 p-3 bg-green-50 rounded-lg">
+                  <div className="flex items-start gap-3 p-3 bg-green-50 dark:bg-green-950/20 rounded-lg">
                     <CheckCircle className="h-5 w-5 text-green-500 mt-1" />
                     <div>
                       <p className="font-medium text-green-800">Safe failure is crucial</p>
@@ -1520,19 +1520,19 @@ export default function HowItWorksPage() {
               </CardHeader>
               <CardContent>
                 <div className="space-y-3">
-                  <div className="p-3 bg-blue-50 rounded-lg border border-blue-200">
+                  <div className="p-3 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200">
                     <p className="text-sm text-blue-700">Tiered decisions work better than one-size-fits-all</p>
                   </div>
-                  <div className="p-3 bg-green-50 rounded-lg border border-green-200">
+                  <div className="p-3 bg-green-50 dark:bg-green-950/20 rounded-lg border border-green-200">
                     <p className="text-sm text-green-700">AI summaries increase participation by 40%</p>
                   </div>
-                  <div className="p-3 bg-purple-50 rounded-lg border border-purple-200">
+                  <div className="p-3 bg-purple-50 dark:bg-purple-950/20 rounded-lg border border-purple-200">
                     <p className="text-sm text-purple-700">Visual governance trees help understanding</p>
                   </div>
-                  <div className="p-3 bg-orange-50 rounded-lg border border-orange-200">
+                  <div className="p-3 bg-orange-50 dark:bg-orange-950/20 rounded-lg border border-orange-200">
                     <p className="text-sm text-orange-700">3-step processes optimal for engagement</p>
                   </div>
-                  <div className="p-3 bg-emerald-50 rounded-lg border border-emerald-200">
+                  <div className="p-3 bg-emerald-50 dark:bg-emerald-950/20 rounded-lg border border-emerald-200">
                     <p className="text-sm text-emerald-700">Personal branches encourage experimentation</p>
                   </div>
                 </div>
@@ -1556,10 +1556,10 @@ export default function HowItWorksPage() {
             <CardContent>
               <div className="space-y-6">
                 <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-                  <Card className="bg-blue-50 border-blue-200">
+                  <Card className="bg-blue-50 dark:bg-blue-950/20 border-blue-200">
                     <CardHeader className="pb-3">
                       <div className="flex items-center gap-2">
-                        <div className="flex-shrink-0 w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-semibold">1</div>
+                        <div className="flex-shrink-0 w-8 h-8 bg-blue-100 dark:bg-blue-900/50 text-blue-600 rounded-full flex items-center justify-center font-semibold">1</div>
                         <CardTitle className="text-lg text-blue-800">Phase 1 (Now)</CardTitle>
                       </div>
                     </CardHeader>
@@ -1574,10 +1574,10 @@ export default function HowItWorksPage() {
                     </CardContent>
                   </Card>
 
-                  <Card className="bg-green-50 border-green-200">
+                  <Card className="bg-green-50 dark:bg-green-950/20 border-green-200">
                     <CardHeader className="pb-3">
                       <div className="flex items-center gap-2">
-                        <div className="flex-shrink-0 w-8 h-8 bg-green-100 text-green-600 rounded-full flex items-center justify-center font-semibold">2</div>
+                        <div className="flex-shrink-0 w-8 h-8 bg-green-100 dark:bg-green-900/50 text-green-600 rounded-full flex items-center justify-center font-semibold">2</div>
                         <CardTitle className="text-lg text-green-800">Phase 2</CardTitle>
                       </div>
                     </CardHeader>
@@ -1589,17 +1589,17 @@ export default function HowItWorksPage() {
                         <li>• Investment opportunities</li>
                         <li>• Win-win economics</li>
                       </ul>
-                      <div className="mt-3 p-2 bg-white rounded border border-green-300">
+                      <div className="mt-3 p-2 bg-background rounded border border-green-300">
                         <p className="text-xs text-green-700 font-medium">Key Innovation:</p>
                         <p className="text-xs text-green-600">Investors profit while funding community</p>
                       </div>
                     </CardContent>
                   </Card>
 
-                  <Card className="bg-purple-50 border-purple-200">
+                  <Card className="bg-purple-50 dark:bg-purple-950/20 border-purple-200">
                     <CardHeader className="pb-3">
                       <div className="flex items-center gap-2">
-                        <div className="flex-shrink-0 w-8 h-8 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center font-semibold">3</div>
+                        <div className="flex-shrink-0 w-8 h-8 bg-purple-100 dark:bg-purple-900/50 text-purple-600 rounded-full flex items-center justify-center font-semibold">3</div>
                         <CardTitle className="text-lg text-purple-800">Phase 3</CardTitle>
                       </div>
                     </CardHeader>
@@ -1614,10 +1614,10 @@ export default function HowItWorksPage() {
                     </CardContent>
                   </Card>
 
-                  <Card className="bg-orange-50 border-orange-200">
+                  <Card className="bg-orange-50 dark:bg-orange-950/20 border-orange-200">
                     <CardHeader className="pb-3">
                       <div className="flex items-center gap-2">
-                        <div className="flex-shrink-0 w-8 h-8 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center font-semibold">4</div>
+                        <div className="flex-shrink-0 w-8 h-8 bg-orange-100 dark:bg-orange-900/50 text-orange-600 rounded-full flex items-center justify-center font-semibold">4</div>
                         <CardTitle className="text-lg text-orange-800">Phase 4</CardTitle>
                       </div>
                     </CardHeader>
@@ -1633,7 +1633,7 @@ export default function HowItWorksPage() {
                   </Card>
                 </div>
 
-                <div className="mt-8 p-6 bg-gradient-to-r from-blue-100 to-purple-100 rounded-lg text-center">
+                <div className="mt-8 p-6 bg-gradient-to-r from-blue-100/50 to-purple-100/50 dark:from-blue-900/30 dark:to-purple-900/30 rounded-lg text-center">
                   <h4 className="font-semibold text-indigo-800 mb-2">Current Focus: Building Better Governance Together</h4>
                   <p className="text-sm text-indigo-700">
                     We're in Phase 1, focusing on learning how to create systems that can improve themselves.
@@ -1656,23 +1656,23 @@ export default function HowItWorksPage() {
                         <h4 className="font-semibold mb-3">How It Works</h4>
                         <div className="space-y-2">
                           <div className="flex items-center gap-3">
-                            <div className="flex-shrink-0 w-6 h-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-xs font-semibold">1</div>
+                            <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/50 text-green-600 rounded-full flex items-center justify-center text-xs font-semibold">1</div>
                             <p className="text-sm">Investors buy DAHAO tokens from investment pool</p>
                           </div>
                           <div className="flex items-center gap-3">
-                            <div className="flex-shrink-0 w-6 h-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-xs font-semibold">2</div>
+                            <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/50 text-green-600 rounded-full flex items-center justify-center text-xs font-semibold">2</div>
                             <p className="text-sm">DAHAO success increases token value</p>
                           </div>
                           <div className="flex items-center gap-3">
-                            <div className="flex-shrink-0 w-6 h-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-xs font-semibold">3</div>
+                            <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/50 text-green-600 rounded-full flex items-center justify-center text-xs font-semibold">3</div>
                             <p className="text-sm">Investors can sell for profit anytime</p>
                           </div>
                           <div className="flex items-center gap-3">
-                            <div className="flex-shrink-0 w-6 h-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-xs font-semibold">4</div>
+                            <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/50 text-green-600 rounded-full flex items-center justify-center text-xs font-semibold">4</div>
                             <p className="text-sm">Remaining value funds community work</p>
                           </div>
                           <div className="flex items-center gap-3">
-                            <div className="flex-shrink-0 w-6 h-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-xs font-semibold">5</div>
+                            <div className="flex-shrink-0 w-6 h-6 bg-green-100 dark:bg-green-900/50 text-green-600 rounded-full flex items-center justify-center text-xs font-semibold">5</div>
                             <p className="text-sm">Successful DAHAOs get Avalanche subchain</p>
                           </div>
                         </div>
@@ -1680,7 +1680,7 @@ export default function HowItWorksPage() {
 
                       <div>
                         <h4 className="font-semibold mb-3">The Alex Example</h4>
-                        <Card className="bg-gradient-to-r from-green-100 to-blue-100 p-4">
+                        <Card className="bg-gradient-to-r from-green-100/50 to-blue-100/50 dark:from-green-900/30 dark:to-blue-900/30 p-4">
                           <div className="space-y-2 text-sm">
                             <div className="flex justify-between">
                               <span className="font-medium">Invests:</span>
@@ -1770,27 +1770,27 @@ export default function HowItWorksPage() {
         <div className="text-center">
           <h2 className="text-2xl font-semibold mb-4">Join the Evolution</h2>
 
-          <Card className="bg-gradient-to-r from-green-50 to-blue-50 border-green-200 mb-8">
+          <Card className="bg-gradient-to-r from-green-50/50 to-blue-50/50 dark:from-green-950/20 dark:to-blue-950/20 border-green-200 mb-8">
             <CardHeader>
               <CardTitle className="text-green-800">Start Now</CardTitle>
               <CardDescription>Four simple ways to get involved today</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-                <div className="flex flex-col items-center text-center p-4 bg-white rounded-lg border border-green-200">
-                  <div className="w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-semibold mb-2">1</div>
+                <div className="flex flex-col items-center text-center p-4 bg-background rounded-lg border border-green-200">
+                  <div className="w-8 h-8 bg-blue-100 dark:bg-blue-900/50 text-blue-600 rounded-full flex items-center justify-center font-semibold mb-2">1</div>
                   <p className="font-medium text-blue-800">Connect your API key</p>
                 </div>
-                <div className="flex flex-col items-center text-center p-4 bg-white rounded-lg border border-green-200">
-                  <div className="w-8 h-8 bg-green-100 text-green-600 rounded-full flex items-center justify-center font-semibold mb-2">2</div>
+                <div className="flex flex-col items-center text-center p-4 bg-background rounded-lg border border-green-200">
+                  <div className="w-8 h-8 bg-green-100 dark:bg-green-900/50 text-green-600 rounded-full flex items-center justify-center font-semibold mb-2">2</div>
                   <p className="font-medium text-green-800">Explore governance discussions</p>
                 </div>
-                <div className="flex flex-col items-center text-center p-4 bg-white rounded-lg border border-green-200">
-                  <div className="w-8 h-8 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center font-semibold mb-2">3</div>
+                <div className="flex flex-col items-center text-center p-4 bg-background rounded-lg border border-green-200">
+                  <div className="w-8 h-8 bg-purple-100 dark:bg-purple-900/50 text-purple-600 rounded-full flex items-center justify-center font-semibold mb-2">3</div>
                   <p className="font-medium text-purple-800">Propose an improvement</p>
                 </div>
-                <div className="flex flex-col items-center text-center p-4 bg-white rounded-lg border border-green-200">
-                  <div className="w-8 h-8 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center font-semibold mb-2">4</div>
+                <div className="flex flex-col items-center text-center p-4 bg-background rounded-lg border border-green-200">
+                  <div className="w-8 h-8 bg-orange-100 dark:bg-orange-900/50 text-orange-600 rounded-full flex items-center justify-center font-semibold mb-2">4</div>
                   <p className="font-medium text-orange-800">Help shape the future</p>
                 </div>
               </div>
@@ -1800,22 +1800,22 @@ export default function HowItWorksPage() {
           <div className="mb-6">
             <h3 className="text-lg font-semibold mb-4">Current Opportunities</h3>
             <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-4 max-w-4xl mx-auto">
-              <div className="p-3 bg-blue-50 rounded-lg border border-blue-200">
+              <div className="p-3 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200">
                 <p className="text-sm text-blue-700">Define core terms</p>
               </div>
-              <div className="p-3 bg-green-50 rounded-lg border border-green-200">
+              <div className="p-3 bg-green-50 dark:bg-green-950/20 rounded-lg border border-green-200">
                 <p className="text-sm text-green-700">Improve voting processes</p>
               </div>
-              <div className="p-3 bg-purple-50 rounded-lg border border-purple-200">
+              <div className="p-3 bg-purple-50 dark:bg-purple-950/20 rounded-lg border border-purple-200">
                 <p className="text-sm text-purple-700">Test AI agent patterns</p>
               </div>
-              <div className="p-3 bg-orange-50 rounded-lg border border-orange-200">
+              <div className="p-3 bg-orange-50 dark:bg-orange-950/20 rounded-lg border border-orange-200">
                 <p className="text-sm text-orange-700">Document learnings</p>
               </div>
             </div>
           </div>
 
-          <div className="p-4 bg-gradient-to-r from-green-100 to-blue-100 rounded-lg mb-6 max-w-2xl mx-auto">
+          <div className="p-4 bg-gradient-to-r from-green-100/50 to-blue-100/50 dark:from-green-900/30 dark:to-blue-900/30 rounded-lg mb-6 max-w-2xl mx-auto">
             <p className="font-semibold text-green-800">
               No tokens, no investment, just building better governance together.
             </p>

@@ -132,17 +132,17 @@ const getVersionForBranch = (element: any, branchId: string) => {
 const getStatusColor = (status: string) => {
   switch (status) {
     case 'ratified':
-      return 'bg-green-100 text-green-800 border-green-200';
+      return 'bg-green-100 dark:bg-green-900/50 text-green-800 dark:text-green-200 border-green-200 dark:border-green-700';
     case 'proposed':
-      return 'bg-yellow-100 text-yellow-800 border-yellow-200';
+      return 'bg-yellow-100 dark:bg-yellow-900/50 text-yellow-800 dark:text-yellow-200 border-yellow-200 dark:border-yellow-700';
     case 'voting':
-      return 'bg-blue-100 text-blue-800 border-blue-200';
+      return 'bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 border-blue-200 dark:border-blue-700';
     case 'approved':
-      return 'bg-emerald-100 text-emerald-800 border-emerald-200';
+      return 'bg-emerald-100 dark:bg-emerald-900/50 text-emerald-800 dark:text-emerald-200 border-emerald-200 dark:border-emerald-700';
     case 'resolved':
-      return 'bg-gray-100 text-gray-800 border-gray-200';
+      return 'bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 border-gray-200 dark:border-gray-700 dark:border-gray-700';
     default:
-      return 'bg-gray-100 text-gray-800 border-gray-200';
+      return 'bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 border-gray-200 dark:border-gray-700 dark:border-gray-700';
   }
 };
 
@@ -160,14 +160,14 @@ const getBranchName = (branchId: string, branches: Branch[]) => {
 const getInheritanceBadge = (inheritanceInfo: any, branches: Branch[]) => {
   if (inheritanceInfo.type === 'modified') {
     return (
-      <Badge variant="outline" className="bg-blue-100 text-blue-800 border-blue-200 text-xs">
+      <Badge variant="outline" className="bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 border-blue-200 dark:border-blue-700 text-xs">
         <Edit3 className="h-3 w-3 mr-1" />
         Modified
       </Badge>
     );
   } else if (inheritanceInfo.source === 'core-dahao') {
     return (
-      <Badge variant="outline" className="bg-gray-100 text-gray-600 border-gray-200 text-xs">
+      <Badge variant="outline" className="bg-gray-100 text-gray-600 dark:text-gray-300 border-gray-200 dark:border-gray-700 text-xs">
         <ArrowDown className="h-3 w-3 mr-1" />
         From Core
       </Badge>
@@ -259,12 +259,12 @@ const SortDropdown = ({
   <div className="flex items-center gap-2 mb-4">
     <button 
       onClick={onDirectionChange}
-      className="flex items-center justify-center w-8 h-8 hover:bg-gray-100 rounded-sm transition-colors"
+      className="flex items-center justify-center w-8 h-8 hover:bg-muted/30 rounded-sm transition-colors"
       title={`Sort ${direction === 'asc' ? 'descending' : 'ascending'}`}
     >
       <ArrowUpDown className={`h-4 w-4 transition-transform ${
         direction === 'desc' ? 'rotate-180' : ''
-      } text-gray-500 hover:text-gray-700`} />
+      } text-gray-500 dark:text-gray-400 hover:text-gray-700`} />
     </button>
     <span className="text-sm font-medium text-gray-700">Sort by:</span>
     <Select value={value} onValueChange={onChange}>
@@ -377,19 +377,19 @@ export default function IdeasPage() {
     switch (type) {
       case 'core':
         return { 
-          color: 'bg-blue-100 text-blue-800 border-blue-200', 
+          color: 'bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 border-blue-200 dark:border-blue-700', 
           label: 'Core',
           icon: Home
         };
       case 'sub-dahao':
         return { 
-          color: 'bg-green-100 text-green-800 border-green-200', 
+          color: 'bg-green-100 dark:bg-green-900/50 text-green-800 dark:text-green-200 border-green-200 dark:border-green-700', 
           label: 'Sub-DAHAO',
           icon: Building
         };
       case 'main-branch':
         return { 
-          color: 'bg-purple-100 text-purple-800 border-purple-200', 
+          color: 'bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-purple-200 border-purple-200 dark:border-purple-700', 
           label: 'Main Branch',
           icon: Code
         };
@@ -401,7 +401,7 @@ export default function IdeasPage() {
         };
       default:
         return { 
-          color: 'bg-gray-100 text-gray-800 border-gray-200', 
+          color: 'bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 border-gray-200 dark:border-gray-700 dark:border-gray-700', 
           label: 'Branch',
           icon: GitBranch
         };
@@ -427,7 +427,7 @@ export default function IdeasPage() {
     return (
       <div key={node.id}>
         <div 
-          className={`flex items-center gap-1 py-1 px-2 text-sm cursor-pointer hover:bg-gray-100 rounded-sm group ${
+          className={`flex items-center gap-1 py-1 px-2 text-sm cursor-pointer hover:bg-muted/30 rounded-sm group ${
             isSelected ? 'bg-blue-100 text-blue-900' : 'text-gray-700'
           }`}
           style={{ paddingLeft: `${8 + node.level * 16}px` }}
@@ -439,7 +439,7 @@ export default function IdeasPage() {
           }}
         >
           {hasChildren ? (
-            <button className="flex items-center justify-center w-4 h-4 hover:bg-gray-200 rounded-sm">
+            <button className="flex items-center justify-center w-4 h-4 hover:bg-muted rounded-sm">
               {isExpanded ? (
                 <ChevronDown className="h-3 w-3" />
               ) : (
@@ -449,7 +449,7 @@ export default function IdeasPage() {
           ) : (
             <div className="w-4" />
           )}
-          <IconComponent className="h-4 w-4 text-gray-500 flex-shrink-0" />
+          <IconComponent className="h-4 w-4 text-gray-500 dark:text-gray-400 flex-shrink-0" />
           <span className="truncate">{node.name}</span>
           <span className="text-xs text-gray-400 ml-auto opacity-0 group-hover:opacity-100">
             v{node.version}
@@ -461,7 +461,7 @@ export default function IdeasPage() {
           <div className="relative">
             {/* Vertical line for tree structure */}
             <div 
-              className="absolute border-l border-gray-200"
+              className="absolute border-l border-gray-200 dark:border-gray-700"
               style={{
                 left: `${16 + node.level * 16}px`,
                 top: 0,
@@ -492,16 +492,16 @@ export default function IdeasPage() {
       {/* Two-column layout */}
       <div className="flex gap-6 h-[calc(100vh-400px)]">
         {/* Left Sidebar - Tree Navigation */}
-        <div className="w-80 flex-shrink-0 border border-gray-200 rounded-lg bg-gray-50 flex flex-col">
+        <div className="w-80 flex-shrink-0 border border-gray-200 dark:border-gray-700 rounded-lg bg-muted/30 flex flex-col">
           {/* Search Bar */}
-          <div className="p-4 border-b border-gray-200">
+          <div className="p-4 border-b border-gray-200 dark:border-gray-700">
             <div className="relative">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
               <Input
                 placeholder="Search branches..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-10 bg-white"
+                className="pl-10 bg-background"
               />
             </div>
           </div>
@@ -511,7 +511,7 @@ export default function IdeasPage() {
             {filteredTree.length > 0 ? (
               filteredTree.map(node => renderSidebarNode(node))
             ) : (
-              <div className="p-4 text-center text-gray-500 text-sm">
+              <div className="p-4 text-center text-gray-500 dark:text-gray-400 text-sm">
                 No branches found matching "{searchQuery}"
               </div>
             )}
@@ -529,7 +529,7 @@ export default function IdeasPage() {
                       {(() => {
                         const typeInfo = getBranchTypeInfo(selectedBranch.type);
                         const IconComponent = typeInfo.icon;
-                        return <IconComponent className="h-6 w-6 text-gray-500" />;
+                        return <IconComponent className="h-6 w-6 text-gray-500 dark:text-gray-400" />;
                       })()}
                       <CardTitle className="text-2xl">{selectedBranch.name}</CardTitle>
                       <Badge variant="outline" className={getBranchTypeInfo(selectedBranch.type).color}>
@@ -542,7 +542,7 @@ export default function IdeasPage() {
                     </CardDescription>
                   </div>
                   {selectedBranch.visibility && (
-                    <div className="flex items-center gap-1 text-sm text-gray-500">
+                    <div className="flex items-center gap-1 text-sm text-gray-500 dark:text-gray-400">
                       <Eye className="h-4 w-4" />
                       {selectedBranch.visibility}
                     </div>
@@ -552,32 +552,32 @@ export default function IdeasPage() {
               <CardContent>
                 {/* Stats Grid */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-                  <div className="flex items-center gap-2 p-3 bg-blue-50 rounded-lg">
+                  <div className="flex items-center gap-2 p-3 bg-blue-50 dark:bg-blue-950/20 rounded-lg">
                     <FileText className="h-5 w-5 text-blue-500" />
                     <div>
                       <div className="text-lg font-semibold">{selectedBranch.stats.totalTerms}</div>
-                      <div className="text-sm text-gray-500">Terms</div>
+                      <div className="text-sm text-gray-500 dark:text-gray-400">Terms</div>
                     </div>
                   </div>
-                  <div className="flex items-center gap-2 p-3 bg-green-50 rounded-lg">
+                  <div className="flex items-center gap-2 p-3 bg-green-50 dark:bg-green-950/20 rounded-lg">
                     <Users className="h-5 w-5 text-green-500" />
                     <div>
                       <div className="text-lg font-semibold">{selectedBranch.stats.totalPrinciples}</div>
-                      <div className="text-sm text-gray-500">Principles</div>
+                      <div className="text-sm text-gray-500 dark:text-gray-400">Principles</div>
                     </div>
                   </div>
-                  <div className="flex items-center gap-2 p-3 bg-purple-50 rounded-lg">
+                  <div className="flex items-center gap-2 p-3 bg-purple-50 dark:bg-purple-950/20 rounded-lg">
                     <MessageSquare className="h-5 w-5 text-purple-500" />
                     <div>
                       <div className="text-lg font-semibold">{selectedBranch.stats.totalDiscussions}</div>
-                      <div className="text-sm text-gray-500">Discussions</div>
+                      <div className="text-sm text-gray-500 dark:text-gray-400">Discussions</div>
                     </div>
                   </div>
-                  <div className="flex items-center gap-2 p-3 bg-orange-50 rounded-lg">
+                  <div className="flex items-center gap-2 p-3 bg-orange-50 dark:bg-orange-950/20 rounded-lg">
                     <GitBranch className="h-5 w-5 text-orange-500" />
                     <div>
                       <div className="text-lg font-semibold">{selectedBranch.stats.childBranches}</div>
-                      <div className="text-sm text-gray-500">Child Branches</div>
+                      <div className="text-sm text-gray-500 dark:text-gray-400">Child Branches</div>
                     </div>
                   </div>
                 </div>
@@ -624,7 +624,7 @@ export default function IdeasPage() {
                           <h4 className="font-semibold mb-2">Child Branches:</h4>
                           <div className="space-y-1">
                             {selectedBranch.children.map(child => (
-                              <div key={child.id} className="text-sm text-gray-600">
+                              <div key={child.id} className="text-sm text-gray-600 dark:text-gray-300">
                                 {child.name} (v{child.version})
                               </div>
                             ))}
@@ -640,8 +640,8 @@ export default function IdeasPage() {
                         const branchTerms = getElementsForBranch(termsData.terms, selectedBranch.id, branches);
                         if (branchTerms.length === 0) {
                           return (
-                            <div className="text-center text-gray-500 py-8">
-                              <FileText className="h-12 w-12 text-gray-300 mx-auto mb-4" />
+                            <div className="text-center text-gray-500 dark:text-gray-400 py-8">
+                              <FileText className="h-12 w-12 text-gray-300 dark:text-gray-600 dark:text-gray-300 mx-auto mb-4" />
                               <p>No terms defined for this branch</p>
                             </div>
                           );
@@ -657,7 +657,7 @@ export default function IdeasPage() {
                           
                           return (
                             <div key={term.id} className={`border rounded-lg p-4 ${
-                              inheritanceInfo?.type === 'modified' ? 'border-blue-200 bg-blue-50/30' : 'border-gray-200'
+                              inheritanceInfo?.type === 'modified' ? 'border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-950/20' : 'border-gray-200 dark:border-gray-700'
                             }`}>
                               <div className="flex items-start justify-between mb-2">
                                 <div className="flex items-center gap-2 flex-wrap">
@@ -673,26 +673,26 @@ export default function IdeasPage() {
                                 {versionData?.githubIssue && (
                                   <a 
                                     href={`#${versionData.githubIssue}`}
-                                    className="text-gray-400 hover:text-gray-600"
+                                    className="text-gray-400 hover:text-gray-600 dark:text-gray-300"
                                   >
                                     <ExternalLink className="h-4 w-4" />
                                   </a>
                                 )}
                               </div>
                               {inheritanceInfo?.type === 'inherited' && inheritanceInfo.source !== selectedBranch.id && (
-                                <div className="text-xs text-gray-600 mb-2 italic">
+                                <div className="text-xs text-gray-600 dark:text-gray-300 mb-2 italic">
                                   Inherited from {getBranchName(inheritanceInfo.source, branches)}
                                 </div>
                               )}
-                              <p className="text-sm text-gray-600 mb-2">{versionData?.brief}</p>
+                              <p className="text-sm text-gray-600 dark:text-gray-300 mb-2">{versionData?.brief}</p>
                               <p className="text-sm mb-3">{versionData?.definition}</p>
                               {versionData?.changelog && inheritanceInfo?.type === 'modified' && (
-                                <div className="text-xs text-blue-600 bg-blue-50 p-2 rounded mb-2">
+                                <div className="text-xs text-blue-600 dark:text-blue-300 bg-blue-50 dark:bg-blue-950/20 p-2 rounded mb-2">
                                   <strong>Changes in this branch:</strong> {versionData.changelog}
                                 </div>
                               )}
                               {term.usedBy && (
-                                <div className="text-xs text-gray-500">
+                                <div className="text-xs text-gray-500 dark:text-gray-400">
                                   <strong>Used by:</strong>{' '}
                                   {term.usedBy.principles && (
                                     <span>
@@ -748,8 +748,8 @@ export default function IdeasPage() {
                         const branchPrinciples = getElementsForBranch(principlesData.principles, selectedBranch.id, branches);
                         if (branchPrinciples.length === 0) {
                           return (
-                            <div className="text-center text-gray-500 py-8">
-                              <BookOpen className="h-12 w-12 text-gray-300 mx-auto mb-4" />
+                            <div className="text-center text-gray-500 dark:text-gray-400 py-8">
+                              <BookOpen className="h-12 w-12 text-gray-300 dark:text-gray-600 dark:text-gray-300 mx-auto mb-4" />
                               <p>No principles defined for this branch</p>
                             </div>
                           );
@@ -764,7 +764,7 @@ export default function IdeasPage() {
                           
                           return (
                             <div key={principle.id} className={`border rounded-lg p-4 ${
-                              inheritanceInfo?.type === 'modified' ? 'border-blue-200 bg-blue-50/30' : 'border-gray-200'
+                              inheritanceInfo?.type === 'modified' ? 'border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-950/20' : 'border-gray-200 dark:border-gray-700'
                             }`}>
                               <div className="flex items-start justify-between mb-2">
                                 <div className="flex items-center gap-2 flex-wrap">
@@ -780,26 +780,26 @@ export default function IdeasPage() {
                                 {versionData?.githubIssue && (
                                   <a 
                                     href={`#${versionData.githubIssue}`}
-                                    className="text-gray-400 hover:text-gray-600"
+                                    className="text-gray-400 hover:text-gray-600 dark:text-gray-300"
                                   >
                                     <ExternalLink className="h-4 w-4" />
                                   </a>
                                 )}
                               </div>
                               {inheritanceInfo?.type === 'inherited' && inheritanceInfo.source !== selectedBranch.id && (
-                                <div className="text-xs text-gray-600 mb-2 italic">
+                                <div className="text-xs text-gray-600 dark:text-gray-300 mb-2 italic">
                                   Inherited from {getBranchName(inheritanceInfo.source, branches)}
                                 </div>
                               )}
                               <p className="text-sm mb-3 font-medium italic">{versionData?.statement}</p>
                               {versionData?.changelog && inheritanceInfo?.type === 'modified' && (
-                                <div className="text-xs text-blue-600 bg-blue-50 p-2 rounded mb-2">
+                                <div className="text-xs text-blue-600 dark:text-blue-300 bg-blue-50 dark:bg-blue-950/20 p-2 rounded mb-2">
                                   <strong>Changes in this branch:</strong> {versionData.changelog}
                                 </div>
                               )}
                               <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
                                 {versionData?.termDependencies && Object.keys(versionData.termDependencies).length > 0 && (
-                                  <div className="text-gray-600">
+                                  <div className="text-gray-600 dark:text-gray-300">
                                     <strong>Uses terms:</strong>{' '}
                                     {Object.entries(versionData.termDependencies).map(([term, termVersion], index) => (
                                       <span key={term}>
@@ -810,7 +810,7 @@ export default function IdeasPage() {
                                   </div>
                                 )}
                                 {principle.implementedBy?.rules && (
-                                  <div className="text-gray-600">
+                                  <div className="text-gray-600 dark:text-gray-300">
                                     <strong>Implemented by:</strong> {principle.implementedBy.rules.length} rules
                                   </div>
                                 )}
@@ -861,8 +861,8 @@ export default function IdeasPage() {
                         
                         if (allRules.length === 0) {
                           return (
-                            <div className="text-center text-gray-500 py-8">
-                              <Shield className="h-12 w-12 text-gray-300 mx-auto mb-4" />
+                            <div className="text-center text-gray-500 dark:text-gray-400 py-8">
+                              <Shield className="h-12 w-12 text-gray-300 dark:text-gray-600 dark:text-gray-300 mx-auto mb-4" />
                               <p>No rules defined for this branch</p>
                             </div>
                           );
@@ -879,14 +879,14 @@ export default function IdeasPage() {
                           
                           return (
                             <div key={rule.id} className={`border rounded-lg p-4 ${
-                              inheritanceInfo?.type === 'modified' ? 'border-blue-200 bg-blue-50/30' : 'border-gray-200'
+                              inheritanceInfo?.type === 'modified' ? 'border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-950/20' : 'border-gray-200 dark:border-gray-700'
                             }`}>
                               <div className="flex items-start justify-between mb-2">
                                 <div className="flex items-center gap-2 flex-wrap">
                                   <h4 className="font-semibold text-lg">{rule.name}</h4>
                                   <Badge variant="outline">v{version}</Badge>
                                   {inheritanceInfo && getInheritanceBadge(inheritanceInfo, branches)}
-                                  <Badge variant="outline" className={isMetaRule ? 'bg-purple-100 text-purple-800 border-purple-200' : 'bg-blue-100 text-blue-800 border-blue-200'}>
+                                  <Badge variant="outline" className={isMetaRule ? 'bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-purple-200 border-purple-200 dark:border-purple-700' : 'bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 border-blue-200 dark:border-blue-700'}>
                                     {isMetaRule ? 'Meta-Rule' : 'Rule'}
                                   </Badge>
                                   {versionData?.status && (
@@ -898,18 +898,18 @@ export default function IdeasPage() {
                                 {versionData?.githubIssue && (
                                   <a 
                                     href={`#${versionData.githubIssue}`}
-                                    className="text-gray-400 hover:text-gray-600"
+                                    className="text-gray-400 hover:text-gray-600 dark:text-gray-300"
                                   >
                                     <ExternalLink className="h-4 w-4" />
                                   </a>
                                 )}
                               </div>
                               {inheritanceInfo?.type === 'inherited' && inheritanceInfo.source !== selectedBranch.id && (
-                                <div className="text-xs text-gray-600 mb-2 italic">
+                                <div className="text-xs text-gray-600 dark:text-gray-300 mb-2 italic">
                                   Inherited from {getBranchName(inheritanceInfo.source, branches)}
                                 </div>
                               )}
-                              <p className="text-sm text-gray-600 mb-3">{versionData?.purpose}</p>
+                              <p className="text-sm text-gray-600 dark:text-gray-300 mb-3">{versionData?.purpose}</p>
                               {versionData?.keyRequirements && (
                                 <div className="mb-3">
                                   <strong className="text-sm">Key Requirements:</strong>
@@ -931,12 +931,12 @@ export default function IdeasPage() {
                                 </div>
                               )}
                               {versionData?.changelog && inheritanceInfo?.type === 'modified' && (
-                                <div className="text-xs text-blue-600 bg-blue-50 p-2 rounded mb-2">
+                                <div className="text-xs text-blue-600 dark:text-blue-300 bg-blue-50 dark:bg-blue-950/20 p-2 rounded mb-2">
                                   <strong>Changes in this branch:</strong> {versionData.changelog}
                                 </div>
                               )}
                               {(rule.implements || rule.uses) && (
-                                <div className="text-xs text-gray-500">
+                                <div className="text-xs text-gray-500 dark:text-gray-400">
                                   {rule.implements && (
                                     <span><strong>Implements:</strong> {rule.implements.join(', ')}</span>
                                   )}
@@ -989,14 +989,14 @@ export default function IdeasPage() {
                         const branchDiscussions = getDiscussionsForBranch(selectedBranch.id);
                         if (branchDiscussions.length === 0) {
                           return (
-                            <div className="text-center text-gray-500 py-8">
-                              <MessageSquare className="h-12 w-12 text-gray-300 mx-auto mb-4" />
+                            <div className="text-center text-gray-500 dark:text-gray-400 py-8">
+                              <MessageSquare className="h-12 w-12 text-gray-300 dark:text-gray-600 dark:text-gray-300 mx-auto mb-4" />
                               <p>No active discussions for this branch</p>
                             </div>
                           );
                         }
                         return branchDiscussions.map((discussion: any) => (
-                          <div key={discussion.id} className="border border-gray-200 rounded-lg p-4">
+                          <div key={discussion.id} className="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
                             <div className="flex items-start justify-between mb-2">
                               <div className="flex items-center gap-2">
                                 <h4 className="font-semibold text-lg">{discussion.title}</h4>
@@ -1010,17 +1010,17 @@ export default function IdeasPage() {
                               {discussion.githubIssue && (
                                 <a 
                                   href={`#${discussion.githubIssue}`}
-                                  className="text-gray-400 hover:text-gray-600"
+                                  className="text-gray-400 hover:text-gray-600 dark:text-gray-300"
                                 >
                                   <ExternalLink className="h-4 w-4" />
                                 </a>
                               )}
                             </div>
                             {discussion.description && (
-                              <p className="text-sm text-gray-600 mb-3">{discussion.description}</p>
+                              <p className="text-sm text-gray-600 dark:text-gray-300 mb-3">{discussion.description}</p>
                             )}
                             {discussion.proposal && (
-                              <div className="bg-gray-50 p-3 rounded mb-3">
+                              <div className="bg-muted/30 p-3 rounded mb-3">
                                 <strong className="text-sm">Proposed changes:</strong>
                                 <p className="text-sm text-gray-700 mt-1">{discussion.proposal.changes.changelog || discussion.proposal.changes.definition}</p>
                                 {discussion.proposal.impact && (
@@ -1034,19 +1034,19 @@ export default function IdeasPage() {
                               <div className="grid grid-cols-3 gap-4 text-sm mb-3">
                                 <div className="text-center">
                                   <div className="text-green-600 font-semibold">{discussion.voting.results.yes}</div>
-                                  <div className="text-xs text-gray-500">Yes</div>
+                                  <div className="text-xs text-gray-500 dark:text-gray-400">Yes</div>
                                 </div>
                                 <div className="text-center">
                                   <div className="text-red-600 font-semibold">{discussion.voting.results.no}</div>
-                                  <div className="text-xs text-gray-500">No</div>
+                                  <div className="text-xs text-gray-500 dark:text-gray-400">No</div>
                                 </div>
                                 <div className="text-center">
-                                  <div className="text-gray-600 font-semibold">{discussion.voting.results.abstain}</div>
-                                  <div className="text-xs text-gray-500">Abstain</div>
+                                  <div className="text-gray-600 dark:text-gray-300 font-semibold">{discussion.voting.results.abstain}</div>
+                                  <div className="text-xs text-gray-500 dark:text-gray-400">Abstain</div>
                                 </div>
                               </div>
                             )}
-                            <div className="flex items-center gap-4 text-xs text-gray-500">
+                            <div className="flex items-center gap-4 text-xs text-gray-500 dark:text-gray-400">
                               <span className="flex items-center gap-1">
                                 <Eye className="h-3 w-3" />
                                 {discussion.stats.views} views
@@ -1077,9 +1077,9 @@ export default function IdeasPage() {
           ) : (
             <Card className="h-full flex items-center justify-center">
               <CardContent className="text-center p-12">
-                <GitBranch className="h-12 w-12 text-gray-300 mx-auto mb-4" />
-                <h3 className="text-lg font-semibold text-gray-600 mb-2">Select a Branch</h3>
-                <p className="text-gray-500">
+                <GitBranch className="h-12 w-12 text-gray-300 dark:text-gray-600 dark:text-gray-300 mx-auto mb-4" />
+                <h3 className="text-lg font-semibold text-gray-600 dark:text-gray-300 mb-2">Select a Branch</h3>
+                <p className="text-gray-500 dark:text-gray-400">
                   Choose a branch from the tree on the left to view its details, terms, principles, and discussions.
                 </p>
               </CardContent>

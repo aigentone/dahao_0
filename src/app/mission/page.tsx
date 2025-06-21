@@ -224,7 +224,7 @@ export default function MissionPage() {
         {/* Why Now */}
         <section className="mb-16">
           <h2 className="text-3xl font-bold mb-6">Why Now? Individuals Are Finally Empowered</h2>
-          <Card className="bg-gradient-to-r from-green-50 to-blue-50 border-green-200">
+          <Card className="bg-gradient-to-r from-green-50/50 to-blue-50/50 dark:from-green-950/20 dark:to-blue-950/20 border-green-200 dark:border-green-800">
             <CardContent className="pt-6">
               <p className="text-muted-foreground mb-4">
                 For the first time in history, transformative technology (LLMs) empowers individuals more than corporations.
@@ -234,7 +234,7 @@ export default function MissionPage() {
                 DAHAO takes this unprecedented moment and asks: What if we organized this newly empowered population?
                 What if millions of AI-enhanced individuals could coordinate dialectically without corporate intermediaries?
               </p>
-              <div className="bg-white/70 rounded-lg p-4 mt-4">
+              <div className="bg-background/70 rounded-lg p-4 mt-4">
                 <p className="font-medium text-foreground">
                   The cognitive power is already in people's hands. DAHAO just gives them a platform to think together.
                 </p>
@@ -378,7 +378,7 @@ export default function MissionPage() {
         {/* The Promise */}
         <section className="mb-16">
           <h2 className="text-3xl font-bold mb-6">The Philosophical Promise</h2>
-          <Card className="bg-gradient-to-r from-purple-50 to-blue-50 border-purple-200">
+          <Card className="bg-gradient-to-r from-purple-50/50 to-blue-50/50 dark:from-purple-950/20 dark:to-blue-950/20 border-purple-200 dark:border-purple-800">
             <CardContent className="pt-6">
               <p className="text-muted-foreground mb-4">
                 We're not just building better discussion software. We're creating the first system where:

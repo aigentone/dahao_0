@@ -127,7 +127,7 @@ export default function GitStructurePage() {
               {/* Visual Tree Structure */}
               <div className="space-y-6">
                 {/* Core DAHAO */}
-                <div className="border-2 border-blue-200 rounded-lg p-4 bg-blue-50">
+                <div className="border-2 border-blue-200 rounded-lg p-4 bg-blue-50 dark:bg-blue-950/20">
                   <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center gap-2">
                       <Layers className="h-5 w-5 text-blue-600" />
@@ -144,7 +144,7 @@ export default function GitStructurePage() {
                     {Object.entries(GOVERNANCE_STRUCTURE.core.terms).map(([term, data]) => (
                       <div
                         key={term}
-                        className="bg-white p-2 rounded border cursor-pointer hover:shadow-md transition-shadow"
+                        className="bg-background p-2 rounded border cursor-pointer hover:shadow-md transition-shadow"
                         onClick={() => setSelectedTerm(term)}
                       >
                         <div className="flex items-center justify-between">
@@ -168,7 +168,7 @@ export default function GitStructurePage() {
                 {/* Sub-DAHAOs */}
                 <div className="grid gap-4 md:grid-cols-2">
                   {Object.entries(GOVERNANCE_STRUCTURE.subDAHAOs).map(([name, data]) => (
-                    <div key={name} className="border-2 border-green-200 rounded-lg p-4 bg-green-50">
+                    <div key={name} className="border-2 border-green-200 rounded-lg p-4 bg-green-50 dark:bg-green-950/20">
                       <div className="flex items-center justify-between mb-3">
                         <div className="flex items-center gap-2">
                           <GitBranch className="h-5 w-5 text-green-600" />
@@ -182,11 +182,11 @@ export default function GitStructurePage() {
 
                       <div className="space-y-2">
                         {Object.entries(data.terms).map(([term, termData]) => (
-                          <div key={term} className="bg-white p-2 rounded border text-sm">
+                          <div key={term} className="bg-background p-2 rounded border text-sm">
                             <div className="flex items-center justify-between">
                               <span className="font-medium">{term}</span>
                               <div className="flex items-center gap-2">
-                                {'new' in termData && termData.new && <Badge className="text-xs bg-blue-500">NEW</Badge>}
+                                {'new' in termData && termData.new && <Badge className="text-xs bg-blue-50 dark:bg-blue-950/200">NEW</Badge>}
                                 {'extends' in termData && termData.extends && <Badge variant="outline" className="text-xs">extends</Badge>}
                                 <Badge variant="secondary" className="text-xs">v{termData.version}</Badge>
                               </div>
@@ -204,7 +204,7 @@ export default function GitStructurePage() {
                 </div>
 
                 {/* Personal Branches */}
-                <div className="border-2 border-purple-200 rounded-lg p-4 bg-purple-50">
+                <div className="border-2 border-purple-200 rounded-lg p-4 bg-purple-50 dark:bg-purple-950/20">
                   <h4 className="font-semibold mb-3 flex items-center gap-2">
                     <Users className="h-5 w-5 text-purple-600" />
                     Personal Branches
@@ -212,7 +212,7 @@ export default function GitStructurePage() {
 
                   <div className="grid gap-3 md:grid-cols-2">
                     {Object.entries(GOVERNANCE_STRUCTURE.personalBranches).map(([user, data]) => (
-                      <div key={user} className="bg-white p-3 rounded border">
+                      <div key={user} className="bg-background p-3 rounded border">
                         <div className="flex items-center justify-between mb-2">
                           <span className="font-medium">{user}</span>
                           <Badge variant="outline" className="text-xs">
@@ -237,7 +237,7 @@ export default function GitStructurePage() {
               </div>
 
               {/* GitHub Structure Preview */}
-              <Card className="mt-6 bg-gray-50">
+              <Card className="mt-6 bg-muted/30">
                 <CardHeader>
                   <CardTitle className="text-base flex items-center gap-2">
                     <Code className="h-4 w-4" />
@@ -374,7 +374,7 @@ reporting:
 
     {/* Configuration Impact */}
     <div className="mt-4 space-y-3">
-      <div className="p-3 bg-blue-50 rounded">
+      <div className="p-3 bg-blue-50 dark:bg-blue-950/20 rounded">
         <h5 className="font-medium text-sm mb-2">Automated Voting Settings</h5>
         <div className="grid gap-2 md:grid-cols-2 text-xs">
           <div>
@@ -388,14 +388,14 @@ reporting:
         </div>
       </div>
 
-      <div className="p-3 bg-green-50 rounded">
+      <div className="p-3 bg-green-50 dark:bg-green-950/20 rounded">
         <h5 className="font-medium text-sm mb-2">Rate Limiting</h5>
         <p className="text-xs text-muted-foreground">
           Prevents spam and ensures quality analysis. Users set their own sustainable pace.
         </p>
       </div>
 
-      <div className="p-3 bg-purple-50 rounded">
+      <div className="p-3 bg-purple-50 dark:bg-purple-950/20 rounded">
         <h5 className="font-medium text-sm mb-2">Privacy Controls</h5>
         <p className="text-xs text-muted-foreground">
           Users control who can request their AI and what information is shared.
@@ -426,7 +426,7 @@ reporting:
 
                   {/* Timeline */}
                   <div className="relative">
-                    <div className="absolute left-12 top-0 bottom-0 w-0.5 bg-gray-300"></div>
+                    <div className="absolute left-12 top-0 bottom-0 w-0.5 bg-gray-300 dark:bg-gray-600"></div>
 
                     <div className="space-y-6">
                       {/* Core v1.0 */}
@@ -438,7 +438,7 @@ reporting:
                           </div>
                         </div>
                         <div className="flex-1">
-                          <div className="bg-blue-50 p-3 rounded">
+                          <div className="bg-blue-50 dark:bg-blue-950/20 p-3 rounded">
                             <div className="flex items-center gap-2 mb-1">
                               <Badge variant="outline" className="text-xs">Core</Badge>
                               <span className="font-medium">harm v1.0.0</span>
@@ -471,7 +471,7 @@ reporting:
                           </div>
                         </div>
                         <div className="flex-1">
-                          <div className="bg-blue-50 p-3 rounded">
+                          <div className="bg-blue-50 dark:bg-blue-950/20 p-3 rounded">
                             <div className="flex items-center gap-2 mb-1">
                               <Badge variant="outline" className="text-xs">Core</Badge>
                               <span className="font-medium">harm v1.2.0</span>
@@ -490,9 +490,9 @@ reporting:
                           <GitMerge className="w-4 h-4 text-purple-600 ml-10" />
                         </div>
                         <div className="flex-1 grid gap-3 md:grid-cols-2">
-                          <div className="bg-green-50 p-3 rounded">
+                          <div className="bg-green-50 dark:bg-green-950/20 p-3 rounded">
                             <div className="flex items-center gap-2 mb-1">
-                              <Badge variant="outline" className="text-xs bg-green-100">Animal</Badge>
+                              <Badge variant="outline" className="text-xs bg-green-100 dark:bg-green-900/50">Animal</Badge>
                               <span className="font-medium">harm v1.2-animal</span>
                             </div>
                             <p className="text-sm text-muted-foreground">
@@ -502,9 +502,9 @@ reporting:
                             </p>
                           </div>
 
-                          <div className="bg-green-50 p-3 rounded">
+                          <div className="bg-green-50 dark:bg-green-950/20 p-3 rounded">
                             <div className="flex items-center gap-2 mb-1">
-                              <Badge variant="outline" className="text-xs bg-green-100">Music</Badge>
+                              <Badge variant="outline" className="text-xs bg-green-100 dark:bg-green-900/50">Music</Badge>
                               <span className="font-medium">harm v1.2-music</span>
                             </div>
                             <p className="text-sm text-muted-foreground">
@@ -525,9 +525,9 @@ reporting:
                           </div>
                         </div>
                         <div className="flex-1">
-                          <div className="bg-orange-50 p-3 rounded border-2 border-orange-200 border-dashed">
+                          <div className="bg-orange-50 dark:bg-orange-950/20 p-3 rounded border-2 border-orange-200 border-dashed">
                             <div className="flex items-center gap-2 mb-1">
-                              <Badge variant="outline" className="text-xs bg-orange-100">Core Proposal</Badge>
+                              <Badge variant="outline" className="text-xs bg-orange-100 dark:bg-orange-900/50">Core Proposal</Badge>
                               <span className="font-medium">harm v1.3.0</span>
                             </div>
                             <p className="text-sm text-muted-foreground">
@@ -551,26 +551,26 @@ reporting:
                 </div>
 
                 {/* Version Namespacing */}
-                <Card className="bg-gray-50">
+                <Card className="bg-muted/30">
                   <CardHeader>
                     <CardTitle className="text-base">Version Namespacing</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-2 font-mono text-sm">
                       <div className="flex items-center gap-2">
-                        <code className="bg-white px-2 py-1 rounded">harm@core-v1.3.0</code>
+                        <code className="bg-background px-2 py-1 rounded">harm@core-v1.3.0</code>
                         <span className="text-muted-foreground">Core version</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <code className="bg-white px-2 py-1 rounded">harm@animal-v1.2-animal</code>
+                        <code className="bg-background px-2 py-1 rounded">harm@animal-v1.2-animal</code>
                         <span className="text-muted-foreground">Animal Welfare version</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <code className="bg-white px-2 py-1 rounded">harm@music-v1.2-music</code>
+                        <code className="bg-background px-2 py-1 rounded">harm@music-v1.2-music</code>
                         <span className="text-muted-foreground">Music Industry version</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <code className="bg-white px-2 py-1 rounded">harm@personal-sarah-v1.2-animal-vegan</code>
+                        <code className="bg-background px-2 py-1 rounded">harm@personal-sarah-v1.2-animal-vegan</code>
                         <span className="text-muted-foreground">Personal branch version</span>
                       </div>
                     </div>
@@ -607,7 +607,7 @@ reporting:
                         <p className="text-sm text-muted-foreground mb-3">
                           Someone proposes updating "harm" from v1.2 to v1.3
                         </p>
-                        <div className="bg-blue-50 p-3 rounded text-sm">
+                        <div className="bg-blue-50 dark:bg-blue-950/20 p-3 rounded text-sm">
                           <code>GitHub Issue #234: Update harm definition to include systemic disadvantage</code>
                         </div>
                       </CardContent>
@@ -629,7 +629,7 @@ reporting:
                         </p>
                         <div className="flex gap-2">
                           <Badge variant="outline">156 participants</Badge>
-                          <Badge className="bg-green-100 text-green-800">78% approval</Badge>
+                          <Badge className="bg-green-100 dark:bg-green-900/50 text-green-800 dark:text-green-200">78% approval</Badge>
                         </div>
                       </CardContent>
                     </Card>
@@ -680,14 +680,14 @@ reporting:
                           Each sub-DAHAO independently decides how to respond
                         </p>
                         <div className="grid gap-3 md:grid-cols-2">
-                          <div className="bg-green-50 p-3 rounded">
+                          <div className="bg-green-50 dark:bg-green-950/20 p-3 rounded">
                             <h5 className="font-medium text-sm mb-2">Animal Welfare Response</h5>
                             <Badge className="bg-green-600 text-xs">Adopt & Extend</Badge>
                             <p className="text-xs text-muted-foreground mt-1">
                               Creates harm v1.3-animal with core changes + their extensions
                             </p>
                           </div>
-                          <div className="bg-orange-50 p-3 rounded">
+                          <div className="bg-orange-50 dark:bg-orange-950/20 p-3 rounded">
                             <h5 className="font-medium text-sm mb-2">Music Industry Response</h5>
                             <Badge className="bg-orange-600 text-xs">Keep Current</Badge>
                             <p className="text-xs text-muted-foreground mt-1">
@@ -723,7 +723,7 @@ reporting:
                 </div>
 
                 {/* GitHub Automation */}
-                <Card className="bg-gray-50">
+                <Card className="bg-muted/30">
                   <CardHeader>
                     <CardTitle className="text-base flex items-center gap-2">
                       <Code className="h-4 w-4" />
@@ -778,7 +778,7 @@ jobs:
               <div className="space-y-6">
 
                 {/* IssueOps Automation */}
-                <Card className="border-blue-200 bg-blue-50">
+                <Card className="border-blue-200 bg-blue-50 dark:bg-blue-950/20">
                   <CardHeader>
                     <CardTitle className="text-base flex items-center gap-2">
                       <GitPullRequest className="h-5 w-5 text-blue-600" />
@@ -792,7 +792,7 @@ jobs:
                       </p>
 
                       {/* Task Types */}
-                      <div className="bg-white p-3 rounded">
+                      <div className="bg-background p-3 rounded">
                         <h5 className="font-medium text-sm mb-2">Available Task Types</h5>
                         <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
                           <Badge variant="outline">Analysis</Badge>
@@ -804,9 +804,9 @@ jobs:
                       </div>
 
                       {/* Flow Example */}
-                      <div className="bg-white p-3 rounded">
+                      <div className="bg-background p-3 rounded">
                         <h5 className="font-medium text-sm mb-2">Example Flow</h5>
-                        <pre className="text-xs bg-gray-100 p-3 rounded overflow-x-auto">
+                        <pre className="text-xs bg-gray-100 dark:bg-gray-800 p-3 rounded overflow-x-auto">
         {`Issue #234: "Update harm definition"
 
         @john: "This could affect our privacy rules"
@@ -867,7 +867,7 @@ jobs:
                     </CardHeader>
                     <CardContent>
                       <div className="space-y-3">
-                        <div className="p-3 bg-blue-50 rounded">
+                        <div className="p-3 bg-blue-50 dark:bg-blue-950/20 rounded">
                           <h5 className="font-medium text-sm mb-1">Core System AI</h5>
                           <p className="text-xs text-muted-foreground">
                             Validates against universal DAHAO principles
@@ -875,7 +875,7 @@ jobs:
                           <Badge variant="outline" className="text-xs mt-1">Anyone can request</Badge>
                         </div>
 
-                        <div className="p-3 bg-green-50 rounded">
+                        <div className="p-3 bg-green-50 dark:bg-green-950/20 rounded">
                           <h5 className="font-medium text-sm mb-1">Animal Welfare System AI</h5>
                           <p className="text-xs text-muted-foreground">
                             Validates against animal-specific ethics
@@ -883,7 +883,7 @@ jobs:
                           <Badge variant="outline" className="text-xs mt-1">Anyone can request</Badge>
                         </div>
 
-                        <div className="p-3 bg-green-50 rounded">
+                        <div className="p-3 bg-green-50 dark:bg-green-950/20 rounded">
                           <h5 className="font-medium text-sm mb-1">Music Industry System AI</h5>
                           <p className="text-xs text-muted-foreground">
                             Validates against music industry standards
@@ -904,7 +904,7 @@ jobs:
                     </CardHeader>
                     <CardContent>
                       <div className="space-y-3">
-                        <div className="p-3 bg-purple-50 rounded">
+                        <div className="p-3 bg-purple-50 dark:bg-purple-950/20 rounded">
                           <h5 className="font-medium text-sm mb-1">Your Personal AI</h5>
                           <p className="text-xs text-muted-foreground mb-2">
                             Automatically analyzes your comments
@@ -916,7 +916,7 @@ jobs:
                           </div>
                         </div>
 
-                        <div className="p-3 bg-yellow-50 rounded">
+                        <div className="p-3 bg-yellow-50 dark:bg-yellow-950/20 rounded">
                           <h5 className="font-medium text-sm mb-1">Others' Personal AIs</h5>
                           <p className="text-xs text-muted-foreground mb-2">
                             Can be requested if they allow it
@@ -945,7 +945,7 @@ jobs:
                         <div className="overflow-x-auto">
                           <table className="w-full text-sm">
                             <thead>
-                              <tr className="border-b bg-gray-50">
+                              <tr className="border-b bg-muted/30">
                                 <th className="text-left p-2">Agent</th>
                                 <th className="text-center p-2">Anyone</th>
                                 <th className="text-center p-2">Members</th>
@@ -1012,7 +1012,7 @@ jobs:
                 </Card>
 
                 {/* Cross-Domain Example - UPDATED */}
-                <Card className="bg-yellow-50 border-yellow-200">
+                <Card className="bg-yellow-50 dark:bg-yellow-950/20 border-yellow-200">
                   <CardHeader>
                     <CardTitle className="text-base">Example: Multi-Domain Analysis</CardTitle>
                   </CardHeader>
@@ -1020,7 +1020,7 @@ jobs:
                     <p className="text-sm mb-3">
                       Sarah (Animal DAHAO member) analyzes a Music DAHAO proposal:
                     </p>
-                    <div className="bg-white p-3 rounded">
+                    <div className="bg-background p-3 rounded">
                       <pre className="text-xs overflow-x-auto">
         {`Issue: "Music festivals must provide water stations"
 
@@ -1041,7 +1041,7 @@ jobs:
         Status: Requires member sponsorship"`}</pre>
                     </div>
 
-                    <div className="mt-3 p-3 bg-orange-100 rounded">
+                    <div className="mt-3 p-3 bg-orange-100 dark:bg-orange-900/50 rounded">
                       <p className="text-xs font-medium text-orange-800">
                         Note: Sarah can analyze and propose, but can't vote in Music DAHAO
                         unless she's a member. Her proposal needs a Music DAHAO member to sponsor it.
@@ -1063,9 +1063,9 @@ jobs:
                       Personal branch rules follow users across all domains:
                     </p>
                     <div className="space-y-3">
-                      <div className="p-3 bg-red-50 rounded">
+                      <div className="p-3 bg-red-50 dark:bg-red-950/20 rounded">
                         <h5 className="font-medium text-sm">John's Privacy Rule</h5>
-                        <code className="text-xs bg-white px-2 py-1 rounded">
+                        <code className="text-xs bg-background px-2 py-1 rounded">
                           "My AI agent cannot vote or reveal voting preferences"
                         </code>
                         <div className="mt-2 text-xs space-y-1">
@@ -1076,9 +1076,9 @@ jobs:
                         </div>
                       </div>
 
-                      <div className="p-3 bg-green-50 rounded">
+                      <div className="p-3 bg-green-50 dark:bg-green-950/20 rounded">
                         <h5 className="font-medium text-sm">Sarah's Open Rule</h5>
-                        <code className="text-xs bg-white px-2 py-1 rounded">
+                        <code className="text-xs bg-background px-2 py-1 rounded">
                           "My AI agent is fully public and can assist anyone"
                         </code>
                         <div className="mt-2 text-xs space-y-1">
@@ -1100,7 +1100,7 @@ jobs:
                 <CardContent>
                   <div className="space-y-4">
                     {/* Real-time Example */}
-                    <div className="bg-gray-100 p-3 rounded">
+                    <div className="bg-gray-100 dark:bg-gray-800 p-3 rounded">
                       <h5 className="font-medium text-sm mb-2">Live Activity Monitor</h5>
                       <div className="space-y-2 text-xs font-mono">
                         <div className="text-green-600">
@@ -1123,7 +1123,7 @@ jobs:
 
                     {/* Settings Impact */}
                     <div className="grid gap-3 md:grid-cols-3">
-                      <div className="p-3 bg-green-50 rounded">
+                      <div className="p-3 bg-green-50 dark:bg-green-950/20 rounded">
                         <h6 className="font-medium text-xs mb-1">High Automation</h6>
                         <div className="text-xs space-y-1">
                           <div>✓ 100 tasks/day</div>
@@ -1133,7 +1133,7 @@ jobs:
                         <Badge variant="outline" className="text-xs mt-2">Sarah's profile</Badge>
                       </div>
 
-                      <div className="p-3 bg-yellow-50 rounded">
+                      <div className="p-3 bg-yellow-50 dark:bg-yellow-950/20 rounded">
                         <h6 className="font-medium text-xs mb-1">Balanced</h6>
                         <div className="text-xs space-y-1">
                           <div>• 50 tasks/day</div>
@@ -1143,7 +1143,7 @@ jobs:
                         <Badge variant="outline" className="text-xs mt-2">Alex's profile</Badge>
                       </div>
 
-                      <div className="p-3 bg-red-50 rounded">
+                      <div className="p-3 bg-red-50 dark:bg-red-950/20 rounded">
                         <h6 className="font-medium text-xs mb-1">Privacy-First</h6>
                         <div className="text-xs space-y-1">
                           <div>⚬ 10 tasks/day</div>
@@ -1155,9 +1155,9 @@ jobs:
                     </div>
 
                     {/* Weekly Report Example */}
-                    <div className="p-3 bg-purple-50 rounded">
+                    <div className="p-3 bg-purple-50 dark:bg-purple-950/20 rounded">
                       <h5 className="font-medium text-sm mb-2">Sample Weekly Report (John)</h5>
-                      <pre className="text-xs bg-white p-2 rounded">
+                      <pre className="text-xs bg-background p-2 rounded">
               {`Week of Dec 10-16, 2024
 
               Tasks Completed: 42/70 (60% of limit)
@@ -1188,7 +1188,7 @@ jobs:
       </Tabs>
 
       {/* Implementation Status */}
-      <Card className="mt-8 bg-orange-50 border-orange-200">
+      <Card className="mt-8 bg-orange-50 dark:bg-orange-950/20 border-orange-200">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <AlertCircle className="h-5 w-5 text-orange-600" />
@@ -1220,7 +1220,7 @@ jobs:
             </div>
           </div>
 
-          <div className="mt-4 p-3 bg-white rounded">
+          <div className="mt-4 p-3 bg-background rounded">
             <p className="text-sm text-muted-foreground">
               This page will be updated as we build the actual GitHub structure.
               It serves as both documentation and implementation guide.
