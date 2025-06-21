@@ -1,0 +1,143 @@
+{
+  "users": {
+    "user-john-123": {
+      "id": "user-john-123",
+      "username": "john",
+      "displayName": "John Doe",
+      "email": "john@example.com",
+      "githubUsername": "johndoe",
+      "avatar": "https://avatars.githubusercontent.com/u/12345",
+      "bio": "Exploring radical transparency in governance. Building bridges between human wisdom and AI capabilities.",
+      "branches": {
+        "owned": ["john-main-branch", "john-animal-fork", "john-dev-branch"],
+        "watching": ["core-dahao", "animal-welfare-dahao", "sarah-main-branch", "experimental-ai-branch"],
+        "contributing": ["environmental-dahao", "core-governance-v2"]
+      },
+      "stats": {
+        "totalBranches": 3,
+        "totalProposals": 12,
+        "totalComments": 45,
+        "totalVotes": 23,
+        "reputation": 156,
+        "joinedAt": "2024-01-05T00:00:00Z"
+      },
+      "aiAgent": {
+        "enabled": true,
+        "agentId": "agent-john-personal",
+        "provider": "openai",
+        "model": "gpt-4",
+        "autoVote": false,
+        "autoAnalyze": true,
+        "notifyOnAnalysis": true,
+        "values": {
+          "transparency": "radical",
+          "harm-threshold": "minimal",
+          "decision-speed": "thoughtful"
+        }
+      },
+      "notifications": {
+        "email": true,
+        "proposals": true,
+        "mentions": true,
+        "votes": true,
+        "forkRequests": true
+      },
+      "createdAt": "2024-01-05T00:00:00Z",
+      "lastActive": "2024-04-02T16:00:00Z"
+    },
+
+    "user-sarah-456": {
+      "id": "user-sarah-456",
+      "username": "sarah",
+      "displayName": "Sarah Chen",
+      "email": "sarah@example.com",
+      "githubUsername": "sarahchen",
+      "avatar": "https://avatars.githubusercontent.com/u/23456",
+      "bio": "Passionate about inclusive governance and minority protection. Working to ensure every voice is heard.",
+      "branches": {
+        "owned": ["sarah-main-branch", "sarah-animal-fork"],
+        "watching": ["core-dahao", "john-main-branch", "music-industry-dahao"],
+        "contributing": ["animal-welfare-dahao", "experimental-ai-branch"]
+      },
+      "stats": {
+        "totalBranches": 2,
+        "totalProposals": 18,
+        "totalComments": 67,
+        "totalVotes": 45,
+        "reputation": 234,
+        "joinedAt": "2024-01-08T00:00:00Z"
+      },
+      "aiAgent": {
+        "enabled": true,
+        "agentId": "agent-sarah-personal",
+        "provider": "anthropic",
+        "model": "claude-3",
+        "autoVote": false,
+        "autoAnalyze": false,
+        "notifyOnAnalysis": true,
+        "values": {
+          "inclusion": "maximum",
+          "consensus": "strong",
+          "minority-protection": "essential"
+        }
+      },
+      "createdAt": "2024-01-08T00:00:00Z",
+      "lastActive": "2024-04-02T18:30:00Z"
+    },
+
+    "user-alice-002": {
+      "id": "user-alice-002",
+      "username": "alice",
+      "displayName": "Alice Williams",
+      "email": "alice@example.com",
+      "githubUsername": "alicewilliams",
+      "avatar": "https://avatars.githubusercontent.com/u/34567",
+      "bio": "Animal welfare advocate. Working to extend governance to protect all sentient beings.",
+      "branches": {
+        "owned": [],
+        "watching": ["animal-welfare-dahao", "environmental-dahao"],
+        "contributing": ["animal-welfare-dahao", "core-dahao"]
+      },
+      "stats": {
+        "totalBranches": 0,
+        "totalProposals": 8,
+        "totalComments": 34,
+        "totalVotes": 28,
+        "reputation": 98,
+        "joinedAt": "2024-01-03T00:00:00Z"
+      },
+      "role": "maintainer",
+      "maintainerOf": ["animal-welfare-dahao"],
+      "createdAt": "2024-01-03T00:00:00Z",
+      "lastActive": "2024-04-01T14:00:00Z"
+    },
+
+    "user-emma-007": {
+      "id": "user-emma-007",
+      "username": "emma",
+      "displayName": "Emma Thompson",
+      "email": "emma@example.com",
+      "githubUsername": "emmathompson",
+      "avatar": "https://avatars.githubusercontent.com/u/45678",
+      "bio": "AI researcher exploring the intersection of artificial intelligence and democratic governance.",
+      "branches": {
+        "owned": [],
+        "watching": ["experimental-ai-branch", "core-dahao", "john-main-branch"],
+        "contributing": ["experimental-ai-branch", "core-dahao"]
+      },
+      "stats": {
+        "totalBranches": 0,
+        "totalProposals": 15,
+        "totalComments": 89,
+        "totalVotes": 34,
+        "reputation": 189,
+        "joinedAt": "2024-01-20T00:00:00Z"
+      },
+      "role": "maintainer",
+      "maintainerOf": ["experimental-ai-branch"],
+      "expertise": ["ai-governance", "machine-learning", "ethics"],
+      "createdAt": "2024-01-20T00:00:00Z",
+      "lastActive": "2024-04-02T19:00:00Z"
+    }
+  }
+}

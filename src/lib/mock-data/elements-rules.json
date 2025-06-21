@@ -1,0 +1,439 @@
+{"rules": {
+    "proposal-lifecycle": {
+      "id": "proposal-lifecycle",
+      "type": "rule",
+      "name": "Proposal Lifecycle",
+      "currentVersion": "1.0.0",
+      "versions": {
+        "1.0.0": {
+          "purpose": "Defines how proposals move through the system from creation to ratification",
+          "keyRequirements": [
+            "GitHub Issue required for all proposals",
+            "3-day minimum discussion for minor changes",
+            "7-day minimum discussion for major changes",
+            "7-day voting period after discussion"
+          ],
+          "createdAt": "2024-01-20T00:00:00Z",
+          "createdBy": "user-founder-001",
+          "branchId": "core-dahao",
+          "githubIssue": 201,
+          "ratifiedAt": "2024-01-22T00:00:00Z",
+          "status": "ratified"
+        }
+      },
+      "branchVersions": {
+        "core-dahao": "1.0.0"
+      },
+      "implements": ["democratic-evolution", "transparency-default"],
+      "domain": "core"
+    },
+    "voting-thresholds": {
+      "id": "voting-thresholds",
+      "type": "rule",
+      "name": "Voting Thresholds",
+      "currentVersion": "1.2.0",
+      "versions": {
+        "1.0.0": {
+          "purpose": "Sets approval requirements for different types of governance changes",
+          "keyRequirements": [
+            "Minor changes: >50% approval",
+            "Major changes: >67% approval",
+            "Constitutional changes: >75% approval"
+          ],
+          "createdAt": "2024-01-22T00:00:00Z",
+          "createdBy": "user-founder-001",
+          "branchId": "core-dahao",
+          "githubIssue": 212,
+          "status": "ratified"
+        },
+        "1.2.0": {
+          "purpose": "Sets approval requirements for different types of governance changes",
+          "keyRequirements": [
+            "Term clarifications: >40% approval",
+            "Minor changes: >50% approval",
+            "Major changes: >67% approval",
+            "Constitutional (meta-rule) changes: >75% approval"
+          ],
+          "createdAt": "2024-03-10T00:00:00Z",
+          "createdBy": "user-david-006",
+          "branchId": "core-dahao",
+          "githubIssue": 234,
+          "changelog": "Added term clarification threshold at 40%",
+          "previousVersion": "1.0.0",
+          "status": "ratified"
+        }
+      },
+      "branchVersions": {
+        "core-dahao": "1.2.0",
+        "core-governance-v2": "2.0.0"
+      },
+      "implements": ["democratic-evolution"],
+      "domain": "core"
+    },
+    "proposal-templates": {
+      "id": "proposal-templates",
+      "type": "rule",
+      "name": "Proposal Templates",
+      "currentVersion": "1.0.0",
+      "versions": {
+        "1.0.0": {
+          "purpose": "Standardizes proposal formats for consistency and completeness",
+          "keyRequirements": [
+            "Rationale section required",
+            "Impact assessment required",
+            "Alternative considerations required",
+            "Implementation plan required for rules"
+          ],
+          "createdAt": "2024-02-28T00:00:00Z",
+          "createdBy": "user-bob-003",
+          "branchId": "core-dahao",
+          "githubIssue": 245,
+          "ratifiedAt": "2024-03-02T00:00:00Z",
+          "status": "ratified"
+        }
+      },
+      "branchVersions": {
+        "core-dahao": "1.0.0"
+      },
+      "implements": ["transparency-default", "thoughtful-governance"],
+      "domain": "core"
+    },
+    "participation-requirements": {
+      "id": "participation-requirements",
+      "type": "rule",
+      "name": "Participation Requirements",
+      "currentVersion": "1.0.0",
+      "versions": {
+        "1.0.0": {
+          "purpose": "Defines who can participate in governance and how",
+          "keyRequirements": [
+            "GitHub account required",
+            "Email verification required",
+            "Agreement to community guidelines",
+            "No other barriers to entry"
+          ],
+          "createdAt": "2024-01-25T00:00:00Z",
+          "createdBy": "user-founder-001",
+          "branchId": "core-dahao",
+          "githubIssue": 256,
+          "ratifiedAt": "2024-01-28T00:00:00Z",
+          "status": "ratified"
+        }
+      },
+      "branchVersions": {
+        "core-dahao": "1.0.0"
+      },
+      "implements": ["equality", "transparency-default"],
+      "domain": "core"
+    },
+    "equal-participation": {
+      "id": "equal-participation",
+      "type": "rule",
+      "name": "Equal Participation Rights",
+      "currentVersion": "1.0.0",
+      "versions": {
+        "1.0.0": {
+          "purpose": "Ensures all participants have equal voice in governance",
+          "keyRequirements": [
+            "One person, one vote",
+            "No weighted voting in Phase 1",
+            "Equal proposal rights",
+            "Equal discussion rights"
+          ],
+          "createdAt": "2024-01-28T00:00:00Z",
+          "createdBy": "user-founder-001",
+          "branchId": "core-dahao",
+          "githubIssue": 267,
+          "ratifiedAt": "2024-01-30T00:00:00Z",
+          "status": "ratified"
+        }
+      },
+      "branchVersions": {
+        "core-dahao": "1.0.0"
+      },
+      "implements": ["equality"],
+      "domain": "core"
+    },
+    "respectful-discourse": {
+      "id": "respectful-discourse",
+      "type": "rule",
+      "name": "Respectful Discourse",
+      "currentVersion": "1.0.0",
+      "versions": {
+        "1.0.0": {
+          "purpose": "Maintains dignity and constructive dialogue in all interactions",
+          "keyRequirements": [
+            "No personal attacks",
+            "Focus on ideas, not individuals",
+            "Assume good faith",
+            "Acknowledge different perspectives"
+          ],
+          "createdAt": "2024-01-30T00:00:00Z",
+          "createdBy": "user-alice-002",
+          "branchId": "core-dahao",
+          "githubIssue": 278,
+          "ratifiedAt": "2024-02-01T00:00:00Z",
+          "status": "ratified"
+        }
+      },
+      "branchVersions": {
+        "core-dahao": "1.0.0"
+      },
+      "implements": ["dignity-preservation"],
+      "domain": "core"
+    },
+    "ai-agent-participation": {
+      "id": "ai-agent-participation",
+      "type": "rule",
+      "name": "AI Agent Participation",
+      "currentVersion": "1.0.0",
+      "versions": {
+        "1.0.0": {
+          "purpose": "Defines how AI agents participate in governance processes",
+          "keyRequirements": [
+            "AI must identify itself clearly",
+            "AI cannot vote independently",
+            "AI can analyze and suggest",
+            "AI actions must be auditable"
+          ],
+          "createdAt": "2024-03-15T00:00:00Z",
+          "createdBy": "user-emma-007",
+          "branchId": "core-dahao",
+          "githubIssue": 289,
+          "status": "proposed"
+        }
+      },
+      "branchVersions": {
+        "core-dahao": "1.0.0",
+        "experimental-ai-branch": "2.0.0"
+      },
+      "implements": ["transparency-default", "human-ai-collaboration"],
+      "domain": "core"
+    },
+    "ai-boundaries": {
+      "id": "ai-boundaries",
+      "type": "rule",
+      "name": "AI Agent Boundaries",
+      "currentVersion": "1.0.0",
+      "versions": {
+        "1.0.0": {
+          "purpose": "Sets clear limits on AI agent authority and capabilities",
+          "keyRequirements": [
+            "Humans define all terms",
+            "Humans approve all changes",
+            "AI cannot create meta-rules",
+            "AI suggestions require human sponsor"
+          ],
+          "createdAt": "2024-03-15T00:00:00Z",
+          "createdBy": "user-emma-007",
+          "branchId": "core-dahao",
+          "githubIssue": 290,
+          "status": "proposed"
+        }
+      },
+      "branchVersions": {
+        "core-dahao": "1.0.0",
+        "experimental-ai-branch": "2.0.0"
+      },
+      "implements": ["human-ai-collaboration"],
+      "domain": "core"
+    },
+    "deliberation-periods": {
+      "id": "deliberation-periods",
+      "type": "rule",
+      "name": "Deliberation Periods",
+      "currentVersion": "1.0.0",
+      "versions": {
+        "1.0.0": {
+          "purpose": "Ensures adequate time for thoughtful consideration of proposals",
+          "keyRequirements": [
+            "Minimum 3 days for minor changes",
+            "Minimum 7 days for major changes",
+            "Minimum 14 days for meta-rule changes",
+            "Extensions allowed by request"
+          ],
+          "createdAt": "2024-02-18T00:00:00Z",
+          "createdBy": "user-charlie-005",
+          "branchId": "core-dahao",
+          "githubIssue": 301,
+          "ratifiedAt": "2024-02-20T00:00:00Z",
+          "status": "ratified"
+        }
+      },
+      "branchVersions": {
+        "core-dahao": "1.0.0",
+        "core-governance-v2": "2.0.0"
+      },
+      "implements": ["thoughtful-governance", "consensus-seeking"],
+      "domain": "core"
+    },
+    "consensus-building": {
+      "id": "consensus-building",
+      "type": "rule",
+      "name": "Consensus Building Process",
+      "currentVersion": "1.0.0",
+      "versions": {
+        "1.0.0": {
+          "purpose": "Encourages finding common ground before formal voting",
+          "keyRequirements": [
+            "Facilitator role for contentious issues",
+            "Structured dialogue process",
+            "Document areas of agreement",
+            "Identify core disagreements"
+          ],
+          "createdAt": "2024-02-20T00:00:00Z",
+          "createdBy": "user-charlie-005",
+          "branchId": "core-dahao",
+          "githubIssue": 312,
+          "ratifiedAt": "2024-02-22T00:00:00Z",
+          "status": "ratified"
+        }
+      },
+      "branchVersions": {
+        "core-dahao": "1.0.0"
+      },
+      "implements": ["consensus-seeking"],
+      "domain": "core"
+    },
+    "branch-creation": {
+      "id": "branch-creation",
+      "type": "rule",
+      "name": "Branch Creation Rights",
+      "currentVersion": "1.0.0",
+      "versions": {
+        "1.0.0": {
+          "purpose": "Enables participants to experiment with governance variations",
+          "keyRequirements": [
+            "Any participant can create a branch",
+            "Branches must declare divergences",
+            "Branches maintain connection to core",
+            "Successful experiments can merge back"
+          ],
+          "createdAt": "2024-02-10T00:00:00Z",
+          "createdBy": "user-founder-001",
+          "branchId": "core-dahao",
+          "githubIssue": 323,
+          "ratifiedAt": "2024-02-12T00:00:00Z",
+          "status": "ratified"
+        }
+      },
+      "branchVersions": {
+        "core-dahao": "1.0.0"
+      },
+      "implements": ["experimentation-freedom"],
+      "domain": "core"
+    },
+    "public-records": {
+      "id": "public-records",
+      "type": "rule",
+      "name": "Public Record Requirements",
+      "currentVersion": "1.0.0",
+      "versions": {
+        "1.0.0": {
+          "purpose": "Ensures all governance activities are permanently recorded",
+          "keyRequirements": [
+            "All proposals in GitHub Issues",
+            "All votes recorded on-chain",
+            "All discussions preserved",
+            "Version history maintained"
+          ],
+          "createdAt": "2024-02-22T00:00:00Z",
+          "createdBy": "user-charlie-005",
+          "branchId": "core-dahao",
+          "githubIssue": 334,
+          "ratifiedAt": "2024-02-25T00:00:00Z",
+          "status": "ratified"
+        }
+      },
+      "branchVersions": {
+        "core-dahao": "1.0.0"
+      },
+      "implements": ["transparency-default"],
+      "domain": "core"
+    },
+    "impact-assessment": {
+      "id": "impact-assessment",
+      "type": "rule",
+      "name": "Impact Assessment",
+      "currentVersion": "1.0.0",
+      "versions": {
+        "1.0.0": {
+          "purpose": "Requires analysis of potential effects before changes",
+          "keyRequirements": [
+            "Identify affected parties",
+            "Analyze potential harms",
+            "Consider unintended consequences",
+            "Propose mitigation strategies"
+          ],
+          "createdAt": "2024-03-02T00:00:00Z",
+          "createdBy": "user-bob-003",
+          "branchId": "core-dahao",
+          "githubIssue": 345,
+          "ratifiedAt": "2024-03-05T00:00:00Z",
+          "status": "ratified"
+        }
+      },
+      "branchVersions": {
+        "core-dahao": "1.0.0"
+      },
+      "implements": ["minimize-harm", "thoughtful-governance"],
+      "domain": "core"
+    },
+    "periodic-review": {
+      "id": "periodic-review",
+      "type": "rule",
+      "name": "Periodic Governance Review",
+      "currentVersion": "1.0.0",
+      "versions": {
+        "1.0.0": {
+          "purpose": "Ensures governance remains effective and relevant",
+          "keyRequirements": [
+            "Quarterly effectiveness review",
+            "Annual full governance audit",
+            "Community feedback collection",
+            "Sunset clause evaluation"
+          ],
+          "createdAt": "2024-03-05T00:00:00Z",
+          "createdBy": "user-david-006",
+          "branchId": "core-dahao",
+          "githubIssue": 356,
+          "status": "proposed"
+        }
+      },
+      "branchVersions": {
+        "core-dahao": "1.0.0"
+      },
+      "implements": ["continuous-improvement"],
+      "domain": "core"
+    },
+    "harm-reporting": {
+      "id": "harm-reporting",
+      "type": "rule",
+      "name": "Harm Reporting Process",
+      "currentVersion": "1.0.0",
+      "versions": {
+        "1.0.0": {
+          "purpose": "Establishes process for reporting and addressing harm",
+          "keyRequirements": [
+            "Report harm within 24 hours",
+            "Anonymous reporting option",
+            "Investigation within 48 hours",
+            "Remediation plan required"
+          ],
+          "createdAt": "2024-01-18T00:00:00Z",
+          "createdBy": "user-founder-001",
+          "branchId": "core-dahao",
+          "githubIssue": 189,
+          "ratifiedAt": "2024-01-20T00:00:00Z",
+          "status": "ratified"
+        }
+      },
+      "branchVersions": {
+        "core-dahao": "1.0.0"
+      },
+      "implements": ["minimize-harm"],
+      "uses": ["harm"],
+      "domain": "core"
+    }
+  }
+}

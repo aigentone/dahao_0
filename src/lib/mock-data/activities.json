@@ -1,0 +1,101 @@
+{
+  "activities": {
+    "act-001": {
+      "id": "act-001",
+      "type": "proposal_created",
+      "actorId": "user-sarah-456",
+      "timestamp": "2024-04-01T00:00:00Z",
+      "data": {
+        "discussionId": "disc-001",
+        "elementType": "term",
+        "elementId": "harm",
+        "branchId": "core-dahao",
+        "proposalTitle": "Add digital harm to harm definition"
+      },
+      "message": "@sarah created a proposal to modify 'harm' definition in Core DAHAO",
+      "branchIds": ["core-dahao"],
+      "userIds": ["user-sarah-456"],
+      "elementIds": ["harm"]
+    },
+
+    "act-002": {
+      "id": "act-002",
+      "type": "branch_created",
+      "actorId": "user-john-123",
+      "timestamp": "2024-03-30T14:00:00Z",
+      "data": {
+        "branchId": "john-dev-branch",
+        "parentBranch": "john-main-branch",
+        "branchType": "user-branch"
+      },
+      "message": "@john created a new development branch from their main branch",
+      "branchIds": ["john-dev-branch", "john-main-branch"],
+      "userIds": ["user-john-123"]
+    },
+
+    "act-003": {
+      "id": "act-003",
+      "type": "vote_cast",
+      "actorId": "user-mike-789",
+      "timestamp": "2024-04-02T10:00:00Z",
+      "data": {
+        "discussionId": "disc-001",
+        "vote": "no",
+        "reason": "Concerns about definition vagueness"
+      },
+      "message": "@mike voted NO on 'Add digital harm to harm definition'",
+      "branchIds": ["core-dahao"],
+      "userIds": ["user-mike-789", "user-sarah-456"],
+      "elementIds": ["harm"]
+    },
+
+    "act-004": {
+      "id": "act-004",
+      "type": "element_modified",
+      "actorId": "governance-bot",
+      "timestamp": "2024-03-28T00:00:00Z",
+      "data": {
+        "elementType": "rule",
+        "elementId": "deliberation-periods",
+        "branchId": "core-governance-v2",
+        "oldVersion": "1.0.0",
+        "newVersion": "2.0.0",
+        "discussionId": "disc-002"
+      },
+      "message": "Rule 'deliberation-periods' updated to v2.0.0 in Core Governance v2 branch",
+      "branchIds": ["core-governance-v2"],
+      "elementIds": ["deliberation-periods"]
+    },
+
+    "act-005": {
+      "id": "act-005",
+      "type": "ai_analysis_requested",
+      "actorId": "user-mike-789",
+      "timestamp": "2024-04-01T10:30:00Z",
+      "data": {
+        "discussionId": "disc-001",
+        "commentId": "comment-001",
+        "aiAgent": "ai-analyzer"
+      },
+      "message": "@mike requested AI analysis on digital harm proposal",
+      "branchIds": ["core-dahao"],
+      "userIds": ["user-mike-789"],
+      "elementIds": ["harm"]
+    },
+
+    "act-006": {
+      "id": "act-006",
+      "type": "fork_request",
+      "actorId": "user-alex-004",
+      "timestamp": "2024-03-15T00:00:00Z",
+      "data": {
+        "sourceBranch": "environmental-dahao",
+        "newBranch": "alex-eco-fork",
+        "modifications": ["carbon-footprint", "sustainability"]
+      },
+      "message": "@alex forked Environmental DAHAO to create radical zero-carbon branch",
+      "branchIds": ["environmental-dahao", "alex-eco-fork"],
+      "userIds": ["user-alex-004"]
+    }
+  }
+}

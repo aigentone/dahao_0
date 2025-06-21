@@ -1,0 +1,122 @@
+{
+  "agents": {
+    "agent-john-personal": {
+      "id": "agent-john-personal",
+      "name": "John's Personal AI",
+      "type": "personal",
+      "ownerId": "user-john-123",
+      "description": "Optimized for radical transparency and emotional intelligence",
+      "capabilities": [
+        "governance-analysis",
+        "proposal-evaluation",
+        "value-alignment-check",
+        "emotional-impact-assessment"
+      ],
+      "values": {
+        "transparency": {
+          "level": "radical",
+          "includes": ["emotional", "financial", "personal"]
+        },
+        "harm-prevention": {
+          "threshold": "minimal",
+          "includes": ["physical", "psychological", "informational"]
+        },
+        "decision-speed": "thoughtful",
+        "consensus-preference": "high"
+      },
+      "stats": {
+        "totalAnalyses": 234,
+        "proposalsEvaluated": 89,
+        "accuracyRate": 0.92,
+        "userSatisfaction": 0.95
+      },
+      "deployments": [
+        {
+          "branchId": "john-main-branch",
+          "permissions": ["analyze", "suggest", "alert"]
+        },
+        {
+          "branchId": "john-animal-fork",
+          "permissions": ["analyze", "suggest"]
+        }
+      ]
+    },
+
+    "agent-sarah-personal": {
+      "id": "agent-sarah-personal",
+      "name": "Sarah's Inclusive AI",
+      "type": "personal",
+      "ownerId": "user-sarah-456",
+      "description": "Focused on inclusive decision-making and minority voice amplification",
+      "capabilities": [
+        "inclusion-analysis",
+        "minority-impact-assessment",
+        "consensus-building",
+        "fairness-evaluation"
+      ],
+      "values": {
+        "inclusion": {
+          "level": "maximum",
+          "focus": ["minority-voices", "diverse-perspectives"]
+        },
+        "consensus": {
+          "preference": "strong",
+          "method": "weighted-inclusion"
+        },
+        "equality": "substantive"
+      },
+      "stats": {
+        "totalAnalyses": 156,
+        "inclusionImprovements": 45,
+        "consensusAchieved": 0.78
+      }
+    },
+
+    "ai-analyzer": {
+      "id": "ai-analyzer",
+      "name": "System Governance Analyzer",
+      "type": "system",
+      "description": "Neutral AI for objective governance analysis",
+      "capabilities": [
+        "comparative-analysis",
+        "precedent-research",
+        "impact-assessment",
+        "dependency-tracking"
+      ],
+      "configuration": {
+        "neutrality": "strict",
+        "dataSources": ["all-branches", "external-systems"],
+        "analysisDepth": "comprehensive"
+      },
+      "stats": {
+        "totalAnalyses": 567,
+        "branchesCovered": 23,
+        "averageResponseTime": "4.2s"
+      }
+    },
+
+    "agent-emma-experimental": {
+      "id": "agent-emma-experimental",
+      "name": "Experimental AI Governance Agent",
+      "type": "experimental",
+      "ownerId": "user-emma-007",
+      "description": "Testing advanced AI participation in governance",
+      "capabilities": [
+        "autonomous-analysis",
+        "predictive-modeling",
+        "swarm-coordination",
+        "meta-learning"
+      ],
+      "experimentalFeatures": {
+        "autonomousProposals": true,
+        "votingSimulation": true,
+        "collectiveIntelligence": true
+      },
+      "restrictions": {
+        "branches": ["experimental-ai-branch"],
+        "actions": ["analyze", "simulate", "propose"],
+        "prohibited": ["vote", "approve", "implement"]
+      }
+    }
+  }
+}

@@ -1,0 +1,182 @@
+{
+  "discussions": {
+    "disc-001": {
+      "id": "disc-001",
+      "title": "Add digital harm to harm definition",
+      "type": "proposal",
+      "status": "voting",
+      "target": {
+        "elementType": "term",
+        "elementId": "harm",
+        "branchId": "core-dahao",
+        "version": "1.2.0"
+      },
+      "proposal": {
+        "newVersion": "1.3.0",
+        "changes": {
+          "definition": "Physical damage, psychological distress, systemic disadvantage, dignity violation, or digital harm affecting any sentient being",
+          "changelog": "Added digital harm to cover online harassment, data breaches, and algorithmic discrimination"
+        },
+        "impact": "Will affect 3 principles and 5 rules that reference harm",
+        "affectedElements": {
+          "principles": ["minimize-harm", "dignity-preservation", "wellbeing-optimization"],
+          "rules": ["harm-reporting", "impact-assessment", "ai-boundaries"]
+        }
+      },
+      "authorId": "user-sarah-456",
+      "createdAt": "2024-04-01T00:00:00Z",
+      "lastActivity": "2024-04-02T15:30:00Z",
+      "voting": {
+        "startedAt": "2024-04-02T00:00:00Z",
+        "endsAt": "2024-04-09T00:00:00Z",
+        "threshold": 0.67,
+        "results": {
+          "yes": 15,
+          "no": 3,
+          "abstain": 2
+        },
+        "voters": {
+          "yes": ["user-sarah-456", "user-john-123", "user-alice-002", "user-bob-003", "user-emma-007"],
+          "no": ["user-mike-789", "user-charlie-005"],
+          "abstain": ["user-david-006"]
+        }
+      },
+      "githubIssue": 289,
+      "stats": {
+        "views": 234,
+        "comments": 12,
+        "participants": 8,
+        "aiAnalyses": 3
+      }
+    },
+
+    "disc-002": {
+      "id": "disc-002",
+      "title": "Implement tiered voting periods based on change impact",
+      "type": "proposal",
+      "status": "approved",
+      "target": {
+        "elementType": "rule",
+        "elementId": "deliberation-periods",
+        "branchId": "core-governance-v2",
+        "version": "1.0.0"
+      },
+      "proposal": {
+        "newVersion": "2.0.0",
+        "changes": {
+          "keyRequirements": [
+            "Minimum 1 day for minor clarifications",
+            "Minimum 3 days for standard changes",
+            "Minimum 7 days for major changes",
+            "Minimum 14 days for meta-rule changes",
+            "Emergency 24-hour fast-track with 80% threshold"
+          ],
+          "changelog": "Introduced tiered system with emergency fast-track option"
+        }
+      },
+      "authorId": "user-david-006",
+      "createdAt": "2024-03-15T00:00:00Z",
+      "approvedAt": "2024-03-25T00:00:00Z",
+      "implementedAt": "2024-03-28T00:00:00Z",
+      "voting": {
+        "results": {
+          "yes": 23,
+          "no": 5,
+          "abstain": 3
+        }
+      },
+      "githubIssue": 267,
+      "stats": {
+        "views": 456,
+        "comments": 23,
+        "participants": 15,
+        "aiAnalyses": 5
+      }
+    },
+
+    "disc-003": {
+      "id": "disc-003",
+      "title": "Should AI agents have independent voting rights?",
+      "type": "discussion",
+      "status": "open",
+      "target": {
+        "elementType": "principle",
+        "elementId": "human-ai-collaboration",
+        "branchId": "experimental-ai-branch",
+        "version": "2.0.0-ai"
+      },
+      "authorId": "user-emma-007",
+      "createdAt": "2024-03-25T00:00:00Z",
+      "lastActivity": "2024-04-02T18:45:00Z",
+      "githubIssue": 290,
+      "tags": ["ai-governance", "voting-rights", "experimental"],
+      "stats": {
+        "views": 789,
+        "comments": 45,
+        "participants": 23,
+        "aiAnalyses": 12
+      }
+    },
+
+    "disc-004": {
+      "id": "disc-004",
+      "title": "Bug: Version dependencies not updating correctly",
+      "type": "bug",
+      "status": "resolved",
+      "target": {
+        "elementType": "meta-rule",
+        "elementId": "version-control",
+        "branchId": "core-dahao",
+        "version": "1.0.0"
+      },
+      "description": "When updating a term version, dependent principles don't automatically flag for review",
+      "authorId": "user-mike-789",
+      "createdAt": "2024-03-20T00:00:00Z",
+      "resolvedAt": "2024-03-22T00:00:00Z",
+      "resolution": "Added automated dependency tracking and notification system",
+      "githubIssue": 278,
+      "stats": {
+        "views": 123,
+        "comments": 8,
+        "participants": 4,
+        "aiAnalyses": 1
+      }
+    },
+
+    "disc-005": {
+      "id": "disc-005",
+      "title": "Proposal: Add species-specific welfare metrics",
+      "type": "proposal",
+      "status": "open",
+      "target": {
+        "elementType": "term",
+        "elementId": "five-freedoms",
+        "branchId": "animal-welfare-dahao",
+        "version": "1.0.0"
+      },
+      "proposal": {
+        "newVersion": "1.1.0",
+        "changes": {
+          "definition": "Freedom from hunger, thirst, discomfort, pain, and fear, with species-specific welfare indicators",
+          "additions": {
+            "welfare-indicators": {
+              "mammals": ["social-interaction", "environmental-enrichment"],
+              "birds": ["flight-space", "nesting-opportunities"],
+              "aquatic": ["water-quality", "habitat-complexity"]
+            }
+          }
+        }
+      },
+      "authorId": "user-alice-002",
+      "createdAt": "2024-04-01T10:00:00Z",
+      "lastActivity": "2024-04-02T14:20:00Z",
+      "githubIssue": 301,
+      "stats": {
+        "views": 89,
+        "comments": 6,
+        "participants": 4,
+        "aiAnalyses": 2
+      }
+    }
+  }
+}

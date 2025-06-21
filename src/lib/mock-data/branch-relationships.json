@@ -1,0 +1,129 @@
+{
+  "relationships": {
+    "rel-001": {
+      "id": "rel-001",
+      "parentId": "core-dahao",
+      "parentVersion": "1.2.0",
+      "childId": "animal-welfare-dahao",
+      "childVersion": "1.0.0",
+      "type": "fork",
+      "createdAt": "2024-02-01T00:00:00Z",
+      "createdBy": "user-alice-002",
+      "description": "Created specialized animal welfare sub-DAHAO"
+    },
+
+    "rel-002": {
+      "id": "rel-002",
+      "parentId": "core-dahao",
+      "parentVersion": "1.2.0",
+      "childId": "john-main-branch",
+      "childVersion": "1.2.1-john",
+      "type": "fork",
+      "createdAt": "2024-02-15T00:00:00Z",
+      "createdBy": "user-john-123",
+      "description": "Personal branch for radical transparency experiments"
+    },
+
+    "rel-003": {
+      "id": "rel-003",
+      "parentId": "animal-welfare-dahao",
+      "parentVersion": "1.0.0",
+      "childId": "john-animal-fork",
+      "childVersion": "1.0.1-john-animal",
+      "type": "fork",
+      "createdAt": "2024-03-05T00:00:00Z",
+      "createdBy": "user-john-123",
+      "description": "Experimenting with sentience recognition"
+    },
+
+    "rel-004": {
+      "id": "rel-004",
+      "parentId": "sarah-main-branch",
+      "parentVersion": "1.2.0-sarah",
+      "childId": "alex-fork-sarah",
+      "childVersion": "1.2.1-alex-sarah",
+      "type": "fork",
+      "createdAt": "2024-03-12T00:00:00Z",
+      "createdBy": "user-alex-004",
+      "description": "Testing inclusive decision-making with environmental focus"
+    },
+
+    "rel-005": {
+      "id": "rel-005",
+      "parentId": "core-dahao",
+      "parentVersion": "1.2.0",
+      "childId": "environmental-dahao",
+      "childVersion": "1.0.0",
+      "type": "fork",
+      "createdAt": "2024-02-05T00:00:00Z",
+      "createdBy": "user-bob-003",
+      "description": "Environmental sustainability sub-DAHAO"
+    },
+
+    "rel-006": {
+      "id": "rel-006",
+      "parentId": "john-main-branch",
+      "parentVersion": "1.2.1-john",
+      "childId": "peter-fork-from-john",
+      "childVersion": "1.2.2-peter",
+      "type": "fork",
+      "createdAt": "2024-03-18T00:00:00Z",
+      "createdBy": "user-peter-008",
+      "description": "Building on John's transparency work"
+    },
+
+    "rel-007": {
+      "id": "rel-007",
+      "parentId": "core-governance-v2",
+      "parentVersion": "2.0.0",
+      "childId": "mike-gov-fork",
+      "childVersion": "2.1.0-mike",
+      "type": "fork",
+      "createdAt": "2024-03-20T00:00:00Z",
+      "createdBy": "user-mike-789",
+      "description": "Testing adaptive governance thresholds"
+    },
+
+    "rel-008": {
+      "id": "rel-008",
+      "parentId": "environmental-dahao",
+      "parentVersion": "1.1.0",
+      "childId": "alex-eco-fork",
+      "childVersion": "1.2.0-alex",
+      "type": "fork",
+      "createdAt": "2024-03-15T00:00:00Z",
+      "createdBy": "user-alex-004",
+      "description": "Zero-carbon mandate experiments"
+    },
+
+    "rel-009": {
+      "id": "rel-009",
+      "parentId": "john-animal-fork",
+      "parentVersion": "1.0.1-john-animal",
+      "childId": "core-dahao",
+      "childVersion": "1.3.0",
+      "type": "merge-proposal",
+      "status": "pending",
+      "createdAt": "2024-04-01T00:00:00Z",
+      "createdBy": "user-john-123",
+      "description": "Proposing sentience recognition improvements to core",
+      "proposalData": {
+        "discussionId": "disc-006",
+        "modifiedElements": ["being", "harm"],
+        "votingEnds": "2024-04-15T00:00:00Z"
+      }
+    },
+
+    "rel-010": {
+      "id": "rel-010",
+      "parentId": "core-dahao",
+      "parentVersion": "1.2.0",
+      "childId": "music-industry-dahao",
+      "childVersion": "1.0.0",
+      "type": "fork",
+      "createdAt": "2024-02-10T00:00:00Z",
+      "createdBy": "user-charlie-005",
+      "description": "Music industry fair governance sub-DAHAO"
+    }
+  }
+}
