@@ -3,15 +3,16 @@
 
 import { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import {
   GitBranch, GitCommit, GitMerge, GitPullRequest,
   ArrowRight, ArrowDown, Users, Bot, Shield,
-  FileText, Bell, Clock, CheckCircle, AlertCircle,Settings,
-  Code, Layers, Network, Eye
+  Bell, Clock, CheckCircle, AlertCircle,Settings,
+  Code, Layers, Network
 } from 'lucide-react';
+import { HeroSection, FeatureCard } from '@/components/shared';
 
 // Mock data for visualization
 const GOVERNANCE_STRUCTURE = {
@@ -66,63 +67,42 @@ export default function GitStructurePage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      {/* Header */}
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold tracking-tight mb-2">DAHAO Git Structure</h1>
-        <p className="text-muted-foreground">
-          Understanding how governance evolves through Git-like versioning and branching
-        </p>
-      </div>
+      <HeroSection
+        title="DAHAO Git Structure"
+        subtitle="Understanding how governance evolves through Git-like versioning and branching"
+        maxWidth="4xl"
+        className="mb-8"
+      />
 
       {/* Key Concepts */}
       <div className="grid gap-4 md:grid-cols-4 mb-8">
-        <Card>
-          <CardHeader className="pb-3">
-            <GitCommit className="h-8 w-8 text-blue-600 mb-2" />
-            <CardTitle className="text-sm">Versioned Terms</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-xs text-muted-foreground">
-              Every term has semantic versions (1.2.3) with full history
-            </p>
-          </CardContent>
-        </Card>
+        <FeatureCard
+          icon={GitCommit}
+          iconColor="text-blue-600"
+          title="Versioned Terms"
+          description="Every term has semantic versions (1.2.3) with full history"
+        />
 
-        <Card>
-          <CardHeader className="pb-3">
-            <GitBranch className="h-8 w-8 text-green-600 mb-2" />
-            <CardTitle className="text-sm">Branch Independence</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-xs text-muted-foreground">
-              Sub-DAHAOs and personal branches evolve independently
-            </p>
-          </CardContent>
-        </Card>
+        <FeatureCard
+          icon={GitBranch}
+          iconColor="text-green-600"
+          title="Branch Independence"
+          description="Sub-DAHAOs and personal branches evolve independently"
+        />
 
-        <Card>
-          <CardHeader className="pb-3">
-            <GitMerge className="h-8 w-8 text-purple-600 mb-2" />
-            <CardTitle className="text-sm">Update Propagation</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-xs text-muted-foreground">
-              Core updates trigger discussions in all sub-branches
-            </p>
-          </CardContent>
-        </Card>
+        <FeatureCard
+          icon={GitMerge}
+          iconColor="text-purple-600"
+          title="Update Propagation"
+          description="Core updates trigger discussions in all sub-branches"
+        />
 
-        <Card>
-          <CardHeader className="pb-3">
-            <Network className="h-8 w-8 text-orange-600 mb-2" />
-            <CardTitle className="text-sm">Multi-Participation</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-xs text-muted-foreground">
-              Users and agents can work across multiple branches
-            </p>
-          </CardContent>
-        </Card>
+        <FeatureCard
+          icon={Network}
+          iconColor="text-orange-600"
+          title="Multi-Participation"
+          description="Users and agents can work across multiple branches"
+        />
       </div>
 
       {/* Main Content */}

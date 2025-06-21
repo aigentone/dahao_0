@@ -1,35 +1,28 @@
 // app/about/page.tsx
 'use client';
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
 import {
   Bot, Users, RefreshCw, BookOpen, Building, Shield,
-  GitBranch, MessageSquare, Lightbulb, ArrowRight,
-  CheckCircle, Code, Scale, TrendingUp
+  GitBranch, Lightbulb,
+  CheckCircle, Scale, TrendingUp
 } from 'lucide-react';
-import Link from 'next/link';
+import { HeroSection, StepProcess, ArchitectureFlow, BadgeGroup, NavigationCTA } from '@/components/shared';
 
 export default function AboutPage() {
   return (
     <div className="container mx-auto px-4 py-16">
       <div className="max-w-4xl mx-auto">
-        {/* Hero Section */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold tracking-tight mb-4">
-            Understanding DAHAO
-          </h1>
-          <p className="text-xl text-muted-foreground mb-8">
-            The world's first self-improving governance system built through human-AI collaboration,
-            where rules can evolve democratically and systematically.
-          </p>
-          <div className="flex justify-center gap-2">
-            <Badge variant="outline">Open Source</Badge>
-            <Badge variant="outline">Community Driven</Badge>
-            <Badge variant="outline">AI Enhanced</Badge>
-          </div>
-        </div>
+        <HeroSection
+          title="Understanding DAHAO"
+          subtitle="The world's first self-improving governance system built through human-AI collaboration, where rules can evolve democratically and systematically."
+          maxWidth="4xl"
+        >
+          <BadgeGroup
+            badges={["Open Source", "Community Driven", "AI Enhanced"]}
+          />
+        </HeroSection>
 
         {/* Core Innovation Section */}
         <div className="mb-16">
@@ -122,31 +115,15 @@ export default function AboutPage() {
               <CardTitle>Four Layers of Governance</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="flex items-center justify-between gap-2 flex-wrap">
-                <div className="text-center p-4">
-                  <BookOpen className="h-8 w-8 mx-auto mb-2 text-blue-600" />
-                  <h4 className="font-semibold">Terms</h4>
-                  <p className="text-xs text-muted-foreground">Definitions</p>
-                </div>
-                <ArrowRight className="h-4 w-4 text-gray-400" />
-                <div className="text-center p-4">
-                  <Building className="h-8 w-8 mx-auto mb-2 text-green-600" />
-                  <h4 className="font-semibold">Principles</h4>
-                  <p className="text-xs text-muted-foreground">Values</p>
-                </div>
-                <ArrowRight className="h-4 w-4 text-gray-400" />
-                <div className="text-center p-4">
-                  <Scale className="h-8 w-8 mx-auto mb-2 text-purple-600" />
-                  <h4 className="font-semibold">Rules</h4>
-                  <p className="text-xs text-muted-foreground">Operations</p>
-                </div>
-                <ArrowRight className="h-4 w-4 text-gray-400" />
-                <div className="text-center p-4">
-                  <RefreshCw className="h-8 w-8 mx-auto mb-2 text-orange-600" />
-                  <h4 className="font-semibold">Meta-Rules</h4>
-                  <p className="text-xs text-muted-foreground">How to Change</p>
-                </div>
-              </div>
+              <ArchitectureFlow
+                layers={[
+                  { icon: BookOpen, title: "Terms", description: "Definitions", color: "text-blue-600" },
+                  { icon: Building, title: "Principles", description: "Values", color: "text-green-600" },
+                  { icon: Scale, title: "Rules", description: "Operations", color: "text-purple-600" },
+                  { icon: RefreshCw, title: "Meta-Rules", description: "How to Change", color: "text-orange-600" }
+                ]}
+                title=""
+              />
             </CardContent>
           </Card>
 
@@ -204,75 +181,35 @@ export default function AboutPage() {
         <div className="mb-16">
           <h2 className="text-3xl font-semibold mb-8 text-center">How You Participate Today</h2>
 
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-            <Card className="border-l-4 border-l-blue-500">
-              <CardHeader className="pb-3">
-                <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold">1</div>
-                  <CardTitle className="text-lg">Connect AI</CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground mb-2">Optional but powerful</p>
-                <ul className="text-xs space-y-1">
-                  <li>• Add API key</li>
-                  <li>• Get AI analysis</li>
-                  <li>• Personal insights</li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="border-l-4 border-l-green-500">
-              <CardHeader className="pb-3">
-                <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 bg-green-100 text-green-600 rounded-full flex items-center justify-center font-bold">2</div>
-                  <CardTitle className="text-lg">Join Discussions</CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground mb-2">GitHub Issues & PRs</p>
-                <ul className="text-xs space-y-1">
-                  <li>• Define terms</li>
-                  <li>• Propose changes</li>
-                  <li>• Share insights</li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="border-l-4 border-l-purple-500">
-              <CardHeader className="pb-3">
-                <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center font-bold">3</div>
-                  <CardTitle className="text-lg">Create Branch</CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground mb-2">Your governance lab</p>
-                <ul className="text-xs space-y-1">
-                  <li>• Extend values</li>
-                  <li>• Test safely</li>
-                  <li>• Propose back</li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="border-l-4 border-l-orange-500">
-              <CardHeader className="pb-3">
-                <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center font-bold">4</div>
-                  <CardTitle className="text-lg">Use Agents</CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground mb-2">AI assistance</p>
-                <ul className="text-xs space-y-1">
-                  <li>• Call in discussions</li>
-                  <li>• Compare perspectives</li>
-                  <li>• Get insights</li>
-                </ul>
-              </CardContent>
-            </Card>
-          </div>
+          <StepProcess
+            className="md:grid-cols-2"
+            steps={[
+              {
+                number: 1,
+                title: "Connect AI",
+                description: "Optional but powerful",
+                details: ["• Add API key", "• Get AI analysis", "• Personal insights"]
+              },
+              {
+                number: 2,
+                title: "Join Discussions",
+                description: "GitHub Issues & PRs", 
+                details: ["• Define terms", "• Propose changes", "• Share insights"]
+              },
+              {
+                number: 3,
+                title: "Create Branch",
+                description: "Your governance lab",
+                details: ["• Extend values", "• Test safely", "• Propose back"]
+              },
+              {
+                number: 4,
+                title: "Use Agents",
+                description: "AI assistance",
+                details: ["• Call in discussions", "• Compare perspectives", "• Get insights"]
+              }
+            ]}
+          />
         </div>
 
         {/* Evolution Path */}
@@ -526,19 +463,12 @@ export default function AboutPage() {
             </CardContent>
           </Card>
 
-          <div className="flex justify-center gap-4">
-            <Button asChild size="lg">
-              <Link href="/how-it-works">
-                Learn How It Works
-              </Link>
-            </Button>
-            <Button asChild variant="outline" size="lg">
-              <Link href="/forum">
-                <GitBranch className="h-4 w-4 mr-2" />
-                View Governance
-              </Link>
-            </Button>
-          </div>
+          <NavigationCTA
+            buttons={[
+              { text: "Learn How It Works", href: "/how-it-works" },
+              { text: "View Governance", href: "/forum", variant: "outline", icon: GitBranch }
+            ]}
+          />
 
           <div className="mt-8 p-4 bg-yellow-50 rounded-lg max-w-md mx-auto">
             <p className="text-sm text-yellow-800">

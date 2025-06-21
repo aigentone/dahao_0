@@ -15,6 +15,7 @@ import {
   Eye, Edit, GitPullRequest, ChevronRight
 } from 'lucide-react';
 import Link from 'next/link';
+import { HeroSection } from '@/components/shared';
 
 // Mock data for governance elements
 // Mock data for governance elements - Expanded for Phase 1
@@ -1014,24 +1015,23 @@ export default function GovernancePage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      {/* Header */}
-      <div className="mb-8">
-        <div className="flex items-center justify-between mb-4">
-          <div>
-            <h1 className="text-3xl font-bold tracking-tight">DAHAO Governance</h1>
-            <p className="text-muted-foreground mt-1">
-              The living constitution of our self-improving governance system
-            </p>
-          </div>
-          <div className="text-right">
-            <Badge variant="outline" className="text-lg px-3 py-1">
-              Core v1.2.0
-            </Badge>
-            <p className="text-sm text-muted-foreground mt-1">
-              Last updated: December 15, 2024
-            </p>
-          </div>
+      <HeroSection
+        title="DAHAO Governance"
+        subtitle="The living constitution of our self-improving governance system"
+        maxWidth="6xl"
+        className="mb-8"
+      >
+        <div className="flex items-center justify-center gap-4">
+          <Badge variant="outline" className="text-lg px-3 py-1">
+            Core v1.2.0
+          </Badge>
+          <span className="text-sm text-muted-foreground">
+            Last updated: December 15, 2024
+          </span>
         </div>
+      </HeroSection>
+
+      <div className="mb-8">
 
         {/* Action Bar */}
         <div className="flex flex-wrap gap-4 items-center">

@@ -1,15 +1,13 @@
 // app/page.tsx
 'use client';
 
-import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
 import {
   RefreshCw, Users, Bot, GitBranch, ArrowRight,
   BookOpen, Building, Scale, MessageSquare,
   CheckCircle, Lightbulb, Code, Shield
 } from 'lucide-react';
-import Link from 'next/link';
+import { HeroSection, FeatureCard, ArchitectureFlow, NavigationCTA } from '@/components/shared';
 
 export default function HomePage() {
   return (
@@ -17,41 +15,29 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="py-20 px-4 text-center bg-gradient-to-b from-blue-50 to-white">
         <div className="container mx-auto max-w-4xl">
-          <Badge variant="outline" className="mb-4">
-            Open Source • Community Driven • AI Enhanced
-          </Badge>
+          <HeroSection
+            badge="Open Source • Community Driven • AI Enhanced"
+            title="Welcome to DAHAO"
+            subtitle="The first self-improving governance system where communities democratically evolve their rules with AI assistance"
+            maxWidth="4xl"
+          >
+            <NavigationCTA
+              className="mb-12"
+              buttons={[
+                { text: "Learn How It Works", href: "/how-it-works" },
+                { text: "View Governance", href: "/governance", variant: "outline", icon: GitBranch }
+              ]}
+            />
 
-          <h1 className="text-5xl font-bold tracking-tight mb-6">
-            Welcome to DAHAO
-          </h1>
-
-          <p className="text-2xl text-muted-foreground mb-8">
-            The first self-improving governance system where communities
-            democratically evolve their rules with AI assistance
-          </p>
-
-          <div className="flex justify-center gap-4 mb-12">
-            <Button asChild size="lg">
-              <Link href="/how-it-works">
-                Learn How It Works
-              </Link>
-            </Button>
-            <Button asChild variant="outline" size="lg">
-              <Link href="/governance">
-                <GitBranch className="h-4 w-4 mr-2" />
-                View Governance
-              </Link>
-            </Button>
-          </div>
-
-          <Card className="max-w-2xl mx-auto bg-yellow-50 border-yellow-200">
-            <CardContent className="pt-6">
-              <p className="text-sm text-yellow-800">
-                <strong>Phase 1 (Current):</strong> Building governance foundations.
-                No tokens or investment required - just ideas and participation!
-              </p>
-            </CardContent>
-          </Card>
+            <Card className="max-w-2xl mx-auto bg-yellow-50 border-yellow-200">
+              <CardContent className="pt-6">
+                <p className="text-sm text-yellow-800">
+                  <strong>Phase 1 (Current):</strong> Building governance foundations.
+                  No tokens or investment required - just ideas and participation!
+                </p>
+              </CardContent>
+            </Card>
+          </HeroSection>
         </div>
       </section>
 
@@ -63,44 +49,29 @@ export default function HomePage() {
           </h2>
 
           <div className="grid gap-6 md:grid-cols-3">
-            <Card className="text-center">
-              <CardHeader>
-                <RefreshCw className="h-12 w-12 mx-auto mb-4 text-blue-600" />
-                <CardTitle>Self-Improving Governance</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  Rules that can change their own rules. The system learns
-                  and evolves through democratic consensus.
-                </p>
-              </CardContent>
-            </Card>
+            <FeatureCard
+              icon={RefreshCw}
+              iconColor="text-blue-600"
+              title="Self-Improving Governance"
+              description="Rules that can change their own rules. The system learns and evolves through democratic consensus."
+              className="text-center"
+            />
 
-            <Card className="text-center">
-              <CardHeader>
-                <Bot className="h-12 w-12 mx-auto mb-4 text-purple-600" />
-                <CardTitle>Human-AI Collaboration</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  Personal AI represents your values. System AI ensures
-                  compliance. Together, better decisions.
-                </p>
-              </CardContent>
-            </Card>
+            <FeatureCard
+              icon={Bot}
+              iconColor="text-purple-600"
+              title="Human-AI Collaboration"
+              description="Personal AI represents your values. System AI ensures compliance. Together, better decisions."
+              className="text-center"
+            />
 
-            <Card className="text-center">
-              <CardHeader>
-                <GitBranch className="h-12 w-12 mx-auto mb-4 text-green-600" />
-                <CardTitle>Fork-Friendly Evolution</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  Disagree? Fork and improve. Best innovations merge back.
-                  Dissent drives progress.
-                </p>
-              </CardContent>
-            </Card>
+            <FeatureCard
+              icon={GitBranch}
+              iconColor="text-green-600"
+              title="Fork-Friendly Evolution"
+              description="Disagree? Fork and improve. Best innovations merge back. Dissent drives progress."
+              className="text-center"
+            />
           </div>
         </div>
       </section>
@@ -333,55 +304,15 @@ export default function HomePage() {
             Current Focus: Building Foundation
           </h2>
 
-          <div className="grid gap-6 md:grid-cols-4 mb-8">
-            <Card>
-              <CardHeader className="pb-3">
-                <BookOpen className="h-8 w-8 text-blue-600 mb-2" />
-                <CardTitle className="text-lg">Define Terms</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  Creating shared vocabulary that evolves democratically
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader className="pb-3">
-                <Building className="h-8 w-8 text-green-600 mb-2" />
-                <CardTitle className="text-lg">Set Principles</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  Establishing values that guide all decisions
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader className="pb-3">
-                <Scale className="h-8 w-8 text-purple-600 mb-2" />
-                <CardTitle className="text-lg">Create Rules</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  Building operational requirements that work
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader className="pb-3">
-                <RefreshCw className="h-8 w-8 text-orange-600 mb-2" />
-                <CardTitle className="text-lg">Enable Evolution</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  Making the system self-improving
-                </p>
-              </CardContent>
-            </Card>
-          </div>
+          <ArchitectureFlow
+            className="mb-8"
+            layers={[
+              { icon: BookOpen, title: "Define Terms", description: "Creating shared vocabulary that evolves democratically", color: "text-blue-600" },
+              { icon: Building, title: "Set Principles", description: "Establishing values that guide all decisions", color: "text-green-600" },
+              { icon: Scale, title: "Create Rules", description: "Building operational requirements that work", color: "text-purple-600" },
+              { icon: RefreshCw, title: "Enable Evolution", description: "Making the system self-improving", color: "text-orange-600" }
+            ]}
+          />
 
           <Card className="bg-gradient-to-r from-blue-50 to-purple-50">
             <CardHeader>
@@ -428,20 +359,13 @@ export default function HomePage() {
             human-AI collaboration. No tokens needed - just ideas.
           </p>
 
-          <div className="flex justify-center gap-4 mb-8">
-            <Button asChild size="lg">
-              <Link href="/how-it-works">
-                Get Started
-                <ArrowRight className="h-4 w-4 ml-2" />
-              </Link>
-            </Button>
-            <Button asChild variant="outline" size="lg">
-              <Link href="/forum">
-                <MessageSquare className="h-4 w-4 mr-2" />
-                Join Discussions
-              </Link>
-            </Button>
-          </div>
+          <NavigationCTA
+            className="mb-8"
+            buttons={[
+              { text: "Get Started", href: "/how-it-works", icon: ArrowRight, iconPosition: "right" },
+              { text: "Join Discussions", href: "/forum", variant: "outline", icon: MessageSquare }
+            ]}
+          />
 
           <div className="grid gap-4 md:grid-cols-3 max-w-2xl mx-auto text-sm">
             <div className="text-center">

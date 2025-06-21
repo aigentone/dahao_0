@@ -7,32 +7,25 @@ import { Button } from '@/components/ui/button';
 import {
   GitBranch, Shield, Brain, Users, RefreshCw, BookOpen,
   Building, Scale, Layers, ArrowRight, CheckCircle,
-  AlertTriangle, Zap, Network, History, Vote,
-  ShieldCheck, Lightbulb, Code2, TrendingUp, Heart,
-  GitCommit, GitMerge, GitPullRequest, Bot, Gauge,
+  AlertTriangle, Zap, History, Vote,
+  ShieldCheck, Lightbulb, Code2, TrendingUp,
+  Bot, Gauge,
   Lock, Unlock, Timer, Settings, PlayCircle, PauseCircle
 } from 'lucide-react';
 import Link from 'next/link';
+import { HeroSection, FeatureCard } from '@/components/shared';
 
 export default function VersionedEthicsPage() {
   return (
     <div className="container mx-auto px-4 py-16">
       <div className="max-w-6xl mx-auto">
-        {/* Hero Section */}
-        <div className="text-center mb-16">
-          <Badge className="mb-4" variant="outline">The Four-Layer Architecture</Badge>
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
-            Versioned Ethics
-          </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            How DAHAO Enables AI to Govern at the Speed of Innovation While Preserving Human Control
-          </p>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Imagine if AI could help create and evolve your organization's rules - but only in ways
-            you explicitly authorize. That's Versioned Ethics: a system where AI can govern, propose,
-            and modify, but always within boundaries you control.
-          </p>
-        </div>
+        <HeroSection
+          badge="The Four-Layer Architecture"
+          title="Versioned Ethics"
+          subtitle="How DAHAO Enables AI to Govern at the Speed of Innovation While Preserving Human Control"
+          description="Imagine if AI could help create and evolve your organization's rules - but only in ways you explicitly authorize. That's Versioned Ethics: a system where AI can govern, propose, and modify, but always within boundaries you control."
+          maxWidth="3xl"
+        />
 
         {/* Core Philosophy */}
         <Card className="mb-16 bg-gradient-to-r from-blue-50 to-purple-50 border-blue-200">
@@ -50,26 +43,25 @@ export default function VersionedEthicsPage() {
               to give your AI agents.
             </p>
             <div className="grid md:grid-cols-3 gap-4">
-              <div className="flex items-start gap-3">
-                <Zap className="h-5 w-5 text-yellow-600 mt-1" />
-                <div>
-                  <strong>Speed When Needed</strong>
-                  <p className="text-sm text-muted-foreground">AI can govern at machine speed</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <Shield className="h-5 w-5 text-blue-600 mt-1" />
-                <div>
-                  <strong>Safety Always</strong>
-                  <p className="text-sm text-muted-foreground">Version control and rollbacks</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <Users className="h-5 w-5 text-purple-600 mt-1" />
-                <div>
-                  <strong>Your Control</strong>
-                  <p className="text-sm text-muted-foreground">You set the boundaries</p>
-                </div>
+              <div className="grid md:grid-cols-3 gap-4">
+                <FeatureCard
+                  icon={Zap}
+                  iconColor="text-yellow-600"
+                  title="Speed When Needed"
+                  description="AI can govern at machine speed"
+                />
+                <FeatureCard
+                  icon={Shield}
+                  iconColor="text-blue-600"
+                  title="Safety Always"
+                  description="Version control and rollbacks"
+                />
+                <FeatureCard
+                  icon={Users}
+                  iconColor="text-purple-600"
+                  title="Your Control"
+                  description="You set the boundaries"
+                />
               </div>
             </div>
           </CardContent>

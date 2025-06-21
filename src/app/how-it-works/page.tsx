@@ -3,28 +3,23 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Bot,AlertCircle, MessageSquare, Users,Vote, CheckCircle, BookOpen, TrendingUp as TrendingUpIcon, Building, Scale, RefreshCw, ArrowRight, Shield, Info } from 'lucide-react';
-import Link from 'next/link';
-import { Button } from '@/components/ui/button';
 import AgentAssignmentPanel from '@/components/governance/AgentAssignmentPanel';
+import { HeroSection, FeatureCard, ArchitectureFlow, BadgeGroup, NavigationCTA } from '@/components/shared';
 
 export default function HowItWorksPage() {
   return (
     <div className="container mx-auto px-4 py-16">
       <div className="max-w-6xl mx-auto">
-        {/* Hero Section */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold tracking-tight mb-4">
-            How DAHAO Works
-          </h1>
-          <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            A self-evolving governance system that improves itself through community collaboration and AI-enhanced decision making.
-          </p>
-          <div className="flex justify-center gap-2 mb-8">
-            <Badge variant="outline">Meta-Governance</Badge>
-            <Badge variant="outline">GitHub-Powered</Badge>
-            <Badge variant="outline">AI-Enhanced</Badge>
-          </div>
-        </div>
+        <HeroSection
+          title="How DAHAO Works"
+          subtitle="A self-evolving governance system that improves itself through community collaboration and AI-enhanced decision making."
+          maxWidth="3xl"
+        >
+          <BadgeGroup
+            badges={["Meta-Governance", "GitHub-Powered", "AI-Enhanced"]}
+            className="mb-8"
+          />
+        </HeroSection>
 
         {/* The Ways of DAHAO - Multiple Ways to Engage */}
         <div className="mb-16">
@@ -46,107 +41,89 @@ export default function HowItWorksPage() {
               </div>
 
               <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-                <Card className="border-blue-200">
-                  <CardHeader className="pb-3">
-                    <CardTitle className="text-lg flex items-center gap-2">
-                      <Building className="h-5 w-5 text-blue-500" />
-                      As a Philosophy
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="pt-0">
-                    <p className="text-sm text-muted-foreground mb-2">Governance can govern itself</p>
-                    <ul className="text-sm space-y-1">
-                      <li>• Rules about rules</li>
-                      <li>• Evolution mechanics</li>
-                      <li>• Learning systems</li>
-                    </ul>
-                  </CardContent>
-                </Card>
+                <FeatureCard
+                  icon={Building}
+                  iconColor="text-blue-500"
+                  title="As a Philosophy"
+                  description="Governance can govern itself"
+                  className="border-blue-200"
+                >
+                  <ul className="text-sm space-y-1 mt-2">
+                    <li>• Rules about rules</li>
+                    <li>• Evolution mechanics</li>
+                    <li>• Learning systems</li>
+                  </ul>
+                </FeatureCard>
 
-                <Card className="border-green-200">
-                  <CardHeader className="pb-3">
-                    <CardTitle className="text-lg flex items-center gap-2">
-                      <Bot className="h-5 w-5 text-green-500" />
-                      As a Platform
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="pt-0">
-                    <p className="text-sm text-muted-foreground mb-2">GitHub + AI + democratic evolution</p>
-                    <ul className="text-sm space-y-1">
-                      <li>• Open participation</li>
-                      <li>• AI-enhanced decisions</li>
-                      <li>• Version control</li>
-                    </ul>
-                  </CardContent>
-                </Card>
+                <FeatureCard
+                  icon={Bot}
+                  iconColor="text-green-500"
+                  title="As a Platform"
+                  description="GitHub + AI + democratic evolution"
+                  className="border-green-200"
+                >
+                  <ul className="text-sm space-y-1 mt-2">
+                    <li>• Open participation</li>
+                    <li>• AI-enhanced decisions</li>
+                    <li>• Version control</li>
+                  </ul>
+                </FeatureCard>
 
-                <Card className="border-purple-200">
-                  <CardHeader className="pb-3">
-                    <CardTitle className="text-lg flex items-center gap-2">
-                      <Users className="h-5 w-5 text-purple-500" />
-                      As a Community
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="pt-0">
-                    <p className="text-sm text-muted-foreground mb-2">People building better systems</p>
-                    <ul className="text-sm space-y-1">
-                      <li>• Collective wisdom</li>
-                      <li>• Shared values</li>
-                      <li>• Democratic participation</li>
-                    </ul>
-                  </CardContent>
-                </Card>
+                <FeatureCard
+                  icon={Users}
+                  iconColor="text-purple-500"
+                  title="As a Community"
+                  description="People building better systems"
+                  className="border-purple-200"
+                >
+                  <ul className="text-sm space-y-1 mt-2">
+                    <li>• Collective wisdom</li>
+                    <li>• Shared values</li>
+                    <li>• Democratic participation</li>
+                  </ul>
+                </FeatureCard>
 
-                <Card className="border-orange-200">
-                  <CardHeader className="pb-3">
-                    <CardTitle className="text-lg flex items-center gap-2">
-                      <BookOpen className="h-5 w-5 text-orange-500" />
-                      As a Laboratory
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="pt-0">
-                    <p className="text-sm text-muted-foreground mb-2">Learning what works</p>
-                    <ul className="text-sm space-y-1">
-                      <li>• Safe experimentation</li>
-                      <li>• Pattern recognition</li>
-                      <li>• Knowledge accumulation</li>
-                    </ul>
-                  </CardContent>
-                </Card>
+                <FeatureCard
+                  icon={BookOpen}
+                  iconColor="text-orange-500"
+                  title="As a Laboratory"
+                  description="Learning what works"
+                  className="border-orange-200"
+                >
+                  <ul className="text-sm space-y-1 mt-2">
+                    <li>• Safe experimentation</li>
+                    <li>• Pattern recognition</li>
+                    <li>• Knowledge accumulation</li>
+                  </ul>
+                </FeatureCard>
 
-                <Card className="border-emerald-200">
-                  <CardHeader className="pb-3">
-                    <CardTitle className="text-lg flex items-center gap-2">
-                      <TrendingUpIcon className="h-5 w-5 text-emerald-500" />
-                      As a Movement
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="pt-0">
-                    <p className="text-sm text-muted-foreground mb-2">Changing how we organize</p>
-                    <ul className="text-sm space-y-1">
-                      <li>• Building new systems</li>
-                      <li>• Creating alternatives</li>
-                      <li>• Evolving together</li>
-                    </ul>
-                  </CardContent>
-                </Card>
+                <FeatureCard
+                  icon={TrendingUpIcon}
+                  iconColor="text-emerald-500"
+                  title="As a Movement"
+                  description="Changing how we organize"
+                  className="border-emerald-200"
+                >
+                  <ul className="text-sm space-y-1 mt-2">
+                    <li>• Building new systems</li>
+                    <li>• Creating alternatives</li>
+                    <li>• Evolving together</li>
+                  </ul>
+                </FeatureCard>
 
-                <Card className="border-indigo-200">
-                  <CardHeader className="pb-3">
-                    <CardTitle className="text-lg flex items-center gap-2">
-                      <Scale className="h-5 w-5 text-indigo-500" />
-                      As an Economic System
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="pt-0">
-                    <p className="text-sm text-muted-foreground mb-2">Value creation, not extraction</p>
-                    <ul className="text-sm space-y-1">
-                      <li>• Profit WITH purpose</li>
-                      <li>• Aligned incentives</li>
-                      <li>• Sustainable funding</li>
-                    </ul>
-                  </CardContent>
-                </Card>
+                <FeatureCard
+                  icon={Scale}
+                  iconColor="text-indigo-500"
+                  title="As an Economic System"
+                  description="Value creation, not extraction"
+                  className="border-indigo-200"
+                >
+                  <ul className="text-sm space-y-1 mt-2">
+                    <li>• Profit WITH purpose</li>
+                    <li>• Aligned incentives</li>
+                    <li>• Sustainable funding</li>
+                  </ul>
+                </FeatureCard>
               </div>
             </CardContent>
           </Card>
@@ -217,74 +194,38 @@ export default function HowItWorksPage() {
               <CardDescription>Terms → Principles → Rules → Meta-Rules flow</CardDescription>
             </CardHeader>
             <CardContent>
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-              {/* Terms */}
-              <div className="space-y-3">
-                <div className="flex items-center gap-2 mb-2">
-                  <BookOpen className="h-5 w-5 text-blue-500" />
-                  <h4 className="font-semibold text-blue-800">📚 Terms</h4>
+              <ArchitectureFlow
+                layers={[
+                  { icon: BookOpen, title: "Terms", description: "Living Vocabulary", color: "text-blue-500" },
+                  { icon: Building, title: "Principles", description: "Values Using Terms", color: "text-green-500" },
+                  { icon: Scale, title: "Rules", description: "How to Act", color: "text-purple-500" },
+                  { icon: RefreshCw, title: "Meta-Rules", description: "How to Change", color: "text-orange-500" }
+                ]}
+                title=""
+              />
+              
+              <div className="mt-8 grid gap-4 md:grid-cols-2">
+                <div className="space-y-4">
+                  <div className="bg-blue-50 p-4 rounded-lg">
+                    <p className="font-medium text-blue-800 mb-2">📚 Terms Example:</p>
+                    <p className="text-blue-700 text-sm">"harm" v1.2: "Actions causing physical damage, psychological distress, opportunity limitation, or dignity violation"</p>
+                  </div>
+                  <div className="bg-green-50 p-4 rounded-lg">
+                    <p className="font-medium text-green-800 mb-2">🏛️ Principles Example:</p>
+                    <p className="text-green-700 text-sm">"Minimize harm@v1.2 to all beings@v1.0" - References specific term versions</p>
+                  </div>
                 </div>
-                <div className="text-sm">
-                  <p className="font-medium mb-1">Living Vocabulary</p>
-                  <p className="text-muted-foreground">Shared definitions that evolve democratically</p>
-                </div>
-                <div className="bg-blue-50 p-3 rounded-lg text-sm">
-                  <p className="font-medium text-blue-800">Example:</p>
-                  <p className="text-blue-700">"harm" v1.2: "Actions causing physical damage, psychological distress, opportunity limitation, or dignity violation"</p>
-                </div>
-              </div>
-
-              {/* Principles */}
-              <div className="space-y-3">
-                <div className="flex items-center gap-2 mb-2">
-                  <ArrowRight className="h-4 w-4 text-gray-400" />
-                  <Building className="h-5 w-5 text-green-500" />
-                  <h4 className="font-semibold text-green-800">🏛️ Principles</h4>
-                </div>
-                <div className="text-sm">
-                  <p className="font-medium mb-1">Values Using Terms</p>
-                  <p className="text-muted-foreground">Ethical guidelines built on Term definitions</p>
-                </div>
-                <div className="bg-green-50 p-3 rounded-lg text-sm">
-                  <p className="font-medium text-green-800">Example:</p>
-                  <p className="text-green-700">"Minimize harm@v1.2 to all beings@v1.0" - References specific term versions</p>
-                </div>
-              </div>
-
-              {/* Rules */}
-              <div className="space-y-3">
-                <div className="flex items-center gap-2 mb-2">
-                  <ArrowRight className="h-4 w-4 text-gray-400" />
-                  <Scale className="h-5 w-5 text-purple-500" />
-                  <h4 className="font-semibold text-purple-800">⚖️ Rules</h4>
-                </div>
-                <div className="text-sm">
-                  <p className="font-medium mb-1">How to Act</p>
-                  <p className="text-muted-foreground">Concrete actions implementing Principles</p>
-                </div>
-                <div className="bg-purple-50 p-3 rounded-lg text-sm">
-                  <p className="font-medium text-purple-800">Example:</p>
-                  <p className="text-purple-700">"To minimize harm: Report any suspected harm@v1.2 within 24 hours via GitHub Issue"</p>
+                <div className="space-y-4">
+                  <div className="bg-purple-50 p-4 rounded-lg">
+                    <p className="font-medium text-purple-800 mb-2">⚖️ Rules Example:</p>
+                    <p className="text-purple-700 text-sm">"To minimize harm: Report any suspected harm@v1.2 within 24 hours via GitHub Issue"</p>
+                  </div>
+                  <div className="bg-orange-50 p-4 rounded-lg">
+                    <p className="font-medium text-orange-800 mb-2">🔄 Meta-Rules Example:</p>
+                    <p className="text-orange-700 text-sm">"To change 'harm' definition: Test in branch → 67% vote → Update all dependent principles/rules"</p>
+                  </div>
                 </div>
               </div>
-
-              {/* Meta-Rules */}
-              <div className="space-y-3">
-                <div className="flex items-center gap-2 mb-2">
-                  <ArrowRight className="h-4 w-4 text-gray-400" />
-                  <RefreshCw className="h-5 w-5 text-orange-500" />
-                  <h4 className="font-semibold text-orange-800">🔄 Meta-Rules</h4>
-                </div>
-                <div className="text-sm">
-                  <p className="font-medium mb-1">How to Change</p>
-                  <p className="text-muted-foreground">Process for modifying any governance layer</p>
-                </div>
-                <div className="bg-orange-50 p-3 rounded-lg text-sm">
-                  <p className="font-medium text-orange-800">Example:</p>
-                  <p className="text-orange-700">"To change 'harm' definition: Test in branch → 67% vote → Update all dependent principles/rules"</p>
-                </div>
-              </div>
-            </div>
             </CardContent>
           </Card>
 
@@ -1880,18 +1821,12 @@ export default function HowItWorksPage() {
             </p>
           </div>
 
-          <div className="space-x-4">
-            <Button asChild size="lg">
-              <Link href="/api/auth/github">
-                Get Started
-              </Link>
-            </Button>
-            <Button asChild variant="outline" size="lg">
-              <Link href="/forum">
-                View Governance Discussions
-              </Link>
-            </Button>
-          </div>
+          <NavigationCTA
+            buttons={[
+              { text: "Get Started", href: "/api/auth/github" },
+              { text: "View Governance Discussions", href: "/forum", variant: "outline" }
+            ]}
+          />
         </div>
       </div>
     </div>

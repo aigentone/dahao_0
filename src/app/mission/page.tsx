@@ -1,459 +1,462 @@
-// app/mission/page.tsx
-'use client';
-
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
+import {
+  HeroSection,
+  FeatureCard,
+  StepProcess,
+  NavigationCTA
+} from '@/components/shared';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import {
-  ArrowRight, TrendingUp, Shield, Eye, Heart, Zap, GitBranch,
-  Users, RefreshCw, Bot, CheckCircle, Lightbulb, Building,
-  Scale, BookOpen, MessageSquare
+  GitBranch,
+  Users,
+  Zap,
+  MessageSquare,
+  Brain,
+  Network,
+  Heart,
+  Music,
+  Car,
+  GraduationCap,
+  ChevronRight,
+  ArrowRight,
+  Home,
+  BookOpen
 } from 'lucide-react';
-import Link from 'next/link';
 
 export default function MissionPage() {
+  const phases = [
+    {
+      number: 1,
+      title: "Genesis (Now)",
+      description: "Using DAHAO to build DAHAO",
+      details: [
+        "Community defines what 'governance' means",
+        "Create first terms, principles, rules together",
+        "Test AI collaboration patterns",
+        "Discover ideal Git structure through practice",
+        "No tokens, just building"
+      ]
+    },
+    {
+      number: 2,
+      title: "Economic Layer",
+      description: "Add sustainable value flows",
+      details: [
+        "Launch DAHAO token",
+        "Reward quality contributions",
+        "Enable investment in DAHAOs",
+        "Create win-win economics",
+        "Bootstrap new communities"
+      ]
+    },
+    {
+      number: 3,
+      title: "Industry Disruption",
+      description: "Launch real-world applications",
+      details: [
+        "Transportation DAHAO - Uber without Uber",
+        "Music DAHAO - Spotify without Spotify",
+        "Healthcare DAHAO - care without Big Pharma",
+        "Agriculture DAHAO - farming without Monsanto",
+        "Network effects accelerate"
+      ]
+    },
+    {
+      number: 4,
+      title: "Parallel Economy",
+      description: "Alternative to corporate world",
+      details: [
+        "Thousands of interconnected DAHAOs",
+        "Cross-DAHAO value flows",
+        "True economic democracy",
+        "Middlemen become obsolete",
+        "People-powered future realized"
+      ]
+    }
+  ];
+
+  const balanceExamples = [
+    {
+      title: "Personal Ethics DAHAO",
+      description: "You might give your AI full autonomy within your values",
+      icon: Heart,
+      iconColor: "text-red-500"
+    },
+    {
+      title: "Music Creation DAHAO",
+      description: "AI as creative partner with humans",
+      icon: Music,
+      iconColor: "text-purple-500"
+    },
+    {
+      title: "Emergency Response DAHAO",
+      description: "AI speed might be essential for crisis response",
+      icon: Zap,
+      iconColor: "text-yellow-500"
+    }
+  ];
+
+  const applications = [
+    {
+      title: "Transportation Networks",
+      subtitle: "Uber without Uber - Your assets work for you",
+      icon: Car,
+      details: [
+        "Self-driving cars join autonomous delivery networks",
+        "Community-defined 'fairness' in pricing algorithms",
+        "Drivers keep 100% after infrastructure costs",
+        "Your Tesla earns $500/night instead of sitting idle"
+      ]
+    },
+    {
+      title: "Education Networks",
+      subtitle: "Learning without Debt - Knowledge that pays forward",
+      icon: GraduationCap,
+      details: [
+        "Create courses, get paid based on student success",
+        "Peer teaching with compensation",
+        "AI tutoring with human wisdom",
+        "Learn now, contribute back when able"
+      ]
+    }
+  ];
+
   return (
-    <div className="container mx-auto px-4 py-16">
-      <div className="max-w-4xl mx-auto">
-        {/* Hero Section */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold tracking-tight mb-4">
-            Our Mission
-          </h1>
-          <p className="text-2xl text-muted-foreground mb-8">
-            Building governance systems that improve themselves through
-            democratic collaboration and AI assistance
-          </p>
-          <Badge variant="outline" className="text-lg px-4 py-1">
-            Phase 1: Foundation Building
-          </Badge>
-        </div>
+    <div className="min-h-screen bg-background">
+      <div className="container mx-auto px-4 py-12 max-w-4xl">
+        <HeroSection
+          badge="Phase 1: Using DAHAO to Build DAHAO"
+          title="Our Mission"
+          subtitle="Building the first dialectic platform where human values evolve at the speed of technology"
+          maxWidth="4xl"
+        />
 
         {/* The Problem */}
-        <div className="mb-16">
-          <Card className="bg-gradient-to-r from-red-50 to-orange-50 border-red-200">
+        <section className="mb-16">
+          <h2 className="text-3xl font-bold mb-8">The Problem: Technology Outpaces Human Governance</h2>
+          <div className="prose prose-lg max-w-none text-muted-foreground mb-8">
+            <p>
+              Technology evolves exponentially while human language and ethics crawl along at biological pace.
+              This gap creates a dangerous power vacuum that corporations are rushing to fill.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6 mb-8">
+            <FeatureCard
+              title="The Language Crisis"
+              description="When we say 'privacy,' 'harm,' or 'fairness' - what do we actually mean? These concepts evolve daily with new technology, but our definitions remain frozen. AI systems trained on these ambiguous terms make decisions affecting millions."
+              variant="border-left"
+              borderColor="border-l-red-500"
+            />
+            <FeatureCard
+              title="Corporate AI Dominance"
+              description="Multi-billion corporations control AI development. Their AI systems embed their values, not ours. Power and resources centralizing rapidly while human governance can't keep up with AI speed."
+              variant="border-left"
+              borderColor="border-l-orange-500"
+            />
+          </div>
+
+          <Card className="bg-gradient-to-r from-blue-50 to-purple-50 border-blue-200">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <TrendingUp className="h-6 w-6 text-red-600" />
-                The Problem: Static Governance
+                <Network className="h-6 w-6 text-blue-600" />
+                The Agent Network Revolution
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground mb-4">
-                Traditional governance systems are frozen in time. Constitutions written centuries ago.
-                Corporate bylaws that take years to change. Rules that can't adapt to new realities.
+              <p className="text-muted-foreground">
+                As AI researcher Andrej Karpathy observes, LLMs are becoming "people spirits" - stochastic
+                simulations of human thought. A new agent network is forming, like the internet but for AI minds.
+                Our agents will soon coordinate automatically with other systems.
               </p>
-              <div className="grid gap-4 md:grid-cols-3 mt-6">
-                <div className="bg-white/70 p-4 rounded-lg">
-                  <h4 className="font-semibold text-red-800 mb-2">Slow Evolution</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Years to make simple changes
-                  </p>
-                </div>
-                <div className="bg-white/70 p-4 rounded-lg">
-                  <h4 className="font-semibold text-orange-800 mb-2">No Learning</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Same mistakes repeated forever
-                  </p>
-                </div>
-                <div className="bg-white/70 p-4 rounded-lg">
-                  <h4 className="font-semibold text-red-800 mb-2">Power Concentration</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Few control the many
-                  </p>
-                </div>
-              </div>
+              <p className="text-muted-foreground mt-4 font-medium">
+                The question is: Will this network serve corporate interests or human values?
+              </p>
             </CardContent>
           </Card>
-        </div>
+        </section>
 
         {/* Our Insight */}
-        <div className="mb-16">
-          <Card className="bg-gradient-to-r from-green-50 to-emerald-50 border-green-200">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Lightbulb className="h-6 w-6 text-green-600" />
-                Our Insight: Living Governance
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground mb-6">
-                What if governance could improve itself? What if rules could learn from experience?
-                What if communities could evolve their systems as fast as the world changes?
-              </p>
-
-              <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
-                  <div>
-                    <strong>Self-Improvement:</strong> Rules that can change their own rules
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
-                  <div>
-                    <strong>Democratic Evolution:</strong> Community decides all changes
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
-                  <div>
-                    <strong>AI Enhancement:</strong> Better analysis, not AI control
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
-                  <div>
-                    <strong>Version Control:</strong> Every change tracked and reversible
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-
-        {/* The Innovation */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-semibold mb-8 text-center">The DAHAO Innovation</h2>
-
-          <div className="grid gap-6 md:grid-cols-2">
-            <Card>
-              <CardHeader>
-                <Bot className="h-8 w-8 text-purple-600 mb-2" />
-                <CardTitle>Personal vs System AI</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-4">
-                  Two types of AI agents ensure both personal values and objective compliance.
-                </p>
-                <div className="space-y-2 text-sm">
-                  <div className="p-2 bg-purple-50 rounded">
-                    <strong>Personal AI:</strong> Represents YOUR values
-                  </div>
-                  <div className="p-2 bg-green-50 rounded">
-                    <strong>System AI:</strong> Ensures baseline compliance
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <RefreshCw className="h-8 w-8 text-blue-600 mb-2" />
-                <CardTitle>Meta-Governance</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-4">
-                  The system can modify how it modifies itself, enabling true evolution.
-                </p>
-                <div className="space-y-2 text-sm">
-                  <div className="p-2 bg-blue-50 rounded">
-                    <strong>Learn:</strong> From what works and what doesn't
-                  </div>
-                  <div className="p-2 bg-blue-50 rounded">
-                    <strong>Adapt:</strong> Change processes, not just rules
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <BookOpen className="h-8 w-8 text-orange-600 mb-2" />
-                <CardTitle>Living Vocabulary</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-4">
-                  Terms evolve democratically as understanding deepens.
-                </p>
-                <div className="font-mono text-sm bg-orange-50 p-2 rounded">
-                  harm: v1.0 → v1.1 → v1.2
-                </div>
-                <p className="text-xs text-muted-foreground mt-2">
-                  Each version adds community wisdom
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <GitBranch className="h-8 w-8 text-green-600 mb-2" />
-                <CardTitle>Fork & Merge</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-4">
-                  Disagreement drives innovation through parallel experiments.
-                </p>
-                <div className="space-y-2 text-sm">
-                  <div className="p-2 bg-green-50 rounded">
-                    <strong>Fork:</strong> Test your ideas safely
-                  </div>
-                  <div className="p-2 bg-green-50 rounded">
-                    <strong>Merge:</strong> Best ideas flow back
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+        <section className="mb-16">
+          <h2 className="text-3xl font-bold mb-8">Our Insight: Dialectic Evolution</h2>
+          <div className="prose prose-lg max-w-none text-muted-foreground mb-8">
+            <p>
+              What if we could evolve language and ethics at technology speed? What if communities could
+              democratically define what concepts mean in real-time? What if AI could help us think faster
+              without controlling our thoughts?
+            </p>
           </div>
-        </div>
 
-        {/* Three Pillars */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-semibold mb-8 text-center">Three Pillars of Our Mission</h2>
-
-          <div className="grid gap-8 md:grid-cols-3">
-            <Card className="bg-gradient-to-b from-blue-50 to-blue-100">
-              <CardHeader>
-                <GitBranch className="h-8 w-8 text-blue-600 mb-2" />
-                <CardTitle>Radical Transparency</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground mb-4">
-                  Every decision, every change, every vote - all public on GitHub.
-                  Trust through verification, not faith.
-                </p>
-                <div className="bg-white/70 p-3 rounded text-xs">
-                  <strong>Why:</strong> Hidden governance corrupts. Open governance evolves.
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-gradient-to-b from-green-50 to-green-100">
-              <CardHeader>
-                <Users className="h-8 w-8 text-green-600 mb-2" />
-                <CardTitle>Democratic Evolution</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground mb-4">
-                  No kings, no CEOs, no unilateral control. Every change requires
-                  community consent.
-                </p>
-                <div className="bg-white/70 p-3 rounded text-xs">
-                  <strong>How:</strong> Proposals → Discussion → AI Analysis → Vote → Implementation
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-gradient-to-b from-purple-50 to-purple-100">
-              <CardHeader>
-                <Shield className="h-8 w-8 text-purple-600 mb-2" />
-                <CardTitle>Protected Innovation</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground mb-4">
-                  Fork rights ensure minority views can experiment. Best innovations
-                  merge back to benefit all.
-                </p>
-                <div className="bg-white/70 p-3 rounded text-xs">
-                  <strong>Result:</strong> Diversity of thought drives collective progress
-                </div>
-              </CardContent>
-            </Card>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <FeatureCard
+              icon={MessageSquare}
+              iconColor="text-blue-600"
+              title="Living Language"
+              description="Terms evolve through democratic discussion"
+            />
+            <FeatureCard
+              icon={GitBranch}
+              iconColor="text-green-600"
+              title="Versioned Ethics"
+              description="Every definition tracked and reversible"
+            />
+            <FeatureCard
+              icon={Brain}
+              iconColor="text-purple-600"
+              title="AI Enhancement"
+              description="Technology amplifies human reasoning"
+            />
+            <FeatureCard
+              icon={Users}
+              iconColor="text-orange-600"
+              title="Dynamic Balance"
+              description="Each community finds its own AI-human balance"
+            />
+            <FeatureCard
+              icon={Zap}
+              iconColor="text-yellow-600"
+              title="Speed Matching"
+              description="Governance evolves as fast as technology"
+            />
           </div>
-        </div>
+        </section>
 
-        {/* Current Focus */}
-        <div className="mb-16">
-          <Card className="bg-gradient-to-r from-blue-50 to-purple-50">
-            <CardHeader>
-              <CardTitle className="text-center">Phase 1: Building the Foundation</CardTitle>
-              <CardDescription className="text-center">
-                What we're doing right now
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="grid gap-6 md:grid-cols-2 mb-6">
-                <div>
-                  <h4 className="font-semibold mb-3">Creating Core Governance</h4>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li className="flex items-start gap-2">
-                      <CheckCircle className="h-4 w-4 text-green-600 mt-0.5" />
-                      <span>Defining foundational terms</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle className="h-4 w-4 text-green-600 mt-0.5" />
-                      <span>Establishing core principles</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle className="h-4 w-4 text-green-600 mt-0.5" />
-                      <span>Building operational rules</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle className="h-4 w-4 text-green-600 mt-0.5" />
-                      <span>Testing meta-governance</span>
-                    </li>
-                  </ul>
-                </div>
-
-                <div>
-                  <h4 className="font-semibold mb-3">Testing AI Collaboration</h4>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li className="flex items-start gap-2">
-                      <CheckCircle className="h-4 w-4 text-green-600 mt-0.5" />
-                      <span>Personal AI agents for values</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle className="h-4 w-4 text-green-600 mt-0.5" />
-                      <span>System AI for compliance</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle className="h-4 w-4 text-green-600 mt-0.5" />
-                      <span>AI-assisted analysis</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle className="h-4 w-4 text-green-600 mt-0.5" />
-                      <span>Human-AI collaboration patterns</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="bg-white/70 p-4 rounded-lg text-center">
-                <p className="font-semibold text-purple-800">
-                  No tokens. No investment. Just building better governance together.
+        {/* Why Now */}
+        <section className="mb-16">
+          <h2 className="text-3xl font-bold mb-6">Why Now? Individuals Are Finally Empowered</h2>
+          <Card className="bg-gradient-to-r from-green-50 to-blue-50 border-green-200">
+            <CardContent className="pt-6">
+              <p className="text-muted-foreground mb-4">
+                For the first time in history, transformative technology (LLMs) empowers individuals more than corporations.
+                Every person now has access to quasi-expert knowledge across all domains.
+              </p>
+              <p className="text-muted-foreground">
+                DAHAO takes this unprecedented moment and asks: What if we organized this newly empowered population?
+                What if millions of AI-enhanced individuals could coordinate dialectically without corporate intermediaries?
+              </p>
+              <div className="bg-white/70 rounded-lg p-4 mt-4">
+                <p className="font-medium text-foreground">
+                  The cognitive power is already in people's hands. DAHAO just gives them a platform to think together.
                 </p>
               </div>
             </CardContent>
           </Card>
-        </div>
+        </section>
 
-        {/* The Vision */}
-        <div className="mb-16">
-          <Card className="border-2 border-indigo-200">
+        {/* AI-Human Balance */}
+        <section className="mb-16">
+          <h2 className="text-3xl font-bold mb-6">AI-Human Balance: Your Choice</h2>
+          <p className="text-lg text-muted-foreground mb-8">
+            Every DAHAO finds its own optimal balance. No universal rule. Each community experiments and finds what works.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-6 mb-8">
+            {balanceExamples.map((example, index) => (
+              <FeatureCard
+                key={index}
+                icon={example.icon}
+                iconColor={example.iconColor}
+                title={example.title}
+                description={example.description}
+              />
+            ))}
+          </div>
+
+          <Card>
             <CardHeader>
-              <CardTitle className="text-center text-indigo-800">
-                The Vision: Governance That Learns
-              </CardTitle>
+              <CardTitle>Living Balance Evolution</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground text-center mb-6">
-                We envision a world where communities can create governance systems that:
-              </p>
-
-              <div className="grid gap-4 md:grid-cols-2">
-                <div className="p-4 bg-indigo-50 rounded-lg">
-                  <h4 className="font-semibold text-indigo-800 mb-2">Adapt Rapidly</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Change as fast as the world changes, learning from every decision
-                  </p>
+              <div className="space-y-3">
+                <div className="flex items-center gap-3">
+                  <Badge variant="outline">Day 1</Badge>
+                  <span className="text-sm">Community starts human-heavy, AI suggests only</span>
                 </div>
-                <div className="p-4 bg-purple-50 rounded-lg">
-                  <h4 className="font-semibold text-purple-800 mb-2">Stay Democratic</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Power remains with the community, not concentrated in few hands
-                  </p>
+                <div className="flex items-center gap-3">
+                  <Badge variant="outline">Month 1</Badge>
+                  <span className="text-sm">Trust builds, AI gets more autonomy in specific areas</span>
                 </div>
-                <div className="p-4 bg-blue-50 rounded-lg">
-                  <h4 className="font-semibold text-blue-800 mb-2">Scale Wisely</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Work for small groups and large organizations alike
-                  </p>
+                <div className="flex items-center gap-3">
+                  <Badge variant="outline">Crisis Mode</Badge>
+                  <span className="text-sm">AI might take emergency powers within preset boundaries</span>
                 </div>
-                <div className="p-4 bg-green-50 rounded-lg">
-                  <h4 className="font-semibold text-green-800 mb-2">Remain Human</h4>
-                  <p className="text-sm text-muted-foreground">
-                    AI assists but always keep humans latest value
-                  </p>
+                <div className="flex items-center gap-3">
+                  <Badge variant="outline">Ongoing</Badge>
+                  <span className="text-sm">Balance evolves based on community needs and proven performance</span>
                 </div>
               </div>
             </CardContent>
           </Card>
-        </div>
+        </section>
 
-        {/* Future Phases */}
-        <div className="mb-16">
-          <Card className="bg-gray-50 border-gray-300">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <TrendingUp className="h-5 w-5 text-gray-600" />
-                Future Phases
-                <Badge variant="outline">After Foundation</Badge>
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4 text-sm text-muted-foreground">
-                <div className="p-3 border-l-4 border-l-gray-400">
-                  <strong>Phase 2:</strong> Economic layer with tokens and investment pools
-                </div>
-                <div className="p-3 border-l-4 border-l-gray-400">
-                  <strong>Phase 3:</strong> Fund real projects that create impact
-                </div>
-                <div className="p-3 border-l-4 border-l-gray-400">
-                  <strong>Phase 4:</strong> Network of interconnected DAHAOs
-                </div>
+        {/* Real World Applications */}
+        <section className="mb-16">
+          <h2 className="text-3xl font-bold mb-6">Beyond Discussion: Real World Applications</h2>
+          <p className="text-lg text-muted-foreground mb-8">
+            Once we have shared language that evolves democratically, we can coordinate at unprecedented scale:
+          </p>
+
+          <div className="space-y-8">
+            {applications.map((app, index) => (
+              <Card key={index} className="border-l-4 border-l-blue-500">
+                <CardHeader>
+                  <div className="flex items-start gap-3">
+                    <app.icon className="h-8 w-8 text-blue-600 mt-1" />
+                    <div>
+                      <CardTitle className="text-xl">{app.title}</CardTitle>
+                      <p className="text-muted-foreground">{app.subtitle}</p>
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2">
+                    {app.details.map((detail, detailIndex) => (
+                      <li key={detailIndex} className="flex items-start gap-2">
+                        <ChevronRight className="h-4 w-4 text-blue-500 mt-0.5 flex-shrink-0" />
+                        <span className="text-sm text-muted-foreground">{detail}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </section>
+
+        {/* The Journey */}
+        <section className="mb-16">
+          <h2 className="text-3xl font-bold mb-8">The Journey: From Discussion to Civilization</h2>
+          <StepProcess steps={phases} />
+        </section>
+
+        {/* Three Principles */}
+        <section className="mb-16">
+          <h2 className="text-3xl font-bold mb-8">Three Principles of Dialectic Governance</h2>
+          <div className="grid gap-6">
+            <FeatureCard
+              title="Radical Transparency"
+              description="Every discussion, decision, and evolution recorded publicly. No hidden agendas. No corporate manipulation. Pure collective reasoning."
+              variant="border-left"
+              borderColor="border-l-blue-500"
+            />
+            <FeatureCard
+              title="Democratic Evolution"
+              description="Communities decide what concepts mean through discussion, not dictionaries. No final authorities except collective wisdom."
+              variant="border-left"
+              borderColor="border-l-green-500"
+            />
+            <FeatureCard
+              title="Protected Experimentation"
+              description="Your right to fork is sacred. Test ideas. Keep what works. Share insights. Minority perspectives can always experiment."
+              variant="border-left"
+              borderColor="border-l-purple-500"
+            />
+          </div>
+        </section>
+
+        {/* Who This Serves */}
+        <section className="mb-16">
+          <h2 className="text-3xl font-bold mb-6">Who This Serves</h2>
+          <div className="grid md:grid-cols-2 gap-4">
+            {[
+              "Thinkers who want their ideas to matter",
+              "Workers tired of corporate value extraction",
+              "Artists seeking fair compensation systems",
+              "Patients needing affordable healthcare",
+              "Drivers keeping 100% of their labor value",
+              "Teachers wanting to be properly valued",
+              "Anyone who believes human reasoning can improve through technology"
+            ].map((audience, index) => (
+              <div key={index} className="flex items-center gap-3 p-3 rounded-lg bg-muted/30">
+                <ChevronRight className="h-4 w-4 text-blue-500" />
+                <span>{audience}</span>
               </div>
-              <p className="text-xs text-center mt-4 text-gray-600">
-                Each phase builds on solid foundations. We're in Phase 1.
+            ))}
+          </div>
+        </section>
+
+        {/* The Promise */}
+        <section className="mb-16">
+          <h2 className="text-3xl font-bold mb-6">The Philosophical Promise</h2>
+          <Card className="bg-gradient-to-r from-purple-50 to-blue-50 border-purple-200">
+            <CardContent className="pt-6">
+              <p className="text-muted-foreground mb-4">
+                We're not just building better discussion software. We're creating the first system where:
               </p>
+              <ul className="space-y-3">
+                {[
+                  "Language evolves democratically at technology speed",
+                  "AI serves human-defined values instead of corporate goals",
+                  "Communities coordinate without centralized control",
+                  "Individual reasoning gets amplified by collective intelligence",
+                  "Economic value flows to those who create it"
+                ].map((promise, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <ArrowRight className="h-5 w-5 text-purple-500 mt-0.5 flex-shrink-0" />
+                    <span className="text-muted-foreground">{promise}</span>
+                  </li>
+                ))}
+              </ul>
             </CardContent>
           </Card>
-        </div>
-
-        {/* Why This Matters */}
-        <div className="mb-16">
-          <Card className="bg-gradient-to-r from-orange-50 to-yellow-50 border-orange-200">
-            <CardHeader>
-              <CardTitle className="text-center text-orange-800">
-                Why This Matters
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground text-center mb-6">
-                The world is changing faster than ever. AI is advancing exponentially.
-                Global challenges require new solutions. Traditional governance can't keep up.
-              </p>
-
-              <div className="bg-white/70 p-6 rounded-lg">
-                <h4 className="font-semibold text-orange-800 mb-3 text-center">
-                  DAHAO creates governance that evolves as fast as our challenges
-                </h4>
-
-                <div className="grid gap-3 md:grid-cols-3 text-center text-sm">
-                  <div>
-                    <Heart className="h-6 w-6 mx-auto mb-2 text-red-500" />
-                    <p>Human values guide direction</p>
-                  </div>
-                  <div>
-                    <Bot className="h-6 w-6 mx-auto mb-2 text-purple-500" />
-                    <p>AI provides analysis</p>
-                  </div>
-                  <div>
-                    <Users className="h-6 w-6 mx-auto mb-2 text-green-500" />
-                    <p>Community makes decisions</p>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
+        </section>
 
         {/* Call to Action */}
-        <div className="text-center">
-          <h2 className="text-2xl font-semibold mb-4">Join Our Mission</h2>
-          <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Help build the first governance system that can improve itself.
-            Where every voice matters and the best ideas win.
-          </p>
+        <section className="mb-16">
+          <Card className="bg-gradient-to-r from-blue-600 to-purple-600 text-white border-0">
+            <CardContent className="pt-6 text-center">
+              <h2 className="text-3xl font-bold mb-4">Ready to Join the Dialectic?</h2>
+              <p className="text-xl mb-6 text-blue-100">
+                Help build the first platform where human values evolve at the speed of innovation.
+              </p>
 
-          <div className="flex justify-center gap-4 mb-8">
-            <Button asChild size="lg">
-              <Link href="/how-it-works">
-                Learn More
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-            <Button asChild variant="outline" size="lg">
-              <Link href="/forum">
-                <MessageSquare className="h-4 w-4 mr-2" />
-                Join Discussion
-              </Link>
-            </Button>
-          </div>
+              <div className="grid md:grid-cols-2 gap-4 mb-6">
+                {[
+                  "Join Genesis: Shape fundamental concepts from day one",
+                  "Pick Your Domain: Which industry needs dialectic coordination?",
+                  "Start Discussions: Your reasoning improves collective understanding",
+                  "Connect Your AI: Let your agent participate in collective reasoning"
+                ].map((action, index) => (
+                  <div key={index} className="flex items-start gap-3 text-left">
+                    <ChevronRight className="h-5 w-5 text-blue-300 mt-0.5 flex-shrink-0" />
+                    <span className="text-blue-100">{action}</span>
+                  </div>
+                ))}
+              </div>
 
-          <p className="text-sm text-muted-foreground">
-            No investment required. Just bring your ideas.
-          </p>
-        </div>
+              <div className="bg-white/10 rounded-lg p-4 mb-6">
+                <p className="text-blue-100">
+                  No investment required. No permission needed. Just bring your capacity to reason
+                  and willingness to have your mind changed by better arguments.
+                </p>
+              </div>
+
+              <p className="text-xl font-medium">
+                The future isn't built by corporations deciding what concepts mean.
+                It's built by communities thinking together.
+              </p>
+            </CardContent>
+          </Card>
+        </section>
+
+        <NavigationCTA
+          buttons={[
+            {
+              text: "Back to Home",
+              href: "/",
+              variant: "outline",
+              icon: Home,
+              iconPosition: "left"
+            },
+            {
+              text: "Learn More",
+              href: "/how-it-works",
+              variant: "default",
+              icon: BookOpen,
+              iconPosition: "right"
+            }
+          ]}
+        />
       </div>
     </div>
   );
