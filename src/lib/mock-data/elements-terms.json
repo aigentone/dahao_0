@@ -542,6 +542,50 @@
         "rules": ["version-dependencies"]
       },
       "domain": "core"
+    },
+    "five-freedoms": {
+      "id": "five-freedoms",
+      "type": "term",
+      "name": "Five Freedoms",
+      "currentVersion": "1.1.0",
+      "versions": {
+        "1.0.0": {
+          "definition": "Freedom from hunger, thirst, discomfort, pain, and fear - fundamental animal welfare standards",
+          "brief": "Freedom from hunger, thirst, discomfort, pain, and fear",
+          "createdAt": "2024-03-20T00:00:00Z",
+          "createdBy": "user-alice-002",
+          "branchId": "animal-welfare-dahao",
+          "githubIssue": 280,
+          "ratifiedAt": "2024-03-25T00:00:00Z",
+          "status": "ratified"
+        },
+        "1.1.0": {
+          "definition": "Freedom from hunger, thirst, discomfort, pain, and fear, with species-specific welfare indicators",
+          "brief": "Freedom from hunger, thirst, discomfort, pain, fear + species indicators",
+          "createdAt": "2024-04-01T10:00:00Z",
+          "createdBy": "user-alice-002",
+          "branchId": "animal-welfare-dahao",
+          "githubIssue": 301,
+          "changelog": "Added species-specific welfare indicators for mammals, birds, and aquatic animals",
+          "previousVersion": "1.0.0",
+          "status": "proposed",
+          "additions": {
+            "welfare-indicators": {
+              "mammals": ["social-interaction", "environmental-enrichment"],
+              "birds": ["flight-space", "nesting-opportunities"],
+              "aquatic": ["water-quality", "habitat-complexity"]
+            }
+          }
+        }
+      },
+      "branchVersions": {
+        "animal-welfare-dahao": "1.1.0"
+      },
+      "usedBy": {
+        "principles": ["animal-welfare-protection"],
+        "rules": ["welfare-assessment", "species-protection"]
+      },
+      "domain": "animal-welfare"
     }
   }
 }

@@ -99,6 +99,176 @@
         "🎯": 7,
         "🤖": 4
       }
+    },
+
+    "comment-008": {
+      "id": "comment-008",
+      "discussionId": "disc-002",
+      "authorId": "user-david-006",
+      "content": "Opening discussion on the proposed tiered voting periods. The current system has everyone waiting the same amount of time regardless of how significant the change is.\n\nMy proposal:\n- 1 day for typos and clarifications\n- 3 days for standard changes\n- 7 days for major changes\n- 14 days for meta-rule changes\n- Emergency 24-hour fast-track with 80% threshold\n\nThis would let us move faster on obvious improvements while ensuring proper deliberation for big changes.",
+      "createdAt": "2024-03-16T00:00:00Z",
+      "pinned": true,
+      "reactions": {
+        "👍": 12,
+        "💡": 8,
+        "⚡": 3
+      }
+    },
+
+    "comment-009": {
+      "id": "comment-009",
+      "discussionId": "disc-002",
+      "authorId": "user-john-123",
+      "content": "This makes a lot of sense. We've been slowed down by having to wait a full week for obvious typo fixes. The tiered approach would help us be more responsive while maintaining safety.",
+      "createdAt": "2024-03-16T08:00:00Z",
+      "reactions": {
+        "👍": 9,
+        "✅": 4
+      }
+    },
+
+    "comment-010": {
+      "id": "comment-010",
+      "discussionId": "disc-002",
+      "authorId": "user-charlie-005",
+      "content": "I'm concerned about the emergency fast-track option. While I understand the need for speed, requiring 80% approval could be problematic if there's a real emergency and some people aren't available to vote quickly.",
+      "createdAt": "2024-03-16T14:30:00Z",
+      "reactions": {
+        "🤔": 6,
+        "⚠️": 3,
+        "👍": 2
+      }
+    },
+
+    "comment-011": {
+      "id": "comment-011",
+      "discussionId": "disc-002",
+      "authorId": "user-ai-analyzer",
+      "content": "Analysis of emergency governance protocols across 23 similar systems:\n\n- Average emergency threshold: 75% (range: 67%-85%)\n- Average emergency duration: 48 hours (range: 24-72 hours)\n- 87% include automatic expiration clauses\n- 65% require post-emergency ratification\n\nRecommendation: Consider 75% threshold with 48-hour window and mandatory post-emergency review within 7 days.",
+      "createdAt": "2024-03-16T15:00:00Z",
+      "aiGenerated": true,
+      "reactions": {
+        "📊": 8,
+        "👍": 6,
+        "🎯": 4
+      }
+    },
+
+    "comment-012": {
+      "id": "comment-012",
+      "discussionId": "disc-002",
+      "authorId": "user-sarah-456",
+      "content": "I like the AI analysis. The 75% threshold seems more reasonable than 80%, and the 48-hour window gives people more time to respond. The post-emergency review is crucial for accountability.",
+      "createdAt": "2024-03-17T10:00:00Z",
+      "mentions": ["@ai-analyzer", "@david"],
+      "reactions": {
+        "👍": 11,
+        "💡": 5
+      }
+    },
+
+    "comment-013": {
+      "id": "comment-013",
+      "discussionId": "disc-004",
+      "authorId": "user-mike-789",
+      "content": "I discovered this bug when I updated the 'harm' definition. Even though I updated it to v1.2.0, the 'minimize-harm' principle still shows it's using v1.1.0. \n\nThis is a critical issue because:\n1. People don't know they're working with outdated dependencies\n2. New changes might conflict with old assumptions\n3. The system loses its self-consistency guarantee",
+      "createdAt": "2024-03-20T09:00:00Z",
+      "reactions": {
+        "🐛": 8,
+        "🔥": 5,
+        "😬": 3
+      }
+    },
+
+    "comment-014": {
+      "id": "comment-014",
+      "discussionId": "disc-004",
+      "authorId": "user-bob-003",
+      "content": "I can confirm this. When I made changes to the dignity definition, none of the principles that use it got flagged for review. This means we could have inconsistent governance without realizing it.",
+      "createdAt": "2024-03-20T11:30:00Z",
+      "reactions": {
+        "👍": 6,
+        "😟": 4
+      }
+    },
+
+    "comment-015": {
+      "id": "comment-015",
+      "discussionId": "disc-004",
+      "authorId": "user-ai-analyzer",
+      "content": "Bug analysis complete:\n\nRoot cause: Version dependency tracking occurs at proposal creation but not at ratification. When a term version is ratified, dependent elements aren't automatically flagged.\n\nProposed fix:\n1. Add post-ratification dependency scan\n2. Auto-generate 'review required' issues for dependent elements\n3. Add version compatibility checking\n4. Implement dependency graph visualization\n\nImplementation complexity: Medium. Estimated effort: 3-5 days.",
+      "createdAt": "2024-03-20T12:00:00Z",
+      "aiGenerated": true,
+      "reactions": {
+        "🔧": 9,
+        "👍": 7,
+        "🎯": 5
+      }
+    },
+
+    "comment-016": {
+      "id": "comment-016",
+      "discussionId": "disc-004",
+      "authorId": "user-emma-007",
+      "content": "This is exactly the kind of issue we need to prevent. I'll work on implementing the automated dependency tracking system. Thanks for the detailed analysis @ai-analyzer.",
+      "createdAt": "2024-03-21T08:00:00Z",
+      "mentions": ["@ai-analyzer"],
+      "reactions": {
+        "🙏": 6,
+        "👍": 8
+      }
+    },
+
+    "comment-017": {
+      "id": "comment-017",
+      "discussionId": "disc-005",
+      "authorId": "user-alice-002",
+      "content": "I'm proposing to enhance our Five Freedoms definition with species-specific welfare indicators. The current definition is good but too general.\n\nProposed additions:\n- Mammals: social interaction requirements, environmental enrichment\n- Birds: flight space minimums, nesting opportunities  \n- Aquatic: water quality standards, habitat complexity\n\nThis would help us create more targeted and effective animal welfare policies.",
+      "createdAt": "2024-04-01T11:00:00Z",
+      "reactions": {
+        "🐾": 7,
+        "👍": 6,
+        "💡": 4
+      }
+    },
+
+    "comment-018": {
+      "id": "comment-018",
+      "discussionId": "disc-005",
+      "authorId": "user-john-123",
+      "content": "This is a great evolution of the concept. Having species-specific indicators would make our animal welfare governance much more practical and effective.",
+      "createdAt": "2024-04-01T13:00:00Z",
+      "reactions": {
+        "👍": 5,
+        "🐱": 3
+      }
+    },
+
+    "comment-019": {
+      "id": "comment-019",
+      "discussionId": "disc-005",
+      "authorId": "user-bob-003",
+      "content": "I support this direction. We should also consider how these indicators would be measured and enforced. Perhaps we need companion rules that define assessment protocols?",
+      "createdAt": "2024-04-01T15:30:00Z",
+      "reactions": {
+        "🤔": 4,
+        "👍": 6,
+        "📏": 2
+      }
+    },
+
+    "comment-020": {
+      "id": "comment-020",
+      "discussionId": "disc-005",
+      "authorId": "user-ai-analyzer",
+      "content": "Species-specific welfare research analysis:\n\nMammals: 89% of animal welfare frameworks include social interaction requirements. Environmental enrichment shows 23% reduction in stress indicators.\n\nBirds: Flight space correlates strongly with psychological wellbeing (r=0.78). Nesting opportunities reduce aggressive behaviors by 34%.\n\nAquatic: Water quality standards vary significantly by species. Habitat complexity increases natural behaviors by 45-67%.\n\nRecommendation: Implement tiered approach with basic minimums and species-optimized standards.",
+      "createdAt": "2024-04-02T09:00:00Z",
+      "aiGenerated": true,
+      "reactions": {
+        "📊": 8,
+        "🐾": 5,
+        "👍": 7
+      }
     }
   }
 }

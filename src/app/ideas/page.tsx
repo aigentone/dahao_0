@@ -43,6 +43,7 @@ import rulesData from '@/lib/mock-data/elements-rules.json';
 import metaRulesData from '@/lib/mock-data/elements-metarules.json';
 import discussionsData from '@/lib/mock-data/discussions.json';
 import AgentAssignmentPanel from '@/components/governance/AgentAssignmentPanel';
+import { DiscussionModal } from '@/components/governance/DiscussionModal';
 
 interface Branch {
   id: string;
@@ -315,6 +316,15 @@ export default function IdeasPage() {
     'minimize-harm': ['system-ai-001']
   });
 
+  // Discussion modal state
+  const [showDiscussionModal, setShowDiscussionModal] = useState(false);
+  const [selectedDiscussion, setSelectedDiscussion] = useState<{
+    elementId: string;
+    elementType: 'term' | 'principle' | 'rule';
+    elementName: string;
+    elementVersion: string;
+  } | null>(null);
+
   const branches: Branch[] = Object.values(branchesData.branches).map(branch => ({
     ...branch,
     type: branch.type as 'core' | 'sub-dahao' | 'main-branch' | 'user-branch'
@@ -514,6 +524,34 @@ export default function IdeasPage() {
   const closeAgentPanel = () => {
     setShowAgentPanel(false);
     setSelectedGovernanceItem(null);
+  };
+
+  // Discussion modal helpers
+  const handleOpenDiscussion = (item: any, type: 'term' | 'principle' | 'rule') => {
+    const version = getVersionForBranch(item, selectedBranch?.id || '');
+    setSelectedDiscussion({
+      elementId: item.id,
+      elementType: type,
+      elementName: item.name,
+      elementVersion: version
+    });
+    setShowDiscussionModal(true);
+  };
+
+  const closeDiscussionModal = () => {
+    setShowDiscussionModal(false);
+    setSelectedDiscussion(null);
+  };
+
+  const handleAssignAgentFromModal = () => {
+    if (selectedDiscussion) {
+      const mockItem = {
+        id: selectedDiscussion.elementId,
+        name: selectedDiscussion.elementName
+      };
+      handleAssignAgent(mockItem, selectedDiscussion.elementType);
+      setShowDiscussionModal(false);
+    }
   };
 
   const renderAgentBadges = (itemId: string) => {
@@ -772,12 +810,12 @@ export default function IdeasPage() {
                                     <Bot className="h-4 w-4" />
                                   </Button>
                                   {versionData?.githubIssue && (
-                                    <a 
-                                      href={`#${versionData.githubIssue}`}
-                                      className="text-gray-400 hover:text-gray-600 dark:text-gray-300"
+                                    <button 
+                                      onClick={() => handleOpenDiscussion(term, 'term')}
+                                      className="text-gray-400 hover:text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 p-1 rounded"
                                     >
                                       <ExternalLink className="h-4 w-4" />
-                                    </a>
+                                    </button>
                                   )}
                                 </div>
                               </div>
@@ -890,12 +928,12 @@ export default function IdeasPage() {
                                     <Bot className="h-4 w-4" />
                                   </Button>
                                   {versionData?.githubIssue && (
-                                    <a 
-                                      href={`#${versionData.githubIssue}`}
-                                      className="text-gray-400 hover:text-gray-600 dark:text-gray-300"
+                                    <button 
+                                      onClick={() => handleOpenDiscussion(principle, 'principle')}
+                                      className="text-gray-400 hover:text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 p-1 rounded"
                                     >
                                       <ExternalLink className="h-4 w-4" />
-                                    </a>
+                                    </button>
                                   )}
                                 </div>
                               </div>
@@ -1019,12 +1057,12 @@ export default function IdeasPage() {
                                     <Bot className="h-4 w-4" />
                                   </Button>
                                   {versionData?.githubIssue && (
-                                    <a 
-                                      href={`#${versionData.githubIssue}`}
-                                      className="text-gray-400 hover:text-gray-600 dark:text-gray-300"
+                                    <button 
+                                      onClick={() => handleOpenDiscussion(rule, 'rule')}
+                                      className="text-gray-400 hover:text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 p-1 rounded"
                                     >
                                       <ExternalLink className="h-4 w-4" />
-                                    </a>
+                                    </button>
                                   )}
                                 </div>
                               </div>
@@ -1133,12 +1171,19 @@ export default function IdeasPage() {
                                 </Badge>
                               </div>
                               {discussion.githubIssue && (
-                                <a 
-                                  href={`#${discussion.githubIssue}`}
-                                  className="text-gray-400 hover:text-gray-600 dark:text-gray-300"
+                                <button 
+                                  onClick={() => {
+                                    // For discussions tab, we'll use the discussion data directly
+                                    const mockItem = { 
+                                      id: discussion.target?.elementId || discussion.id, 
+                                      name: discussion.title 
+                                    };
+                                    handleOpenDiscussion(mockItem, discussion.target?.elementType || 'term');
+                                  }}
+                                  className="text-gray-400 hover:text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 p-1 rounded"
                                 >
                                   <ExternalLink className="h-4 w-4" />
-                                </a>
+                                </button>
                               )}
                             </div>
                             {discussion.description && (
@@ -1232,6 +1277,17 @@ export default function IdeasPage() {
           </div>
         </div>
       )}
+
+      {/* Discussion Modal */}
+      <DiscussionModal
+        isOpen={showDiscussionModal}
+        onClose={closeDiscussionModal}
+        elementId={selectedDiscussion?.elementId}
+        elementType={selectedDiscussion?.elementType}
+        elementName={selectedDiscussion?.elementName}
+        elementVersion={selectedDiscussion?.elementVersion}
+        onAssignAgent={handleAssignAgentFromModal}
+      />
     </div>
   );
 }

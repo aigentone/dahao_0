@@ -434,6 +434,52 @@
       "implements": ["minimize-harm"],
       "uses": ["harm"],
       "domain": "core"
+    },
+    "deliberation-periods": {
+      "id": "deliberation-periods",
+      "type": "rule",
+      "name": "Deliberation Periods",
+      "currentVersion": "2.0.0",
+      "versions": {
+        "1.0.0": {
+          "purpose": "Establishes minimum deliberation periods for governance changes",
+          "keyRequirements": [
+            "Minimum 3 days for standard changes",
+            "Minimum 7 days for major changes",
+            "Minimum 14 days for constitutional changes"
+          ],
+          "createdAt": "2024-03-10T00:00:00Z",
+          "createdBy": "user-david-006",
+          "branchId": "core-governance-v2",
+          "githubIssue": 250,
+          "ratifiedAt": "2024-03-12T00:00:00Z",
+          "status": "ratified"
+        },
+        "2.0.0": {
+          "purpose": "Establishes tiered deliberation periods based on change impact",
+          "keyRequirements": [
+            "Minimum 1 day for minor clarifications",
+            "Minimum 3 days for standard changes",
+            "Minimum 7 days for major changes",
+            "Minimum 14 days for meta-rule changes",
+            "Emergency 24-hour fast-track with 80% threshold"
+          ],
+          "createdAt": "2024-03-15T00:00:00Z",
+          "createdBy": "user-david-006",
+          "branchId": "core-governance-v2",
+          "githubIssue": 267,
+          "changelog": "Introduced tiered system with emergency fast-track option",
+          "ratifiedAt": "2024-03-25T00:00:00Z",
+          "previousVersion": "1.0.0",
+          "status": "ratified"
+        }
+      },
+      "branchVersions": {
+        "core-dahao": "1.0.0",
+        "core-governance-v2": "2.0.0"
+      },
+      "implements": ["democratic-evolution", "thoughtful-governance"],
+      "domain": "governance"
     }
   }
 }
