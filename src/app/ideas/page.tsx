@@ -618,9 +618,9 @@ export default function IdeasPage() {
       </div>
 
       {/* Two-column layout - Mobile responsive */}
-      <div className="flex flex-col lg:flex-row gap-4 lg:gap-6 h-[calc(100vh-400px)]">
+      <div className="flex flex-col lg:flex-row gap-4 lg:gap-6 min-h-[calc(100vh-16rem)] lg:h-[calc(100vh-400px)]">
         {/* Left Sidebar - Tree Navigation */}
-        <div className="w-full lg:w-80 lg:flex-shrink-0 border border-gray-200 dark:border-gray-700 rounded-lg bg-muted/30 flex flex-col h-64 lg:h-auto">
+        <div className="w-full lg:w-80 lg:flex-shrink-0 border border-gray-200 dark:border-gray-700 rounded-lg bg-muted/30 flex flex-col max-h-64 lg:h-auto">
           {/* Search Bar */}
           <div className="p-4 border-b border-gray-200 dark:border-gray-700">
             <div className="relative">
