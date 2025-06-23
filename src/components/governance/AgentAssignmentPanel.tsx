@@ -1224,7 +1224,7 @@ Analysis completed with your personal value system.
         <CardContent>
           {/* Governance Item Display */}
           {governanceItem && (
-            <div className="mb-6 p-4 bg-gray-50 border border-gray-200 rounded-lg">
+            <div className="mb-6 p-4 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg">
               <div className="flex items-center gap-2 mb-3">
                 <Badge variant="outline" className="capitalize">
                   {governanceItem.type}
@@ -1242,7 +1242,7 @@ Analysis completed with your personal value system.
               <div className="space-y-2">
                 <h4 className="font-semibold">{governanceItem.id}</h4>
                 {governanceItem.data && (
-                  <div className="text-sm text-gray-600">
+                  <div className="text-sm text-gray-600 dark:text-gray-300">
                     {'name' in governanceItem.data && (
                       <p><strong>Name:</strong> {governanceItem.data.name}</p>
                     )}
@@ -1291,38 +1291,38 @@ Analysis completed with your personal value system.
             {/* Token Reward & Cost Projection */}
             <div className="mt-4 space-y-3">
               {/* Rewards Section */}
-              <div className="p-3 bg-yellow-50 border border-yellow-200 rounded-lg">
+              <div className="p-3 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg">
                 <div className="flex items-center gap-2 mb-2">
-                  <Coins className="w-4 h-4 text-yellow-600" />
-                  <span className="text-sm font-medium text-yellow-800">Token Reward Projection</span>
+                  <Coins className="w-4 h-4 text-yellow-600 dark:text-yellow-400" />
+                  <span className="text-sm font-medium text-yellow-800 dark:text-yellow-200">Token Reward Projection</span>
                 </div>
                 <div className="grid grid-cols-3 gap-2 text-xs">
                   <div>
-                    <div className="text-yellow-700">Estimated Total</div>
-                    <div className="font-semibold text-yellow-900">{currentTokenProjection.estimatedTotal} tokens</div>
+                    <div className="text-yellow-700 dark:text-yellow-300">Estimated Total</div>
+                    <div className="font-semibold text-yellow-900 dark:text-yellow-100">{currentTokenProjection.estimatedTotal} tokens</div>
                   </div>
                   <div>
-                    <div className="text-yellow-700">On Completion</div>
-                    <div className="font-semibold text-yellow-900">{currentTokenProjection.paymentSchedule.onCompletion} tokens</div>
+                    <div className="text-yellow-700 dark:text-yellow-300">On Completion</div>
+                    <div className="font-semibold text-yellow-900 dark:text-yellow-100">{currentTokenProjection.paymentSchedule.onCompletion} tokens</div>
                   </div>
                   <div>
-                    <div className="text-yellow-700">Multiplier</div>
-                    <div className="font-semibold text-yellow-900">{selectedAgentType === 'personal' ? '1.5x' : '1.0x'}</div>
+                    <div className="text-yellow-700 dark:text-yellow-300">Multiplier</div>
+                    <div className="font-semibold text-yellow-900 dark:text-yellow-100">{selectedAgentType === 'personal' ? '1.5x' : '1.0x'}</div>
                   </div>
                 </div>
               </div>
 
               {/* Cost & Net Earnings Section */}
-              <div className="p-3 bg-blue-50 border border-blue-200 rounded-lg">
+              <div className="p-3 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
                 <div className="flex items-center justify-between">
                   <div className="flex-1">
                     <div className="flex items-center gap-2 mb-2">
-                      <Settings className="w-4 h-4 text-blue-600" />
-                      <span className="text-sm font-medium text-blue-800">API Cost Estimate</span>
+                      <Settings className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+                      <span className="text-sm font-medium text-blue-800 dark:text-blue-200">API Cost Estimate</span>
                     </div>
-                    <div className="text-xs text-blue-700">
+                    <div className="text-xs text-blue-700 dark:text-blue-300">
                       <div>Estimated cost: <span className="font-semibold">{currentAPICost} tokens</span></div>
-                      <div className="text-blue-600 mt-1">
+                      <div className="text-blue-600 dark:text-blue-400 mt-1">
                         {selectedAgentType === 'personal' ? 
                           'Personal AI uses advanced prompts (+20% cost)' : 
                           'System AI uses standard prompts'
@@ -1331,9 +1331,9 @@ Analysis completed with your personal value system.
                     </div>
                   </div>
                   <div className="text-right ml-4">
-                    <div className="text-xs text-green-700">Net Earnings</div>
-                    <div className="text-lg font-bold text-green-800">+{netEarnings} tokens</div>
-                    <div className="text-xs text-green-600">after API costs</div>
+                    <div className="text-xs text-green-700 dark:text-green-300">Net Earnings</div>
+                    <div className="text-lg font-bold text-green-800 dark:text-green-200">+{netEarnings} tokens</div>
+                    <div className="text-xs text-green-600 dark:text-green-400">after API costs</div>
                   </div>
                 </div>
               </div>
@@ -1341,9 +1341,9 @@ Analysis completed with your personal value system.
 
             {/* Agent Type Explanation */}
             <TabsContent value="personal" className="mt-4">
-              <div className="p-3 bg-blue-50 border border-blue-200 rounded-lg">
-                <h4 className="font-medium text-blue-900 mb-2">Personal AI Agent Benefits</h4>
-                <ul className="text-sm text-blue-800 space-y-1">
+              <div className="p-3 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
+                <h4 className="font-medium text-blue-900 dark:text-blue-200 mb-2">Personal AI Agent Benefits</h4>
+                <ul className="text-sm text-blue-800 dark:text-blue-300 space-y-1">
                   <li>• Aligned with your personal value system</li>
                   <li>• Can override standard decisions based on your preferences</li>
                   <li>• Learns from your feedback and improves over time</li>
@@ -1354,9 +1354,9 @@ Analysis completed with your personal value system.
             </TabsContent>
 
             <TabsContent value="system" className="mt-4">
-              <div className="p-3 bg-green-50 border border-green-200 rounded-lg">
-                <h4 className="font-medium text-green-900 mb-2">System AI Agent Benefits</h4>
-                <ul className="text-sm text-green-800 space-y-1">
+              <div className="p-3 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg">
+                <h4 className="font-medium text-green-900 dark:text-green-200 mb-2">System AI Agent Benefits</h4>
+                <ul className="text-sm text-green-800 dark:text-green-300 space-y-1">
                   <li>• Objective evaluation based only on core DAHAO principles</li>
                   <li>• No personal bias or custom modifications</li>
                   <li>• Consistent validation across all users and proposals</li>
@@ -1529,7 +1529,7 @@ Analysis completed with your personal value system.
                     
                     {/* Issue context information */}
                     {assignment.context === 'issue' && assignment.issueTitle && (
-                      <div className="mb-2 p-2 bg-blue-50 rounded text-xs">
+                      <div className="mb-2 p-2 bg-blue-50 dark:bg-blue-900/20 rounded text-xs text-gray-900 dark:text-gray-100">
                         <strong>Issue Context:</strong> {assignment.issueTitle}
                       </div>
                     )}
@@ -1548,9 +1548,9 @@ Analysis completed with your personal value system.
 
                     {assignment.analysis && (
                       <div className={`p-3 rounded-lg ${
-                        assignment.agentType === 'personal' ? 'bg-blue-50' : 'bg-green-50'
+                        assignment.agentType === 'personal' ? 'bg-blue-50 dark:bg-blue-900/20' : 'bg-green-50 dark:bg-green-900/20'
                       }`}>
-                        <pre className="text-sm whitespace-pre-wrap font-mono">
+                        <pre className="text-sm whitespace-pre-wrap font-mono text-gray-900 dark:text-gray-100">
                           {assignment.analysis}
                         </pre>
                       </div>
@@ -1558,17 +1558,17 @@ Analysis completed with your personal value system.
 
                     {/* Individual Verification Results */}
                     {assignment.verification?.result && (
-                      <div className="mt-3 p-3 bg-purple-50 border border-purple-200 rounded-lg">
+                      <div className="mt-3 p-3 bg-purple-50 dark:bg-purple-900/20 border border-purple-200 dark:border-purple-800 rounded-lg">
                         <div className="flex items-center gap-2 mb-2">
-                          <Bot className="h-4 w-4 text-purple-600" />
-                          <span className="text-sm font-medium text-purple-800">Individual Verification Result</span>
+                          <Bot className="h-4 w-4 text-purple-600 dark:text-purple-400" />
+                          <span className="text-sm font-medium text-purple-800 dark:text-purple-200">Individual Verification Result</span>
                           {assignment.verification.confidence && (
-                            <Badge variant="outline" className="text-xs bg-purple-100">
+                            <Badge variant="outline" className="text-xs bg-purple-100 dark:bg-purple-900/40">
                               {assignment.verification.confidence}% confidence
                             </Badge>
                           )}
                         </div>
-                        <pre className="text-xs whitespace-pre-wrap font-mono text-purple-900">
+                        <pre className="text-xs whitespace-pre-wrap font-mono text-purple-900 dark:text-purple-100">
                           {assignment.verification.result}
                         </pre>
                       </div>
@@ -1576,7 +1576,7 @@ Analysis completed with your personal value system.
 
                     {/* Agent Value System Info */}
                     {assignment.status === 'completed' && assignment.agentType === 'personal' && agent && 'valueSystem' in agent && (
-                      <div className="mt-2 p-2 bg-blue-100 rounded text-xs">
+                      <div className="mt-2 p-2 bg-blue-100 dark:bg-blue-900/30 rounded text-xs text-gray-900 dark:text-gray-100">
                         <strong>Value System Applied:</strong> {agent.valueSystem.coreValues.join(', ')}
                         {agent.valueSystem.customValues.length > 0 && (
                           <div><strong>Custom Values:</strong> {agent.valueSystem.customValues.join(', ')}</div>
@@ -1585,7 +1585,7 @@ Analysis completed with your personal value system.
                     )}
 
                     {assignment.status === 'completed' && assignment.agentType === 'system' && agent && 'authority' in agent && (
-                      <div className="mt-2 p-2 bg-green-100 rounded text-xs">
+                      <div className="mt-2 p-2 bg-green-100 dark:bg-green-900/30 rounded text-xs text-gray-900 dark:text-gray-100">
                         <strong>System Authority:</strong> {agent.authority.level} | 
                         <strong> Role:</strong> {agent.role} |
                         <strong> Scope:</strong> {agent.deployment.scope}
@@ -1602,22 +1602,22 @@ Analysis completed with your personal value system.
 
       {/* Cross-Branch Deployment Options */}
       {selectedAgentType === 'personal' && (
-        <Card className="bg-purple-50 border-purple-200">
+        <Card className="bg-purple-50 dark:bg-purple-900/20 border-purple-200 dark:border-purple-800">
           <CardContent className="pt-6">
             <div className="flex items-center gap-2 mb-3">
-              <Target className="w-5 h-5 text-purple-600" />
-              <h4 className="font-semibold text-purple-900">Cross-Branch Deployment</h4>
+              <Target className="w-5 h-5 text-purple-600 dark:text-purple-400" />
+              <h4 className="font-semibold text-purple-900 dark:text-purple-200">Cross-Branch Deployment</h4>
             </div>
-            <p className="text-sm text-purple-800 mb-3">
+            <p className="text-sm text-purple-800 dark:text-purple-300 mb-3">
               Personal AI agents can be deployed across multiple DAHAO branches you participate in, 
               maintaining your value system while earning tokens from each deployment.
             </p>
             <div className="flex gap-2">
-              <Button variant="outline" size="sm" className="text-purple-700 border-purple-300">
+              <Button variant="outline" size="sm" className="text-purple-700 dark:text-purple-300 border-purple-300 dark:border-purple-700">
                 <Settings className="w-4 h-4 mr-2" />
                 Configure Deployment
               </Button>
-              <Button variant="outline" size="sm" className="text-purple-700 border-purple-300">
+              <Button variant="outline" size="sm" className="text-purple-700 dark:text-purple-300 border-purple-300 dark:border-purple-700">
                 <Coins className="w-4 h-4 mr-2" />
                 View Earnings Across Branches
               </Button>

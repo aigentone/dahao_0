@@ -5,8 +5,10 @@ import { HeroSection } from '@/components/shared/HeroSection';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { ScrollArea } from '@/components/ui/scroll-area';
 import { 
   GitBranch, 
   Search, 
@@ -30,7 +32,8 @@ import {
   ArrowDown,
   Edit3,
   Plus,
-  ArrowUpDown
+  ArrowUpDown,
+  Bot
 } from 'lucide-react';
 import branchesData from '@/lib/mock-data/branches.json';
 import termsData from '@/lib/mock-data/elements-terms.json';
@@ -38,6 +41,7 @@ import principlesData from '@/lib/mock-data/elements-principles.json';
 import rulesData from '@/lib/mock-data/elements-rules.json';
 import metaRulesData from '@/lib/mock-data/elements-metarules.json';
 import discussionsData from '@/lib/mock-data/discussions.json';
+import AgentAssignmentPanel from '@/components/governance/AgentAssignmentPanel';
 
 interface Branch {
   id: string;
@@ -296,6 +300,16 @@ export default function IdeasPage() {
   const [selectedBranch, setSelectedBranch] = useState<TreeNode | null>(null);
   const [sortOption, setSortOption] = useState('modified-first');
   const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('asc');
+  
+  // Agent assignment state
+  const [selectedGovernanceItem, setSelectedGovernanceItem] = useState<any>(null);
+  const [showAgentPanel, setShowAgentPanel] = useState(false);
+  const [activeAgents, setActiveAgents] = useState<Record<string, string[]>>({
+    // Mock some assigned agents for demonstration
+    'harm': ['personal-ai-001'],
+    'transparency': ['system-ai-001', 'personal-ai-002'],
+    'minimize-harm': ['system-ai-001']
+  });
 
   const branches: Branch[] = Object.values(branchesData.branches).map(branch => ({
     ...branch,
@@ -480,6 +494,40 @@ export default function IdeasPage() {
   const totalTerms = branches.reduce((sum, branch) => sum + branch.stats.totalTerms, 0);
   const totalDiscussions = branches.reduce((sum, branch) => sum + branch.stats.totalDiscussions, 0);
 
+  // Agent assignment helpers
+  const handleAssignAgent = (item: any, type: 'term' | 'principle' | 'rule') => {
+    const governanceItem = {
+      type,
+      data: item,
+      id: item.id,
+      version: getVersionForBranch(item, selectedBranch?.id || ''),
+      domain: selectedBranch?.name || 'Unknown'
+    };
+    setSelectedGovernanceItem(governanceItem);
+    setShowAgentPanel(true);
+  };
+
+  const closeAgentPanel = () => {
+    setShowAgentPanel(false);
+    setSelectedGovernanceItem(null);
+  };
+
+  const renderAgentBadges = (itemId: string) => {
+    const agents = activeAgents[itemId];
+    if (!agents || agents.length === 0) return null;
+    
+    return (
+      <div className="flex gap-1 mt-1">
+        {agents.map((agentId, index) => (
+          <Badge key={index} variant="secondary" className="text-xs bg-purple-100 text-purple-700 dark:bg-purple-900/50 dark:text-purple-300">
+            <Bot className="h-3 w-3 mr-1" />
+            AI-{agentId.slice(-3)}
+          </Badge>
+        ))}
+      </div>
+    );
+  };
+
   return (
     <div className="container mx-auto px-6 py-12">
       <HeroSection
@@ -507,19 +555,21 @@ export default function IdeasPage() {
           </div>
 
           {/* Tree Navigation */}
-          <div className="flex-1 overflow-y-auto p-2">
-            {filteredTree.length > 0 ? (
-              filteredTree.map(node => renderSidebarNode(node))
-            ) : (
-              <div className="p-4 text-center text-gray-500 dark:text-gray-400 text-sm">
-                No branches found matching "{searchQuery}"
-              </div>
-            )}
-          </div>
+          <ScrollArea className="flex-1">
+            <div className="p-2">
+              {filteredTree.length > 0 ? (
+                filteredTree.map(node => renderSidebarNode(node))
+              ) : (
+                <div className="p-4 text-center text-gray-500 dark:text-gray-400 text-sm">
+                  No branches found matching "{searchQuery}"
+                </div>
+              )}
+            </div>
+          </ScrollArea>
         </div>
 
         {/* Right Content Area */}
-        <div className="flex-1 overflow-y-auto">
+        <ScrollArea className="flex-1">
           {selectedBranch ? (
             <Card>
               <CardHeader>
@@ -670,14 +720,24 @@ export default function IdeasPage() {
                                     </Badge>
                                   )}
                                 </div>
-                                {versionData?.githubIssue && (
-                                  <a 
-                                    href={`#${versionData.githubIssue}`}
-                                    className="text-gray-400 hover:text-gray-600 dark:text-gray-300"
+                                <div className="flex items-center gap-2">
+                                  <Button
+                                    variant="ghost"
+                                    size="sm"
+                                    onClick={() => handleAssignAgent(term, 'term')}
+                                    className="h-8 w-8 p-0"
                                   >
-                                    <ExternalLink className="h-4 w-4" />
-                                  </a>
-                                )}
+                                    <Bot className="h-4 w-4" />
+                                  </Button>
+                                  {versionData?.githubIssue && (
+                                    <a 
+                                      href={`#${versionData.githubIssue}`}
+                                      className="text-gray-400 hover:text-gray-600 dark:text-gray-300"
+                                    >
+                                      <ExternalLink className="h-4 w-4" />
+                                    </a>
+                                  )}
+                                </div>
                               </div>
                               {inheritanceInfo?.type === 'inherited' && inheritanceInfo.source !== selectedBranch.id && (
                                 <div className="text-xs text-gray-600 dark:text-gray-300 mb-2 italic">
@@ -705,6 +765,7 @@ export default function IdeasPage() {
                                   )}
                                 </div>
                               )}
+                              {renderAgentBadges(term.id)}
                             </div>
                           );
                         };
@@ -777,14 +838,24 @@ export default function IdeasPage() {
                                     </Badge>
                                   )}
                                 </div>
-                                {versionData?.githubIssue && (
-                                  <a 
-                                    href={`#${versionData.githubIssue}`}
-                                    className="text-gray-400 hover:text-gray-600 dark:text-gray-300"
+                                <div className="flex items-center gap-2">
+                                  <Button
+                                    variant="ghost"
+                                    size="sm"
+                                    onClick={() => handleAssignAgent(principle, 'principle')}
+                                    className="h-8 w-8 p-0"
                                   >
-                                    <ExternalLink className="h-4 w-4" />
-                                  </a>
-                                )}
+                                    <Bot className="h-4 w-4" />
+                                  </Button>
+                                  {versionData?.githubIssue && (
+                                    <a 
+                                      href={`#${versionData.githubIssue}`}
+                                      className="text-gray-400 hover:text-gray-600 dark:text-gray-300"
+                                    >
+                                      <ExternalLink className="h-4 w-4" />
+                                    </a>
+                                  )}
+                                </div>
                               </div>
                               {inheritanceInfo?.type === 'inherited' && inheritanceInfo.source !== selectedBranch.id && (
                                 <div className="text-xs text-gray-600 dark:text-gray-300 mb-2 italic">
@@ -815,6 +886,7 @@ export default function IdeasPage() {
                                   </div>
                                 )}
                               </div>
+                              {renderAgentBadges(principle.id)}
                             </div>
                           );
                         };
@@ -895,14 +967,24 @@ export default function IdeasPage() {
                                     </Badge>
                                   )}
                                 </div>
-                                {versionData?.githubIssue && (
-                                  <a 
-                                    href={`#${versionData.githubIssue}`}
-                                    className="text-gray-400 hover:text-gray-600 dark:text-gray-300"
+                                <div className="flex items-center gap-2">
+                                  <Button
+                                    variant="ghost"
+                                    size="sm"
+                                    onClick={() => handleAssignAgent(rule, 'rule')}
+                                    className="h-8 w-8 p-0"
                                   >
-                                    <ExternalLink className="h-4 w-4" />
-                                  </a>
-                                )}
+                                    <Bot className="h-4 w-4" />
+                                  </Button>
+                                  {versionData?.githubIssue && (
+                                    <a 
+                                      href={`#${versionData.githubIssue}`}
+                                      className="text-gray-400 hover:text-gray-600 dark:text-gray-300"
+                                    >
+                                      <ExternalLink className="h-4 w-4" />
+                                    </a>
+                                  )}
+                                </div>
                               </div>
                               {inheritanceInfo?.type === 'inherited' && inheritanceInfo.source !== selectedBranch.id && (
                                 <div className="text-xs text-gray-600 dark:text-gray-300 mb-2 italic">
@@ -946,6 +1028,7 @@ export default function IdeasPage() {
                                   )}
                                 </div>
                               )}
+                              {renderAgentBadges(rule.id)}
                             </div>
                           );
                         };
@@ -1085,8 +1168,30 @@ export default function IdeasPage() {
               </CardContent>
             </Card>
           )}
-        </div>
+        </ScrollArea>
       </div>
+
+      {/* Agent Assignment Panel */}
+      {showAgentPanel && selectedGovernanceItem && (
+        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+          <div className="bg-white dark:bg-gray-900 rounded-lg max-w-4xl w-full max-h-[90vh] flex flex-col">
+            <div className="bg-white dark:bg-gray-900 border-b p-4 flex justify-between items-center">
+              <h3 className="text-lg font-semibold">Assign AI Agent</h3>
+              <Button variant="ghost" size="sm" onClick={closeAgentPanel}>
+                ✕
+              </Button>
+            </div>
+            <ScrollArea className="flex-1">
+              <div className="p-4">
+                <AgentAssignmentPanel
+                  context="governance"
+                  governanceItem={selectedGovernanceItem}
+                />
+              </div>
+            </ScrollArea>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

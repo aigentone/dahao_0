@@ -9,8 +9,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import {
   GitBranch, GitCommit, GitMerge, GitPullRequest,
   ArrowRight, ArrowDown, Users, Bot, Shield,
-  Bell, Clock, CheckCircle, AlertCircle,Settings,
-  Code, Layers, Network
+  Bell, Clock, CheckCircle, AlertCircle, Settings,
+  Code, Layers, Network, Info, FileText, Zap
 } from 'lucide-react';
 import { HeroSection, FeatureCard } from '@/components/shared';
 
@@ -61,7 +61,7 @@ const GOVERNANCE_STRUCTURE = {
 };
 
 export default function GitStructurePage() {
-  const [selectedView, setSelectedView] = useState<'overview' | 'inheritance' | 'updates' | 'agents'>('overview');
+  const [selectedView, setSelectedView] = useState<'branching' | 'overview' | 'inheritance' | 'updates' | 'agents'>('branching');
   const [selectedTerm, setSelectedTerm] = useState<string | null>(null);
   const [showUpdateFlow, setShowUpdateFlow] = useState(false);
 
@@ -69,13 +69,13 @@ export default function GitStructurePage() {
     <div className="container mx-auto px-4 py-8">
       <HeroSection
         title="DAHAO Git Structure"
-        subtitle="Understanding how governance evolves through Git-like versioning and branching"
+        subtitle="Fork, customize, and evolve governance - from concept to Git implementation"
         maxWidth="4xl"
         className="mb-8"
       />
 
       {/* Key Concepts */}
-      <div className="grid gap-4 md:grid-cols-4 mb-8">
+      <div className="grid gap-4 md:grid-cols-5 mb-8">
         <FeatureCard
           icon={GitCommit}
           iconColor="text-blue-600"
@@ -103,19 +103,249 @@ export default function GitStructurePage() {
           title="Multi-Participation"
           description="Users and agents can work across multiple branches"
         />
+
+        <FeatureCard
+          icon={GitBranch}
+          iconColor="text-indigo-600"
+          title="Fork From Anywhere"
+          description="Start from Core, specialized DAHAOs, or community branches"
+        />
       </div>
 
       {/* Main Content */}
       <Tabs value={selectedView} onValueChange={(v) => setSelectedView(v as any)}>
-        <TabsList className="grid w-full grid-cols-4">
+        <TabsList className="grid w-full grid-cols-5">
+          <TabsTrigger value="branching">Branching Concept</TabsTrigger>
           <TabsTrigger value="overview">Structure Overview</TabsTrigger>
           <TabsTrigger value="inheritance">Inheritance Chain</TabsTrigger>
           <TabsTrigger value="updates">Update Flow</TabsTrigger>
           <TabsTrigger value="agents">Agent System</TabsTrigger>
         </TabsList>
 
+        {/* Branching Concept */}
+        <TabsContent value="branching" className="space-y-6">
+          <Card>
+            <CardHeader>
+              <CardTitle>How DAHAO Branching Works</CardTitle>
+              <CardDescription>Your Governance, Your Way</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              {/* Introduction */}
+              <div className="prose prose-sm dark:prose-invert max-w-none">
+                <p className="text-base leading-relaxed">
+                  DAHAO lets you create your own governance system by building on existing work. Think of it like GitHub for governance - you can fork, modify, and contribute back.
+                </p>
+              </div>
+
+              {/* Starting Points */}
+              <div>
+                <h3 className="font-semibold text-lg mb-3">Starting Points</h3>
+                <p className="text-sm text-muted-foreground mb-4">
+                  You don't have to start from scratch. Choose any existing governance system:
+                </p>
+                <div className="grid gap-3 md:grid-cols-3">
+                  <Card className="border-2 hover:border-blue-200 transition-colors">
+                    <CardHeader className="pb-3">
+                      <CardTitle className="text-base flex items-center gap-2">
+                        <Layers className="h-5 w-5 text-blue-600" />
+                        Core DAHAO
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-sm text-muted-foreground">
+                        The vanilla foundation with basic governance rules
+                      </p>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="border-2 hover:border-green-200 transition-colors">
+                    <CardHeader className="pb-3">
+                      <CardTitle className="text-base flex items-center gap-2">
+                        <GitBranch className="h-5 w-5 text-green-600" />
+                        Specialized DAHAOs
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-sm text-muted-foreground">
+                        Pre-built for specific domains (Animal Welfare, Environmental, Music Industry)
+                      </p>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="border-2 hover:border-purple-200 transition-colors">
+                    <CardHeader className="pb-3">
+                      <CardTitle className="text-base flex items-center gap-2">
+                        <Users className="h-5 w-5 text-purple-600" />
+                        Community Branches
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-sm text-muted-foreground">
+                        Other users' innovations you can build upon
+                      </p>
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
+
+              {/* Two Ways to Use DAHAO */}
+              <div>
+                <h3 className="font-semibold text-lg mb-3">Two Ways to Use DAHAO</h3>
+                <div className="grid gap-4 md:grid-cols-2">
+                  <Card className="bg-blue-50 dark:bg-blue-950/20 border-blue-200">
+                    <CardHeader>
+                      <CardTitle className="text-base flex items-center gap-2">
+                        <FileText className="h-5 w-5 text-blue-600" />
+                        1. Reference Branch (Use As-Is)
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="space-y-2">
+                      <ul className="text-sm space-y-1">
+                        <li>• Want to use existing governance without changes?</li>
+                        <li>• Create a reference branch - you follow those exact rules</li>
+                        <li>• No modifications needed</li>
+                        <li>• Still counts as "your branch" for task automation</li>
+                      </ul>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="bg-green-50 dark:bg-green-950/20 border-green-200">
+                    <CardHeader>
+                      <CardTitle className="text-base flex items-center gap-2">
+                        <GitBranch className="h-5 w-5 text-green-600" />
+                        2. Forked Branch (Customize)
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="space-y-2">
+                      <ul className="text-sm space-y-1">
+                        <li>• Want to modify anything? Even one word?</li>
+                        <li>• Automatically creates your fork</li>
+                        <li>• Inherits everything from parent</li>
+                        <li>• Add your improvements on top</li>
+                      </ul>
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
+
+              {/* Example Journey */}
+              <div>
+                <h3 className="font-semibold text-lg mb-3">Example Journey</h3>
+                <p className="text-sm text-muted-foreground mb-4">Sarah's path with visual cards:</p>
+                
+                <div className="space-y-3">
+                  {[
+                    { number: 1, text: "Browses available governance systems", icon: Users },
+                    { number: 2, text: "Finds 'Animal Welfare DAHAO' interesting", icon: Layers },
+                    { number: 3, text: "Likes it but wants to add 'wildlife protection' focus", icon: GitBranch },
+                    { number: 4, text: "Edits one term → automatically forks", icon: Zap },
+                    { number: 5, text: "Now has: All Animal Welfare rules + her wildlife additions", icon: CheckCircle },
+                    { number: 6, text: "Others can fork from Sarah's branch too!", icon: Network }
+                  ].map(step => (
+                    <div key={step.number} className="flex gap-4 items-start">
+                      <div className="flex-shrink-0 w-8 h-8 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-sm">
+                        {step.number}
+                      </div>
+                      <div className="flex-1 flex items-center gap-3">
+                        <step.icon className="h-5 w-5 text-purple-600 flex-shrink-0" />
+                        <span className="text-sm">{step.text}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* AI Agent Integration */}
+              <Card className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-950/20 dark:to-purple-950/20 border-0">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <Bot className="h-5 w-5" />
+                    AI Agent Integration
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm mb-3">Your AI agent automatically understands:</p>
+                  <ul className="text-sm space-y-1 mb-4">
+                    <li>• All rules from your current branch</li>
+                    <li>• Everything inherited from parent branches</li>
+                    <li>• Your custom modifications</li>
+                  </ul>
+                  
+                  <p className="text-sm font-medium mb-2">Run tasks like:</p>
+                  <div className="space-y-2">
+                    <Badge variant="outline" className="text-xs">
+                      "Verify this follows our animal welfare principles"
+                    </Badge>
+                    <Badge variant="outline" className="text-xs">
+                      "Research latest wildlife protection standards"
+                    </Badge>
+                    <Badge variant="outline" className="text-xs">
+                      "Check if this proposal aligns with our values"
+                    </Badge>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Community Building */}
+              <div>
+                <h3 className="font-semibold text-lg mb-3">Community Building</h3>
+                <div className="grid gap-2 md:grid-cols-2 lg:grid-cols-3">
+                  <div className="flex items-center gap-2 text-sm">
+                    <CheckCircle className="h-4 w-4 text-green-600" />
+                    <span>Start anywhere in the tree</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm">
+                    <CheckCircle className="h-4 w-4 text-green-600" />
+                    <span>Build on others' work</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm">
+                    <CheckCircle className="h-4 w-4 text-green-600" />
+                    <span>Share your improvements</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm">
+                    <CheckCircle className="h-4 w-4 text-green-600" />
+                    <span>Create specialized governance for your needs</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm">
+                    <CheckCircle className="h-4 w-4 text-green-600" />
+                    <span>Propose successful experiments back upstream</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* No Permission Needed */}
+              <Card className="bg-purple-100 dark:bg-purple-950/40 border-purple-200">
+                <CardContent className="pt-6">
+                  <div className="text-center">
+                    <h3 className="font-semibold text-lg mb-2">No Permission Needed</h3>
+                    <p className="text-purple-800 dark:text-purple-200 font-medium">
+                      "Fork anything. Experiment freely. Your branch is your laboratory for better governance."
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </CardContent>
+          </Card>
+        </TabsContent>
+
         {/* Structure Overview */}
         <TabsContent value="overview" className="space-y-6">
+          {/* Context Note */}
+          <Card className="mb-6 bg-blue-50 dark:bg-blue-950/20 border-blue-200">
+            <CardContent className="pt-6">
+              <div className="flex items-start gap-3">
+                <Info className="h-5 w-5 text-blue-600 mt-0.5" />
+                <div>
+                  <p className="text-sm font-medium mb-1">Proposed Implementation</p>
+                  <p className="text-sm text-muted-foreground">
+                    This GitHub structure is one possible way to implement DAHAO branching.
+                    The community will decide the final technical approach.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
           <Card>
             <CardHeader>
               <CardTitle>Multi-Layer Governance Structure</CardTitle>
@@ -1199,31 +1429,30 @@ jobs:
           <div className="space-y-3">
             <div className="flex items-center gap-3">
               <CheckCircle className="h-5 w-5 text-green-600" />
-              <span className="line-through text-muted-foreground">Design Git structure</span>
+              <span className="line-through text-muted-foreground">Design branching concept</span>
             </div>
             <div className="flex items-center gap-3">
               <div className="w-5 h-5 border-2 border-orange-600 rounded-full"></div>
-              <span className="font-medium">Create GitHub organization</span>
+              <span className="font-medium">Deploy on Firebase</span>
               <Badge variant="outline" className="text-xs">Next</Badge>
             </div>
             <div className="flex items-center gap-3">
               <div className="w-5 h-5 border-2 border-gray-300 rounded-full"></div>
-              <span>Implement core governance</span>
+              <span>Community decides Git structure</span>
             </div>
             <div className="flex items-center gap-3">
               <div className="w-5 h-5 border-2 border-gray-300 rounded-full"></div>
-              <span>Set up GitHub Actions</span>
+              <span>Implement chosen approach</span>
             </div>
             <div className="flex items-center gap-3">
               <div className="w-5 h-5 border-2 border-gray-300 rounded-full"></div>
-              <span>Deploy first System AI</span>
+              <span>Set up automation</span>
             </div>
           </div>
 
           <div className="mt-4 p-3 bg-background rounded">
             <p className="text-sm text-muted-foreground">
-              This page will be updated as we build the actual GitHub structure.
-              It serves as both documentation and implementation guide.
+              The branching concept is now active on Firebase. The technical GitHub implementation shown here is a proposal - the community will decide the final approach.
             </p>
           </div>
         </CardContent>
