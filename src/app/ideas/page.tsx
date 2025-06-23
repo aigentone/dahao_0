@@ -18,6 +18,7 @@ import {
   Calendar,
   ChevronDown,
   ChevronRight,
+  ChevronUp,
   Eye,
   Home,
   Building,
@@ -260,19 +261,21 @@ const SortDropdown = ({
   direction: 'asc' | 'desc';
   onDirectionChange: () => void;
 }) => (
-  <div className="flex items-center gap-2 mb-4">
-    <button 
-      onClick={onDirectionChange}
-      className="flex items-center justify-center w-8 h-8 hover:bg-muted/30 rounded-sm transition-colors"
-      title={`Sort ${direction === 'asc' ? 'descending' : 'ascending'}`}
-    >
-      <ArrowUpDown className={`h-4 w-4 transition-transform ${
-        direction === 'desc' ? 'rotate-180' : ''
-      } text-gray-500 dark:text-gray-400 hover:text-gray-700`} />
-    </button>
-    <span className="text-sm font-medium text-gray-700">Sort by:</span>
+  <div className="flex flex-col sm:flex-row sm:items-center gap-2 mb-4">
+    <div className="flex items-center gap-2">
+      <button 
+        onClick={onDirectionChange}
+        className="flex items-center justify-center w-8 h-8 hover:bg-muted/30 rounded-sm transition-colors"
+        title={`Sort ${direction === 'asc' ? 'descending' : 'ascending'}`}
+      >
+        <ArrowUpDown className={`h-4 w-4 transition-transform ${
+          direction === 'desc' ? 'rotate-180' : ''
+        } text-gray-500 dark:text-gray-400 hover:text-gray-700`} />
+      </button>
+      <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Sort by:</span>
+    </div>
     <Select value={value} onValueChange={onChange}>
-      <SelectTrigger className="w-48">
+      <SelectTrigger className="w-full sm:w-48">
         <SelectValue />
       </SelectTrigger>
       <SelectContent>
@@ -300,6 +303,7 @@ export default function IdeasPage() {
   const [selectedBranch, setSelectedBranch] = useState<TreeNode | null>(null);
   const [sortOption, setSortOption] = useState('modified-first');
   const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('asc');
+  const [isMobileHeroExpanded, setIsMobileHeroExpanded] = useState(false);
   
   // Agent assignment state
   const [selectedGovernanceItem, setSelectedGovernanceItem] = useState<any>(null);
@@ -530,17 +534,55 @@ export default function IdeasPage() {
 
   return (
     <div className="container mx-auto px-6 py-12">
-      <HeroSection
-        badge="Governance Explorer"
-        title="DAHAO Ideas"
-        subtitle="Explore the ecosystem of governance branches, from core principles to specialized domains"
-        description={`Discover ${totalBranches} governance branches with ${totalTerms} terms and ${totalDiscussions} active discussions`}
-      />
+      {/* Desktop Hero - Always visible */}
+      <div className="hidden lg:block">
+        <HeroSection
+          badge="Governance Explorer"
+          title="DAHAO Ideas"
+          subtitle="Explore the ecosystem of governance branches, from core principles to specialized domains"
+          description={`Discover ${totalBranches} governance branches with ${totalTerms} terms and ${totalDiscussions} active discussions`}
+        />
+      </div>
 
-      {/* Two-column layout */}
-      <div className="flex gap-6 h-[calc(100vh-400px)]">
+      {/* Mobile Hero - Collapsible */}
+      <div className="lg:hidden mb-8">
+        <div className="text-center">
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <Badge variant="outline" className="text-xs">
+              Governance Explorer
+            </Badge>
+            <button
+              onClick={() => setIsMobileHeroExpanded(!isMobileHeroExpanded)}
+              className="flex items-center justify-center w-8 h-8 hover:bg-muted/30 rounded-sm transition-colors"
+              aria-label={isMobileHeroExpanded ? "Collapse details" : "Expand details"}
+            >
+              {isMobileHeroExpanded ? (
+                <ChevronUp className="h-4 w-4 text-gray-500" />
+              ) : (
+                <ChevronDown className="h-4 w-4 text-gray-500" />
+              )}
+            </button>
+          </div>
+          
+          <h1 className="text-3xl font-bold mb-2">DAHAO Ideas</h1>
+          
+          {isMobileHeroExpanded && (
+            <div className="space-y-3 animate-in slide-in-from-top-2 duration-200">
+              <p className="text-lg text-muted-foreground">
+                Explore the ecosystem of governance branches, from core principles to specialized domains
+              </p>
+              <p className="text-sm text-muted-foreground">
+                Discover {totalBranches} governance branches with {totalTerms} terms and {totalDiscussions} active discussions
+              </p>
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Two-column layout - Mobile responsive */}
+      <div className="flex flex-col lg:flex-row gap-4 lg:gap-6 h-[calc(100vh-400px)]">
         {/* Left Sidebar - Tree Navigation */}
-        <div className="w-80 flex-shrink-0 border border-gray-200 dark:border-gray-700 rounded-lg bg-muted/30 flex flex-col">
+        <div className="w-full lg:w-80 lg:flex-shrink-0 border border-gray-200 dark:border-gray-700 rounded-lg bg-muted/30 flex flex-col h-64 lg:h-auto">
           {/* Search Bar */}
           <div className="p-4 border-b border-gray-200 dark:border-gray-700">
             <div className="relative">
@@ -569,7 +611,7 @@ export default function IdeasPage() {
         </div>
 
         {/* Right Content Area */}
-        <ScrollArea className="flex-1">
+        <ScrollArea className="flex-1 min-h-0">
           {selectedBranch ? (
             <Card>
               <CardHeader>
@@ -600,8 +642,8 @@ export default function IdeasPage() {
                 </div>
               </CardHeader>
               <CardContent>
-                {/* Stats Grid */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                {/* Stats Grid - Mobile responsive */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
                   <div className="flex items-center gap-2 p-3 bg-blue-50 dark:bg-blue-950/20 rounded-lg">
                     <FileText className="h-5 w-5 text-blue-500" />
                     <div>
@@ -640,9 +682,9 @@ export default function IdeasPage() {
                   </div>
                 )}
 
-                {/* Tabs for different content */}
+                {/* Tabs for different content - Mobile responsive */}
                 <Tabs defaultValue="overview" className="w-full">
-                  <TabsList className="grid w-full grid-cols-5">
+                  <TabsList className="grid w-full grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 h-auto">
                     <TabsTrigger value="overview">Overview</TabsTrigger>
                     <TabsTrigger value="terms">Terms</TabsTrigger>
                     <TabsTrigger value="principles">Principles</TabsTrigger>
@@ -652,7 +694,7 @@ export default function IdeasPage() {
                   
                   <TabsContent value="overview" className="mt-6">
                     <div className="space-y-4">
-                      <div className="grid grid-cols-2 gap-4 text-sm">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
                         <div>
                           <strong>Created:</strong> {formatDate(selectedBranch.createdAt)}
                         </div>
@@ -709,7 +751,7 @@ export default function IdeasPage() {
                             <div key={term.id} className={`border rounded-lg p-4 ${
                               inheritanceInfo?.type === 'modified' ? 'border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-950/20' : 'border-gray-200 dark:border-gray-700'
                             }`}>
-                              <div className="flex items-start justify-between mb-2">
+                              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-2 gap-2">
                                 <div className="flex items-center gap-2 flex-wrap">
                                   <h4 className="font-semibold text-lg">{term.name}</h4>
                                   <Badge variant="outline">v{version}</Badge>
@@ -1171,24 +1213,22 @@ export default function IdeasPage() {
         </ScrollArea>
       </div>
 
-      {/* Agent Assignment Panel */}
+      {/* Agent Assignment Panel - Mobile responsive */}
       {showAgentPanel && selectedGovernanceItem && (
-        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
-          <div className="bg-white dark:bg-gray-900 rounded-lg max-w-4xl w-full max-h-[90vh] flex flex-col">
-            <div className="bg-white dark:bg-gray-900 border-b p-4 flex justify-between items-center">
+        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-2 sm:p-4">
+          <div className="bg-white dark:bg-gray-900 rounded-lg max-w-4xl w-full max-h-[95vh] sm:max-h-[90vh] flex flex-col overflow-hidden">
+            <div className="bg-white dark:bg-gray-900 border-b p-4 flex justify-between items-center flex-shrink-0">
               <h3 className="text-lg font-semibold">Assign AI Agent</h3>
               <Button variant="ghost" size="sm" onClick={closeAgentPanel}>
                 ✕
               </Button>
             </div>
-            <ScrollArea className="flex-1">
-              <div className="p-4">
-                <AgentAssignmentPanel
-                  context="governance"
-                  governanceItem={selectedGovernanceItem}
-                />
-              </div>
-            </ScrollArea>
+            <div className="flex-1 overflow-y-auto p-4">
+              <AgentAssignmentPanel
+                context="governance"
+                governanceItem={selectedGovernanceItem}
+              />
+            </div>
           </div>
         </div>
       )}
