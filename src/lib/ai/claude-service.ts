@@ -5,6 +5,8 @@ import { anthropic } from '@ai-sdk/anthropic';
 import { generateText } from 'ai';
 import { AnalysisRequest, AgentAnalysis, ClaudeResponse, PromptContext } from './types';
 import { getPromptForContext, estimatePromptTokens } from './prompts';
+import { getUserValuesFromBranch } from '../utils/user-values';
+import { getSystemValuesForContext } from '../utils/system-values';
 import { v4 as uuidv4 } from 'uuid';
 
 // Anthropic pricing (as of 2024)
@@ -42,15 +44,31 @@ export class ClaudeService {
     const analysisId = uuidv4();
 
     try {
-      // Build prompt context
+      // Extract dynamic context based on request
+      const userContext = request.user.contextOverride?.extractDynamicValues ? 
+        getUserValuesFromBranch(request.user.id, request.user.contextOverride.branchId) :
+        undefined;
+
+      const systemContext = request.task.agentType === 'system' ? 
+        getSystemValuesForContext(
+          request.governanceItem.elementBranchId || request.branch.id,
+          request.governanceItem.type,
+          request.governanceItem.id
+        ) : undefined;
+
+      // Build prompt context with dynamic context
       const promptContext: PromptContext = {
-        user: request.user,
+        user: {
+          ...request.user,
+          dynamicContext: userContext
+        },
         element: {
           type: request.governanceItem.type,
           id: request.governanceItem.id,
           name: request.governanceItem.name,
           version: request.governanceItem.version,
-          data: request.governanceItem.data
+          data: request.governanceItem.data,
+          branchId: request.governanceItem.elementBranchId
         },
         task: {
           agentType: request.task.agentType,
@@ -58,7 +76,8 @@ export class ClaudeService {
           description: request.task.context || `Analyze ${request.governanceItem.type}: ${request.governanceItem.name}`,
           context: request.task.context
         },
-        branch: request.branch
+        branch: request.branch,
+        systemContext: systemContext
       };
 
       // Generate appropriate prompt
@@ -99,7 +118,8 @@ export class ClaudeService {
           userId: request.user.id,
           userName: request.user.name,
           userBranch: request.user.branch,
-          userValues: request.user.values
+          userValues: request.user.values,
+          userContext: userContext
         },
         target: {
           elementType: request.governanceItem.type as 'term' | 'principle' | 'rule',
@@ -114,7 +134,8 @@ export class ClaudeService {
           taskType: request.task.taskType,
           taskDescription: request.task.context || `Analyze ${request.governanceItem.type}`,
           context: request.task.context,
-          discussionId: request.task.discussionId
+          discussionId: request.task.discussionId,
+          commentId: request.task.commentId
         },
         execution: {
           agentId: `${request.task.agentType}-${this.model}`,
@@ -122,7 +143,19 @@ export class ClaudeService {
           modelVersion: this.model,
           temperature: this.temperature,
           promptTemplate: request.task.agentType,
-          promptTokens: estimatedInputTokens
+          promptTokens: estimatedInputTokens,
+          // Track dynamic context used
+          systemBaseline: systemContext ? {
+            branchId: systemContext.branchId,
+            branchName: systemContext.branchName,
+            version: systemContext.version,
+            domainFocus: systemContext.domainFocus
+          } : undefined,
+          personalContext: userContext ? {
+            valueCount: userContext.coreValues.length,
+            modifiedTerms: userContext.valueTerms.length,
+            personalPrinciples: userContext.personalPrinciples.length
+          } : undefined
         },
         timeline: {
           requestedAt: new Date(startTime).toISOString(),

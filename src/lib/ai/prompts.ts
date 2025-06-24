@@ -1,7 +1,10 @@
 // AI Prompt Templates for DAHAO Governance Analysis
 // Supports Personal AI (user values) vs System AI (objective) distinction
+// Enhanced with dynamic context from actual branch data
 
 import { PromptContext } from './types';
+import { getUserValuesFromBranch } from '../utils/user-values';
+import { getSystemValuesForContext } from '../utils/system-values';
 
 export const TASK_DEFINITIONS = {
   'definition-clarity': {
@@ -69,60 +72,110 @@ export const TASK_DEFINITIONS = {
 export function buildPersonalAIPrompt(context: PromptContext): string {
   const taskDef = TASK_DEFINITIONS[context.task.taskType as keyof typeof TASK_DEFINITIONS];
   
-  return `You are a Personal AI assistant analyzing governance for a user with these specific values and preferences:
+  // Get dynamic user context from their actual branch
+  const userContext = context.user.dynamicContext || getUserValuesFromBranch(
+    context.user.id, 
+    context.user.branch
+  );
+  
+  let prompt = `You are a Personal AI assistant analyzing governance for a user with these specific values and preferences:
 
 USER PROFILE:
 - Name: ${context.user.name}
-- Governance Branch: ${context.branch.name}
-- Core Values: ${context.user.values.join(', ')}
+- Governance Branch: ${userContext.branchName} (${userContext.branchType})
+- Core Values: ${userContext.coreValues.join(', ')}
 - Analysis Focus: ${taskDef?.personalPrompt || 'Provide analysis aligned with user values'}
 
-TASK: ${context.task.description}
-Context: ${context.task.context || 'General governance analysis'}
+USER'S GOVERNANCE PHILOSOPHY:
+Based on ${context.user.name}'s branch modifications, they demonstrate these values:`;
+
+  // Add modified terms that reflect user's values
+  if (userContext.valueTerms.length > 0) {
+    prompt += `\n\nVALUE-DEFINING TERMS (User's Modified Definitions):`;
+    userContext.valueTerms.forEach(term => {
+      prompt += `\n- ${term.name} (v${term.version}): ${term.definition}`;
+      if (term.modifications.length > 0) {
+        prompt += `\n  User's modifications: ${term.modifications.join('; ')}`;
+      }
+    });
+  }
+
+  // Add personal principles
+  if (userContext.personalPrinciples.length > 0) {
+    prompt += `\n\nPERSONAL GOVERNANCE PRINCIPLES:`;
+    userContext.personalPrinciples.forEach(principle => {
+      const newLabel = principle.isNew ? ' [NEW]' : '';
+      prompt += `\n- ${principle.statement}${newLabel}`;
+    });
+  }
+
+  // Add governance preferences
+  if (userContext.governancePreferences.length > 0) {
+    prompt += `\n\nGOVERNANCE PREFERENCES:`;
+    userContext.governancePreferences.forEach(pref => {
+      prompt += `\n- ${pref.area}: ${pref.preference}`;
+    });
+  }
+
+  prompt += `
 
 GOVERNANCE ELEMENT TO ANALYZE:
 Type: ${context.element.type.toUpperCase()}
 Name: ${context.element.name}
 Version: ${context.element.version}
 Branch: ${context.branch.name}
+Context: ${context.task.context || 'General governance analysis'}
 
 Element Data:
 ${JSON.stringify(context.element.data, null, 2)}
 
 INSTRUCTIONS:
-1. Analyze this ${context.element.type} from the perspective of the user's values: ${context.user.values.join(', ')}
-2. Consider how this element aligns with or conflicts with their governance branch: ${context.branch.name}
-3. Provide recommendations that honor their value system
-4. Use a tone that matches their governance style
-5. Include specific references to their value system when relevant
-6. Suggest modifications that would better align with their preferences
+1. Analyze this ${context.element.type} from the perspective of the user's actual values extracted from their branch
+2. Consider how this element aligns with their personal governance modifications
+3. Reference their specific term definitions and principles when relevant
+4. Provide recommendations that honor their demonstrated value system
+5. Use their governance preferences to guide analysis approach
+6. Suggest modifications that would better align with their branch philosophy
 
 RESPONSE FORMAT:
 🤖 Personal AI Analysis (${context.user.name}'s Values):
 
-**Value Alignment Check:**
-- [Check each user value against the element]
+**Value System Analysis:**
+- [How this element relates to their core values: ${userContext.coreValues.join(', ')}]
 
-**Branch Compatibility:**
-- [How does this fit with their governance branch?]
+**Branch Philosophy Alignment:**
+- [Compatibility with their governance branch approach and modifications]
 
-**Personal Recommendations:**
-- [Specific suggestions based on their values]
+**Personal Term Definitions:**
+- [Reference any of their modified terms that are relevant]
 
-**Potential Concerns:**
-- [Any conflicts with their value system]
+**Personalized Recommendations:**
+- [Specific suggestions based on their demonstrated values and preferences]
+
+**Potential Value Conflicts:**
+- [Any aspects that might conflict with their value system]
 
 **Confidence Level:** [0-100]%
 
-Remember: This is a PERSONAL AI analysis tailored specifically for ${context.user.name}'s values and governance preferences. Provide analysis that serves their specific needs and worldview.`;
+Remember: This analysis uses ${context.user.name}'s actual governance branch data to understand their values, not generic assumptions.`;
+
+  return prompt;
 }
 
 export function buildSystemAIPrompt(context: PromptContext): string {
   const taskDef = TASK_DEFINITIONS[context.task.taskType as keyof typeof TASK_DEFINITIONS];
+  
+  // Get dynamic system context for appropriate baseline
+  const systemContext = context.systemContext || getSystemValuesForContext(
+    context.element.branchId || context.branch.id,
+    context.element.type,
+    context.element.id
+  );
+  
+  let prompt = `You are a System AI performing objective governance validation using ${systemContext.branchName} baseline standards.
 
-  return `You are a System AI performing objective governance validation for DAHAO (Decentralized Autonomous Hybrid-AI Organization).
-
-OBJECTIVE ANALYSIS TASK: ${context.task.description}
+VALIDATION BASELINE: ${systemContext.branchName} (${systemContext.branchType})
+Domain Focus: ${systemContext.domainFocus.join(', ')}
 Analysis Type: ${taskDef?.systemPrompt || 'Provide objective analysis'}
 
 GOVERNANCE ELEMENT TO ANALYZE:
@@ -132,42 +185,85 @@ Version: ${context.element.version}
 Branch Context: ${context.branch.name}
 
 Element Data:
-${JSON.stringify(context.element.data, null, 2)}
+${JSON.stringify(context.element.data, null, 2)}`;
 
-DAHAO BASELINE PRINCIPLES (v1.0):
-- Transparency: All governance processes must be open and traceable
-- Equality: All beings have equal consideration in governance
-- Harm Prevention: Minimize harm to all sentient beings
-- Democratic Process: Decisions through inclusive participation
-- Accountability: Clear responsibility and consequences
-- Adaptability: Governance must evolve with new understanding
+  // Add baseline terms that define core concepts
+  if (systemContext.baselineTerms.length > 0) {
+    prompt += `\n\nBASELINE TERM DEFINITIONS:`;
+    systemContext.baselineTerms.forEach(term => {
+      const coreLabel = term.isCore ? ' [CORE]' : '';
+      prompt += `\n- ${term.name} (v${term.version}): ${term.definition}${coreLabel}`;
+    });
+  }
 
-INSTRUCTIONS:
-1. Analyze this ${context.element.type} using ONLY the baseline DAHAO principles above
-2. Do NOT incorporate personal values or branch-specific modifications
-3. Provide objective, unbiased assessment
-4. Use standard governance evaluation criteria
-5. Reference only core DAHAO principles in your analysis
-6. Maintain neutrality regardless of branch context
+  // Add baseline principles for validation
+  if (systemContext.baselinePrinciples.length > 0) {
+    prompt += `\n\nBASELINE PRINCIPLES TO ENFORCE:`;
+    systemContext.baselinePrinciples.forEach(principle => {
+      const priorityLabel = principle.priority === 'critical' ? ' [CRITICAL]' : 
+                           principle.priority === 'important' ? ' [IMPORTANT]' : '';
+      const coreLabel = principle.isCore ? ' [CORE]' : '';
+      prompt += `\n- ${principle.statement}${priorityLabel}${coreLabel}`;
+    });
+  }
+
+  // Add compliance rules that must be enforced
+  if (systemContext.complianceRules.length > 0) {
+    prompt += `\n\nCOMPLIANCE REQUIREMENTS:`;
+    systemContext.complianceRules.forEach(rule => {
+      const criticalLabel = rule.isCritical ? ' [CRITICAL]' : '';
+      prompt += `\n- ${rule.name}: ${rule.purpose}${criticalLabel}`;
+    });
+  }
+
+  // Add validation criteria
+  prompt += `\n\nVALIDATION CRITERIA:`;
+  systemContext.validationCriteria.forEach(criteria => {
+    prompt += `\n- ${criteria}`;
+  });
+
+  prompt += `\n\nINSTRUCTIONS:
+1. Validate this ${context.element.type} against the ${systemContext.branchName} baseline standards above
+2. Do NOT incorporate personal values or user-specific modifications  
+3. Use only the baseline terms, principles, and compliance rules listed above
+4. Apply domain-specific validation criteria: ${systemContext.domainFocus.join(', ')}
+5. Maintain objectivity using community-established standards
+6. Reference specific baseline elements in your analysis
 
 RESPONSE FORMAT:
-⚖️ System AI - Objective Analysis:
+⚖️ System AI - ${systemContext.branchName} Validation:
 
-**DAHAO Baseline Compliance:**
-- Transparency: [COMPLIANT/NON-COMPLIANT with explanation]
-- Equality: [COMPLIANT/NON-COMPLIANT with explanation]
-- Harm Prevention: [COMPLIANT/NON-COMPLIANT with explanation]
-- Democratic Process: [COMPLIANT/NON-COMPLIANT with explanation]
-- Accountability: [COMPLIANT/NON-COMPLIANT with explanation]
-- Adaptability: [COMPLIANT/NON-COMPLIANT with explanation]
+**Baseline Compliance Check:**`;
 
-**Objective Assessment:**
-- [Neutral evaluation based on standard criteria]
+  // Add compliance checks for critical principles
+  systemContext.baselinePrinciples
+    .filter(p => p.priority === 'critical')
+    .forEach(principle => {
+      const principleKey = principle.id.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+      prompt += `\n- ${principleKey}: [COMPLIANT/NON-COMPLIANT with explanation]`;
+    });
 
-**System Validation:** [APPROVED/REQUIRES_REVIEW/REJECTED]
+  prompt += `\n
+**Domain-Specific Validation:**`;
+  
+  systemContext.domainFocus.forEach(focus => {
+    prompt += `\n- ${focus}: [Assessment of element's impact in this domain]`;
+  });
+
+  prompt += `\n
+**Baseline Term Consistency:**
+- [Check if element uses terms consistently with baseline definitions]
+
+**Compliance Rule Assessment:**
+- [Verify alignment with compliance requirements]
+
+**Overall System Validation:** [APPROVED/REQUIRES_REVIEW/REJECTED]
 **Confidence Level:** [0-100]%
+**Baseline Used:** ${systemContext.branchName} v${systemContext.version}
 
-Remember: This is an OBJECTIVE system analysis. Do not incorporate personal values, branch modifications, or subjective preferences. Use only DAHAO baseline principles for evaluation.`;
+Remember: This analysis uses ${systemContext.branchName} community standards, not personal preferences. Validate against established baseline only.`;
+
+  return prompt;
 }
 
 export function getPromptForContext(context: PromptContext): string {

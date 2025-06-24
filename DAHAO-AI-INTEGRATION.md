@@ -11,7 +11,7 @@ This document provides a comprehensive explanation of the real AI integration im
 - **Result**: A fully functional AI-powered governance platform
 
 ### Key Achievement
-Users can now assign real AI agents to analyze governance elements (terms, principles, rules) and receive actual Claude AI analysis with complete cost transparency and audit trails.
+Users can now assign real AI agents to analyze governance elements (terms, principles, rules) and receive actual Claude AI analysis with complete cost transparency and audit trails. Additionally, the Discussion Modal now supports real-time AI analysis of governance discussions with context-aware responses.
 
 ## Architecture
 
@@ -33,7 +33,8 @@ src/
 │   └── analyses/route.ts            # Analysis retrieval endpoint
 ├── components/governance/           # Updated Components
 │   ├── AgentAssignmentPanel.tsx     # Rewritten for real AI
-│   └── AnalysisHistory.tsx          # New analysis history component
+│   ├── AnalysisHistory.tsx          # New analysis history component
+│   └── DiscussionModal.tsx          # Enhanced with real AI timeline integration
 └── lib/mock-data/
     └── agent-analyses.json          # Analysis storage file
 ```
@@ -189,6 +190,71 @@ export default function AnalysisHistory({
 - **Search and filtering** capabilities
 - **Statistics summary** (total cost, average confidence)
 
+### DiscussionModal.tsx - Enhanced with Real AI Integration
+
+The Discussion Modal has been transformed from a static interface into a **fully functional AI-powered discussion platform** that supports real-time Claude AI analysis of governance discussions.
+
+#### Key Integration Features:
+
+1. **Discussion Context Tracking**
+   ```typescript
+   // Every analysis includes full discussion context
+   const analysisRequest: AnalysisRequest = {
+     task: {
+       agentType,
+       taskType,
+       context: `Analyzing comment: "${comment.content.slice(0, 100)}..."`,
+       discussionId: activeDiscussion.id,
+       commentId: commentId
+     }
+   };
+   ```
+
+2. **Real-Time Context Menu Actions**
+   - **"Ask Personal AI to elaborate"** → `personal` AI with `general-analysis`
+   - **"Request System validation"** → `system` AI with `philosophical-consistency`  
+   - **"Get research on this point"** → `system` AI with `cross-domain-impact`
+
+3. **Seamless Timeline Integration**
+   ```typescript
+   // Combines mock and real AI responses naturally
+   const getAllAgentResponses = (comment: Comment) => {
+     const mockResponses = comment.agentResponses || [];
+     const realResponses = getRealAnalysesForComment(comment.id).map(analysis => ({
+       agentId: analysis.execution.agentId,
+       agentType: analysis.request.agentType,
+       agentName: analysis.request.agentType === 'personal' ? 'Personal AI Assistant' : 'System AI Validator',
+       analysis: analysis.result.analysis,
+       confidence: analysis.result.confidence,
+       isReal: true,
+       cost: analysis.usage.cost.amount,
+       timestamp: analysis.timeline.completedAt
+     }));
+     return [...mockResponses, ...realResponses];
+   };
+   ```
+
+4. **Visual Distinction for Real AI**
+   - **"Real AI • $0.0078"** cost indicators for actual Claude analyses
+   - Loading spinners during analysis processing
+   - Confidence scores and timestamps for real responses
+   - Error handling with user-friendly messages
+
+5. **Performance Optimizations**
+   - **Memoized discussion data** to prevent infinite re-renders
+   - **Single API call** on modal open (fixed infinite loop issue)
+   - **Efficient state management** with proper useCallback and useMemo usage
+
+#### Discussion Analysis Data Flow:
+```
+1. User right-clicks comment → Context menu appears
+2. User selects AI action → Loading spinner shows
+3. Real Claude API call → Analysis processed with discussion context
+4. Result saved with commentId/discussionId → Complete audit trail
+5. Timeline updates immediately → New AI response appears inline
+6. Cost and metadata tracked → Full transparency maintained
+```
+
 ## Data Flow
 
 ### Analysis Request Flow
@@ -230,7 +296,9 @@ All analyses are stored in `agent-analyses.json` with complete audit trail:
         "agentType": "personal",
         "taskType": "definition-clarity",
         "taskDescription": "Analyze term definition clarity",
-        "context": "Analyzing term: Harm"
+        "context": "Analyzing term: Harm",
+        "discussionId": "disc-001",
+        "commentId": "comment-123"
       },
       "execution": {
         "agentId": "personal-ai-claude",
@@ -347,6 +415,8 @@ const calculateAPIcost = (agentType: 'personal' | 'system', taskType: string): n
 - ✅ **Real governance insights** that can improve governance systems
 
 ### User Workflow
+
+#### Ideas Page Analysis
 1. **Navigate to Ideas page** (`/ideas`)
 2. **Select any governance element** (term, principle, rule)
 3. **Click the Bot icon (🤖)** to open agent assignment
@@ -358,6 +428,18 @@ const calculateAPIcost = (agentType: 'personal' | 'system', taskType: string): n
 7. **Assign agent** and wait for real Claude AI analysis
 8. **View detailed results** with confidence scores and recommendations
 9. **Access analysis history** to see all past analyses
+
+#### Discussion Modal Analysis
+1. **Click GitHub issue link** (🔗) on any governance element
+2. **Discussion Modal opens** showing governance conversations
+3. **Right-click any comment** or **click ⋮ menu**
+4. **Select AI action** from context menu:
+   - **"Ask Personal AI to elaborate"** - Get personalized analysis
+   - **"Request System validation"** - Get objective review
+   - **"Get research on this point"** - Get detailed research
+5. **Watch loading spinner** during real Claude API processing
+6. **See real AI response** appear in timeline with cost info
+7. **View analysis history** for each comment automatically loaded
 
 ## Setup Instructions
 
@@ -396,10 +478,9 @@ const calculateAPIcost = (agentType: 'personal' | 'system', taskType: string): n
    ```
 
 5. **Test Integration**
-   - Navigate to `/ideas` page
-   - Click any governance element
-   - Click the 🤖 bot icon
-   - Assign an agent and test real AI analysis
+   - **Ideas Page**: Navigate to `/ideas`, click any governance element, click 🤖 bot icon, assign agent
+   - **Discussion Modal**: Click any 🔗 link, right-click comment, select AI action from context menu
+   - **Verify Real AI**: Check console logs for actual Claude API calls and costs
 
 ### Environment Variables
 
@@ -454,6 +535,29 @@ export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
     const elementId = searchParams.get('elementId');
+    const discussionId = searchParams.get('discussionId');
+    const commentId = searchParams.get('commentId');
+    
+    // Support discussion-based queries
+    if (discussionId) {
+      const analyses = await getAnalysesByDiscussionId(discussionId);
+      return NextResponse.json({
+        success: true,
+        analyses: analyses,
+        total: analyses.length,
+        query: { discussionId }
+      });
+    }
+
+    if (commentId) {
+      const analyses = await getAnalysesByCommentId(commentId);
+      return NextResponse.json({
+        success: true,
+        analyses: analyses,
+        total: analyses.length,
+        query: { commentId }
+      });
+    }
     
     if (elementId) {
       const analyses = await getAnalysesByElementId(elementId);
@@ -552,11 +656,30 @@ export async function saveAnalysis(analysis: AgentAnalysis): Promise<void> {
 
 #### Querying Analysis History
 ```typescript
+// Query by element ID (governance elements)
 export async function getAnalysesByElementId(elementId: string): Promise<AgentAnalysis[]> {
   const storage = await readStorage();
   
   return Object.values(storage.analyses)
     .filter(analysis => analysis.target.elementId === elementId)
+    .sort((a, b) => new Date(b.timeline.completedAt).getTime() - new Date(a.timeline.completedAt).getTime());
+}
+
+// Query by discussion ID (all analyses in a discussion)
+export async function getAnalysesByDiscussionId(discussionId: string): Promise<AgentAnalysis[]> {
+  const storage = await readStorage();
+  
+  return Object.values(storage.analyses)
+    .filter(analysis => analysis.request.discussionId === discussionId)
+    .sort((a, b) => new Date(b.timeline.completedAt).getTime() - new Date(a.timeline.completedAt).getTime());
+}
+
+// Query by comment ID (analyses for specific comment)
+export async function getAnalysesByCommentId(commentId: string): Promise<AgentAnalysis[]> {
+  const storage = await readStorage();
+  
+  return Object.values(storage.analyses)
+    .filter(analysis => analysis.request.commentId === commentId)
     .sort((a, b) => new Date(b.timeline.completedAt).getTime() - new Date(a.timeline.completedAt).getTime());
 }
 ```
@@ -623,6 +746,16 @@ The real AI integration seamlessly connects with the existing Ideas page archite
 4. **Analysis History**: AnalysisHistory component shows past analyses
 5. **Inheritance Awareness**: AI understands governance branch relationships
 
+### Discussion Modal Integration
+The Discussion Modal provides **contextual AI analysis** for governance conversations:
+
+1. **Context Menu Actions**: Right-click any comment to trigger real AI analysis
+2. **Timeline Integration**: Real AI responses appear inline with existing discussions
+3. **Discussion Context**: Every analysis includes full discussion and comment context
+4. **Cost Transparency**: Live cost tracking with "Real AI • $0.0078" indicators
+5. **Seamless Blending**: Mock and real AI responses coexist naturally in timeline
+6. **Performance Optimized**: Single API call on load, memoized data to prevent loops
+
 ### Governance Data Integration
 ```typescript
 // Governance item context automatically passed to AI
@@ -644,3 +777,284 @@ The AI service understands DAHAO's branching governance system:
 - **Inheritance**: How elements are inherited and modified across branches
 
 This implementation transforms DAHAO from a demonstration of governance concepts into a **fully functional AI-powered governance platform** that can provide real insights for improving governance systems.
+
+## Enhanced Capabilities (Latest Update)
+
+### Discussion Modal Real AI Integration
+
+The latest enhancement adds **real-time AI analysis** to governance discussions, creating a truly interactive hybrid governance platform:
+
+#### New Features Added:
+- ✅ **Context Menu AI Actions**: Right-click any comment for instant AI analysis
+- ✅ **Discussion Timeline Integration**: Real AI responses appear inline with discussions
+- ✅ **Complete Discussion Context**: AI understands full conversation context
+- ✅ **Cost Transparency**: Real-time cost tracking with visual indicators
+- ✅ **Performance Optimized**: Fixed infinite loop, efficient state management
+- ✅ **Query Enhancement**: Support for `?discussionId=` and `?commentId=` parameters
+- ✅ **Seamless UX**: Loading states, error handling, immediate timeline updates
+
+#### Technical Achievements:
+- **API Enhancement**: Extended `/api/ai/analyses` with discussion query support
+- **Type Safety**: Added `discussionId` and `commentId` to analysis tracking
+- **Storage Functions**: New `getAnalysesByDiscussionId()` and `getAnalysesByCommentId()`
+- **Component Integration**: Memoized data, useCallback optimization
+- **Visual Design**: Real AI badges, cost indicators, loading spinners
+
+#### User Impact:
+Users can now engage in **AI-assisted governance discussions** where:
+- **Every comment** can be analyzed by Personal or System AI
+- **Real insights** appear immediately in the discussion timeline
+- **Complete transparency** shows actual costs and AI confidence levels
+- **Discussion history** preserves all AI analyses for future reference
+- **Contextual analysis** considers the full conversation thread
+
+This creates a **hybrid human-AI governance system** where artificial intelligence augments human decision-making in real-time, making governance discussions more informed, accessible, and effective.
+
+## Latest Enhancement: Dynamic Context System with User Values and System Baselines
+
+The most recent major enhancement transforms the AI system from using hardcoded "current-user" values to a sophisticated **dynamic context system** that extracts actual governance values from branch data and provides domain-appropriate validation baselines.
+
+### 🚀 New Dynamic Context Architecture
+
+#### Enhanced Directory Structure
+```
+src/
+├── lib/ai/                           # AI Service Layer
+│   ├── claude-service.ts            # Enhanced with dynamic context extraction
+│   ├── prompts.ts                   # Dynamic prompts using actual branch data
+│   ├── types.ts                     # Enhanced with dynamic context types
+│   └── json-storage.ts              # Analysis persistence with context tracking
+├── lib/utils/                       # NEW: Dynamic Context Utilities
+│   ├── user-values.ts               # Extract actual user values from branches
+│   └── system-values.ts             # Extract appropriate DAHAO baselines
+├── components/governance/           # Enhanced Components
+│   └── AgentAssignmentPanel.tsx     # Dynamic context selection and display
+```
+
+### ✨ Key Features Implemented
+
+#### 1. **Dynamic User Value Extraction** (`/src/lib/utils/user-values.ts`)
+- **Extracts actual user values from governance branches** instead of hardcoded defaults
+- **Analyzes branch modifications** to understand user's governance philosophy
+- **Multiple user profile support** with easy switching
+
+```typescript
+// Before: Hardcoded values
+values: ['transparency', 'equality', 'harm-prevention']
+
+// After: Dynamic extraction from John's branch
+values: ['transparency', 'radical-transparency', 'harm-prevention', 'personal-governance']
+valueTerms: [
+  { name: 'Harm', definition: 'Adds emotional and informational harm', modifications: ['emotional_harm', 'informational_harm'] },
+  { name: 'Transparency', definition: 'Complete openness including financial details', modifications: ['radical_honesty', 'financial_transparency'] }
+]
+```
+
+#### 2. **Dynamic System Baseline Selection** (`/src/lib/utils/system-values.ts`)
+- **Context-aware baseline selection** based on element domain
+- **Domain-specific validation standards** instead of generic DAHAO principles
+- **Automatic baseline suggestion** with manual override capability
+
+```typescript
+// Smart baseline selection
+if (elementId.includes('animal') || elementContent.includes('species')) {
+  return 'animal-welfare-dahao';  // Uses Animal Welfare baseline
+}
+if (elementContent.includes('environment') || elementContent.includes('carbon')) {
+  return 'environmental-dahao';   // Uses Environmental baseline
+}
+// Default to core-dahao for general governance
+```
+
+#### 3. **Enhanced Agent Assignment Panel**
+- **User context selection dropdown** showing actual branch names and values
+- **System baseline selection** with smart suggestions and reasoning
+- **Real-time context display** showing what values/baselines will be used
+- **Dynamic cost estimation** accounting for context complexity
+
+#### 4. **Intelligent AI Prompts with Real Data**
+
+**Personal AI Enhancement:**
+```typescript
+// Before: Generic personal prompt
+`You are a Personal AI with user values: transparency, equality...`
+
+// After: Rich context from actual branch
+`You are a Personal AI for ${userName} with actual governance philosophy:
+
+USER'S GOVERNANCE PHILOSOPHY:
+Based on John's branch modifications, they demonstrate these values:
+
+VALUE-DEFINING TERMS (User's Modified Definitions):
+- Harm (v1.3.0-john): Adds emotional and informational harm
+  User's modifications: Added emotional_harm, informational_harm
+- Transparency (v1.2.0-john): Complete openness including financial details
+  User's modifications: Added radical_honesty, financial_transparency
+
+PERSONAL GOVERNANCE PRINCIPLES:
+- Radical openness in all governance decisions [NEW]
+
+GOVERNANCE PREFERENCES:
+- information-sharing: Values high transparency in governance
+- decision-speed: Prefers rapid decision-making processes`
+```
+
+**System AI Enhancement:**
+```typescript
+// Before: Generic baseline
+`Use only DAHAO baseline principles...`
+
+// After: Domain-appropriate baseline
+`You are a System AI using Animal Welfare DAHAO baseline standards.
+
+VALIDATION BASELINE: Animal Welfare DAHAO (sub-dahao)
+Domain Focus: animal welfare, species rights, sentient being protection
+
+BASELINE TERM DEFINITIONS:
+- Harm (v1.2.1-animal): Includes species-specific suffering [DOMAIN]
+- Being (v1.1.0-animal): Extended to include all sentient species [DOMAIN]
+- Five Freedoms (v1.0.0): Freedom from hunger, discomfort, pain, distress, expression [DOMAIN]
+
+BASELINE PRINCIPLES TO ENFORCE:
+- Animal welfare considerations must be primary [CRITICAL]
+- Species-appropriate care must be provided [IMPORTANT]
+- Habitat protection is essential [IMPORTANT]
+
+COMPLIANCE REQUIREMENTS:
+- Animal Impact Assessment: All decisions must assess impact on animals [CRITICAL]
+- Welfare Monitoring: Continuous monitoring of animal wellbeing
+- Species Representation: Include animal welfare perspectives in governance`
+```
+
+### 🔄 Dynamic Context Flow
+
+#### User Context Resolution:
+```
+1. User selects "John" from dropdown
+2. System extracts John's branch data (john-main-branch)
+3. Analyzes modifications: radical transparency + emotional harm
+4. Builds rich user context with actual values
+5. Personal AI uses John's real governance philosophy
+```
+
+#### System Context Resolution:
+```
+1. User analyzes "harm" term from animal welfare context
+2. System detects animal-related content
+3. Suggests Animal Welfare DAHAO baseline
+4. Extracts baseline terms, principles, and compliance rules
+5. System AI validates against community animal welfare standards
+```
+
+### 💡 Real-World Examples
+
+#### **Scenario 1: Alex (Environmental Branch) analyzing "harm" term**
+- **Personal AI**: Uses Alex's branch where "harm" includes "environmental damage"
+- **System AI**: Uses Environmental DAHAO baseline for sustainability validation
+- **Result**: Personal gives environmental perspective, System validates against community environmental standards
+
+#### **Scenario 2: John (Personal Branch) analyzing animal welfare rule**
+- **Personal AI**: Uses John's personal modifications and transparency values  
+- **System AI**: Uses Animal Welfare DAHAO baseline (not John's personal branch)
+- **Result**: Personal reflects John's approach, System validates against animal welfare community standard
+
+### 🏗️ Enhanced Analysis Storage
+
+All analyses now track complete dynamic context:
+
+```json
+{
+  "execution": {
+    "agentId": "personal-ai-claude",
+    "systemBaseline": {
+      "branchId": "animal-welfare-dahao",
+      "branchName": "Animal Welfare DAHAO",
+      "version": "1.0.0",
+      "domainFocus": ["animal welfare", "species rights", "habitat preservation"]
+    },
+    "personalContext": {
+      "valueCount": 7,
+      "modifiedTerms": 2,
+      "personalPrinciples": 1
+    }
+  },
+  "requestedBy": {
+    "userContext": {
+      "userId": "user-john-123",
+      "branchName": "John's Main Branch",
+      "coreValues": ["transparency", "radical-transparency", "harm-prevention"],
+      "valueTerms": [/* actual modified terms */],
+      "personalPrinciples": [/* actual personal principles */]
+    }
+  }
+}
+```
+
+### 🎯 User Experience Transformation
+
+#### **Before Dynamic Context:**
+- ❌ All users had identical "current-user" values
+- ❌ System AI used generic DAHAO principles for everything
+- ❌ No actual personalization or domain awareness
+- ❌ Artificial distinction between Personal and System AI
+
+#### **After Dynamic Context:**
+- ✅ **Personal AI truly personal** - uses actual user branch values
+- ✅ **System AI domain-appropriate** - animal elements use Animal Welfare baseline
+- ✅ **Clear value sources** - shows exactly which values/baselines are active
+- ✅ **Smart suggestions** - automatically suggests appropriate baselines
+- ✅ **Complete transparency** - full audit trail of context used
+
+### 🔧 Technical Implementation Highlights
+
+#### **Type Safety with Dynamic Context:**
+```typescript
+interface UserValueContext {
+  userId: string;
+  userName: string;
+  branchId: string;
+  coreValues: string[];
+  valueTerms: Array<{
+    id: string;
+    name: string;
+    version: string;
+    definition: string;
+    modifications: string[];
+  }>;
+  personalPrinciples: Array<{
+    id: string;
+    statement: string;
+    isNew: boolean;
+  }>;
+  governancePreferences: Array<{
+    area: string;
+    preference: string;
+    basedOn: string;
+  }>;
+}
+```
+
+#### **Smart Baseline Detection:**
+```typescript
+function getSuggestedSystemBranch(elementBranchId: string, elementType: string, elementId?: string) {
+  if (elementBranchId.includes('animal-welfare') || elementContent.includes('species')) {
+    return 'animal-welfare';
+  }
+  if (elementContent.includes('environment') || elementContent.includes('carbon')) {
+    return 'environmental';
+  }
+  return 'core'; // Default baseline
+}
+```
+
+### 🎉 Impact and Benefits
+
+This enhancement transforms DAHAO from a demonstration with simulated AI into a **sophisticated governance intelligence system** where:
+
+1. **Personal AI becomes genuinely personal** by using actual user governance modifications
+2. **System AI provides appropriate validation** using domain-specific community standards  
+3. **Clear separation of concerns** between individual perspectives and community baselines
+4. **Complete transparency** about which context is being used for analysis
+5. **Scalable architecture** that supports additional users and governance domains
+
+The system now demonstrates how AI can truly understand and work with complex, branching governance systems while maintaining the crucial distinction between personalized analysis and objective community validation.

@@ -7,6 +7,8 @@ import {
   getAnalysesByElementId, 
   getAnalysesByUserId, 
   getAnalysesByBranchId,
+  getAnalysesByDiscussionId,
+  getAnalysesByCommentId,
   getFilteredAnalyses,
   getAnalysisStats,
   getStorageMetadata 
@@ -20,6 +22,8 @@ export async function GET(request: NextRequest) {
     const elementId = searchParams.get('elementId');
     const userId = searchParams.get('userId');
     const branchId = searchParams.get('branchId');
+    const discussionId = searchParams.get('discussionId');
+    const commentId = searchParams.get('commentId');
     const elementType = searchParams.get('elementType') as 'term' | 'principle' | 'rule' | null;
     const agentType = searchParams.get('agentType') as 'personal' | 'system' | null;
     const status = searchParams.get('status') as 'pending' | 'completed' | 'failed' | null;
@@ -49,6 +53,26 @@ export async function GET(request: NextRequest) {
     }
 
     // Handle specific query types
+    if (discussionId) {
+      const analyses = await getAnalysesByDiscussionId(discussionId);
+      return NextResponse.json({
+        success: true,
+        analyses: analyses,
+        total: analyses.length,
+        query: { discussionId }
+      });
+    }
+
+    if (commentId) {
+      const analyses = await getAnalysesByCommentId(commentId);
+      return NextResponse.json({
+        success: true,
+        analyses: analyses,
+        total: analyses.length,
+        query: { commentId }
+      });
+    }
+
     if (elementId) {
       const analyses = await getAnalysesByElementId(elementId);
       return NextResponse.json({

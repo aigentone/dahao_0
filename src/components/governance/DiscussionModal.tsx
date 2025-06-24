@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ScrollArea } from '@/components/ui/scroll-area';
@@ -14,11 +14,13 @@ import {
   ThumbsUp,
   MoreVertical,
   Play,
-  BarChart3
+  BarChart3,
+  Loader2
 } from 'lucide-react';
 import discussionsData from '@/lib/mock-data/discussions.json';
 import commentsData from '@/lib/mock-data/comments.json';
 import usersData from '@/lib/mock-data/users.json';
+import { AgentAnalysis, AnalysisRequest } from '@/lib/ai/types';
 
 interface Comment {
   id: string;
@@ -150,10 +152,111 @@ export function DiscussionModal({
   const [showContextMenu, setShowContextMenu] = useState(false);
   const [contextMenuPosition, setContextMenuPosition] = useState({ x: 0, y: 0 });
   const [hoveredElement, setHoveredElement] = useState<string | null>(null);
+  const [selectedCommentId, setSelectedCommentId] = useState<string | null>(null);
+  const [realAIAnalyses, setRealAIAnalyses] = useState<AgentAnalysis[]>([]);
+  const [loadingAnalyses, setLoadingAnalyses] = useState<Set<string>>(new Set());
 
-  // Build discussion from existing mock data or use provided discussion
-  const activeDiscussion = discussion || (elementId && elementName && elementType ? 
-    buildDiscussionFromMockData(elementId, elementName, elementType) : null);
+  // Build discussion from existing mock data or use provided discussion (memoized)
+  const activeDiscussion = useMemo(() => {
+    return discussion || (elementId && elementName && elementType ? 
+      buildDiscussionFromMockData(elementId, elementName, elementType) : null);
+  }, [discussion, elementId, elementName, elementType]);
+
+  // Load real AI analyses for this discussion
+  const loadRealAIAnalyses = useCallback(async () => {
+    if (!activeDiscussion) return;
+
+    try {
+      const response = await fetch(`/api/ai/analyses?discussionId=${encodeURIComponent(activeDiscussion.id)}`);
+      if (response.ok) {
+        const result = await response.json();
+        setRealAIAnalyses(result.analyses || []);
+      }
+    } catch (error) {
+      console.error('Failed to load real AI analyses:', error);
+    }
+  }, [activeDiscussion]);
+
+  // Request AI analysis for a comment
+  const requestAIAnalysis = async (commentId: string, agentType: 'personal' | 'system', taskType: string) => {
+    if (!activeDiscussion || !commentId) return;
+
+    const loadingKey = `${commentId}-${agentType}`;
+    setLoadingAnalyses(prev => new Set(prev).add(loadingKey));
+
+    try {
+      // Find the comment to get context
+      const comment = activeDiscussion.comments.find(c => c.id === commentId);
+      if (!comment) throw new Error('Comment not found');
+
+      const analysisRequest: AnalysisRequest = {
+        user: {
+          id: 'current-user',
+          name: 'Current User',
+          branch: 'core-dahao',
+          values: ['transparency', 'equality', 'harm-prevention']
+        },
+        governanceItem: {
+          type: activeDiscussion.elementType,
+          id: activeDiscussion.elementId,
+          name: activeDiscussion.elementName,
+          version: activeDiscussion.elementVersion,
+          data: {
+            name: activeDiscussion.elementName,
+            id: activeDiscussion.elementId,
+            type: activeDiscussion.elementType
+          }
+        },
+        task: {
+          agentType,
+          taskType,
+          context: `Analyzing comment: "${comment.content.slice(0, 100)}..."`,
+          discussionId: activeDiscussion.id,
+          commentId: commentId
+        },
+        branch: {
+          id: 'core-dahao',
+          name: 'Core DAHAO'
+        }
+      };
+
+      // Call Claude API through API endpoint (which handles saving automatically)
+      const response = await fetch('/api/ai/analyze', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(analysisRequest)
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Analysis request failed');
+      }
+
+      const result = await response.json();
+      const analysis: AgentAnalysis = result.analysis;
+
+      // Add to real analyses list
+      setRealAIAnalyses(prev => [...prev, analysis]);
+
+    } catch (error) {
+      console.error('AI analysis failed:', error);
+    } finally {
+      setLoadingAnalyses(prev => {
+        const newSet = new Set(prev);
+        newSet.delete(loadingKey);
+        return newSet;
+      });
+    }
+  };
+
+  // Load real AI analyses when discussion changes
+  useEffect(() => {
+    if (isOpen && activeDiscussion) {
+      loadRealAIAnalyses();
+    }
+  }, [isOpen, activeDiscussion?.id, loadRealAIAnalyses]);
 
   // Close modal on escape key
   useEffect(() => {
@@ -190,10 +293,32 @@ export function DiscussionModal({
   const displayVersion = activeDiscussion?.elementVersion || elementVersion || '1.0.0';
   const displayType = activeDiscussion?.elementType || elementType || 'element';
 
-  const handleContextMenu = (e: React.MouseEvent) => {
+  const handleContextMenu = (e: React.MouseEvent, commentId: string) => {
     e.preventDefault();
     setContextMenuPosition({ x: e.clientX, y: e.clientY });
+    setSelectedCommentId(commentId);
     setShowContextMenu(true);
+  };
+
+  const handlePersonalAIElaborate = () => {
+    if (selectedCommentId) {
+      requestAIAnalysis(selectedCommentId, 'personal', 'general-analysis');
+    }
+    setShowContextMenu(false);
+  };
+
+  const handleSystemValidation = () => {
+    if (selectedCommentId) {
+      requestAIAnalysis(selectedCommentId, 'system', 'philosophical-consistency');
+    }
+    setShowContextMenu(false);
+  };
+
+  const handleResearchRequest = () => {
+    if (selectedCommentId) {
+      requestAIAnalysis(selectedCommentId, 'system', 'cross-domain-impact');
+    }
+    setShowContextMenu(false);
   };
 
   const handleLensToggle = (lens: LensType) => {
@@ -223,6 +348,29 @@ export function DiscussionModal({
     if (hours < 24) return `${hours} hour${hours > 1 ? 's' : ''} ago`;
     const days = Math.floor(hours / 24);
     return `${days} day${days > 1 ? 's' : ''} ago`;
+  };
+
+  // Get real AI analyses for a specific comment
+  const getRealAnalysesForComment = (commentId: string) => {
+    return realAIAnalyses.filter(analysis => analysis.request.commentId === commentId);
+  };
+
+  // Combine mock and real agent responses for a comment
+  const getAllAgentResponses = (comment: Comment) => {
+    const mockResponses = comment.agentResponses || [];
+    const realResponses = getRealAnalysesForComment(comment.id).map(analysis => ({
+      agentId: analysis.execution.agentId,
+      agentType: analysis.request.agentType,
+      agentName: analysis.request.agentType === 'personal' ? 'Personal AI Assistant' : 'System AI Validator',
+      analysis: analysis.result.analysis,
+      confidence: analysis.result.confidence,
+      isReal: true,
+      cost: analysis.usage.cost.amount,
+      tokens: analysis.usage.tokenUsage.total,
+      timestamp: analysis.timeline.completedAt
+    }));
+
+    return [...mockResponses, ...realResponses];
   };
 
   return (
@@ -313,7 +461,7 @@ export function DiscussionModal({
                         {/* Human Comment */}
                         <div 
                           className="bg-gray-800/50 border border-gray-700 rounded-2xl p-6 max-w-2xl mx-auto relative hover:bg-gray-800/70 transition-all duration-300 hover:scale-[1.02] cursor-pointer"
-                          onContextMenu={handleContextMenu}
+                          onContextMenu={(e) => handleContextMenu(e, comment.id)}
                           onMouseEnter={() => setHoveredElement(comment.id)}
                           onMouseLeave={() => setHoveredElement(null)}
                         >
@@ -354,7 +502,7 @@ export function DiscussionModal({
                             </button>
                             <button 
                               className="flex items-center gap-1 text-sm text-gray-400 hover:text-gray-200 transition-colors ml-auto"
-                              onClick={handleContextMenu}
+                              onClick={(e) => handleContextMenu(e as any, comment.id)}
                             >
                               <MoreVertical className="h-4 w-4" />
                             </button>
@@ -362,7 +510,9 @@ export function DiscussionModal({
                         </div>
 
                         {/* Agent Responses */}
-                        {comment.agentResponses && comment.agentResponses.length > 0 && (
+                        {(() => {
+                          const allResponses = getAllAgentResponses(comment);
+                          return allResponses.length > 0 && (
                           <div className="relative mt-8">
                             {/* SVG Connector */}
                             <svg className="absolute left-1/2 -top-8 transform -translate-x-1/2" width="200" height="64" viewBox="0 0 200 64">
@@ -380,7 +530,7 @@ export function DiscussionModal({
                                 strokeDasharray="4 2"
                                 className="animate-pulse"
                               />
-                              {comment.agentResponses.length > 1 && (
+                              {allResponses.length > 1 && (
                                 <path 
                                   d="M 100 0 Q 100 32 150 32 L 180 32" 
                                   stroke="url(#branchGradient)" 
@@ -394,7 +544,7 @@ export function DiscussionModal({
                             
                             {/* Agent Cards */}
                             <div className="flex gap-6 justify-center flex-wrap">
-                              {comment.agentResponses.map((agent, agentIdx) => (
+                              {allResponses.map((agent, agentIdx) => (
                                 <div 
                                   key={agent.agentId}
                                   className={`max-w-xs p-4 rounded-xl border transition-all duration-300 hover:scale-105 cursor-pointer ${
@@ -414,11 +564,18 @@ export function DiscussionModal({
                                         agent.agentType === 'personal' ? 'text-orange-400' : 'text-blue-400'
                                       }`} />
                                     </div>
-                                    <span className={`text-sm font-semibold ${
-                                      agent.agentType === 'personal' ? 'text-orange-400' : 'text-blue-400'
-                                    }`}>
-                                      {agent.agentName}
-                                    </span>
+                                    <div className="flex-1">
+                                      <span className={`text-sm font-semibold ${
+                                        agent.agentType === 'personal' ? 'text-orange-400' : 'text-blue-400'
+                                      }`}>
+                                        {agent.agentName}
+                                      </span>
+                                      {(agent as any).isReal && (
+                                        <div className="text-xs text-green-400">
+                                          Real AI • ${((agent as any).cost || 0).toFixed(4)}
+                                        </div>
+                                      )}
+                                    </div>
                                   </div>
                                   
                                   <p className="text-sm text-gray-300 leading-relaxed mb-3">{agent.analysis}</p>
@@ -441,7 +598,8 @@ export function DiscussionModal({
                               ))}
                             </div>
                           </div>
-                        )}
+                          );
+                        })()}
                       </div>
                     ))}
                   </div>
@@ -537,16 +695,40 @@ export function DiscussionModal({
           style={{ left: contextMenuPosition.x, top: contextMenuPosition.y }}
           onClick={(e) => e.stopPropagation()}
         >
-          <button className="w-full px-4 py-2 text-left text-sm text-gray-300 hover:bg-gray-800 flex items-center gap-2">
-            <Bot className="h-4 w-4" />
+          <button 
+            className="w-full px-4 py-2 text-left text-sm text-gray-300 hover:bg-gray-800 flex items-center gap-2"
+            onClick={handlePersonalAIElaborate}
+            disabled={selectedCommentId ? loadingAnalyses.has(`${selectedCommentId}-personal`) : false}
+          >
+            {selectedCommentId && loadingAnalyses.has(`${selectedCommentId}-personal`) ? (
+              <Loader2 className="h-4 w-4 animate-spin" />
+            ) : (
+              <Bot className="h-4 w-4" />
+            )}
             Ask Personal AI to elaborate
           </button>
-          <button className="w-full px-4 py-2 text-left text-sm text-gray-300 hover:bg-gray-800 flex items-center gap-2">
-            <Users className="h-4 w-4" />
+          <button 
+            className="w-full px-4 py-2 text-left text-sm text-gray-300 hover:bg-gray-800 flex items-center gap-2"
+            onClick={handleSystemValidation}
+            disabled={selectedCommentId ? loadingAnalyses.has(`${selectedCommentId}-system`) : false}
+          >
+            {selectedCommentId && loadingAnalyses.has(`${selectedCommentId}-system`) ? (
+              <Loader2 className="h-4 w-4 animate-spin" />
+            ) : (
+              <Users className="h-4 w-4" />
+            )}
             Request System validation
           </button>
-          <button className="w-full px-4 py-2 text-left text-sm text-gray-300 hover:bg-gray-800 flex items-center gap-2">
-            <MessageSquare className="h-4 w-4" />
+          <button 
+            className="w-full px-4 py-2 text-left text-sm text-gray-300 hover:bg-gray-800 flex items-center gap-2"
+            onClick={handleResearchRequest}
+            disabled={selectedCommentId ? loadingAnalyses.has(`${selectedCommentId}-system`) : false}
+          >
+            {selectedCommentId && loadingAnalyses.has(`${selectedCommentId}-system`) ? (
+              <Loader2 className="h-4 w-4 animate-spin" />
+            ) : (
+              <MessageSquare className="h-4 w-4" />
+            )}
             Get research on this point
           </button>
         </div>

@@ -110,6 +110,24 @@ export async function getAllAnalyses(limit?: number, offset?: number): Promise<{
   return { analyses, total, hasMore };
 }
 
+// Get analyses by discussion ID
+export async function getAnalysesByDiscussionId(discussionId: string): Promise<AgentAnalysis[]> {
+  const storage = await readStorage();
+  
+  return Object.values(storage.analyses)
+    .filter(analysis => analysis.request.discussionId === discussionId)
+    .sort((a, b) => new Date(b.timeline.completedAt).getTime() - new Date(a.timeline.completedAt).getTime());
+}
+
+// Get analyses by comment ID
+export async function getAnalysesByCommentId(commentId: string): Promise<AgentAnalysis[]> {
+  const storage = await readStorage();
+  
+  return Object.values(storage.analyses)
+    .filter(analysis => analysis.request.commentId === commentId)
+    .sort((a, b) => new Date(b.timeline.completedAt).getTime() - new Date(a.timeline.completedAt).getTime());
+}
+
 // Update analysis status (for pending/failed analyses)
 export async function updateAnalysisStatus(
   id: string, 

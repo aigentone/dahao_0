@@ -1,17 +1,19 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Bot, Loader2, CheckCircle, User, Shield, AlertTriangle, DollarSign } from 'lucide-react';
+import { Bot, Loader2, CheckCircle, User, Shield, AlertTriangle, DollarSign, Info } from 'lucide-react';
 import { TASK_DEFINITIONS } from '@/lib/ai/prompts';
 import { AgentAnalysis } from '@/lib/ai/types';
 import { GitHubIssue } from '@/types/github-compatible';
 import { createGitHubDataService } from '@/services/github-data-service';
 import { GovernancePrinciple, GovernanceRule, Term } from '@/types/governance';
+import { getUserValuesFromBranch, getAvailableUserProfiles } from '@/lib/utils/user-values';
+import { getSystemValuesForContext, getSuggestedSystemBranch, getAvailableSystemValidators } from '@/lib/utils/system-values';
 
 interface AssignedAgent {
   agentId: string;
@@ -75,7 +77,46 @@ export default function AgentAssignmentPanel({
   const [loading, setLoading] = useState<Record<string, boolean>>({});
   const [selectedAgentType, setSelectedAgentType] = useState<'personal' | 'system'>('personal');
   const [selectedTaskType, setSelectedTaskType] = useState<string>('general-analysis');
+  const [selectedUserId, setSelectedUserId] = useState<string>('current-user');
+  const [selectedSystemBaseline, setSelectedSystemBaseline] = useState<string>('');
   const githubService = createGitHubDataService();
+
+  // Get available user profiles for Personal AI
+  const availableUsers = useMemo(() => getAvailableUserProfiles(), []);
+
+  // Get user context for selected user
+  const currentUserContext = useMemo(() => {
+    return getUserValuesFromBranch(selectedUserId);
+  }, [selectedUserId]);
+
+  // Get suggested system baseline and available validators
+  const systemInfo = useMemo(() => {
+    if (!governanceItem) return { suggested: 'core', validators: [] };
+    
+    const suggested = getSuggestedSystemBranch(
+      governanceItem.id,
+      governanceItem.type,
+      governanceItem.id
+    );
+    
+    const validators = getAvailableSystemValidators();
+    
+    return { suggested, validators };
+  }, [governanceItem]);
+
+  // Get system context for selected baseline
+  const currentSystemContext = useMemo(() => {
+    if (!governanceItem) return null;
+    
+    const baselineKey = selectedSystemBaseline || systemInfo.suggested;
+    const validator = systemInfo.validators.find(v => v.key === baselineKey);
+    
+    return validator ? getSystemValuesForContext(
+      validator.branchName,
+      governanceItem.type,
+      governanceItem.id
+    ) : null;
+  }, [selectedSystemBaseline, systemInfo, governanceItem]);
 
   // Get available task types based on context and governance item
   const getAvailableTaskTypes = () => {
@@ -208,32 +249,45 @@ export default function AgentAssignmentPanel({
         throw new Error('No governance item provided for analysis');
       }
 
+      // Use dynamic context for enhanced analysis
+      const userContext = currentUserContext;
+      const systemContext = currentSystemContext;
+      
       const analysisRequest = {
         user: {
-          id: 'current-user',
-          name: 'Current User',
-          branch: governanceItem.domain || 'unknown',
-          values: ['transparency', 'equality', 'harm-prevention'] // Default values
+          id: selectedUserId,
+          name: userContext.userName,
+          branch: userContext.branchId,
+          values: userContext.coreValues,
+          // Pass dynamic context for enhanced prompts
+          contextOverride: {
+            branchId: userContext.branchId,
+            extractDynamicValues: true
+          }
         },
         governanceItem: {
           type: governanceItem.type,
           id: governanceItem.id,
           name: governanceItem.data.name || governanceItem.id,
           version: governanceItem.version || '1.0.0',
-          data: governanceItem.data
+          data: governanceItem.data,
+          elementBranchId: governanceItem.domain
         },
         task: {
           agentType,
           taskType: selectedTaskType,
-          context: `Analyzing ${governanceItem.type}: ${governanceItem.data.name || governanceItem.id}`
+          context: `Analyzing ${governanceItem.type}: ${governanceItem.data.name || governanceItem.id}`,
+          // For System AI: specify which baseline to use
+          systemBaselinePreference: agentType === 'system' ? 
+            (selectedSystemBaseline || systemInfo.suggested) : undefined
         },
         branch: {
-          id: governanceItem.domain || 'unknown',
-          name: governanceItem.domain || 'Unknown Branch'
+          id: userContext.branchId,
+          name: userContext.branchName
         }
       };
 
-      // Call real Claude API
+      // Call real Claude API through API endpoint (which handles saving automatically)
       const response = await fetch('/api/ai/analyze', {
         method: 'POST',
         headers: {
@@ -378,27 +432,104 @@ export default function AgentAssignmentPanel({
             </div>
           </div>
 
-          {/* Agent Information */}
+          {/* Agent Information with Dynamic Context */}
           <TabsContent value="personal" className="mt-4">
+            <div className="p-3 bg-blue-50 dark:bg-blue-950 border rounded-lg mb-4">
+              <h4 className="font-medium text-blue-900 dark:text-blue-100 mb-2">Personal AI Context</h4>
+              <div className="text-sm space-y-1">
+                <div><strong>User:</strong> {currentUserContext.userName}</div>
+                <div><strong>Branch:</strong> {currentUserContext.branchName} ({currentUserContext.branchType})</div>
+                <div><strong>Core Values:</strong> {currentUserContext.coreValues.join(', ')}</div>
+                {currentUserContext.valueTerms.length > 0 && (
+                  <div><strong>Modified Terms:</strong> {currentUserContext.valueTerms.length} custom definitions</div>
+                )}
+                {currentUserContext.personalPrinciples.length > 0 && (
+                  <div><strong>Personal Principles:</strong> {currentUserContext.personalPrinciples.length} custom principles</div>
+                )}
+              </div>
+            </div>
+            
+            {/* User Selection */}
+            <div className="mb-4">
+              <label className="text-sm font-medium mb-2 block">User Context</label>
+              <Select value={selectedUserId} onValueChange={setSelectedUserId}>
+                <SelectTrigger>
+                  <SelectValue placeholder="Select user context" />
+                </SelectTrigger>
+                <SelectContent>
+                  {availableUsers.map((user) => (
+                    <SelectItem key={user.id} value={user.id}>
+                      {user.name} - {user.branchName}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+
             <div className="p-3 bg-blue-50 dark:bg-blue-950 border rounded-lg">
               <h4 className="font-medium text-blue-900 dark:text-blue-100 mb-2">Personal AI Benefits</h4>
               <ul className="text-sm text-blue-800 dark:text-blue-200 space-y-1">
-                <li>• Aligned with your personal value system</li>
-                <li>• Personalized recommendations based on your preferences</li>
-                <li>• Context-aware analysis considering your governance branch</li>
-                <li>• Higher quality insights tailored to your needs</li>
+                <li>• Uses actual values from {currentUserContext.userName}'s governance branch</li>
+                <li>• References their specific term definitions and principles</li>
+                <li>• Considers their demonstrated governance preferences</li>
+                <li>• Provides personalized recommendations aligned with their philosophy</li>
               </ul>
             </div>
           </TabsContent>
 
           <TabsContent value="system" className="mt-4">
+            {currentSystemContext && (
+              <div className="p-3 bg-green-50 dark:bg-green-950 border rounded-lg mb-4">
+                <h4 className="font-medium text-green-900 dark:text-green-100 mb-2">System AI Context</h4>
+                <div className="text-sm space-y-1">
+                  <div><strong>Baseline:</strong> {currentSystemContext.branchName}</div>
+                  <div><strong>Domain Focus:</strong> {currentSystemContext.domainFocus.join(', ')}</div>
+                  <div><strong>Baseline Terms:</strong> {currentSystemContext.baselineTerms.length} definitions</div>
+                  <div><strong>Baseline Principles:</strong> {currentSystemContext.baselinePrinciples.length} standards</div>
+                  <div><strong>Compliance Rules:</strong> {currentSystemContext.complianceRules.length} requirements</div>
+                </div>
+              </div>
+            )}
+
+            {/* System Baseline Selection */}
+            <div className="mb-4">
+              <label className="text-sm font-medium mb-2 block">Validation Baseline</label>
+              <Select 
+                value={selectedSystemBaseline || systemInfo.suggested} 
+                onValueChange={setSelectedSystemBaseline}
+              >
+                <SelectTrigger>
+                  <SelectValue placeholder="Select baseline standard" />
+                </SelectTrigger>
+                <SelectContent>
+                  {systemInfo.validators.map((validator) => (
+                    <SelectItem key={validator.key} value={validator.key}>
+                      <div className="flex items-center gap-2">
+                        <span>{validator.icon}</span>
+                        <span>{validator.name}</span>
+                        {validator.key === systemInfo.suggested && (
+                          <Badge variant="secondary" className="text-xs">Suggested</Badge>
+                        )}
+                      </div>
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+              {systemInfo.suggested && (
+                <div className="mt-1 text-xs text-muted-foreground">
+                  <Info className="inline w-3 h-3 mr-1" />
+                  {systemInfo.validators.find(v => v.key === systemInfo.suggested)?.description}
+                </div>
+              )}
+            </div>
+
             <div className="p-3 bg-green-50 dark:bg-green-950 border rounded-lg">
               <h4 className="font-medium text-green-900 dark:text-green-100 mb-2">System AI Benefits</h4>
               <ul className="text-sm text-green-800 dark:text-green-200 space-y-1">
-                <li>• Objective evaluation using only DAHAO baseline principles</li>
-                <li>• No personal bias or custom modifications</li>
-                <li>• Consistent validation across all users</li>
-                <li>• Faster analysis with standard prompts</li>
+                <li>• Validates against {currentSystemContext?.branchName || 'appropriate DAHAO'} baseline standards</li>
+                <li>• Uses community-established principles and definitions</li>
+                <li>• Provides objective, domain-appropriate validation</li>
+                <li>• Maintains consistency across all governance analysis</li>
               </ul>
             </div>
           </TabsContent>

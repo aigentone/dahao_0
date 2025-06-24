@@ -1,15 +1,20 @@
 // AI Service Types for DAHAO Real Claude Integration
-// Comprehensive type definitions for agent analysis tracking
+// Comprehensive type definitions for agent analysis tracking with dynamic context
+
+import { UserValueContext } from '../utils/user-values';
+import { SystemValueContext } from '../utils/system-values';
 
 export interface AgentAnalysis {
   id: string;
 
-  // WHO requested the analysis
+  // WHO requested the analysis (enhanced with dynamic context)
   requestedBy: {
     userId: string;
     userName: string;
     userBranch: string;
     userValues: string[];
+    // Dynamic user context from branch analysis
+    userContext?: UserValueContext;
   };
 
   // WHAT was analyzed
@@ -29,9 +34,10 @@ export interface AgentAnalysis {
     taskDescription: string;
     context?: string;
     discussionId?: string;
+    commentId?: string;
   };
 
-  // HOW it was analyzed
+  // HOW it was analyzed (enhanced with dynamic baseline tracking)
   execution: {
     agentId: string;
     agentProvider: 'anthropic';
@@ -39,6 +45,19 @@ export interface AgentAnalysis {
     temperature: number;
     promptTemplate: string;
     promptTokens: number;
+    // For System AI: track which baseline was used
+    systemBaseline?: {
+      branchId: string;
+      branchName: string;
+      version: string;
+      domainFocus: string[];
+    };
+    // For Personal AI: track which user values were applied
+    personalContext?: {
+      valueCount: number;
+      modifiedTerms: number;
+      personalPrinciples: number;
+    };
   };
 
   // WHEN it happened
@@ -86,12 +105,17 @@ export interface AgentAnalysis {
 }
 
 export interface AnalysisRequest {
-  // User context
+  // User context (enhanced with dynamic values)
   user: {
     id: string;
     name: string;
     branch: string;
     values: string[];
+    // Optional: override user context for analysis
+    contextOverride?: {
+      branchId: string;
+      extractDynamicValues: boolean;
+    };
   };
 
   // Target element
@@ -101,14 +125,19 @@ export interface AnalysisRequest {
     name: string;
     version: string;
     data: any;
+    // Element's original branch for context determination
+    elementBranchId?: string;
   };
 
-  // Task details
+  // Task details (enhanced with system baseline preferences)
   task: {
     agentType: 'personal' | 'system';
     taskType: string;
     context?: string;
     discussionId?: string;
+    commentId?: string;
+    // For System AI: specify which baseline to use (auto-detected if not provided)
+    systemBaselinePreference?: 'core' | 'animal-welfare' | 'environmental' | 'music-industry';
   };
 
   // Branch context
@@ -124,6 +153,8 @@ export interface PromptContext {
     name: string;
     branch: string;
     values: string[];
+    // Dynamic user context for Personal AI
+    dynamicContext?: UserValueContext;
   };
   element: {
     type: string;
@@ -131,6 +162,7 @@ export interface PromptContext {
     name: string;
     version: string;
     data: any;
+    branchId?: string;
   };
   task: {
     agentType: 'personal' | 'system';
@@ -142,6 +174,8 @@ export interface PromptContext {
     id: string;
     name: string;
   };
+  // Dynamic system context for System AI
+  systemContext?: SystemValueContext;
 }
 
 export interface AnalysisStorage {
@@ -189,4 +223,85 @@ export interface TaskDefinition {
   applicableToElements: ('term' | 'principle' | 'rule')[];
   estimatedTokens: number;
   baseReward: number;
+}
+
+// Dynamic Context Management Types
+
+export interface ContextSelectionOptions {
+  // User context options
+  availableUsers: Array<{
+    id: string;
+    name: string;
+    branchName: string;
+    coreValues: string[];
+  }>;
+  
+  // System baseline options
+  availableSystemBaselines: Array<{
+    key: string;
+    name: string;
+    branchName: string;
+    description: string;
+    appropriate: boolean;
+    reason?: string;
+  }>;
+  
+  // Current selections
+  selectedUserId: string;
+  suggestedSystemBaseline: string;
+}
+
+export interface AnalysisContextValidation {
+  userContext: {
+    valid: boolean;
+    branchExists: boolean;
+    hasValues: boolean;
+    valueCount: number;
+    warnings?: string[];
+  };
+  
+  systemContext: {
+    valid: boolean;
+    appropriate: boolean;
+    baselineExists: boolean;
+    domainMatch: boolean;
+    suggestions?: string[];
+  };
+  
+  overall: {
+    ready: boolean;
+    criticalIssues: string[];
+    recommendations: string[];
+  };
+}
+
+// Enhanced cost estimation with context complexity
+export interface ContextAwareCostEstimation {
+  baseEstimate: {
+    tokens: number;
+    cost: number;
+  };
+  
+  personalAIComplexity: {
+    userValueTokens: number;
+    modifiedTermTokens: number;
+    personalPrincipleTokens: number;
+    totalAdditionalTokens: number;
+    complexityMultiplier: number;
+  };
+  
+  systemAIComplexity: {
+    baselineTermTokens: number;
+    baselinePrincipleTokens: number;
+    complianceRuleTokens: number;
+    domainContextTokens: number;
+    totalAdditionalTokens: number;
+    complexityMultiplier: number;
+  };
+  
+  finalEstimate: {
+    tokens: number;
+    cost: number;
+    confidence: 'low' | 'medium' | 'high';
+  };
 }
