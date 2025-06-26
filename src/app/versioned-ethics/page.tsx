@@ -34,11 +34,11 @@ export default function VersionedEthicsPage() {
           </CardHeader>
           <CardContent>
             <p className="text-lg mb-6">
-              At the heart of DAHAO lies a revolutionary principle: <strong>Governance should be as natural as conversation, 
+              At the heart of DAHAO lies a revolutionary principle: <strong>Governance should be as natural as conversation,
               as powerful as code, and as accessible as asking a question.</strong>
             </p>
             <p className="mb-6">
-              Instead of rigid programmatic rules, DAHAO uses natural language instructions that AI interprets contextually. 
+              Instead of rigid programmatic rules, DAHAO uses natural language instructions that AI interprets contextually.
               This means your community can evolve its governance through discussion, not through writing code.
             </p>
 
@@ -176,7 +176,7 @@ export default function VersionedEthicsPage() {
                     </p>
                   </div>
                 </div>
-                
+
                 <div>
                   <h3 className="text-xl font-bold mb-4">DAHAO Natural Language Rules</h3>
                   <div className="bg-green-50 dark:bg-green-950/20 p-4 rounded-lg border border-green-200">
@@ -202,9 +202,9 @@ export default function VersionedEthicsPage() {
 {`{
   "discussion-first": {
     instruction: "Before proposals, ensure discussion with...",
-    parameters: { 
-      minParticipants: 3, 
-      consensusThreshold: 60 
+    parameters: {
+      minParticipants: 3,
+      consensusThreshold: 60
     },
     outputTemplate: {
       notification: "Discussion needed: {participants} of {minParticipants} participated",
@@ -222,7 +222,7 @@ export default function VersionedEthicsPage() {
         {/* From Proposals to Living Projects */}
         <div className="mb-16">
           <h2 className="text-3xl font-semibold mb-8 text-center">From Proposals to Living Projects</h2>
-          
+
           <Card className="mb-8">
             <CardHeader>
               <CardTitle>Organic Growth Through AI Collaboration</CardTitle>
@@ -239,7 +239,7 @@ export default function VersionedEthicsPage() {
                     Your community votes on proposals using natural language discussions
                   </p>
                 </div>
-                
+
                 <div className="text-center">
                   <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Target className="h-8 w-8 text-green-600" />
@@ -249,7 +249,7 @@ export default function VersionedEthicsPage() {
                     AI generates specific tasks with confidence scores and resource estimates
                   </p>
                 </div>
-                
+
                 <div className="text-center">
                   <div className="w-16 h-16 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Workflow className="h-8 w-8 text-purple-600" />
@@ -260,7 +260,7 @@ export default function VersionedEthicsPage() {
                   </p>
                 </div>
               </div>
-              
+
               <div className="mt-8 p-4 bg-blue-50 dark:bg-blue-950/20 rounded-lg">
                 <h4 className="font-semibold mb-2">Example Project Evolution:</h4>
                 <div className="text-sm space-y-2">
@@ -482,7 +482,7 @@ export default function VersionedEthicsPage() {
         {/* Three-Layer AI Integration */}
         <div className="mb-16">
           <h2 className="text-3xl font-semibold mb-8 text-center">Three-Layer AI Integration</h2>
-          
+
           <div className="grid md:grid-cols-3 gap-6">
             <Card className="bg-gradient-to-br from-purple-50/50 to-purple-100/50 dark:from-purple-950/20 dark:to-purple-900/30 border-purple-300">
               <CardHeader>
@@ -500,7 +500,7 @@ export default function VersionedEthicsPage() {
                 </ul>
                 <div className="mt-4 p-3 bg-background rounded-lg">
                   <p className="text-xs text-muted-foreground">
-                    <strong>Example:</strong> "Based on your branch's focus on transparency, 
+                    <strong>Example:</strong> "Based on your branch's focus on transparency,
                     I suggest adding discussion requirements to this proposal."
                   </p>
                 </div>
@@ -523,7 +523,7 @@ export default function VersionedEthicsPage() {
                 </ul>
                 <div className="mt-4 p-3 bg-background rounded-lg">
                   <p className="text-xs text-muted-foreground">
-                    <strong>Example:</strong> "This rule conflicts with the Animal Welfare baseline. 
+                    <strong>Example:</strong> "This rule conflicts with the Animal Welfare baseline.
                     Consider adjusting the harm definition to include species impact."
                   </p>
                 </div>
@@ -546,7 +546,7 @@ export default function VersionedEthicsPage() {
                 </ul>
                 <div className="mt-4 p-3 bg-background rounded-lg">
                   <p className="text-xs text-muted-foreground">
-                    <strong>Example:</strong> "Daily summary: 3 proposals need votes, 
+                    <strong>Example:</strong> "Daily summary: 3 proposals need votes,
                     2 discussions require moderator attention, 1 rule effectiveness report ready."
                   </p>
                 </div>
@@ -675,7 +675,7 @@ export default function VersionedEthicsPage() {
                   <div>
                     <h4 className="font-semibold text-sm mb-2">Result:</h4>
                     <p className="text-sm text-muted-foreground">
-                      Governance evolves through conversation. The community can modify their rules using natural language, 
+                      Governance evolves through conversation. The community can modify their rules using natural language,
                       making governance accessible to non-technical members while maintaining precision and effectiveness.
                     </p>
                   </div>
@@ -1010,10 +1010,10 @@ export default function VersionedEthicsPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Rules in DAHAO are natural language instructions that LLMs interpret contextually. Each rule includes 
-                  parameters your branch can customize and output templates you can personalize. This makes governance 
-                  accessible to everyone while maintaining consistency through AI interpretation. For example, instead of 
-                  coding "if votes > 60% then approve", you write "Proposals need 60% support to pass" and your branch 
+                  Rules in DAHAO are natural language instructions that LLMs interpret contextually. Each rule includes
+                  parameters your branch can customize and output templates you can personalize. This makes governance
+                  accessible to everyone while maintaining consistency through AI interpretation. For example, instead of
+                  coding "if votes  60% then approve", you write "Proposals need 60% support to pass" and your branch
                   can adjust that threshold through discussion.
                 </p>
               </CardContent>
