@@ -6,10 +6,10 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import {
   GitBranch, Shield, Brain, Users, RefreshCw, BookOpen,
-  Building, Scale, Layers, ArrowRight, CheckCircle,
+  Layers, CheckCircle,
   AlertTriangle, Zap, History, Vote,
   ShieldCheck, Lightbulb, Code2, TrendingUp,
-  Bot, Gauge,
+  Bot, Gauge, MessageCircle, Target, Workflow,
   Lock, Unlock, Timer, Settings, PlayCircle, PauseCircle
 } from 'lucide-react';
 import Link from 'next/link';
@@ -20,49 +20,68 @@ export default function VersionedEthicsPage() {
     <div className="container mx-auto px-4 py-16">
       <div className="max-w-6xl mx-auto">
         <HeroSection
-          badge="The Four-Layer Architecture"
-          title="Versioned Ethics"
-          subtitle="How DAHAO Enables AI to Govern at the Speed of Innovation While Preserving Human Control"
-          description="Imagine if AI could help create and evolve your organization's rules - but only in ways you explicitly authorize. That's Versioned Ethics: a system where AI can govern, propose, and modify, but always within boundaries you control."
+          badge="Natural Language Governance"
+          title="Living Governance"
+          subtitle="How DAHAO Combines Human Wisdom with AI Through Natural Language Rules"
+          description="Imagine governance that evolves through conversation, not code. DAHAO uses natural language rules that AI interprets contextually, making sophisticated governance accessible to everyone while maintaining precision and reliability."
           maxWidth="3xl"
         />
 
         {/* Core Philosophy */}
         <Card className="mb-16 bg-gradient-to-r from-blue-50/50 to-purple-50/50 dark:from-blue-950/20 dark:to-purple-950/20 border-blue-200">
           <CardHeader>
-            <CardTitle className="text-2xl">The Core Philosophy: Controlled Acceleration</CardTitle>
+            <CardTitle className="text-2xl">The Core Philosophy: Governance Through Conversation</CardTitle>
           </CardHeader>
           <CardContent>
             <p className="text-lg mb-6">
-              At the heart of DAHAO lies a revolutionary principle: <strong>AI can create, modify, and
-              govern - but only with your explicit permission and within your defined boundaries.</strong>
+              At the heart of DAHAO lies a revolutionary principle: <strong>Governance should be as natural as conversation, 
+              as powerful as code, and as accessible as asking a question.</strong>
             </p>
             <p className="mb-6">
-              As technology accelerates beyond human comprehension speed, we can't afford to bottleneck
-              governance at human pace. DAHAO solves this by letting you choose exactly how much authority
-              to give your AI agents.
+              Instead of rigid programmatic rules, DAHAO uses natural language instructions that AI interprets contextually. 
+              This means your community can evolve its governance through discussion, not through writing code.
             </p>
-            <div className="grid md:grid-cols-3 gap-4">
-              <div className="grid md:grid-cols-3 gap-4">
-                <FeatureCard
-                  icon={Zap}
-                  iconColor="text-yellow-600"
-                  title="Speed When Needed"
-                  description="AI can govern at machine speed"
-                />
-                <FeatureCard
-                  icon={Shield}
-                  iconColor="text-blue-600"
-                  title="Safety Always"
-                  description="Version control and rollbacks"
-                />
-                <FeatureCard
-                  icon={Users}
-                  iconColor="text-purple-600"
-                  title="Your Control"
-                  description="You set the boundaries"
-                />
+
+            {/* Conversational Example */}
+            <div className="mb-6 p-4 bg-white dark:bg-gray-900 rounded-lg border">
+              <h4 className="font-semibold mb-3 text-gray-800 dark:text-gray-200">Example Daily Interaction:</h4>
+              <div className="space-y-2 text-sm">
+                <div className="flex gap-2">
+                  <strong className="text-blue-600">You:</strong>
+                  <span>"What do I need to do today?"</span>
+                </div>
+                <div className="flex gap-2">
+                  <strong className="text-green-600">DAHAO:</strong>
+                  <div>
+                    <p>"Good morning! You have 3 governance tasks:</p>
+                    <p>1. 🗳️ Vote on 'AI transparency in decisions' (2 hours left)</p>
+                    <p>2. 💬 Join 'Urban farming integration' discussion</p>
+                    <p>3. 📋 New tasks matching your skills</p>
+                    <p><br />Which would you like to start with?"</p>
+                  </div>
+                </div>
               </div>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-4">
+              <FeatureCard
+                icon={MessageCircle}
+                iconColor="text-green-600"
+                title="Natural Language"
+                description="Rules evolve through discussion"
+              />
+              <FeatureCard
+                icon={Brain}
+                iconColor="text-blue-600"
+                title="AI Interpretation"
+                description="Contextual understanding, not rigid code"
+              />
+              <FeatureCard
+                icon={Users}
+                iconColor="text-purple-600"
+                title="Community Accessible"
+                description="No technical knowledge required"
+              />
             </div>
           </CardContent>
         </Card>
@@ -136,148 +155,119 @@ export default function VersionedEthicsPage() {
           </Card>
         </div>
 
-        {/* The Four Layers with AI Participation */}
+        {/* Rules as Instructions */}
         <div className="mb-16">
-          <h2 className="text-3xl font-semibold mb-8 text-center">The Four Layers: Flexible Control at Every Level</h2>
+          <h2 className="text-3xl font-semibold mb-8 text-center">Rules as Instructions: Natural Language Governance</h2>
 
           {/* Visual Architecture */}
           <Card className="mb-8">
             <CardContent className="p-8">
-              <div className="flex flex-col gap-4">
-                {/* Layer 1: Terms */}
-                <div className="relative">
-                  <div className="bg-blue-100 dark:bg-blue-900/30 rounded-lg p-6 border-2 border-blue-300">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <BookOpen className="h-8 w-8 text-blue-700 dark:text-blue-300" />
-                        <div>
-                          <h3 className="text-xl font-bold text-blue-900 dark:text-blue-100">Layer 1: Terms - Living Definitions</h3>
-                          <p className="text-blue-700 dark:text-blue-300">The DNA of governance with precise versions</p>
-                        </div>
-                      </div>
-                      <Badge className="bg-blue-200 text-blue-900 dark:text-blue-100">Foundation</Badge>
-                    </div>
-                    <div className="mt-4 grid grid-cols-2 gap-4">
-                      <div>
-                        <p className="text-sm font-semibold text-blue-900 dark:text-blue-100 mb-2">Example Terms:</p>
-                        <div className="space-y-1">
-                          <code className="bg-background p-2 rounded text-sm block">harm@v1.2</code>
-                          <code className="bg-background p-2 rounded text-sm block">efficiency@v2.1</code>
-                        </div>
-                      </div>
-                      <div>
-                        <p className="text-sm font-semibold text-blue-900 dark:text-blue-100 mb-2">AI Participation Options:</p>
-                        <ul className="text-sm space-y-1">
-                          <li>• Suggest new terms from patterns</li>
-                          <li>• Propose modifications</li>
-                          <li>• Auto-update in your branch</li>
-                          <li>• All changes versioned</li>
-                        </ul>
-                      </div>
-                    </div>
+              <div className="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h3 className="text-xl font-bold mb-4">Traditional Programming Rules</h3>
+                  <div className="bg-red-50 dark:bg-red-950/20 p-4 rounded-lg border border-red-200">
+                    <code className="text-sm block text-red-800 dark:text-red-200">
+                      if (proposal.votes.yes / proposal.votes.total &gt; 0.6) &#123;<br />
+                      &nbsp;&nbsp;proposal.status = "approved";<br />
+                      &#125;
+                    </code>
+                    <p className="text-xs text-red-600 dark:text-red-400 mt-2">
+                      ❌ Requires coding knowledge • Hard to modify • Rigid interpretation
+                    </p>
                   </div>
-                  <ArrowRight className="h-6 w-6 text-gray-400 mx-auto my-2" />
                 </div>
-
-                {/* Layer 2: Principles */}
-                <div className="relative">
-                  <div className="bg-green-100 dark:bg-green-900/30 rounded-lg p-6 border-2 border-green-300">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <Building className="h-8 w-8 text-green-700 dark:text-green-300" />
-                        <div>
-                          <h3 className="text-xl font-bold text-green-900 dark:text-green-100">Layer 2: Principles - Encoded Values</h3>
-                          <p className="text-green-700 dark:text-green-300">Value statements built from versioned terms</p>
-                        </div>
-                      </div>
-                      <Badge className="bg-green-200 text-green-900 dark:text-green-100">Values</Badge>
-                    </div>
-                    <div className="mt-4 grid grid-cols-2 gap-4">
-                      <div>
-                        <p className="text-sm font-semibold text-green-900 dark:text-green-100 mb-2">Example:</p>
-                        <code className="bg-background p-3 rounded text-sm block">
-                          "Maximize benefit@v1.3 while minimizing harm@v1.2"
-                        </code>
-                      </div>
-                      <div>
-                        <p className="text-sm font-semibold text-green-900 dark:text-green-100 mb-2">AI Capabilities (When Authorized):</p>
-                        <ul className="text-sm space-y-1">
-                          <li>• Generate principles from patterns</li>
-                          <li>• Optimize combinations</li>
-                          <li>• Resolve conflicts</li>
-                          <li>• Evolve based on outcomes</li>
-                        </ul>
+                
+                <div>
+                  <h3 className="text-xl font-bold mb-4">DAHAO Natural Language Rules</h3>
+                  <div className="bg-green-50 dark:bg-green-950/20 p-4 rounded-lg border border-green-200">
+                    <div className="text-sm text-green-800 dark:text-green-200">
+                      <p className="font-semibold mb-2">"discussion-first" rule:</p>
+                      <p className="mb-2">"Before proposals, ensure discussion with at least 3 participants and 60% consensus threshold."</p>
+                      <div className="text-xs">
+                        <strong>Parameters:</strong> minParticipants: 3, consensusThreshold: 60<br />
+                        <strong>Branch Override:</strong> Your community can adjust these numbers
                       </div>
                     </div>
+                    <p className="text-xs text-green-600 dark:text-green-400 mt-2">
+                      ✅ Anyone can understand • Easy to modify • Contextual interpretation
+                    </p>
                   </div>
-                  <ArrowRight className="h-6 w-6 text-gray-400 mx-auto my-2" />
                 </div>
+              </div>
 
-                {/* Layer 3: Rules */}
-                <div className="relative">
-                  <div className="bg-purple-100 dark:bg-purple-900/30 rounded-lg p-6 border-2 border-purple-300">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <Scale className="h-8 w-8 text-purple-700 dark:text-purple-300" />
-                        <div>
-                          <h3 className="text-xl font-bold text-purple-900 dark:text-purple-100">Layer 3: Rules - Operational Intelligence</h3>
-                          <p className="text-purple-700 dark:text-purple-300">Concrete actions implementing principles</p>
-                        </div>
-                      </div>
-                      <Badge className="bg-purple-200 text-purple-900 dark:text-purple-100">Operations</Badge>
-                    </div>
-                    <div className="mt-4 grid grid-cols-2 gap-4">
-                      <div>
-                        <p className="text-sm font-semibold text-purple-900 dark:text-purple-100 mb-2">Example:</p>
-                        <code className="bg-background p-3 rounded text-sm block">
-                          "When harm@v1.2 risk &gt;15%, require human review"
-                        </code>
-                      </div>
-                      <div>
-                        <p className="text-sm font-semibold text-purple-900 dark:text-purple-100 mb-2">AI Rule Creation (Your Choice):</p>
-                        <ul className="text-sm space-y-1">
-                          <li>• Draft rules automatically</li>
-                          <li>• Modify based on performance</li>
-                          <li>• Create exception handling</li>
-                          <li>• Optimize interactions</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <ArrowRight className="h-6 w-6 text-gray-400 mx-auto my-2" />
+              <div className="mt-8">
+                <h3 className="text-lg font-semibold mb-4">Example Rule Structure</h3>
+                <div className="bg-background p-4 rounded-lg border">
+                  <pre className="text-sm overflow-x-auto">
+{`{
+  "discussion-first": {
+    instruction: "Before proposals, ensure discussion with...",
+    parameters: { 
+      minParticipants: 3, 
+      consensusThreshold: 60 
+    },
+    outputTemplate: {
+      notification: "Discussion needed: {participants} of {minParticipants} participated",
+      summary: "Ready to proceed with {consensusLevel}% support"
+    }
+  }
+}`}
+                  </pre>
                 </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
 
-                {/* Layer 4: Meta-Rules */}
-                <div className="relative">
-                  <div className="bg-orange-100 rounded-lg p-6 border-2 border-orange-300">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <RefreshCw className="h-8 w-8 text-orange-700" />
-                        <div>
-                          <h3 className="text-xl font-bold text-orange-900">Layer 4: Meta-Rules - Evolution Control</h3>
-                          <p className="text-orange-700">How the system changes itself</p>
-                        </div>
-                      </div>
-                      <Badge className="bg-orange-200 text-orange-900">Evolution</Badge>
-                    </div>
-                    <div className="mt-4 grid grid-cols-2 gap-4">
-                      <div>
-                        <p className="text-sm font-semibold text-orange-900 mb-2">Example:</p>
-                        <code className="bg-background p-3 rounded text-sm block">
-                          "AI can modify terms with &lt;20% impact without approval"
-                        </code>
-                      </div>
-                      <div>
-                        <p className="text-sm font-semibold text-orange-900 mb-2">You Define AI's Boundaries:</p>
-                        <ul className="text-sm space-y-1">
-                          <li>• Set change thresholds</li>
-                          <li>• Define emergency powers</li>
-                          <li>• Create rollback triggers</li>
-                          <li>• Establish review requirements</li>
-                        </ul>
-                      </div>
-                    </div>
+        {/* From Proposals to Living Projects */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-semibold mb-8 text-center">From Proposals to Living Projects</h2>
+          
+          <Card className="mb-8">
+            <CardHeader>
+              <CardTitle>Organic Growth Through AI Collaboration</CardTitle>
+              <CardDescription>How approved proposals evolve into continuously growing projects</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Vote className="h-8 w-8 text-blue-600" />
                   </div>
+                  <h4 className="font-semibold mb-2">1. Community Approval</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Your community votes on proposals using natural language discussions
+                  </p>
+                </div>
+                
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Target className="h-8 w-8 text-green-600" />
+                  </div>
+                  <h4 className="font-semibold mb-2">2. AI Task Generation</h4>
+                  <p className="text-sm text-muted-foreground">
+                    AI generates specific tasks with confidence scores and resource estimates
+                  </p>
+                </div>
+                
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Workflow className="h-8 w-8 text-purple-600" />
+                  </div>
+                  <h4 className="font-semibold mb-2">3. Organic Evolution</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Tasks spawn new tasks as they're completed, growing based on community needs
+                  </p>
+                </div>
+              </div>
+              
+              <div className="mt-8 p-4 bg-blue-50 dark:bg-blue-950/20 rounded-lg">
+                <h4 className="font-semibold mb-2">Example Project Evolution:</h4>
+                <div className="text-sm space-y-2">
+                  <p><strong>Week 1:</strong> "Urban Farming Initiative" approved → AI generates initial tasks</p>
+                  <p><strong>Week 2:</strong> Soil testing task completed → AI suggests water system design</p>
+                  <p><strong>Week 3:</strong> Community feedback → AI adapts plan for winter growing</p>
+                  <p><strong>Week 4:</strong> Success metrics → AI proposes expansion to neighboring areas</p>
                 </div>
               </div>
             </CardContent>
@@ -288,7 +278,7 @@ export default function VersionedEthicsPage() {
         <div className="mb-16">
           <h2 className="text-3xl font-semibold mb-8 text-center">Your Control Panel: Setting AI Boundaries</h2>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <Card>
               <CardHeader>
                 <div className="flex items-center gap-2">
@@ -391,6 +381,72 @@ export default function VersionedEthicsPage() {
             <Card>
               <CardHeader>
                 <div className="flex items-center gap-2">
+                  <MessageCircle className="h-5 w-5 text-green-600" />
+                  <CardTitle>Rule Interpretation Settings</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between p-2 rounded hover:bg-muted/30">
+                    <span className="text-sm">Literal Only</span>
+                    <Lock className="h-4 w-4 text-gray-400" />
+                  </div>
+                  <div className="flex items-center justify-between p-2 rounded hover:bg-muted/30">
+                    <span className="text-sm">Context-Aware</span>
+                    <Brain className="h-4 w-4 text-blue-600" />
+                  </div>
+                  <div className="flex items-center justify-between p-2 rounded hover:bg-muted/30">
+                    <span className="text-sm">Personal AI Priority</span>
+                    <Users className="h-4 w-4 text-purple-600" />
+                  </div>
+                  <div className="flex items-center justify-between p-2 rounded hover:bg-muted/30">
+                    <span className="text-sm">System AI Priority</span>
+                    <Bot className="h-4 w-4 text-green-600" />
+                  </div>
+                </div>
+                <p className="text-xs text-muted-foreground mt-3">
+                  AI follows rules exactly / AI interprets context and intent /
+                  Personal AI guides interpretation / System AI maintains objectivity
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <div className="flex items-center gap-2">
+                  <Settings className="h-5 w-5 text-blue-600" />
+                  <CardTitle>Output Customization</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between p-2 rounded hover:bg-muted/30">
+                    <span className="text-sm">Minimal</span>
+                    <Timer className="h-4 w-4 text-gray-400" />
+                  </div>
+                  <div className="flex items-center justify-between p-2 rounded hover:bg-muted/30">
+                    <span className="text-sm">Structured</span>
+                    <Code2 className="h-4 w-4 text-yellow-600" />
+                  </div>
+                  <div className="flex items-center justify-between p-2 rounded hover:bg-muted/30">
+                    <span className="text-sm">Detailed</span>
+                    <BookOpen className="h-4 w-4 text-blue-600" />
+                  </div>
+                  <div className="flex items-center justify-between p-2 rounded hover:bg-muted/30">
+                    <span className="text-sm">Conversational</span>
+                    <MessageCircle className="h-4 w-4 text-green-600" />
+                  </div>
+                </div>
+                <p className="text-xs text-muted-foreground mt-3">
+                  Brief summaries only / Data tables and charts /
+                  Full explanations and context / Natural dialogue format
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <div className="flex items-center gap-2">
                   <AlertTriangle className="h-5 w-5 text-orange-600" />
                   <CardTitle>Emergency Powers</CardTitle>
                 </div>
@@ -418,6 +474,82 @@ export default function VersionedEthicsPage() {
                   No emergency AI authority / AI alerts you to emergencies /
                   AI gets temporary powers / AI can act immediately
                 </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+
+        {/* Three-Layer AI Integration */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-semibold mb-8 text-center">Three-Layer AI Integration</h2>
+          
+          <div className="grid md:grid-cols-3 gap-6">
+            <Card className="bg-gradient-to-br from-purple-50/50 to-purple-100/50 dark:from-purple-950/20 dark:to-purple-900/30 border-purple-300">
+              <CardHeader>
+                <Users className="h-8 w-8 text-purple-600 mb-2" />
+                <CardTitle>Personal AI</CardTitle>
+                <CardDescription>Your governance coach and advisor</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="text-sm space-y-2">
+                  <li>• Learns from your branch modifications</li>
+                  <li>• Provides personalized guidance</li>
+                  <li>• Acts as your governance coach</li>
+                  <li>• Understands your community's values</li>
+                  <li>• Suggests improvements based on your goals</li>
+                </ul>
+                <div className="mt-4 p-3 bg-background rounded-lg">
+                  <p className="text-xs text-muted-foreground">
+                    <strong>Example:</strong> "Based on your branch's focus on transparency, 
+                    I suggest adding discussion requirements to this proposal."
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-gradient-to-br from-blue-50/50 to-blue-100/50 dark:from-blue-950/20 dark:to-blue-900/30 border-blue-300">
+              <CardHeader>
+                <Shield className="h-8 w-8 text-blue-600 mb-2" />
+                <CardTitle>System AI</CardTitle>
+                <CardDescription>Objective governance validator</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="text-sm space-y-2">
+                  <li>• Maintains objectivity using core principles</li>
+                  <li>• Domain-aware for specialized DAHAOs</li>
+                  <li>• Facilitates cross-branch learning</li>
+                  <li>• Ensures baseline governance standards</li>
+                  <li>• Prevents conflicts and inconsistencies</li>
+                </ul>
+                <div className="mt-4 p-3 bg-background rounded-lg">
+                  <p className="text-xs text-muted-foreground">
+                    <strong>Example:</strong> "This rule conflicts with the Animal Welfare baseline. 
+                    Consider adjusting the harm definition to include species impact."
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-gradient-to-br from-green-50/50 to-green-100/50 dark:from-green-950/20 dark:to-green-900/30 border-green-300">
+              <CardHeader>
+                <Bot className="h-8 w-8 text-green-600 mb-2" />
+                <CardTitle>Worker Agents</CardTitle>
+                <CardDescription>Background task automation</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="text-sm space-y-2">
+                  <li>• Execute routine tasks automatically</li>
+                  <li>• Handle notifications and validations</li>
+                  <li>• Operate 24/7 in background</li>
+                  <li>• Monitor compliance and performance</li>
+                  <li>• Generate reports and summaries</li>
+                </ul>
+                <div className="mt-4 p-3 bg-background rounded-lg">
+                  <p className="text-xs text-muted-foreground">
+                    <strong>Example:</strong> "Daily summary: 3 proposals need votes, 
+                    2 discussions require moderator attention, 1 rule effectiveness report ready."
+                  </p>
+                </div>
               </CardContent>
             </Card>
           </div>
@@ -520,6 +652,45 @@ export default function VersionedEthicsPage() {
                 </div>
               </CardContent>
             </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <MessageCircle className="h-5 w-5 text-orange-600" />
+                  Scenario 4: The Evolving Community
+                </CardTitle>
+                <CardDescription>A community discovers their voting rules need adjustment through discussion</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="grid md:grid-cols-2 gap-4 mb-4">
+                  <div>
+                    <h4 className="font-semibold text-sm mb-2">Configuration:</h4>
+                    <ul className="text-sm space-y-1">
+                      <li>• Discussion opens about voting improvements</li>
+                      <li>• AI facilitates natural language rule evolution</li>
+                      <li>• Community votes on rule changes with rich feedback</li>
+                      <li>• Rules update without any code changes</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-sm mb-2">Result:</h4>
+                    <p className="text-sm text-muted-foreground">
+                      Governance evolves through conversation. The community can modify their rules using natural language, 
+                      making governance accessible to non-technical members while maintaining precision and effectiveness.
+                    </p>
+                  </div>
+                </div>
+                <div className="mt-4 p-3 bg-orange-50 dark:bg-orange-950/20 rounded-lg">
+                  <h5 className="font-semibold text-sm mb-2">Example Evolution:</h5>
+                  <div className="text-sm space-y-1">
+                    <p><strong>Week 1:</strong> "Our 60% threshold feels too high for minor proposals"</p>
+                    <p><strong>Week 2:</strong> Discussion reveals need for tiered voting thresholds</p>
+                    <p><strong>Week 3:</strong> AI suggests: "Minor changes need 40%, major changes need 75%"</p>
+                    <p><strong>Week 4:</strong> Community refines and approves new natural language rule</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
 
@@ -527,7 +698,7 @@ export default function VersionedEthicsPage() {
         <div className="mb-16">
           <h2 className="text-3xl font-semibold mb-8 text-center">Why This Works: Speed AND Safety</h2>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <Card className="bg-gradient-to-br from-blue-50/50 to-blue-100/50 dark:from-blue-950/20 dark:to-blue-900/30 border-blue-300">
               <CardHeader>
                 <History className="h-8 w-8 text-blue-600 mb-2" />
@@ -578,6 +749,24 @@ export default function VersionedEthicsPage() {
                   <li>• Understand why decisions were made</li>
                   <li>• Track performance over time</li>
                   <li>• Share successful patterns</li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-gradient-to-br from-orange-50/50 to-orange-100/50 dark:from-orange-950/20 dark:to-orange-900/30 border-orange-300">
+              <CardHeader>
+                <MessageCircle className="h-8 w-8 text-orange-600 mb-2" />
+                <CardTitle>Natural Language = Accessibility</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm mb-3">
+                  Rules evolve through discussion:
+                </p>
+                <ul className="text-sm space-y-1">
+                  <li>• No coding knowledge required</li>
+                  <li>• AI interprets intent, not syntax</li>
+                  <li>• Community-driven evolution</li>
+                  <li>• Everyone can participate in governance</li>
                 </ul>
               </CardContent>
             </Card>
@@ -814,6 +1003,21 @@ export default function VersionedEthicsPage() {
                 </p>
               </CardContent>
             </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">How do rules work if they're not hard-coded?</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  Rules in DAHAO are natural language instructions that LLMs interpret contextually. Each rule includes 
+                  parameters your branch can customize and output templates you can personalize. This makes governance 
+                  accessible to everyone while maintaining consistency through AI interpretation. For example, instead of 
+                  coding "if votes > 60% then approve", you write "Proposals need 60% support to pass" and your branch 
+                  can adjust that threshold through discussion.
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
 
@@ -891,8 +1095,8 @@ export default function VersionedEthicsPage() {
                     <span className="text-sm font-semibold text-blue-600">2</span>
                   </div>
                   <div className="flex-1">
-                    <strong>Set Initial Boundaries</strong>
-                    <p className="text-sm text-muted-foreground">Define what AI can and cannot do</p>
+                    <strong>Customize Your Rules</strong>
+                    <p className="text-sm text-muted-foreground">Modify rule parameters for your branch, set your preferred output formats, choose AI interpretation strictness</p>
                   </div>
                 </div>
 

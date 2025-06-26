@@ -529,6 +529,29 @@ export default function IdeasPage() {
   // Discussion modal helpers
   const handleOpenDiscussion = (item: any, type: 'term' | 'principle' | 'rule') => {
     const version = getVersionForBranch(item, selectedBranch?.id || '');
+    
+    // Debug logging for discussion opening
+    console.log('🚀 DISCUSSION OPENING:', {
+      element: { 
+        id: item.id, 
+        name: item.name, 
+        type,
+        fullItem: item 
+      },
+      selectedBranch: {
+        id: selectedBranch?.id,
+        name: selectedBranch?.name,
+        version: selectedBranch?.version
+      },
+      derivedVersion: version,
+      finalDiscussionState: {
+        elementId: item.id,
+        elementType: type,
+        elementName: item.name,
+        elementVersion: version
+      }
+    });
+    
     setSelectedDiscussion({
       elementId: item.id,
       elementType: type,

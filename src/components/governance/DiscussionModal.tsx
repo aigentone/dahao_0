@@ -65,13 +65,58 @@ interface DiscussionModalProps {
 type LensType = 'all' | 'consensus' | 'conflict' | 'evolution' | 'agent';
 
 // Helper function to build discussion from existing mock data
-const buildDiscussionFromMockData = (elementId: string, elementName: string, elementType: 'term' | 'principle' | 'rule'): Discussion | null => {
-  // Find a discussion that matches the element
-  const discussionEntry = Object.values(discussionsData.discussions).find((disc: any) => 
-    disc.target?.elementId === elementId
+const buildDiscussionFromMockData = (elementId: string, elementName: string, elementType: 'term' | 'principle' | 'rule', elementVersion?: string): Discussion | null => {
+  // Debug logging for discussion building
+  const availableDiscussions = Object.values(discussionsData.discussions);
+  console.log('🔍 BUILDING DISCUSSION:', {
+    inputs: { 
+      elementId, 
+      elementName, 
+      elementType, 
+      elementVersion 
+    },
+    availableDiscussions: availableDiscussions.map((disc: any) => ({
+      id: disc.id,
+      title: disc.title,
+      target: disc.target
+    })),
+    searchCriteria: { 
+      elementId, 
+      elementVersion: elementVersion || 'any' 
+    }
+  });
+
+  // Find a discussion that matches the element AND version (if provided)
+  const discussionEntry = availableDiscussions.find((disc: any) => 
+    disc.target?.elementId === elementId && 
+    (!elementVersion || disc.target?.version === elementVersion)
   );
 
-  if (!discussionEntry) return null;
+  console.log('🔍 DISCUSSION SEARCH RESULT:', {
+    foundDiscussion: discussionEntry ? {
+      id: discussionEntry.id,
+      title: discussionEntry.title,
+      target: discussionEntry.target
+    } : null,
+    searchMatched: !!discussionEntry,
+    willAutoCreate: !discussionEntry
+  });
+
+  if (!discussionEntry) {
+    const autoDiscussion = {
+      id: `auto-${elementId}-${elementVersion || 'current'}`,
+      elementId,
+      elementType,
+      elementName,
+      elementVersion: elementVersion || '1.0.0',
+      comments: [], // Start with empty comments - real discussions will grow organically
+      consensusLevel: 0,
+      status: 'active' as const
+    };
+    
+    console.log('🆕 AUTO-CREATED DISCUSSION:', autoDiscussion);
+    return autoDiscussion;
+  }
 
   // Get comments for this discussion
   const discussionComments = Object.values(commentsData.comments)
@@ -158,24 +203,132 @@ export function DiscussionModal({
 
   // Build discussion from existing mock data or use provided discussion (memoized)
   const activeDiscussion = useMemo(() => {
-    return discussion || (elementId && elementName && elementType ? 
-      buildDiscussionFromMockData(elementId, elementName, elementType) : null);
-  }, [discussion, elementId, elementName, elementType]);
+    const result = discussion || (elementId && elementName && elementType ? 
+      buildDiscussionFromMockData(elementId, elementName, elementType, elementVersion) : null);
+    
+    // Debug logging for active discussion
+    console.log('💬 DISCUSSION MODAL ACTIVE DISCUSSION:', {
+      modalProps: {
+        isOpen,
+        elementId,
+        elementName,
+        elementType,
+        elementVersion,
+        providedDiscussion: !!discussion
+      },
+      activeDiscussion: result ? {
+        id: result.id,
+        elementId: result.elementId,
+        elementVersion: result.elementVersion,
+        commentsCount: result.comments?.length || 0,
+        consensusLevel: result.consensusLevel,
+        status: result.status
+      } : null,
+      discussionSource: discussion ? 'PROVIDED_AS_PROP' : 'BUILT_FROM_MOCK_DATA'
+    });
+    
+    return result;
+  }, [discussion, elementId, elementName, elementType, elementVersion, isOpen]);
 
   // Load real AI analyses for this discussion
   const loadRealAIAnalyses = useCallback(async () => {
-    if (!activeDiscussion) return;
+    if (!activeDiscussion) {
+      console.log('⚠️ LOAD ANALYSES: No active discussion');
+      return;
+    }
+
+    const apiUrl = `/api/ai/analyses?discussionId=${encodeURIComponent(activeDiscussion.id)}`;
+    console.log('🌐 FETCHING ANALYSES:', {
+      discussionId: activeDiscussion.id,
+      apiUrl,
+      elementContext: {
+        elementId: activeDiscussion.elementId,
+        elementVersion: activeDiscussion.elementVersion
+      }
+    });
 
     try {
-      const response = await fetch(`/api/ai/analyses?discussionId=${encodeURIComponent(activeDiscussion.id)}`);
+      const response = await fetch(apiUrl);
       if (response.ok) {
         const result = await response.json();
+        console.log('✅ ANALYSES LOADED:', {
+          analysesCount: result.analyses?.length || 0,
+          analyses: result.analyses?.map((a: any) => ({
+            id: a.id,
+            elementId: a.elementId,
+            commentId: a.commentId,
+            agentType: a.agentType,
+            taskType: a.taskType
+          })) || []
+        });
         setRealAIAnalyses(result.analyses || []);
+      } else {
+        console.error('❌ ANALYSES FETCH FAILED:', response.status, response.statusText);
       }
     } catch (error) {
-      console.error('Failed to load real AI analyses:', error);
+      console.error('❌ ANALYSES FETCH ERROR:', error);
     }
   }, [activeDiscussion]);
+
+  // Load element analyses (from Ideas page 🤖 buttons)
+  const loadElementAnalyses = useCallback(async () => {
+    if (!elementId) {
+      console.log('⚠️ LOAD ELEMENT ANALYSES: No elementId');
+      return;
+    }
+
+    const apiUrl = `/api/ai/analyses?elementId=${encodeURIComponent(elementId)}`;
+    console.log('🎯 FETCHING ELEMENT ANALYSES:', {
+      elementId,
+      elementVersion,
+      apiUrl
+    });
+
+    try {
+      const response = await fetch(apiUrl);
+      if (response.ok) {
+        const result = await response.json();
+        console.log('✅ ELEMENT ANALYSES LOADED:', {
+          analysesCount: result.analyses?.length || 0,
+          analyses: result.analyses?.map((a: any) => ({
+            id: a.id,
+            elementId: a.target?.elementId,      // ✅ Fix: Use nested path
+            agentType: a.request?.agentType,     // ✅ Fix: Use nested path
+            taskType: a.request?.taskType,       // ✅ Fix: Use nested path
+            confidence: a.result?.confidence     // ✅ Fix: Use nested path
+          })) || []
+        });
+        
+        // Add element analyses to the existing list (avoid duplicates)
+        setRealAIAnalyses(prev => {
+          const elementAnalyses = result.analyses || [];
+          const existingIds = new Set(prev.map(a => a.id));
+          const newAnalyses = elementAnalyses.filter((a: any) => !existingIds.has(a.id));
+          
+          // Fix 3: State update debugging
+          console.log('🔄 STATE UPDATE DEBUG:', {
+            existingAnalyses: prev.length,
+            incomingElementAnalyses: elementAnalyses.length,
+            newAnalysesAfterDupeFilter: newAnalyses.length,
+            finalTotalAfterMerge: [...prev, ...newAnalyses].length,
+            firstNewAnalysis: newAnalyses[0] ? {
+              id: newAnalyses[0].id,
+              hasTarget: !!newAnalyses[0].target,
+              hasRequest: !!newAnalyses[0].request,
+              targetElementId: newAnalyses[0].target?.elementId,
+              requestAgentType: newAnalyses[0].request?.agentType
+            } : null
+          });
+          
+          return [...prev, ...newAnalyses];
+        });
+      } else {
+        console.error('❌ ELEMENT ANALYSES FETCH FAILED:', response.status, response.statusText);
+      }
+    } catch (error) {
+      console.error('❌ ELEMENT ANALYSES FETCH ERROR:', error);
+    }
+  }, [elementId, elementVersion]);
 
   // Request AI analysis for a comment
   const requestAIAnalysis = async (commentId: string, agentType: 'personal' | 'system', taskType: string) => {
@@ -253,10 +406,38 @@ export function DiscussionModal({
 
   // Load real AI analyses when discussion changes
   useEffect(() => {
-    if (isOpen && activeDiscussion) {
-      loadRealAIAnalyses();
+    console.log('🔄 DISCUSSION MODAL EFFECT:', {
+      isOpen,
+      hasActiveDiscussion: !!activeDiscussion,
+      hasElementId: !!elementId,
+      activeDiscussionId: activeDiscussion?.id,
+      elementId,
+      willLoadAnalyses: isOpen && (!!activeDiscussion || !!elementId)
+    });
+    
+    if (isOpen) {
+      // Load discussion-based analyses
+      if (activeDiscussion) {
+        console.log('📊 LOADING DISCUSSION ANALYSES:', {
+          discussionId: activeDiscussion.id,
+          elementContext: {
+            elementId: activeDiscussion.elementId,
+            elementVersion: activeDiscussion.elementVersion
+          }
+        });
+        loadRealAIAnalyses();
+      }
+      
+      // Load element-based analyses (from Ideas page 🤖 buttons)
+      if (elementId) {
+        console.log('🎯 LOADING ELEMENT ANALYSES:', {
+          elementId,
+          elementVersion
+        });
+        loadElementAnalyses();
+      }
     }
-  }, [isOpen, activeDiscussion?.id, loadRealAIAnalyses]);
+  }, [isOpen, activeDiscussion, elementId, loadRealAIAnalyses, loadElementAnalyses]);
 
   // Close modal on escape key
   useEffect(() => {
@@ -288,7 +469,10 @@ export function DiscussionModal({
 
   if (!isOpen) return null;
 
-  const hasDiscussion = activeDiscussion && activeDiscussion.comments.length > 0;
+  const hasDiscussion = activeDiscussion && (
+    activeDiscussion.comments.length > 0 || 
+    realAIAnalyses.filter(a => a.target?.elementId && !a.request?.commentId).length > 0
+  );
   const displayName = activeDiscussion?.elementName || elementName || 'Unknown Element';
   const displayVersion = activeDiscussion?.elementVersion || elementVersion || '1.0.0';
   const displayType = activeDiscussion?.elementType || elementType || 'element';
@@ -449,6 +633,64 @@ export function DiscussionModal({
                   
                   {/* Timeline Nodes */}
                   <div className="space-y-12">
+                    {/* Element Analyses (from Ideas page 🤖 buttons) */}
+                    {(() => {
+                      // Fix 2: UI debugging
+                      const elementAnalyses = realAIAnalyses.filter(analysis => analysis.target?.elementId && !analysis.request?.commentId);
+                      console.log('🎯 UI RENDER DEBUG:', {
+                        totalAnalyses: realAIAnalyses.length,
+                        rawAnalyses: realAIAnalyses,
+                        analysesWithElementId: realAIAnalyses.filter(a => a.target?.elementId).length,
+                        analysesWithoutCommentId: realAIAnalyses.filter(a => !a.request?.commentId).length,
+                        finalElementAnalyses: elementAnalyses.length,
+                        elementAnalyses: elementAnalyses
+                      });
+                      return elementAnalyses;
+                    })().map((analysis, index) => (
+                      <div key={analysis.id} className="relative">
+                        <div className="bg-green-900/20 border border-green-500/30 rounded-2xl p-6 max-w-2xl mx-auto relative">
+                          <div className="flex items-center gap-3 mb-4">
+                            <div className="w-10 h-10 rounded-full bg-gradient-to-r from-green-500 to-emerald-500 flex items-center justify-center text-white">
+                              <Bot className="h-5 w-5" />
+                            </div>
+                            <div className="flex-1">
+                              <div className="font-semibold text-white">
+                                {analysis.request?.agentType === 'personal' ? 'Personal AI Assistant' : 'System AI Validator'}
+                              </div>
+                              <div className="text-sm text-gray-400">
+                                {analysis.timeline?.completedAt ? formatTimeAgo(analysis.timeline.completedAt) : 'Recently'}
+                              </div>
+                            </div>
+                            <Badge className="bg-green-500/20 text-green-400 border-green-500/30">
+                              📄 Element Analysis
+                            </Badge>
+                          </div>
+                          
+                          <div className="text-gray-300 mb-4 leading-relaxed">
+                            {analysis.result?.analysis || 'Analysis content not available'}
+                          </div>
+                          
+                          {/* Analysis metadata */}
+                          <div className="flex items-center gap-4 text-sm text-gray-400 pt-4 border-t border-gray-700">
+                            <span>Task: {analysis.request?.taskType || 'Unknown'}</span>
+                            <span>Confidence: {analysis.result?.confidence || 0}%</span>
+                            <span>Cost: ${analysis.usage?.cost?.amount || 0}</span>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                    
+                    {/* Divider between element analyses and comments */}
+                    {realAIAnalyses.filter(analysis => analysis.target?.elementId && !analysis.request?.commentId).length > 0 && activeDiscussion.comments.length > 0 && (
+                      <div className="relative">
+                        <div className="absolute left-1/2 transform -translate-x-1/2 w-32 h-px bg-gradient-to-r from-transparent via-gray-600 to-transparent" />
+                        <div className="text-center">
+                          <span className="bg-gray-900 px-4 py-2 text-sm text-gray-400">Discussion Timeline</span>
+                        </div>
+                      </div>
+                    )}
+                    
+                    {/* Comments */}
                     {activeDiscussion.comments.map((comment, index) => (
                       <div 
                         key={comment.id} 
