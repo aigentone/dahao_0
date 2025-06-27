@@ -41,20 +41,28 @@
           "status": "ratified"
         },
         "1.2.1-animal": {
-          "definition": "Physical damage, psychological distress, systemic disadvantage, dignity violation, or species-specific suffering affecting any sentient being",
-          "brief": "Includes species-specific suffering",
+          "definition": "Physical damage, psychological distress, systemic disadvantage, dignity violation, species-suffering@v1.0.0, or habitat-destruction@v1.0.0 affecting any sentient being",
+          "brief": "Includes species-specific suffering and habitat destruction",
+          "termDependencies": {
+            "species-suffering": "1.0.0",
+            "habitat-destruction": "1.0.0"
+          },
           "createdAt": "2024-03-25T00:00:00Z",
           "createdBy": "user-john-123",
           "branchId": "animal-welfare-dahao",
           "parentVersion": "1.2.0",
           "githubIssue": 201,
-          "changelog": "Added species-specific suffering for animal welfare context",
+          "changelog": "Added species-specific suffering and habitat destruction for animal welfare context",
           "ratifiedAt": "2024-03-28T00:00:00Z",
           "status": "ratified"
         },
         "1.3.0-john": {
-          "definition": "Physical damage, psychological distress, systemic disadvantage, dignity violation, emotional harm, or informational harm affecting any sentient being",
+          "definition": "Physical damage, psychological distress, systemic disadvantage, dignity violation, emotional harm@v1.0.0, or informational harm@v1.0.0 affecting any sentient being",
           "brief": "Includes emotional and informational harm",
+          "termDependencies": {
+            "emotional-harm": "1.0.0",
+            "informational-harm": "1.0.0"
+          },
           "createdAt": "2024-03-30T00:00:00Z",
           "createdBy": "user-john-123",
           "branchId": "john-main-branch",
@@ -584,6 +592,122 @@
       "usedBy": {
         "principles": ["animal-welfare-protection"],
         "rules": ["welfare-assessment", "species-protection"]
+      },
+      "domain": "animal-welfare"
+    },
+    "emotional-harm": {
+      "id": "emotional-harm",
+      "type": "term",
+      "name": "Emotional Harm",
+      "currentVersion": "1.0.0",
+      "versions": {
+        "1.0.0": {
+          "definition": "Psychological trauma, social isolation, or dignity violation through non-physical means",
+          "brief": "Psychological trauma and dignity violation",
+          "createdAt": "2024-03-30T12:00:00Z",
+          "createdBy": "user-john-123",
+          "branchId": "john-main-branch",
+          "githubIssue": 352,
+          "ratifiedAt": "2024-04-02T00:00:00Z",
+          "status": "ratified"
+        }
+      },
+      "branchVersions": {
+        "john-main-branch": "1.0.0"
+      },
+      "parentTerms": {
+        "harm": "1.3.0-john"
+      },
+      "usedBy": {
+        "principles": ["minimize-harm"],
+        "rules": ["harm-reporting"]
+      },
+      "domain": "core"
+    },
+    "informational-harm": {
+      "id": "informational-harm",
+      "type": "term",
+      "name": "Informational Harm",
+      "currentVersion": "1.0.0",
+      "versions": {
+        "1.0.0": {
+          "definition": "Damage through misinformation, doxxing, or data misuse",
+          "brief": "Damage through misinformation and data misuse",
+          "createdAt": "2024-03-30T12:30:00Z",
+          "createdBy": "user-john-123",
+          "branchId": "john-main-branch",
+          "githubIssue": 353,
+          "ratifiedAt": "2024-04-02T00:00:00Z",
+          "status": "ratified"
+        }
+      },
+      "branchVersions": {
+        "john-main-branch": "1.0.0"
+      },
+      "parentTerms": {
+        "harm": "1.3.0-john"
+      },
+      "usedBy": {
+        "principles": ["minimize-harm"],
+        "rules": ["harm-reporting"]
+      },
+      "domain": "core"
+    },
+    "habitat-destruction": {
+      "id": "habitat-destruction",
+      "type": "term",
+      "name": "Habitat Destruction",
+      "currentVersion": "1.0.0",
+      "versions": {
+        "1.0.0": {
+          "definition": "Degradation or elimination of natural living spaces",
+          "brief": "Degradation of natural living spaces",
+          "createdAt": "2024-03-25T14:00:00Z",
+          "createdBy": "user-alice-002",
+          "branchId": "animal-welfare-dahao",
+          "githubIssue": 354,
+          "ratifiedAt": "2024-03-28T00:00:00Z",
+          "status": "ratified"
+        }
+      },
+      "branchVersions": {
+        "animal-welfare-dahao": "1.0.0"
+      },
+      "parentTerms": {
+        "harm": "1.2.1-animal"
+      },
+      "usedBy": {
+        "principles": ["minimize-harm"],
+        "rules": ["animal-impact-assessment"]
+      },
+      "domain": "animal-welfare"
+    },
+    "species-suffering": {
+      "id": "species-suffering",
+      "type": "term",
+      "name": "Species Suffering",
+      "currentVersion": "1.0.0",
+      "versions": {
+        "1.0.0": {
+          "definition": "Pain or distress specific to non-human species",
+          "brief": "Pain or distress specific to non-human species",
+          "createdAt": "2024-03-25T14:30:00Z",
+          "createdBy": "user-alice-002",
+          "branchId": "animal-welfare-dahao",
+          "githubIssue": 355,
+          "ratifiedAt": "2024-03-28T00:00:00Z",
+          "status": "ratified"
+        }
+      },
+      "branchVersions": {
+        "animal-welfare-dahao": "1.0.0"
+      },
+      "parentTerms": {
+        "harm": "1.2.1-animal"
+      },
+      "usedBy": {
+        "principles": ["minimize-harm"],
+        "rules": ["animal-impact-assessment"]
       },
       "domain": "animal-welfare"
     }
