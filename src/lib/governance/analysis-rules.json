@@ -1,0 +1,513 @@
+{
+  "version": "1.0.0",
+  "description": "DAHAO governance analysis rules converted from task types",
+  "rules": {
+    "definition-clarity-rule": {
+      "name": "Definition Clarity Review",
+      "description": "Analyze how clearly a term is defined and suggest improvements",
+      "version": "1.0.0",
+      
+      "instruction": "Analyze the clarity of the '{elementName}' {elementType} definition:\n1. Use MCP tool 'getBranchElements' to examine how this term is used across governance elements in the {branchName} branch\n2. Check for ambiguity, vagueness, or circular definitions\n3. Compare with similar terms in the same branch for consistency\n4. Consider the {agentType} perspective: {agentPerspective}\n5. Provide specific improvement suggestions based on {analysisDepth} analysis\n6. Format response according to {agentType} output template",
+      
+      "parameters": {
+        "analysisDepth": {
+          "default": "comprehensive",
+          "type": "string",
+          "description": "How thorough the clarity analysis should be",
+          "branchOverrides": {
+            "animal-welfare-dahao": "detailed",
+            "music-industry-dahao": "practical",
+            "environmental-dahao": "comprehensive"
+          }
+        },
+        "focusAreas": {
+          "default": ["clarity", "precision", "usability"],
+          "type": "array",
+          "description": "Key areas to focus on during analysis",
+          "branchOverrides": {
+            "animal-welfare-dahao": ["clarity", "precision", "usability", "ethical-implications"],
+            "environmental-dahao": ["clarity", "precision", "usability", "environmental-impact"],
+            "music-industry-dahao": ["clarity", "usability", "practical-application"]
+          }
+        },
+        "agentPerspective": {
+          "personal": "user's communication preferences and values",
+          "system": "objective standards and baseline requirements"
+        }
+      },
+      
+      "outputTemplates": {
+        "personal": "🤖 Personal AI Analysis ({userName}'s Values):\n\n**Definition Clarity Assessment:**\n- Clarity Level: {clarityScore}/10\n- Key Strengths: {strengths}\n- Areas for Improvement: {improvements}\n\n**Value Alignment:**\n- How this definition aligns with your values: {valueAlignment}\n- Personal relevance: {personalRelevance}\n\n**Personalized Recommendations:**\n{personalizedSuggestions}\n\n**Confidence:** {confidence}%",
+        
+        "system": "⚖️ System AI - {branchName} Validation:\n\n**Baseline Compliance Check:**\n- Definition Standard: {complianceLevel}\n- Consistency Score: {consistencyScore}/10\n- Technical Precision: {precisionScore}/10\n\n**Objective Assessment:**\n{objectiveFindings}\n\n**Required Improvements:**\n{requiredImprovements}\n\n**System Recommendation:** {systemRecommendation}\n**Confidence:** {confidence}%"
+      },
+      
+      "dependencies": ["transparency@v1.0.0"],
+      "mcp_tools": ["getBranchElements", "getElementUsage"]
+    },
+    
+    "usage-consistency-rule": {
+      "name": "Usage Consistency Check",
+      "description": "Check how consistently a term is used across governance elements",
+      "version": "1.0.0",
+      
+      "instruction": "Check usage consistency of '{elementName}' across governance elements:\n1. Use MCP tool 'getElementUsage' to find all references to this {elementType}\n2. Analyze variations in meaning or application across different contexts\n3. Identify any conflicting or contradictory uses\n4. Apply {agentType} perspective: {agentPerspective}\n5. Compare usage patterns with branch philosophy using 'getBranchPhilosophy'\n6. Provide consistency score and recommendations",
+      
+      "parameters": {
+        "consistencyThreshold": {
+          "default": 80,
+          "type": "number",
+          "description": "Minimum consistency percentage required",
+          "branchOverrides": {
+            "animal-welfare-dahao": 90,
+            "core-dahao": 85,
+            "music-industry-dahao": 75
+          }
+        },
+        "contextSensitivity": {
+          "default": "moderate",
+          "type": "string",
+          "description": "How much to consider contextual variations",
+          "branchOverrides": {
+            "animal-welfare-dahao": "high",
+            "music-industry-dahao": "flexible"
+          }
+        },
+        "agentPerspective": {
+          "personal": "user's contextual priorities and flexible interpretation",
+          "system": "strict consistency across all governance elements"
+        }
+      },
+      
+      "outputTemplates": {
+        "personal": "🤖 Personal Consistency Analysis:\n\n**Usage Pattern Overview:**\n- Total References: {totalReferences}\n- Consistency Score: {consistencyScore}%\n- Contextual Variations: {contextualVariations}\n\n**Your Priority Areas:**\n{userPriorityAnalysis}\n\n**Flexible Interpretation:**\n{flexibleInterpretation}\n\n**Recommendations for Your Context:**\n{personalRecommendations}",
+        
+        "system": "⚖️ System Consistency Validation:\n\n**Usage Metrics:**\n- Total References: {totalReferences}\n- Consistency Score: {consistencyScore}%\n- Threshold: {consistencyThreshold}%\n- Status: {complianceStatus}\n\n**Inconsistencies Found:**\n{inconsistencyList}\n\n**System Requirements:**\n{systemRequirements}\n\n**Mandatory Actions:**\n{mandatoryActions}"
+      },
+      
+      "dependencies": ["consistency@v1.0.0"],
+      "mcp_tools": ["getElementUsage", "getBranchElements"]
+    },
+    
+    "evolution-analysis-rule": {
+      "name": "Evolution Analysis",
+      "description": "Analyze how an element has changed over time and predict future needs",
+      "version": "1.0.0",
+      
+      "instruction": "Analyze the evolution of '{elementName}' {elementType}:\n1. Use MCP tools to trace version history and changes\n2. Identify patterns in how this element has evolved\n3. Analyze drivers of change (community needs, external factors)\n4. Apply {agentType} lens: {agentPerspective}\n5. Predict future evolution based on {predictionTimeframe}\n6. Consider branch-specific evolution patterns",
+      
+      "parameters": {
+        "predictionTimeframe": {
+          "default": "6-12 months",
+          "type": "string",
+          "description": "How far into the future to predict evolution",
+          "branchOverrides": {
+            "animal-welfare-dahao": "12-24 months",
+            "music-industry-dahao": "3-6 months"
+          }
+        },
+        "evolutionFactors": {
+          "default": ["community-feedback", "external-changes", "usage-patterns"],
+          "type": "array",
+          "description": "Factors to consider in evolution analysis",
+          "branchOverrides": {
+            "animal-welfare-dahao": ["ethical-developments", "scientific-research", "community-feedback"],
+            "environmental-dahao": ["climate-science", "policy-changes", "community-feedback"]
+          }
+        },
+        "agentPerspective": {
+          "personal": "evolution aligned with user's values and priorities",
+          "system": "objective analysis of element evolution patterns"
+        }
+      },
+      
+      "outputTemplates": {
+        "personal": "🤖 Personal Evolution Analysis:\n\n**Evolution History:**\n{evolutionTimeline}\n\n**Changes Aligned with Your Values:**\n{valueAlignedChanges}\n\n**Future Predictions ({predictionTimeframe}):**\n{personalPredictions}\n\n**Your Influence Opportunities:**\n{influenceOpportunities}",
+        
+        "system": "⚖️ System Evolution Analysis:\n\n**Version History:**\n{versionHistory}\n\n**Change Patterns:**\n{changePatterns}\n\n**Objective Predictions ({predictionTimeframe}):**\n{systemPredictions}\n\n**Stability Assessment:**\n{stabilityAssessment}"
+      },
+      
+      "dependencies": ["version-control@v1.0.0"],
+      "mcp_tools": ["getElementUsage", "getBranchElements", "getBranchPhilosophy"]
+    },
+    
+    "philosophical-consistency-rule": {
+      "name": "Philosophical Consistency Review",
+      "description": "Check if principles align with core philosophical foundations",
+      "version": "1.0.0",
+      
+      "instruction": "Evaluate philosophical consistency of '{elementName}':\n1. Use MCP tool 'getBranchPhilosophy' to understand branch's philosophical foundation\n2. Use MCP tool 'getElementVersion' to get related principles and terms\n3. Check alignment with {philosophicalBaseline} philosophical framework\n4. Identify potential conflicts or contradictions\n5. Apply {agentType} analysis: {agentPerspective}\n6. Provide specific recommendations for better alignment considering {philosophicalDepth}",
+      
+      "parameters": {
+        "philosophicalDepth": {
+          "default": "moderate",
+          "type": "string",
+          "description": "How deep the philosophical analysis should go",
+          "branchOverrides": {
+            "animal-welfare-dahao": "deep",
+            "music-industry-dahao": "practical",
+            "environmental-dahao": "comprehensive"
+          }
+        },
+        "philosophicalBaseline": {
+          "default": "branch-specific",
+          "type": "string",
+          "description": "Which philosophical framework to use as baseline",
+          "branchOverrides": {
+            "core-dahao": "fundamental-principles",
+            "animal-welfare-dahao": "sentience-based-ethics",
+            "environmental-dahao": "ecological-philosophy"
+          }
+        },
+        "alignmentThreshold": {
+          "default": 70,
+          "type": "number",
+          "description": "Minimum philosophical alignment percentage",
+          "branchOverrides": {
+            "animal-welfare-dahao": 85,
+            "core-dahao": 75
+          }
+        },
+        "agentPerspective": {
+          "personal": "user's philosophical framework and value system",
+          "system": "DAHAO baseline principles and objective standards"
+        }
+      },
+      
+      "outputTemplates": {
+        "personal": "🤖 Personal Philosophical Analysis:\n\n**Your Philosophical Framework:**\n{userPhilosophy}\n\n**Value System Alignment:**\n- Compatibility with your values: {valueAlignment}%\n- Key alignments: {alignmentPoints}\n- Potential conflicts: {personalConflicts}\n\n**Philosophical Consistency:**\n{philosophicalAssessment}\n\n**Personal Recommendations:**\n{personalPhilosophicalSuggestions}",
+        
+        "system": "⚖️ System Philosophical Validation:\n\n**Baseline Framework:**\n{baselinePhilosophy}\n\n**Principle Alignment Analysis:**\n- Core DAHAO Consistency: {coreAlignment}%\n- Branch-Specific Fit: {branchFit}%\n- Threshold: {alignmentThreshold}%\n\n**Philosophical Integrity:**\n{integrityAssessment}\n\n**Conflicts Identified:**\n{conflictsList}\n\n**System Validation:** {systemValidation}"
+      },
+      
+      "dependencies": ["fundamental-principles@v1.0.0", "branch-philosophy@v1.0.0"],
+      "mcp_tools": ["getBranchPhilosophy", "getBranchElements", "getElementUsage"]
+    },
+    
+    "implementation-feasibility-rule": {
+      "name": "Implementation Feasibility Analysis",
+      "description": "Assess how practical it would be to implement this principle",
+      "version": "1.0.0",
+      
+      "instruction": "Assess implementation feasibility of '{elementName}' {elementType}:\n1. Use MCP tools to understand current implementation landscape\n2. Analyze resource requirements (technical, human, financial)\n3. Identify potential barriers and enablers\n4. Consider {implementationContext} context\n5. Apply {agentType} perspective: {agentPerspective}\n6. Provide feasibility score and implementation roadmap",
+      
+      "parameters": {
+        "implementationContext": {
+          "default": "general",
+          "type": "string",
+          "description": "Context for implementation assessment",
+          "branchOverrides": {
+            "animal-welfare-dahao": "welfare-focused",
+            "music-industry-dahao": "industry-specific",
+            "environmental-dahao": "sustainability-oriented"
+          }
+        },
+        "feasibilityFactors": {
+          "default": ["resources", "complexity", "adoption"],
+          "type": "array",
+          "description": "Key factors to assess in feasibility",
+          "branchOverrides": {
+            "animal-welfare-dahao": ["ethical-compliance", "welfare-impact", "resources"],
+            "music-industry-dahao": ["industry-adoption", "cost-benefit", "technical-requirements"]
+          }
+        },
+        "timeframeAssessment": {
+          "default": "medium-term",
+          "type": "string",
+          "description": "Implementation timeframe to consider",
+          "branchOverrides": {
+            "music-industry-dahao": "short-term",
+            "environmental-dahao": "long-term"
+          }
+        },
+        "agentPerspective": {
+          "personal": "feasibility within user's constraints and preferences",
+          "system": "objective assessment of implementation challenges"
+        }
+      },
+      
+      "outputTemplates": {
+        "personal": "🤖 Personal Feasibility Assessment:\n\n**Implementation Viability for You:**\n- Feasibility Score: {personalFeasibilityScore}%\n- Alignment with your capabilities: {capabilityAlignment}\n- Resource availability: {personalResources}\n\n**Your Implementation Path:**\n{personalImplementationPath}\n\n**Practical Steps You Can Take:**\n{practicalSteps}\n\n**Potential Challenges for You:**\n{personalChallenges}",
+        
+        "system": "⚖️ System Feasibility Analysis:\n\n**Objective Assessment:**\n- Overall Feasibility: {systemFeasibilityScore}%\n- Technical Complexity: {complexityRating}\n- Resource Requirements: {resourceRequirements}\n\n**Implementation Requirements:**\n{implementationRequirements}\n\n**Risk Assessment:**\n{riskAssessment}\n\n**System Recommendation:** {systemRecommendation}"
+      },
+      
+      "dependencies": ["implementation@v1.0.0"],
+      "mcp_tools": ["getBranchElements", "getElementUsage"]
+    },
+    
+    "cross-domain-impact-rule": {
+      "name": "Cross-Domain Impact Assessment",
+      "description": "Analyze how this principle affects other governance domains",
+      "version": "1.0.0",
+      
+      "instruction": "Analyze cross-domain impacts of '{elementName}':\n1. Use MCP tools to identify all connected domains\n2. Map direct and indirect impacts on each domain\n3. Assess impact severity using {impactScale} scale\n4. Consider {domainScope} domain relationships\n5. Apply {agentType} lens: {agentPerspective}\n6. Provide impact matrix and recommendations",
+      
+      "parameters": {
+        "impactScale": {
+          "default": "standard",
+          "type": "string",
+          "description": "Scale for measuring cross-domain impact",
+          "branchOverrides": {
+            "animal-welfare-dahao": "comprehensive",
+            "music-industry-dahao": "simplified"
+          }
+        },
+        "domainScope": {
+          "default": ["primary", "secondary"],
+          "type": "array",
+          "description": "Which domain relationships to analyze",
+          "branchOverrides": {
+            "core-dahao": ["primary", "secondary", "tertiary"],
+            "music-industry-dahao": ["primary"]
+          }
+        },
+        "impactThreshold": {
+          "default": "moderate",
+          "type": "string",
+          "description": "Minimum impact level to report",
+          "branchOverrides": {
+            "animal-welfare-dahao": "low",
+            "environmental-dahao": "low"
+          }
+        },
+        "agentPerspective": {
+          "personal": "impacts relevant to user's domain interests",
+          "system": "comprehensive mapping across all governance domains"
+        }
+      },
+      
+      "outputTemplates": {
+        "personal": "🤖 Personal Domain Impact Analysis:\n\n**Domains You Care About:**\n{relevantDomains}\n\n**Impact on Your Priorities:**\n{personalizedImpacts}\n\n**Cross-Domain Opportunities:**\n{crossDomainOpportunities}\n\n**Your Action Items:**\n{personalActionItems}",
+        
+        "system": "⚖️ System Cross-Domain Analysis:\n\n**Impact Matrix:**\n{impactMatrix}\n\n**Domain Relationships:**\n{domainRelationships}\n\n**Systemic Effects:**\n{systemicEffects}\n\n**Risk Mitigation Required:**\n{riskMitigation}"
+      },
+      
+      "dependencies": ["domain-mapping@v1.0.0"],
+      "mcp_tools": ["getBranchElements", "getBranchPhilosophy", "getElementUsage"]
+    },
+    
+    "enforcement-mechanism-rule": {
+      "name": "Enforcement Mechanism Review",
+      "description": "Evaluate how well a rule can be enforced in practice",
+      "version": "1.0.0",
+      
+      "instruction": "Evaluate enforcement mechanisms for '{elementName}' rule:\n1. Use MCP tools to understand current enforcement landscape\n2. Analyze enforcement methods: {enforcementMethods}\n3. Assess enforceability score based on {enforcementCriteria}\n4. Consider {enforcementContext} context\n5. Apply {agentType} perspective: {agentPerspective}\n6. Provide enforcement recommendations",
+      
+      "parameters": {
+        "enforcementMethods": {
+          "default": ["community-driven", "automated", "governance-based"],
+          "type": "array",
+          "description": "Methods of enforcement to consider",
+          "branchOverrides": {
+            "animal-welfare-dahao": ["ethical-oversight", "community-driven", "audit-based"],
+            "music-industry-dahao": ["contract-based", "platform-integration", "community-driven"]
+          }
+        },
+        "enforcementCriteria": {
+          "default": ["clarity", "measurability", "accountability"],
+          "type": "array",
+          "description": "Criteria for evaluating enforcement",
+          "branchOverrides": {
+            "core-dahao": ["transparency", "fairness", "effectiveness"],
+            "environmental-dahao": ["measurability", "verification", "impact"]
+          }
+        },
+        "enforcementContext": {
+          "default": "balanced",
+          "type": "string",
+          "description": "Context for enforcement approach",
+          "branchOverrides": {
+            "animal-welfare-dahao": "welfare-protective",
+            "music-industry-dahao": "practical-compliance"
+          }
+        },
+        "agentPerspective": {
+          "personal": "enforcement aligned with user's philosophy and capabilities",
+          "system": "objective enforcement standards and requirements"
+        }
+      },
+      
+      "outputTemplates": {
+        "personal": "🤖 Personal Enforcement Analysis:\n\n**Your Enforcement Philosophy:**\n{userEnforcementPhilosophy}\n\n**Practical Enforcement for You:**\n- Enforceability in your context: {personalEnforceability}%\n- Methods you prefer: {preferredMethods}\n- Your role in enforcement: {userRole}\n\n**Recommendations for Your Approach:**\n{personalEnforcementRecommendations}",
+        
+        "system": "⚖️ System Enforcement Validation:\n\n**Enforcement Metrics:**\n- Overall Enforceability: {systemEnforceability}%\n- Clarity Score: {clarityScore}/10\n- Measurability: {measurabilityScore}/10\n- Accountability: {accountabilityScore}/10\n\n**Enforcement Mechanisms:**\n{enforcementMechanisms}\n\n**Gaps Identified:**\n{enforcementGaps}\n\n**System Requirements:**\n{systemEnforcementRequirements}"
+      },
+      
+      "dependencies": ["enforcement@v1.0.0"],
+      "mcp_tools": ["getBranchElements", "getElementUsage"]
+    },
+    
+    "compliance-framework-rule": {
+      "name": "Compliance Framework Check",
+      "description": "Check if rule fits within existing compliance frameworks",
+      "version": "1.0.0",
+      
+      "instruction": "Check compliance framework fit for '{elementName}':\n1. Use MCP tools to map existing compliance requirements\n2. Analyze alignment with {complianceFrameworks} frameworks\n3. Identify compliance gaps or conflicts\n4. Consider {complianceContext} requirements\n5. Apply {agentType} perspective: {agentPerspective}\n6. Provide compliance score and integration path",
+      
+      "parameters": {
+        "complianceFrameworks": {
+          "default": ["internal-governance", "community-standards"],
+          "type": "array",
+          "description": "Compliance frameworks to check against",
+          "branchOverrides": {
+            "animal-welfare-dahao": ["welfare-standards", "ethical-guidelines", "internal-governance"],
+            "music-industry-dahao": ["industry-standards", "platform-policies", "legal-requirements"]
+          }
+        },
+        "complianceStrictness": {
+          "default": "moderate",
+          "type": "string",
+          "description": "How strictly to interpret compliance",
+          "branchOverrides": {
+            "animal-welfare-dahao": "strict",
+            "music-industry-dahao": "flexible"
+          }
+        },
+        "complianceContext": {
+          "default": "general",
+          "type": "string",
+          "description": "Context for compliance assessment",
+          "branchOverrides": {
+            "environmental-dahao": "sustainability-focused",
+            "core-dahao": "governance-focused"
+          }
+        },
+        "agentPerspective": {
+          "personal": "compliance priorities aligned with user's values",
+          "system": "comprehensive compliance verification"
+        }
+      },
+      
+      "outputTemplates": {
+        "personal": "🤖 Personal Compliance Assessment:\n\n**Your Compliance Priorities:**\n{userCompliancePriorities}\n\n**Framework Fit for You:**\n- Alignment with your standards: {personalAlignment}%\n- Priority frameworks: {priorityFrameworks}\n- Flexibility needed: {flexibilityAssessment}\n\n**Your Compliance Path:**\n{personalCompliancePath}",
+        
+        "system": "⚖️ System Compliance Verification:\n\n**Compliance Matrix:**\n{complianceMatrix}\n\n**Framework Analysis:**\n{frameworkAnalysis}\n\n**Compliance Gaps:**\n{complianceGaps}\n\n**Integration Requirements:**\n{integrationRequirements}\n\n**System Verdict:** {systemVerdict}"
+      },
+      
+      "dependencies": ["compliance@v1.0.0"],
+      "mcp_tools": ["getBranchElements", "getElementUsage", "getBranchPhilosophy"]
+    },
+    
+    "implementation-requirements-rule": {
+      "name": "Implementation Requirements Audit",
+      "description": "Detail what would be needed to implement this rule",
+      "version": "1.0.0",
+      
+      "instruction": "Audit implementation requirements for '{elementName}':\n1. Use MCP tools to understand implementation context\n2. Detail {requirementCategories} requirements\n3. Prioritize requirements based on {prioritizationMethod}\n4. Consider {implementationScope} scope\n5. Apply {agentType} perspective: {agentPerspective}\n6. Provide comprehensive requirements list with timeline",
+      
+      "parameters": {
+        "requirementCategories": {
+          "default": ["technical", "human", "process", "resource"],
+          "type": "array",
+          "description": "Categories of requirements to audit",
+          "branchOverrides": {
+            "animal-welfare-dahao": ["ethical", "welfare", "technical", "oversight"],
+            "music-industry-dahao": ["platform", "legal", "technical", "business"]
+          }
+        },
+        "prioritizationMethod": {
+          "default": "impact-effort",
+          "type": "string",
+          "description": "Method for prioritizing requirements",
+          "branchOverrides": {
+            "animal-welfare-dahao": "welfare-impact",
+            "environmental-dahao": "sustainability-first"
+          }
+        },
+        "implementationScope": {
+          "default": "standard",
+          "type": "string",
+          "description": "Scope of implementation to consider",
+          "branchOverrides": {
+            "core-dahao": "comprehensive",
+            "music-industry-dahao": "mvp-focused"
+          }
+        },
+        "detailLevel": {
+          "default": "moderate",
+          "type": "string",
+          "description": "Level of detail for requirements",
+          "branchOverrides": {
+            "animal-welfare-dahao": "exhaustive",
+            "music-industry-dahao": "practical"
+          }
+        },
+        "agentPerspective": {
+          "personal": "requirements relevant to user's implementation style",
+          "system": "comprehensive requirements for full implementation"
+        }
+      },
+      
+      "outputTemplates": {
+        "personal": "🤖 Personal Requirements Analysis:\n\n**Your Implementation Style:**\n{userImplementationStyle}\n\n**Requirements for Your Context:**\n{personalizedRequirements}\n\n**Priority Actions for You:**\n{personalPriorityActions}\n\n**Resources You'll Need:**\n{personalResources}\n\n**Your Timeline:**\n{personalTimeline}",
+        
+        "system": "⚖️ System Requirements Audit:\n\n**Complete Requirements Matrix:**\n{requirementsMatrix}\n\n**Critical Path:**\n{criticalPath}\n\n**Resource Allocation:**\n{resourceAllocation}\n\n**Risk Assessment:**\n{riskAssessment}\n\n**Implementation Timeline:**\n{systemTimeline}"
+      },
+      
+      "dependencies": ["implementation@v1.0.0"],
+      "mcp_tools": ["getBranchElements", "getElementUsage", "getBranchPhilosophy"]
+    },
+    
+    "general-analysis-rule": {
+      "name": "General Analysis",
+      "description": "Comprehensive analysis of the governance element",
+      "version": "1.0.0",
+      
+      "instruction": "Provide comprehensive analysis of '{elementName}' {elementType}:\n1. Use all available MCP tools to gather complete context\n2. Analyze from {analysisPerspectives} perspectives\n3. Apply {comprehensiveness} level of analysis\n4. Use {analysisFramework} framework\n5. Consider {agentType} approach: {agentPerspective}\n6. Provide balanced assessment with specific recommendations",
+      
+      "parameters": {
+        "comprehensiveness": {
+          "default": "balanced",
+          "type": "string",
+          "description": "How comprehensive the analysis should be",
+          "branchOverrides": {
+            "animal-welfare-dahao": "thorough",
+            "music-industry-dahao": "focused",
+            "core-dahao": "comprehensive"
+          }
+        },
+        "analysisPerspectives": {
+          "default": ["clarity", "consistency", "feasibility", "impact"],
+          "type": "array",
+          "description": "Perspectives to analyze from",
+          "branchOverrides": {
+            "animal-welfare-dahao": ["ethical", "welfare", "practical", "systemic"],
+            "environmental-dahao": ["sustainability", "impact", "feasibility", "justice"]
+          }
+        },
+        "analysisFramework": {
+          "default": ["SWOT", "feasibility", "impact"],
+          "type": "array",
+          "description": "Analysis frameworks to apply",
+          "branchOverrides": {
+            "music-industry-dahao": ["cost-benefit", "market-fit", "feasibility"],
+            "animal-welfare-dahao": ["ethical-impact", "welfare-assessment", "SWOT"]
+          }
+        },
+        "recommendationFocus": {
+          "default": "balanced",
+          "type": "string",
+          "description": "Focus area for recommendations",
+          "branchOverrides": {
+            "animal-welfare-dahao": "welfare-maximizing",
+            "music-industry-dahao": "practical-implementation"
+          }
+        },
+        "agentPerspective": {
+          "personal": "comprehensive review aligned with user's interests and values",
+          "system": "objective systematic evaluation across all dimensions"
+        }
+      },
+      
+      "outputTemplates": {
+        "personal": "🤖 Comprehensive Personal Analysis:\n\n**Overall Assessment for You:**\n- Element Quality: {overallScore}/10\n- Alignment with Your Values: {personalAlignment}%\n- Relevance to Your Goals: {goalRelevance}\n\n**Multi-Perspective Analysis:**\n{perspectiveAnalysis}\n\n**What This Means for You:**\n{personalImplications}\n\n**Your Opportunities:**\n{personalOpportunities}\n\n**Tailored Recommendations:**\n{personalRecommendations}\n\n**Next Steps for You:**\n{personalNextSteps}",
+        
+        "system": "⚖️ System Comprehensive Evaluation:\n\n**Executive Summary:**\n{executiveSummary}\n\n**Systematic Assessment:**\n- Overall Quality: {systemScore}/10\n- Baseline Compliance: {complianceLevel}%\n- Implementation Readiness: {readinessScore}/10\n\n**Multi-Dimensional Analysis:**\n{dimensionalAnalysis}\n\n**Framework Results:**\n{frameworkResults}\n\n**Critical Findings:**\n{criticalFindings}\n\n**System Recommendations:**\n{systemRecommendations}\n\n**Required Actions:**\n{requiredActions}"
+      },
+      
+      "dependencies": ["analysis-framework@v1.0.0"],
+      "mcp_tools": ["getBranchElements", "getElementUsage", "getBranchPhilosophy"]
+    }
+  }
+}

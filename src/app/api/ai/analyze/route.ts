@@ -2,7 +2,7 @@
 // Processes AI analysis requests and returns real Claude analysis
 
 import { NextRequest, NextResponse } from 'next/server';
-import { claudeService } from '@/lib/ai/claude-service';
+import { enhancedClaudeService } from '@/lib/ai/enhanced-claude-service';
 import { saveAnalysis } from '@/lib/ai/json-storage';
 import { AnalysisRequest } from '@/lib/ai/types';
 
@@ -50,8 +50,8 @@ export async function POST(request: NextRequest) {
       taskType: body.task.taskType
     });
 
-    // Process analysis with Claude
-    const analysis = await claudeService.analyzeGovernanceElement(body);
+    // Process analysis with Enhanced Claude (Rule-based)
+    const analysis = await enhancedClaudeService.analyzeGovernanceElement(body);
 
     // Save to JSON storage
     await saveAnalysis(analysis);
