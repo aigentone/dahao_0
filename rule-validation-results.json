@@ -1,0 +1,2759 @@
+{
+  "metadata": {
+    "testDate": "2025-06-28T15:32:46.772Z",
+    "totalTests": 30,
+    "successCount": 30,
+    "successRate": "100.0",
+    "scenarios": 3,
+    "ruleTypes": 10
+  },
+  "summary": {
+    "totalTests": 30,
+    "successful": 30,
+    "failed": 0,
+    "successRate": "100.0",
+    "averageResponseTime": 10984,
+    "totalCost": 0.561912,
+    "averageConfidence": "86.3",
+    "totalTokens": 114920,
+    "ruleTypeStats": {
+      "definition-clarity": {
+        "total": 3,
+        "successful": 3,
+        "successRate": "100.0",
+        "averageConfidence": "85.0",
+        "averageTools": "2.0"
+      },
+      "usage-consistency": {
+        "total": 3,
+        "successful": 3,
+        "successRate": "100.0",
+        "averageConfidence": "88.0",
+        "averageTools": "2.0"
+      },
+      "evolution-analysis": {
+        "total": 3,
+        "successful": 3,
+        "successRate": "100.0",
+        "averageConfidence": "85.0",
+        "averageTools": "3.0"
+      },
+      "philosophical-consistency": {
+        "total": 3,
+        "successful": 3,
+        "successRate": "100.0",
+        "averageConfidence": "87.0",
+        "averageTools": "3.0"
+      },
+      "implementation-feasibility": {
+        "total": 3,
+        "successful": 3,
+        "successRate": "100.0",
+        "averageConfidence": "89.7",
+        "averageTools": "2.0"
+      },
+      "cross-domain-impact": {
+        "total": 3,
+        "successful": 3,
+        "successRate": "100.0",
+        "averageConfidence": "85.0",
+        "averageTools": "3.0"
+      },
+      "enforcement-mechanism": {
+        "total": 3,
+        "successful": 3,
+        "successRate": "100.0",
+        "averageConfidence": "85.7",
+        "averageTools": "2.0"
+      },
+      "compliance-framework": {
+        "total": 3,
+        "successful": 3,
+        "successRate": "100.0",
+        "averageConfidence": "87.3",
+        "averageTools": "3.0"
+      },
+      "implementation-requirements": {
+        "total": 3,
+        "successful": 3,
+        "successRate": "100.0",
+        "averageConfidence": "85.0",
+        "averageTools": "3.0"
+      },
+      "general-analysis": {
+        "total": 3,
+        "successful": 3,
+        "successRate": "100.0",
+        "averageConfidence": "85.0",
+        "averageTools": "3.0"
+      }
+    }
+  },
+  "results": [
+    {
+      "ruleType": "definition-clarity",
+      "scenario": "John Personal Branch - Term Analysis",
+      "agentType": "personal",
+      "status": "success",
+      "duration": 11260,
+      "governance": {
+        "hasToolExecution": true,
+        "toolsUsed": [
+          "getBranchElements",
+          "getElementUsage"
+        ],
+        "branchSpecific": true,
+        "governanceAware": true,
+        "personalizedContent": true,
+        "confidenceScore": 85,
+        "analysisLength": 2389,
+        "governanceKeywords": [
+          {
+            "keyword": "branch",
+            "count": 2
+          },
+          {
+            "keyword": "version",
+            "count": 1
+          },
+          {
+            "keyword": "governance",
+            "count": 3
+          },
+          {
+            "keyword": "principle",
+            "count": 3
+          },
+          {
+            "keyword": "rule",
+            "count": 1
+          },
+          {
+            "keyword": "transparency",
+            "count": 9
+          },
+          {
+            "keyword": "values",
+            "count": 4
+          }
+        ],
+        "branchMentions": [
+          "branch",
+          "branch"
+        ],
+        "versionMentions": [
+          "v1.3.0",
+          "v1.3.0",
+          "v1.0.0",
+          "v1.0.0",
+          "v1.0.0",
+          "v1.0.0"
+        ]
+      },
+      "analysis": {
+        "id": "analysis-1751124433427-euklg4923",
+        "confidence": 85,
+        "tokensUsed": 4192,
+        "cost": 0.019752,
+        "analysisLength": 2389
+      },
+      "execution": {
+        "agentId": "personal-rules-claude-3-5-sonnet",
+        "agentProvider": "anthropic",
+        "modelVersion": "claude-3-5-sonnet-20241022",
+        "temperature": 0.7,
+        "promptTemplate": "rule-based-personal",
+        "promptTokens": 3594,
+        "ruleId": "definition-clarity-rule",
+        "ruleName": "Definition Clarity Review",
+        "mcpToolsUsed": [
+          "getBranchElements",
+          "getElementUsage"
+        ],
+        "parametersUsed": {
+          "analysisDepth": "comprehensive",
+          "focusAreas": [
+            "clarity",
+            "precision",
+            "usability"
+          ],
+          "agentPerspective": "user's communication preferences and values"
+        }
+      },
+      "timestamp": "2025-06-28T15:27:13.441Z"
+    },
+    {
+      "ruleType": "usage-consistency",
+      "scenario": "John Personal Branch - Term Analysis",
+      "agentType": "personal",
+      "status": "success",
+      "duration": 9753,
+      "governance": {
+        "hasToolExecution": true,
+        "toolsUsed": [
+          "getElementUsage",
+          "getBranchElements"
+        ],
+        "branchSpecific": true,
+        "governanceAware": true,
+        "personalizedContent": true,
+        "confidenceScore": 85,
+        "analysisLength": 2114,
+        "governanceKeywords": [
+          {
+            "keyword": "branch",
+            "count": 2
+          },
+          {
+            "keyword": "governance",
+            "count": 3
+          },
+          {
+            "keyword": "usage",
+            "count": 3
+          },
+          {
+            "keyword": "principle",
+            "count": 4
+          },
+          {
+            "keyword": "rule",
+            "count": 2
+          },
+          {
+            "keyword": "transparency",
+            "count": 6
+          },
+          {
+            "keyword": "values",
+            "count": 2
+          },
+          {
+            "keyword": "requirements",
+            "count": 1
+          }
+        ],
+        "branchMentions": [
+          "branch",
+          "branch"
+        ],
+        "versionMentions": []
+      },
+      "analysis": {
+        "id": "analysis-1751124443680-9yb6lqyeo",
+        "confidence": 85,
+        "tokensUsed": 4093,
+        "cost": 0.018626999999999998,
+        "analysisLength": 2114
+      },
+      "execution": {
+        "agentId": "personal-rules-claude-3-5-sonnet",
+        "agentProvider": "anthropic",
+        "modelVersion": "claude-3-5-sonnet-20241022",
+        "temperature": 0.7,
+        "promptTemplate": "rule-based-personal",
+        "promptTokens": 3564,
+        "ruleId": "usage-consistency-rule",
+        "ruleName": "Usage Consistency Check",
+        "mcpToolsUsed": [
+          "getElementUsage",
+          "getBranchElements"
+        ],
+        "parametersUsed": {
+          "consistencyThreshold": 80,
+          "contextSensitivity": "moderate",
+          "agentPerspective": "user's contextual priorities and flexible interpretation"
+        }
+      },
+      "timestamp": "2025-06-28T15:27:23.696Z"
+    },
+    {
+      "ruleType": "evolution-analysis",
+      "scenario": "John Personal Branch - Term Analysis",
+      "agentType": "personal",
+      "status": "success",
+      "duration": 12094,
+      "governance": {
+        "hasToolExecution": true,
+        "toolsUsed": [
+          "getElementUsage",
+          "getBranchElements",
+          "getBranchPhilosophy"
+        ],
+        "branchSpecific": true,
+        "governanceAware": true,
+        "personalizedContent": true,
+        "confidenceScore": 85,
+        "analysisLength": 2191,
+        "governanceKeywords": [
+          {
+            "keyword": "branch",
+            "count": 4
+          },
+          {
+            "keyword": "governance",
+            "count": 5
+          },
+          {
+            "keyword": "principle",
+            "count": 2
+          },
+          {
+            "keyword": "rule",
+            "count": 1
+          },
+          {
+            "keyword": "transparency",
+            "count": 10
+          },
+          {
+            "keyword": "values",
+            "count": 1
+          }
+        ],
+        "branchMentions": [
+          "branch",
+          "Branch",
+          "branch",
+          "branch"
+        ],
+        "versionMentions": [
+          "v1.0.0",
+          "v1.2.0",
+          "v1.3.0"
+        ]
+      },
+      "analysis": {
+        "id": "analysis-1751124456280-cw0x9zly1",
+        "confidence": 85,
+        "tokensUsed": 4177,
+        "cost": 0.019107,
+        "analysisLength": 2191
+      },
+      "execution": {
+        "agentId": "personal-rules-claude-3-5-sonnet",
+        "agentProvider": "anthropic",
+        "modelVersion": "claude-3-5-sonnet-20241022",
+        "temperature": 0.7,
+        "promptTemplate": "rule-based-personal",
+        "promptTokens": 3629,
+        "ruleId": "evolution-analysis-rule",
+        "ruleName": "Evolution Analysis",
+        "mcpToolsUsed": [
+          "getElementUsage",
+          "getBranchElements",
+          "getBranchPhilosophy"
+        ],
+        "parametersUsed": {
+          "predictionTimeframe": "6-12 months",
+          "evolutionFactors": [
+            "community-feedback",
+            "external-changes",
+            "usage-patterns"
+          ],
+          "agentPerspective": "evolution aligned with user's values and priorities"
+        }
+      },
+      "timestamp": "2025-06-28T15:27:36.292Z"
+    },
+    {
+      "ruleType": "philosophical-consistency",
+      "scenario": "John Personal Branch - Term Analysis",
+      "agentType": "personal",
+      "status": "success",
+      "duration": 12336,
+      "governance": {
+        "hasToolExecution": true,
+        "toolsUsed": [
+          "getBranchPhilosophy",
+          "getBranchElements",
+          "getElementUsage"
+        ],
+        "branchSpecific": true,
+        "governanceAware": true,
+        "personalizedContent": true,
+        "confidenceScore": 85,
+        "analysisLength": 2693,
+        "governanceKeywords": [
+          {
+            "keyword": "branch",
+            "count": 2
+          },
+          {
+            "keyword": "governance",
+            "count": 7
+          },
+          {
+            "keyword": "philosophy",
+            "count": 1
+          },
+          {
+            "keyword": "principle",
+            "count": 5
+          },
+          {
+            "keyword": "transparency",
+            "count": 11
+          },
+          {
+            "keyword": "values",
+            "count": 4
+          },
+          {
+            "keyword": "requirements",
+            "count": 1
+          }
+        ],
+        "branchMentions": [
+          "branch",
+          "branch"
+        ],
+        "versionMentions": [
+          "v1.4.0"
+        ]
+      },
+      "analysis": {
+        "id": "analysis-1751124469117-qoej85alw",
+        "confidence": 85,
+        "tokensUsed": 4348,
+        "cost": 0.021132,
+        "analysisLength": 2693
+      },
+      "execution": {
+        "agentId": "personal-rules-claude-3-5-sonnet",
+        "agentProvider": "anthropic",
+        "modelVersion": "claude-3-5-sonnet-20241022",
+        "temperature": 0.7,
+        "promptTemplate": "rule-based-personal",
+        "promptTokens": 3674,
+        "ruleId": "philosophical-consistency-rule",
+        "ruleName": "Philosophical Consistency Review",
+        "mcpToolsUsed": [
+          "getBranchPhilosophy",
+          "getBranchElements",
+          "getElementUsage"
+        ],
+        "parametersUsed": {
+          "philosophicalDepth": "moderate",
+          "philosophicalBaseline": "branch-specific",
+          "alignmentThreshold": 70,
+          "agentPerspective": "user's philosophical framework and value system"
+        }
+      },
+      "timestamp": "2025-06-28T15:27:49.130Z"
+    },
+    {
+      "ruleType": "implementation-feasibility",
+      "scenario": "John Personal Branch - Term Analysis",
+      "agentType": "personal",
+      "status": "success",
+      "duration": 12084,
+      "governance": {
+        "hasToolExecution": true,
+        "toolsUsed": [
+          "getBranchElements",
+          "getElementUsage"
+        ],
+        "branchSpecific": true,
+        "governanceAware": true,
+        "personalizedContent": true,
+        "confidenceScore": 92,
+        "analysisLength": 2465,
+        "governanceKeywords": [
+          {
+            "keyword": "branch",
+            "count": 2
+          },
+          {
+            "keyword": "governance",
+            "count": 3
+          },
+          {
+            "keyword": "principle",
+            "count": 2
+          },
+          {
+            "keyword": "transparency",
+            "count": 5
+          },
+          {
+            "keyword": "values",
+            "count": 1
+          }
+        ],
+        "branchMentions": [
+          "branch",
+          "branch"
+        ],
+        "versionMentions": []
+      },
+      "analysis": {
+        "id": "analysis-1751124481704-jxbot1b9f",
+        "confidence": 92,
+        "tokensUsed": 4191,
+        "cost": 0.019976999999999998,
+        "analysisLength": 2465
+      },
+      "execution": {
+        "agentId": "personal-rules-claude-3-5-sonnet",
+        "agentProvider": "anthropic",
+        "modelVersion": "claude-3-5-sonnet-20241022",
+        "temperature": 0.7,
+        "promptTemplate": "rule-based-personal",
+        "promptTokens": 3574,
+        "ruleId": "implementation-feasibility-rule",
+        "ruleName": "Implementation Feasibility Analysis",
+        "mcpToolsUsed": [
+          "getBranchElements",
+          "getElementUsage"
+        ],
+        "parametersUsed": {
+          "implementationContext": "general",
+          "feasibilityFactors": [
+            "resources",
+            "complexity",
+            "adoption"
+          ],
+          "timeframeAssessment": "medium-term",
+          "agentPerspective": "feasibility within user's constraints and preferences"
+        }
+      },
+      "timestamp": "2025-06-28T15:28:01.716Z"
+    },
+    {
+      "ruleType": "cross-domain-impact",
+      "scenario": "John Personal Branch - Term Analysis",
+      "agentType": "personal",
+      "status": "success",
+      "duration": 12059,
+      "governance": {
+        "hasToolExecution": true,
+        "toolsUsed": [
+          "getBranchElements",
+          "getBranchPhilosophy",
+          "getElementUsage"
+        ],
+        "branchSpecific": true,
+        "governanceAware": true,
+        "personalizedContent": true,
+        "confidenceScore": 85,
+        "analysisLength": 2550,
+        "governanceKeywords": [
+          {
+            "keyword": "branch",
+            "count": 6
+          },
+          {
+            "keyword": "governance",
+            "count": 5
+          },
+          {
+            "keyword": "customization",
+            "count": 1
+          },
+          {
+            "keyword": "principle",
+            "count": 2
+          },
+          {
+            "keyword": "rule",
+            "count": 1
+          },
+          {
+            "keyword": "transparency",
+            "count": 13
+          }
+        ],
+        "branchMentions": [
+          "branch",
+          "branch",
+          "branch",
+          "branch",
+          "branch",
+          "branch"
+        ],
+        "versionMentions": []
+      },
+      "analysis": {
+        "id": "analysis-1751124494264-ixie8raj2",
+        "confidence": 85,
+        "tokensUsed": 4243,
+        "cost": 0.020385,
+        "analysisLength": 2550
+      },
+      "execution": {
+        "agentId": "personal-rules-claude-3-5-sonnet",
+        "agentProvider": "anthropic",
+        "modelVersion": "claude-3-5-sonnet-20241022",
+        "temperature": 0.7,
+        "promptTemplate": "rule-based-personal",
+        "promptTokens": 3605,
+        "ruleId": "cross-domain-impact-rule",
+        "ruleName": "Cross-Domain Impact Assessment",
+        "mcpToolsUsed": [
+          "getBranchElements",
+          "getBranchPhilosophy",
+          "getElementUsage"
+        ],
+        "parametersUsed": {
+          "impactScale": "standard",
+          "domainScope": [
+            "primary",
+            "secondary"
+          ],
+          "impactThreshold": "moderate",
+          "agentPerspective": "impacts relevant to user's domain interests"
+        }
+      },
+      "timestamp": "2025-06-28T15:28:14.276Z"
+    },
+    {
+      "ruleType": "enforcement-mechanism",
+      "scenario": "John Personal Branch - Term Analysis",
+      "agentType": "personal",
+      "status": "success",
+      "duration": 10114,
+      "governance": {
+        "hasToolExecution": true,
+        "toolsUsed": [
+          "getBranchElements",
+          "getElementUsage"
+        ],
+        "branchSpecific": true,
+        "governanceAware": true,
+        "personalizedContent": true,
+        "confidenceScore": 87,
+        "analysisLength": 2235,
+        "governanceKeywords": [
+          {
+            "keyword": "branch",
+            "count": 1
+          },
+          {
+            "keyword": "version",
+            "count": 1
+          },
+          {
+            "keyword": "philosophy",
+            "count": 2
+          },
+          {
+            "keyword": "transparency",
+            "count": 3
+          },
+          {
+            "keyword": "values",
+            "count": 1
+          }
+        ],
+        "branchMentions": [
+          "branch"
+        ],
+        "versionMentions": []
+      },
+      "analysis": {
+        "id": "analysis-1751124504877-lott9qhie",
+        "confidence": 87,
+        "tokensUsed": 4128,
+        "cost": 0.019091999999999998,
+        "analysisLength": 2235
+      },
+      "execution": {
+        "agentId": "personal-rules-claude-3-5-sonnet",
+        "agentProvider": "anthropic",
+        "modelVersion": "claude-3-5-sonnet-20241022",
+        "temperature": 0.7,
+        "promptTemplate": "rule-based-personal",
+        "promptTokens": 3569,
+        "ruleId": "enforcement-mechanism-rule",
+        "ruleName": "Enforcement Mechanism Review",
+        "mcpToolsUsed": [
+          "getBranchElements",
+          "getElementUsage"
+        ],
+        "parametersUsed": {
+          "enforcementMethods": [
+            "community-driven",
+            "automated",
+            "governance-based"
+          ],
+          "enforcementCriteria": [
+            "clarity",
+            "measurability",
+            "accountability"
+          ],
+          "enforcementContext": "balanced",
+          "agentPerspective": "enforcement aligned with user's philosophy and capabilities"
+        }
+      },
+      "timestamp": "2025-06-28T15:28:24.892Z"
+    },
+    {
+      "ruleType": "compliance-framework",
+      "scenario": "John Personal Branch - Term Analysis",
+      "agentType": "personal",
+      "status": "success",
+      "duration": 8516,
+      "governance": {
+        "hasToolExecution": true,
+        "toolsUsed": [
+          "getBranchElements",
+          "getElementUsage",
+          "getBranchPhilosophy"
+        ],
+        "branchSpecific": true,
+        "governanceAware": true,
+        "personalizedContent": true,
+        "confidenceScore": 87,
+        "analysisLength": 2001,
+        "governanceKeywords": [
+          {
+            "keyword": "branch",
+            "count": 1
+          },
+          {
+            "keyword": "governance",
+            "count": 4
+          },
+          {
+            "keyword": "customization",
+            "count": 3
+          },
+          {
+            "keyword": "principle",
+            "count": 2
+          },
+          {
+            "keyword": "transparency",
+            "count": 8
+          },
+          {
+            "keyword": "values",
+            "count": 3
+          },
+          {
+            "keyword": "requirements",
+            "count": 1
+          }
+        ],
+        "branchMentions": [
+          "branch"
+        ],
+        "versionMentions": []
+      },
+      "analysis": {
+        "id": "analysis-1751124513896-cjteotkox",
+        "confidence": 87,
+        "tokensUsed": 4141,
+        "cost": 0.018435,
+        "analysisLength": 2001
+      },
+      "execution": {
+        "agentId": "personal-rules-claude-3-5-sonnet",
+        "agentProvider": "anthropic",
+        "modelVersion": "claude-3-5-sonnet-20241022",
+        "temperature": 0.7,
+        "promptTemplate": "rule-based-personal",
+        "promptTokens": 3640,
+        "ruleId": "compliance-framework-rule",
+        "ruleName": "Compliance Framework Check",
+        "mcpToolsUsed": [
+          "getBranchElements",
+          "getElementUsage",
+          "getBranchPhilosophy"
+        ],
+        "parametersUsed": {
+          "complianceFrameworks": [
+            "internal-governance",
+            "community-standards"
+          ],
+          "complianceStrictness": "moderate",
+          "complianceContext": "general",
+          "agentPerspective": "compliance priorities aligned with user's values"
+        }
+      },
+      "timestamp": "2025-06-28T15:28:33.909Z"
+    },
+    {
+      "ruleType": "implementation-requirements",
+      "scenario": "John Personal Branch - Term Analysis",
+      "agentType": "personal",
+      "status": "success",
+      "duration": 11541,
+      "governance": {
+        "hasToolExecution": true,
+        "toolsUsed": [
+          "getBranchElements",
+          "getElementUsage",
+          "getBranchPhilosophy"
+        ],
+        "branchSpecific": true,
+        "governanceAware": true,
+        "personalizedContent": true,
+        "confidenceScore": 85,
+        "analysisLength": 2713,
+        "governanceKeywords": [
+          {
+            "keyword": "branch",
+            "count": 2
+          },
+          {
+            "keyword": "version",
+            "count": 2
+          },
+          {
+            "keyword": "governance",
+            "count": 1
+          },
+          {
+            "keyword": "philosophy",
+            "count": 2
+          },
+          {
+            "keyword": "transparency",
+            "count": 7
+          },
+          {
+            "keyword": "values",
+            "count": 1
+          },
+          {
+            "keyword": "requirements",
+            "count": 7
+          }
+        ],
+        "branchMentions": [
+          "branch",
+          "branch"
+        ],
+        "versionMentions": []
+      },
+      "analysis": {
+        "id": "analysis-1751124525933-nlho5brz1",
+        "confidence": 85,
+        "tokensUsed": 4325,
+        "cost": 0.021123,
+        "analysisLength": 2713
+      },
+      "execution": {
+        "agentId": "personal-rules-claude-3-5-sonnet",
+        "agentProvider": "anthropic",
+        "modelVersion": "claude-3-5-sonnet-20241022",
+        "temperature": 0.7,
+        "promptTemplate": "rule-based-personal",
+        "promptTokens": 3646,
+        "ruleId": "implementation-requirements-rule",
+        "ruleName": "Implementation Requirements Audit",
+        "mcpToolsUsed": [
+          "getBranchElements",
+          "getElementUsage",
+          "getBranchPhilosophy"
+        ],
+        "parametersUsed": {
+          "requirementCategories": [
+            "technical",
+            "human",
+            "process",
+            "resource"
+          ],
+          "prioritizationMethod": "impact-effort",
+          "implementationScope": "standard",
+          "detailLevel": "moderate",
+          "agentPerspective": "requirements relevant to user's implementation style"
+        }
+      },
+      "timestamp": "2025-06-28T15:28:45.954Z"
+    },
+    {
+      "ruleType": "general-analysis",
+      "scenario": "John Personal Branch - Term Analysis",
+      "agentType": "personal",
+      "status": "success",
+      "duration": 13407,
+      "governance": {
+        "hasToolExecution": true,
+        "toolsUsed": [
+          "getBranchElements",
+          "getElementUsage",
+          "getBranchPhilosophy"
+        ],
+        "branchSpecific": true,
+        "governanceAware": true,
+        "personalizedContent": true,
+        "confidenceScore": 85,
+        "analysisLength": 3065,
+        "governanceKeywords": [
+          {
+            "keyword": "branch",
+            "count": 2
+          },
+          {
+            "keyword": "version",
+            "count": 2
+          },
+          {
+            "keyword": "governance",
+            "count": 5
+          },
+          {
+            "keyword": "element",
+            "count": 3
+          },
+          {
+            "keyword": "usage",
+            "count": 1
+          },
+          {
+            "keyword": "principle",
+            "count": 5
+          },
+          {
+            "keyword": "transparency",
+            "count": 14
+          },
+          {
+            "keyword": "values",
+            "count": 2
+          }
+        ],
+        "branchMentions": [
+          "branch",
+          "branch"
+        ],
+        "versionMentions": []
+      },
+      "analysis": {
+        "id": "analysis-1751124539849-zuwsokene",
+        "confidence": 85,
+        "tokensUsed": 4463,
+        "cost": 0.022593000000000002,
+        "analysisLength": 3065
+      },
+      "execution": {
+        "agentId": "personal-rules-claude-3-5-sonnet",
+        "agentProvider": "anthropic",
+        "modelVersion": "claude-3-5-sonnet-20241022",
+        "temperature": 0.7,
+        "promptTemplate": "rule-based-personal",
+        "promptTokens": 3696,
+        "ruleId": "general-analysis-rule",
+        "ruleName": "General Analysis",
+        "mcpToolsUsed": [
+          "getBranchElements",
+          "getElementUsage",
+          "getBranchPhilosophy"
+        ],
+        "parametersUsed": {
+          "comprehensiveness": "balanced",
+          "analysisPerspectives": [
+            "clarity",
+            "consistency",
+            "feasibility",
+            "impact"
+          ],
+          "analysisFramework": [
+            "SWOT",
+            "feasibility",
+            "impact"
+          ],
+          "recommendationFocus": "balanced",
+          "agentPerspective": "comprehensive review aligned with user's interests and values"
+        }
+      },
+      "timestamp": "2025-06-28T15:28:59.862Z"
+    },
+    {
+      "ruleType": "definition-clarity",
+      "scenario": "Core DAHAO - Principle Analysis",
+      "agentType": "system",
+      "status": "success",
+      "duration": 10264,
+      "governance": {
+        "hasToolExecution": true,
+        "toolsUsed": [
+          "getBranchElements",
+          "getElementUsage"
+        ],
+        "branchSpecific": true,
+        "governanceAware": true,
+        "personalizedContent": false,
+        "confidenceScore": 85,
+        "analysisLength": 2100,
+        "governanceKeywords": [
+          {
+            "keyword": "version",
+            "count": 2
+          },
+          {
+            "keyword": "governance",
+            "count": 5
+          },
+          {
+            "keyword": "element",
+            "count": 2
+          },
+          {
+            "keyword": "usage",
+            "count": 1
+          },
+          {
+            "keyword": "principle",
+            "count": 3
+          },
+          {
+            "keyword": "transparency",
+            "count": 3
+          },
+          {
+            "keyword": "requirements",
+            "count": 6
+          }
+        ],
+        "branchMentions": [
+          "Core DAHAO"
+        ],
+        "versionMentions": [
+          "v1.0.0",
+          "v1.1.0"
+        ]
+      },
+      "analysis": {
+        "id": "analysis-1751124550606-4jzifo3t4",
+        "confidence": 85,
+        "tokensUsed": 3321,
+        "cost": 0.016263,
+        "analysisLength": 2100
+      },
+      "execution": {
+        "agentId": "system-rules-claude-3-5-sonnet",
+        "agentProvider": "anthropic",
+        "modelVersion": "claude-3-5-sonnet-20241022",
+        "temperature": 0.7,
+        "promptTemplate": "rule-based-system",
+        "promptTokens": 2796,
+        "systemBaseline": {
+          "branchId": "core-dahao",
+          "branchName": "Core DAHAO",
+          "version": "1.2.0",
+          "domainFocus": [
+            "general governance",
+            "foundational principles",
+            "democratic processes"
+          ]
+        },
+        "ruleId": "definition-clarity-rule",
+        "ruleName": "Definition Clarity Review",
+        "mcpToolsUsed": [
+          "getBranchElements",
+          "getElementUsage"
+        ],
+        "parametersUsed": {
+          "analysisDepth": "comprehensive",
+          "focusAreas": [
+            "clarity",
+            "precision",
+            "usability"
+          ],
+          "agentPerspective": "objective standards and baseline requirements"
+        }
+      },
+      "timestamp": "2025-06-28T15:29:10.627Z"
+    },
+    {
+      "ruleType": "usage-consistency",
+      "scenario": "Core DAHAO - Principle Analysis",
+      "agentType": "system",
+      "status": "success",
+      "duration": 9447,
+      "governance": {
+        "hasToolExecution": true,
+        "toolsUsed": [
+          "getElementUsage",
+          "getBranchElements"
+        ],
+        "branchSpecific": true,
+        "governanceAware": true,
+        "personalizedContent": false,
+        "confidenceScore": 92,
+        "analysisLength": 2009,
+        "governanceKeywords": [
+          {
+            "keyword": "branch",
+            "count": 1
+          },
+          {
+            "keyword": "version",
+            "count": 4
+          },
+          {
+            "keyword": "governance",
+            "count": 2
+          },
+          {
+            "keyword": "element",
+            "count": 7
+          },
+          {
+            "keyword": "usage",
+            "count": 1
+          },
+          {
+            "keyword": "philosophy",
+            "count": 1
+          },
+          {
+            "keyword": "principle",
+            "count": 1
+          },
+          {
+            "keyword": "rule",
+            "count": 1
+          },
+          {
+            "keyword": "transparency",
+            "count": 5
+          },
+          {
+            "keyword": "requirements",
+            "count": 5
+          }
+        ],
+        "branchMentions": [
+          "branch",
+          "Version Mismatch: The element doesn't reference the specific version (v1.1.0",
+          "version referencing: Must use transparency@v1.1.0"
+        ],
+        "versionMentions": [
+          "v1.1.0",
+          "v1.1.0",
+          "v1.1.0",
+          "Version Mismatch: The element doesn't reference the specific version (v1.1.0",
+          "version referencing: Must use transparency@v1.1.0"
+        ]
+      },
+      "analysis": {
+        "id": "analysis-1751124560545-pt8mcxbsh",
+        "confidence": 92,
+        "tokensUsed": 3269,
+        "cost": 0.015843,
+        "analysisLength": 2009
+      },
+      "execution": {
+        "agentId": "system-rules-claude-3-5-sonnet",
+        "agentProvider": "anthropic",
+        "modelVersion": "claude-3-5-sonnet-20241022",
+        "temperature": 0.7,
+        "promptTemplate": "rule-based-system",
+        "promptTokens": 2766,
+        "systemBaseline": {
+          "branchId": "core-dahao",
+          "branchName": "Core DAHAO",
+          "version": "1.2.0",
+          "domainFocus": [
+            "general governance",
+            "foundational principles",
+            "democratic processes"
+          ]
+        },
+        "ruleId": "usage-consistency-rule",
+        "ruleName": "Usage Consistency Check",
+        "mcpToolsUsed": [
+          "getElementUsage",
+          "getBranchElements"
+        ],
+        "parametersUsed": {
+          "consistencyThreshold": 85,
+          "contextSensitivity": "moderate",
+          "agentPerspective": "strict consistency across all governance elements"
+        }
+      },
+      "timestamp": "2025-06-28T15:29:20.576Z"
+    },
+    {
+      "ruleType": "evolution-analysis",
+      "scenario": "Core DAHAO - Principle Analysis",
+      "agentType": "system",
+      "status": "success",
+      "duration": 9577,
+      "governance": {
+        "hasToolExecution": true,
+        "toolsUsed": [
+          "getElementUsage",
+          "getBranchElements",
+          "getBranchPhilosophy"
+        ],
+        "branchSpecific": true,
+        "governanceAware": true,
+        "personalizedContent": false,
+        "confidenceScore": 85,
+        "analysisLength": 2270,
+        "governanceKeywords": [
+          {
+            "keyword": "branch",
+            "count": 3
+          },
+          {
+            "keyword": "version",
+            "count": 1
+          },
+          {
+            "keyword": "governance",
+            "count": 7
+          },
+          {
+            "keyword": "element",
+            "count": 1
+          },
+          {
+            "keyword": "usage",
+            "count": 1
+          },
+          {
+            "keyword": "philosophy",
+            "count": 1
+          },
+          {
+            "keyword": "customization",
+            "count": 1
+          },
+          {
+            "keyword": "principle",
+            "count": 5
+          },
+          {
+            "keyword": "rule",
+            "count": 1
+          },
+          {
+            "keyword": "transparency",
+            "count": 11
+          },
+          {
+            "keyword": "requirements",
+            "count": 4
+          }
+        ],
+        "branchMentions": [
+          "branch",
+          "branch",
+          "Branch",
+          "core DAHAO"
+        ],
+        "versionMentions": [
+          "v1.0.0",
+          "v1.1.0",
+          "v1.1.0"
+        ]
+      },
+      "analysis": {
+        "id": "analysis-1751124570644-036whu6e3",
+        "confidence": 85,
+        "tokensUsed": 3369,
+        "cost": 0.016923,
+        "analysisLength": 2270
+      },
+      "execution": {
+        "agentId": "system-rules-claude-3-5-sonnet",
+        "agentProvider": "anthropic",
+        "modelVersion": "claude-3-5-sonnet-20241022",
+        "temperature": 0.7,
+        "promptTemplate": "rule-based-system",
+        "promptTokens": 2801,
+        "systemBaseline": {
+          "branchId": "core-dahao",
+          "branchName": "Core DAHAO",
+          "version": "1.2.0",
+          "domainFocus": [
+            "general governance",
+            "foundational principles",
+            "democratic processes"
+          ]
+        },
+        "ruleId": "evolution-analysis-rule",
+        "ruleName": "Evolution Analysis",
+        "mcpToolsUsed": [
+          "getElementUsage",
+          "getBranchElements",
+          "getBranchPhilosophy"
+        ],
+        "parametersUsed": {
+          "predictionTimeframe": "6-12 months",
+          "evolutionFactors": [
+            "community-feedback",
+            "external-changes",
+            "usage-patterns"
+          ],
+          "agentPerspective": "objective analysis of element evolution patterns"
+        }
+      },
+      "timestamp": "2025-06-28T15:29:30.655Z"
+    },
+    {
+      "ruleType": "philosophical-consistency",
+      "scenario": "Core DAHAO - Principle Analysis",
+      "agentType": "system",
+      "status": "success",
+      "duration": 9086,
+      "governance": {
+        "hasToolExecution": true,
+        "toolsUsed": [
+          "getBranchPhilosophy",
+          "getBranchElements",
+          "getElementUsage"
+        ],
+        "branchSpecific": true,
+        "governanceAware": true,
+        "personalizedContent": true,
+        "confidenceScore": 87,
+        "analysisLength": 2080,
+        "governanceKeywords": [
+          {
+            "keyword": "branch",
+            "count": 1
+          },
+          {
+            "keyword": "governance",
+            "count": 4
+          },
+          {
+            "keyword": "principle",
+            "count": 4
+          },
+          {
+            "keyword": "transparency",
+            "count": 4
+          },
+          {
+            "keyword": "requirements",
+            "count": 2
+          }
+        ],
+        "branchMentions": [
+          "Branch",
+          "Core DAHAO",
+          "Core DAHAO",
+          "core DAHAO",
+          "Core DAHAO"
+        ],
+        "versionMentions": [
+          "v1.2.0"
+        ]
+      },
+      "analysis": {
+        "id": "analysis-1751124580228-o8v0hpcs0",
+        "confidence": 87,
+        "tokensUsed": 3377,
+        "cost": 0.016371,
+        "analysisLength": 2080
+      },
+      "execution": {
+        "agentId": "system-rules-claude-3-5-sonnet",
+        "agentProvider": "anthropic",
+        "modelVersion": "claude-3-5-sonnet-20241022",
+        "temperature": 0.7,
+        "promptTemplate": "rule-based-system",
+        "promptTokens": 2857,
+        "systemBaseline": {
+          "branchId": "core-dahao",
+          "branchName": "Core DAHAO",
+          "version": "1.2.0",
+          "domainFocus": [
+            "general governance",
+            "foundational principles",
+            "democratic processes"
+          ]
+        },
+        "ruleId": "philosophical-consistency-rule",
+        "ruleName": "Philosophical Consistency Review",
+        "mcpToolsUsed": [
+          "getBranchPhilosophy",
+          "getBranchElements",
+          "getElementUsage"
+        ],
+        "parametersUsed": {
+          "philosophicalDepth": "moderate",
+          "philosophicalBaseline": "fundamental-principles",
+          "alignmentThreshold": 75,
+          "agentPerspective": "DAHAO baseline principles and objective standards"
+        }
+      },
+      "timestamp": "2025-06-28T15:29:40.242Z"
+    },
+    {
+      "ruleType": "implementation-feasibility",
+      "scenario": "Core DAHAO - Principle Analysis",
+      "agentType": "system",
+      "status": "success",
+      "duration": 9939,
+      "governance": {
+        "hasToolExecution": true,
+        "toolsUsed": [
+          "getBranchElements",
+          "getElementUsage"
+        ],
+        "branchSpecific": true,
+        "governanceAware": true,
+        "personalizedContent": false,
+        "confidenceScore": 90,
+        "analysisLength": 2134,
+        "governanceKeywords": [
+          {
+            "keyword": "version",
+            "count": 1
+          },
+          {
+            "keyword": "governance",
+            "count": 2
+          },
+          {
+            "keyword": "element",
+            "count": 1
+          },
+          {
+            "keyword": "principle",
+            "count": 1
+          },
+          {
+            "keyword": "transparency",
+            "count": 6
+          },
+          {
+            "keyword": "requirements",
+            "count": 4
+          }
+        ],
+        "branchMentions": [
+          "Core DAHAO"
+        ],
+        "versionMentions": []
+      },
+      "analysis": {
+        "id": "analysis-1751124590649-s0tcgk32j",
+        "confidence": 90,
+        "tokensUsed": 3306,
+        "cost": 0.016326,
+        "analysisLength": 2134
+      },
+      "execution": {
+        "agentId": "system-rules-claude-3-5-sonnet",
+        "agentProvider": "anthropic",
+        "modelVersion": "claude-3-5-sonnet-20241022",
+        "temperature": 0.7,
+        "promptTemplate": "rule-based-system",
+        "promptTokens": 2772,
+        "systemBaseline": {
+          "branchId": "core-dahao",
+          "branchName": "Core DAHAO",
+          "version": "1.2.0",
+          "domainFocus": [
+            "general governance",
+            "foundational principles",
+            "democratic processes"
+          ]
+        },
+        "ruleId": "implementation-feasibility-rule",
+        "ruleName": "Implementation Feasibility Analysis",
+        "mcpToolsUsed": [
+          "getBranchElements",
+          "getElementUsage"
+        ],
+        "parametersUsed": {
+          "implementationContext": "general",
+          "feasibilityFactors": [
+            "resources",
+            "complexity",
+            "adoption"
+          ],
+          "timeframeAssessment": "medium-term",
+          "agentPerspective": "objective assessment of implementation challenges"
+        }
+      },
+      "timestamp": "2025-06-28T15:29:50.683Z"
+    },
+    {
+      "ruleType": "cross-domain-impact",
+      "scenario": "Core DAHAO - Principle Analysis",
+      "agentType": "system",
+      "status": "success",
+      "duration": 12089,
+      "governance": {
+        "hasToolExecution": true,
+        "toolsUsed": [
+          "getBranchElements",
+          "getBranchPhilosophy",
+          "getElementUsage"
+        ],
+        "branchSpecific": false,
+        "governanceAware": true,
+        "personalizedContent": false,
+        "confidenceScore": 85,
+        "analysisLength": 2507,
+        "governanceKeywords": [
+          {
+            "keyword": "version",
+            "count": 1
+          },
+          {
+            "keyword": "governance",
+            "count": 3
+          },
+          {
+            "keyword": "principle",
+            "count": 2
+          },
+          {
+            "keyword": "transparency",
+            "count": 3
+          },
+          {
+            "keyword": "requirements",
+            "count": 4
+          }
+        ],
+        "branchMentions": [],
+        "versionMentions": []
+      },
+      "analysis": {
+        "id": "analysis-1751124603264-gjr0k8guv",
+        "confidence": 85,
+        "tokensUsed": 3410,
+        "cost": 0.017754,
+        "analysisLength": 2507
+      },
+      "execution": {
+        "agentId": "system-rules-claude-3-5-sonnet",
+        "agentProvider": "anthropic",
+        "modelVersion": "claude-3-5-sonnet-20241022",
+        "temperature": 0.7,
+        "promptTemplate": "rule-based-system",
+        "promptTokens": 2783,
+        "systemBaseline": {
+          "branchId": "core-dahao",
+          "branchName": "Core DAHAO",
+          "version": "1.2.0",
+          "domainFocus": [
+            "general governance",
+            "foundational principles",
+            "democratic processes"
+          ]
+        },
+        "ruleId": "cross-domain-impact-rule",
+        "ruleName": "Cross-Domain Impact Assessment",
+        "mcpToolsUsed": [
+          "getBranchElements",
+          "getBranchPhilosophy",
+          "getElementUsage"
+        ],
+        "parametersUsed": {
+          "impactScale": "standard",
+          "domainScope": [
+            "primary",
+            "secondary",
+            "tertiary"
+          ],
+          "impactThreshold": "moderate",
+          "agentPerspective": "comprehensive mapping across all governance domains"
+        }
+      },
+      "timestamp": "2025-06-28T15:30:03.274Z"
+    },
+    {
+      "ruleType": "enforcement-mechanism",
+      "scenario": "Core DAHAO - Principle Analysis",
+      "agentType": "system",
+      "status": "success",
+      "duration": 10833,
+      "governance": {
+        "hasToolExecution": true,
+        "toolsUsed": [
+          "getBranchElements",
+          "getElementUsage"
+        ],
+        "branchSpecific": true,
+        "governanceAware": true,
+        "personalizedContent": false,
+        "confidenceScore": 85,
+        "analysisLength": 2426,
+        "governanceKeywords": [
+          {
+            "keyword": "branch",
+            "count": 1
+          },
+          {
+            "keyword": "version",
+            "count": 1
+          },
+          {
+            "keyword": "governance",
+            "count": 4
+          },
+          {
+            "keyword": "principle",
+            "count": 1
+          },
+          {
+            "keyword": "transparency",
+            "count": 11
+          },
+          {
+            "keyword": "requirements",
+            "count": 4
+          }
+        ],
+        "branchMentions": [
+          "branch",
+          "Core DAHAO"
+        ],
+        "versionMentions": []
+      },
+      "analysis": {
+        "id": "analysis-1751124614597-oebqj6224",
+        "confidence": 85,
+        "tokensUsed": 3390,
+        "cost": 0.017454,
+        "analysisLength": 2426
+      },
+      "execution": {
+        "agentId": "system-rules-claude-3-5-sonnet",
+        "agentProvider": "anthropic",
+        "modelVersion": "claude-3-5-sonnet-20241022",
+        "temperature": 0.7,
+        "promptTemplate": "rule-based-system",
+        "promptTokens": 2783,
+        "systemBaseline": {
+          "branchId": "core-dahao",
+          "branchName": "Core DAHAO",
+          "version": "1.2.0",
+          "domainFocus": [
+            "general governance",
+            "foundational principles",
+            "democratic processes"
+          ]
+        },
+        "ruleId": "enforcement-mechanism-rule",
+        "ruleName": "Enforcement Mechanism Review",
+        "mcpToolsUsed": [
+          "getBranchElements",
+          "getElementUsage"
+        ],
+        "parametersUsed": {
+          "enforcementMethods": [
+            "community-driven",
+            "automated",
+            "governance-based"
+          ],
+          "enforcementCriteria": [
+            "transparency",
+            "fairness",
+            "effectiveness"
+          ],
+          "enforcementContext": "balanced",
+          "agentPerspective": "objective enforcement standards and requirements"
+        }
+      },
+      "timestamp": "2025-06-28T15:30:14.609Z"
+    },
+    {
+      "ruleType": "compliance-framework",
+      "scenario": "Core DAHAO - Principle Analysis",
+      "agentType": "system",
+      "status": "success",
+      "duration": 10277,
+      "governance": {
+        "hasToolExecution": true,
+        "toolsUsed": [
+          "getBranchElements",
+          "getElementUsage",
+          "getBranchPhilosophy"
+        ],
+        "branchSpecific": true,
+        "governanceAware": true,
+        "personalizedContent": false,
+        "confidenceScore": 88,
+        "analysisLength": 2359,
+        "governanceKeywords": [
+          {
+            "keyword": "governance",
+            "count": 6
+          },
+          {
+            "keyword": "philosophy",
+            "count": 1
+          },
+          {
+            "keyword": "principle",
+            "count": 5
+          },
+          {
+            "keyword": "transparency",
+            "count": 4
+          },
+          {
+            "keyword": "requirements",
+            "count": 5
+          }
+        ],
+        "branchMentions": [
+          "core DAHAO",
+          "core statement supports fundamental DAHAO"
+        ],
+        "versionMentions": []
+      },
+      "analysis": {
+        "id": "analysis-1751124625373-nlbzxzu74",
+        "confidence": 88,
+        "tokensUsed": 3396,
+        "cost": 0.017268,
+        "analysisLength": 2359
+      },
+      "execution": {
+        "agentId": "system-rules-claude-3-5-sonnet",
+        "agentProvider": "anthropic",
+        "modelVersion": "claude-3-5-sonnet-20241022",
+        "temperature": 0.7,
+        "promptTemplate": "rule-based-system",
+        "promptTokens": 2806,
+        "systemBaseline": {
+          "branchId": "core-dahao",
+          "branchName": "Core DAHAO",
+          "version": "1.2.0",
+          "domainFocus": [
+            "general governance",
+            "foundational principles",
+            "democratic processes"
+          ]
+        },
+        "ruleId": "compliance-framework-rule",
+        "ruleName": "Compliance Framework Check",
+        "mcpToolsUsed": [
+          "getBranchElements",
+          "getElementUsage",
+          "getBranchPhilosophy"
+        ],
+        "parametersUsed": {
+          "complianceFrameworks": [
+            "internal-governance",
+            "community-standards"
+          ],
+          "complianceStrictness": "moderate",
+          "complianceContext": "governance-focused",
+          "agentPerspective": "comprehensive compliance verification"
+        }
+      },
+      "timestamp": "2025-06-28T15:30:25.388Z"
+    },
+    {
+      "ruleType": "implementation-requirements",
+      "scenario": "Core DAHAO - Principle Analysis",
+      "agentType": "system",
+      "status": "success",
+      "duration": 12347,
+      "governance": {
+        "hasToolExecution": true,
+        "toolsUsed": [
+          "getBranchElements",
+          "getElementUsage",
+          "getBranchPhilosophy"
+        ],
+        "branchSpecific": true,
+        "governanceAware": true,
+        "personalizedContent": false,
+        "confidenceScore": 85,
+        "analysisLength": 2877,
+        "governanceKeywords": [
+          {
+            "keyword": "branch",
+            "count": 1
+          },
+          {
+            "keyword": "version",
+            "count": 1
+          },
+          {
+            "keyword": "governance",
+            "count": 1
+          },
+          {
+            "keyword": "principle",
+            "count": 2
+          },
+          {
+            "keyword": "transparency",
+            "count": 2
+          },
+          {
+            "keyword": "requirements",
+            "count": 8
+          }
+        ],
+        "branchMentions": [
+          "branch",
+          "Core DAHAO"
+        ],
+        "versionMentions": []
+      },
+      "analysis": {
+        "id": "analysis-1751124638229-cd2cy7wc1",
+        "confidence": 85,
+        "tokensUsed": 3537,
+        "cost": 0.019250999999999997,
+        "analysisLength": 2877
+      },
+      "execution": {
+        "agentId": "system-rules-claude-3-5-sonnet",
+        "agentProvider": "anthropic",
+        "modelVersion": "claude-3-5-sonnet-20241022",
+        "temperature": 0.7,
+        "promptTemplate": "rule-based-system",
+        "promptTokens": 2817,
+        "systemBaseline": {
+          "branchId": "core-dahao",
+          "branchName": "Core DAHAO",
+          "version": "1.2.0",
+          "domainFocus": [
+            "general governance",
+            "foundational principles",
+            "democratic processes"
+          ]
+        },
+        "ruleId": "implementation-requirements-rule",
+        "ruleName": "Implementation Requirements Audit",
+        "mcpToolsUsed": [
+          "getBranchElements",
+          "getElementUsage",
+          "getBranchPhilosophy"
+        ],
+        "parametersUsed": {
+          "requirementCategories": [
+            "technical",
+            "human",
+            "process",
+            "resource"
+          ],
+          "prioritizationMethod": "impact-effort",
+          "implementationScope": "comprehensive",
+          "detailLevel": "moderate",
+          "agentPerspective": "comprehensive requirements for full implementation"
+        }
+      },
+      "timestamp": "2025-06-28T15:30:38.237Z"
+    },
+    {
+      "ruleType": "general-analysis",
+      "scenario": "Core DAHAO - Principle Analysis",
+      "agentType": "system",
+      "status": "success",
+      "duration": 13960,
+      "governance": {
+        "hasToolExecution": true,
+        "toolsUsed": [
+          "getBranchElements",
+          "getElementUsage",
+          "getBranchPhilosophy"
+        ],
+        "branchSpecific": true,
+        "governanceAware": true,
+        "personalizedContent": false,
+        "confidenceScore": 85,
+        "analysisLength": 3121,
+        "governanceKeywords": [
+          {
+            "keyword": "governance",
+            "count": 3
+          },
+          {
+            "keyword": "element",
+            "count": 1
+          },
+          {
+            "keyword": "principle",
+            "count": 6
+          },
+          {
+            "keyword": "transparency",
+            "count": 9
+          },
+          {
+            "keyword": "requirements",
+            "count": 5
+          }
+        ],
+        "branchMentions": [
+          "Core DAHAO",
+          "core DAHAO"
+        ],
+        "versionMentions": []
+      },
+      "analysis": {
+        "id": "analysis-1751124652689-xa2psnfyq",
+        "confidence": 85,
+        "tokensUsed": 3660,
+        "cost": 0.020352000000000002,
+        "analysisLength": 3121
+      },
+      "execution": {
+        "agentId": "system-rules-claude-3-5-sonnet",
+        "agentProvider": "anthropic",
+        "modelVersion": "claude-3-5-sonnet-20241022",
+        "temperature": 0.7,
+        "promptTemplate": "rule-based-system",
+        "promptTokens": 2879,
+        "systemBaseline": {
+          "branchId": "core-dahao",
+          "branchName": "Core DAHAO",
+          "version": "1.2.0",
+          "domainFocus": [
+            "general governance",
+            "foundational principles",
+            "democratic processes"
+          ]
+        },
+        "ruleId": "general-analysis-rule",
+        "ruleName": "General Analysis",
+        "mcpToolsUsed": [
+          "getBranchElements",
+          "getElementUsage",
+          "getBranchPhilosophy"
+        ],
+        "parametersUsed": {
+          "comprehensiveness": "comprehensive",
+          "analysisPerspectives": [
+            "clarity",
+            "consistency",
+            "feasibility",
+            "impact"
+          ],
+          "analysisFramework": [
+            "SWOT",
+            "feasibility",
+            "impact"
+          ],
+          "recommendationFocus": "balanced",
+          "agentPerspective": "objective systematic evaluation across all dimensions"
+        }
+      },
+      "timestamp": "2025-06-28T15:30:52.699Z"
+    },
+    {
+      "ruleType": "definition-clarity",
+      "scenario": "Animal Welfare Branch - Rule Analysis",
+      "agentType": "personal",
+      "status": "success",
+      "duration": 10378,
+      "governance": {
+        "hasToolExecution": true,
+        "toolsUsed": [
+          "getBranchElements",
+          "getElementUsage"
+        ],
+        "branchSpecific": true,
+        "governanceAware": true,
+        "personalizedContent": true,
+        "confidenceScore": 85,
+        "analysisLength": 2303,
+        "governanceKeywords": [
+          {
+            "keyword": "governance",
+            "count": 1
+          },
+          {
+            "keyword": "principle",
+            "count": 4
+          },
+          {
+            "keyword": "values",
+            "count": 3
+          },
+          {
+            "keyword": "requirements",
+            "count": 4
+          }
+        ],
+        "branchMentions": [
+          "animal welfare",
+          "animal welfare"
+        ],
+        "versionMentions": [
+          "v1.2.1"
+        ]
+      },
+      "analysis": {
+        "id": "analysis-1751124663559-ybfmrwc58",
+        "confidence": 85,
+        "tokensUsed": 3809,
+        "cost": 0.018339,
+        "analysisLength": 2303
+      },
+      "execution": {
+        "agentId": "personal-rules-claude-3-5-sonnet",
+        "agentProvider": "anthropic",
+        "modelVersion": "claude-3-5-sonnet-20241022",
+        "temperature": 0.7,
+        "promptTemplate": "rule-based-personal",
+        "promptTokens": 3233,
+        "ruleId": "definition-clarity-rule",
+        "ruleName": "Definition Clarity Review",
+        "mcpToolsUsed": [
+          "getBranchElements",
+          "getElementUsage"
+        ],
+        "parametersUsed": {
+          "analysisDepth": "detailed",
+          "focusAreas": [
+            "clarity",
+            "precision",
+            "usability",
+            "ethical-implications"
+          ],
+          "agentPerspective": "user's communication preferences and values"
+        }
+      },
+      "timestamp": "2025-06-28T15:31:03.577Z"
+    },
+    {
+      "ruleType": "usage-consistency",
+      "scenario": "Animal Welfare Branch - Rule Analysis",
+      "agentType": "personal",
+      "status": "success",
+      "duration": 9568,
+      "governance": {
+        "hasToolExecution": true,
+        "toolsUsed": [
+          "getElementUsage",
+          "getBranchElements"
+        ],
+        "branchSpecific": true,
+        "governanceAware": true,
+        "personalizedContent": true,
+        "confidenceScore": 87,
+        "analysisLength": 2089,
+        "governanceKeywords": [
+          {
+            "keyword": "branch",
+            "count": 3
+          },
+          {
+            "keyword": "element",
+            "count": 3
+          },
+          {
+            "keyword": "usage",
+            "count": 1
+          },
+          {
+            "keyword": "principle",
+            "count": 4
+          },
+          {
+            "keyword": "rule",
+            "count": 4
+          },
+          {
+            "keyword": "requirements",
+            "count": 1
+          }
+        ],
+        "branchMentions": [
+          "branch",
+          "branch",
+          "branch",
+          "animal welfare",
+          "Animal Welfare",
+          "animal welfare",
+          "animal welfare"
+        ],
+        "versionMentions": []
+      },
+      "analysis": {
+        "id": "analysis-1751124673630-twfu8z18y",
+        "confidence": 87,
+        "tokensUsed": 3721,
+        "cost": 0.017439,
+        "analysisLength": 2089
+      },
+      "execution": {
+        "agentId": "personal-rules-claude-3-5-sonnet",
+        "agentProvider": "anthropic",
+        "modelVersion": "claude-3-5-sonnet-20241022",
+        "temperature": 0.7,
+        "promptTemplate": "rule-based-personal",
+        "promptTokens": 3198,
+        "ruleId": "usage-consistency-rule",
+        "ruleName": "Usage Consistency Check",
+        "mcpToolsUsed": [
+          "getElementUsage",
+          "getBranchElements"
+        ],
+        "parametersUsed": {
+          "consistencyThreshold": 90,
+          "contextSensitivity": "high",
+          "agentPerspective": "user's contextual priorities and flexible interpretation"
+        }
+      },
+      "timestamp": "2025-06-28T15:31:13.649Z"
+    },
+    {
+      "ruleType": "evolution-analysis",
+      "scenario": "Animal Welfare Branch - Rule Analysis",
+      "agentType": "personal",
+      "status": "success",
+      "duration": 10453,
+      "governance": {
+        "hasToolExecution": true,
+        "toolsUsed": [
+          "getElementUsage",
+          "getBranchElements",
+          "getBranchPhilosophy"
+        ],
+        "branchSpecific": true,
+        "governanceAware": true,
+        "personalizedContent": true,
+        "confidenceScore": 85,
+        "analysisLength": 2331,
+        "governanceKeywords": [
+          {
+            "keyword": "version",
+            "count": 1
+          },
+          {
+            "keyword": "governance",
+            "count": 2
+          },
+          {
+            "keyword": "principle",
+            "count": 1
+          },
+          {
+            "keyword": "values",
+            "count": 1
+          },
+          {
+            "keyword": "requirements",
+            "count": 2
+          }
+        ],
+        "branchMentions": [
+          "core DAHAO",
+          "animal-welfare",
+          "animal welfare",
+          "animal welfare"
+        ],
+        "versionMentions": [
+          "v1.1.0",
+          "v1.1.0"
+        ]
+      },
+      "analysis": {
+        "id": "analysis-1751124684593-2br48jlqf",
+        "confidence": 85,
+        "tokensUsed": 3851,
+        "cost": 0.018549,
+        "analysisLength": 2331
+      },
+      "execution": {
+        "agentId": "personal-rules-claude-3-5-sonnet",
+        "agentProvider": "anthropic",
+        "modelVersion": "claude-3-5-sonnet-20241022",
+        "temperature": 0.7,
+        "promptTemplate": "rule-based-personal",
+        "promptTokens": 3268,
+        "ruleId": "evolution-analysis-rule",
+        "ruleName": "Evolution Analysis",
+        "mcpToolsUsed": [
+          "getElementUsage",
+          "getBranchElements",
+          "getBranchPhilosophy"
+        ],
+        "parametersUsed": {
+          "predictionTimeframe": "12-24 months",
+          "evolutionFactors": [
+            "ethical-developments",
+            "scientific-research",
+            "community-feedback"
+          ],
+          "agentPerspective": "evolution aligned with user's values and priorities"
+        }
+      },
+      "timestamp": "2025-06-28T15:31:24.605Z"
+    },
+    {
+      "ruleType": "philosophical-consistency",
+      "scenario": "Animal Welfare Branch - Rule Analysis",
+      "agentType": "personal",
+      "status": "success",
+      "duration": 13070,
+      "governance": {
+        "hasToolExecution": true,
+        "toolsUsed": [
+          "getBranchPhilosophy",
+          "getBranchElements",
+          "getElementUsage"
+        ],
+        "branchSpecific": true,
+        "governanceAware": true,
+        "personalizedContent": true,
+        "confidenceScore": 89,
+        "analysisLength": 2828,
+        "governanceKeywords": [
+          {
+            "keyword": "branch",
+            "count": 2
+          },
+          {
+            "keyword": "governance",
+            "count": 1
+          },
+          {
+            "keyword": "element",
+            "count": 2
+          },
+          {
+            "keyword": "philosophy",
+            "count": 1
+          },
+          {
+            "keyword": "principle",
+            "count": 2
+          },
+          {
+            "keyword": "rule",
+            "count": 3
+          },
+          {
+            "keyword": "values",
+            "count": 3
+          }
+        ],
+        "branchMentions": [
+          "branch",
+          "branch",
+          "animal welfare"
+        ],
+        "versionMentions": [
+          "v1.2.1",
+          "v1.2.1"
+        ]
+      },
+      "analysis": {
+        "id": "analysis-1751124698159-2kmpitb6n",
+        "confidence": 89,
+        "tokensUsed": 4018,
+        "cost": 0.020538,
+        "analysisLength": 2828
+      },
+      "execution": {
+        "agentId": "personal-rules-claude-3-5-sonnet",
+        "agentProvider": "anthropic",
+        "modelVersion": "claude-3-5-sonnet-20241022",
+        "temperature": 0.7,
+        "promptTemplate": "rule-based-personal",
+        "promptTokens": 3311,
+        "ruleId": "philosophical-consistency-rule",
+        "ruleName": "Philosophical Consistency Review",
+        "mcpToolsUsed": [
+          "getBranchPhilosophy",
+          "getBranchElements",
+          "getElementUsage"
+        ],
+        "parametersUsed": {
+          "philosophicalDepth": "deep",
+          "philosophicalBaseline": "sentience-based-ethics",
+          "alignmentThreshold": 85,
+          "agentPerspective": "user's philosophical framework and value system"
+        }
+      },
+      "timestamp": "2025-06-28T15:31:38.176Z"
+    },
+    {
+      "ruleType": "implementation-feasibility",
+      "scenario": "Animal Welfare Branch - Rule Analysis",
+      "agentType": "personal",
+      "status": "success",
+      "duration": 10495,
+      "governance": {
+        "hasToolExecution": true,
+        "toolsUsed": [
+          "getBranchElements",
+          "getElementUsage"
+        ],
+        "branchSpecific": true,
+        "governanceAware": true,
+        "personalizedContent": true,
+        "confidenceScore": 87,
+        "analysisLength": 2223,
+        "governanceKeywords": [
+          {
+            "keyword": "principle",
+            "count": 2
+          }
+        ],
+        "branchMentions": [
+          "animal welfare",
+          "Animal Welfare",
+          "animal welfare"
+        ],
+        "versionMentions": []
+      },
+      "analysis": {
+        "id": "analysis-1751124709161-nifl1xjla",
+        "confidence": 87,
+        "tokensUsed": 3771,
+        "cost": 0.017985,
+        "analysisLength": 2223
+      },
+      "execution": {
+        "agentId": "personal-rules-claude-3-5-sonnet",
+        "agentProvider": "anthropic",
+        "modelVersion": "claude-3-5-sonnet-20241022",
+        "temperature": 0.7,
+        "promptTemplate": "rule-based-personal",
+        "promptTokens": 3215,
+        "ruleId": "implementation-feasibility-rule",
+        "ruleName": "Implementation Feasibility Analysis",
+        "mcpToolsUsed": [
+          "getBranchElements",
+          "getElementUsage"
+        ],
+        "parametersUsed": {
+          "implementationContext": "welfare-focused",
+          "feasibilityFactors": [
+            "ethical-compliance",
+            "welfare-impact",
+            "resources"
+          ],
+          "timeframeAssessment": "medium-term",
+          "agentPerspective": "feasibility within user's constraints and preferences"
+        }
+      },
+      "timestamp": "2025-06-28T15:31:49.172Z"
+    },
+    {
+      "ruleType": "cross-domain-impact",
+      "scenario": "Animal Welfare Branch - Rule Analysis",
+      "agentType": "personal",
+      "status": "success",
+      "duration": 10430,
+      "governance": {
+        "hasToolExecution": true,
+        "toolsUsed": [
+          "getBranchElements",
+          "getBranchPhilosophy",
+          "getElementUsage"
+        ],
+        "branchSpecific": true,
+        "governanceAware": true,
+        "personalizedContent": true,
+        "confidenceScore": 85,
+        "analysisLength": 2352,
+        "governanceKeywords": [
+          {
+            "keyword": "branch",
+            "count": 1
+          },
+          {
+            "keyword": "governance",
+            "count": 1
+          },
+          {
+            "keyword": "principle",
+            "count": 1
+          },
+          {
+            "keyword": "transparency",
+            "count": 1
+          },
+          {
+            "keyword": "requirements",
+            "count": 2
+          }
+        ],
+        "branchMentions": [
+          "branch",
+          "Animal Welfare",
+          "Animal Welfare",
+          "Animal Welfare",
+          "animal welfare"
+        ],
+        "versionMentions": []
+      },
+      "analysis": {
+        "id": "analysis-1751124720091-urnsekf4a",
+        "confidence": 85,
+        "tokensUsed": 3829,
+        "cost": 0.018543,
+        "analysisLength": 2352
+      },
+      "execution": {
+        "agentId": "personal-rules-claude-3-5-sonnet",
+        "agentProvider": "anthropic",
+        "modelVersion": "claude-3-5-sonnet-20241022",
+        "temperature": 0.7,
+        "promptTemplate": "rule-based-personal",
+        "promptTokens": 3241,
+        "ruleId": "cross-domain-impact-rule",
+        "ruleName": "Cross-Domain Impact Assessment",
+        "mcpToolsUsed": [
+          "getBranchElements",
+          "getBranchPhilosophy",
+          "getElementUsage"
+        ],
+        "parametersUsed": {
+          "impactScale": "comprehensive",
+          "domainScope": [
+            "primary",
+            "secondary"
+          ],
+          "impactThreshold": "low",
+          "agentPerspective": "impacts relevant to user's domain interests"
+        }
+      },
+      "timestamp": "2025-06-28T15:32:00.104Z"
+    },
+    {
+      "ruleType": "enforcement-mechanism",
+      "scenario": "Animal Welfare Branch - Rule Analysis",
+      "agentType": "personal",
+      "status": "success",
+      "duration": 9623,
+      "governance": {
+        "hasToolExecution": true,
+        "toolsUsed": [
+          "getBranchElements",
+          "getElementUsage"
+        ],
+        "branchSpecific": true,
+        "governanceAware": true,
+        "personalizedContent": true,
+        "confidenceScore": 85,
+        "analysisLength": 2264,
+        "governanceKeywords": [
+          {
+            "keyword": "branch",
+            "count": 1
+          },
+          {
+            "keyword": "philosophy",
+            "count": 2
+          },
+          {
+            "keyword": "principle",
+            "count": 2
+          },
+          {
+            "keyword": "transparency",
+            "count": 1
+          },
+          {
+            "keyword": "values",
+            "count": 1
+          },
+          {
+            "keyword": "requirements",
+            "count": 1
+          }
+        ],
+        "branchMentions": [
+          "branch",
+          "animal welfare",
+          "Animal Welfare",
+          "animal welfare"
+        ],
+        "versionMentions": []
+      },
+      "analysis": {
+        "id": "analysis-1751124730218-3r1zc9ajs",
+        "confidence": 85,
+        "tokensUsed": 3773,
+        "cost": 0.018111,
+        "analysisLength": 2264
+      },
+      "execution": {
+        "agentId": "personal-rules-claude-3-5-sonnet",
+        "agentProvider": "anthropic",
+        "modelVersion": "claude-3-5-sonnet-20241022",
+        "temperature": 0.7,
+        "promptTemplate": "rule-based-personal",
+        "promptTokens": 3207,
+        "ruleId": "enforcement-mechanism-rule",
+        "ruleName": "Enforcement Mechanism Review",
+        "mcpToolsUsed": [
+          "getBranchElements",
+          "getElementUsage"
+        ],
+        "parametersUsed": {
+          "enforcementMethods": [
+            "ethical-oversight",
+            "community-driven",
+            "audit-based"
+          ],
+          "enforcementCriteria": [
+            "clarity",
+            "measurability",
+            "accountability"
+          ],
+          "enforcementContext": "welfare-protective",
+          "agentPerspective": "enforcement aligned with user's philosophy and capabilities"
+        }
+      },
+      "timestamp": "2025-06-28T15:32:10.229Z"
+    },
+    {
+      "ruleType": "compliance-framework",
+      "scenario": "Animal Welfare Branch - Rule Analysis",
+      "agentType": "personal",
+      "status": "success",
+      "duration": 8947,
+      "governance": {
+        "hasToolExecution": true,
+        "toolsUsed": [
+          "getBranchElements",
+          "getElementUsage",
+          "getBranchPhilosophy"
+        ],
+        "branchSpecific": true,
+        "governanceAware": true,
+        "personalizedContent": true,
+        "confidenceScore": 87,
+        "analysisLength": 1847,
+        "governanceKeywords": [
+          {
+            "keyword": "governance",
+            "count": 1
+          },
+          {
+            "keyword": "principle",
+            "count": 1
+          },
+          {
+            "keyword": "rule",
+            "count": 1
+          },
+          {
+            "keyword": "values",
+            "count": 1
+          },
+          {
+            "keyword": "requirements",
+            "count": 1
+          }
+        ],
+        "branchMentions": [
+          "Animal welfare"
+        ],
+        "versionMentions": []
+      },
+      "analysis": {
+        "id": "analysis-1751124739663-bnzfqqrgf",
+        "confidence": 87,
+        "tokensUsed": 3742,
+        "cost": 0.01677,
+        "analysisLength": 1847
+      },
+      "execution": {
+        "agentId": "personal-rules-claude-3-5-sonnet",
+        "agentProvider": "anthropic",
+        "modelVersion": "claude-3-5-sonnet-20241022",
+        "temperature": 0.7,
+        "promptTemplate": "rule-based-personal",
+        "promptTokens": 3280,
+        "ruleId": "compliance-framework-rule",
+        "ruleName": "Compliance Framework Check",
+        "mcpToolsUsed": [
+          "getBranchElements",
+          "getElementUsage",
+          "getBranchPhilosophy"
+        ],
+        "parametersUsed": {
+          "complianceFrameworks": [
+            "welfare-standards",
+            "ethical-guidelines",
+            "internal-governance"
+          ],
+          "complianceStrictness": "strict",
+          "complianceContext": "general",
+          "agentPerspective": "compliance priorities aligned with user's values"
+        }
+      },
+      "timestamp": "2025-06-28T15:32:19.678Z"
+    },
+    {
+      "ruleType": "implementation-requirements",
+      "scenario": "Animal Welfare Branch - Rule Analysis",
+      "agentType": "personal",
+      "status": "success",
+      "duration": 11443,
+      "governance": {
+        "hasToolExecution": true,
+        "toolsUsed": [
+          "getBranchElements",
+          "getElementUsage",
+          "getBranchPhilosophy"
+        ],
+        "branchSpecific": true,
+        "governanceAware": true,
+        "personalizedContent": true,
+        "confidenceScore": 85,
+        "analysisLength": 2399,
+        "governanceKeywords": [
+          {
+            "keyword": "principle",
+            "count": 2
+          },
+          {
+            "keyword": "requirements",
+            "count": 8
+          }
+        ],
+        "branchMentions": [
+          "animal welfare",
+          "Animal welfare"
+        ],
+        "versionMentions": []
+      },
+      "analysis": {
+        "id": "analysis-1751124751610-xzdtfyfis",
+        "confidence": 85,
+        "tokensUsed": 3883,
+        "cost": 0.018848999999999998,
+        "analysisLength": 2399
+      },
+      "execution": {
+        "agentId": "personal-rules-claude-3-5-sonnet",
+        "agentProvider": "anthropic",
+        "modelVersion": "claude-3-5-sonnet-20241022",
+        "temperature": 0.7,
+        "promptTemplate": "rule-based-personal",
+        "promptTokens": 3283,
+        "ruleId": "implementation-requirements-rule",
+        "ruleName": "Implementation Requirements Audit",
+        "mcpToolsUsed": [
+          "getBranchElements",
+          "getElementUsage",
+          "getBranchPhilosophy"
+        ],
+        "parametersUsed": {
+          "requirementCategories": [
+            "ethical",
+            "welfare",
+            "technical",
+            "oversight"
+          ],
+          "prioritizationMethod": "welfare-impact",
+          "implementationScope": "standard",
+          "detailLevel": "exhaustive",
+          "agentPerspective": "requirements relevant to user's implementation style"
+        }
+      },
+      "timestamp": "2025-06-28T15:32:31.622Z"
+    },
+    {
+      "ruleType": "general-analysis",
+      "scenario": "Animal Welfare Branch - Rule Analysis",
+      "agentType": "personal",
+      "status": "success",
+      "duration": 14144,
+      "governance": {
+        "hasToolExecution": true,
+        "toolsUsed": [
+          "getBranchElements",
+          "getElementUsage",
+          "getBranchPhilosophy"
+        ],
+        "branchSpecific": true,
+        "governanceAware": true,
+        "personalizedContent": true,
+        "confidenceScore": 85,
+        "analysisLength": 3400,
+        "governanceKeywords": [
+          {
+            "keyword": "branch",
+            "count": 7
+          },
+          {
+            "keyword": "governance",
+            "count": 1
+          },
+          {
+            "keyword": "element",
+            "count": 2
+          },
+          {
+            "keyword": "philosophy",
+            "count": 3
+          },
+          {
+            "keyword": "customization",
+            "count": 1
+          },
+          {
+            "keyword": "principle",
+            "count": 2
+          },
+          {
+            "keyword": "rule",
+            "count": 5
+          },
+          {
+            "keyword": "values",
+            "count": 3
+          },
+          {
+            "keyword": "requirements",
+            "count": 1
+          }
+        ],
+        "branchMentions": [
+          "branch",
+          "branch",
+          "branch",
+          "branch",
+          "branch",
+          "branch",
+          "branch",
+          "animal welfare",
+          "animal welfare"
+        ],
+        "versionMentions": []
+      },
+      "analysis": {
+        "id": "analysis-1751124766253-wbcjedjo7",
+        "confidence": 85,
+        "tokensUsed": 4187,
+        "cost": 0.022761,
+        "analysisLength": 3400
+      },
+      "execution": {
+        "agentId": "personal-rules-claude-3-5-sonnet",
+        "agentProvider": "anthropic",
+        "modelVersion": "claude-3-5-sonnet-20241022",
+        "temperature": 0.7,
+        "promptTemplate": "rule-based-personal",
+        "promptTokens": 3337,
+        "ruleId": "general-analysis-rule",
+        "ruleName": "General Analysis",
+        "mcpToolsUsed": [
+          "getBranchElements",
+          "getElementUsage",
+          "getBranchPhilosophy"
+        ],
+        "parametersUsed": {
+          "comprehensiveness": "thorough",
+          "analysisPerspectives": [
+            "ethical",
+            "welfare",
+            "practical",
+            "systemic"
+          ],
+          "analysisFramework": [
+            "ethical-impact",
+            "welfare-assessment",
+            "SWOT"
+          ],
+          "recommendationFocus": "welfare-maximizing",
+          "agentPerspective": "comprehensive review aligned with user's interests and values"
+        }
+      },
+      "timestamp": "2025-06-28T15:32:46.269Z"
+    }
+  ]
+}

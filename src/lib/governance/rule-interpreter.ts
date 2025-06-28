@@ -15,6 +15,7 @@ import {
   mapTaskTypeToRule
 } from './types';
 import { mcpAnalysisTools } from '../mcp/analysis-tools';
+import { GovernanceToolExecutor } from './tool-executor';
 import { getUserValuesFromBranch } from '../utils/user-values';
 import { getSystemValuesForContext } from '../utils/system-values';
 
@@ -22,9 +23,11 @@ export class RuleInterpreter implements IRuleInterpreter {
   private rulesCache: { [ruleId: string]: Rule } = {};
   private cacheTimestamp: number = 0;
   private readonly CACHE_TTL = 5 * 60 * 1000; // 5 minutes
+  private toolExecutor: GovernanceToolExecutor;
 
   constructor() {
-    // Initialize with empty cache
+    // Initialize with empty cache and tool executor
+    this.toolExecutor = new GovernanceToolExecutor();
   }
 
   /**
@@ -211,60 +214,37 @@ export class RuleInterpreter implements IRuleInterpreter {
   }
 
   /**
-   * Execute MCP tools to gather context data
-   * TODO: Fix MCP tool execution signature issue
+   * Execute governance analysis tools to gather context data
+   * Uses GovernanceToolExecutor for clean interface to Vercel AI SDK tools
    */
   private async executeMCPTools(toolNames: string[], context: RuleContext): Promise<{ [toolName: string]: any }> {
-    const results: { [toolName: string]: any } = {};
-
-    // Temporarily return empty results to allow compilation
-    // TODO: Implement proper MCP tool execution
-    console.log(`Would execute MCP tools: ${toolNames.join(', ')}`);
+    // Validate tool names before execution
+    const { valid, invalid } = this.toolExecutor.validateToolNames(toolNames);
     
-    return results;
-    
-    /* TODO: Fix and uncomment when MCP tool signature is resolved
-    for (const toolName of toolNames) {
-      try {
-        switch (toolName) {
-          case 'getBranchElements':
-            results[toolName] = await mcpAnalysisTools.getBranchElements.execute({
-              branchId: context.branch.id,
-              elementType: context.element.type
-            });
-            break;
-
-          case 'getElementUsage':
-            results[toolName] = await mcpAnalysisTools.getElementUsage.execute({
-              elementId: context.element.id,
-              branchId: context.branch.id
-            });
-            break;
-
-          case 'getBranchPhilosophy':
-            results[toolName] = await mcpAnalysisTools.getBranchPhilosophy.execute({
-              branchId: context.branch.id
-            });
-            break;
-
-          case 'getElementVersion':
-            results[toolName] = await mcpAnalysisTools.getElementVersion.execute({
-              elementId: context.element.id,
-              branchId: context.branch.id,
-              version: context.element.version
-            });
-            break;
-
-          default:
-            console.warn(`Unknown MCP tool: ${toolName}`);
-        }
-      } catch (error: any) {
-        throw new MCPToolError(toolName, error.message);
-      }
+    if (invalid.length > 0) {
+      console.warn(`🔧 Invalid governance tools specified: ${invalid.join(', ')}`);
+      console.warn(`🔧 Available tools: ${this.toolExecutor.getAvailableTools().join(', ')}`);
     }
-
-    return results;
-    */
+    
+    if (valid.length === 0) {
+      console.warn('🔧 No valid governance tools to execute, proceeding without tool context');
+      return {};
+    }
+    
+    console.log(`🔧 Rule interpreter executing ${valid.length} governance tools: ${valid.join(', ')}`);
+    
+    try {
+      // Execute tools using the clean tool executor interface
+      const results = await this.toolExecutor.executeTools(valid, context);
+      
+      console.log(`🎉 Rule interpreter successfully obtained governance context from ${valid.length} tools`);
+      return results;
+      
+    } catch (error: any) {
+      console.error(`💥 Governance tool execution failed: ${error.message}`);
+      // Return empty results to allow analysis to continue without governance context
+      return {};
+    }
   }
 
   /**
