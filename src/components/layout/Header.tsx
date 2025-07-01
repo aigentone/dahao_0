@@ -40,10 +40,8 @@ export function Header() {
     { href: '/', label: 'Home' },
     { href: '/mission', label: 'Our Mission' },
     { href: '/how-it-works', label: 'How It Works' },
-
-    {href:'/versioned-ethics',label:'Ethics'},
-    {href: '/git-structure', label:'Git'},
-    {href: '/ideas',label:'ideas'}
+    { href: '/versioned-ethics', label: 'Ethics' },
+    { href: '/git-structure', label: 'Git Structure' }
   ];
 
   const toggleMobileMenu = () => {
