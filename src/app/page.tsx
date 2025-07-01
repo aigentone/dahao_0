@@ -5,9 +5,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import {
   RefreshCw, Users, Bot, GitBranch, ArrowRight,
   BookOpen, Building, Scale, MessageSquare,
-  CheckCircle, Lightbulb, Code, Shield
+  CheckCircle, Lightbulb, Code, Shield,Lock,Workflow,Settings,DollarSign,Zap,Palette,FileText,Server,Network
 } from 'lucide-react';
 import { HeroSection, FeatureCard, ArchitectureFlow, NavigationCTA } from '@/components/shared';
+import { Badge } from '@/components/ui/badge';
+
 
 export default function HomePage() {
   return (
@@ -240,62 +242,275 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Personal Branches */}
-      <section className="py-16 px-4 bg-muted/30">
-        <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            Personal Governance Branches
-          </h2>
+{/* Personal Branches with MCP Orchestration */}
+<section className="py-16 px-4 bg-muted/30">
+  <div className="container mx-auto max-w-6xl">
+    <h2 className="text-3xl font-bold text-center mb-12">
+      Personal Governance Branches with MCP Orchestration
+    </h2>
 
-          <div className="max-w-3xl mx-auto">
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <GitBranch className="h-5 w-5 text-purple-600" />
-                  Your Governance Laboratory
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-4">
-                  <p className="text-muted-foreground">
-                    Create your personal workspace to develop governance that
-                    matches your values. Like Git for code, but for governance.
-                  </p>
+    <div className="max-w-5xl mx-auto space-y-8">
+      {/* Main Card */}
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <GitBranch className="h-5 w-5 text-purple-600" />
+            Your Governance Laboratory + Multi-Service Orchestration
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-6">
+            <p className="text-muted-foreground">
+              Create personal branches that not only customize governance but orchestrate
+              multiple AI services. Each Rule becomes a powerful workflow engine connecting
+              any MCP-enabled service.
+            </p>
 
-                  <div className="grid gap-4 md:grid-cols-2">
-                    <div className="space-y-2">
-                      <h4 className="font-semibold">What You Can Do:</h4>
-                      <ul className="text-sm space-y-1 text-muted-foreground">
-                        <li>• Extend term definitions</li>
-                        <li>• Add personal principles</li>
-                        <li>• Modify rules for your context</li>
-                        <li>• Test governance ideas safely</li>
-                      </ul>
-                    </div>
-                    <div className="space-y-2">
-                      <h4 className="font-semibold">How It Works:</h4>
-                      <ul className="text-sm space-y-1 text-muted-foreground">
-                        <li>• Fork from core governance</li>
-                        <li>• Make your modifications</li>
-                        <li>• AI agents use your version</li>
-                        <li>• Propose best ideas back</li>
-                      </ul>
-                    </div>
+            <div className="grid gap-6 md:grid-cols-2">
+              <div className="space-y-4">
+                <h4 className="font-semibold flex items-center gap-2">
+                  <Settings className="h-4 w-4" />
+                  Core Capabilities:
+                </h4>
+                <ul className="text-sm space-y-2 text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-600 mt-0.5">✓</span>
+                    <span>Connect unlimited MCP servers per Rule</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-600 mt-0.5">✓</span>
+                    <span>Orchestrate complex multi-service workflows</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-600 mt-0.5">✓</span>
+                    <span>Dynamic tool discovery and adaptation</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-600 mt-0.5">✓</span>
+                    <span>Automatic rate limiting and cost management</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-600 mt-0.5">✓</span>
+                    <span>Security scoping for safe experimentation</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="space-y-4">
+                <h4 className="font-semibold flex items-center gap-2">
+                  <Workflow className="h-4 w-4" />
+                  MCP Services You Can Orchestrate:
+                </h4>
+                <div className="flex flex-wrap gap-2">
+                  <Badge variant="outline" className="text-xs">🔧 GitHub</Badge>
+                  <Badge variant="outline" className="text-xs">📊 Analytics</Badge>
+                  <Badge variant="outline" className="text-xs">🤖 OpenAI</Badge>
+                  <Badge variant="outline" className="text-xs">🔍 Search</Badge>
+                  <Badge variant="outline" className="text-xs">📚 ArXiv</Badge>
+                  <Badge variant="outline" className="text-xs">🛡️ Security</Badge>
+                  <Badge variant="outline" className="text-xs">💬 Slack</Badge>
+                  <Badge variant="outline" className="text-xs">📧 Email</Badge>
+                  <Badge variant="outline" className="text-xs">🌍 Climate Data</Badge>
+                  <Badge variant="outline" className="text-xs">🎯 Custom APIs</Badge>
+                </div>
+              </div>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Example Workflow Card */}
+      <Card className="border-blue-200 dark:border-blue-800">
+        <CardHeader>
+          <CardTitle className="text-lg flex items-center gap-2">
+            <Code className="h-5 w-5 text-blue-600" />
+            Example: AI Safety Research Validation Rule
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-4">
+            <div className="bg-muted p-4 rounded-lg font-mono text-sm">
+              <pre className="overflow-x-auto">{`Rule: "AI Safety Paper Review"@3.0.0
+MCP Connections: {
+  "arxiv": "@modelcontextprotocol/arxiv",
+  "search": "@modelcontextprotocol/server-brave-search",
+  "gpt4-analysis": "@modelcontextprotocol/openai"
+  "claude-verify": "@modelcontextprotocol/claude",
+  "github": "@modelcontextprotocol/server-github"
+}`}</pre>
+            </div>
+
+            <div className="space-y-3">
+              <p className="text-sm font-semibold">Workflow Steps:</p>
+              <div className="space-y-2 text-sm">
+                <div className="flex items-center gap-3">
+                  <span className="bg-blue-100 dark:bg-blue-900/50 px-2 py-1 rounded text-xs font-mono">1</span>
+                  <span>Fetch paper metadata from ArXiv</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="bg-blue-100 dark:bg-blue-900/50 px-2 py-1 rounded text-xs font-mono">2</span>
+                  <span>Check citations via Semantic Scholar</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="bg-blue-100 dark:bg-blue-900/50 px-2 py-1 rounded text-xs font-mono">3</span>
+                  <span>Parallel AI analysis (GPT-4 + Claude)</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="bg-blue-100 dark:bg-blue-900/50 px-2 py-1 rounded text-xs font-mono">4</span>
+                  <span>Search for reproduction code on GitHub</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="bg-blue-100 dark:bg-blue-900/50 px-2 py-1 rounded text-xs font-mono">5</span>
+                  <span>Compile comprehensive report</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Branch-Specific Configuration */}
+      <div className="grid gap-6 md:grid-cols-2">
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-lg flex items-center gap-2">
+              <Shield className="h-5 w-5 text-green-600" />
+              Branch-Specific MCP Authorization
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-sm text-muted-foreground mb-4">
+              Each branch can authorize different MCP servers with custom limits:
+            </p>
+            <div className="space-y-3">
+              <div className="flex items-center justify-between p-2 bg-muted rounded">
+                <span className="text-sm font-medium">Climate Data API</span>
+                <Badge variant="default" className="text-xs bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">Unlimited</Badge>
+              </div>
+              <div className="flex items-center justify-between p-2 bg-muted rounded">
+                <span className="text-sm font-medium">Carbon Calculator</span>
+                <Badge variant="default" className="text-xs bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200">1000/month</Badge>
+              </div>
+              <div className="flex items-center justify-between p-2 bg-muted rounded">
+                <span className="text-sm font-medium">Satellite Imagery</span>
+                <Badge variant="secondary" className="text-xs">Approval Required</Badge>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-lg flex items-center gap-2">
+              <DollarSign className="h-5 w-5 text-yellow-600" />
+              Cost & Rate Limit Management
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-sm text-muted-foreground mb-4">
+              Built-in budget controls and smart fallbacks:
+            </p>
+            <div className="space-y-3 text-sm">
+              <div className="p-3 bg-yellow-50 dark:bg-yellow-950/20 rounded-lg">
+                <div className="font-medium">OpenAI Budget</div>
+                <div className="text-xs text-muted-foreground">Max: 50k tokens / $10 per run</div>
+                <div className="text-xs text-green-600">Fallback: Local model</div>
+              </div>
+              <div className="p-3 bg-blue-50 dark:bg-blue-950/20 rounded-lg">
+                <div className="font-medium">API Rate Limiting</div>
+                <div className="text-xs text-muted-foreground">Auto-throttle enabled</div>
+                <div className="text-xs text-green-600">Queue excess requests</div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+
+      {/* Visual Rule Builder Preview */}
+      <Card className="bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950/20 dark:to-blue-950/20">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <Palette className="h-5 w-5 text-purple-600" />
+            Visual Rule Builder with MCP Integration
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="bg-white dark:bg-gray-900 p-6 rounded-lg border-2 border-dashed border-gray-300 dark:border-gray-700">
+            <div className="text-center space-y-4">
+              <div className="flex justify-center gap-4 items-center">
+                <div className="p-3 bg-blue-100 dark:bg-blue-900/50 rounded-lg">
+                  <FileText className="h-6 w-6 text-blue-600" />
+                  <p className="text-xs mt-1">Trigger</p>
+                </div>
+                <ArrowRight className="h-5 w-5 text-gray-400" />
+                <div className="flex gap-2">
+                  <div className="p-3 bg-green-100 dark:bg-green-900/50 rounded-lg">
+                    <Server className="h-6 w-6 text-green-600" />
+                    <p className="text-xs mt-1">ArXiv</p>
                   </div>
-
-                  <div className="bg-blue-50 dark:bg-blue-950/20 p-4 rounded-lg">
-                    <p className="text-sm text-blue-800 dark:text-blue-200">
-                      <strong>Example:</strong> Add "radical transparency" to your
-                      transparency definition, test it in your branch, then propose
-                      it to core if it works well.
-                    </p>
+                  <div className="p-3 bg-purple-100 dark:bg-purple-900/50 rounded-lg">
+                    <GitBranch className="h-6 w-6 text-purple-600" />
+                    <p className="text-xs mt-1">GitHub</p>
+                  </div>
+                  <div className="p-3 bg-orange-100 dark:bg-orange-900/50 rounded-lg">
+                    <Bot className="h-6 w-6 text-orange-600" />
+                    <p className="text-xs mt-1">GPT-4</p>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
+                <ArrowRight className="h-5 w-5 text-gray-400" />
+                <div className="p-3 bg-red-100 dark:bg-red-900/50 rounded-lg">
+                  <CheckCircle className="h-6 w-6 text-red-600" />
+                  <p className="text-xs mt-1">Decision</p>
+                </div>
+              </div>
+              <p className="text-sm text-muted-foreground">
+                Drag & drop MCP services to build complex workflows visually
+              </p>
+            </div>
           </div>
-        </div>
-      </section>
+        </CardContent>
+      </Card>
+
+      {/* Power of Composition */}
+      <Card className="border-gradient">
+        <CardHeader>
+          <CardTitle className="text-center text-2xl">
+            The Power of Composition
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="text-center text-muted-foreground mb-6">
+            Your Rules aren't just simple if-then statements - they're full orchestration
+            engines that can coordinate any service with an MCP interface.
+          </p>
+          <div className="grid gap-4 md:grid-cols-3">
+            <div className="text-center space-y-2">
+              <Network className="h-8 w-8 mx-auto text-blue-600" />
+              <h4 className="font-semibold">Unlimited Connections</h4>
+              <p className="text-xs text-muted-foreground">
+                Connect to any number of MCP servers
+              </p>
+            </div>
+            <div className="text-center space-y-2">
+              <Zap className="h-8 w-8 mx-auto text-yellow-600" />
+              <h4 className="font-semibold">Intelligent Orchestration</h4>
+              <p className="text-xs text-muted-foreground">
+                Handle failures, cache results, manage costs
+              </p>
+            </div>
+            <div className="text-center space-y-2">
+              <Lock className="h-8 w-8 mx-auto text-green-600" />
+              <h4 className="font-semibold">Secure by Design</h4>
+              <p className="text-xs text-muted-foreground">
+                Scoped permissions for safe experimentation
+              </p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+    </div>
+  </div>
+</section>
 
       {/* Current Focus */}
       <section className="py-16 px-4 bg-background">

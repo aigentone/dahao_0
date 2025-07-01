@@ -42,23 +42,23 @@ export default function MissionPage() {
       title: "Economic Layer",
       description: "Add sustainable value flows",
       details: [
-        "Launch DAHAO token",
-        "Reward quality contributions",
-        "Enable investment in DAHAOs",
-        "Create win-win economics",
-        "Bootstrap new communities"
+        "DAHAOs earn trust through transparent governance",
+        "Launch tokens when community reaches consensus",
+        "Invest in causes you believe in, earn returns",
+        "See exactly how funds are allocated on-chain",
+        "Transform charity into sustainable economy"
       ]
     },
     {
       number: 3,
-      title: "Industry Disruption",
-      description: "Launch real-world applications",
+      title: "Real-World DAHAOs",
+      description: "Communities launch their own essential services",
       details: [
-        "Transportation DAHAO - Uber without Uber",
-        "Music DAHAO - Spotify without Spotify",
-        "Healthcare DAHAO - care without Big Pharma",
-        "Agriculture DAHAO - farming without Monsanto",
-        "Network effects accelerate"
+        "Driver-owned transport networks",
+        "Artist-governed music platforms",
+        "Patient-led healthcare cooperatives",
+        "Farmer-controlled supply chains",
+        "Each DAHAO owned by its users"
       ]
     },
     {
@@ -143,23 +143,25 @@ export default function MissionPage() {
 
           <div className="grid md:grid-cols-2 gap-6 mb-8">
             <FeatureCard
-              title="The Language Crisis"
-              description="When we say 'privacy,' 'harm,' or 'fairness' - what do we actually mean? These concepts evolve daily with new technology, but our definitions remain frozen. AI systems trained on these ambiguous terms make decisions affecting millions."
+              title="The Definition Gap"
+              description="Critical concepts resist singular meaning. Communities interpret through their lens. Experience shapes understanding.
+Security sees encryption. Healthcare sees confidentiality. Legal sees rights. Each domain speaks its dialect.
+Building systems that listen: versioned definitions. Contextual interpretation. Domain-specific truth."
               variant="border-left"
               borderColor="border-l-red-500"
             />
             <FeatureCard
               title="Corporate AI Dominance"
-              description="Multi-billion corporations control AI development. Their AI systems embed their values, not ours. Power and resources centralizing rapidly while human governance can't keep up with AI speed."
+              description="Big Tech writes the rules. Their AIs optimize for engagement and profit, not human flourishing. By the time regulators react, it's already too late. The gap between AI capability and democratic control widens daily."
               variant="border-left"
               borderColor="border-l-orange-500"
             />
           </div>
 
-          <Card className="bg-gradient-to-r from-blue-50 to-purple-50 border-blue-200">
+          <Card className="bg-gradient-to-r from-blue-50 to-purple-50 border-blue-200 dark:from-green-950/20 dark:to-blue-950/20 border-green-200 dark:border-green-800">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Network className="h-6 w-6 text-blue-600" />
+                <Network className="h-6 w-6 text-blue-600 " />
                 The Agent Network Revolution
               </CardTitle>
             </CardHeader>
@@ -192,7 +194,7 @@ export default function MissionPage() {
               icon={MessageSquare}
               iconColor="text-blue-600"
               title="Living Language"
-              description="Terms evolve through democratic discussion"
+              description="System evolve through democratic discussion"
             />
             <FeatureCard
               icon={GitBranch}
@@ -289,39 +291,6 @@ export default function MissionPage() {
           </Card>
         </section>
 
-        {/* Real World Applications */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-6">Beyond Discussion: Real World Applications</h2>
-          <p className="text-lg text-muted-foreground mb-8">
-            Once we have shared language that evolves democratically, we can coordinate at unprecedented scale:
-          </p>
-
-          <div className="space-y-8">
-            {applications.map((app, index) => (
-              <Card key={index} className="border-l-4 border-l-blue-500">
-                <CardHeader>
-                  <div className="flex items-start gap-3">
-                    <app.icon className="h-8 w-8 text-blue-600 mt-1" />
-                    <div>
-                      <CardTitle className="text-xl">{app.title}</CardTitle>
-                      <p className="text-muted-foreground">{app.subtitle}</p>
-                    </div>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2">
-                    {app.details.map((detail, detailIndex) => (
-                      <li key={detailIndex} className="flex items-start gap-2">
-                        <ChevronRight className="h-4 w-4 text-blue-500 mt-0.5 flex-shrink-0" />
-                        <span className="text-sm text-muted-foreground">{detail}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </section>
 
         {/* The Journey */}
         <section className="mb-16">
@@ -354,26 +323,7 @@ export default function MissionPage() {
           </div>
         </section>
 
-        {/* Who This Serves */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-6">Who This Serves</h2>
-          <div className="grid md:grid-cols-2 gap-4">
-            {[
-              "Thinkers who want their ideas to matter",
-              "Workers tired of corporate value extraction",
-              "Artists seeking fair compensation systems",
-              "Patients needing affordable healthcare",
-              "Drivers keeping 100% of their labor value",
-              "Teachers wanting to be properly valued",
-              "Anyone who believes human reasoning can improve through technology"
-            ].map((audience, index) => (
-              <div key={index} className="flex items-center gap-3 p-3 rounded-lg bg-muted/30">
-                <ChevronRight className="h-4 w-4 text-blue-500" />
-                <span>{audience}</span>
-              </div>
-            ))}
-          </div>
-        </section>
+
 
         {/* The Promise */}
         <section className="mb-16">
@@ -385,7 +335,7 @@ export default function MissionPage() {
               </p>
               <ul className="space-y-3">
                 {[
-                  "Language evolves democratically at technology speed",
+                  "Language evolves democratically at technological advancement speed",
                   "AI serves human-defined values instead of corporate goals",
                   "Communities coordinate without centralized control",
                   "Individual reasoning gets amplified by collective intelligence",
@@ -405,7 +355,7 @@ export default function MissionPage() {
         <section className="mb-16">
           <Card className="bg-gradient-to-r from-blue-600 to-purple-600 text-white border-0">
             <CardContent className="pt-6 text-center">
-              <h2 className="text-3xl font-bold mb-4">Ready to Join the Dialectic?</h2>
+              <h2 className="text-3xl font-bold mb-4">Ready to Join the Dialectic Governance?</h2>
               <p className="text-xl mb-6 text-blue-100">
                 Help build the first platform where human values evolve at the speed of innovation.
               </p>

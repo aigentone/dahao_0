@@ -14,7 +14,7 @@ export function Header() {
     // Check for saved theme preference or default to light mode
     const savedTheme = localStorage.getItem('theme');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
+
     if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
       setIsDarkMode(true);
       document.documentElement.classList.add('dark');
@@ -39,9 +39,8 @@ export function Header() {
   const navItems = [
     { href: '/', label: 'Home' },
     { href: '/mission', label: 'Our Mission' },
-    { href: '/about', label: 'About' },
     { href: '/how-it-works', label: 'How It Works' },
-    { href: '/governance', label: 'Governance' },
+
     {href:'/versioned-ethics',label:'Ethics'},
     {href: '/git-structure', label:'Git'},
     {href: '/ideas',label:'ideas'}
@@ -78,7 +77,7 @@ export function Header() {
                   <Moon className="h-5 w-5" />
                 )}
               </button>
-              
+
               {/* Mobile menu button */}
               <button
                 onClick={toggleMobileMenu}
@@ -109,7 +108,7 @@ export function Header() {
                 {item.label}
               </Link>
             ))}
-            
+
             {/* Dark mode toggle */}
             <button
               onClick={toggleDarkMode}

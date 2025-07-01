@@ -44,6 +44,7 @@ import metaRulesData from '@/lib/mock-data/elements-metarules.json';
 import discussionsData from '@/lib/mock-data/discussions.json';
 import AgentAssignmentPanel from '@/components/governance/AgentAssignmentPanel';
 import { DiscussionModal } from '@/components/governance/DiscussionModal';
+import { GovernanceChatPanel } from '@/components/governance/GovernanceChatPanel';
 
 interface Branch {
   id: string;
@@ -325,6 +326,16 @@ export default function IdeasPage() {
     elementVersion: string;
   } | null>(null);
 
+  // Chat panel state
+  const [showChatPanel, setShowChatPanel] = useState(false);
+  const [selectedChatElement, setSelectedChatElement] = useState<{
+    id: string;
+    name: string;
+    type: 'term' | 'principle' | 'rule';
+    version: string;
+    data: any;
+  } | null>(null);
+
   const branches: Branch[] = Object.values(branchesData.branches).map(branch => ({
     ...branch,
     type: branch.type as 'core' | 'sub-dahao' | 'main-branch' | 'user-branch'
@@ -575,6 +586,25 @@ export default function IdeasPage() {
       handleAssignAgent(mockItem, selectedDiscussion.elementType);
       setShowDiscussionModal(false);
     }
+  };
+
+  const handleOpenChat = (item: any, type: 'term' | 'principle' | 'rule') => {
+    const version = getVersionForBranch(item, selectedBranch?.id || 'core-dahao');
+    const versionData = item.versions?.[version];
+    
+    setSelectedChatElement({
+      id: item.id,
+      name: item.name,
+      type,
+      version,
+      data: versionData || item.data || {}
+    });
+    setShowChatPanel(true);
+  };
+
+  const closeChatPanel = () => {
+    setShowChatPanel(false);
+    setSelectedChatElement(null);
   };
 
   const renderAgentBadges = (itemId: string) => {
@@ -829,8 +859,18 @@ export default function IdeasPage() {
                                     size="sm"
                                     onClick={() => handleAssignAgent(term, 'term')}
                                     className="h-8 w-8 p-0"
+                                    title="Assign AI Agent"
                                   >
                                     <Bot className="h-4 w-4" />
+                                  </Button>
+                                  <Button
+                                    variant="ghost"
+                                    size="sm"
+                                    onClick={() => handleOpenChat(term, 'term')}
+                                    className="h-8 w-8 p-0"
+                                    title="Chat about this term"
+                                  >
+                                    <MessageSquare className="h-4 w-4" />
                                   </Button>
                                   {versionData?.githubIssue && (
                                     <button 
@@ -947,8 +987,18 @@ export default function IdeasPage() {
                                     size="sm"
                                     onClick={() => handleAssignAgent(principle, 'principle')}
                                     className="h-8 w-8 p-0"
+                                    title="Assign AI Agent"
                                   >
                                     <Bot className="h-4 w-4" />
+                                  </Button>
+                                  <Button
+                                    variant="ghost"
+                                    size="sm"
+                                    onClick={() => handleOpenChat(principle, 'principle')}
+                                    className="h-8 w-8 p-0"
+                                    title="Chat about this principle"
+                                  >
+                                    <MessageSquare className="h-4 w-4" />
                                   </Button>
                                   {versionData?.githubIssue && (
                                     <button 
@@ -1076,8 +1126,18 @@ export default function IdeasPage() {
                                     size="sm"
                                     onClick={() => handleAssignAgent(rule, 'rule')}
                                     className="h-8 w-8 p-0"
+                                    title="Assign AI Agent"
                                   >
                                     <Bot className="h-4 w-4" />
+                                  </Button>
+                                  <Button
+                                    variant="ghost"
+                                    size="sm"
+                                    onClick={() => handleOpenChat(rule, 'rule')}
+                                    className="h-8 w-8 p-0"
+                                    title="Chat about this rule"
+                                  >
+                                    <MessageSquare className="h-4 w-4" />
                                   </Button>
                                   {versionData?.githubIssue && (
                                     <button 
@@ -1311,6 +1371,25 @@ export default function IdeasPage() {
         elementVersion={selectedDiscussion?.elementVersion}
         onAssignAgent={handleAssignAgentFromModal}
       />
+
+      {/* Governance Chat Panel */}
+      {selectedChatElement && (
+        <GovernanceChatPanel
+          element={selectedChatElement}
+          branch={selectedBranch ? {
+            id: selectedBranch.id,
+            name: selectedBranch.name
+          } : undefined}
+          user={{
+            id: 'current-user',
+            name: 'User',
+            values: ['transparency', 'fairness'] // Mock user values
+          }}
+          isOpen={showChatPanel}
+          onClose={closeChatPanel}
+          initialWidth={400} // Slightly larger default width
+        />
+      )}
     </div>
   );
 }
