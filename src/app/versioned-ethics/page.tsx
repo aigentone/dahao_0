@@ -10,7 +10,14 @@ import {
   AlertTriangle, Zap, History, Vote,
   ShieldCheck, Lightbulb, Code2, TrendingUp,
   Bot, Gauge, MessageCircle, Target,
-  Lock, Unlock, Timer, Settings, PlayCircle, PauseCircle
+  Lock, Unlock, Timer, Settings, PlayCircle, PauseCircle,
+  GraduationCap,
+  Leaf,
+  Microscope,
+  Code,
+  Database,
+  Building,
+  AlertCircle
 } from 'lucide-react';
 import Link from 'next/link';
 import { HeroSection, FeatureCard } from '@/components/shared';
@@ -819,206 +826,210 @@ export default function VersionedEthicsPage() {
 
         {/* Real-World Scenarios */}
         <div className="mb-16">
-          <h2 className="text-3xl font-semibold mb-8 text-center">Real-World Scenarios: AI Governance in Action</h2>
+          <h2 className="text-3xl font-semibold mb-8 text-center">Real-World Scenarios</h2>
 
-          <div className="grid md:grid-cols-1 gap-6">
-            <Card>
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* Scenario 1 - Featured style */}
+            <Card className="col-span-full bg-gradient-to-br from-red-50/50 to-orange-50/50 dark:from-red-950/20 dark:to-orange-950/20 border-red-200 dark:border-red-800">
               <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Gauge className="h-5 w-5 text-purple-600" />
-                  Scenario 1: The Speed Trader's DAHAO
-                </CardTitle>
-                <CardDescription>High-frequency trading collective needs millisecond decisions</CardDescription>
+                <div className="flex items-start justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 bg-red-100 dark:bg-red-900/30 rounded-lg flex items-center justify-center">
+                      <Shield className="h-6 w-6 text-red-600" />
+                    </div>
+                    <div>
+                      <CardTitle className="text-xl">Animal Welfare DAHAO</CardTitle>
+                      <CardDescription className="text-red-700 dark:text-red-300">Tracking and preventing animal abuse through community action</CardDescription>
+                    </div>
+                  </div>
+                  <Badge variant="outline" className="bg-red-100 text-red-700 border-red-300">Featured</Badge>
+                </div>
               </CardHeader>
               <CardContent>
-                <div className="grid md:grid-cols-2 gap-4 mb-4">
-                  <div>
-                    <h4 className="font-semibold text-sm mb-2">Configuration:</h4>
-                    <ul className="text-sm space-y-1">
-                      <li>• AI has full term modification rights for efficiency-related terms</li>
-                      <li>• Human approval required for ethics-related terms</li>
-                      <li>• AI can create rules for market conditions</li>
-                      <li>• Automatic rollback if losses exceed 2%</li>
-                    </ul>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="font-semibold text-sm mb-3 flex items-center gap-2">
+                        <Settings className="h-4 w-4 text-red-600" />
+                        Configuration:
+                      </h4>
+                      <div className="space-y-2">
+                        <div className="flex items-start gap-2 p-2 bg-white/60 dark:bg-gray-800/60 rounded">
+                          <Database className="h-4 w-4 text-red-600 mt-0.5 flex-shrink-0" />
+                          <span className="text-sm">Maintains verified abuse reports database</span>
+                        </div>
+                        <div className="flex items-start gap-2 p-2 bg-white/60 dark:bg-gray-800/60 rounded">
+                          <Building className="h-4 w-4 text-orange-600 mt-0.5 flex-shrink-0" />
+                          <span className="text-sm">Tracks companies with abuse history</span>
+                        </div>
+                        <div className="flex items-start gap-2 p-2 bg-white/60 dark:bg-gray-800/60 rounded">
+                          <AlertCircle className="h-4 w-4 text-purple-600 mt-0.5 flex-shrink-0" />
+                          <span className="text-sm">AI verifies evidence and patterns</span>
+                        </div>
+                        <div className="flex items-start gap-2 p-2 bg-white/60 dark:bg-gray-800/60 rounded">
+                          <Users className="h-4 w-4 text-blue-600 mt-0.5 flex-shrink-0" />
+                          <span className="text-sm">Coordinates boycotts and campaigns</span>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-sm mb-2">Result:</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Governance evolves at market speed while protecting core values. The AI adapts
-                      trading rules in real-time based on market conditions, but ethical boundaries
-                      remain under human control.
-                    </p>
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="font-semibold text-sm mb-3 flex items-center gap-2">
+                        <TrendingUp className="h-4 w-4 text-green-600" />
+                        Result:
+                      </h4>
+                      <div className="p-4 bg-green-50/80 dark:bg-green-950/30 rounded-lg border border-green-200 dark:border-green-800">
+                        <p className="text-sm text-green-800 dark:text-green-200 leading-relaxed">
+                          Transparent tracking of animal abuse cases creates accountability. Companies face
+                          immediate community response. AI helps verify claims to prevent false reports while
+                          ensuring real abuse is documented and acted upon.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Example Actions */}
+                <div className="mt-4 p-3 bg-yellow-50/80 dark:bg-yellow-950/30 rounded-lg">
+                  <h5 className="font-medium text-sm mb-2 flex items-center gap-2">
+                    <Zap className="h-4 w-4 text-yellow-600" />
+                    Example Actions:
+                  </h5>
+                  <div className="grid md:grid-cols-2 gap-2 text-xs">
+                    <div>• "Factory farm violation" → Investigation protocol activated</div>
+                    <div>• "Lab testing on animals" → Company added to watchlist</div>
+                    <div>• "Pattern detected at supplier" → Supply chain alert issued</div>
+                    <div>• "Evidence verified" → Boycott campaign coordinated</div>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Shield className="h-5 w-5 text-blue-600" />
-                  Scenario 2: Community Decision Making
-                </CardTitle>
-                <CardDescription>Different communities interpret fairness differently</CardDescription>
+            {/* Scenario 2 - Compact style */}
+            <Card className="border-purple-200 dark:border-purple-800 hover:shadow-lg transition-shadow">
+              <CardHeader className="pb-3">
+                <div className="flex items-center gap-2 mb-2">
+                  <Microscope className="h-5 w-5 text-purple-600" />
+                  <CardTitle className="text-lg">Research Collective DAHAO</CardTitle>
+                </div>
+                <CardDescription className="text-xs">Accelerating peer review while maintaining rigor</CardDescription>
               </CardHeader>
-              <CardContent>
-                <div className="mb-4">
-                  <h4 className="font-semibold text-sm mb-3">Natural Language Rule: "Decisions should be @fair and @transparent"</h4>
-
-                  <div className="grid md:grid-cols-2 gap-6 mb-4">
-                    <div className="p-4 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200">
-                      <h5 className="font-semibold mb-3 text-blue-700 flex items-center gap-2">
-                        <GitBranch className="h-4 w-4" />
-                        Tech Startup Branch
-                      </h5>
-                      <div className="space-y-2 text-sm">
-                        <div><strong>@fair</strong> = "merit-based rewards"</div>
-                        <div><strong>@transparent</strong> = "open metrics"</div>
-                        <div><strong>AI Interpretation:</strong></div>
-                        <ul className="ml-4 space-y-1 text-xs text-muted-foreground">
-                          <li>• AI prioritizes performance data</li>
-                          <li>• Shows contribution metrics publicly</li>
-                          <li>• Merit-based resource allocation</li>
-                        </ul>
-                      </div>
-                    </div>
-
-                    <div className="p-4 bg-green-50 dark:bg-green-950/20 rounded-lg border border-green-200">
-                      <h5 className="font-semibold mb-3 text-green-700 flex items-center gap-2">
-                        <GitBranch className="h-4 w-4" />
-                        Co-op Branch
-                      </h5>
-                      <div className="space-y-2 text-sm">
-                        <div><strong>@fair</strong> = "equal voice"</div>
-                        <div><strong>@transparent</strong> = "consensus visible"</div>
-                        <div><strong>AI Interpretation:</strong></div>
-                        <ul className="ml-4 space-y-1 text-xs text-muted-foreground">
-                          <li>• AI ensures everyone participates</li>
-                          <li>• Shows consensus-building process</li>
-                          <li>• Equal weight for all opinions</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div className="p-4 bg-purple-50 dark:bg-purple-950/20 rounded-lg border border-purple-200">
-                      <h5 className="font-semibold mb-3 text-purple-700 flex items-center gap-2">
-                        <GitBranch className="h-4 w-4" />
-                        Environmental NGO Branch
-                      </h5>
-                      <div className="space-y-2 text-sm">
-                        <div><strong>@fair</strong> = "future generations considered"</div>
-                        <div><strong>@transparent</strong> = "impact data public"</div>
-                        <div><strong>AI Interpretation:</strong></div>
-                        <ul className="ml-4 space-y-1 text-xs text-muted-foreground">
-                          <li>• AI weighs long-term consequences</li>
-                          <li>• Shows environmental impact data</li>
-                          <li>• Intergenerational fairness priority</li>
-                        </ul>
-                      </div>
-                    </div>
-
-                    <div className="p-4 bg-orange-50 dark:bg-orange-950/20 rounded-lg border border-orange-200">
-                      <h5 className="font-semibold mb-3 text-orange-700 flex items-center gap-2">
-                        <GitBranch className="h-4 w-4" />
-                        Artists Collective Branch
-                      </h5>
-                      <div className="space-y-2 text-sm">
-                        <div><strong>@fair</strong> = "creative opportunity"</div>
-                        <div><strong>@transparent</strong> = "artistic process shared"</div>
-                        <div><strong>AI Interpretation:</strong></div>
-                        <ul className="ml-4 space-y-1 text-xs text-muted-foreground">
-                          <li>• AI ensures creative access equity</li>
-                          <li>• Shows artistic decision rationale</li>
-                          <li>• Balances creative freedom and inclusion</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="mt-4 p-3 bg-gradient-to-r from-green-50/50 to-blue-50/50 dark:from-green-950/20 dark:to-blue-950/20 rounded-lg border">
-                    <p className="text-sm text-center">
-                      <strong>Result:</strong> Same rule creates entirely different governance behaviors based on each community's
-                      values—AI interprets context precisely without requiring separate rule systems.
-                    </p>
-                  </div>
+              <CardContent className="space-y-4">
+                <div className="bg-purple-50/50 dark:bg-purple-950/20 p-3 rounded-lg">
+                  <h4 className="font-medium text-xs text-purple-700 dark:text-purple-300 mb-2">Key Features:</h4>
+                  <ul className="text-xs space-y-1 text-muted-foreground">
+                    <li>• AI validates methodology against standards</li>
+                    <li>• Quick pre-review for obvious issues</li>
+                    <li>• AI matches papers with expert reviewers</li>
+                    <li>• Human experts make final decisions</li>
+                  </ul>
+                </div>
+                <div className="border-t pt-3">
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    <strong className="text-purple-600">Impact:</strong> Review time drops from months to weeks.
+                    AI catches methodological flaws early, experts focus on novel insights.
+                  </p>
                 </div>
               </CardContent>
             </Card>
 
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Brain className="h-5 w-5 text-green-600" />
-                  Scenario 3: The Experimental Branch
-                </CardTitle>
-                <CardDescription>Research group testing AI governance limits</CardDescription>
+            {/* Scenario 3 - Icon-focused style */}
+            <Card className="border-green-200 dark:border-green-800 hover:shadow-lg transition-shadow">
+              <CardHeader className="text-center pb-3">
+                <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <Leaf className="h-8 w-8 text-green-600" />
+                </div>
+                <CardTitle className="text-lg">Local Farming Cooperative</CardTitle>
+                <CardDescription className="text-xs">Sustainable agriculture coordination</CardDescription>
               </CardHeader>
-              <CardContent>
-                <div className="grid md:grid-cols-2 gap-4 mb-4">
-                  <div>
-                    <h4 className="font-semibold text-sm mb-2">Configuration:</h4>
-                    <ul className="text-sm space-y-1">
-                      <li>• AI has full governance authority in isolated branch</li>
-                      <li>• Creates new terms based on observed needs</li>
-                      <li>• Evolves entire governance structure</li>
-                      <li>• Findings shared with main branch</li>
-                    </ul>
+              <CardContent className="space-y-4">
+                <div className="grid grid-cols-2 gap-2">
+                  <div className="text-center p-2 bg-green-50/50 dark:bg-green-950/20 rounded">
+                    <MessageCircle className="h-4 w-4 text-green-600 mx-auto mb-1" />
+                    <p className="text-xs font-medium">Weather AI</p>
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-sm mb-2">Result:</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Rapid innovation in safe environment. The experimental branch discovers new
-                      governance patterns that can be selectively adopted by the main community
-                      after proven successful.
-                    </p>
+                  <div className="text-center p-2 bg-green-50/50 dark:bg-green-950/20 rounded">
+                    <RefreshCw className="h-4 w-4 text-green-600 mx-auto mb-1" />
+                    <p className="text-xs font-medium">Auto Sharing</p>
+                  </div>
+                  <div className="text-center p-2 bg-green-50/50 dark:bg-green-950/20 rounded">
+                    <Vote className="h-4 w-4 text-green-600 mx-auto mb-1" />
+                    <p className="text-xs font-medium">Crop Voting</p>
+                  </div>
+                  <div className="text-center p-2 bg-green-50/50 dark:bg-green-950/20 rounded">
+                    <AlertTriangle className="h-4 w-4 text-green-600 mx-auto mb-1" />
+                    <p className="text-xs font-medium">Disease Alert</p>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <MessageCircle className="h-5 w-5 text-orange-600" />
-                  Scenario 4: The Evolving Community
-                </CardTitle>
-                <CardDescription>A community discovers their voting rules need adjustment through discussion</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="grid md:grid-cols-2 gap-4 mb-4">
-                  <div>
-                    <h4 className="font-semibold text-sm mb-2">Configuration:</h4>
-                    <ul className="text-sm space-y-1">
-                      <li>• Discussion opens about voting improvements</li>
-                      <li>• AI facilitates natural language rule evolution</li>
-                      <li>• Community votes on rule changes with rich feedback</li>
-                      <li>• Rules update without any code changes</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-sm mb-2">Result:</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Governance evolves through conversation. The community can modify their rules using natural language,
-                      making governance accessible to non-technical members while maintaining precision and effectiveness.
-                    </p>
-                  </div>
-                </div>
-                <div className="mt-4 p-3 bg-orange-50 dark:bg-orange-950/20 rounded-lg">
-                  <h5 className="font-semibold text-sm mb-2">Example Evolution:</h5>
-                  <div className="text-sm space-y-1">
-                    <p><strong>Week 1:</strong> "Our 60% threshold feels too high for minor proposals"</p>
-                    <p><strong>Week 2:</strong> Discussion reveals need for tiered voting thresholds</p>
-                    <p><strong>Week 3:</strong> AI suggests: "Minor changes need 40%, major changes need 75%"</p>
-                    <p><strong>Week 4:</strong> Community refines and approves new natural language rule</p>
-                  </div>
+                <div className="text-center p-3 bg-green-50 dark:bg-green-950/20 rounded-lg border border-green-200 dark:border-green-800">
+                  <p className="text-xs text-green-800 dark:text-green-200">
+                    Farmers optimize yields while maintaining community control. Local food security improves.
+                  </p>
                 </div>
               </CardContent>
             </Card>
           </div>
-        </div>
 
+          {/* Scenario 4 - Timeline style */}
+          <Card className="mt-6 border-orange-200 dark:border-orange-800">
+            <CardHeader>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <GraduationCap className="h-6 w-6 text-orange-600" />
+                  <div>
+                    <CardTitle className="text-xl">Educational Community DAHAO</CardTitle>
+                    <CardDescription>Personalizing learning while maintaining standards</CardDescription>
+                  </div>
+                </div>
+                <Badge variant="secondary" className="text-xs">Learning Path</Badge>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                <div className="grid md:grid-cols-4 gap-4">
+                  <div className="flex flex-col items-center text-center p-3 bg-orange-50/50 dark:bg-orange-950/20 rounded-lg">
+                    <div className="w-8 h-8 bg-orange-100 dark:bg-orange-900/30 rounded-full flex items-center justify-center mb-2">
+                      <span className="text-sm font-bold text-orange-600">1</span>
+                    </div>
+                    <h5 className="text-xs font-medium mb-1">AI Adaptation</h5>
+                    <p className="text-xs text-muted-foreground">Content adapts to learning styles</p>
+                  </div>
+                  <div className="flex flex-col items-center text-center p-3 bg-orange-50/50 dark:bg-orange-950/20 rounded-lg">
+                    <div className="w-8 h-8 bg-orange-100 dark:bg-orange-900/30 rounded-full flex items-center justify-center mb-2">
+                      <span className="text-sm font-bold text-orange-600">2</span>
+                    </div>
+                    <h5 className="text-xs font-medium mb-1">Standards</h5>
+                    <p className="text-xs text-muted-foreground">Community defines quality</p>
+                  </div>
+                  <div className="flex flex-col items-center text-center p-3 bg-orange-50/50 dark:bg-orange-950/20 rounded-lg">
+                    <div className="w-8 h-8 bg-orange-100 dark:bg-orange-900/30 rounded-full flex items-center justify-center mb-2">
+                      <span className="text-sm font-bold text-orange-600">3</span>
+                    </div>
+                    <h5 className="text-xs font-medium mb-1">Tracking</h5>
+                    <p className="text-xs text-muted-foreground">Automated progress monitoring</p>
+                  </div>
+                  <div className="flex flex-col items-center text-center p-3 bg-orange-50/50 dark:bg-orange-950/20 rounded-lg">
+                    <div className="w-8 h-8 bg-orange-100 dark:bg-orange-900/30 rounded-full flex items-center justify-center mb-2">
+                      <span className="text-sm font-bold text-orange-600">4</span>
+                    </div>
+                    <h5 className="text-xs font-medium mb-1">Mentorship</h5>
+                    <p className="text-xs text-muted-foreground">Human guidance for complex topics</p>
+                  </div>
+                </div>
+                <div className="bg-gradient-to-r from-orange-50 to-yellow-50 dark:from-orange-950/20 dark:to-yellow-950/20 p-4 rounded-lg border border-orange-200 dark:border-orange-800">
+                  <p className="text-sm text-center">
+                    <strong className="text-orange-700 dark:text-orange-300">Outcome:</strong>
+                    <span className="text-muted-foreground ml-2">
+                      Each learner gets personalized path while meeting community standards.
+                      AI handles routine assessment, teachers focus on inspiration and guidance.
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
         {/* Why This Works: Speed AND Safety */}
         <div className="mb-16">
           <h2 className="text-3xl font-semibold mb-8 text-center">Why This Works: Speed AND Safety</h2>

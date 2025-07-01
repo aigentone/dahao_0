@@ -41,6 +41,7 @@ export function Header() {
     { href: '/mission', label: 'Our Mission' },
     { href: '/how-it-works', label: 'How It Works' },
     { href: '/versioned-ethics', label: 'Ethics' },
+
   ];
 
   const toggleMobileMenu = () => {

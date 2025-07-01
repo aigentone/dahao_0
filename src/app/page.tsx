@@ -296,24 +296,72 @@ export default function HomePage() {
                 </ul>
               </div>
 
-              <div className="space-y-4">
-                <h4 className="font-semibold flex items-center gap-2">
-                  <Workflow className="h-4 w-4" />
-                  MCP Services You Can Orchestrate:
-                </h4>
-                <div className="flex flex-wrap gap-2">
-                  <Badge variant="outline" className="text-xs">🔧 GitHub</Badge>
-                  <Badge variant="outline" className="text-xs">📊 Analytics</Badge>
-                  <Badge variant="outline" className="text-xs">🤖 OpenAI</Badge>
-                  <Badge variant="outline" className="text-xs">🔍 Search</Badge>
-                  <Badge variant="outline" className="text-xs">📚 ArXiv</Badge>
-                  <Badge variant="outline" className="text-xs">🛡️ Security</Badge>
-                  <Badge variant="outline" className="text-xs">💬 Slack</Badge>
-                  <Badge variant="outline" className="text-xs">📧 Email</Badge>
-                  <Badge variant="outline" className="text-xs">🌍 Climate Data</Badge>
-                  <Badge variant="outline" className="text-xs">🎯 Custom APIs</Badge>
+              <div>
+
+                  <h4 className="font-semibold flex items-center gap-2 mb-2">
+                    <Workflow className="h-4 w-4" />
+                    Connect External Services
+                  </h4>
+
+                  <p className="text-sm text-muted-foreground mb-3">
+                    DAHAO integrates with services through MCP (Model Context Protocol) and other emerging standards.
+                    Currently, many companies are creating MCP servers as their primary way to enable LLM integration.
+                  </p>
+
+                  <div className="bg-blue-50 dark:bg-blue-950/20 p-3 rounded-lg mb-4">
+                    <p className="text-xs">
+                      <strong>Why MCP?</strong> It's becoming the standard for AI-service communication.
+                      Companies build MCP servers so their tools can talk to Claude, ChatGPT, and other LLMs seamlessly.
+                    </p>
+                  </div>
+
+                  <div className="space-y-3">
+                    <div>
+                      <h5 className="text-xs font-medium text-muted-foreground mb-2">AI Assistants</h5>
+                      <div className="flex flex-wrap gap-2">
+                        <Badge variant="outline" className="text-xs">🤖 OpenAI</Badge>
+                        <Badge variant="outline" className="text-xs">🧠 Claude Desktop</Badge>
+                        <Badge variant="outline" className="text-xs">💻 Claude Code</Badge>
+                        <Badge variant="outline" className="text-xs">🦙 Local LLMs</Badge>
+                      </div>
+                    </div>
+
+                    <div>
+                      <h5 className="text-xs font-medium text-muted-foreground mb-2">Development Tools</h5>
+                      <div className="flex flex-wrap gap-2">
+                        <Badge variant="outline" className="text-xs">🔧 GitHub</Badge>
+                        <Badge variant="outline" className="text-xs">🛡️ Security Scanners</Badge>
+                        <Badge variant="outline" className="text-xs">📦 Package Managers</Badge>
+                      </div>
+                    </div>
+
+                    <div>
+                      <h5 className="text-xs font-medium text-muted-foreground mb-2">Research & Data</h5>
+                      <div className="flex flex-wrap gap-2">
+                        <Badge variant="outline" className="text-xs">📚 ArXiv</Badge>
+                        <Badge variant="outline" className="text-xs">🔍 Search APIs</Badge>
+                        <Badge variant="outline" className="text-xs">🌍 Climate Data</Badge>
+                        <Badge variant="outline" className="text-xs">📊 Analytics</Badge>
+                      </div>
+                    </div>
+
+                    <div>
+                      <h5 className="text-xs font-medium text-muted-foreground mb-2">Communication</h5>
+                      <div className="flex flex-wrap gap-2">
+                        <Badge variant="outline" className="text-xs">💬 Slack</Badge>
+                        <Badge variant="outline" className="text-xs">📧 Email</Badge>
+                        <Badge variant="outline" className="text-xs">🔔 Discord</Badge>
+                        <Badge variant="outline" className="text-xs">🎯 Custom APIs</Badge>
+                      </div>
+                    </div>
+                  </div>
+
+                  <p className="text-xs text-muted-foreground mt-3 italic">
+                    More services are adding MCP support daily as it becomes the de facto standard for AI integration.
+                  </p>
                 </div>
-              </div>
+
+
             </div>
           </div>
         </CardContent>
