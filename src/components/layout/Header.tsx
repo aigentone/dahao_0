@@ -41,7 +41,6 @@ export function Header() {
     { href: '/mission', label: 'Our Mission' },
     { href: '/how-it-works', label: 'How It Works' },
     { href: '/versioned-ethics', label: 'Ethics' },
-    { href: '/git-structure', label: 'Git Structure' }
   ];
 
   const toggleMobileMenu = () => {

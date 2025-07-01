@@ -1,10 +1,12 @@
 'use client';
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import {Button} from '@/components/ui/button';
 import {
   Bot, CheckCircle, BookOpen, Building, Scale, RefreshCw, ArrowRight,
   Shield, GitBranch, Code, Network, Gauge, Database, Users, Layers,
-  Workflow, Lock, Zap, Globe, Terminal, Cloud
+  Workflow, Lock, Zap, Globe, Terminal, Cloud,
+  Badge
 } from 'lucide-react';
 import { HeroSection, FeatureCard, ArchitectureFlow, NavigationCTA, StepProcess } from '@/components/shared';
 
@@ -800,6 +802,40 @@ const result = await dahao.checkCompliance(action);`}
         </div>
       </section>
 
+      {/* Technical Roadmap */}
+      <section className="py-16 px-4 bg-muted/30">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">What's Next</h2>
+            <p className="text-lg text-muted-foreground">
+              Building the future of governance together
+            </p>
+          </div>
+
+          <div className="max-w-2xl mx-auto">
+            <Card>
+              <CardHeader>
+                <div className="flex items-center justify-between">
+                  <CardTitle>Technical Roadmap</CardTitle>
+                  <Badge>Coming Soon</Badge>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm mb-4">
+                  As we build DAHAO together, we're planning:
+                </p>
+                <ul className="space-y-2 text-sm">
+                  <li>• Git-based version control for all governance</li>
+                  <li>• Personal branches for customization</li>
+                  <li>• Automated GitHub workflows</li>
+                  <li>• Full technical documentation</li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Navigation */}
       <section className="py-16 px-4 bg-background">
         <div className="container mx-auto max-w-4xl text-center">
@@ -811,6 +847,8 @@ const result = await dahao.checkCompliance(action);`}
           />
         </div>
       </section>
+
+
     </div>
   );
 }

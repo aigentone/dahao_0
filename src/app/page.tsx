@@ -27,7 +27,7 @@ export default function HomePage() {
               className="mb-12"
               buttons={[
                 { text: "Learn How It Works", href: "/how-it-works" },
-                { text: "View Governance", href: "/governance", variant: "outline", icon: GitBranch }
+
               ]}
             />
 
@@ -578,7 +578,7 @@ MCP Connections: {
             className="mb-8"
             buttons={[
               { text: "Get Started", href: "/how-it-works", icon: ArrowRight, iconPosition: "right" },
-              { text: "Join Discussions", href: "/forum", variant: "outline", icon: MessageSquare }
+
             ]}
           />
 

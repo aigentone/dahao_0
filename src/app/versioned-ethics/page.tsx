@@ -115,9 +115,11 @@ export default function VersionedEthicsPage() {
                   </div>
                   <h4 className="font-semibold mb-2">Cultural Variations</h4>
                   <div className="text-xs space-y-1 text-left">
-                    <p><strong>@harm (Western branch):</strong><br />"Physical and psychological damage"</p>
-                    <p><strong>@harm (Buddhist branch):</strong><br />"Including harm to all sentient beings"</p>
-                    <p><strong>@harm (Environmental branch):</strong><br />"Including ecosystem damage"</p>
+                  <p><strong>@harm (Core DAHAO):</strong><br />"Physical, psychological, or economic damage to individuals or communities"</p>
+
+                  <p><strong>@harm (Animal Protection):</strong><br />"Pain, distress, habitat loss, or inability to express natural behaviors"</p>
+
+                  <p><strong>@harm (Creative Commons):</strong><br />"Plagiarism, artistic censorship, or denial of fair creative compensation"</p>
                   </div>
                 </div>
 
@@ -1542,12 +1544,7 @@ export default function VersionedEthicsPage() {
                 See How It Works
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg">
-              <Link href="/forum">
-                <GitBranch className="h-4 w-4 mr-2" />
-                Explore Governance
-              </Link>
-            </Button>
+
           </div>
 
           <Card className="max-w-md mx-auto">
