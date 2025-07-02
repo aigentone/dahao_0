@@ -37,7 +37,7 @@ export default function HomePage() {
             <Card className="max-w-2xl mx-auto bg-yellow-50 dark:bg-yellow-950/20 border-yellow-200 dark:border-yellow-800">
               <CardContent className="pt-6">
                 <p className="text-sm text-yellow-800 dark:text-yellow-200">
-                  <strong>Phase 1 (Current):</strong> Building governance foundations.
+                  <strong>Phase 1:</strong> Building governance foundations.
                   No tokens or investment required - just ideas and participation!
                 </p>
               </CardContent>
@@ -236,8 +236,8 @@ export default function HomePage() {
           <Card className="mt-6 bg-purple-50 dark:bg-purple-950/20 border-purple-200 dark:border-purple-800">
             <CardContent className="pt-6">
               <p className="text-center text-purple-800 dark:text-purple-200">
-                <strong>Try it now:</strong> Connect your OpenAI or Claude API key
-                to enable AI-powered governance analysis. Your agents help you
+                <strong>Coming Soon:</strong> You'll be able to connect your OpenAI or Claude API key
+                to enable AI-powered governance analysis. Personal AI agents will help you
                 understand and participate in governance decisions.
               </p>
             </CardContent>
@@ -774,18 +774,18 @@ MCP Connections: {
       <section className="py-20 px-4 bg-gradient-to-t from-muted/30 to-background">
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-3xl font-bold mb-6">
-            Ready to Shape the Future of Governance?
+            Interested in the Future of Governance?
           </h2>
 
           <p className="text-xl text-muted-foreground mb-8">
-            Join the first community building self-improving governance through
-            human-AI collaboration. No tokens needed - just ideas.
+            Learn about our vision for self-improving governance through
+            human-AI collaboration. Join the conversation about what's possible.
           </p>
 
           <NavigationCTA
             className="mb-8"
             buttons={[
-              { text: "Get Started", href: "/how-it-works", icon: ArrowRight, iconPosition: "right" },
+              { text: "Explore the Mission", href: "/mission", icon: ArrowRight, iconPosition: "right" },
 
             ]}
           />
@@ -793,8 +793,8 @@ MCP Connections: {
           <div className="grid gap-4 md:grid-cols-3 max-w-2xl mx-auto text-sm">
             <div className="text-center">
               <CheckCircle className="h-5 w-5 mx-auto mb-2 text-green-600" />
-              <p className="font-medium">Free to Join</p>
-              <p className="text-muted-foreground">GitHub account only</p>
+              <p className="font-medium">Open Concept</p>
+              <p className="text-muted-foreground">Follow our progress</p>
             </div>
             <div className="text-center">
               <CheckCircle className="h-5 w-5 mx-auto mb-2 text-green-600" />

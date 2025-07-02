@@ -51,20 +51,20 @@ export default function VersionedEthicsPage() {
 
             {/* Conversational Example */}
             <div className="mb-6 p-4 bg-white dark:bg-gray-900 rounded-lg border">
-              <h4 className="font-semibold mb-3 text-gray-800 dark:text-gray-200">Example Daily Interaction:</h4>
+              <h4 className="font-semibold mb-3 text-gray-800 dark:text-gray-200">Envisioned Future Interaction:</h4>
               <div className="space-y-2 text-sm">
                 <div className="flex gap-2">
-                  <strong className="text-blue-600">You:</strong>
-                  <span>"What do I need to do today?"</span>
+                  <strong className="text-blue-600">You (Future):</strong>
+                  <span>"What would I need to do in DAHAO?"</span>
                 </div>
                 <div className="flex gap-2">
-                  <strong className="text-green-600">DAHAO:</strong>
+                  <strong className="text-green-600">DAHAO (Concept):</strong>
                   <div>
-                    <p>"Good morning! You have 3 governance tasks:</p>
-                    <p>1. 🗳️ Vote on 'AI transparency in decisions' (2 hours left)</p>
-                    <p>2. 💬 Join 'Urban farming integration' discussion</p>
-                    <p>3. 📋 New tasks matching your skills</p>
-                    <p><br />Which would you like to start with?"</p>
+                    <p>"In the future platform, you might have tasks like:</p>
+                    <p>1. 🗳️ Voting on governance decisions</p>
+                    <p>2. 💬 Joining community discussions</p>
+                    <p>3. 📋 Contributing to projects matching your skills</p>
+                    <p><br />This demonstrates how the system could work once built."</p>
                   </div>
                 </div>
               </div>
@@ -1542,25 +1542,17 @@ export default function VersionedEthicsPage() {
 
         {/* Call to Action */}
         <div className="text-center">
-          <h2 className="text-2xl font-semibold mb-4">Ready to Accelerate Your Governance?</h2>
+          <h2 className="text-2xl font-semibold mb-4">Vision for Accelerated Governance</h2>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Join the revolution where human values guide and AI capabilities amplify
+            Explore our vision for a future where human values guide and AI capabilities amplify
             our collective intelligence.
           </p>
 
-          <div className="flex justify-center gap-4 mb-8">
-            <Button asChild size="lg">
-              <Link href="/how-it-works">
-                <Lightbulb className="h-4 w-4 mr-2" />
-                See How It Works
-              </Link>
-            </Button>
 
-          </div>
 
           <Card className="max-w-md mx-auto">
             <CardContent className="p-6">
-              <Badge className="mb-3">Phase 1 Active</Badge>
+              <Badge className="mb-3">Phase 1</Badge>
               <p className="text-sm text-muted-foreground">
               No tokens needed - just ideas. We're using DAHAO to build DAHAO, creating the first self-improving governance system through community collaboration.
               </p>

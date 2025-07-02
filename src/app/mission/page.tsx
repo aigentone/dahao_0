@@ -27,8 +27,8 @@ export default function MissionPage() {
   const phases = [
     {
       number: 1,
-      title: "Genesis (Now)",
-      description: "Using DAHAO to build DAHAO",
+      title: "Genesis (Planned)",
+      description: "Vision: Using DAHAO to build DAHAO",
       details: [
         "Community defines what 'governance' means",
         "Create first terms, principles, rules together",
@@ -125,7 +125,7 @@ export default function MissionPage() {
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-12 max-w-4xl">
         <HeroSection
-          badge="Phase 1: Using DAHAO to Build DAHAO"
+          badge="Phase 1: Envisioning DAHAO"
           title="Our Mission"
           subtitle="Building the first dialectic platform where human values evolve at the speed of technology"
           maxWidth="4xl"
@@ -355,17 +355,17 @@ Building systems that listen: versioned definitions. Contextual interpretation. 
         <section className="mb-16">
           <Card className="bg-gradient-to-r from-blue-600 to-purple-600 text-white border-0">
             <CardContent className="pt-6 text-center">
-              <h2 className="text-3xl font-bold mb-4">Ready to Join the Dialectic Governance?</h2>
+              <h2 className="text-3xl font-bold mb-4">Interested in Dialectic Governance?</h2>
               <p className="text-xl mb-6 text-blue-100">
-                Help build the first platform where human values evolve at the speed of innovation.
+                Learn about our vision for the first platform where human values could evolve at the speed of innovation.
               </p>
 
               <div className="grid md:grid-cols-2 gap-4 mb-6">
                 {[
-                  "Join Genesis: Shape fundamental concepts from day one",
-                  "Pick Your Domain: Which industry needs dialectic coordination?",
-                  "Start Discussions: Your reasoning improves collective understanding",
-                  "Connect Your AI: Let your agent participate in collective reasoning"
+                  "Genesis Vision: How we'll shape fundamental concepts together",
+                  "Future Domains: Which industries could benefit from dialectic coordination",
+                  "Planned Discussions: How your reasoning will improve collective understanding",
+                  "AI Integration Concept: How agents could participate in collective reasoning"
                 ].map((action, index) => (
                   <div key={index} className="flex items-start gap-3 text-left">
                     <ChevronRight className="h-5 w-5 text-blue-300 mt-0.5 flex-shrink-0" />

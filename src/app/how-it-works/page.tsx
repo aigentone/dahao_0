@@ -22,13 +22,6 @@ export default function HowItWorksPage() {
             subtitle="The concepts, design patterns, and integration points that make DAHAO revolutionary. Built on four foundational concepts that work together to create living governance."
             maxWidth="4xl"
           >
-            <NavigationCTA
-              className="mb-12"
-              buttons={[
-                { text: "View Architecture", href: "#architecture", icon: Layers },
-
-              ]}
-            />
           </HeroSection>
         </div>
       </section>
@@ -844,7 +837,7 @@ const result = await dahao.checkCompliance(action);`}
           <NavigationCTA
             buttons={[
 
-              { text: "Back to Overview", href: "/", variant: "outline", icon: ArrowRight }
+              { text: "Explore Our Moral Code", href: "/versioned-ethics", variant: "outline", icon: ArrowRight }
             ]}
           />
         </div>
