@@ -100,7 +100,7 @@ export default function VersionedEthicsPage() {
           <Card className="mb-8">
             <CardHeader>
               <CardTitle className="text-xl">Why Versioning Matters Beyond Updates</CardTitle>
-              <CardDescription>Versioning in DAHAO captures different interpretations, not just updates—enabling the same term to mean different things to different communities</CardDescription>
+              <CardDescription>Versioning in DAHAO captures different interpretations, not just updates enabling the same term to mean different things to different communities</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="grid md:grid-cols-3 gap-6 mb-6">
@@ -410,7 +410,7 @@ export default function VersionedEthicsPage() {
 
               <div className="mt-4 p-3 bg-gradient-to-r from-purple-50/50 to-blue-50/50 dark:from-purple-950/20 dark:to-blue-950/20 rounded-lg border">
                 <p className="text-sm text-center">
-                  <strong>Same rule, different interpretations</strong> — AI uses your versioned @terms to understand exactly what your community means, no visual configuration needed.
+                  <strong>Same rule, different interpretations</strong>   AI uses your versioned @terms to understand exactly what your community means, no visual configuration needed.
                 </p>
               </div>
             </CardContent>
@@ -815,7 +815,7 @@ export default function VersionedEthicsPage() {
 
                 <div className="bg-gradient-to-r from-green-50/50 to-blue-50/50 dark:from-green-950/20 dark:to-blue-950/20 p-4 rounded-lg border">
                   <p className="text-sm text-center">
-                    <strong>Same rule, different execution</strong> — AI understands each community's unique context through versioned terms,
+                    <strong>Same rule, different execution</strong>   AI understands each community's unique context through versioned terms,
                     enabling precise interpretation without requiring separate implementations.
                   </p>
                 </div>
@@ -1346,7 +1346,7 @@ export default function VersionedEthicsPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  When you write a rule like "Proposals need @community-discussion before voting," DAHAO enriches your natural language rule with versioned terms. The AI interprets your rule using your branch's specific definitions of @community-discussion to execute exactly as your community intends. No coding or visual workflows required—just write rules naturally and AI understands the context.
+                  When you write a rule like "Proposals need @community-discussion before voting," DAHAO enriches your natural language rule with versioned terms. The AI interprets your rule using your branch's specific definitions of @community-discussion to execute exactly as your community intends. No coding or visual workflows required just write rules naturally and AI understands the context.
                 </p>
               </CardContent>
             </Card>
@@ -1379,7 +1379,7 @@ export default function VersionedEthicsPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  While DAHAO focuses on natural language governance, there is an optional visual builder available for those who prefer it. However, it's not needed for most use cases—the core power of DAHAO comes from writing rules naturally and having AI interpret them with perfect contextual understanding through your versioned terms. The visual interface is simply a helper tool for advanced users who want to visualize complex rule interactions.
+                  While DAHAO focuses on natural language governance, there is an optional visual builder available for those who prefer it. However, it's not needed for most use cases the core power of DAHAO comes from writing rules naturally and having AI interpret them with perfect contextual understanding through your versioned terms. The visual interface is simply a helper tool for advanced users who want to visualize complex rule interactions.
                 </p>
               </CardContent>
             </Card>
@@ -1507,7 +1507,7 @@ export default function VersionedEthicsPage() {
             </CardHeader>
             <CardContent>
               <p className="text-lg text-center mb-6">
-                Your values become natural language rules. Your versioned terms eliminate ambiguity. Your principles guide AI interpretation. Write naturally, and AI executes with your community's exact understanding—no workflows or coding required.
+                Your values become natural language rules. Your versioned terms eliminate ambiguity. Your principles guide AI interpretation. Write naturally, and AI executes with your community's exact understanding no workflows or coding required.
               </p>
 
               <div className="bg-background p-6 rounded-lg text-center">
@@ -1533,7 +1533,7 @@ export default function VersionedEthicsPage() {
               <div className="text-center mt-6 p-4 bg-gradient-to-r from-blue-50 to-green-50 dark:from-blue-950/20 dark:to-green-950/20 rounded-lg">
                 <p className="font-semibold mb-2">The Promise of Natural Language Governance:</p>
                 <p className="text-muted-foreground">
-                  Human wisdom interpreted with perfect context at the speed of conversation. Create sophisticated governance through natural language, maintain control through versioned definitions, and evolve rules through community discussion—no technical knowledge required.
+                  Human wisdom interpreted with perfect context at the speed of conversation. Create sophisticated governance through natural language, maintain control through versioned definitions, and evolve rules through community discussion no technical knowledge required.
                 </p>
               </div>
             </CardContent>

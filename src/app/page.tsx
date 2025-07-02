@@ -5,13 +5,16 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import {
   RefreshCw, Users, Bot, GitBranch, ArrowRight,
   BookOpen, Building, Scale, MessageSquare,
-  CheckCircle, Lightbulb, Code, Shield,Lock,Workflow,Settings,DollarSign,Zap,Palette,FileText,Server,Network
+  CheckCircle, Lightbulb, Code, Shield,Lock,Workflow,Settings,DollarSign,Zap,Palette,FileText,Server,Network,Plug,
+  ChevronDown, ChevronUp
 } from 'lucide-react';
 import { HeroSection, FeatureCard, ArchitectureFlow, NavigationCTA } from '@/components/shared';
 import { Badge } from '@/components/ui/badge';
+import { useState } from 'react';
 
 
 export default function HomePage() {
+  const [isMCPExpanded, setIsMCPExpanded] = useState(false);
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
@@ -250,6 +253,8 @@ export default function HomePage() {
     </h2>
 
     <div className="max-w-5xl mx-auto space-y-8">
+
+
       {/* Main Card */}
       <Card>
         <CardHeader>
@@ -362,6 +367,161 @@ export default function HomePage() {
                 </div>
 
 
+            </div>
+
+            {/* MCP Explanation Section */}
+            <div className="mt-8 pt-6 border-t border-border">
+              <button
+                onClick={() => setIsMCPExpanded(!isMCPExpanded)}
+                className="w-full text-left group hover:opacity-80 transition-opacity"
+              >
+                <h4 className="font-semibold flex items-center justify-between cursor-pointer">
+                  <span className="flex items-center gap-2">
+                    <Plug className="h-4 w-4 text-purple-600" />
+                    What is MCP?
+                  </span>
+                  {isMCPExpanded ? (
+                    <ChevronUp className="h-4 w-4 text-muted-foreground transition-transform duration-200 group-hover:text-purple-600" />
+                  ) : (
+                    <ChevronDown className="h-4 w-4 text-muted-foreground transition-transform duration-200 group-hover:text-purple-600" />
+                  )}
+                </h4>
+              </button>
+              
+              {isMCPExpanded && (
+                <div className="mt-4 space-y-6 animate-in slide-in-from-top-2 duration-300">
+                  {/* Main explanation */}
+                  <div className="prose prose-gray max-w-none">
+                    <p className="text-muted-foreground leading-relaxed">
+                      Model Context Protocol (MCP) is a standardized framework designed to connect AI systems—like Claude—to
+                      enterprise knowledge and tools in a modular, scalable, and consistent way. Traditionally, each AI
+                      application required custom implementation for prompt logic, tool integration, and data access. MCP
+                      eliminates this fragmentation by introducing a unified protocol where AI clients can interact with
+                      standardized servers.
+                    </p>
+                  </div>
+
+                  {/* Key Features Grid */}
+                  <div className="grid gap-4 md:grid-cols-2">
+                    <div className="space-y-3">
+                      <h5 className="font-semibold flex items-center gap-2">
+                        <Network className="h-4 w-4 text-purple-600" />
+                        How MCP Works
+                      </h5>
+                      <ul className="text-sm space-y-2 text-muted-foreground">
+                        <li className="flex items-start gap-2">
+                          <span className="text-green-600 mt-0.5">✓</span>
+                          <span>Standardized servers expose resources (files, records)</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-green-600 mt-0.5">✓</span>
+                          <span>Tools provide functions (search, update, analyze)</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-green-600 mt-0.5">✓</span>
+                          <span>Pre-defined prompt templates ensure consistency</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-green-600 mt-0.5">✓</span>
+                          <span>Any MCP-compatible AI can access these services</span>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div className="space-y-3">
+                      <h5 className="font-semibold flex items-center gap-2">
+                        <Zap className="h-4 w-4 text-purple-600" />
+                        Key Benefits
+                      </h5>
+                      <ul className="text-sm space-y-2 text-muted-foreground">
+                        <li className="flex items-start gap-2">
+                          <span className="text-blue-600 mt-0.5">•</span>
+                          <span>No custom integrations for each AI application</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-blue-600 mt-0.5">•</span>
+                          <span>Dramatically simplified development & maintenance</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-blue-600 mt-0.5">•</span>
+                          <span>Enhanced reliability through standardization</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-blue-600 mt-0.5">•</span>
+                          <span>Enterprise-ready AI development</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  {/* Architecture Overview */}
+                  <div className="bg-gradient-to-r from-purple-50 to-blue-50 dark:from-purple-950/20 dark:to-blue-950/20 p-4 rounded-lg">
+                    <h5 className="font-semibold flex items-center gap-2 mb-3">
+                      <Building className="h-4 w-4 text-purple-600" />
+                      MCP Architecture
+                    </h5>
+                    <div className="grid gap-4 md:grid-cols-2">
+                      <div>
+                        <p className="text-sm font-medium mb-2">AI Clients (like Claude)</p>
+                        <ul className="text-xs space-y-1 text-muted-foreground">
+                          <li>• Make requests for resources</li>
+                          <li>• Invoke tools and functions</li>
+                          <li>• Interpolate prompt templates</li>
+                          <li>• Handle user interactions</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <p className="text-sm font-medium mb-2">MCP Servers</p>
+                        <ul className="text-xs space-y-1 text-muted-foreground">
+                          <li>• Handle backend integration</li>
+                          <li>• Manage data access & security</li>
+                          <li>• Execute business logic</li>
+                          <li>• Provide consistent interfaces</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Use Cases */}
+                  <div>
+                    <h5 className="font-semibold flex items-center gap-2 mb-3">
+                      <Code className="h-4 w-4 text-purple-600" />
+                      Real-World Applications
+                    </h5>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="secondary">Database MCP → Query & modify records</Badge>
+                      <Badge variant="secondary">CRM MCP → Manage contacts & interactions</Badge>
+                      <Badge variant="secondary">GitHub MCP → Code management & reviews</Badge>
+                      <Badge variant="secondary">Analytics MCP → Data insights & reports</Badge>
+                    </div>
+                  </div>
+
+                  {/* Summary */}
+                  <div className="bg-purple-100 dark:bg-purple-900/20 p-4 rounded-lg">
+                    <p className="text-sm font-medium flex items-start gap-2">
+                      <Shield className="h-4 w-4 text-purple-600 mt-0.5 flex-shrink-0" />
+                      <span>
+                        By centralizing integration logic and separating the AI interface from backend systems,
+                        MCP enables AI agents to act as personal assistants, software developers, or analysts—seamlessly
+                        retrieving enterprise data and performing meaningful actions on behalf of users.
+                      </span>
+                    </p>
+                  </div>
+
+                  {/* Learn More Link */}
+                  <div className="pt-4 border-t border-purple-200 dark:border-purple-800">
+                    <a
+                      href="https://modelcontextprotocol.io/introduction"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-sm text-purple-600 hover:text-purple-700 dark:text-purple-400 dark:hover:text-purple-300 transition-colors"
+                    >
+                      <span>Learn more about MCP</span>
+                      <ArrowRight className="h-3 w-3" />
+                    </a>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </CardContent>

@@ -47,16 +47,17 @@ export default function HowItWorksPage() {
             <CardContent className="pt-6">
               <div className="font-mono text-sm text-center mb-4">
                 <pre className="bg-white dark:bg-gray-900 p-4 rounded-lg border inline-block text-left">
-{`┌─────────────────────────────────────────────────┐
+{`
+┌──────────────────────────────────────────────────┐
 │                  DAHAO CORE                      │
-├─────────────────────────────────────────────────┤
+├──────────────────────────────────────────────────┤
 │                                                  │
-│  Terms (@)    →    Principles (#)   →   Rules   │
+│  Terms (@)    →    Principles (#)   →   Rules    │
 │     ↑                    ↑                 ↑     │
 │     └────────── Meta-Rules ────────────────┘     │
 │                                                  │
 │  Version Control │ MCP Integration │ Branches    │
-└─────────────────────────────────────────────────┘`}
+└──────────────────────────────────────────────────┘`}
                 </pre>
               </div>
             </CardContent>
@@ -285,22 +286,23 @@ export default function HowItWorksPage() {
             <CardContent className="pt-6">
               <div className="font-mono text-xs text-center">
                 <pre className="bg-white dark:bg-gray-900 p-4 rounded-lg border inline-block text-left">
-{`┌─────────────────────────────────────────────────┐
-│                 DAHAO as MCP Hub                 │
+{`
+┌─────────────────────────────────────────────────┐
+│                 DAHAO as MCP Hub                │
 ├─────────────────────────────────────────────────┤
-│                                                  │
+│                                                 │
 │   External Services          DAHAO              │
-│   ┌─────────────┐           ┌─────┐            │
+│   ┌─────────────┐            ┌─────┐            │
 │   │   GitHub    │ ←────MCP──→│     │            │
-│   ├─────────────┤           │     │            │
+│   ├─────────────┤            │     │            │
 │   │   OpenAI    │ ←────MCP──→│ Hub │            │
-│   ├─────────────┤           │     │            │
+│   ├─────────────┤            │     │            │
 │   │   Slack     │ ←────MCP──→│     │            │
-│   ├─────────────┤           └─────┘            │
+│   ├─────────────┤            └─────┘            │
 │   │ Custom APIs │ ←────MCP────┘ ↑               │
 │   └─────────────┘               │               │
-│                                  │               │
-│   External Clients              MCP              │
+│                                 │               │
+│   External Clients              MCP             │
 │   ┌─────────────┐               │               │
 │   │   Claude    │ ←─────────────┘               │
 │   │ Computer Use│                               │
