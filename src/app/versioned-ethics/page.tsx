@@ -188,7 +188,7 @@ export default function VersionedEthicsPage() {
                   <div className="p-4 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200">
                     <div className="flex items-center gap-2 mb-2">
                       <Users className="h-5 w-5 text-blue-600" />
-                      <strong>Manual Approval Mode</strong>
+                      <strong>Manual Approval</strong>
                     </div>
                     <ul className="text-sm space-y-1 text-muted-foreground">
                       <li>• AI interprets rules and suggests actions</li>
@@ -256,21 +256,21 @@ export default function VersionedEthicsPage() {
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="space-y-3">
                   <div className="p-3 bg-blue-50 dark:bg-blue-950/20 rounded border-l-4 border-blue-500">
-                    <h5 className="font-semibold text-sm text-blue-700 dark:text-blue-300">Manual Approval</h5>
+                    <h5 className="font-semibold text-sm text-blue-700 dark:text-blue-300">The Manual Approval Mode</h5>
                     <p className="text-xs text-muted-foreground">AI suggests: "Based on @community-values definition, this member aligns" → You review interpretation → You decide</p>
                   </div>
                   <div className="p-3 bg-purple-50 dark:bg-purple-950/20 rounded border-l-4 border-purple-500">
-                    <h5 className="font-semibold text-sm text-purple-700 dark:text-purple-300">Supervised Interpretation</h5>
+                    <h5 className="font-semibold text-sm text-purple-700 dark:text-purple-300">The Supervised Interpretation Mode</h5>
                     <p className="text-xs text-muted-foreground">AI interprets @community-values → If clear match, approve → If ambiguous, pause for human review</p>
                   </div>
                 </div>
                 <div className="space-y-3">
                   <div className="p-3 bg-green-50 dark:bg-green-950/20 rounded border-l-4 border-green-500">
-                    <h5 className="font-semibold text-sm text-green-700 dark:text-green-300">Trusted Interpretation</h5>
+                    <h5 className="font-semibold text-sm text-green-700 dark:text-green-300">The Trusted Interpretation Mode</h5>
                     <p className="text-xs text-muted-foreground">AI applies @community-values interpretation → Auto-approve most → Alert only on edge cases</p>
                   </div>
                   <div className="p-3 bg-orange-50 dark:bg-orange-950/20 rounded border-l-4 border-orange-500">
-                    <h5 className="font-semibold text-sm text-orange-700 dark:text-orange-300">Full Delegation</h5>
+                    <h5 className="font-semibold text-sm text-orange-700 dark:text-orange-300">The Full Delegation Mode</h5>
                     <p className="text-xs text-muted-foreground">AI interprets nuanced @community-values → Learns from outcomes → Refines understanding → You monitor trends</p>
                   </div>
                 </div>

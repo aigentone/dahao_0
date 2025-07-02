@@ -133,7 +133,7 @@ export default function MissionPage() {
 
         {/* The Problem */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-8">The Problem: Technology Outpaces Human Governance</h2>
+          <h2 className="text-3xl font-bold mb-8">Technology Outpaces Human Governance</h2>
           <div className="prose prose-lg max-w-none text-muted-foreground mb-8">
             <p>
               Technology evolves exponentially while human language and ethics crawl along at biological pace.

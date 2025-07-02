@@ -387,7 +387,7 @@ export default function HomePage() {
                   )}
                 </h4>
               </button>
-              
+
               {isMCPExpanded && (
                 <div className="mt-4 space-y-6 animate-in slide-in-from-top-2 duration-300">
                   {/* Main explanation */}
