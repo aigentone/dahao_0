@@ -25,7 +25,8 @@ import {
   Vote,
   Scale,
   TrendingDown,
-  Heart
+  Heart,
+  University
 } from 'lucide-react';
 
 export default function EconomicsPage() {
@@ -41,17 +42,18 @@ Rule #49: "Treasury spending requires @economic-consensus"`;
       description: 'Local governance for 50 people'
     },
     {
+        icon: University,
+        iconColor: 'text-green-500',
+        title: 'Your University',
+        description: 'Coordination at scale'
+      },
+    {
       icon: Building,
       iconColor: 'text-purple-500',
       title: 'Your City',
       description: 'Municipal decisions for 5 million residents'
     },
-    {
-      icon: Globe,
-      iconColor: 'text-green-500',
-      title: 'Your Nation',
-      description: 'National coordination at scale'
-    },
+
     {
       icon: Globe,
       iconColor: 'text-orange-500',
@@ -70,7 +72,7 @@ Rule #49: "Treasury spending requires @economic-consensus"`;
   const futureApplications = [
     'Startups incorporate as DAHAOs',
     'Cities run on DAHAO governance',
-    'NGOs coordinate through DAHAOs',
+    'Non-Governmental Organizations coordinate through DAHAOs',
     'Even nations could democratize via DAHAO'
   ];
 
@@ -82,7 +84,7 @@ Rule #49: "Treasury spending requires @economic-consensus"`;
           <HeroSection
             badge="Economic Democracy"
             badgeVariant="secondary"
-            title="Economics as Governance"
+            title=""
             subtitle="In DAHAO, financial decisions are democratic rules that evolve with your community"
             description="From local markets to global coordination - one framework, infinite applications"
             maxWidth="3xl"
@@ -124,7 +126,7 @@ Rule #49: "Treasury spending requires @economic-consensus"`;
                 icon={ArrowRight}
                 iconColor="text-primary"
               />
-              
+
               <InfoCard variant="info" className="mt-6" showIcon={false}>
                 The same system that governs decisions governs money. Democratic. Versioned. Transparent.
               </InfoCard>
@@ -154,17 +156,7 @@ Rule #49: "Treasury spending requires @economic-consensus"`;
             ))}
           </FeatureGrid>
 
-          <div className="mt-12 text-center">
-            <p className="text-lg text-muted-foreground mb-4">
-              The same core system can power:
-            </p>
-            <IconList
-              items={applications}
-              icon={Scale}
-              iconColor="text-purple-600"
-              className="max-w-2xl mx-auto text-left"
-            />
-          </div>
+
         </div>
       </Section>
 
@@ -216,7 +208,7 @@ Rule #49: "Treasury spending requires @economic-consensus"`;
               iconColor="text-green-600"
               spacing="relaxed"
             />
-            
+
             <InfoCard variant="success" className="mt-8 max-w-2xl mx-auto" showIcon={false}>
               <strong>Build once. Humanity uses forever.</strong>
             </InfoCard>
@@ -243,13 +235,6 @@ Rule #49: "Treasury spending requires @economic-consensus"`;
             </CardContent>
           </Card>
 
-          <NavigationCTA
-            className="mt-12"
-            buttons={[
-              { text: "Explore How It Works", href: "/how-it-works" },
-              { text: "Join the Mission", href: "/mission" }
-            ]}
-          />
         </div>
       </Section>
 
@@ -308,8 +293,8 @@ Rule #49: "Treasury spending requires @economic-consensus"`;
           </FeatureGrid>
 
           <InfoCard variant="success" className="mt-8 max-w-3xl mx-auto" showIcon={false}>
-            <strong>Transform charity into investment.</strong> When DAHAOs succeed in their missions, 
-            early supporters benefit both from the positive impact created and from the economic value generated. 
+            <strong>Transform charity into investment.</strong> When DAHAOs succeed in their missions,
+            early supporters benefit both from the positive impact created and from the economic value generated.
             It's not charity - it's sustainable economics aligned with your values.
           </InfoCard>
         </div>
