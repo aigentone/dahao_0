@@ -12,3 +12,7 @@ export { CodeBlock } from './CodeBlock';
 export { SectionTitle } from './SectionTitle';
 export { FeatureGrid } from './FeatureGrid';
 export { IconButton } from './IconButton';
+export { GovernanceCard } from './GovernanceCard';
+export { YamlViewer } from './YamlViewer';
+export { TermReference } from './TermReference';
+export { TermCard } from './TermCard';

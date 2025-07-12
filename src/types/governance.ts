@@ -214,3 +214,56 @@ export interface TermDictionary {
   namespace: string;
   terms: Record<string, Record<string, Term>>;
 }
+
+// YAML Document Types for GitHub Integration
+export interface YamlMetaRule {
+  version?: string;
+  title?: string;
+  statement?: string;
+  rationale?: string;
+  immutable_aspects?: string[];
+  change_process?: string[];
+  examples?: string[];
+  exceptions?: string[];
+  uses_terms?: string[];
+  [key: string]: any;
+}
+
+export interface YamlPrinciple {
+  statement?: string;
+  rationale?: string;
+  requirements?: string[];
+  exceptions?: string[];
+  examples?: string[];
+  uses_terms?: string[];
+  [key: string]: any;
+}
+
+export interface YamlRule {
+  title?: string;
+  trigger?: string;
+  workflow?: {
+    [key: string]: string[];
+  };
+  mcp_integrations?: Array<{
+    service: string;
+    for: string;
+  }>;
+  thresholds?: Record<string, number>;
+  outputs?: Array<{
+    type: string;
+    format: string;
+  }>;
+  uses_terms?: string[];
+  [key: string]: any;
+}
+
+export interface YamlTerm {
+  definition?: string;
+  contexts?: Record<string, string>;
+  mechanisms?: Record<string, string>;
+  examples?: string[];
+  related_terms?: string[];
+  changelog?: Record<string, any>;
+  [key: string]: any;
+}
